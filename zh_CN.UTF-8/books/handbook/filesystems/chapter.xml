@@ -289,7 +289,7 @@ example/data        17547008       0 17547008     0%    /example/data</screen>
           <acronym>SCSI</acronym> 设备，
           <filename>da0</filename>， <filename>da1</filename>
           和 <filename>da2</filename>，使用如下命令创建一个
-          <acronym>RAID</acronym>-Z 存储池:</para>
+          <acronym>RAID</acronym>-Z 存储池：</para>
 
 	<screen>&prompt.root; <userinput>zpool create storage raidz da0 da1 da2</userinput></screen>
 
