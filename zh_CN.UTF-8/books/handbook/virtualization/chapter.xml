@@ -3,7 +3,7 @@
      The FreeBSD Documentation Project
      The FreeBSD Simplified Chinese Project
 
-     Original Revision: 1.25
+     Original Revision: r43258
      $FreeBSD$
 -->
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="virtualization">
@@ -19,9 +19,8 @@
   <sect1 xml:id="virtualization-synopsis">
     <title>概述</title>
 
-    <para>虚拟化软件能够让同一台机器上同时运行多个操作系统。
-      在 PC 上， 这种系统通常由一个运行虚拟化软件的宿主操作系统，
-      以及一系列客户操作系统组成。</para>
+    <para>虚拟化软件允许在一台计算机上同时运行多个操作系统。在 PC 上，
+        这类系统通常都是通过在宿主 （host ） 操作系统上运行虚拟机软件， 在虚拟机里运行多个客户 （guest ） 操作系统。</para>
 
     <para>读完这章， 您将了解：</para>
 
@@ -31,8 +30,7 @@
       </listitem>
 
       <listitem>
-	<para>如何在采用  &intel; 处理器的 &apple; &macintosh;
-	  计算机上安装 &os;。</para>
+          <para>如何在采用 &intel; 架构的&apple; &macintosh; 计算机上安装 &os; 。</para>
       </listitem>
 
 <!--
@@ -40,212 +38,195 @@
          Hide all information regarding Xen under FreeBSD.
 
       <listitem>
-	<para>如何在包含 <application>&xen;</application> 的 Linux 上安装 &os;。</para>
+	<para>How to install &os; on Linux with
+	  <application>&xen;</application>.</para>
       </listitem>
 -->
       <listitem>
-	<para>如何在 &microsoft.windows; 以
-	  <application>Virtual PC</application> 安装 &os;。</para>
+          <para>如何在 &microsoft.windows; 上的 <application>Virtual PC</application>  里安装 &os;。</para>
       </listitem>
 
       <listitem>
 	<para>如何针对虚拟化环境对 &os; 系统进行性能调优。</para>
       </listitem>
+
     </itemizedlist>
 
-    <para>在阅读这章之前， 您应：</para>
+    <para>阅读这章之前， 您应该：</para>
 
     <itemizedlist>
       <listitem>
-	<para>理解 &unix; 和 &os; 的基础知识 (<xref linkend="basics"/>)。</para>
+	<para>了解 <link linkend="basics">&unix; 和 &os;</link> 的基本知识。</para>
       </listitem>
 
-      <listitem><para>了解如何安装 &os; (<xref linkend="install"/>)。</para></listitem>
+      <listitem>
+	<para>了解 <link linkend="install"> 如何安装 &os;</link>。</para>
+      </listitem>
 
-      <listitem><para>了解如何配置网络连接 (<xref linkend="advanced-networking"/>)。</para></listitem>
+      <listitem>
+	<para>了解 <link linkend="advanced-networking">如何配置网络</link>。</para>
+      </listitem>
 
-      <listitem><para>了解如何安装第三方软件
-        (<xref linkend="ports"/>).</para></listitem>
+      <listitem>
+	<para>了解 <link linkend="ports"> 如何安装第三方应用程序</link>。</para>
+      </listitem>
     </itemizedlist>
-
   </sect1>
 
-
-
   <sect1 xml:id="virtualization-guest">
-    <title>作为客户 OS 的 &os;</title>
+      <title>&os; 作为客户操作系统</title>
 
     <sect2 xml:id="virtualization-guest-parallels">
-      <title>MacOS 上的 Parallels</title>
+      <title>&macos; X 上的 <application>Parallels</application> 虚拟机</title>
 
-      <para>为 &mac; 设计的 <application>Parallels Desktop</application>
-	是一种可用于采用 &intel; 处理器， 并运行 &macos;
-        10.4.6 或更高版本的 &apple; &mac; 计算机的商业软件。
-        它为 &os; 系统提供了完整的支持。 在 &macos;
-        X 上安装了这个软件之后， 用户需要配置虚拟机并安装所需的客户操作系统。</para>
+      <para><application>Parallels Desktop</application> &mac; 版是一种在采用 &intel; 架构，
+          及运行着 &macos; 10.4.6 或更高版本的 &apple; &mac; 上的商业虚拟机软件。
+          它完美的支持使用 &os; 作为它的客户操作系统。
+          在 &macos; X 上安装好 <application>Parallels</application> 之后， 用户需要配置虚拟机并安装所需的客户操作系统。</para>
 
-	<sect3 xml:id="virtualization-guest-parallels-install">
-	  <title>在 Parallels/&macos; X 上安装 &os;</title>
+      <sect3 xml:id="virtualization-guest-parallels-install">
+	<title>在 Parallels/&macos; X 里安装 &os;</title>
 
-	  <para>在 &macos;
-	    X/<application>Parallels</application> 上安装 FreeBSD 的第一步是创建一个新的虚拟机。
-	    在系统提示选择客户 OS 类型 (<guimenu>Guest OS Type</guimenu>) 时选择 <guimenuitem>&os;</guimenuitem>，
-	    并根据您使用 &os; 虚拟实例的需要分配磁盘和内存：</para>
+    <para>在 <application>Parallels</application> 里安装 &os; 的第一步是新建虚拟机。
+        在弹出窗口的 <guimenu>客户 OS 类型 (Guest OS Type)</guimenu> 选项选择 <guimenuitem>&os;</guimenuitem>：</para>
 
-	  <mediaobject>
-            <imageobject>
-	      <imagedata fileref="virtualization/parallels-freebsd1"/>
-            </imageobject>
-          </mediaobject>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="virtualization/parallels-freebsd1"/>
+	  </imageobject>
+	</mediaobject>
 
-	  <para>对多数在 <application>Parallels</application> 上使用
-	    &os; 的情形而言， 4GB 磁盘空间和 512MB 的 RAM 就够用了：</para>
+    <para>并根据自身需求选择合适的磁盘空间和内存。
+        多数情况下在 <application>Parallels</application> 里使用 &os; ，
+        4GB 磁盘空间和 512MB 内存就足够了：</para>
 
-	  <mediaobject>
-	    <imageobject>
-	      <imagedata fileref="virtualization/parallels-freebsd2"/>
-	    </imageobject>
-	  </mediaobject>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="virtualization/parallels-freebsd2"/>
+	  </imageobject>
+	</mediaobject>
 
-	  <mediaobject>
-	    <imageobject>
-	      <imagedata fileref="virtualization/parallels-freebsd3"/>
-	    </imageobject>
-	  </mediaobject>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="virtualization/parallels-freebsd3"/>
+	  </imageobject>
+	</mediaobject>
 
-	  <mediaobject>
-	    <imageobject>
-	      <imagedata fileref="virtualization/parallels-freebsd4"/>
-	    </imageobject>
-	  </mediaobject>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="virtualization/parallels-freebsd4"/>
+	  </imageobject>
+	</mediaobject>
 
-	  <mediaobject>
-	    <imageobject>
-	      <imagedata fileref="virtualization/parallels-freebsd5"/>
-	    </imageobject>
-	  </mediaobject>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="virtualization/parallels-freebsd5"/>
+	  </imageobject>
+	</mediaobject>
 
-	  <para>选择使用的网络和网卡类型：</para>
+	<para>接下来， 选择网络和网卡类型：</para>
 
-	  <mediaobject>
-	    <imageobject>
-	      <imagedata fileref="virtualization/parallels-freebsd6"/>
-	    </imageobject>
-	  </mediaobject>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="virtualization/parallels-freebsd6"/>
+	  </imageobject>
+	</mediaobject>
 
-	  <mediaobject>
-	    <imageobject>
-	      <imagedata fileref="virtualization/parallels-freebsd7"/>
-	    </imageobject>
-	  </mediaobject>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="virtualization/parallels-freebsd7"/>
+	  </imageobject>
+	</mediaobject>
 
-	  <para>保存并完成配置：</para>
+	<para>最后保存，完成配置：</para>
 
-	  <mediaobject>
-	    <imageobject>
-	      <imagedata fileref="virtualization/parallels-freebsd8"/>
-	    </imageobject>
-	  </mediaobject>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="virtualization/parallels-freebsd8"/>
+	  </imageobject>
+	</mediaobject>
 
-	  <mediaobject>
-            <imageobject>
-	      <imagedata fileref="virtualization/parallels-freebsd9"/>
-            </imageobject>
-          </mediaobject>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="virtualization/parallels-freebsd9"/>
+	  </imageobject>
+	</mediaobject>
 
-	  <para>在创建了 &os; 虚拟机之后， 还需要在其中安装 &os;。
-	    最好的做法是使用官方的 &os; CDROM 或从官方 FTP 站点下载的 ISO 镜像来完成这个任务。
-	    如果您的本地 &mac; 文件系统中有 ISO 映像文件， 或您的 &mac; 的 CD 驱动器中有
-	    CDROM， 就可以在 &os;
-	    <application>Parallels</application> 窗口的右下角点击光盘图标。
-	    之后， 系统将给出一个窗口， 供您完成将虚拟机中的
-	    CDROM 驱动器连接到本地的 ISO 文件或真正的 CDROM 驱动器上。</para>
+    <para>在新建好 &os; 虚拟机后， 就可以开始安装 &os; 。最好使用官方的 &os; CD/DVD 或从官方 FTP 站下载 ISO 镜像。
+        将 ISO 镜像保存到 &mac; 文件系统上， 或将 CD/DVD 插入到 &mac; 光驱里，
+        之后点击 <application>Parallels</application> &os; 虚拟机窗口右下角的光盘图标。
+        在弹出的窗口里将 虚拟机光驱设置为 ISO 镜像或物理光驱。</para>
 
-	  <mediaobject>
-	    <imageobject>
-	      <imagedata fileref="virtualization/parallels-freebsd11"/>
-	    </imageobject>
-	  </mediaobject>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="virtualization/parallels-freebsd11"/>
+	  </imageobject>
+	</mediaobject>
 
-	  <para>在完成了将 CDROM 与您的安装源完成关联之后，
-	    就可以按重启 (reboot) 图标来重启 &os; 虚拟机了。
-	    <application>Parallels</application> 将配合一个特殊的
-	    BIOS 启动， 后者能够像普通的 BIOS 一样检查系统中是否有 CDROM 驱动器。</para>
+    <para>设置完虚拟光驱的光盘源后， 就可以点击开机图标启动 &os; 虚拟机了，
+        <application>Parallels</application> 会像普通计算机的 BIOS 那样检测光驱是否存在可启动光盘。</para>
 
-	  <mediaobject>
-	    <imageobject>
-	      <imagedata fileref="virtualization/parallels-freebsd10"/>
-	    </imageobject>
-	  </mediaobject>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="virtualization/parallels-freebsd10"/>
+	  </imageobject>
+	</mediaobject>
 
-	  <para>此时， 它就能够找到 &os; 安装介质并开始 <xref linkend="install"/>
-	    中所介绍的标准的基于  <application>sysinstall</application> 安装的过程。</para>
+    <para>这种情况下， 虚拟机会找到 &os; 安装介质， 并开始标准的 &os; 安装过程。
+        这时可以顺便把 <application>&xorg;</application>  安装上， 但不要立即进行配置。</para>
 
-	  <mediaobject>
-	    <imageobject>
-	      <imagedata fileref="virtualization/parallels-freebsd12"/>
-	    </imageobject>
-	  </mediaobject>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="virtualization/parallels-freebsd12"/>
+	  </imageobject>
+	</mediaobject>
 
-	  <para>此时您可以安装 X11，
-	    但暂时不要对它进行配置。 在完成安装之后， 重启并进入新安装的 &os; 虚拟机。</para>
+	<para>安装完成后， 重启进入新安装的 &os; 虚拟机。</para>
 
-	  <mediaobject>
-	    <imageobject>
-	      <imagedata fileref="virtualization/parallels-freebsd13"/>
-	    </imageobject>
-	  </mediaobject>
-	</sect3>
-
-	<sect3 xml:id="virtualization-guest-parallels-configure">
-	  <title>在 &macos; X/Parallels 上配置 &os;</title>
-
-	  <para>在您将 &os; 安装到 &macos;
-	    X 的 <application>Parallels</application> 上之后， 还需要进行一系列的配置，
-	    以便为系统的虚拟化操作进行优化。</para>
-
-          <procedure>
-	    <step>
-	      <title>配置引导加载器变量</title>
-
-	      <para>最重要的一步是通过调低
-	        <option>kern.hz</option> 变量来降低 <application>Parallels</application> 环境中的 &os;
-		对 CPU 的使用。 这可以通过在
-		<filename>/boot/loader.conf</filename> 中增加下述配置来完成：</para>
-
-	  	<programlisting>kern.hz=100</programlisting>
-
-	      <para>如果不使用这个配置， 闲置的 &os; <application>Parallels</application> 客户
-		OS 会在单处理器的 &imac; 上使用大约 15% 的 CPU。 如此修改之后，
-		空闲时的使用量就减少到大约 5% 了。</para>
-	    </step>
-
-	    <step>
-	      <title>创建新的内核配置文件</title>
-
-	      <para>您可以删去全部 SCSI、 FireWire， 以及 USB
-	        设备驱动程序。 <application>Parallels</application> 提供了一个由 &man.ed.4; 驱动的虚拟网卡，
-	        因此， 除了
-	        &man.ed.4; 和 &man.miibus.4;
-	        之外的其他网络接口驱动都可以从内核中删去。</para>
-	    </step>
-
-	    <step>
-	      <title>配置网络</title>
-
-	      <para>最基本的网络配置， 是通过使用 DHCP 来将您的虚拟机与宿主 &mac;
-	        接入同一个局域网。 这可以通过在
-	        <filename>/etc/rc.conf</filename> 中加入
-	        <literal>ifconfig_ed0="DHCP"</literal> 来完成。
-		更高级一些的网络配置方法， 请参见 <xref linkend="advanced-networking"/> 中的介绍。</para>
-	    </step>
-          </procedure>
-
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="virtualization/parallels-freebsd13"/>
+	  </imageobject>
+	</mediaobject>
       </sect3>
 
+      <sect3 xml:id="virtualization-guest-parallels-configure">
+          <title>配置 <application>Parallels</application> 里的 &os; 虚拟机</title>
+
+          <para>在您将 &os; 安装到 &macos; X 上的 <application>Parallels</application> 里后， 还需要一些设置， 以便优化虚拟机。</para>
+
+	<procedure>
+	  <step>
+	    <title>配置引导器参数</title>
+
+        <para>最重要的一步是通过调低 <option>kern.hz</option>  参数来降低 <application>Parallels</application>  环境中的 &os; 对 CPU 的使用率。
+            这可以通过在 <filename>/boot/loader.conf</filename> 中添加以下内容来下完成配置：</para>
+
+	    <programlisting>kern.hz=100</programlisting>
+
+        <para>如果不配置， <application>Parallels</application> 虚拟机里的 &os; 客户机在空闲状态下将会单核 &imac; 计算机上占用 15% 的处理器资源，配置后将会降低至 5% 。</para>
+	  </step>
+
+	  <step>
+	    <title>配置新的内核配置文件</title>
+
+        <para>全部的 SCSI、 FireWire 和 USB 驱动都可以从自定义内核配置文件里删除。
+            <application>Parallels</application> 提供了一个 &man.ed.4; 驱动的虚拟网卡， 因此，
+            除了  &man.ed.4; 和 &man.miibus.4; 之外的所有其他网卡驱动都可以从内核配置文件里删除。</para>
+	  </step>
+
+	  <step>
+	    <title>配置网络</title>
+
+        <para>最简单的配置可以通过启用 DHCP 来将您的虚拟机接入到您 &mac; 宿主机同一个局域网内。
+            这可以通过在 <filename>/etc/rc.conf</filename> 里添加 <literal>ifconfig_ed0="DHCP"</literal> 完成配置。
+            更多高级网络配置方法， 请参阅 <xref linkend="advanced-networking"/> 。</para>
+	  </step>
+	</procedure>
+      </sect3>
     </sect2>
 <!--
-Deactive/hide this section as the instruction in there do NOT work anyore:
+Deactive/hide this section as the instructions in there do NOT work anymore:
 - FreeBSD 7.0 has reached its EOL a long time ago.
 - The needed files from www.fsmware.com are not available anymore, as the
   server is dead.  So it is impossible to follow the instructions in here.
@@ -256,117 +237,127 @@ jkois@FreeBSD.org, 2010-06-18
       <sect2info>
 	<authorgroup>
 	  <author>
-            <firstname>福康</firstname>
-	    <surname>陈 (Loader)</surname>
-	    <contrib>原作 </contrib>
-          </author>
-        </authorgroup>
-
+	    <firstname>Fukang</firstname>
+	    <surname>Chen (Loader)</surname>
+	    <contrib>Contributed by </contrib>
+	  </author>
+	</authorgroup>
       </sect2info>
 
-      <title>在 Linux 上通过 &xen; 运行 &os;</title>
+      <title>&os; with &xen; on Linux</title>
 
-	<para><application>&xen;</application> hypervisor 是一个开放源代码的并行虚拟化产品，
-	  并由商业的 XenSource 公司提供支持。 在这种系统中， 客户操作系统称为 domU 域，
-	  而宿主系统则称为 dom0。 在 Linux 上运行 &os; 虚拟机实例的第一步， 是安装用于
-	  Linux dom0 的
-	  <application>&xen;</application>。 在这个例子中，
-	  宿主系统采用的发行版本是 Slackware Linux。</para>
+	<para>The <application>&xen;</application> hypervisor is an
+	  open source paravirtualization product which is now
+	  supported by the commercial XenSource company.  Guest
+	  operating systems are known as domU domains, and the host
+	  operating system is known as dom0.  The first step in
+	  running a virtual &os; instance under Linux is to install
+	  <application>&xen;</application> for Linux dom0.  The host
+	  operating system will be a Slackware Linux
+	  distribution.</para>
 
 	<sect3 id="xen-slackware-dom0">
-	  <title>在 Linux dom0 上安装 &xen; 3</title>
+	  <title>Setup &xen; 3 on Linux dom0</title>
 
 	  <procedure>
 	    <step>
-	      <title>从 XenSource 下载 &xen; 3.0</title>
+	      <title>Download &xen; 3.0 from XenSource</title>
 
-	      <para>从 <ulink url="http://www.xensource.com/"></ulink> 下载 <ulink
-	        url="http://bits.xensource.com/oss-xen/release/3.0.4-1/src.tgz/xen-3.0.4_1-src.tgz">xen-3.0.4_1-src.tgz</ulink>。</para>
-
+	      <para>Download <ulink
+		  url="http://bits.xensource.com/oss-xen/release/3.0.4-1/src.tgz/xen-3.0.4_1-src.tgz">xen-3.0.4_1-src.tgz</ulink>
+		from <ulink
+		url="http://www.xensource.com/"></ulink>.</para>
 	    </step>
 
 	    <step>
-	      <title>解压缩源代码包</title>
+	      <title>Unpack the tarball</title>
 
               <screen>&prompt.root; <userinput>cd xen-3.0.4_1-src</userinput>
 &prompt.root; <userinput>KERNELS="linux-2.6-xen0 linux-2.6-xenU" make world</userinput>
 &prompt.root; <userinput>make install</userinput></screen>
 
-            <note>
-	      <para>为 dom0 重新编译内核：</para>
+	      <note>
+		<para>To re-compile the kernel for dom0:</para>
 
-	      <screen>&prompt.root; <userinput>cd xen-3.0.4_1-src/linux-2.6.16.33-xen0</userinput>
+		<screen>&prompt.root; <userinput>cd xen-3.0.4_1-src/linux-2.6.16.33-xen0</userinput>
 &prompt.root; <userinput>make menuconfig</userinput>
 &prompt.root; <userinput>make</userinput>
 &prompt.root; <userinput>make install</userinput></screen>
 
-	      <para>对于较早版本的 <application>&xen;</application>， 可能需要指定
-	        <command>make ARCH=xen menuconfig</command></para>
-	    </note>
+		<para>Older version of
+		  <application>&xen;</application> may need to specify
+		  <command>make ARCH=xen menuconfig</command></para>
+	      </note>
 	    </step>
 
 	    <step>
-	      <title>在 Grub 的 menu.lst 中增加一个对应的菜单项</title>
+	      <title>Add a menu entry into Grub menu.lst</title>
 
-	      <para>编辑 <filename>/boot/grub/menu.lst</filename>
-		并在其中增加下列配置：</para>
+	      <para>Edit <filename>/boot/grub/menu.lst</filename> and
+		add the following lines:</para>
 
 	      <programlisting>title Xen-3.0.4
 root (hd0,0)
 kernel /boot/xen-3.0.4-1.gz dom0_mem=262144
 module /boot/vmlinuz-2.6.16.33-xen0 root=/dev/hda1 ro</programlisting>
-            </step>
+	    </step>
 
-            <step>
-              <title>重新启动计算机并进入 &xen;</title>
+	    <step>
+	      <title>Reboot your computer into &xen;</title>
 
-	      <para>首先， 编辑
-		<filename>/etc/xen/xend-config.sxp</filename>，
-		并在其中增加下列配置：</para>
+	      <para>First, edit
+		<filename>/etc/xen/xend-config.sxp</filename>, and add
+		the following line:</para>
 
 	      <programlisting>(network-script 'network-bridge netdev=eth0')</programlisting>
 
-	      <para>接下来就可以运行
-		<application>&xen;</application> 了：</para>
+	      <para>Then, we can launch
+		<application>&xen;</application>:</para>
 
-              <screen>&prompt.root; <userinput>/etc/init.d/xend start</userinput>
+	      <screen>&prompt.root; <userinput>/etc/init.d/xend start</userinput>
 &prompt.root; <userinput>/etc/init.d/xendomains start</userinput></screen>
 
-	      <para>现在 dom0 已经开始运行：</para>
+	      <para>Our dom0 is running:</para>
 
-              <screen>&prompt.root; <userinput>xm list</userinput>
+	      <screen>&prompt.root; <userinput>xm list</userinput>
 Name                                      ID   Mem VCPUs      State   Time(s)
 Domain-0                                   0   256     1     r&ndash;&ndash;&ndash;&ndash;&ndash;  54452.9</screen>
-            </step>
-          </procedure>
-        </sect3>
+	    </step>
+	  </procedure>
+	</sect3>
 
-        <sect3>
-          <title>&os; 7-CURRENT domU</title>
+	<sect3>
+	  <title>&os; 7-CURRENT domU</title>
 
-          <para>从 <ulink
-            url="http://www.fsmware.com/">http://www.fsmware.com/</ulink>
-	    下载用于 <application>&xen; 3.0</application> 的 &os; domU 内核。</para>
+	  <para>Download the &os; domU kernel for
+	    <application>&xen; 3.0</application> and disk image from
+	    <ulink
+	      url="http://www.fsmware.com/">http://www.fsmware.com/</ulink></para>
 
-      <itemizedlist>
-	<listitem>
-	  <para><ulink url="http://www.fsmware.com/xenofreebsd/7.0/download/kernel-current">kernel-current</ulink></para>
-	</listitem>
+	  <itemizedlist>
+	    <listitem>
+	      <para><ulink
+		  url="http://www.fsmware.com/xenofreebsd/7.0/download/kernel-current">kernel-current</ulink></para>
+	    </listitem>
 
-	<listitem>
-	  <para><ulink url="http://www.fsmware.com/xenofreebsd/7.0/download/mdroot-7.0.bz2">mdroot-7.0.bz2</ulink></para>
-	</listitem>
+	    <listitem>
+	      <para><ulink
+		  url="http://www.fsmware.com/xenofreebsd/7.0/download/mdroot-7.0.bz2">mdroot-7.0.bz2</ulink></para>
+	    </listitem>
 
-	<listitem>
-	  <para><ulink url="http://www.fsmware.com/xenofreebsd/7.0/download/config/xmexample1.bsd">xmexample1.bsd</ulink></para>
-	</listitem>
-      </itemizedlist>
+	    <listitem>
+	      <para><ulink
+		  url="http://www.fsmware.com/xenofreebsd/7.0/download/config/xmexample1.bsd">xmexample1.bsd</ulink></para>
+	    </listitem>
+	  </itemizedlist>
 
-      <para>将配置文件 <filename>xmexample1.bsd</filename>
-	放到 <filename>/etc/xen/</filename> 并修改与内核及磁盘映像位置有关的配置项。
-	下面是一个示范的例子：</para>
+	  <para>Put the configuration file
+	    <filename>xmexample1.bsd</filename> into
+	    <filename>/etc/xen/</filename> and modify the related
+	    entries about where the kernel and the disk image are
+	    stored. It should look like the following:</para>
 
-      <programlisting>kernel = "/opt/kernel-current"
+	  <programlisting>kernel = "/opt/kernel-current"
 memory = 256
 name = "freebsd"
 vif = [ '' ]
@@ -377,16 +368,19 @@ extra += ",boot_single"
 extra += ",kern.hz=100"
 extra += ",vfs.root.mountfrom=ufs:/dev/xbd769a"</programlisting>
 
-      <para>其中， <filename>mdroot-7.0.bz2</filename> 应是未压缩的。</para>
+	  <para>The <filename>mdroot-7.0.bz2</filename> file should
+	    be uncompressed.</para>
 
-      <para>接下来， 您需要修改 <filename>kernel-current</filename> 中的 __xen_guest
-	小节， 并加入 <application>&xen; 3.0.3</application> 所需要的 VIRT_BASE：</para>
+	  <para>Next, the __xen_guest section in
+	    <filename>kernel-current</filename> needs to be altered to
+	    add the VIRT_BASE that
+	    <application>&xen; 3.0.3</application> requires:</para>
 
-      <screen>&prompt.root; <userinput>objcopy kernel-current -R __xen_guest</userinput>
+	  <screen>&prompt.root; <userinput>objcopy kernel-current -R __xen_guest</userinput>
 &prompt.root; <userinput>perl -e 'print "LOADER=generic,GUEST_OS=freebsd,GUEST_VER=7.0,XEN_VER=xen-3.0,BSD_SYMTAB,VIRT_BASE=0xC0000000\x00"' &gt; tmp</userinput>
 &prompt.root; <userinput>objcopy kernel-current &ndash;&ndash;add-section __xen_guest=tmp</userinput></screen>
 
-      <screen>&prompt.root; <userinput>objdump -j __xen_guest -s kernel-current</userinput>
+	  <screen>&prompt.root; <userinput>objdump -j __xen_guest -s kernel-current</userinput>
 
 kernel-current:     file format elf32-i386
 
@@ -398,9 +392,10 @@ Contents of section __xen_guest:
  0040 445f5359 4d544142 2c564952 545f4241  D_SYMTAB,VIRT_BA
  0050 53453d30 78433030 30303030 3000      SE=0xC0000000. </screen>
 
-      <para>现在可以创建并运行 domU 了：</para>
+	  <para>We are, now, ready to create and launch our
+	    domU:</para>
 
-      <screen>&prompt.root; <userinput>xm create /etc/xen/xmexample1.bsd -c</userinput>
+	  <screen>&prompt.root; <userinput>xm create /etc/xen/xmexample1.bsd -c</userinput>
 Using config file "/etc/xen/xmexample1.bsd".
 Started domain freebsd
 WARNING: loader(8) metadata is missing!
@@ -461,18 +456,18 @@ FreeBSD/i386 (demo.freebsd.org) (xc0)
 
 login: </screen>
 
-      <para>现在 domU 应该能运行 &os;&nbsp;7.0-CURRENT
-	内核了：</para>
+	  <para>The domU should run the &os;&nbsp;7.0-CURRENT
+	    kernel:</para>
 
-      <screen>&prompt.root; <userinput>uname -a</userinput>
+	  <screen>&prompt.root; <userinput>uname -a</userinput>
 FreeBSD demo.freebsd.org 7.0-CURRENT FreeBSD 7.0-CURRENT #113: Wed Jan  4 06:25:43 UTC 2006
 kmacy@freebsd7.gateway.2wire.net:/usr/home/kmacy/p4/freebsd7_xen3/src/sys/i386-xen/compile/XENCONF  i386</screen>
 
-      <para>接下来可以在 domU 中配置网络了。 &os;
-	domU 会使用一种称做
-	<devicename>xn0</devicename> 的专用网络接口：</para>
+	  <para>The network can now be configured on the domU.  The
+	    &os; domU will use a specific interface called
+	    <devicename>xn0</devicename>:</para>
 
-      <screen>&prompt.root; <userinput>ifconfig xn0 10.10.10.200 netmask 255.0.0.0</userinput>
+	  <screen>&prompt.root; <userinput>ifconfig xn0 10.10.10.200 netmask 255.0.0.0</userinput>
 &prompt.root; <userinput>ifconfig</userinput>
 xn0: flags=843&lt;UP,BROADCAST,RUNNING,SIMPLEX&gt; mtu 1500
     inet 10.10.10.200 netmask 0xff000000 broadcast 10.255.255.255
@@ -482,528 +477,601 @@ lo0: flags=8049&lt;UP,LOOPBACK,RUNNING,MULTICAST&gt; mtu 16384
       inet6 fe80::1%lo0 prefixlen 64 scopeid 0x2
       inet 127.0.0.1 netmask 0xff000000 </screen>
 
-      <para>在 dom0 Slackware 上 会出现一些 <application>&xen;</application>
-	专用的网络接口：</para>
+	  <para>On dom0 Slackware, some
+	    <application>&xen;</application> dependant network
+	    interfaces should show up:</para>
 
-      <screen>&prompt.root; <userinput>ifconfig</userinput>
+	  <screen>&prompt.root; <userinput>ifconfig</userinput>
 eth0      Link encap:Ethernet  HWaddr 00:07:E9:A0:02:C2
-          inet addr:10.10.10.130  Bcast:0.0.0.0  Mask:255.0.0.0
-          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
-          RX packets:815 errors:0 dropped:0 overruns:0 frame:0
-          TX packets:1400 errors:0 dropped:0 overruns:0 carrier:0
-          collisions:0 txqueuelen:0
-          RX bytes:204857 (200.0 KiB)  TX bytes:129915 (126.8 KiB)
+	  inet addr:10.10.10.130  Bcast:0.0.0.0  Mask:255.0.0.0
+	  UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+	  RX packets:815 errors:0 dropped:0 overruns:0 frame:0
+	  TX packets:1400 errors:0 dropped:0 overruns:0 carrier:0
+	  collisions:0 txqueuelen:0
+	  RX bytes:204857 (200.0 KiB)  TX bytes:129915 (126.8 KiB)
 
 lo        Link encap:Local Loopback
-          inet addr:127.0.0.1  Mask:255.0.0.0
-          UP LOOPBACK RUNNING  MTU:16436  Metric:1
-          RX packets:99 errors:0 dropped:0 overruns:0 frame:0
-          TX packets:99 errors:0 dropped:0 overruns:0 carrier:0
-          collisions:0 txqueuelen:0
-          RX bytes:9744 (9.5 KiB)  TX bytes:9744 (9.5 KiB)
+	  inet addr:127.0.0.1  Mask:255.0.0.0
+	  UP LOOPBACK RUNNING  MTU:16436  Metric:1
+	  RX packets:99 errors:0 dropped:0 overruns:0 frame:0
+	  TX packets:99 errors:0 dropped:0 overruns:0 carrier:0
+	  collisions:0 txqueuelen:0
+	  RX bytes:9744 (9.5 KiB)  TX bytes:9744 (9.5 KiB)
 
 peth0     Link encap:Ethernet  HWaddr FE:FF:FF:FF:FF:FF
-          UP BROADCAST RUNNING NOARP  MTU:1500  Metric:1
-          RX packets:1853349 errors:0 dropped:0 overruns:0 frame:0
-          TX packets:952923 errors:0 dropped:0 overruns:0 carrier:0
-          collisions:0 txqueuelen:1000
-          RX bytes:2432115831 (2.2 GiB)  TX bytes:86528526 (82.5 MiB)
-          Base address:0xc000 Memory:ef020000-ef040000
+	  UP BROADCAST RUNNING NOARP  MTU:1500  Metric:1
+	  RX packets:1853349 errors:0 dropped:0 overruns:0 frame:0
+	  TX packets:952923 errors:0 dropped:0 overruns:0 carrier:0
+	  collisions:0 txqueuelen:1000
+	  RX bytes:2432115831 (2.2 GiB)  TX bytes:86528526 (82.5 MiB)
+	  Base address:0xc000 Memory:ef020000-ef040000
 
 vif0.1    Link encap:Ethernet  HWaddr FE:FF:FF:FF:FF:FF
-          UP BROADCAST RUNNING NOARP  MTU:1500  Metric:1
-          RX packets:1400 errors:0 dropped:0 overruns:0 frame:0
-          TX packets:815 errors:0 dropped:0 overruns:0 carrier:0
-          collisions:0 txqueuelen:0
-          RX bytes:129915 (126.8 KiB)  TX bytes:204857 (200.0 KiB)
+	  UP BROADCAST RUNNING NOARP  MTU:1500  Metric:1
+	  RX packets:1400 errors:0 dropped:0 overruns:0 frame:0
+	  TX packets:815 errors:0 dropped:0 overruns:0 carrier:0
+	  collisions:0 txqueuelen:0
+	  RX bytes:129915 (126.8 KiB)  TX bytes:204857 (200.0 KiB)
 
 vif1.0    Link encap:Ethernet  HWaddr FE:FF:FF:FF:FF:FF
-          UP BROADCAST RUNNING NOARP  MTU:1500  Metric:1
-          RX packets:3 errors:0 dropped:0 overruns:0 frame:0
-          TX packets:2 errors:0 dropped:157 overruns:0 carrier:0
-          collisions:0 txqueuelen:1
-          RX bytes:140 (140.0 b)  TX bytes:158 (158.0 b)
+	  UP BROADCAST RUNNING NOARP  MTU:1500  Metric:1
+	  RX packets:3 errors:0 dropped:0 overruns:0 frame:0
+	  TX packets:2 errors:0 dropped:157 overruns:0 carrier:0
+	  collisions:0 txqueuelen:1
+	  RX bytes:140 (140.0 b)  TX bytes:158 (158.0 b)
 
 xenbr1    Link encap:Ethernet  HWaddr FE:FF:FF:FF:FF:FF
-          UP BROADCAST RUNNING NOARP  MTU:1500  Metric:1
-          RX packets:4 errors:0 dropped:0 overruns:0 frame:0
-          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
-          collisions:0 txqueuelen:0
-          RX bytes:112 (112.0 b)  TX bytes:0 (0.0 b)</screen>
+	  UP BROADCAST RUNNING NOARP  MTU:1500  Metric:1
+	  RX packets:4 errors:0 dropped:0 overruns:0 frame:0
+	  TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+	  collisions:0 txqueuelen:0
+	  RX bytes:112 (112.0 b)  TX bytes:0 (0.0 b)</screen>
 
       <screen>&prompt.root; <userinput>brctl show</userinput>
 bridge name     bridge id           STP enabled         interfaces
 xenbr1          8000.feffffffffff   no                  vif0.1
                                                         peth0
                                                         vif1.0</screen>
-      </sect3>
-
-    </sect2>
+	</sect3>
+      </sect2>
 -->
     <sect2 xml:id="virtualization-guest-virtualpc">
-      <title>&windows; 上的 Virtual PC</title>
+      <title>&windows; 上的 <application>Virtual PC</application> 虚拟机</title>
 
-      <para><application>Virtual PC</application> 是 &microsoft;
-	上的 &windows; 软件产品， 可以免费下载使用。 相关系统要求，请参阅
-	<link xlink:href="http://www.microsoft.com/windows/downloads/virtualpc/sysreq.mspx">system requirements</link> 说明。
-	在 &microsoft.windows; 装完 <application>Virtual PC</application>
-	之后， 必须针对所安装的虚拟机器来做相应设定。</para>
+      <para>&windows; 上的 <application>Virtual PC</application> 是 &microsoft; 旗下软件， 可下载免费使用。
+          相关信息请参阅 <link xlink:href="http://www.microsoft.com/windows/downloads/virtualpc/sysreq.mspx">系统要求</link>。
+          一旦完成在 &microsoft.windows; 上安装 <application> Virtual PC</application> 后， 您需要配置一个虚拟机并安装所需的客户操作系统。</para>
 
-	<sect3 xml:id="virtualization-guest-virtualpc-install">
-	  <title>在 Virtual PC/&microsoft.windows; 上安装 &os;</title>
+      <sect3 xml:id="virtualization-guest-virtualpc-install">
+	<title>在 <application>Virtual PC</application> 里安装 &os;</title>
 
-	  <para>在 &microsoft.windows;/<application>Virtual PC</application>
-	    上安装 &os; 的第一步是新增虚拟器。 如下所示，在提示向导中请选择
-	    <guimenuitem>Create a virtual machine</guimenuitem>：</para>
+    <para>在 <application>Virtual PC</application> 里安装 &os; 的第一步是新建一个虚拟机。
+        选择 <guimenuitem>创建一个虚拟机 (Create a virtual machine)</guimenuitem> ：</para>
 
-	  <mediaobject>
-            <imageobject>
-	      <imagedata fileref="virtualization/virtualpc-freebsd1"/>
-            </imageobject>
-          </mediaobject>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="virtualization/virtualpc-freebsd1"/>
+	  </imageobject>
+	</mediaobject>
 
-	  <mediaobject>
-            <imageobject>
-	      <imagedata fileref="virtualization/virtualpc-freebsd2"/>
-            </imageobject>
-          </mediaobject>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="virtualization/virtualpc-freebsd2"/>
+	  </imageobject>
+	</mediaobject>
 
-	  <para>然后在 <guimenuitem>Operating system</guimenuitem>
-	    处选 <guimenuitem>Other</guimenuitem>：</para>
+    <para>然后在 <guimenuitem>操作系统 (Operating system)</guimenuitem> 处选择 <guimenuitem>其他 (Other)</guimenuitem> :</para>
 
-	  <mediaobject>
-	    <imageobject>
-	      <imagedata fileref="virtualization/virtualpc-freebsd3"/>
-	    </imageobject>
-	  </mediaobject>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="virtualization/virtualpc-freebsd3"/>
+	  </imageobject>
+	</mediaobject>
 
-	  <para>并依据自身需求来规划硬盘容量和内存的分配。对大多数在
-	    <application>Virtual PC</application> 使用 &os;
-	    的情况而言， 大约 4GB 的硬盘空间以及 512MB 的内存就够用了。</para>
+    <para>并根据自身需求选择合适的磁盘空间和内存。
+        多数情况下在 <application>Virtual PC</application> 里使用 &os; ，
+        4GB 磁盘空间和 512MB 内存就足够了：</para>
 
-	  <mediaobject>
-	    <imageobject>
-	      <imagedata fileref="virtualization/virtualpc-freebsd4"/>
-	    </imageobject>
-	  </mediaobject>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="virtualization/virtualpc-freebsd4"/>
+	  </imageobject>
+	</mediaobject>
 
-	  <mediaobject>
-	    <imageobject>
-	      <imagedata fileref="virtualization/virtualpc-freebsd5"/>
-	    </imageobject>
-	  </mediaobject>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="virtualization/virtualpc-freebsd5"/>
+	  </imageobject>
+	</mediaobject>
 
-	  <para>保存并完成配置：</para>
+	<para>保存，完成配置：</para>
 
-	  <mediaobject>
-	    <imageobject>
-	      <imagedata fileref="virtualization/virtualpc-freebsd6"/>
-	    </imageobject>
-	  </mediaobject>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="virtualization/virtualpc-freebsd6"/>
+	  </imageobject>
+	</mediaobject>
 
-	  <para>接下来选择新建的 &os; 虚拟机器，并单击
-	    <guimenu>Settings</guimenu>， 以设定网络种类以及网卡：</para>
+    <para>选择 &os; 虚拟机， 然后单击<guimenu>设置</guimenu>， 之后设置网络和网卡的类型：</para>
 
-	  <mediaobject>
-	    <imageobject>
-	      <imagedata fileref="virtualization/virtualpc-freebsd7"/>
-	    </imageobject>
-	  </mediaobject>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="virtualization/virtualpc-freebsd7"/>
+	  </imageobject>
+	</mediaobject>
 
-	  <mediaobject>
-            <imageobject>
-	      <imagedata fileref="virtualization/virtualpc-freebsd8"/>
-            </imageobject>
-          </mediaobject>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="virtualization/virtualpc-freebsd8"/>
+	  </imageobject>
+	</mediaobject>
 
-	  <para>在新建 &os; 虚拟机器以后， 就可以继续以其安装
-	    &os;。 安装方面， 比较好的作法是使用官方的 &os;
-	    光盘或从官方 FTP 站下载 ISO 镜像。 若您的 &windows; 系统
-	    内已有该 ISO 镜像， 那么就可以在 &os; 虚拟机器上双击，
-	    以开始启动。 接着在 <application>Virtual PC</application>
-	    窗口内按 <guimenu>CD</guimenu> 再按
-	    <guimenu>Capture ISO Image...</guimenu>。 接着出现一个对话框，
-	    可以把虚拟机器内的光驱设定到该 ISO 镜像， 或者是真实的光驱。</para>
+    <para>在新建好 &os; 虚拟机后， 就可以开始安装 &os; 了。 最好使用官方的 &os; CD/DVD 或从官方 FTP 站下载 ISO 镜像。
+        将 ISO 镜像保存到 &windows; 文件系统上， 或将 CD/DVD 插入到光驱里，
+        之后就可以启动 &os; 虚拟机了， 在弹出的 <application>Virtual PC</application> 窗口选择 <guimenu>CD</guimenu> 菜单，
+        再选择 <guimenu>Capture ISO Image...</guimenu> ， 再接着出现的对话框，  把虚拟机里的光驱设置为 ISO 镜像，
+        或者物理光驱。</para>
 
-	  <mediaobject>
-	    <imageobject>
-	      <imagedata fileref="virtualization/virtualpc-freebsd9"/>
-	    </imageobject>
-	  </mediaobject>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="virtualization/virtualpc-freebsd9"/>
+	  </imageobject>
+	</mediaobject>
 
-	  <mediaobject>
-	    <imageobject>
-	      <imagedata fileref="virtualization/virtualpc-freebsd10"/>
-	    </imageobject>
-	  </mediaobject>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="virtualization/virtualpc-freebsd10"/>
+	  </imageobject>
+	</mediaobject>
 
-	  <para>设好光盘来源之后，就可以重新开机， 也就是先按
-	    <guimenu>Action</guimenu> 再按  <guimenu>Reset</guimenu> 即可。
-	    <application>Virtual PC</application> 会以特殊 BIOS 开机，
-	    并与普通 BIOS 一样会先检查是否有光盘驱动器。</para>
+    <para>设置完虚拟光驱的光盘源后， 就可以选择 <guimenu>Action</guimenu> ， 之后选择 <guimenu>Reset</guimenu> 重启 &os; 虚拟机。
+        <application>Virtual PC</application> 会像普通计算机的 BIOS 那样检测光驱是否存在可启动光盘。</para>
 
-	  <mediaobject>
-	    <imageobject>
-	      <imagedata fileref="virtualization/virtualpc-freebsd11"/>
-	    </imageobject>
-	  </mediaobject>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="virtualization/virtualpc-freebsd11"/>
+	  </imageobject>
+	</mediaobject>
 
-	  <para>此时， 它会找到 &os; 安装光盘， 并开始在
-	    <xref linkend="install"/> 内所介绍的
-	      <application>sysinstall</application> 安装过程。
-	      这时候也可以顺便安装 X11， 但不要进行相关设定。</para>
+    <para>此时， 虚拟机会找到 &os; 安装介质， 并开始标准的 &os; 安装过程。
+        这时可以顺便把 <application>&xorg;</application>  安装上， 但不要立即进行配置。</para>
 
-	  <mediaobject>
-	    <imageobject>
-	      <imagedata fileref="virtualization/virtualpc-freebsd12"/>
-	    </imageobject>
-	  </mediaobject>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="virtualization/virtualpc-freebsd12"/>
+	  </imageobject>
+	</mediaobject>
 
-	  <para>完成安装之后， 记得把安装光盘或者 ISO 镜像退出。
-	    最后， 把装好的 &os; 虚拟机器重新开机即可。</para>
+    <para>当安装完成后，记得要弹出 CD/DVD 或释放 ISO 映像。最后，重启进入新安装的 &os; 虚拟机。</para>
 
-	  <mediaobject>
-	    <imageobject>
-	      <imagedata fileref="virtualization/virtualpc-freebsd13"/>
-	    </imageobject>
-	  </mediaobject>
-	</sect3>
-
-	<sect3 xml:id="virtualization-guest-virtualpc-configure">
-	  <title>调整 &microsoft.windows;/Virtual PC 上的 &os;</title>
-
-	  <para>在 &microsoft.windows; 上以 <application>Virtual PC</application>
-	    装好 &os; 后， 还需要做一些设定步骤，
-	    以便将虚拟机内的 &os; 最佳化。</para>
-
-          <procedure>
-	    <step>
-	      <title>设定 boot loader 参数</title>
-
-	      <para>最重要的步骤乃是藉由调降 <option>kern.hz</option>
-		来降低 <application>Virtual PC</application> 环境内
-		&os; 的 CPU 占用率。 在
-		<filename>/boot/loader.conf</filename>
-		内加上下列设定即可：</para>
-
-	  	<programlisting>kern.hz=100</programlisting>
-
-	      <para>若不作这设定， 那么光是 idle 状态的 &os;
-		<application>Virtual PC</application> guest OS
-		就会在单一处理器的电脑上大约有 40% 的 CPU 占用率。
-		作了上述修改之后, 占用率大约会降至 3%。</para>
-	    </step>
-
-	    <step>
-	      <title>建立一个新的内核配置文件</title>
-
-	      <para>可以放心把所有的 SCSI， FireWire 和 USB
-		设备驱动都移除。 <application>Virtual PC</application>
-		有提供 &man.de.4; 的虚拟网卡， 因此除了
-		&man.de.4; 以及 &man.miibus.4;
-		以外其他的网卡也都可以从内核的配置文件中移除。</para>
-	    </step>
-
-	    <step>
-	      <title>设定网络</title>
-
-	      <para>可以给虚拟机器简单得使用 DHCP 来设定与
-		host (&microsoft.windows;) 相同的本地网络环境，
-		只要在 <filename>/etc/rc.conf</filename>
-		加上 <literal>ifconfig_de0="DHCP"</literal>
-		即可完成。 其他的高级网络设置， 可参阅
-		<xref linkend="advanced-networking"/>.</para>
-	    </step>
-          </procedure>
-
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="virtualization/virtualpc-freebsd13"/>
+	  </imageobject>
+	</mediaobject>
       </sect3>
 
+      <sect3 xml:id="virtualization-guest-virtualpc-configure">
+          <title>配置 <application>Virtual PC</application> 里的 &os; 虚拟机</title>
+
+	<para>在您将 &os; 安装到 &microsoft.windows; 上的 <application>Virtual PC</application> 里后， 还需要一些设置， 以便优化虚拟机。</para>
+
+	<procedure>
+	  <step>
+	    <title>配置引导器参数</title>
+
+        <para>最重要的一步是通过调低 <option>kern.hz</option>  参数来降低 <application>Virtual PC</application>环境中的
+            &os; 对 CPU 的使用率。 这可以通过在 <filename>/boot/loader.conf</filename> 中添加以下内容来下完成配置：</para>
+
+	      <programlisting>kern.hz=100</programlisting>
+
+          <para>如果不配置， <application>Virtual PC</application> 虚拟机里的 &os; 客户机在空闲状态下将会单核计算机上占用
+              40% 处理器资源， 配置后将会降低至 3% 。</para>
+	  </step>
+
+	  <step>
+	    <title>配置新的内核配置文件</title>
+
+        <para>全部的 SCSI、 FireWire 和 USB 驱动都可以从自定义内核配置文件里删除。
+            <application>Virtual PC</application> 提供了一个&man.de.4; 驱动的虚拟网卡， 因此，
+            除了 &man.de.4; 和 &man.miibus.4; 之外的所有其他网卡驱动都可以从内核配置文件里删除。</para>
+	  </step>
+
+	  <step>
+	    <title>配置网络</title>
+
+        <para>最简单的配置可以通过启用 DHCP 来将您的虚拟机接入到您 &microsoft.windows; 宿主机同一个局域网内。
+            这可以通过在 <filename>/etc/rc.conf</filename> 里添加 <literal>ifconfig_de0="DHCP"</literal> 完成配置。
+            更多高级网络配置方法， 请参阅 <xref linkend="advanced-networking"/> 。</para>
+	  </step>
+	</procedure>
+      </sect3>
     </sect2>
 
     <sect2 xml:id="virtualization-guest-vmware">
-      <title>运行于 MacOS 的 VMware</title>
+      <title><application>VMware Fusion 虚拟机</application> on
+	&macos;</title>
 
-      <para>&mac; 版本的 <application>VMware Fusion</application>
-	是一个商业软件，运行在基于 &intel; 的 &apple; &mac; 计算机的
-	&macos; 10.4.9 或更版本的操作系统上。 &os;
-	是一个完全被支持的客户操作系统。 在 &macos; X 上安装了
-	<application>VMware Fusion</application> 之后，
-	用户就可以着手配置一个虚拟机器并安装客户操作系统。</para>
+<para><application>VMware Fusion</application> &mac; 版是一种在采用 &intel; 架构，
+    及运行着 &macos; 10.4.9 或更高版本 的 &apple; &mac; 上的商业虚拟机软件。
+    它完美的支持使用 &os; 作为它的客户操作系统。
+    在 &macos; X 上安装好 <application>VMware Fusion</application> 之后， 用户需要配置虚拟机并安装所需的客户操作系统。</para>
 
-	<sect3 xml:id="virtualization-guest-vmware-install">
-	  <title>在 VMware/&macos; X 上安装 &os;</title>
+      <sect3 xml:id="virtualization-guest-vmware-install">
+	<title>在<application>VMware Fusion</application> 里安装 &os;</title>
 
-	  <para>第一步是运行 VMware Fusion， 虚拟机器库将被装载。
-	    单击 "New" 创建 VM：</para>
+    <para>第一步是启动 <application>VMware Fusion</application> 将加载虚拟机库。 单击 <guimenuitem>新建</guimenuitem> 以创建虚拟机：</para>
 
-	  <mediaobject>
-            <imageobject>
-	      <imagedata fileref="virtualization/vmware-freebsd01"/>
-            </imageobject>
-          </mediaobject>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="virtualization/vmware-freebsd01"/>
+	  </imageobject>
+	</mediaobject>
 
-	  <para>New Virtual Machine Assistant 将被运行来帮助你创建 VM，
-	    单击 Continue 继续：</para>
+    <para>这将载入新建虚拟机助手。 点击 <guimenuitem>Continue</guimenuitem>  以继续：</para>
 
-	  <mediaobject>
-	    <imageobject>
-	      <imagedata fileref="virtualization/vmware-freebsd02"/>
-	    </imageobject>
-	  </mediaobject>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="virtualization/vmware-freebsd02"/>
+	  </imageobject>
+	</mediaobject>
 
-	  <para>在 <guimenuitem>Operatiing System</guimenuitem> 项选择
-	    <guimenuitem>Other</guimenuitem>，<guimenuitem>Version</guimenuitem>
-	    项可选 <guimenuitem>&os;</guimenuitem> 或
-	    <guimenuitem>&os; 64-bit</guimenuitem>。</para>
+    <para>在弹出的窗口里 <guimenuitem>Operating System</guimenuitem> 选择 <guimenuitem>Other</guimenuitem> ，
+        <guimenu>Version</guimenu> 选择 <guimenuitem>&os;</guimenuitem> 或 <guimenuitem>&os; 64-bit</guimenuitem>：</para>
 
-	  <mediaobject>
-	    <imageobject>
-	      <imagedata fileref="virtualization/vmware-freebsd03"/>
-	    </imageobject>
-	  </mediaobject>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="virtualization/vmware-freebsd03"/>
+	  </imageobject>
+	</mediaobject>
 
-	  <para>选一个你想要的 VM 镜像名字和存储的目录位置。</para>
+	<para>给虚拟机取个名字， 并设置保存位置：</para>
 
-	  <mediaobject>
-	    <imageobject>
-	      <imagedata fileref="virtualization/vmware-freebsd04"/>
-	    </imageobject>
-	  </mediaobject>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="virtualization/vmware-freebsd04"/>
+	  </imageobject>
+	</mediaobject>
 
-	  <para>选择 VM 虚拟硬盘的大小：</para>
+	<para>选择虚拟机磁盘大小：</para>
 
-	  <mediaobject>
-	    <imageobject>
-	      <imagedata fileref="virtualization/vmware-freebsd05"/>
-	    </imageobject>
-	  </mediaobject>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="virtualization/vmware-freebsd05"/>
+	  </imageobject>
+	</mediaobject>
 
-	  <para>选择安装 VM 的方式， 从一个 ISO 镜像或一张 CD 安装：</para>
+    <para>选择虚拟机安装方式， 使用 ISO 镜像或者 CD/DVD：</para>
 
-	  <mediaobject>
-	    <imageobject>
-	      <imagedata fileref="virtualization/vmware-freebsd06"/>
-	    </imageobject>
-	  </mediaobject>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="virtualization/vmware-freebsd06"/>
+	  </imageobject>
+	</mediaobject>
 
-	  <para>一旦你点击了 Finish， VM 就会启动了：</para>
+	<para>接着点击 <guimenuitem>Finish</guimenuitem> 并启动虚拟机：</para>
 
-	  <mediaobject>
-	    <imageobject>
-	      <imagedata fileref="virtualization/vmware-freebsd07"/>
-	    </imageobject>
-	  </mediaobject>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="virtualization/vmware-freebsd07"/>
+	  </imageobject>
+	</mediaobject>
 
-	  <para>以你通常的方式安装 &os; 或者参照 <xref linkend="install"/>
-	      中的步骤：</para>
+    <para>像往常那样安装 &os; </para>
 
-	  <mediaobject>
-	    <imageobject>
-	      <imagedata fileref="virtualization/vmware-freebsd08"/>
-	    </imageobject>
-	  </mediaobject>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="virtualization/vmware-freebsd08"/>
+	  </imageobject>
+	</mediaobject>
 
-	  <para>安装完成之后，你就可以修改一些 VM 的设定，比如内存大小：</para>
+	<para>安装完成之后， 你可以修改一些虚拟机设定， 比如内存大小：</para>
 
-          <note>
-	    <para>在 VM 运行的时候，VM 系统硬件的设置是无法修改的。</para>
-          </note>
+	<note>
+	  <para>虚拟机运行时， 将无法修改虚拟机硬件配置。</para>
+	</note>
 
-	  <mediaobject>
-            <imageobject>
-	      <imagedata fileref="virtualization/vmware-freebsd09"/>
-            </imageobject>
-          </mediaobject>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="virtualization/vmware-freebsd09"/>
+	  </imageobject>
+	</mediaobject>
 
-	  <para>配置 VM 的 CPU 数量：</para>
+	<para>调整虚拟机 CPU 数量：</para>
 
-	  <mediaobject>
-	    <imageobject>
-	      <imagedata fileref="virtualization/vmware-freebsd10"/>
-	    </imageobject>
-	  </mediaobject>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="virtualization/vmware-freebsd10"/>
+	  </imageobject>
+	</mediaobject>
 
-	  <para>CD-ROM设备的状态。通常当你不在需要 CDROM/ISO 的时候可以切断他们跟
-	    VM 的连接。</para>
+	<para>光驱设备状态。 通常当您不需要时可以断开虚拟光驱与虚拟机的连接。</para>
 
-	  <mediaobject>
-	    <imageobject>
-	      <imagedata fileref="virtualization/vmware-freebsd11"/>
-	    </imageobject>
-	  </mediaobject>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="virtualization/vmware-freebsd11"/>
+	  </imageobject>
+	</mediaobject>
 
-	  <para>最后一项需要修改的是 VM 与网络连接的方式。
-	    如果你希望除了宿主以外的机器也能连接到 VM，
-	    请选择 <guimenuitem>Connect directly to the physical network
-	    (Bridged)</guimenuitem>。选择 <guimenuitem>Share the
-	    host's internet connection (NAT)</guimenuitem> 的话，
-	    VM 可以连接上网络，但是不能从外面访问。</para>
+    <para>最后可以修改虚拟机网络连接的方式。 如果你希望除了宿主以外的计算机也能连接到虚拟机，
+        那么请选择 <guimenuitem>Connect directly to the physical network (Bridged)</guimenuitem> 方式。
+        选择 <guimenuitem>Share the host's internet connection (NAT)</guimenuitem> 方式， 则
+        虚拟机可以连接到网络， 但是不能从外面的计算机无法访问虚拟机。</para>
 
-	  <mediaobject>
-	    <imageobject>
-	      <imagedata fileref="virtualization/vmware-freebsd12"/>
-	    </imageobject>
-	  </mediaobject>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="virtualization/vmware-freebsd12"/>
+	  </imageobject>
+	</mediaobject>
 
-	  <para>在你修改完设定之后，就可以从新安装的 &os;
-	    虚拟机器启动了。</para>
-        </sect3>
-
-	<sect3 xml:id="virtualization-guest-vmware-configure">
-	  <title>配置运行于 &macos; X/VMware 上的 &os;</title>
-
-	  <para>在 &macos; X 上的 <application>VMware</application>
-	    上安装完 &os; 之后，有些配置的步骤可用来优化虚拟系统。</para>
-
-          <procedure>
-	    <step>
-	      <title>设置 boot loader 变量</title>
-
-	      <para>最重要的步骤是降低 <option>kern.hz</option>
-		来减少 <application>VMware</application> 上 &os;
-		的 CPU 使用率。这需要在 <filename>/boot/loader.conf</filename>
-		里加入以下这行设定：</para>
-
-	  	<programlisting>kern.hz=100</programlisting>
-
-	      <para>如果没有这项设定，<application>VMware</application>
-		上的 &os; 客户 OS 空闲时将占用 &imac; 上一个 CPU
-		大约 15% 的资源。在修改此项设定之后仅为 5%。</para>
-	    </step>
-
-	    <step>
-	      <title>创建一个新的内核配置文件</title>
-
-	      <para>你可以去掉所有的 FireWire, USB 设备的驱动程序。
-		<application>VMware</application> 提供了一个
-		&man.em.4; 支持的虚拟网络适配器，所以除了 &man.em.4;
-		之外的网卡驱动都可以被剔除。</para>
-	    </step>
-
-	    <step>
-	      <title>设置网络</title>
-
-	      <para>最基本的网络设定包括简单的使用 DHCP
-		把你的虚拟机器连接到宿主 &mac; 相同的本地网络上。
-		在 <filename>/etc/rc.conf</filename> 中加入：
-		<literal>ifconfig_em0="DHCP"</literal>。
-		更多有关网络的设置可以参阅
-		<xref linkend="advanced-networking"/>。</para>
-	    </step>
-          </procedure>
-
+	<para>在你修改完设置后， 就可以重新启动新安装的 &os; 虚拟机了。</para>
       </sect3>
+
+      <sect3 xml:id="virtualization-guest-vmware-configure">
+	<title>配置<application>VMware Fusion</application> 里的 &os; 虚拟机</title>
+
+    <para>在您将 &os; 安装到 &macos; X 上的 <application>VMware Fusion</application> 里后， 还需要一些设置， 以便优化虚拟机。</para>
+
+	<procedure>
+	  <step>
+	    <title>配置引导器参数</title>
+
+        <para>最重要的一步是通过调低 <option>kern.hz</option>  参数来降低 <application>VMware Fusion</application>  环境中的 &os; 对 CPU 的使用率。 这可以通过在 <filename>/boot/loader.conf</filename> 中添加以下内容来下完成配置：</para>
+
+	    <programlisting>kern.hz=100</programlisting>
+
+	    <para>如果不配置， <application>VMware Fusion</application> 虚拟机里的 &os; 客户机在空闲状态下将会单核
+            计算机上占用 15% 的处理器资源， 配置后将会降低至 5% 。</para>
+	  </step>
+
+	  <step>
+	    <title>配置新的内核配置文件</title>
+
+        <para>全部的 FireWire 和 USB 驱动都可以从自定义内核配置文件里删除。
+            <application>VMware Fusion</application> 提供了一个 &man.em.4; 驱动的虚拟网卡， 因此，
+            除 &man.em.4; 之外的所有其他网卡驱动都可以从内核配置文件里删除。</para>
+	  </step>
+
+	  <step>
+	    <title>配置网络</title>
+
+        <para>最简单的配置可以通过启用 DHCP 来将您的虚拟机接入到您 &mac; 宿主机介入同一个局域网内。
+            这可以通过在 <filename>/etc/rc.conf</filename> 里添加 <literal>ifconfig_em0="DHCP"</literal> 完成配置。
+            更多高级网络配置方法， 请参阅  <xref linkend="advanced-networking"/>。</para>
+	  </step>
+	</procedure>
+      </sect3>
+    </sect2>
+
+    <sect2 xml:id="virtualization-guest-virtualbox-guest-additions">
+      <title>给 &os; 客户机安装 &virtualbox; 增强功能包 (Guest Additions)</title>
+
+      <para><application>&virtualbox;</application> 增强功能包支持以下功能：</para>
+
+      <itemizedlist>
+	<listitem>
+	  <para>剪贴板共享。</para>
+	</listitem>
+
+	<listitem>
+	  <para>整合鼠标指针。</para>
+	</listitem>
+
+	<listitem>
+	  <para>主机时间同步。</para>
+	</listitem>
+
+	<listitem>
+	  <para>窗口缩放。</para>
+	</listitem>
+
+	<listitem>
+	  <para>无缝模式。</para>
+	</listitem>
+      </itemizedlist>
+
+      <note>
+	<para>&os; 客户机执行以下命令。</para>
+      </note>
+
+      <para>首先， &os; 客户机通过预编译包或 port 安装上 <package>emulators/virtualbox-ose-additions</package> 软件包。
+          通过 port 安装使用以下命令：</para>
+
+      <screen>&prompt.root; <userinput>cd /usr/ports/emulators/virtualbox-ose-additions &amp;&amp; make install clean</userinput></screen>
+
+      <para>添加以下内容到 <filename>/etc/rc.conf</filename> 中去：</para>
+
+      <programlisting>vboxguest_enable="YES"
+vboxservice_enable="YES"</programlisting>
+
+      <para>如果 &man.ntpd.8; 或 &man.ntpdate.8; 服务启用时， 应禁止主机时间同步功能：</para>
+
+      <programlisting>vboxservice_flags="--disable-timesync"</programlisting>
+
+      <para><command>Xorg -configure</command> 应该能自动识别 <literal>vboxvideo</literal> 显卡设备。
+          如果不能识别， 需要修改 <filename>/etc/X11/xorg.conf</filename> 文件，
+          添加 <application>&virtualbox;</application> 显卡的支持：</para>
+
+      <programlisting>Section "Device"
+	### Available Driver options are:-
+	### Values: &lt;i&gt;: integer, &lt;f&gt;: float, &lt;bool&gt;: "True"/"False",
+	### &lt;string&gt;: "String", &lt;freq&gt;: "&lt;f&gt; Hz/kHz/MHz"
+	### [arg]: arg optional
+	Identifier "Card0"
+	Driver "vboxvideo"
+	VendorName "InnoTek Systemberatung GmbH"
+	BoardName "VirtualBox Graphics Adapter"
+	BusID "PCI:0:2:0"
+EndSection</programlisting>
+
+      <para>使用 <literal>vboxmouse</literal> 鼠标设备， 调整 <filename>/etc/X11/xorg.conf</filename> 文件添加：</para>
+
+      <programlisting>Section "InputDevice"
+	Identifier "Mouse0"
+	Driver "vboxmouse"
+EndSection</programlisting>
+
+      <para><acronym>HAL</acronym> 用户还应该创建或将 <filename>/usr/local/share/hal/fdi/policy/10osvendor/90-vboxguest.fdi</filename> 拷贝到
+              <filename>/usr/local/etc/hal/fdi/policy/90-vboxguest.fdi</filename>：</para>
+
+      <programlisting>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;!--
+# Sun VirtualBox
+# Hal driver description for the vboxmouse driver
+# $Id: chapter.xml,v 1.33 2012-03-17 04:53:52 eadler Exp $
+
+	Copyright (C) 2008-2009 Sun Microsystems, Inc.
+
+	This file is part of VirtualBox Open Source Edition (OSE, as
+	available from http://www.virtualbox.org. This file is free software;
+	you can redistribute it and/or modify it under the terms of the GNU
+	General Public License (GPL) as published by the Free Software
+	Foundation, in version 2 as it comes in the "COPYING" file of the
+	VirtualBox OSE distribution. VirtualBox OSE is distributed in the
+	hope that it will be useful, but WITHOUT ANY WARRANTY of any kind.
+
+	Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa
+	Clara, CA 95054 USA or visit http://www.sun.com if you need
+	additional information or have any questions.
+--&gt;
+&lt;deviceinfo version="0.2"&gt;
+  &lt;device&gt;
+    &lt;match key="info.subsystem" string="pci"&gt;
+      &lt;match key="info.product" string="VirtualBox guest Service"&gt;
+        &lt;append key="info.capabilities" type="strlist"&gt;input&lt;/append&gt;
+	&lt;append key="info.capabilities" type="strlist"&gt;input.mouse&lt;/append&gt;
+        &lt;merge key="input.x11_driver" type="string"&gt;vboxmouse&lt;/merge&gt;
+	&lt;merge key="input.device" type="string"&gt;/dev/vboxguest&lt;/merge&gt;
+      &lt;/match&gt;
+    &lt;/match&gt;
+  &lt;/device&gt;
+&lt;/deviceinfo&gt;</programlisting>
     </sect2>
   </sect1>
 
   <sect1 xml:id="virtualization-host">
-    <title>作为宿主 OS 的 &os;</title>
+    <title>&os; 作为宿主机操作系统</title>
 
-    <para>在过去的几年中 &os; 并没有任何可用的并被官方支持的虚拟化解决方案。
-      一些用户曾时使用过利用 &linux; 二进制兼容层运行的
-      <application>VMware</application> 陈旧并多半已过时的版本 (比如
-      <package>emulators/vmware3</package>)。
-      在 &os;&nbsp;7.2 发布不久， Sun 开源版本 (Open Source Edition
-      <acronym>OSE</acronym>) 的 <application>&virtualbox;</application>
-      作为一个 &os; 原生的程序出现在了 Ports&nbsp;Collection 中。</para>
-
-    <para><application>&virtualbox;</application> 是一个开发非常活跃，
-      完全虚拟化的软件， 并且可在大部份的操作系统上使用， 包括 &windows;，
-      &macos;， &linux; 和 &os;。同样也能把 &windows; 或 &unix;
-      作为客户系统运行。 它有一个开源和一个私有两种版本。 从用户的角度来看，
-      <acronym>OSE</acronym> 版本最主要的限制也许是缺乏 USB 的支持。
-      其他更多的差异可以通过链接
-      <uri xlink:href="http://www.virtualbox.org/wiki/Editions">http://www.virtualbox.org/wiki/Editions</uri>
-      查看 <quote>Editions</quote> 页面。 目前， &os; 上只有 OSE
-      版本可用。</para>
+    <para><application>&virtualbox;</application> 是一个开发非常活跃的， 完整的虚拟化方案， 适用于大多数操作系统，
+        包括 &windows; 、 &macos; 、 &linux; 和 &os; 。
+        也支持使用 &windows; 或 &unix;-like 作为它的客户机。 它被作为一个开源的虚拟化方案发布， 同时也单独的提供一个闭源的扩展包组件。
+        这个组件提供了对 USB 2.0 设备的支持。 更多有关信息可以在
+        <link xlink:href="http://www.virtualbox.org/wiki/Downloads"><application>&virtualbox;</application> wiki</link><quote>下载</quote> 页面找到。
+        目前这个扩展包还不支持 &os; 操作系统。</para>
 
     <sect2 xml:id="virtualization-virtualbox-install">
       <title>安装 &virtualbox;</title>
 
-      <para><application>&virtualbox;</application> 已作为一个 &os; port 提供，
-        位于 <package>emulators/virtualbox-ose</package>，
-        可使用如下的命令安装：</para>
+      <para><application>&virtualbox;</application> 可以通过 &os; 预编译包或 port 安装 <package>emulators/virtualbox-ose</package> 这个软件包。
+          通过 port 安装使用以下命令：</para>
 
       <screen>&prompt.root; <userinput>cd /usr/ports/emulators/virtualbox-ose</userinput>
 &prompt.root; <userinput>make install clean</userinput></screen>
 
-      <para>在配置对话框中的一个有用的选项是
-        <literal>GusetAdditions</literal> 程序套件。
-        这些在客户操作系统中提供了一些有用的特性，
-        比如集成鼠标指针 (允许在宿主和客户系统间使用鼠标，
-        而不用事先按下某个特定的快捷键来切换) 和更快的视频渲染，
-        特别是在 &windows; 客户系统中。 在安装了客户操作系统之后，
-        客户附加软件可在 <guimenu>Devices</guimenu> 菜单中找到。</para>
+      <para>这个 port 有个 <literal>增强功能包(GuestAdditions)</literal> 的选项， 它为客户机操作系统提供很多有用的功能，
+          比如鼠标指针集成（允许宿主机与客户机之间共享鼠标指针， 而不需要提前按下切换热键来切换）和更好的视频渲染效果，
+          尤其是当客户机是 &windows; 的时候。 这个增强功能包在客户操作系统安装完成后， 可以在 <guimenu>设备(Devices)</guimenu> 菜单下找到。</para>
 
-      <para>在第一次运行 <application>&virtualbox;</application>
-        之前还需要做一些配置上的修改。port 会安装一个内核模块至
-        <filename>/boot/modules</filename> 目录，
-        此模块需要事先加载：</para>
+      <para>在第一次运行 <application>&virtualbox;</application> 之前还需要做一些配置。
+          在通过 port 安装的时候会安装一个内核模块到 <filename>/boot/modules</filename> 目录， 这个模块需要运行前加载：</para>
 
       <screen>&prompt.root; <userinput>kldload vboxdrv</userinput></screen>
 
-      <para>可以在 <filename>/boot/loader.conf</filename>
-        中加入以下的配置使此模块在机器重启之后能自动加载：</para>
+      <para>为了确保每次重启都会自动加载，可以在 <filename>/boot/loader.conf</filename> 文件中增加以下内容：</para>
 
       <programlisting>vboxdrv_load="YES"</programlisting>
 
-      <para>在 3.1.2 之前版本的 <application>&virtualbox;</application>
-	需要挂接 <filename>proc</filename> 文件系统。
-	在新版本中不再有此要求， 因为它们使用了由 &man.sysctl.3; 库提供的功能。</para>
+      <para>如果需要使用桥接或仅主机网络， 则需要增加以下内容到 <filename>/etc/rc.conf</filename> 中，并重启计算机：</para>
 
-      <para>当使用旧版本的 port 时， 需要使用下面的步骤来挂载
-	<filename>proc</filename>：</para>
+      <programlisting>vboxnet_enable="YES"</programlisting>
 
-      <screen>&prompt.root; <userinput>mount -t procfs proc /proc</userinput></screen>
-
-      <para>为了使配置能在重启后始终生效， 需要在
-        <filename>/etc/fstab</filename> 中加入以下这行：</para>
-
-      <programlisting>proc	/proc	procfs	rw	0	0</programlisting>
-
-      <note>
-        <para>如果在运行 <application>&virtualbox;</application>
-          的终端中发现了类似如下的错误消息：</para>
-
-	<screen>VirtualBox: supR3HardenedExecDir: couldn't read "", errno=2 cchLink=-1</screen>
-
-        <para>此故障可能是由 <filename>proc</filename>
-          文件系统导致的。 请使用 <command>mount</command>
-          命令检查文件系统是否正确挂载。</para>
-      </note>
-
-      <para>在安装 <application>&virtualbox;</application>
-        时会自动创建 <systemitem class="groupname">vboxusers</systemitem> 组。
-        所有需要使用 <application>&virtualbox;</application>
-        的用户必须被添加为此组中的成员。 可以使用 <command>pw</command>
-        命令添加新的成员：</para>
+      <para><systemitem class="groupname">vboxusers</systemitem> 用户组会在 <application>&virtualbox;</application> 安装过程时自动添加。
+          需要使用 <application>&virtualbox;</application> 的所有用户都必须被添加为这个用户组的成员。
+          可以使用 <command>pw</command> 命令添加新成员：</para>
 
       <screen>&prompt.root; <userinput>pw groupmod vboxusers -m yourusername</userinput></screen>
 
-      <para>运行 <application>&virtualbox;</application>，
-        可以通过选择你当前图形环境中的
-        <guimenuitem>Sun VirtualBox</guimenuitem>，
-        也可以在虚拟终端中键入以下的命令:</para>
+      <para>由于权限限制， 当需要使用桥接网络(bridged networking)时，
+          需要修改 <filename>/dev/vboxnetctl</filename> 设备的权限：</para>
+
+      <screen>&prompt.root; <userinput>chown root:vboxusers /dev/vboxnetctl</userinput>
+&prompt.root; <userinput>chmod 0660 /dev/vboxnetctl</userinput></screen>
+
+      <para>为了使这个权限永久生效，需要添加以下内容到 <filename>/etc/devfs.conf</filename> 中去：</para>
+
+      <programlisting>own     vboxnetctl root:vboxusers
+perm    vboxnetctl 0660</programlisting>
+
+      <para>要运行 <application>&virtualbox;</application>， 可以在 <application>&xorg;</application> 会话中执行：</para>
 
       <screen>&prompt.user; <userinput>VirtualBox</userinput></screen>
 
-      <para>获得更多有关配置和使用 <application>&virtualbox;</application>
-        的信息， 请访问官方网站 <uri xlink:href="http://www.virtualbox.org">http://www.virtualbox.org</uri>。
-        鉴于 &os; port 非常新， 并仍处于开发状态。请查看 &os; wiki
-        上的相关页面 <uri xlink:href="http://wiki.FreeBSD.org/VirtualBox">http://wiki.FreeBSD.org/VirtualBox</uri>
-        以获取最新的信息和故障排查细则。</para>
+      <para>有关配置和使用 <application>&virtualbox;</application> 的更多信息， 请参考官方网站。
+          与 &os; 相关和的特定信息和故障排除说明，
+          请参阅 <link xlink:href="http://wiki.FreeBSD.org/VirtualBox">&os; 维基</link> 页。</para>
     </sect2>
+
+    <sect2 xml:id="virtualization-virtualbox-usb-support">
+      <title>&virtualbox; 的 USB 支持</title>
+
+      <para>为了能够读写 USB 设备， 需要将用户添加到 <systemitem class="groupname">operator</systemitem> 用户组：</para>
+
+      <screen>&prompt.root; <userinput>pw groupmod operator -m jerry</userinput></screen>
+
+      <para>然后， 添加以下规则到 <filename>/etc/devfs.rules</filename> 文件中去， 如果文件不存在则创建：</para>
+
+      <programlisting>[system=10]
+add path 'usb/*' mode 0660 group operator</programlisting>
+
+      <para>要加载这些新规则需要在 <filename>/etc/rc.conf</filename> 中添加以下内容：</para>
+
+      <programlisting>devfs_system_ruleset="system"</programlisting>
+
+      <para>然后， 重启 devfs 服务：</para>
+
+      <screen>&prompt.root; <userinput>service devfs restart</userinput></screen>
+
+      <para>现在可以在客户操作系统里使用 USB 设备了。 USB 功能是 &virtualbox; 里一个很好的功能。</para>
+    </sect2>
+
+    <sect2 xml:id="virtualization-virtualbox-host-dvd-cd-access">
+      <title>&virtualbox; 访问宿主机 DVD/CD</title>
+
+      <para>访问宿主机 DVD/CD 设备是通过共享物理设备来实现的。 在 &virtualbox; 虚拟机存储设置界面，
+          首先需要先创建一个空的 IDE CD/DVD  设备， 然后在虚拟 CD/DVD 设备选择物理设备。
+          弹出的复选框 <literal>Passthrough</literal> 后就允许虚拟机使用物理设备了。
+          例如， 使用物理音频 CD 或 burner 了。</para>
+
+      <para><application>&virtualbox;</application> 使用 DVD/CD 需要启用 <acronym>HAL</acronym> 服务，
+          要启用它， 添加以下内容到 <filename>/etc/rc.conf</filename> 中：</para>
+
+      <programlisting>hald_enable="YES"</programlisting>
+
+      <screen>&prompt.root; <userinput>service hald start</userinput></screen>
+
+      <para>为了让用户能够正常使用的 <application>&virtualbox;</application> 物理 DVD/CD 功能，
+          需要用户对下列 <filename>/dev/xpt0</filename> 、 <filename>/dev/cdN</filename> 和 <filename>/dev/passN</filename> 设备具有访问权，
+          通常的做法是将用户加入到  <systemitem class="groupname">operator</systemitem> 用户组中。
+          通过修改 <filename>/etc/devfs.conf</filename> 文件修正这些设备的权限：</para>
+
+      <programlisting>perm cd* 0600
+perm xpt0 0660
+perm pass* 0660</programlisting>
+
+      <screen>&prompt.root; <userinput>service devfs restart</userinput></screen>
+    </sect2>
+
 <!--
   Note:  There is no working/end-user ready Xen support for FreeBSD as of 07-2010.
          Hide all information regarding Xen under FreeBSD.
 
     <sect2 id="virtualization-other">
-      <title>其他的虚拟化选项</title>
+      <title>Other Virtualization Options</title>
 
-      <para><application>&xen;</application>在 &os;
-        上作为宿主运行依然处于开发之中。</para>
+      <para>There is ongoing work in getting
+	<application>&xen;</application>
+	to work as a host environment on &os;.</para>
     </sect2>
 -->
   </sect1>
-
 </chapter>
