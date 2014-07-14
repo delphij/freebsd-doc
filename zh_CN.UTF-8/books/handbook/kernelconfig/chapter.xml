@@ -7,42 +7,55 @@
      $FreeBSD$
 -->
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="kernelconfig">
-  <info><title>配置FreeBSD的内核</title>
+<!--<chapterinfo>
     <authorgroup>
-      <author><personname><firstname>Jim</firstname><surname>Mock</surname></personname><contrib>Updated and restructured by </contrib></author>
+      <author>
+	<firstname>Jim</firstname>
+	<surname>Mock</surname>
+	<contrib>Updated and restructured in Mar 2000 by </contrib>
+      </author>
     </authorgroup>
     <authorgroup>
-      <author><personname><firstname>Jake</firstname><surname>Hamby</surname></personname><contrib>Originally contributed by </contrib></author>
+      <author>
+	<firstname>Jake</firstname>
+	<surname>Hamby</surname>
+	<contrib>Originally contributed 6 Oct 1995 by </contrib>
+      </author>
     </authorgroup>
-  </info>
+  </chapterinfo>
+  -->
 
-  
+  <title>配置 FreeBSD 内核</title>
 
   <sect1 xml:id="kernelconfig-synopsis">
     <title>概述</title>
 
     <indexterm>
       <primary>内核</primary>
-      <secondary>建立一个定制的内核</secondary>
+      <secondary>联编一个定制的内核</secondary>
     </indexterm>
 
-    <para>内核是 &os; 操作系统的核心。 它负责管理内存、 执行安全控制、
-    网络、 磁盘访问等等。 尽管 &os; 可以动态修改的现在已经越来越多，
-    但有时您还是需要重新配置和编译您的内核。</para>
+    <para>内核是 &os; 操作系统的核心。 它负责管理内存、 实施安全控制、
+    联网、 访问磁盘等。 尽管 &os; 可以在运行的时候动态配置，
+    但有时仍然有必要配置并编译一个定制的内核。</para>
 
     <para>读完这章，您将了解：</para>
 
     <itemizedlist>
       <listitem>
-	<para>为什么需要建立定制的内核。</para>
+	<para>何时需要联编定制的内核。</para>
       </listitem>
 
       <listitem>
-	<para>如何编写内核配置文件，或修改已存在的配置文件。</para>
+	<para>如何获取硬件清单。</para>
       </listitem>
 
       <listitem>
-	<para>如何使用内核配置文件创建和联编新的内核。</para>
+	<para>如何自定义内核配置。</para>
+      </listitem>
+
+      <listitem>
+	<para>如何使用内核配置文件创建和联编新内核。</para>
       </listitem>
 
       <listitem>
@@ -50,126 +63,139 @@
       </listitem>
 
       <listitem>
-	<para>如何处理出现的问题。</para>
+	<para>如何排除故障。</para>
       </listitem>
     </itemizedlist>
 
-    <para>这一章给出的命令应该以 <systemitem class="username">root</systemitem> 身份执行，
-      否则可能会不成功。</para>
+    <para>本章给出的所有命令应该以 <systemitem class="username">root</systemitem> 身份执行。</para>
   </sect1>
 
   <sect1 xml:id="kernelconfig-custom-kernel">
-    <title>为什么需要建立定制的内核?</title>
+    <title>为什么要联编定制的内核?</title>
 
-    <para>过去， &os; 采用的是被人们称作
-      <quote>单片式</quote> 的内核。 这种内核本身是一个大的程序，
-      它支持的设备不能够动态地加以改变，
-      而当希望改变内核的行为时， 就必须编译一个新的内核，
-      并重新启动计算机才可以使用它。</para>
+    <para>过去， &os; 采用 <quote>单片式</quote> 的内核。 
+      这种内核本身是一个大的程序，只支持一些固定的设备，
+      为了改变内核的行为，必须编译新内核并且重新启动切换到新内核。</para>
 
-    <para>如今， &os; 正在迅速地迁移到一种新的模型，
-      其特点是将大量内核功能放进可以动态加载和卸载的内核模块来提供。
-      这使得内核能够适应硬件的调整 (例如笔记本计算机中的 PCMCIA 卡)，
-      以及为内核引入新的功能， 而无需在编译内核时就将其添加进去。
-      这种做法称为模块化内核。</para>
+    <para>如今， &os; 内核的大部分功能都包含在各个模块中，
+      这些模块能够在内核运行的时候按需加载或卸载。
+      这样就使得运行中的内核能够立即支持新硬件或新功能。
+      这种内核被称作模块化内核。</para>
 
-    <para>尽管如此， 仍然有一些功能需要静态地联编进内核。
-      有时， 这是由于这些功能与内核的结合非常紧密而无法实现动态加载，
-      还有一些情况是暂时没有人将这些功能改写为可动态加载的模块。</para>
+    <para>但是在少数情况下，我们仍然需要进行静态的内核配置。
+      比如，有时所需的功能和内核结合的非常紧密，以至于无法做成动态加载的模块；
+      有时在安全环境下，系统不允许加载或卸载内核模块，
+      要求只有用到的功能才能被静态的编译进内核。</para>
 
     <para>联编定制的内核是成为高级 BSD 用户所必须经历的一关。
-      尽管这一过程需要花费一些时间， 但它能够为您的 &os; 系统带来一些好处。
+      尽管这一过程比较耗时，但它能够为您的 &os; 系统带来好处。
       与必须支持大量硬件的 <filename>GENERIC</filename> 内核不同，
-      定制的内核可以只包含对于
-      <emphasis>您</emphasis> PC 硬件的支持。
-      这样做有很多好处， 例如：</para>
+      定制的内核可以只支持特定计算机的硬件。
+      这样做有很多好处，例如：</para>
 
     <itemizedlist>
       <listitem>
-	<para>更快地启动。 因为内核只需要检测您系统上的硬件，
-	启动时所花费的时间将大大缩短。</para>
+	<para>更快地启动。因为内核只需要检测您系统上的硬件，
+	  启动时所花费的时间将大大缩短。</para>
       </listitem>
 
       <listitem>
-	<para>使用更少的内存。 由于可以删去不需要的功能和设备驱动，
-	  通常定制的内核会比 <filename>GENERIC</filename> 使用的内存更少。
-	  节省内核使用的内存之所以重要是因为内核必须常驻于物理内存中，
-	  从而使应用程序能够用到更多的内存。 正因为这样，
-	  对 RAM 较小的系统来说定制内核就更为重要了。</para>
+	<para>占用更少的内存。 由于定制的内核删去了不需要的特性和设备驱动，
+      其占用的内存通常比 <filename>GENERIC</filename> 内核少。
+      这点非常重要，因为内核常驻于物理内存中，
+      所以这部分内存无法被应用程序使用。
+      因此，对于内存较小的系统来说，定制内核非常有用。</para>
       </listitem>
 
       <listitem>
-	<para>支持更多的硬件。 定制的内核允许您增加类似声卡这样的
-	  <filename>GENERIC</filename> 内核没有提供内建支持的硬件。</para>
+	<para>支持更多的硬件。定制的内核能够支持
+      <filename>GENERIC</filename> 内核所不支持的硬件。</para>
       </listitem>
     </itemizedlist>
+
+    <para>联编定制内核之前，必须考虑清楚为什么要这么做。
+      如果只是为了支持某个特定的硬件，也许已经有现成的内核模块了。</para>
+
+    <para>内核模块位于 <filename>/boot/kernel</filename> 目录下，
+      可以使用 &man.kldload.8; 命令将其动态加载进运行中的内核。
+      大多数内核驱动都有一个可加载的内核模块和手册。
+      例如，&man.ath.4; 无线网卡驱动在它的手册页中就有如下信息：</para>
+
+    <programlisting>或者, 若要在启动时将此驱动作为模块加载，
+可在 &man.loader.conf.5; 中添加如下配置：
+
+    if_ath_load="YES"</programlisting>
+
+    <para>在 <filename>/boot/loader.conf</filename> 中添加
+      <literal>if_ath_load="YES"</literal>，
+      系统就会在启动的时候动态加载该模块。</para>
+
+    <para>对于某些子系统而言，
+      <filename>/boot/kernel</filename> 目录下不一定有其对应的内核模块。</para>
   </sect1>
 
   <sect1 xml:id="kernelconfig-devices">
-    <info><title>发现系统硬件</title>
+    <!--
+    <sect1info>
       <authorgroup>
-	<author><personname><firstname>Tom</firstname><surname>Rhodes</surname></personname><contrib>作者 </contrib></author>
+	<author>
+	  <firstname>Tom</firstname>
+	  <surname>Rhodes</surname>
+	  <contrib>Written by </contrib>
+	</author>
       </authorgroup>
-    </info>
-    
+    </sect1info>
+    -->
+    <title>发现系统硬件</title>
 
-    <para>在尝试配置内核以前，比较明智的做法是先获得一份机器硬件的清单。
-      当 &os; 并不是主操作系统时，通过查看当前操作系统的配置可以很容易的
-      创建一份机器硬件的配置清单。举例来说， &microsoft; 的
-      <application>设备管理器</application> 里通常含有关于已安装硬件的重要信息。
-      <application>设备管理器</application> 位于控制面板。</para>
+    <para>在编辑内核配置文件之前，我们建议先获得一份机器硬件的清单。
+      在双启动的系统上，可以通过另一个操作系统创建这份清单。
+      例如，&microsoft; 的
+      <application>设备管理器</application> 里就包含了已安装设备的信息。</para>
 
     <note>
       <para>某些版本的 &microsoft.windows; 有一个 <application>系统</application>
-	图标会指明 <application>设备管理器</application> 的位置。</para>
+	图标，点击后可以打开 <application>设备管理器</application>。</para>
     </note>
 
-    <para>如果机器上并不存在其他的操作系统，
-      系统管理员只能手动寻找这些信息了。其中的一个方法是使用
-      &man.dmesg.8; 工具以及 &man.man.1; 命令。&os;
-      上大多数的驱动程序都有一份手册页（manual page）列出了所支持的硬件，
-      在系统启动的时候，被发现的硬件也会被列出。举例来说，
-      下面的这几行表示 <filename>psm</filename> 驱动找到了一个鼠标：</para>
+    <para>如果系统上只安装了 &os;，
+      可以通过 &man.dmesg.8; 来查明系统在启动时找到并列出了哪些硬件。
+      &os; 的大多数设备驱动都有一个手册页，里面列出了该驱动所支持的硬件。
+      例如，下面这几行表明 <filename>psm</filename> 驱动找到了一个鼠标：</para>
 
     <programlisting>psm0: &lt;PS/2 Mouse&gt; irq 12 on atkbdc0
 psm0: [GIANT-LOCKED]
 psm0: [ITHREAD]
 psm0: model Generic PS/2 mouse, device ID 0</programlisting>
 
-    <para>这个驱动需要被包含在客户制定的内核配置文件里，
-      或着使用 &man.loader.conf.5; 加载。</para>
+    <para>因为机器上有这个硬件，所以定制的内核的时候不应该把该驱动删去。</para>
 
-    <para>有时，<command>dmesg</command> 里只会显示来自系统消息的数据，
-      而不是系统启动时的检测信息。在这样的情况下，你可以查看文件
-      <filename>/var/run/dmesg.boot</filename>。</para>
+    <para>有时，<command>dmesg</command> 命令并不显示系统启动时的检测信息，
+      此时可以查看文件 <filename>/var/run/dmesg.boot</filename>。</para>
 
     <para>另一个查找硬件信息的方法是使用 &man.pciconf.8; 工具，
-      它能提供更详细的输出，比如：</para>
+      它能提供更详细的输出，例如：</para>
 
-    <programlisting>ath0@pci0:3:0:0:        class=0x020000 card=0x058a1014 chip=0x1014168c rev=0x01 hdr=0x00
+    <programlisting><command>pciconf -lv</command>
+    ath0@pci0:3:0:0:        class=0x020000 card=0x058a1014 chip=0x1014168c rev=0x01 hdr=0x00
     vendor     = 'Atheros Communications Inc.'
     device     = 'AR5212 Atheros AR5212 802.11abg wireless'
     class      = network
     subclass   = ethernet</programlisting>
 
-    <para>这个片断取自于 <command>pciconf -lv</command>
-      命令的输出，显示 <filename>ath</filename>
-      驱动找到了一个无线以太网设备。输入命令
-      <command>man ath</command>
-      就能查阅有关 &man.ath.4; 的手册页（manual page）了。</para>
+    <para>上述输出显示 <filename>ath</filename>
+      驱动找到了一个无线以太网设备。</para>
 
-    <para>还可以传给 &man.man.1; 命令 <option>-k</option> 选项，
-      同样能获得有用的信息。例如：</para>
+    <para>&man.man.1; 命令的 <option>-k</option> 选项能够提供有用的信息。
+      例如，若要显示哪些手册页中含有特定的词：</para>
 
     <screen>&prompt.root; man -k <replaceable>Atheros</replaceable></screen>
-
-    <para>能得到一份包含特定词语的手册页（manual page）:</para>
 
     <programlisting>ath(4)                   - Atheros IEEE 802.11 wireless network driver
 ath_hal(4)               - Atheros Hardware Access Layer (HAL)</programlisting>
 
-    <para>手头备有一份硬件的配置清单，
-      那么编译制定内核的过程就显得不那么困难了。</para>
+    <para>一旦有了硬件配置清单，自定义内核的时候就可以参考它，
+      确保不会误删必备的硬件驱动。</para>
   </sect1>
 
   <sect1 xml:id="kernelconfig-modules">
