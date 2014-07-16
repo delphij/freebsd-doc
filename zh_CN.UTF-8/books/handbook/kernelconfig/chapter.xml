@@ -7,42 +7,55 @@
      $FreeBSD$
 -->
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="kernelconfig">
-  <info><title>配置FreeBSD的内核</title>
+<!--<chapterinfo>
     <authorgroup>
-      <author><personname><firstname>Jim</firstname><surname>Mock</surname></personname><contrib>Updated and restructured by </contrib></author>
+      <author>
+	<firstname>Jim</firstname>
+	<surname>Mock</surname>
+	<contrib>Updated and restructured in Mar 2000 by </contrib>
+      </author>
     </authorgroup>
     <authorgroup>
-      <author><personname><firstname>Jake</firstname><surname>Hamby</surname></personname><contrib>Originally contributed by </contrib></author>
+      <author>
+	<firstname>Jake</firstname>
+	<surname>Hamby</surname>
+	<contrib>Originally contributed 6 Oct 1995 by </contrib>
+      </author>
     </authorgroup>
-  </info>
+  </chapterinfo>
+  -->
 
-  
+  <title>配置 FreeBSD 内核</title>
 
   <sect1 xml:id="kernelconfig-synopsis">
     <title>概述</title>
 
     <indexterm>
       <primary>内核</primary>
-      <secondary>建立一个定制的内核</secondary>
+      <secondary>联编一个定制的内核</secondary>
     </indexterm>
 
-    <para>内核是 &os; 操作系统的核心。 它负责管理内存、 执行安全控制、
-    网络、 磁盘访问等等。 尽管 &os; 可以动态修改的现在已经越来越多，
-    但有时您还是需要重新配置和编译您的内核。</para>
+    <para>内核是 &os; 操作系统的核心。 它负责管理内存、 实施安全控制、
+    联网、 访问磁盘等。 尽管 &os; 可以在运行的时候动态配置，
+    但有时仍然有必要配置并编译一个定制的内核。</para>
 
     <para>读完这章，您将了解：</para>
 
     <itemizedlist>
       <listitem>
-	<para>为什么需要建立定制的内核。</para>
+	<para>何时需要联编定制的内核。</para>
       </listitem>
 
       <listitem>
-	<para>如何编写内核配置文件，或修改已存在的配置文件。</para>
+	<para>如何获取硬件清单。</para>
       </listitem>
 
       <listitem>
-	<para>如何使用内核配置文件创建和联编新的内核。</para>
+	<para>如何自定义内核配置。</para>
+      </listitem>
+
+      <listitem>
+	<para>如何使用内核配置文件创建和联编新内核。</para>
       </listitem>
 
       <listitem>
@@ -50,352 +63,139 @@
       </listitem>
 
       <listitem>
-	<para>如何处理出现的问题。</para>
+	<para>如何排除故障。</para>
       </listitem>
     </itemizedlist>
 
-    <para>这一章给出的命令应该以 <systemitem class="username">root</systemitem> 身份执行，
-      否则可能会不成功。</para>
+    <para>本章给出的所有命令应该以 <systemitem class="username">root</systemitem> 身份执行。</para>
   </sect1>
 
   <sect1 xml:id="kernelconfig-custom-kernel">
-    <title>为什么需要建立定制的内核?</title>
+    <title>为什么要联编定制的内核?</title>
 
-    <para>过去， &os; 采用的是被人们称作
-      <quote>单片式</quote> 的内核。 这种内核本身是一个大的程序，
-      它支持的设备不能够动态地加以改变，
-      而当希望改变内核的行为时， 就必须编译一个新的内核，
-      并重新启动计算机才可以使用它。</para>
+    <para>过去， &os; 采用 <quote>单片式</quote> 的内核。 
+      这种内核本身是一个大的程序，只支持一些固定的设备，
+      为了改变内核的行为，必须编译新内核并且重新启动切换到新内核。</para>
 
-    <para>如今， &os; 正在迅速地迁移到一种新的模型，
-      其特点是将大量内核功能放进可以动态加载和卸载的内核模块来提供。
-      这使得内核能够适应硬件的调整 (例如笔记本计算机中的 PCMCIA 卡)，
-      以及为内核引入新的功能， 而无需在编译内核时就将其添加进去。
-      这种做法称为模块化内核。</para>
+    <para>如今， &os; 内核的大部分功能都包含在各个模块中，
+      这些模块能够在内核运行的时候按需加载或卸载。
+      这样就使得运行中的内核能够立即支持新硬件或新功能。
+      这种内核被称作模块化内核。</para>
 
-    <para>尽管如此， 仍然有一些功能需要静态地联编进内核。
-      有时， 这是由于这些功能与内核的结合非常紧密而无法实现动态加载，
-      还有一些情况是暂时没有人将这些功能改写为可动态加载的模块。</para>
+    <para>但是在少数情况下，我们仍然需要进行静态的内核配置。
+      比如，有时所需的功能和内核结合的非常紧密，以至于无法做成动态加载的模块；
+      有时在安全环境下，系统不允许加载或卸载内核模块，
+      要求只有用到的功能才能被静态的编译进内核。</para>
 
     <para>联编定制的内核是成为高级 BSD 用户所必须经历的一关。
-      尽管这一过程需要花费一些时间， 但它能够为您的 &os; 系统带来一些好处。
+      尽管这一过程比较耗时，但它能够为您的 &os; 系统带来好处。
       与必须支持大量硬件的 <filename>GENERIC</filename> 内核不同，
-      定制的内核可以只包含对于
-      <emphasis>您</emphasis> PC 硬件的支持。
-      这样做有很多好处， 例如：</para>
+      定制的内核可以只支持特定计算机的硬件。
+      这样做有很多好处，例如：</para>
 
     <itemizedlist>
       <listitem>
-	<para>更快地启动。 因为内核只需要检测您系统上的硬件，
-	启动时所花费的时间将大大缩短。</para>
+	<para>更快地启动。因为内核只需要检测您系统上的硬件，
+	  启动时所花费的时间将大大缩短。</para>
       </listitem>
 
       <listitem>
-	<para>使用更少的内存。 由于可以删去不需要的功能和设备驱动，
-	  通常定制的内核会比 <filename>GENERIC</filename> 使用的内存更少。
-	  节省内核使用的内存之所以重要是因为内核必须常驻于物理内存中，
-	  从而使应用程序能够用到更多的内存。 正因为这样，
-	  对 RAM 较小的系统来说定制内核就更为重要了。</para>
+	<para>占用更少的内存。 由于定制的内核删去了不需要的特性和设备驱动，
+      其占用的内存通常比 <filename>GENERIC</filename> 内核少。
+      这点非常重要，因为内核常驻于物理内存中，
+      所以这部分内存无法被应用程序使用。
+      因此，对于内存较小的系统来说，定制内核非常有用。</para>
       </listitem>
 
       <listitem>
-	<para>支持更多的硬件。 定制的内核允许您增加类似声卡这样的
-	  <filename>GENERIC</filename> 内核没有提供内建支持的硬件。</para>
+	<para>支持更多的硬件。定制的内核能够支持
+      <filename>GENERIC</filename> 内核所不支持的硬件。</para>
       </listitem>
     </itemizedlist>
+
+    <para>联编定制内核之前，必须考虑清楚为什么要这么做。
+      如果只是为了支持某个特定的硬件，也许已经有现成的内核模块了。</para>
+
+    <para>内核模块位于 <filename>/boot/kernel</filename> 目录下，
+      可以使用 &man.kldload.8; 命令将其动态加载进运行中的内核。
+      大多数内核驱动都有一个可加载的内核模块和手册。
+      例如，&man.ath.4; 无线网卡驱动在它的手册页中就有如下信息：</para>
+
+    <programlisting>或者, 若要在启动时将此驱动作为模块加载，
+可在 &man.loader.conf.5; 中添加如下配置：
+
+    if_ath_load="YES"</programlisting>
+
+    <para>在 <filename>/boot/loader.conf</filename> 中添加
+      <literal>if_ath_load="YES"</literal>，
+      系统就会在启动的时候动态加载该模块。</para>
+
+    <para>对于某些子系统而言，
+      <filename>/boot/kernel</filename> 目录下不一定有其对应的内核模块。</para>
   </sect1>
 
   <sect1 xml:id="kernelconfig-devices">
-    <info><title>发现系统硬件</title>
+    <!--
+    <sect1info>
       <authorgroup>
-	<author><personname><firstname>Tom</firstname><surname>Rhodes</surname></personname><contrib>作者 </contrib></author>
+	<author>
+	  <firstname>Tom</firstname>
+	  <surname>Rhodes</surname>
+	  <contrib>Written by </contrib>
+	</author>
       </authorgroup>
-    </info>
-    
+    </sect1info>
+    -->
+    <title>发现系统硬件</title>
 
-    <para>在尝试配置内核以前，比较明智的做法是先获得一份机器硬件的清单。
-      当 &os; 并不是主操作系统时，通过查看当前操作系统的配置可以很容易的
-      创建一份机器硬件的配置清单。举例来说， &microsoft; 的
-      <application>设备管理器</application> 里通常含有关于已安装硬件的重要信息。
-      <application>设备管理器</application> 位于控制面板。</para>
+    <para>在编辑内核配置文件之前，我们建议先获得一份机器硬件的清单。
+      在双启动的系统上，可以通过另一个操作系统创建这份清单。
+      例如，&microsoft; 的
+      <application>设备管理器</application> 里就包含了已安装设备的信息。</para>
 
     <note>
       <para>某些版本的 &microsoft.windows; 有一个 <application>系统</application>
-	图标会指明 <application>设备管理器</application> 的位置。</para>
+	图标，点击后可以打开 <application>设备管理器</application>。</para>
     </note>
 
-    <para>如果机器上并不存在其他的操作系统，
-      系统管理员只能手动寻找这些信息了。其中的一个方法是使用
-      &man.dmesg.8; 工具以及 &man.man.1; 命令。&os;
-      上大多数的驱动程序都有一份手册页（manual page）列出了所支持的硬件，
-      在系统启动的时候，被发现的硬件也会被列出。举例来说，
-      下面的这几行表示 <filename>psm</filename> 驱动找到了一个鼠标：</para>
+    <para>如果系统上只安装了 &os;，
+      可以通过 &man.dmesg.8; 来查明系统在启动时找到并列出了哪些硬件。
+      &os; 的大多数设备驱动都有一个手册页，里面列出了该驱动所支持的硬件。
+      例如，下面这几行表明 <filename>psm</filename> 驱动找到了一个鼠标：</para>
 
     <programlisting>psm0: &lt;PS/2 Mouse&gt; irq 12 on atkbdc0
 psm0: [GIANT-LOCKED]
 psm0: [ITHREAD]
 psm0: model Generic PS/2 mouse, device ID 0</programlisting>
 
-    <para>这个驱动需要被包含在客户制定的内核配置文件里，
-      或着使用 &man.loader.conf.5; 加载。</para>
+    <para>因为机器上有这个硬件，所以定制的内核的时候不应该把该驱动删去。</para>
 
-    <para>有时，<command>dmesg</command> 里只会显示来自系统消息的数据，
-      而不是系统启动时的检测信息。在这样的情况下，你可以查看文件
-      <filename>/var/run/dmesg.boot</filename>。</para>
+    <para>有时，<command>dmesg</command> 命令并不显示系统启动时的检测信息，
+      此时可以查看文件 <filename>/var/run/dmesg.boot</filename>。</para>
 
     <para>另一个查找硬件信息的方法是使用 &man.pciconf.8; 工具，
-      它能提供更详细的输出，比如：</para>
+      它能提供更详细的输出，例如：</para>
 
-    <programlisting>ath0@pci0:3:0:0:        class=0x020000 card=0x058a1014 chip=0x1014168c rev=0x01 hdr=0x00
+    <programlisting><command>pciconf -lv</command>
+    ath0@pci0:3:0:0:        class=0x020000 card=0x058a1014 chip=0x1014168c rev=0x01 hdr=0x00
     vendor     = 'Atheros Communications Inc.'
     device     = 'AR5212 Atheros AR5212 802.11abg wireless'
     class      = network
     subclass   = ethernet</programlisting>
 
-    <para>这个片断取自于 <command>pciconf -lv</command>
-      命令的输出，显示 <filename>ath</filename>
-      驱动找到了一个无线以太网设备。输入命令
-      <command>man ath</command>
-      就能查阅有关 &man.ath.4; 的手册页（manual page）了。</para>
+    <para>上述输出显示 <filename>ath</filename>
+      驱动找到了一个无线以太网设备。</para>
 
-    <para>还可以传给 &man.man.1; 命令 <option>-k</option> 选项，
-      同样能获得有用的信息。例如：</para>
+    <para>&man.man.1; 命令的 <option>-k</option> 选项能够提供有用的信息。
+      例如，若要显示哪些手册页中含有特定的词：</para>
 
     <screen>&prompt.root; man -k <replaceable>Atheros</replaceable></screen>
-
-    <para>能得到一份包含特定词语的手册页（manual page）:</para>
 
     <programlisting>ath(4)                   - Atheros IEEE 802.11 wireless network driver
 ath_hal(4)               - Atheros Hardware Access Layer (HAL)</programlisting>
 
-    <para>手头备有一份硬件的配置清单，
-      那么编译制定内核的过程就显得不那么困难了。</para>
-  </sect1>
-
-  <sect1 xml:id="kernelconfig-modules">
-    <title>内核驱动，子系统和模块</title>
-    <indexterm>
-      <primary>kernel</primary>
-      <secondary>drivers / modules / subsystems</secondary>
-    </indexterm>
-
-    <para>在编译一个制定的内核之前请三思一下这么做的理由，
-      如果仅是需要某个特定的硬件支持的话，
-      那么很可能已经存在一个现成的模块了。</para>
-
-    <para>内核模块存放在目录
-      <filename>/boot/kernel</filename>
-      中，并能由 &man.kldload.8; 命令加载入正在运行的内核。
-      基本上所有的内核驱动都有特定的模块和手册页。比如，
-      下面提到的 <filename>ath</filename> 无线以太网驱动。
-      在这个设备的联机手册中有以下信息：</para>
-
-    <programlisting>Alternatively, to load the driver as a module at boot time, place the
-following line in &man.loader.conf.5;:
-
-    if_ath_load="YES"</programlisting>
-
-    <para>遵照示例，在 <filename>/boot/loader.conf</filename> 中加入
-      <literal>if_ath_load="YES"</literal>
-      则能在机器启动的时候动态加载这个模块。</para>
-
-    <para>某些情况下，则没有相关的模块。通常是一些子系统和非常重要的驱动，
-      比如，快速文件系统 (<acronym>FFS</acronym>) 就是一个内核必需的选项。
-      同样的还有网络支持 (INET)。不幸的是，
-      分辨一个驱动是否必需的唯一方法就是检查测试以下那个模块本身。</para>
-
-    <warning>
-      <para>去除某个驱动的支持或某个选项会非常容易得到一个坏掉的内核。
-        举例来说，如果把 &man.ata.4; 驱动从内核配置文件中去掉，
-        那么一个使用 <acronym>ATA</acronym>
-        磁盘设备的系统可能就变得无法引导，除非有在
-        <filename>loader.conf</filename> 中加载。当你无法确定的时候，
-        请检查一下那个模块并把它留在你的内核配置中。</para>
-    </warning>
-  </sect1>
-
-  <sect1 xml:id="kernelconfig-building">
-    <title>建立并安装一个定制的内核</title>
-    <indexterm>
-      <primary>内核</primary>
-      <secondary>建立/安装</secondary>
-    </indexterm>
-
-    <para>首先对内核构建目录做一个快速的浏览。
-      这里所提到的所有目录都在
-      <filename>/usr/src/sys</filename> 目录中； 也可以通过
-      <filename>/sys</filename> 来访问它。
-      这里的众多子目录包含了内核的不同部分，
-      但对我们所要完成的任务最重要的目录是
-      <filename>arch/conf</filename>，
-      您将在这里编辑定制的内核配置； 以及
-      <filename>compile</filename>， 编译过程中的文件将放置在这里。
-      <replaceable>arch</replaceable> 表示
-      <filename>i386</filename>、
-      <filename>amd64</filename>、 <filename>ia64</filename>、
-      <filename>powerpc</filename>、 <filename>sparc64</filename>， 或
-      <filename>pc98</filename> (在日本比较流行的另一种
-      PC 硬件开发分支)。 在特定硬件架构目录中的文件只和特定的硬件有关；
-      而其余代码则是与机器无关的， 则所有已经或将要移植并运行 &os;
-      的平台上都共享这些代码。
-      文件目录是按照逻辑组织的， 所支持的硬件设备、
-      文件系统， 以及可选的组件通常都在它们自己的目录中。</para>
-
-    <para>这一章提供的例子假定您使用 i386 架构的计算机。
-      如果您的情况不是这样， 只需对目录名作相应的调整即可。</para>
-
-    <note>
-      <para>如果您的系统中 <emphasis>没有</emphasis>
-	<filename>/usr/src/sys</filename> 这样一个目录，
-	则说明没有安装内核源代码。 安装它最简单的方法是通过以 root 身份运行
-	<command>sysinstall</command>， 选择
-	<guimenuitem>Configure</guimenuitem>， 然后是
-	<guimenuitem>Distributions</guimenuitem>、
-	<guimenuitem>src</guimenuitem>， 选中其中的
-	<guimenuitem>base</guimenuitem> 和
-	<guimenuitem>sys</guimenuitem>。 如果您不喜欢
-	<application>sysinstall</application> 并且有一张
-	<quote>官方的</quote> &os; CDROM， 也可以使用下列命令，
-	从命令行来安装源代码：</para>
-
-      <screen>&prompt.root; <userinput>mount /cdrom</userinput>
-&prompt.root; <userinput>mkdir -p /usr/src/sys</userinput>
-&prompt.root; <userinput>ln -s /usr/src/sys /sys</userinput>
-&prompt.root; <userinput>cat /cdrom/src/ssys.[a-d]* | tar -xzvf -</userinput>
-&prompt.root; <userinput>cat /cdrom/src/sbase.[a-d]* | tar -xzvf -</userinput></screen>
-    </note>
-
-    <para>接下来， 进入 <filename>arch/conf</filename>
-	目录下面， 复制 <filename>GENERIC</filename> 配置文件，
-	并给这个文件起一个容易辨认的名称， 它就是您的内核名称。例如：</para>
-    <screen>&prompt.root; <userinput>cd /usr/src/sys/i386/conf</userinput>
-&prompt.root; <userinput>cp GENERIC MYKERNEL</userinput></screen>
-
-    <para>通常，这个名称是大写的，如果您正维护着多台不同硬件的&os;机器，
-    以您机器的域名来命名是非常好的主意。我们把它命名为
-      <filename>MYKERNEL</filename>就是这个原因。
-    </para>
-
-    <tip>
-      <para>将您的内核配置文件直接保存在
-	<filename>/usr/src</filename> 可能不是一个好主意。
-	如果您遇到问题， 删掉
-	<filename>/usr/src</filename> 并重新开始很可能是一个诱人的选择。
-	一旦开始做这件事，
-	您可能几秒钟之后才会意识到您同时会删除定制的内核配置文件。
-	另外， 也不要直接编辑 <filename>GENERIC</filename>，
-	因为下次您
-	<link linkend="updating-upgrading">更新代码</link> 时它会被覆盖，
-	而您的修改也就随之丢失了。</para>
-
-      <para>您也可以考虑把内核配置文件放到别的地方，
-	然后再到 <filename>i386</filename>
-	目录中创建一个指向它的符号链接。</para>
-
-      <para>例如：</para>
-
-      <screen>&prompt.root; <userinput>cd /usr/src/sys/i386/conf</userinput>
-&prompt.root; <userinput>mkdir /root/kernels</userinput>
-&prompt.root; <userinput>cp GENERIC /root/kernels/MYKERNEL</userinput>
-&prompt.root; <userinput>ln -s /root/kernels/MYKERNEL</userinput></screen>
-    </tip>
-
-    <note>
-      <para>必须以 <systemitem class="username">root</systemitem> 身份执行这些和接下来命令，
-	否则就会得到 <errortype>permission denied</errortype> 的错误提示。
-      </para>
-    </note>
-
-    <para>现在就可以用您喜欢的文本编辑器来编辑
-      <filename>MYKERNEL</filename> 了。
-      如果您刚刚开始使用 FreeBSD， 唯一可用的编辑器很可能是
-      <application>vi</application>， 它的使用比较复杂， 限于篇幅，
-      这里不予介绍， 您可以在 <link linkend="bibliography">参考书目</link> 一章中找到很多相关书籍。
-      不过， &os; 也提供了一个更好用的编辑器，
-      它叫做 <application>ee</application>， 对于新手来说，
-      这很可能是一个不错的选择。
-      您可以修改配置文件中的注释以反映您的配置，
-      或其他与 <filename>GENERIC</filename> 不同的地方。</para>
-    <indexterm><primary>SunOS</primary></indexterm>
-
-    <para>如果您在&sunos;或者其他BSD系统下定制过内核，那这个文件中的绝大部分将对您非常熟悉。
-     如果您使用的是诸如DOS这样的系统，那<filename>GENERIC</filename>配置文件看起来就非常困难，
-     所以在下面的 <link linkend="kernelconfig-config">配置文件</link>章节将慢慢地、仔细地进行介绍。
-      </para>
-
-    <note>
-      <para>如果您和 &os; project 进行了 <link linkend="updating-upgrading">代码同步</link>，
-        则一定要在进行任何更新之前查看
-        <filename>/usr/src/UPDATING</filename>。
-        这个文件中描述了更新过的代码中出现的重大问题或需要注意的地方。
-        <filename>/usr/src/UPDATING</filename> 总是和您的
-        &os; 源代码对应， 因此能够提供比手册更具时效性的新内容。</para>
-    </note>
-
-    <para>现在应该编译内核的源代码了。</para>
-
-    <procedure>
-      <title>联编内核</title>
-
-      <step>
-	<para>进入 <filename>/usr/src</filename> 目录：</para>
-
-	<screen>&prompt.root; <userinput>cd /usr/src</userinput></screen>
-      </step>
-
-      <step>
-	<para>编译内核：</para>
-
-	<screen>&prompt.root; <userinput>make buildkernel KERNCONF=MYKERNEL</userinput></screen>
-      </step>
-
-      <step>
-	<para>安装新内核：</para>
-
-	<screen>&prompt.root; <userinput>make installkernel KERNCONF=MYKERNEL</userinput></screen>
-      </step>
-    </procedure>
-
-    <note>
-      <para>使用这种方法联编内核时， 需要安装完整的 &os; 源代码。</para>
-    </note>
-
-    <tip>
-      <para>默认情况下， 在联编您所定制的内核时，
-	<emphasis>全部</emphasis> 内核模块也会同时参与构建。
-	如果您希望更快地升级内核， 或者只希望联编您所需要的模块，
-	则应在联编之前编辑 <filename>/etc/make.conf</filename>：</para>
-
-      <programlisting>MODULES_OVERRIDE = linux acpi sound/sound sound/driver/ds1 ntfs</programlisting>
-
-      <para>这个变量的内容是所希望构建的模块列表。</para>
-
-      <programlisting>WITHOUT_MODULES = linux acpi sound ntfs</programlisting>
-
-      <para>这个变量的内容是将不在联编过程中编译的顶级模块列表。
-	如果希望了解更多与构建内核有关的变量， 请参见 &man.make.conf.5;
-	联机手册。</para>
-    </tip>
-
-    <indexterm>
-      <primary><filename>/boot/kernel.old</filename></primary>
-    </indexterm>
-
-    <para>新内核将会被复制到 <filename>/boot/kernel</filename> 目录中成为
-      <filename>/boot/kernel/kernel</filename> 而旧的则被移到
-      <filename>/boot/kernel.old/kernel</filename>。
-      现在关闭系统， 然后用新的内核启动计算机。 如果出现问题，
-      后面的一些 <link linkend="kernelconfig-trouble">故障排除方法</link>
-      将帮您摆脱困境。 如果您的内核 <link linkend="kernelconfig-noboot">无法启动</link>， 请参考那一节。</para>
-
-    <note>
-      <para>其他与启动过程相关的文件， 如
-	&man.loader.8; 及其配置， 则放在
-	<filename>/boot</filename>。 第三方或定制的模块也可以放在
-	<filename>/boot/kernel</filename>，
-	不过应该注意保持模块和内核的同步时很重要的，
-	否则会导致不稳定和错误。</para>
-    </note>
+    <para>一旦有了硬件配置清单，自定义内核的时候就可以参考它，
+      确保不会误删必备的硬件驱动。</para>
   </sect1>
 
   <sect1 xml:id="kernelconfig-config">
@@ -1262,6 +1062,190 @@ device          fwe           # Ethernet over FireWire (non-standard!)</programl
 	&os;'s<acronym>PAE</acronym>支持的最新信息。
         </para>
     </sect2>
+  </sect1>
+
+  <sect1 xml:id="kernelconfig-building">
+    <title>建立并安装一个定制的内核</title>
+    <indexterm>
+      <primary>内核</primary>
+      <secondary>建立/安装</secondary>
+    </indexterm>
+
+    <para>首先对内核构建目录做一个快速的浏览。
+      这里所提到的所有目录都在
+      <filename>/usr/src/sys</filename> 目录中； 也可以通过
+      <filename>/sys</filename> 来访问它。
+      这里的众多子目录包含了内核的不同部分，
+      但对我们所要完成的任务最重要的目录是
+      <filename>arch/conf</filename>，
+      您将在这里编辑定制的内核配置； 以及
+      <filename>compile</filename>， 编译过程中的文件将放置在这里。
+      <replaceable>arch</replaceable> 表示
+      <filename>i386</filename>、
+      <filename>amd64</filename>、 <filename>ia64</filename>、
+      <filename>powerpc</filename>、 <filename>sparc64</filename>， 或
+      <filename>pc98</filename> (在日本比较流行的另一种
+      PC 硬件开发分支)。 在特定硬件架构目录中的文件只和特定的硬件有关；
+      而其余代码则是与机器无关的， 则所有已经或将要移植并运行 &os;
+      的平台上都共享这些代码。
+      文件目录是按照逻辑组织的， 所支持的硬件设备、
+      文件系统， 以及可选的组件通常都在它们自己的目录中。</para>
+
+    <para>这一章提供的例子假定您使用 i386 架构的计算机。
+      如果您的情况不是这样， 只需对目录名作相应的调整即可。</para>
+
+    <note>
+      <para>如果您的系统中 <emphasis>没有</emphasis>
+	<filename>/usr/src/sys</filename> 这样一个目录，
+	则说明没有安装内核源代码。 安装它最简单的方法是通过以 root 身份运行
+	<command>sysinstall</command>， 选择
+	<guimenuitem>Configure</guimenuitem>， 然后是
+	<guimenuitem>Distributions</guimenuitem>、
+	<guimenuitem>src</guimenuitem>， 选中其中的
+	<guimenuitem>base</guimenuitem> 和
+	<guimenuitem>sys</guimenuitem>。 如果您不喜欢
+	<application>sysinstall</application> 并且有一张
+	<quote>官方的</quote> &os; CDROM， 也可以使用下列命令，
+	从命令行来安装源代码：</para>
+
+      <screen>&prompt.root; <userinput>mount /cdrom</userinput>
+&prompt.root; <userinput>mkdir -p /usr/src/sys</userinput>
+&prompt.root; <userinput>ln -s /usr/src/sys /sys</userinput>
+&prompt.root; <userinput>cat /cdrom/src/ssys.[a-d]* | tar -xzvf -</userinput>
+&prompt.root; <userinput>cat /cdrom/src/sbase.[a-d]* | tar -xzvf -</userinput></screen>
+    </note>
+
+    <para>接下来， 进入 <filename>arch/conf</filename>
+	目录下面， 复制 <filename>GENERIC</filename> 配置文件，
+	并给这个文件起一个容易辨认的名称， 它就是您的内核名称。例如：</para>
+    <screen>&prompt.root; <userinput>cd /usr/src/sys/i386/conf</userinput>
+&prompt.root; <userinput>cp GENERIC MYKERNEL</userinput></screen>
+
+    <para>通常，这个名称是大写的，如果您正维护着多台不同硬件的&os;机器，
+    以您机器的域名来命名是非常好的主意。我们把它命名为
+      <filename>MYKERNEL</filename>就是这个原因。
+    </para>
+
+    <tip>
+      <para>将您的内核配置文件直接保存在
+	<filename>/usr/src</filename> 可能不是一个好主意。
+	如果您遇到问题， 删掉
+	<filename>/usr/src</filename> 并重新开始很可能是一个诱人的选择。
+	一旦开始做这件事，
+	您可能几秒钟之后才会意识到您同时会删除定制的内核配置文件。
+	另外， 也不要直接编辑 <filename>GENERIC</filename>，
+	因为下次您
+	<link linkend="updating-upgrading">更新代码</link> 时它会被覆盖，
+	而您的修改也就随之丢失了。</para>
+
+      <para>您也可以考虑把内核配置文件放到别的地方，
+	然后再到 <filename>i386</filename>
+	目录中创建一个指向它的符号链接。</para>
+
+      <para>例如：</para>
+
+      <screen>&prompt.root; <userinput>cd /usr/src/sys/i386/conf</userinput>
+&prompt.root; <userinput>mkdir /root/kernels</userinput>
+&prompt.root; <userinput>cp GENERIC /root/kernels/MYKERNEL</userinput>
+&prompt.root; <userinput>ln -s /root/kernels/MYKERNEL</userinput></screen>
+    </tip>
+
+    <note>
+      <para>必须以 <systemitem class="username">root</systemitem> 身份执行这些和接下来命令，
+	否则就会得到 <errortype>permission denied</errortype> 的错误提示。
+      </para>
+    </note>
+
+    <para>现在就可以用您喜欢的文本编辑器来编辑
+      <filename>MYKERNEL</filename> 了。
+      如果您刚刚开始使用 FreeBSD， 唯一可用的编辑器很可能是
+      <application>vi</application>， 它的使用比较复杂， 限于篇幅，
+      这里不予介绍， 您可以在 <link linkend="bibliography">参考书目</link> 一章中找到很多相关书籍。
+      不过， &os; 也提供了一个更好用的编辑器，
+      它叫做 <application>ee</application>， 对于新手来说，
+      这很可能是一个不错的选择。
+      您可以修改配置文件中的注释以反映您的配置，
+      或其他与 <filename>GENERIC</filename> 不同的地方。</para>
+    <indexterm><primary>SunOS</primary></indexterm>
+
+    <para>如果您在&sunos;或者其他BSD系统下定制过内核，那这个文件中的绝大部分将对您非常熟悉。
+     如果您使用的是诸如DOS这样的系统，那<filename>GENERIC</filename>配置文件看起来就非常困难，
+     所以在下面的 <link linkend="kernelconfig-config">配置文件</link>章节将慢慢地、仔细地进行介绍。
+      </para>
+
+    <note>
+      <para>如果您和 &os; project 进行了 <link linkend="updating-upgrading">代码同步</link>，
+        则一定要在进行任何更新之前查看
+        <filename>/usr/src/UPDATING</filename>。
+        这个文件中描述了更新过的代码中出现的重大问题或需要注意的地方。
+        <filename>/usr/src/UPDATING</filename> 总是和您的
+        &os; 源代码对应， 因此能够提供比手册更具时效性的新内容。</para>
+    </note>
+
+    <para>现在应该编译内核的源代码了。</para>
+
+    <procedure>
+      <title>联编内核</title>
+
+      <step>
+	<para>进入 <filename>/usr/src</filename> 目录：</para>
+
+	<screen>&prompt.root; <userinput>cd /usr/src</userinput></screen>
+      </step>
+
+      <step>
+	<para>编译内核：</para>
+
+	<screen>&prompt.root; <userinput>make buildkernel KERNCONF=MYKERNEL</userinput></screen>
+      </step>
+
+      <step>
+	<para>安装新内核：</para>
+
+	<screen>&prompt.root; <userinput>make installkernel KERNCONF=MYKERNEL</userinput></screen>
+      </step>
+    </procedure>
+
+    <note>
+      <para>使用这种方法联编内核时， 需要安装完整的 &os; 源代码。</para>
+    </note>
+
+    <tip>
+      <para>默认情况下， 在联编您所定制的内核时，
+	<emphasis>全部</emphasis> 内核模块也会同时参与构建。
+	如果您希望更快地升级内核， 或者只希望联编您所需要的模块，
+	则应在联编之前编辑 <filename>/etc/make.conf</filename>：</para>
+
+      <programlisting>MODULES_OVERRIDE = linux acpi sound/sound sound/driver/ds1 ntfs</programlisting>
+
+      <para>这个变量的内容是所希望构建的模块列表。</para>
+
+      <programlisting>WITHOUT_MODULES = linux acpi sound ntfs</programlisting>
+
+      <para>这个变量的内容是将不在联编过程中编译的顶级模块列表。
+	如果希望了解更多与构建内核有关的变量， 请参见 &man.make.conf.5;
+	联机手册。</para>
+    </tip>
+
+    <indexterm>
+      <primary><filename>/boot/kernel.old</filename></primary>
+    </indexterm>
+
+    <para>新内核将会被复制到 <filename>/boot/kernel</filename> 目录中成为
+      <filename>/boot/kernel/kernel</filename> 而旧的则被移到
+      <filename>/boot/kernel.old/kernel</filename>。
+      现在关闭系统， 然后用新的内核启动计算机。 如果出现问题，
+      后面的一些 <link linkend="kernelconfig-trouble">故障排除方法</link>
+      将帮您摆脱困境。 如果您的内核 <link linkend="kernelconfig-noboot">无法启动</link>， 请参考那一节。</para>
+
+    <note>
+      <para>其他与启动过程相关的文件， 如
+	&man.loader.8; 及其配置， 则放在
+	<filename>/boot</filename>。 第三方或定制的模块也可以放在
+	<filename>/boot/kernel</filename>，
+	不过应该注意保持模块和内核的同步时很重要的，
+	否则会导致不稳定和错误。</para>
+    </note>
   </sect1>
 
   <sect1 xml:id="kernelconfig-trouble">
