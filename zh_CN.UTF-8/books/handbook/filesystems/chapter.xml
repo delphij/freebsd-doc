@@ -87,7 +87,7 @@
 
     <para>Z 文件系统最初是由 &sun; 开发的，
       它使用基于池的存储方法，只有存储数据时才会真正消耗空间。
-      它能够最大化数据完整性，支持数据快照，多份拷贝以及数据校验。
+      它的设计也能够最大限度地保证数据完整性，并支持数据快照、多份副本以及数据校验。
       它使用了一种被称为 <acronym>RAID</acronym>-Z 的软件实现的数据复写模型。
       <acronym>RAID</acronym>-Z 能够提供类似于硬件 <acronym>RAID</acronym> 的冗余性, 
       能够防止数据写入时损坏，并克服了硬件 <acronym>RAID</acronym> 的一些限制。</para>
@@ -102,7 +102,7 @@
       <sect3>
         <title>内存</title>
 
-        <para>如果不考虑其他应用的开销，总共的系统内存至少应有 1GB。
+        <para>如果不考虑其他应用的开销，系统的总内存不应少于 1GB。
           理想的内存大小取决于存储池的大小和启用了哪些 ZFS 特性。
           通行的准则是：每 1TB 存储空间需要 1GB 内存。
           如果启用了重复数据删除（deduplication）特性，
@@ -163,7 +163,7 @@ vfs.zfs.vdev.cache.size="5M"</programlisting>
       <sect3>
         <title>单个磁盘存储池</title>
 
-        <para>在单个磁盘上创建一个简单，
+        <para>在单个磁盘上创建一个简单的，
           非冗余的 <acronym>ZFS</acronym> 存储池，
           使用 <command>zpool</command> 命令：</para>
 
@@ -385,7 +385,7 @@ storage/home  26320512       0 26320512     0%    /home</screen>
       </sect3>
 
       <sect3>
-        <title>恢复 <acronym>RAID</acronym>-Z</title>
+        <title>修复 <acronym>RAID</acronym>-Z</title>
 
         <para>每种软 <acronym>RAID</acronym>
           都有监测其 <literal>状态</literal> 的方法。
