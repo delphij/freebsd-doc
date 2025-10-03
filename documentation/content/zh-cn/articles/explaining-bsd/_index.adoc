@@ -1,0 +1,233 @@
+---
+title: "解释 BSD"
+authors:
+  - author: "Greg Lehey"
+    email: "grog@FreeBSD.org"
+description: "关于 BSD 的简要说明"
+trademarks: ["freebsd", "amd", "apple", "git", "intel", "linux", "opengroup", "sun", "unix", "general"]
+tags: ["解释 BSD", "BSD", "FreeBSD", "操作系统"]
+---
+
+= 解释 BSD
+:doctype: article
+:toc: macro
+:toclevels: 1
+:icons: font
+:sectnums:
+:sectnumlevels: 6
+:source-highlighter: rouge
+:experimental:
+:images-path: articles/explaining-bsd/
+
+ifdef::env-beastie[]
+ifdef::backend-html5[]
+include::shared/authors.adoc[]
+include::shared/mirrors.adoc[]
+include::shared/releases.adoc[]
+include::shared/attributes/attributes-{{% lang %}}.adoc[]
+include::shared/{{% lang %}}/teams.adoc[]
+include::shared/{{% lang %}}/mailing-lists.adoc[]
+include::shared/{{% lang %}}/urls.adoc[]
+:imagesdir: ../../../images/{images-path}
+endif::[]
+ifdef::backend-pdf,backend-epub3[]
+include::../../../../shared/asciidoctor.adoc[]
+endif::[]
+endif::[]
+
+ifndef::env-beastie[]
+include::../../../../../shared/asciidoctor.adoc[]
+endif::[]
+
+[.abstract-title]
+摘要
+
+在开源世界里，「Linux」几乎是「操作系统」的同义词，但它并不是唯一的开源 UNIX(R) 操作系统。
+
+那么秘密是什么呢？为什么 BSD 没有更广为人知？本白皮书将探讨这些以及其他问题。
+
+在本文中，BSD 和 Linux 之间的区别将__像这样__标注。
+
+'''
+
+toc::[]
+
+[[what-is-bsd]]
+== 什么是 BSD？
+
+BSD 代表「伯克利软件发行版」（Berkeley Software Distribution）。
+它是加州大学伯克利分校源代码发行的名称，最初是 AT&T 研究院 UNIX(R) 操作系统的扩展。
+几个开源操作系统项目都基于一个名为 4.4BSD-Lite 的源代码发行版。
+此外，它们还包含来自其他开源项目的一些软件包，其中最著名的是 GNU 项目。
+整个操作系统包括：
+
+* BSD 内核，负责处理进程调度、内存管理、对称多处理（SMP）、设备驱动程序等。
+* C 库，系统的基础 API。
++
+__BSD C 库基于伯克利的代码，而非 GNU 项目。__
+* 诸如 shell、文件工具、编译器和链接器等实用程序。
++
+__一些实用程序源自 GNU 项目，另一些则不是。__
+* X 窗口系统，负责处理图形显示。
++
+大多数 BSD 版本中使用的 X 窗口系统由 http://www.X.org/[X.Org 项目] 维护。
+FreeBSD 允许用户从各种桌面环境中选择，如 Gnome、KDE 或 Xfce；以及轻量级窗口管理器，如 Openbox、Fluxbox 或 Awesome。
+* 许多其他程序和实用工具。
+
+[[what-a-real-unix]]
+== 什么，一个真正的 UNIX(R)？
+
+BSD 操作系统不是克隆品，而是 AT&T 研究院 UNIX(R) 操作系统的开源衍生品，后者也是现代 UNIX(R) System V 的祖先。
+这可能会让你感到惊讶。
+既然 AT&T 从未将其代码作为开源发布，这怎么可能发生呢？
+
+的确，AT&T UNIX(R) 不是开源的，从版权意义上说，BSD 也绝不是 UNIX(R)，但另一方面，AT&T 也从其他项目引入了源代码，特别是加州大学伯克利分校的计算机科学研究组（CSRG）。从 1976 年开始，CSRG 开始发布他们的软件磁带，称之为「伯克利软件发行版」或 __BSD__。
+
+最初的 BSD 版本主要由用户程序组成，但当 CSRG 与国防高级研究计划局（DARPA）签订合同，升级其网络 ARPANET 的通信协议时，情况发生了巨大变化。
+新协议被称为__互联网协议__，后来根据最重要的协议称为 _TCP/IP_。
+第一个广泛分发的实现是 1982 年 4.2BSD 的一部分。
+
+在 20 世纪 80 年代，许多新的工作站公司涌现出来。
+许多公司宁愿授权使用 UNIX(R) 而不是自己开发操作系统。
+特别是，Sun Microsystems 授权了 UNIX(R) 并实现了一个 4.2BSD 的版本，他们称之为 SunOS(TM)。
+当 AT&T 自己被允许商业销售 UNIX(R) 时，他们从一个相当简陋的实现 System III 开始，很快就推出了 System V。
+System V 的代码库不包括网络功能，所以所有的实现都包含了来自 BSD 的附加软件，包括 TCP/IP 软件，以及像 _csh_ shell 和 _vi_ 编辑器这样的实用程序。
+总的来说，这些增强功能被称为__伯克利扩展__。
+
+BSD 磁带包含 AT&T 源代码，因此需要 UNIX(R) 源代码许可证。
+到 1990 年，CSRG 的资金即将耗尽，面临关闭。
+该小组的一些成员决定发布不含 AT&T 专有代码的 BSD 代码，这是开源的。
+这最终通过__网络磁带 2__（通常称为 __Net/2__）得以实现。
+Net/2 不是一个完整的操作系统：大约 20% 的内核代码缺失。
+CSRG 的一名成员 William F. Jolitz 编写了剩余的代码，并于 1992 年初以 __386BSD__ 的名义发布。
+与此同时，另一组前 CSRG 成员成立了一家名为 http://www.bsdi.com/[Berkeley Software Design Inc.] 的商业公司，并发布了一个名为 http://www.bsdi.com/[BSD/386] 的操作系统的测试版，该系统基于相同的源代码。
+该操作系统的名称后来改为 BSD/OS。
+
+386BSD 从未成为一个稳定的操作系统。
+相反，1993 年从中分裂出另外两个项目：http://www.NetBSD.org/[NetBSD] 和 link:https://www.FreeBSD.org/[FreeBSD]。
+这两个项目最初的分歧是由于对 386BSD 改进的耐心程度不同：NetBSD 的人在年初就开始了，而 FreeBSD 的第一个版本直到年底才准备好。
+在此期间，代码库已经分化得足以使其难以合并。
+此外，如下文所述，这些项目有不同的目标。1996 年，http://www.OpenBSD.org/[OpenBSD] 从 NetBSD 分裂出来，2003 年，http://www.dragonflybsd.org/[DragonFlyBSD] 从 FreeBSD 分裂出来。
+
+[[why-is-bsd-not-better-known]]
+== 为什么 BSD 没有更广为人知？
+
+由于多种原因，BSD 相对不为人所知：
+
+. BSD 开发者通常更感兴趣于完善他们的代码，而不是市场推广。
+. Linux 的大部分流行度归功于 Linux 项目之外的因素，例如媒体以及为提供 Linux 服务而成立的公司。直到最近，开源 BSD 还没有这样的支持者。
+. 1992 年，AT&T 起诉 http://www.bsdi.com/[BSDI]（BSD/386 的供应商），指控该产品包含 AT&T 版权的代码。此案于 1994 年庭外和解，但诉讼的阴影仍然困扰着人们。2000 年 3 月，网上发表的一篇文章声称该案「最近已解决」。
++
+诉讼确实澄清了一个细节，即命名问题：在 20 世纪 80 年代，BSD 被称为「BSD UNIX(R)」。
+随着从 BSD 中删除了 AT&T 代码的最后痕迹，它也失去了使用 UNIX(R) 名称的权利。
+因此，你会在书名中看到「4.3BSD UNIX(R) 操作系统」和「4.4BSD 操作系统」的提法。
+
+[[comparing-bsd-and-linux]]
+== 比较 BSD 和 Linux
+
+那么，比如说，Debian Linux 和 FreeBSD 之间到底有什么区别呢？对于普通用户来说，区别小得惊人：两者都是类 UNIX(R) 操作系统。
+两者都是由非商业项目开发的（当然，这不适用于许多其他 Linux 发行版）。
+在下一节中，我们将探讨 BSD 并将其与 Linux 进行比较。
+该描述最适用于 FreeBSD，估计占 BSD 安装量的 80%，但与 NetBSD、OpenBSD 和 DragonFlyBSD 的差异很小。
+
+=== 谁拥有 BSD？
+
+没有任何个人或公司拥有 BSD。
+它是由一个遍布全球的、技术精湛、忠诚奉献的贡献者社区创建和分发的。
+BSD 的一些组件本身就是开源项目，由不同的项目维护者管理。
+
+=== BSD 是如何开发和更新的？
+
+BSD 内核是遵循开源开发模式进行开发和更新的。
+每个项目都维护一个可公开访问的_源代码树_，其中包含项目的所有源文件，包括文档和其他附带文件。
+用户可以获得任何版本的完整副本。
+
+全球有大量开发者为 BSD 的改进做出贡献。
+他们分为三种类型：
+
+* _贡献者_编写代码或文档。他们不被允许直接向源代码树提交（添加代码）。他们的代码要被包含在系统中，必须经过注册的开发者（称为__提交者__）的审查和签入。
+* _提交者_是具有源代码树写入权限的开发者。要成为一名提交者，个人必须在他们活跃的领域表现出能力。
++
+提交者可以自行决定在向源代码树提交更改之前是否需要获得授权。
+一般来说，有经验的提交者可以在未经共识的情况下进行明显正确的更改。
+例如，文档项目的提交者可以纠正排版或语法错误而无需审查。
+另一方面，进行影响深远或复杂更改的开发者则应在提交前将其更改提交审查。
+在极端情况下，具有首席架构师等职能的核心团队成员可以下令从树中删除更改，这个过程称为_退回_。
+所有提交者都会收到描述每次提交的邮件，因此不可能秘密提交。
+* _核心团队_。FreeBSD 和 NetBSD 各有一个核心团队来管理项目。核心团队是在项目过程中发展起来的，他们的角色并不总是定义得很清楚。成为核心团队成员不一定要是开发者，尽管通常是。核心团队的规则因项目而异，但总的来​​说，他们在项目方向上的发言权比非核心团队成员要多。
+
+这种安排在很多方面与 Linux 不同：
+
+. 没有一个人控制系统的内​​容。实际上，这种差异被夸大了，因为首席架构师可以要求代码被退回，即使在 Linux 项目中，也有几个人被允许进行更改。
+. 另一方面，_有_一个中央存储库，一个可以找到整个操作系统源代码（包括所有旧版本）的地方。
+. BSD 项目维护整个「操作系统」，而不仅仅是内核。这种区别只是略有作用：没有应用程序，BSD 和 Linux 都没有用。BSD 下使用的应用程序通常与 Linux 下使用的应用程序相同。
+. 由于对单个 Git 源代码树的正式维护，BSD 的开发是清晰的，并且可以通过版本号或日期访问系统的任何版本。Git 还允许对系统进行增量更新：例如，FreeBSD 存储库每天更新约 100 次。这些更改大多很小。
+
+=== BSD 版本
+
+FreeBSD、NetBSD 和 OpenBSD 以三种不同的「版本」提供系统。
+与 Linux 一样，版本被分配一个诸如 1.4.1 或 3.5 之类的编号。
+此外，版本号还有一个后缀，表明其用途：
+
+. 系统的开发版本称为 _CURRENT_。FreeBSD 为 CURRENT 分配一个编号，例如 FreeBSD 5.0-CURRENT。NetBSD 使用稍微不同的命名方案，并附加一个单字母后缀，表示内部接口的更改，例如 NetBSD 1.4.3G。OpenBSD 不分配编号（「OpenBSD-current」）。系统所有的新开发都进入这个分支。
+. 项目定期（每年两到四次）推出系统的 _RELEASE_ 版本，该版本可在 CD-ROM 上获得，并可从 FTP 站点免费下载，例如 OpenBSD 2.6-RELEASE 或 NetBSD 1.4-RELEASE。RELEASE 版本面向最终用户，是系统的正常版本。NetBSD 还提供带有第三位数字的_补丁版本_，例如 NetBSD 1.4.2。
+. 在 RELEASE 版本中发现错误后，会进行修复，并将修复程序添加到 Git 树中。在 FreeBSD 中，由此产生的版本称为 _STABLE_ 版本，而在 NetBSD 和 OpenBSD 中，它继续被称为 RELEASE 版本。较小的新功能也可以在 CURRENT 分支中经过一段时间的测试后添加到此分支。安全性和其他重要的错误修复也适用于所有受支持的 RELEASE 版本。
+
+_相比之下，Linux 维护两个独立的代码树：稳定版和开发版。
+稳定版的次版本号为偶数，例如 2.0、2.2 或 2.4。
+开发版的次版本号为奇数，例如 2.1、2.3 或 2.5。
+在每种情况下，该数字后面都跟着一个指定确切版本的数字。
+此外，每个供应商都会添加自己的用户区程序和实用程序，因此发行版的名称也很重要。
+每个发行版供应商还为发行版分配版本号，因此完整的描述可能是「TurboLinux 6.0 with kernel 2.2.14」之类的内容。_
+
+=== 有哪些 BSD 版本可用？
+
+与众多 Linux 发行版相比，只有四个主要的开源 BSD。每个 BSD 项目都维护自己的源代码树和自己的内核。然而，在实践中，项目之间的用户区代码的分歧似乎比 Linux 中的要少。
+
+很难对每个项目的目标进行分类：差异非常主观。基本上，
+
+* FreeBSD 旨在为最终用户提供高性能和易用性，是 Web 内容提供商的最爱。它运行在 link:https://www.FreeBSD.org/platforms/[多个平台] 上，并且用户数量明显多于其他项目。
+* NetBSD 旨在实现最大的可移植性：「当然它能运行 NetBSD」。它运行在从掌上电脑到大型服务器的各种机器上，甚至在 NASA 的太空任务中也曾使用过。在旧的非 Intel(R) 硬件上运行，它是一个特别好的选择。
+* OpenBSD 旨在实现安全性和代码纯度：它结合了开源概念和严格的代码审查，以创建一个可证明正确的系统，使其成为银行、证券交易所和美国政府部门等注重安全的组织的选择。与 NetBSD 一样，它运行在多个平台上。
+* DragonFlyBSD 旨在在从单节点 UP 系统到大规模集群系统的所有环境下实现高性能和可伸缩性。DragonFlyBSD 有几个长期的技术目标，但重点在于提供一个易于理解、维护和开发的 SMP-capable 基础设施。
+
+还有另外两个非开源的 BSD UNIX(R) 操作系统，BSD/OS 和 Apple 的 Mac OS(R) X：
+
+* BSD/OS 是 4.4BSD 衍生品中最古老的一个。它不是开源的，尽管可以以相对较低的成本获得源代码许可证。它在许多方面与 FreeBSD 相似。在 Wind River Systems 收购 BSDi 两年后，BSD/OS 未能作为独立产品幸存下来。Wind River 可能仍提供支持和源代码，但所有新开发都集中在 VxWorks 嵌入式操作系统上。
+* http://www.apple.com/macosx/server/[Mac OS(R) X] 是 Apple(R) Mac(R) 系列操作系统的最新版本。该操作系统的 BSD 核心 http://developer.apple.com/darwin/[Darwin] 可作为适用于 x86 和 PPC 计算机的全功能开源操作系统。然而，Aqua/Quartz 图形系统和 Mac OS(R) X 的许多其他专有方面仍然是闭源的。一些 Darwin 开发者也是 FreeBSD 提交者，反之亦然。
+
+=== BSD 许可证与 GNU 公共许可证有何不同？
+
+Linux 在 http://www.fsf.org/copyleft/gpl.html[GNU 通用公共许可证]（GPL）下可用，该许可证旨在消除闭源软件。
+特别是，根据 GPL 发布的产品的任何衍生作品，如果被要求，也必须提供源代码。
+相比之下，http://www.opensource.org/licenses/bsd-license.html[BSD 许可证] 的限制性较小：允许仅二进制分发。
+这对于嵌入式应用尤其有吸引力。
+
+=== 我还应该知道什么？
+
+由于 BSD 可用的应用程序比 Linux 少，BSD 开发者创建了一个 Linux 兼容性包，允许 Linux 程序在 BSD 下运行。
+该包包括内核修改（以正确执行 Linux 系统调用）和 Linux 兼容性文件（如 C 库）。
+在相同速度的机器上，Linux 应用程序在 Linux 机器上运行和在 BSD 机器上运行之间没有明显的执行速度差异。
+
+BSD 的「全部来自一个供应商」的性质意味着升级比 Linux 通常情况要容易得多。
+BSD 通过为早期库版本提供兼容性模块来处理库版本升级，因此可以毫无问题地运行几年前的二进制文件。
+
+=== 我应该使用 BSD 还是 Linux？
+
+这一切在实践中意味着什么？谁应该使用 BSD，谁应该使用 Linux？
+
+这是一个很难回答的问题。
+以下是一些指导原则：
+
+* 「如果没坏，就不要修理它」：如果你已经在使用一个开源操作系统，并且你对它很满意，那么可能没有充分的理由去改变。
+* BSD 系统，特别是 FreeBSD，其性能可能明显高于 Linux。但这并非普遍情况。在许多情况下，性能几乎没有差异。在某些情况下，Linux 的性能可能优于 FreeBSD。
+* 总的来说，BSD 系统在可靠性方面享有更好的声誉，这主要是由于其更成熟的代码库。
+* BSD 项目在其文档的质量和完整性方面享有更好的声誉。各种文档项目旨在提供多种语言的、涵盖系统所有方面的、积极更新的文档。
+* BSD 许可证可能比 GPL 更具吸引力。
+* BSD 可以执行大多数 Linux 二进制文件，而 Linux 不能执行 BSD 二进制文件。许多 BSD 实现还可以执行来自其他类 UNIX(R) 系统的二进制文件。因此，BSD 可能比 Linux 提供更容易从其他系统迁移的途径。
+
+=== 谁为 BSD 提供支持、服务和培训？
+
+http://www.ixsystems.com/[iXsystems, Inc.] 为 FreeBSD 提供支持合同。
+
+此外，每个项目都有一个可供雇佣的顾问列表：link:https://www.FreeBSD.org/commercial/consult_bycat/[FreeBSD]、http://www.netbsd.org/gallery/consultants.html[NetBSD] 和 http://www.openbsd.org/support.html[OpenBSD]。
