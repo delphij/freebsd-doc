@@ -142,7 +142,6 @@ ePub 文件格式。
 
 [source,shell]
 ....
-% cd ~/doc/documentation
 % make run BIND=192.168.15.10 HUGO_ARGS="-p 8080"
 ....
 
@@ -266,16 +265,16 @@ ePub 文件格式。
 #
 # Targets intended for use on the command line
 #
-# all (default)	- generate the books TOC and compile all the documentation
-# clean		- removes generated files
-# run		- serves the built documentation site for local browsing
-# pdf		- build PDF versions of the articles and books.
-# html		- build HTML versions of the articles and books for
-#		  offline use.
-#		  If variable DOC_HTML_ARCHIVE is set, all documents will be
-#		  archived/compressed, and only these files will be kept in the public
-#		  directory.
-# epub		- build EPUB versions of the articles and books (Experimental).
+# all (default)	-	generate the books TOC and compile all the documentation
+# clean		- 	removes generated files
+# run		-	serves the built documentation site for local browsing
+# pdf		-	build PDF versions of the articles and books.
+# html		-	build HTML versions of the articles and books for
+#			offline use.
+#			If variable DOC_HTML_ARCHIVE is set, all documents will be
+#			archived/compressed, and only these files will be kept in the public
+#			directory.
+# epub		-	build EPUB versions of the articles and books (Experimental).
 #
 # The run target uses hugo's built-in webserver to make the documentation site
 # available for local browsing.  The documentation should have been built prior
@@ -292,29 +291,29 @@ BOOKONLY_LANGS=		mn
 # List of all languages we have content for
 ALL_LANGUAGES=	bn-bd da de el en es fr hu it ja ko mn nl pl pt-br ru tr zh-cn zh-tw <.>
 
-LOCALBASE?= 	/usr/local
+LOCALBASE?=	/usr/local
 
-RUBY_CMD = 	${LOCALBASE}/bin/ruby <.>
-HUGO_CMD = 	${LOCALBASE}/bin/hugo <.>
-HUGO_ARGS?= 	--verbose --minify
+RUBY_CMD =	${LOCALBASE}/bin/ruby <.>
+HUGO_CMD =	${LOCALBASE}/bin/hugo <.>
+HUGO_ARGS?=	--verbose --minify
 HUGO_OFFLINE_ARGS?= 	--environment offline --verbose --minify
 ASCIIDOCTOR_CMD=	${LOCALBASE}/bin/asciidoctor
 ASCIIDOCTORPDF_CMD=	${LOCALBASE}/bin/asciidoctor-pdf
 
 .if defined(DOC_LANG) && !empty(DOC_LANG)
-LANGUAGES= 	${DOC_LANG:S/,/ /g}
+LANGUAGES=	${DOC_LANG:S/,/ /g}
 .if  ${LANGUAGES:Men} == "" && ${.TARGETS:Mpdf*} == "" && ${.TARGETS:Mhtml*} == ""
 .warning "Warning: cannot skip 'en'; adding it back"
-LANGUAGES+= 	en
+LANGUAGES+=	en
 .endif
 .else
-LANGUAGES= 	${ALL_LANGUAGES}
+LANGUAGES=	${ALL_LANGUAGES}
 .endif
 
-RUBYLIB = 	../shared/lib
+RUBYLIB =	../shared/lib
 .export	RUBYLIB
 
-RUN_DEPENDS= 	${HUGO_CMD} \
+RUN_DEPENDS=	${HUGO_CMD} \
 		${LOCALBASE}/bin/asciidoctor \
 		${LOCALBASE}/bin/rougify
 
@@ -347,13 +346,14 @@ ARTICLE_LANGS:=	${ARTICLE_LANGS:N${a}}
 SKIP_LANGS=
 .for a in ${ALL_LANGUAGES}
 .if  ${LANGUAGES:M${a}} == ""
-SKIP_LANGS+= 	${a}
+SKIP_LANGS+=    ${a}
 .endif
 .endfor
 
 .ORDER: all run <.>
 
 .ORDER: requirements <.>
+.ORDER: starting-message
 .ORDER: starting-message build
 .ORDER: build
 
@@ -381,15 +381,15 @@ requirements-epub:
 .endif
 
 starting-message: .PHONY <.>
-	t@echo ---------------------------------------------------------------
-	t@echo 			Building the documentation
-	t@echo 	 included languages: ${LANGUAGES}
-	t@echo 	 excluded languages: ${SKIP_LANGS}
-	t@echo ---------------------------------------------------------------
+	@echo ---------------------------------------------------------------
+	@echo                   Building the documentation
+	@echo  included languages: ${LANGUAGES}
+	@echo  excluded languages: ${SKIP_LANGS}
+	@echo ---------------------------------------------------------------
 
 generate-pgpkeys-txt: static/pgpkeys/pgpkeys.txt
 
-static/pgpkeys/pgpkeys.txt:
+static/pgpkeys/pgpkeys.txt: static/pgpkeys/*key
 	${RUBY_CMD} ./tools/global-pgpkeys-creator.rb
 
 run-local: .PHONY <.>
@@ -555,8 +555,8 @@ epub-articles-clean:
 #
 # Targets intended for use on the command line
 #
-# all (default)	- generate the releases.toml and compile all the website
-# run		- serves the built website for local browsing
+# all (default)	-	generate the releases.toml and compile all the website
+# run	-			serves the built website for local browsing
 #
 # The run target uses hugo's built-in webserver to make the built website
 # available for local browsing.  The website should have been built prior
@@ -568,12 +568,12 @@ MAINTAINER=carlavilla@FreeBSD.org <.>
 # List of all languages we have content for
 ALL_LANGUAGES=	de el en es fr hu it ja nl ru tr zh-cn zh-tw
 
-LOCALBASE?= 	/usr/local
+LOCALBASE?=	/usr/local
 
-RUBY_CMD = 	${LOCALBASE}/bin/ruby <.>
-HUGO_CMD = 	${LOCALBASE}/bin/hugo <.>
-HUGO_ARGS?= 	--verbose
-RUBYLIB = 	../shared/lib
+RUBY_CMD =	${LOCALBASE}/bin/ruby <.>
+HUGO_CMD =	${LOCALBASE}/bin/hugo <.>
+HUGO_ARGS?=	--verbose
+RUBYLIB =	../shared/lib
 .export	RUBYLIB
 
 .ifndef HOSTNAME
@@ -587,13 +587,13 @@ RUBYLIB = 	../shared/lib
 .endif
 
 .if defined(DOC_LANG) && !empty(DOC_LANG)
-LANGUAGES=	 ${DOC_LANG:S/,/ /g}
-.if 	${LANGUAGES:Men} == ""
+LANGUAGES=      ${DOC_LANG:S/,/ /g}
+.if  ${LANGUAGES:Men} == ""
 .warning "Warning: cannot skip 'en'; adding it back"
 LANGUAGES+=	en
 .endif
 .else
-LANGUAGES=	 ${ALL_LANGUAGES}
+LANGUAGES=	${ALL_LANGUAGES}
 .endif
 
 # Take the list of all languages, and take out the ones we have been

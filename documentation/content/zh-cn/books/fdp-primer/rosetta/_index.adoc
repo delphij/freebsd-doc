@@ -58,44 +58,37 @@ endif::[]
 |===
 |语言特性 |Docbook | AsciiDoc
 
-
 |*粗体*
 |<strong>bold</strong>
-|*bold*
-
+|\*bold*
 
 |*斜体*
 |<emphasis>Italic</emphasis>
-|_*Italic*_
-
+|\_Italic_
 
 |*等宽字体*
 |<literal>Monospace</literal>
-|`Monospace`
-
+|\`Monospace`
 
 |*段落*
 |<para>This is a paragraph</para>
 |This is a paragraph
 
-
 |*按键*
 |<keycap>F11</keycap>
-|`kbd`:[F11]
-
+|\kbd:[F11]
 
 |*链接*
 a|
 [source,xml]
 ----
-<link xlink:href="https://www.freebsd.org/where/">Download FreeBSD</link>
+<link xlink:href="https://www.freebsd.org/where/">下载 FreeBSD</link>
 ----
 a|
 [source]
 ----
-link:https://www.freebsd.org/where/[Download FreeBSD]
+link:https://www.freebsd.org/where/[下载 FreeBSD]
 ----
-
 
 |*章节*
 a|
@@ -111,7 +104,6 @@ a|
  [[id]]
  = Section 1
 ----
-
 
 |*无序列表*
 a|
@@ -133,7 +125,6 @@ a|
 * When to build a custom kernel.
 * How to take a hardware inventory.
 ----
-
 
 |*有序列表*
 a|
@@ -163,7 +154,6 @@ a|
 . Four
 ----
 
-
 |*变量列表*
 a|
 [source,xml]
@@ -184,7 +174,6 @@ amd64::
 This is the most common desktop...
 ----
 
-
 |*源代码*
 a|
 [source,xml]
@@ -201,7 +190,6 @@ a|
 # mkdir -p /var/spool/lpd/lp
 ----
 ....
-
 
 |*字面量块*
 a|
@@ -230,7 +218,6 @@ options         IPFIREWALL_DEFAULT_TO_ACCEPT
 options         IPDIVERT
 ....
 ----
-
 
 |*图片*
 a|
@@ -262,7 +249,6 @@ a|
 image::bsdinstall/bsdinstall-newboot-loader-menu[The FreeBSD loader menu, with options 1-6 to boot multi-user, boot single user, escape to loader prompt, reboot, select a kernel to load, and select boot options]
 ----
 
-
 |*包含*
 |n/a
 a|
@@ -270,7 +256,6 @@ a|
 ----
 \include::chapter.adoc[]
 ----
-
 
 |*表格*
 a|
@@ -302,16 +287,15 @@ a|
 [[partition-schemes]]
 .Partitioning Schemes
 [cols="1,1", frame="none", options="header"]
-|===
-| Abbreviation
-| Description
+\|===
+\| Abbreviation
+\| Description
 
-|APM
-|Apple Partition Map, used by PowerPC(R).
+\|APM
+\|Apple Partition Map, used by PowerPC(R).
 
-|===
+\|===
 ----
-
 
 |*警告框*
 a|
@@ -329,6 +313,5 @@ a|
 This is a tip
 ====
 ----
-
 
 |===

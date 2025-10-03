@@ -33,9 +33,9 @@ include::shared/authors.adoc[]
 include::shared/mirrors.adoc[]
 include::shared/releases.adoc[]
 include::shared/attributes/attributes-{{% lang %}}.adoc[]
-include::shared/{% lang %}/teams.adoc[]
-include::shared/{% lang %}/mailing-lists.adoc[]
-include::shared/{% lang %}/urls.adoc[]
+include::shared/{{% lang %}}/teams.adoc[]
+include::shared/{{% lang %}}/mailing-lists.adoc[]
+include::shared/{{% lang %}}/urls.adoc[]
 toc::[]
 endif::[]
 ifdef::backend-pdf,backend-epub3[]
@@ -107,7 +107,7 @@ if has("autocmd")
 endif " has(autocmd)
 
 function Set_Highlights()
-  "match ExtraWhitespace /^\s* \s*|\s\+\$
+  "match ExtraWhitespace /^\s* \s*\|\s\+$/
   return 0
 endfunction " Set_Highlights_Adoc()
 
@@ -118,7 +118,7 @@ function Set_Highlights_MAN()
 endfunction " Set_Highlights_MAN()
 
 function ShowSpecial()
-  setlocal list listchars=tab:>>,trail:*,eol:$ 
+  setlocal list listchars=tab:>>,trail:*,eol:$
   hi def link nontext ErrorMsg
   return 0
 endfunction " ShowSpecial()
@@ -179,7 +179,7 @@ let g:ale_fix_on_save = 1
 [[editor-config-emacs-igor]]
 === 使用 Flycheck 和 Igor 进行自动校对
 
-The link:https://www.flycheck.org/[Flycheck] 软件包可从 link:https://melpa.org/[Milkypostman 的 Emacs Lisp 软件包存档] (MELPA) 获得。
+link:https://www.flycheck.org/[Flycheck] 软件包可从 link:https://melpa.org/[Milkypostman 的 Emacs Lisp 软件包存档] (MELPA) 获得。
 如果 MELPA 尚未在 Emacs 的 packages-archives 中，可以通过评估以下内容来添加它
 
 [source,emacs-lisp]
@@ -203,8 +203,8 @@ The link:https://www.flycheck.org/[Flycheck] 软件包可从 link:https://melpa.
 (flycheck-define-checker igor
   "FreeBSD Documentation Project sanity checker.
 
-  See URLs https://www.freebsd.org/docproj/ and
-  http://www.freshports.org/textproc/igor/."
+See URLs https://www.freebsd.org/docproj/ and
+http://www.freshports.org/textproc/igor/."
   :command ("igor" "-X" source-inplace)
   :error-parser flycheck-parse-checkstyle
   :modes (nxml-mode)
@@ -259,26 +259,26 @@ color magenta "^===[[:space:]].*$"
 color magenta "^~~~~+$"
 # h4
 color green "^====[[:space:]].*$"
-color green "^\^\^\^\^$"
+color green "^\^\^\^\^+$"
 # h5
 color brightblue "^=====[[:space:]].*$"
 color brightblue "^\+\+\+\++$"
 # attributes
 color brightgreen ":.*:"
 color brightred "\{[a-z0-9]*\}"
-color red "\\\{[a-z0-9]*\\}"
+color red "\\\{[a-z0-9]*\}"
 color red "\+\+\+\{[a-z0-9]*\}\+\+\+"
 # Paragraph Title
 color yellow "^\..*$"
 # source
 color magenta "^\[(source,.+|NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]"
 # Other markup
-color yellow ".*[[:space:]]+$"
+color yellow ".*[[:space:]]\+$"
 color yellow "_[^_]+_"
 color yellow "\*[^\*]+\*"
 color yellow "\+[^\+]+\+"
 color yellow "`[^`]+`"
-color yellow "^[^\^]+\^"
+color yellow "\^[^\^]+\^"
 color yellow "~[^~]+~"
 color yellow "'[^']+'"
 color cyan "`{1,2}[^']+'{1,2}"

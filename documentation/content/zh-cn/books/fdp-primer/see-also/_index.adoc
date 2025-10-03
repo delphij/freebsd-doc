@@ -48,7 +48,7 @@ toc::[]
 include::../../../../../shared/asciidoctor.adoc[]
 endif::[]
 
-本文档故意不详尽地讨论 AsciiDoc 和 FreeBSD 文档项目。
+本文档特意地没有详尽讨论 AsciiDoc 和 FreeBSD 文档项目。
 有关这些的更多信息，建议您参阅以下网站。
 
 [[see-also-fdp]]

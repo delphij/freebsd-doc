@@ -319,7 +319,7 @@ $ bmake run USE_RUBYGEMS=YES RUBY_CMD="$(brew --prefix ruby)/bin/ruby" HUGO_CMD=
 +
 . 使用基于 Web 的 https://bugs.FreeBSD.org/bugzilla/enter_bug.cgi?product=Documentation[问题报告] 系统提交补丁或 diff 文件。
 如果使用 Web 表单，请输入一个「摘要」，内容为「问题简短描述」。
-选择「组件」为 `Documentation`。
+选择 `Documentation`「组件」。
 在「描述」字段中，输入问题的简短描述，并在「关键字」字段中添加「patch」。
 使用「添加附件」按钮附加补丁或 diff 文件。
 最后，使用「提交错误」按钮将您的 diff 提交到问题报告系统。
@@ -328,7 +328,7 @@ $ bmake run USE_RUBYGEMS=YES RUBY_CMD="$(brew --prefix ruby)/bin/ruby" HUGO_CMD=
 [[overview-doc]]
 == FreeBSD 文档集
 
-The FDP 负责四类 FreeBSD 文档。
+FDP 负责四类 FreeBSD 文档。
 
 * _手册_：手册是面向 FreeBSD 用户的综合性在线资源和参考。
 * _FAQ_：FAQ（常见问题解答）采用简短的问答形式，解答在各种 FreeBSD 邮件列表和论坛上经常被问到的问题。这种格式不适合长篇大论的回答。

@@ -89,18 +89,20 @@ https://weblate.org/en/[Weblate] 是一款基于 Web 的开源软件，专注于
 
 [.programlisting]
 ....
-主题：自我介绍：姓名和语言
+Subject: Self-Introduction: Name and language
 
-姓名：      姓名（使用首选名称）
-地点：      城市，国家（可选）
-登录名：     用户名或电子邮件（必需）
-语言：  要翻译的语言（必需）
-职业或学生身份：（可选）
-关于您：（自由格式——您愿意与他人分享的信息：
-  公司、学校、其他隶属关系、历史资格、您参与过的其他项目、
-  计算机技能的水平和类型、其他相关技能等）
-您与 FreeBSD 项目：（自由格式：感兴趣的其他 FreeBSD 项目、
-  评论等）
+Name:      Name (use preferred name)
+Location:  City, country (optional)
+Login:     username or email (essential)
+Language:  Language to translate (essential)
+Profession or student status: (optional)
+About You: (free format -- info which you feel comfortable sharing with
+  others: company, school, other affiliation, historical qualifications, other
+  projects you have worked on, level and type of computer skills, other relevant skills,
+  etc.)
+You and the FreeBSD Project: (free format: other FreeBSD projects of
+  interest, comments, etc.)
+  interest, comments, etc.)
 ....
 
 [[weblate-login]]

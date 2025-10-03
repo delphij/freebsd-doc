@@ -111,7 +111,7 @@ http://www.gnu.org/software/gettext/[GNU gettext] 系统为翻译人员提供了
 [[po-translations-quick-start-translation]]
 [.procedure]
 ====
-.步骤：翻译
+.Procedure: 翻译
 
 使用 PO 编辑器在 PO 文件中输入翻译。
 有几种不同的编辑器可用。这里显示的是来自 package:editors/poedit[] 的 [.filename]#poedit#。
@@ -125,7 +125,7 @@ http://www.gnu.org/software/gettext/[GNU gettext] 系统为翻译人员提供了
 [[po-translations-quick-generating-a-translated-document]]
 [.procedure]
 ====
-.步骤：生成翻译文档
+.Procedure: 生成翻译文档
 . 生成翻译文档：
 +
 [source,shell]
@@ -229,7 +229,7 @@ _lang_ 是一个两个字符的小写代码。
 |[.filename]#tr#
 
 |中文
-|中国
+|中国大陆地区
 |[.filename]#zh-cn#
 
 |中文
