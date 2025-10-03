@@ -104,10 +104,10 @@ CSRG 的一名成员 William F. Jolitz 编写了剩余的代码，并于 1992 �
 该操作系统的名称后来改为 BSD/OS。
 
 386BSD 从未成为一个稳定的操作系统。
-相反，1993 年从中分裂出另外两个项目：http://www.NetBSD.org/[NetBSD] 和 link:https://www.FreeBSD.org/[FreeBSD]。
+相反，1993 年从中分裂出另外两个项目： http://www.NetBSD.org/[NetBSD] 和 link:https://www.FreeBSD.org/[FreeBSD]。
 这两个项目最初的分歧是由于对 386BSD 改进的耐心程度不同：NetBSD 的人在年初就开始了，而 FreeBSD 的第一个版本直到年底才准备好。
 在此期间，代码库已经分化得足以使其难以合并。
-此外，如下文所述，这些项目有不同的目标。1996 年，http://www.OpenBSD.org/[OpenBSD] 从 NetBSD 分裂出来，2003 年，http://www.dragonflybsd.org/[DragonFlyBSD] 从 FreeBSD 分裂出来。
+此外，如下文所述，这些项目有不同的目标。1996 年， http://www.OpenBSD.org/[OpenBSD] 从 NetBSD 分裂出来，2003 年， http://www.dragonflybsd.org/[DragonFlyBSD] 从 FreeBSD 分裂出来。
 
 [[why-is-bsd-not-better-known]]
 == 为什么 BSD 没有更广为人知？
@@ -200,7 +200,7 @@ _相比之下，Linux 维护两个独立的代码树：稳定版和开发版。
 
 Linux 在 http://www.fsf.org/copyleft/gpl.html[GNU 通用公共许可证]（GPL）下可用，该许可证旨在消除闭源软件。
 特别是，根据 GPL 发布的产品的任何衍生作品，如果被要求，也必须提供源代码。
-相比之下，http://www.opensource.org/licenses/bsd-license.html[BSD 许可证] 的限制性较小：允许仅二进制分发。
+相比之下， http://www.opensource.org/licenses/bsd-license.html[BSD 许可证] 的限制性较小：允许仅二进制分发。
 这对于嵌入式应用尤其有吸引力。
 
 === 我还应该知道什么？
