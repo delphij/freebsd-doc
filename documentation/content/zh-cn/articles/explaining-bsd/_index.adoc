@@ -230,4 +230,4 @@ BSD 通过为早期库版本提供兼容性模块来处理库版本升级，因�
 
 http://www.ixsystems.com/[iXsystems, Inc.] 为 FreeBSD 提供支持合同。
 
-此外，每个项目都有一个可供雇佣的顾问列表：link:https://www.FreeBSD.org/commercial/consult_bycat/[FreeBSD]、http://www.netbsd.org/gallery/consultants.html[NetBSD] 和 http://www.openbsd.org/support.html[OpenBSD]。
+此外，每个项目都有一个可供雇佣的顾问列表：link:https://www.FreeBSD.org/commercial/consult_bycat/[FreeBSD]、 http://www.netbsd.org/gallery/consultants.html[NetBSD] 和 http://www.openbsd.org/support.html[OpenBSD]。
