@@ -1,11 +1,16 @@
 ---
-title: 为 FreeBSD 提供帮助
+title: 为 FreeBSD 做贡献
 authors:
   - author: Jordan Hubbard
+  - author: Sam Lawrance
+  - author: Mark Linimon
+description: 如何为 FreeBSD 项目做贡献
 trademarks: ["freebsd", "ieee", "general"]
+weight: 15
+tags: ["贡献", "FreeBSD", "非程序员任务", "程序员任务"]
 ---
 
-= 为 FreeBSD 提供帮助
+= 为 FreeBSD 做贡献
 :doctype: article
 :toc: macro
 :toclevels: 1
@@ -36,112 +41,196 @@ ifndef::env-beastie[]
 include::../../../../../shared/asciidoctor.adoc[]
 endif::[]
 
+pass:[<!-- vale FreeBSD.Pronouns = NO -->]
+
 [.abstract-title]
 摘要
 
-无论是作为个人还是组织机构，如果您希望为FreeBSD项目提供帮助， 都可以在本文中找到合适的方法。
+本文介绍了个人或组织可以为 FreeBSD 项目做出贡献的不同方式。
 
 '''
 
 toc::[]
 
-您希望给 FreeBSD 项目做点什么吗？ 太好了， 我们欢迎您。 FreeBSD 正是 _依靠_ 广大用户的贡献才得以发展壮大的。 我们不仅非常感谢您所做的贡献，而且，这些工作对于 FreeBSD 的持续发展也至关重要。
+您想为 FreeBSD 做出贡献吗？
+那太好了！
+FreeBSD 的生存 _依赖_ 于其用户群的贡献。
+您的贡献不仅会受到赞赏，而且对 FreeBSD 的持续发展至关重要。
 
-也许与您想象的不同， 您既不必是一名出色的程序员， 也无须和 FreeBSD 核心团队成员有很好的私交， 我们会一视同仁的对待您的工作。 FreeBSD 的开发人员遍布全球， 大家技术专长各异， 年龄分布也非常广泛。 每天， 我们都在面对持续增长的工作而苦于没有足够的人手， 因此我们随时欢迎您的帮助。
+FreeBSD 由数量庞大且不断增长的国际贡献者开发，他们的年龄和技术专长领域差异很大。
+总是有比现有人员能做更多的工作，我们随时欢迎更多的帮助。
 
-FreeBSD 项目处理的是一个完整的操作系统环境， 而不只是一个内核或是一些零散的工具包。 因此， 我们的 [.filename]#TODO# 任务列表里包含各种各样的工作， 从文档、用户测试、演示， 到系统安装程序和高度专业的内核开发。 因此无论您的技术水平如何， 从事何种领域， 都可以帮助这个项目。
+作为一名志愿者，您所做的事情只受您想做什么的限制。
+但是，我们确实要求您了解 FreeBSD 社区其他成员对您的期望。
+在决定做志愿者之前，您可能需要考虑到这一点。
 
-我们鼓励从事和 FreeBSD 相关工作的企业和我们联系。 您需要一些特殊的扩展来使您的产品运转起来么？ 您会发现我们很乐意答应您的请求， 除非是特别稀奇古怪的。 您是否正从事相关的增值业务？ 让我们来帮助您吧， 我们也许可以在其中的某些方面相互协作。 自由软件世界正在努力打破旧有的关于软件开发、 销售和维护的框框， 我们希望恳请您至少能给它一次机会。
+FreeBSD 项目负责整个操作系统环境，而不仅仅是一个内核或一些零散的实用程序。
+因此，我们的 [.filename]#TODO# 列表涵盖了非常广泛的任务：从文档、beta 测试和演示，到系统安装程序和高度专业化的内核开发。
+几乎任何领域的任何技能水平的人几乎都可以为项目提供帮助。
+
+我们也鼓励从事 FreeBSD 相关业务的商业实体与我们联系。
+您是否需要特殊的扩展来使您的产品正常工作？
+您会发现我们愿意接受您的请求，只要它们不太离谱。
+您是否正在开发增值产品？
+请告诉我们！
+我们也许可以在某些方面进行合作。
+自由软件世界正在挑战许多关于软件如何开发、销售和维护的现有假设，我们敦促您至少再看一眼。
 
 [[contrib-what]]
-== 我们的需求
+== 需要什么
 
-下面列出了一些需要完成的任务和子项目， 它们基本上可以被等同于 [.filename]#TODO#(任务列表) 列表， 以及用户的要求。
+以下任务和子项目列表代表了各种 [.filename]#TODO# 列表和用户请求的综合。
 
 [[non-programmer-tasks]]
-=== 正在进行中的非开发任务
+=== 持续的非程序员任务
 
-很多参加FreeBSD项目的人不是程序员。 这个项目里有文档撰写者、 网页设计师、 以及技术支持人员。 对于这些志愿者来说， 他们只需要贡献一些时间， 并且具有学习的意愿。
+许多参与 FreeBSD 的人不是程序员。
+该项目包括文档作者、Web 设计师和支持人员。
+所有这些人需要贡献的只是投入时间和学习的意愿。
 
-. 您可以经常通读FAQ和手册， 如果您发现了繁琐的解释， 或者是过时的知识， 甚至完全不正确的地方， 都请告诉我们。 如果您能顺手把他们改过来那就更好了 (SGML其实并不难学， 但我们也不反对您直接提交 ASCII 的版本)。
-. 帮助我们把 FreeBSD 文档翻译成您的母语。 如果您的母语版本已经存在了， 您也可以翻译一些其他的文档或者检查那些已有的文档是否是最新更新过的。 您可以先简单看看 FreeBSD 文档计划中有关 extref:{fdp-primer}[翻译的常见问题, translations]。 参加翻译工作并不是说您要孤军奋战翻译所有的 FreeBSD 文档。 作为一个志愿者， 做多少工作完全取决于您的意愿。 一旦某个人开始翻译了， 其他人几乎一定会参与到这些工作中来。 如果您只有有限的时间或者精力去翻译部分文档， 您可以首先去翻译安装指南。
-. 阅读 {freebsd-questions} 并偶尔看一看 link:news:comp.unix.bsd.freebsd.misc[comp.unix.bsd.freebsd.misc] (甚至有规律地这样做)。 与别人分享您的专业知识， 并帮助他们解决问题是一件令人愉悦的事情； 有些时候您甚至可以在这个过程中学到一些新东西！ 这些论坛有时也会为您提供一些有价值的主意。
+. 定期通读常见问题解答和手册。
+如果有什么解释得不好、模棱两可、过时或不正确的地方，请告诉我们。
+更好的是，给我们发送一个修复（AsciiDoc 不难学，但也不反对纯文本提交）。
+. 帮助将 FreeBSD 文档翻译成您的母语。
+如果您的语言已经有文档，您可以帮助翻译其他文档或验证翻译是否最新和正确。
+首先，请查看 FreeBSD 文档项目初级读本中的 extref:{fdp-primer}[翻译常见问题解答, translations]。
+这样做并不意味着您承诺翻译每一份 FreeBSD 文档——作为一名志愿者，您可以随心所欲地进行或多或少的翻译。
+一旦有人开始翻译，几乎总会有其他人加入。
+如果您只有时间或精力翻译文档的一部分，请翻译安装说明。
+. 偶尔（甚至定期）阅读 {freebsd-questions}。
+分享您的专业知识并帮助人们解决问题会非常有成就感；有时您甚至可以自己学到新东西！
+这些论坛也可以是改进事物的想法来源。
 
 [[ongoing-programmer-tasks]]
-=== 正在进行的开发任务
+=== 持续的程序员任务
 
-列在这里的大部分任务都需要您投入可观的时间， 或者需要您在 FreeBSD 内核方面有丰富的知识， 或者两者都要。 当然这里也有很多重要的任务也许您一个 "周末开发人员" 就可以干完。
+这里列出的大多数任务可能需要投入大量时间、深入了解 FreeBSD 内核，或两者兼而有之。
+但是，也有许多有用的任务适合「周末黑客」。
 
-. 如果您正在运行 FreeBSD-CURRENT 版本并且有一条高速的 Internet接入线路， 您可以访问 `current.FreeBSD.org`， 这里每天会有一个新版本 - 如果您有空， 您可以隔三岔五地下载一份并且安装它， 其间如果出了什么问题，请告诉我们。
-. 阅读 {freebsd-bugs}。 您可能会为这些问题提供具有建设性意义的评论， 或者帮忙测试一些补丁。 此外， 您甚至可以尝试修正其中的一些问题。
-. 如果您知道有一些修正已经在 -CURRENT 上成功地进行， 但在经过一段时间之后仍然没有合并到 -STABLE (通常是 2周左右)， 给相关的 committer 发一封礼貌的提示信。
-. 将第三方软件加入到源代码中的 [.filename]#src/contrib# 目录。
-. 确保 [.filename]#src/contrib# 中的代码是最新的
-. 以更高的警告级别构建源代码 (或一部分源代码) 并清理这些警告。
-. 更新那些在 ports 中使用过时的东西， 例如 `gets()` 或包含 [.filename]#malloc.h# 所产生的警告。
-. 如果您制作了 ports， 并进行了一些针对 FreeBSD 的改动， 将您的补丁发回给原作者 (这样下次升级时您的工作会变得轻松一些)。
-. 获取一份正式的标准， 如 POSIX(R) 的副本。 您可以在 link:https://www.FreeBSD.org/projects/c99/[FreeBSD C99 & POSIX 标准顺应项目] 网站上得到相关的链接。 将 FreeBSD 的行为同标准进行比较。 如果与标准不同， 特别是那些细节地方的微小差异， 请发送一个关于它的 PR (问题报告)。 如果可能， 请指出如何修正它， 并随 PR 提交补丁。 如果您认为标准有问题， 请向标准化团体要求对其进行重新的考虑。
-. 为这份列表建议更多的内容！
+. 如果您运行 FreeBSD-CURRENT 并且有良好的互联网连接，有一台机器 `current.FreeBSD.org` 每天构建一个完整的版本——时不时地，尝试从中安装最新的版本并报告过程中的任何失败。
+. 阅读 {freebsd-bugs}。
+可能会有一个问题您可以建设性地评论或提供补丁进行测试。
+或者您甚至可以自己尝试修复其中一个问题。
+. 如果您知道任何已成功应用于 -CURRENT 但在适当的间隔（通常是几周）后尚未合并到 -STABLE 的错误修复，请向提交者发送礼貌的提醒。
+. 将贡献的软件移动到源代码树中的 [.filename]#src/contrib#。
+. 确保 [.filename]#src/contrib# 中的代码是最新的。
+. 使用额外的警告启用构建源代码树（或其中的一部分）并清理警告。
+还可以从我们的 https://ci.freebsd.org[CI] 中选择一个构建并检查「LLVM/Clang 警告」来找到构建警告列表。
+. 修复执行已弃用操作（如使用 `gets()` 或包含 [.filename]#malloc.h#）的 ports 的警告。
+. 如果您贡献了任何 ports 并且必须进行 FreeBSD 特定的更改，请将您的补丁发回给原始作者（这将使您在他们发布下一个版本时更容易）。
+. 获取 POSIX(R) 等正式标准的副本。
+将 FreeBSD 的行为与标准要求的行为进行比较。
+如果行为不同，特别是在规范的细微或晦涩的角落，请提交一个关于它的 PR。
+如果您有能力，请找出如何修复它并在 PR 中包含一个补丁。
+如果您认为标准是错误的，请要求标准机构考虑这个问题。
+. 为此列表建议更多任务！
 
-=== 查看整个 PR 数据库
+=== 浏览 PR 数据库
 
-http://www.FreeBSD.org/cgi/query-pr-summary.cgi[FreeBSD PR 列表] 展示了所有当前处于活跃状态的问题报告， 以及由 FreeBSD 用户提交的改进建议。 PR 数据库同时包括了开发人员和非开发人员的任务。 查看那些尚未解决的 PR， 并看看是否有您感兴趣的任务。 这其中可能有一些是非常简单的问题， 只需要看一看并确认 PR 是正确的。 另外一些可能会非常复杂， 或者完全没有包括任何修正。
+https://bugs.FreeBSD.org/search/[FreeBSD PR 列表] 显示了 FreeBSD 用户提交的所有当前活动的问题报告和增强请求。
+PR 数据库包括程序员和非程序员的任务。
+浏览打开的 PR，看看是否有您感兴趣的内容。
+其中一些可能是非常简单的任务，只需要一双额外的眼睛来查看它们并确认 PR 中的修复是好的。
+其他的可能要复杂得多，或者甚至可能根本不包含修复。
 
-首先看一看那些还没有人接手的 PR。 如果 PR 已经分配给了其它人， 但看起来是您能够处理的， 您可以给那个人发信， 并询问您是否可以提供帮助 - 他们可能已经有了可供测试的补丁， 或有一些可供讨论的意见。
+从没有分配给其他人的 PR 开始。
+如果一个 PR 分配给了其他人，但看起来您可以处理，请给分配到的人发电子邮件，询问您是否可以处理它——他们可能已经有一个准备好测试的补丁，或者您可以与他们讨论的进一步想法。
 
-=== 从 "点子" 网页上认领项目
+=== 持续的 Ports 任务
 
-link:https://www.FreeBSD.org/projects/ideas/[FreeBSD 志愿者项目和点子清单] 也是提供给愿意为 FreeBSD 项目做出贡献的人们的。 这张清单一直在被定期更新着， 包含了对程序员和非程序员有用的每个项目的信息。
+Ports Collection 是一项持续进行的工作。
+我们希望为我们的用户提供一个易于使用、最新、高质量的第三方软件存储库。
+我们需要人们贡献一些时间和精力来帮助我们实现这一目标。
+
+任何人都可以参与，并且有很多不同的方式可以参与。
+为 ports 做出贡献是向项目「回馈」一些东西的绝佳方式。
+无论您是想寻找一个持续的角色，还是想在雨天寻找一个有趣的挑战，我们都希望得到您的帮助！
+
+您可以通过多种简单的方式为保持 ports 树的最新和良好工作状态做出贡献：
+
+* 找到一些很酷或有用的软件，并为其 extref:{porters-handbook}[创建一个 port]。
+* 有大量的 ports 没有维护者。
+成为维护者并 crossref:contributing[adopt-port, 采用一个无人维护的 port]。
+* 如果您创建或采用了一个 port，请注意 crossref:contributing[maintain-port, port 维护者的挑战]。
+* 当您正在寻找一个快速的挑战时，您可以 crossref:contributing[fix-broken, 查找并修复一个损坏的 port]。
+
+=== 从创意页面中选择一个项目
+
+https://wiki.freebsd.org/IdeasPage[FreeBSD 志愿者项目和创意列表] 也可供愿意为 FreeBSD 项目做出贡献的人们使用。
+该列表会定期更新，并包含针对程序员和非程序员的项目信息。
 
 [[contrib-how]]
-== 如何提供帮助
+== 如何贡献
 
-帮助改进系统基本上可以分为 5 类：
+对系统的贡献通常分为以下 5 个类别中的一个或多个：
 
 [[contrib-general]]
-=== 错误报告和一般的注解
+=== 错误报告和一般评论
 
-通常， _一般意义上的_ 技术想法和建议应该发到 {freebsd-hackers}。 同样地， 对于这些东西有兴趣的人 (当然， 他们同时还要能够容忍 _大量的_ 邮件！) 可以考虑订阅 {freebsd-hackers}。 参见 extref:{handbook}eresources[FreeBSD 使用手册, eresources-mail] 以了解关于这个邮件列表， 以及其它邮件列表的详细情况。
+具有 _一般_ 技术兴趣的想法或建议应邮寄至 {freebsd-hackers}。
+同样，对此类事物感兴趣的人（并且能够容忍 _大量_ 邮件！）可以订阅 {freebsd-hackers}。
+有关此邮件列表和其他邮件列表的更多信息，请参阅 extref:{handbook}[FreeBSD 手册, eresources-mail]。
 
-如果您发现了 bug 或者想要提交某些修改， 请通过 man:send-pr[1] 程序或使用 link:https://www.FreeBSD.org/send-pr/[基于 WEB 的提交页面] 来提交。 请试着填写 bug 报告的每一项。 一般来说， 我们建议在 bug 报告中直接附上补丁， 除非它超过了 65KB。 如果补丁可以直接应用到源代码上， 则建议您在报告的 synopsis 一栏写上 `[PATCH]`。 在附带补丁时， 请 _不要_ 通过复制和粘贴来进行， 因为这样做会把 tab 变成空格， 结果补丁很可能就不能用了。 如果补丁超过 20KB 很多， 应考虑将其压缩 (例如使用 man:gzip[1] 或 man:bzip2[1]) 之后用 man:uuencode[1] 进行编码之后再放进您的问题报告中。
+如果您要向 src 仓库提交一个简单的补丁，请考虑将其作为 https://github.com/freebsd/freebsd-src/pulls[拉取请求] 提交到项目的 GitHub 镜像。
+合适的提交应：
 
-一旦报告被存档， 您会收到一封确认邮件以及一个事件追踪编号。 请保留这个编号， 因为您可以在之后使用这个编号， 发邮件到 {bugfollowup} 来提供关于该事件的进一步信息。 您需要做的是将编号放到邮件的标题中， 例如 `"Re: kern/3377"`。 关于同一问题更进一步的情况应该通过这种方式来提交。
+* 准备好或几乎准备好提交。
+提交者应该能够在不到 10 分钟的额外工作内合并此补丁。
+* 它通过了所有 GitHub CI 作业。
+* 您可以快速回复反馈。
+* 它涉及的文件少于约 10 个，更改少于约 200 行。
+更大的更改也可以，或者您可能会被要求提交多个更易于管理的拉取请求。
+* 每个逻辑更改都是拉取请求中的一个单独提交。
+每个更改的提交消息应遵循 extref:{committers-guide}#commit-log-message[提交日志指南]。
+* 所有提交都包含您希望在 FreeBSD 存储库中看到的姓名和有效电子邮件地址作为作者。
+不能使用假的 github.com 地址。
+* 拉取请求的范围在审查期间不应更改。
+如果审查建议扩大范围的更改，请创建一个独立的拉取请求。
+* 修复提交应与它们正在修复的提交压缩在一起。
+您分支中的每个提交都应适合 FreeBSD 的存储库。
+* 提交应包括一个或多个 `Signed-off-by:` 行，其中包含全名和电子邮件地址，以证明 https://developercertificate.org/[开发者原创证书]。
 
-如果您在一段时间之后仍然没有收到确认信 (超过 3 天甚至 1 周， 这取决于您的邮件服务) 或者由于某种原因无法使用 man:send-pr[1] 命令， 则可以发信给 {freebsd-bugs} 要求别人代您发送它。
+更新拉取请求时，请使用强制推送进行 rebase，而不是合并提交。
+更复杂的更改可以作为拉取请求提交，但如果它们太大、太笨重、变得不活跃、需要在社区中进一步讨论或需要大量修改，则可能会被关闭。
+请避免创建大型、范围广泛的清理补丁：它们太大，缺乏良好审查所需的重点。
+方向错误的补丁可能会被重定向到更合适的论坛以解决补丁。
 
-请参见 extref:{problem-reports}[这篇文章] 了解如何撰写好的问题报告。
+提交到 ports 存储库的拉取请求可能会也可能不会被处理，这取决于开发人员的意愿。
+目前，如果您遵循 ports 提交过程 crossref:contributing[ports-contributing, 为 ports 做贡献]，您将有更好的体验。
 
-=== 对于文档的修订
+docs 团队也通过 GitHub 接受拉取请求，但尚未为此制定任何政策。
 
-对于文档的修改由 {freebsd-doc} 来审查。 请参见 extref:{fdp-primer}[FreeBSD 文档计划初级读本] 来获得完整的指导。 请按照 <<contrib-general>> 中介绍的方法使用 man:send-pr[1] 来发送新的文档或者对于现有文档的完善 (哪怕是很小的改进也是欢迎的！)。
+如果您发现错误或提交特定更改，请使用 https://bugs.FreeBSD.org/submit/[错误提交表] 报告。
+尝试填写错误报告的每个字段。
+除非它们超过 65KB，否则请将任何补丁直接包含在报告中。
+如果补丁适合应用于源代码树，请在报告的摘要中添加 `[PATCH]`。
+包含补丁时，_不要_ 使用剪切和粘贴，因为剪切和粘贴会将制表符转换为空格并使其无法使用。
+当补丁远大于 20KB 时，请考虑在上传之前对其进行压缩（例如使用 man:gzip[1] 或 man:bzip2[1]）。
 
-=== 对于现有源代码的修改
+提交报告后，您应该会收到确认以及一个跟踪号。
+保留此跟踪号，以便您可以向我们更新有关问题的详细信息。
 
-在现有代码上进行修改或增加功能在某种程度上是需要更多技巧的事情， 并且还和您对于目前 FreeBSD 的开发现状的了解有关。 有多种方式可以得到被称作 "FreeBSD-CURRENT" 的 FreeBSD 开发版本， 您可以通过它来了解最近的开发情况。 请参见 extref:{handbook}updating-upgrading[FreeBSD 使用手册, current-stable] 来了解使用 FreeBSD-CURRENT 的进一步详情。
+另请参阅 extref:{problem-reports}[本文] 了解如何编写好的问题报告。
 
-在旧的代码上进行修改， 则通常可能由于代码已经过时， 或与新的开发版本差异太大而无法被重新集成到 FreeBSD 中。 如果您订阅了 {freebsd-announce} 以及 {freebsd-current} 邮件列表， 则可以通过它们来大体了解目前的开发状态。
+=== 文档更改
 
-假如说您能够基于尽可能新的代码来完成您的修改， 则下一步要做的事情就是生成您所进行的修改的差异文件， 并将它发给 FreeBSD 的维护人员。 这项工作可以通过 man:diff[1] 命令来完成。
+文档的更改由 {freebsd-doc} 监督。
+有关完整说明，请参阅 extref:{fdp-primer}[FreeBSD 文档项目初级读本]。
+使用与任何其他错误报告相同的方法发送提交和更改（即使是很小的更改也欢迎！）。
 
-提交补丁时推荐的 man:diff[1] 格式是一致差异 (unified diff)， 它可以通过 `diff -u` 来生成。 不过， 如果您修改了大量的代码， 则使用 `diff -c` 来生成的上下文格式 (context diff) 的差异可能更容易阅读， 因而推荐使用。
+=== 对现有源代码的更改
 
-例如：
+对现有源代码的添加或更改是一件稍微棘手的事情，很大程度上取决于您与 FreeBSD 开发当前状态的差距。
+有一个名为「FreeBSD-CURRENT」的特殊持续发布的 FreeBSD 版本，以各种方式提供给积极从事系统开发的开发人员。
+有关获取和使用 FreeBSD-CURRENT 的更多信息，请参阅 extref:{handbook}[FreeBSD 手册, current-stable]。
 
-[source,shell]
-....
-% diff -c oldfile newfile
-....
+不幸的是，使用较旧的源代码意味着您的更改有时可能过于陈旧或过于分散，无法轻松地重新集成到 FreeBSD 中。
+通过订阅 {freebsd-announce} 和 {freebsd-current} 列表，可以稍微减少这种情况的发生，在这些列表中会讨论系统的当前状态。
 
-或者
+假设您可以设法获得相当新的源代码来作为更改的基础，下一步是生成一组差异以发送给 FreeBSD 维护人员。
+这是使用 man:diff[1] 命令完成的。
 
-[source,shell]
-....
-% diff -c -r olddir newdir
-....
-
-将分别生成给定文件或目录结构的 context diff。
-
-类似地，
+提交补丁的首选 man:diff[1] 格式是 `diff -u` 生成的统一输出格式。
 
 [source,shell]
 ....
@@ -152,76 +241,49 @@ link:https://www.FreeBSD.org/projects/ideas/[FreeBSD 志愿者项目和点子清
 
 [source,shell]
 ....
-% diff -u -r olddir newdir
+% diff -u -r -N olddir newdir
 ....
 
-的作用与前面的类似， 但采用的格式是 unified diff。
+将为给定的源文件或目录层次结构生成一组统一的差异。
 
-请参见 man:diff[1] 联机手册了解更多细节。
+有关更多信息，请参见 man:diff[1]。
 
-一旦您使用 man:diff[1] 生成了差异集 (可以使用 man:patch[1] 命令来测试一下)， 就可以提交它们， 以便被 FreeBSD 收录。 通过使用 <<contrib-general>> 中所介绍的 man:send-pr[1] 程序就可以完成这项工作。 _不要_ 只是把差异集发到 {freebsd-hackers}， 否则它们可能会被丢掉！ 我们会非常感激您提交的修改 (这是一个志愿者项目！)； 因为我们都很忙， 因此有时不一定能够立即修正问题， 但 PR 数据库将一直保持着这些记录， 因此只要有人有了时间它们就能被改正了。 如果您的问题报告中包括补丁， 一定不要忘了在标题上用 `[PATCH]` 来强调一下。
+一旦您有了一组差异（您可以使用 man:patch[1] 命令进行测试），您应该将它们作为错误报告提交以包含在 FreeBSD 中。
+_不要_ 只是将差异发送到 {freebsd-hackers}，否则它们会丢失！我们非常感谢您的提交（这是一个志愿者项目！）；因为我们很忙，我们可能无法立即处理它，但它会保留在 PR 数据库中，直到我们处理它。
+通过在报告的摘要中包含 `[PATCH]` 来表明您的提交。
 
-如果您认为合适 (例如您添加、 删除或重命名了文件)， 还可以考虑使用 `tar` 来将文件打包， 然后用 man:uuencode[1] 来编码。 我们也欢迎用 man:shar[1] 创建的包。
+如果您认为合适（例如，您添加、删除或重命名了文件），请将您的更改捆绑到一个 `tar` 文件中。
 
-如果您的修改可能存在潜在的争议， 例如， 您不确定与之相关的版权问题， 或者感觉需要经过更严格的复审才可以发布它们， 则应直接发给 {core-name}， 而不是通过 man:send-pr[1] 来发送。 {core-name} 是一个小组， 其成员更多的从事 FreeBSD 的日常工作。 需要注意的是， 这个小组也因此 __很忙__， 因此只有在非常必要的时候才应给他们写信。
+如果您的更改具有潜在的敏感性，例如您不确定有关其进一步分发的版权问题，那么您应该直接将其发送到 {core-email}，而不是作为错误报告提交。
+{core-email} 联系到的人群要小得多，他们负责 FreeBSD 的大部分日常工作。
+请注意，这个小组也 _非常忙_，所以您只应在真正必要时才向他们发送邮件。
 
-请参考 man:intro[9] 和 man:style[9] 以了解关于编码习惯和约定的详情。 如果您了解这些约定， 则对我们来说将是极大的帮助。
+有关编码风格的一些信息，请参阅 man:intro[9] 和 man:style[9]。
+如果您在提交代码之前至少了解这些信息，我们将不胜感激。
 
-=== 新代码或重要的增值软件包
+=== 新代码或主要增值包
 
-如果您打算提供规模较大的代码， 或者为 FreeBSD 增加重要的新功能， 则可能必须将它们通过 uuencode 进行编码， 或传到某个 Web 或 FTP 站点， 以便更多的人能够得到它。 如果您没有这样的服务器， 请到相关的 FreeBSD 邮件列表提出， 看看是否有人愿意帮您放置它们。
+在大量工作的重要贡献或向 FreeBSD 添加重要新功能的情况下，几乎总是需要将更改作为 tar 文件发送或将其上传到 Web 或 FTP 站点以供其他人访问。
+如果您无法访问 Web 或 FTP 站点，请在适当的 FreeBSD 邮件列表中请求有人为您托管更改。
 
-对于大量的代码而言， 关于版权的问题肯定会被提出。 FreeBSD 基本系统中能够使用的版权声明包括：
+在处理大量代码时，版权这个棘手的问题也总是会出现。
+FreeBSD 偏爱 BSD 或 ISC 等自由软件许可证。
+有时也允许使用 GPLv2 等 Copyleft 许可证。
+完整的列表可以在 link:https://www.FreeBSD.org/internal/software-license/[核心团队许可政策] 页面上找到。
 
-. BSD 版权。 我们倾向于使用这类授权的代码， 因为它 "不附加多余的条件"， 因而更能够吸引商业企业使用。 FreeBSD 并不反对商业公司使用它的代码， 相反， 我们积极地鼓励商业公司使用我们的代码， 当然， 如果它们最终把一部分代码重新捐赠给 FreeBSD 就更好了。
-. GNU General Public License， 或简称 "GPL"。 我们并不很欢迎使用这样授权的代码， 因为商业公司使用它需要做更多的工作。 不过， 由于很多使用 GPL 授权的代码目前是无法避免的 (编译器、 汇编器， 文本排版程序等等)， 拒绝使用所有采用这样授权的软件是很不明智的。 采用 GPL 授权的代码会被放到源代码的一些专门的位置， 例如 [.filename]#/sys/gnu# 或 [.filename]#/usr/src/gnu#， 以方便那些使用 GPL 代码可能会给他们带来问题的人识别。
+=== 资金或硬件
 
-使用其它授权的代码在进入 FreeBSD 之前必须经过慎重的复审和考虑。 采用包含严厉限制的商业授权的代码， 一般来说会被拒绝， 但我们鼓励这些代码的作者通过自己的渠道来发布它们。
-
-要在您的成果上加入 "BSD式" 的版权， 请把下列文本放到每一个源文件的最开始部分， 并用适当的文字替换 `%%` 之间的文字。
-
-[.programlisting]
-....
-Copyright (c) %%proper_years_here%%
-        %%your_name_here%%, %%your_state%%  %%your_zip%%.
-	All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions
-are met:
-1. Redistributions of source code must retain the above copyright
-   notice, this list of conditions and the following disclaimer as
-   the first lines of this file unmodified.
-2. Redistributions in binary form must reproduce the above copyright
-   notice, this list of conditions and the following disclaimer in the
-   documentation and/or other materials provided with the distribution.
-
-THIS SOFTWARE IS PROVIDED BY %%your_name_here%% ``AS IS'' AND ANY EXPRESS OR
-IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
-OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
-IN NO EVENT SHALL %%your_name_here%% BE LIABLE FOR ANY DIRECT, INDIRECT,
-INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
-NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
-THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
-THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-        $Id$
-....
-
-为了方便您的使用， 在 [.filename]#/usr/shared/examples/etc/bsd-style-copyright# 也可以找到此授权的副本。
-
-=== 资金、 硬件或 Internet 接入
-
-我们非常愿意接受各种形式的捐赠， 以进一步拓展 FreeBSD Project 的事业， 因为有您的支持， 像我们这样的志愿者努力才能够有更大的成就！ 捐赠硬件也非常重要， 因为这样能够帮助我们增加可以支持的硬件种类， 而我们中的很多人并没有足够的资金来购置这些硬件。
+我们总是非常乐意接受捐赠以促进 FreeBSD 项目的事业，在像我们这样的志愿者努力中，一点点就可以走很长的路！
+硬件捐赠也非常重要，可以扩展我们支持的外围设备列表，因为我们通常缺乏自己购买此类物品的资金。
 
 [[donations]]
-==== 捐款
+==== 捐赠资金
 
-FreeBSD 基金会是一个非营利的、 有课税豁免权的基金会， 建立这个基金会的目标是为了让 FreeBSD Project 能够达成更加长远的目标。 作为 501(c)3 实体， 一般而言基金会可以免予上缴美国联邦收入税， 以及科罗拉多州收入税。 通常对于课税豁免的实体进行捐赠， 可以折抵联邦收入中应课税部分的金额。
+https://www.freebsdfoundation.org[FreeBSD 基金会] 是一个非营利、免税的基金会，旨在促进 FreeBSD 项目的目标。
+作为 501(c)3 实体，基金会通常免除美国联邦所得税以及科罗拉多州所得税。
+对免税实体的捐赠通常可以从应税联邦收入中扣除。
 
-您可以把支票寄往：
+捐款可以以支票形式发送至：
 
 [.address]
 ****
@@ -232,14 +294,354 @@ Boulder CO 80304 +
 USA
 ****
 
-FreeBSD 基金会现在可以通过 PayPal 从网上接受捐款。 如果您想向基金会捐款， 请访问它的 http://www.freebsdfoundation.org[web 站点]。
+FreeBSD 基金会也能够通过各种支付方式接受 https://www.freebsdfoundation.org/donate/[在线捐赠]。
 
-关于 FreeBSD 基金会的更多详情， 可以在 http://people.FreeBSD.org/~jdp/foundation/announcement.html[FreeBSD 基金会 -- 介绍] 找到。 要联络基金会， 请发送电子邮件到 mailto:bod@FreeBSDFoundation.org[bod@FreeBSDFoundation.org]。
+有关 FreeBSD 基金会的更多信息，请参见 https://people.FreeBSD.org/~jdp/foundation/announcement.html[FreeBSD 基金会——简介]。
+要通过电子邮件联系基金会，请写信至 mailto:info@FreeBSDFoundation.org[info@FreeBSDFoundation.org]。
 
 ==== 捐赠硬件
 
-FreeBSD 计划欢迎任何人捐赠可以使用的硬件。 如果您有兴趣捐赠硬件， 请联系 link:https://www.FreeBSD.org/donations/[捐赠联络人办公室]。
+FreeBSD 项目很乐意接受可以物尽其用的硬件捐赠。
+如果您有兴趣捐赠硬件，请联系 link:https://www.FreeBSD.org/donations/[捐赠联络处]。
 
-==== 捐赠 Internet 接入
+[[ports-contributing]]
+== 为 ports 做贡献
 
-我们欢迎新的 FTP、 WWW 或 `cvsup` 镜像。 如果您希望成为这样的镜像， 请参见 extref:{hubs}[如何架设 FreeBSD 镜像] 一文， 以了解进一步的情况。
+[[adopt-port]]
+=== 采用一个无人维护的 port
+
+==== 选择一个无人维护的 port
+
+接管无人维护的 ports 的维护是参与进来的一个好方法。
+无人维护的 ports 只有在有人自愿处理它们时才会更新和修复。
+有大量的 ports 无人维护。
+从采用您经常使用的 port 开始是个好主意。
+
+无人维护的 ports 的 `MAINTAINER` 设置为 `ports@FreeBSD.org`。
+许多无人维护的 ports 可能有待处理的更新，这可以在 https://portscout.freebsd.org/ports@freebsd.org.html[FreeBSD Ports distfile 扫描器] 中看到。
+
+在 https://portsfallout.com/fallout?port=&maintainer=ports%40FreeBSD.org[PortsFallout] 上可以看到一个有错误的无人维护的 ports 列表。
+
+由于依赖关系和次要 port 关系，一些 ports 会影响大量其他 ports。
+通常，我们希望人们在维护此类 ports 之前具有一些经验。
+
+您可以通过查看名为 [.filename]#INDEX# 的 ports 的主要索引来了解一个 port 是否具有依赖关系或次要 ports。
+（文件名因 FreeBSD 的版本而异；例如，[.filename]#INDEX-13#。）一些 ports 具有条件依赖关系，这些依赖关系不包含在默认的 [.filename]#INDEX# 构建中。
+我们希望您能够通过查看其他 ports 的 [.filename]#Makefile# 来识别此类 ports。
+
+==== 如何采用 port
+
+首先，请确保您了解您的 crossref:contributing[maintain-port, port 维护者的挑战]。
+另请阅读 extref:{porters-handbook}[Porter's Handbook]。
+_请不要承诺超出您认为可以轻松处理的范围。_
+
+您可以随时请求维护任何无人维护的 port。
+只需将 `MAINTAINER` 设置为您自己的电子邮件地址，然后发送一个包含更改的 PR（问题报告）。
+如果 port 有构建错误或需要更新，您可能希望在同一个 PR 中包含任何其他更改。
+这将有所帮助，因为许多提交者不太愿意将维护权分配给在 FreeBSD 中没有已知记录的人。
+提交修复构建错误或更新 ports 的 PR 是建立记录的最佳方式。
+
+使用产品 `Ports & Packages` 提交您的 PR。
+提交者将检查您的 PR，提交更改，最后关闭 PR。
+有时这个过程可能需要一些时间（提交者也是志愿者 :)）。
+
+[[maintain-port]]
+=== port 维护者的挑战
+
+本节将让您了解为什么需要维护 ports，并概述 port 维护者的职责。
+
+[[why-maintenance]]
+==== 为什么 ports 需要维护
+
+创建一个 port 是一次性的任务。
+确保 port 是最新的并继续构建和运行需要持续的维护工作。
+维护者是那些投入部分时间来实现这些目标的人。
+
+ports 需要维护的首要原因是为了将最新最好的第三方软件带给 FreeBSD 社区。
+另一个挑战是随着 Ports Collection 框架的发展，保持单个 ports 在其中正常工作。
+
+作为维护者，您需要应对以下挑战：
+
+* *新软件版本和更新。* 现有移植软件的新版本和更新随时可用，这些需要被整合到 Ports Collection 中以提供最新的软件。
+
+* *依赖关系的变化。* 如果您的 port 的依赖关系发生重大变化，可能需要更新它以使其继续正常工作。
+
+* *影响依赖 port 的更改。* 如果其他 ports 依赖于您维护的 port，对您的 port 的更改可能需要与其他维护者协调。
+
+* *与其他用户、维护者和开发人员的互动。* 作为维护者的一部分是承担支持角色。
+您不需要提供一般支持（但如果您选择这样做，我们欢迎）。您应该提供的是针对您的 ports 的 FreeBSD 特定问题的协调点。
+
+* *错误查找。* 一个 port 可能会受到 FreeBSD 特有的错误的影响。
+当报告这些错误时，您需要调查、查找和修复它们。
+在问题进入 Ports Collection 之前，彻底测试一个 port 以识别问题会更好。
+
+* *ports 基础设施和策略的更改。* 用于构建 ports 和软件包的系统偶尔会更新，或者会提出影响基础设施的新建议。
+您应该了解这些更改，以防您的 ports 受到影响并需要更新。
+
+* *基础系统的更改。* FreeBSD 处于不断发展之中。
+软件、库、内核甚至策略的更改都可能导致对 ports 的流式更改要求。
+
+==== 维护者职责
+
+===== 保持您的 ports 最新
+
+本节概述了保持您的 ports 最新的过程。
+
+这是一个概述。
+有关升级 port 的更多信息，请参阅 extref:{porters-handbook}[Porter's Handbook]。
+
+[.procedure]
+====
+. 关注更新
++
+监控上游供应商以获取软件的新版本、更新和安全修复。
+公告邮件列表或新闻网页对此很有用。
+有时用户会联系您，询问您的 port 何时会更新。
+如果您正忙于其他事情或由于任何原因无法立即更新它，请询问他们是否愿意通过提交更新来帮助您。
++
+您可能还会收到来自 `FreeBSD Ports Version Check` 的自动电子邮件，通知您您的 port 的 distfile 有更新的版本可用。
+有关该系统的更多信息（包括如何停止未来的电子邮件）将在消息中提供。
+. 整合更改
++
+当它们可用时，将更改整合到 port 中。
+您需要能够生成原始 port 和更新后的 port 之间的补丁。
+. 审查和测试
++
+彻底审查和测试您的更改：
+
+** 在尽可能多的平台和架构上构建、安装和测试您的 port。
+一个 port 在一个分支或平台上工作而在另一个分支或平台上失败是很常见的。
+** 确保您的 port 的依赖关系是完整的。
+推荐的方法是安装您自己的 ports tinderbox。
+有关更多信息，请参见 crossref:contributing[resources, ports 维护者和贡献者的资源]。
+** 检查打包列表是否最新。
+这包括添加任何新文件和目录以及删除未使用的条目。
+** 使用 man:portlint[1] 作为指南来验证您的 port。
+有关使用 portlint 的重要信息，请参见 crossref:contributing[resources, ports 维护者和贡献者的资源]。
+** 考虑对您的 port 的更改是否可能导致任何其他 ports 损坏。
+如果是这种情况，请与这些 ports 的维护者协调更改。
+如果您的更新更改了共享库版本，这一点尤其重要；在这种情况下，至少，依赖的 ports 将需要获得 `PORTREVISION` 提升，以便它们将由 package:ports-mgmt/poudriere[] 等自动化工具自动升级。
+
+. 提交更改
++
+通过提交一个 PR 来发送您的更新，其中包含对更改的解释和包含原始 port 和更新后的 port 之间差异的补丁。
+有关如何编写一个非常好的 PR 的信息，请参阅 extref:{problem-reports}[编写 FreeBSD 问题报告]。
++
+[NOTE]
+======
+请不要提交整个 port 的 man:shar[1] 存档；相反，请使用 man:git-format-patch[1] 或 man:diff[1] `-ruN`。
+这样，提交者可以更容易地确切地看到正在进行哪些更改。
+Porter's Handbook 关于 extref:{porters-handbook}[升级, port-upgrading] 的部分有更多信息。
+======
+. 等待
++
+在某个阶段，提交者将处理您的 PR。
+可能需要几分钟，也可能需要一两个星期——所以请耐心等待。
+如果时间更长，请在邮件列表（{freebsd-ports}）、IRC：EFNet 上的 #bsdports 或 Libera 上的 #freebsd-ports 上寻求帮助。
+. 提供反馈
++
+如果提交者发现您的更改有问题，他们很可能会将其反馈给您。
+及时的回复将有助于您的 PR 更快地被提交，并且在尝试解决任何问题时更好地保持对话的连续性。
+. 最后
++
+您的更改将被提交，您的 port 也将得到更新。
+然后，提交者将关闭 PR。
+就是这样！
+====
+
+===== 确保您的 ports 继续正确构建
+
+本节介绍如何发现和修复导致您的 ports 无法正确构建的问题。
+
+FreeBSD 仅保证 Ports Collection 在 `-STABLE` 分支上工作。
+理论上，您应该能够通过运行每个稳定分支的最新版本来解决问题（因为 ABI 不应该改变），但如果您可以运行该分支，那就更好了。
+
+由于大多数 FreeBSD 安装运行在 PC 兼容机（即 `i386` 架构）上，我们希望您能保持 port 在该架构上工作。
+我们更希望 ports 也能在 `amd64` 架构上原生运行。
+如果您没有这些机器，寻求帮助是完全可以的。
+
+[NOTE]
+====
+非 `x86` 机器的常见故障模式是，原始程序员假设指针是 `int`，或者正在使用相对宽松的旧版 gcc 编译器。
+越来越多的应用程序作者正在重写他们的代码以消除这些假设——但如果作者没有积极维护他们的代码，您可能需要自己动手。
+====
+
+这些是您需要执行的任务，以确保您的 port 能够构建：
+
+[.procedure]
+====
+. 关注构建失败
++
+检查您的邮件中是否有来自 `pkg-fallout@FreeBSD.org` 的邮件和 http://portscout.FreeBSD.org[distfiles 扫描器]，以查看是否有任何构建失败的 port 已过时。
+. 收集信息
++
+一旦您意识到问题，请收集信息以帮助您解决问题。
+`pkg-fallout` 报告的构建错误附有日志，这些日志将向您显示构建失败的位置。
+如果故障是由用户报告给您的，请要求他们向您发送可能有助于诊断问题的信息，例如：
+
+** 构建日志
+** 用于构建 port 的命令和选项（包括在 [.filename]#/etc/make.conf# 中设置的选项）
+** man:pkg-info[8] 显示的其系统上安装的软件包列表
+** man:uname[1] `-a` 显示的他们正在运行的 FreeBSD 版本
+** 他们的 ports collection 上次更新的时间
+** 他们的 ports 树和 [.filename]#INDEX# 上次更新的时间
+
+. 调查并找到解决方案
++
+不幸的是，没有一个直接的过程可以遵循来做到这一点。
+但是，请记住：如果您遇到困难，请寻求帮助！
+{freebsd-ports} 是一个很好的起点，上游开发人员通常也很有帮助。
+. 提交更改
++
+与更新 port 一样，您现在应该整合更改、审查和测试、在 PR 中提交您的更改，并在需要时提供反馈。
+. 将补丁发送给上游作者
++
+在某些情况下，您将不得不对 port 进行修补以使其在 FreeBSD 上运行。
+一些（但不是所有）上游作者会在下一个版本中将此类补丁接受回他们的代码中。
+如果是这样，这甚至可能有助于他们在其他基于 BSD 的系统上的用户，并可能节省重复的工作。
+请考虑将任何适用的补丁作为礼貌发送给作者。
+====
+
+===== 调查与您的 port 相关的错误报告和 PR
+
+本节介绍如何发现和修复错误。
+
+FreeBSD 特定的错误通常是由不适用于 FreeBSD 的构建和运行时环境的假设引起的。
+您不太可能遇到这种类型的问题，但它可能更微妙且难以诊断。
+
+这些是您需要执行的任务，以确保您的 port 继续按预期工作：
+
+[.procedure]
+====
+. 回复错误报告
++
+错误可能会通过 https://bugs.FreeBSD.org/search/[问题报告数据库] 以电子邮件的形式报告给您。
+错误也可能由用户直接报告给您。
++
+您应该在 14 天内回复 PR 和其他报告，但请尽量不要花那么长时间。
+请尽快回复，即使只是说您需要更多时间才能处理 PR。
++
+如果您在 14 天后没有回复，任何提交者都可以通过 `maintainer-timeout` 从您没有回复的 PR 中提交。
+. 收集信息
++
+如果报告错误的人没有同时提供修复，您需要收集信息以生成一个。
++
+如果错误是可重现的，您可以自己收集大部分所需信息。
+如果不是，请要求报告错误的人为您收集信息，例如：
+
+** 他们操作的详细描述、预期的程序行为和实际行为
+** 用于触发错误的输入数据的副本
+** 有关其构建和执行环境的信息——例如，已安装软件包的列表和 man:env[1] 的输出
+** 核心转储
+** 堆栈跟踪
+
+. 排除不正确的报告
++
+一些错误报告可能不正确。
+例如，用户可能只是误用了程序；或者他们安装的软件包可能已过时，需要更新。
+有时报告的错误并非 FreeBSD 特有。
+在这种情况下，请向上游开发人员报告该错误。
+如果该错误在您的能力范围内可以修复，您也可以修补该 port，以便在下一个上游版本之前应用该修复。
+. 找到解决方案
++
+与构建错误一样，您需要找出问题的解决方案。
+再次强调，如果您遇到困难，请记住寻求帮助！
+. 提交或批准更改
++
+与更新 port 一样，您现在应该整合更改、审查和测试，并在 PR 中提交您的更改（如果该问题已存在 PR，则发送后续跟进）。
+如果其他用户在 PR 中提交了更改，您也可以发送后续跟进，说明您是否批准这些更改。
+====
+
+===== 提供支持
+
+作为维护者的一部分是提供支持——不是针对软件本身——而是针对 port 和任何 FreeBSD 特有的怪癖和问题。
+用户可能会就问题、建议、问题和补丁与您联系。
+大多数时候，他们的信件将是 FreeBSD 特有的。
+
+偶尔，您可能需要运用您的外交技巧，并善意地将寻求一般支持的用户引导到适当的资源。
+更不常见的是，您会遇到有人问为什么 `RPMS` 不是最新的，或者他们如何让软件在 Foo Linux 下运行。
+借此机会告诉他们您的 port 是最新的（当然，如果是的话！），并建议他们尝试 FreeBSD。
+
+有时，用户和开发人员会认为您是一个忙碌的人，您的时间很宝贵，并会为您做一些工作。
+例如，他们可能会：
+
+* 提交 PR 或向您发送补丁以更新您的 port，
+* 调查并可能为 PR 提供修复，或
+* 以其他方式向您的 port 提交更改。
+
+在这些情况下，您的主要义务是及时做出回应。
+同样，对无响应维护者的超时时间为 14 天。
+在此期限之后，未经批准的更改可能会被提交。
+他们已经为您费心做了这些；所以请至少尝试及时回复。
+然后尽快与他们一起审查、批准、修改或讨论他们的更改。
+
+如果您能让他们觉得他们的贡献受到赞赏（并且应该如此），您将有更好的机会说服他们在未来为您做更多的事情 :-) 。
+
+[[fix-broken]]
+=== 查找并修复损坏的 port
+
+有一些非常好的地方可以找到需要关注的 port。
+
+您可以使用 https://bugs.freebsd.org/search[Web 界面] 访问问题报告数据库，以搜索和查看未解决的 PR。
+大多数 ports PR 都是更新，但通过一些搜索和浏览摘要，您应该能够找到一些有趣的工作。
+
+https://portsfallout.com/[PortsFallout] 显示了从 FreeBSD 软件包构建中收集的 port 问题。
+
+为维护的 port 发送更改也是可以的，但请记住询问维护者，以防他们已经在处理该问题。
+
+一旦您发现错误或问题，请收集信息、调查并修复！
+如果存在现有的 PR，请跟进该 PR。
+否则，创建一个新的 PR。
+您的更改将被审查，如果一切正常，将被提交。
+
+[[mortal-coil]]
+=== 何时退出
+
+随着您的兴趣和承诺发生变化，您可能会发现自己没有时间继续部分（或全部）ports 贡献。
+没关系！
+如果您不再使用某个 port 或因其他原因失去时间和兴趣成为维护者，请告诉我们。
+这样我们就可以继续让其他人尝试解决该 port 的现有问题，而无需等待您的回复。
+请记住，FreeBSD 是一个志愿者项目，所以如果维护一个 port 不再有趣，那么可能是时候让别人来做了！
+
+无论如何，如果您的 port 在一段时间内没有得到积极维护，Ports 管理团队（`portmgr`）保留重置您维护权的权利。
+（目前，这设置为 3 个月。）
+这意味着在此期间存在未解决的问题或待处理的更新。
+
+[[resources]]
+=== ports 维护者和贡献者的资源
+
+extref:{porters-handbook}[Porter's Handbook] 是您进入 ports 系统的搭便车指南。
+请随身携带！
+
+extref:{problem-reports}[编写 FreeBSD 问题报告] 描述了如何最好地制定和提交 PR。
+2005 年提交了超过一万一千个 ports PR！
+遵循本文将极大地帮助我们减少处理您的 PR 所需的时间。
+
+https://bugs.freebsd.org/bugzilla/query.cgi[问题报告数据库]。
+
+http://portscout.FreeBSD.org[FreeBSD Ports distfile 扫描器 (portscout)] 可以向您显示其 distfiles 无法获取的 ports。
+您可以检查自己的 ports 或使用它来查找需要更新 `MASTER_SITES` 的 ports。
+
+package:ports-mgmt/poudriere[] 是通过安装、打包和卸载的整个周期来测试 port 的最彻底的方法。
+文档位于 https://github.com/freebsd/poudriere[poudriere GitHub 存储库]
+
+man:portlint[1] 是一个可用于验证您的 port 是否符合许多重要的风格和功能指南的应用程序。
+portlint 是一个简单的启发式应用程序，因此您应 __仅将其用作指南__。
+如果 portlint 建议的更改看起来不合理，请查阅 extref:{porters-handbook}[Porter's Handbook] 或寻求建议。
+
+{freebsd-ports} 用于一般的 ports 相关讨论。
+这是一个寻求帮助的好地方。
+您可以 link:https://lists.freebsd.org/[订阅，或阅读和搜索列表档案]。
+阅读 {freebsd-ports-bugs} 和 {svn-ports-head} 的档案也可能很有趣。
+
+https://portsfallout.com/[PortsFallout] 是一个帮助搜索 https://lists.freebsd.org/archives/freebsd-pkg-fallout/[FreeBSD package-fallout 存档] 的地方。
+
+[[ideas-contributing]]
+== 在其他领域入门
+
+正在寻找一些有趣的事情开始，但本文其他地方没有提到？
+FreeBSD 项目有几个 Wiki 页面，其中包含新贡献者可以从中获得如何入门的想法的领域。
+
+https://wiki.freebsd.org/JuniorJobs[初级工作] 页面列出了一些项目，这些项目可能对刚开始接触 FreeBSD 并希望从事有趣的事情以试水的人感兴趣。
+
+https://wiki.freebsd.org/IdeasPage[创意页面] 包含项目中各种「最好有」或「有趣」的事情。
