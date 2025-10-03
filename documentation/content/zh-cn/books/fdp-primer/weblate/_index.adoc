@@ -1,0 +1,487 @@
+--- 
+title: 第 10 章. Weblate 翻译
+prev: books/fdp-primer/po-translations
+next: books/fdp-primer/manual-pages
+description: "如何加入 FreeBSD 翻译团队并在线使用 Weblate 进行翻译"
+tags: ["weblate", "po", "translations", "tutorial", "quick start"]
+showBookMenu: true
+weight: 10
+params:
+  path: "/books/fdp-primer/weblate/"
+---
+
+[[weblate-translations]]
+= Weblate 翻译
+:doctype: book
+:toc: macro
+:toclevels: 1
+:icons: font
+:sectnums:
+:sectnumlevels: 6
+:sectnumoffset: 10
+:partnums:
+:source-highlighter: rouge
+:experimental:
+:images-path: books/fdp-primer/
+
+ifdef::env-beastie[]
+ifdef::backend-html5[]
+:imagesdir: ../../../../images/{images-path}
+endif::[]
+ifndef::book[]
+include::shared/authors.adoc[]
+include::shared/mirrors.adoc[]
+include::shared/releases.adoc[]
+include::shared/attributes/attributes-{{% lang %}}.adoc[]
+include::shared/{{% lang %}}/teams.adoc[]
+include::shared/{{% lang %}}/mailing-lists.adoc[]
+include::shared/{{% lang %}}/urls.adoc[]
+toc::[]
+endif::[]
+ifdef::backend-pdf,backend-epub3[]
+include::../../../../../shared/asciidoctor.adoc[]
+endif::[]
+endif::[]
+
+ifndef::env-beastie[]
+toc::[]
+include::../../../../../shared/asciidoctor.adoc[]
+endif::[]
+
+[[weblate-introduction]]
+== 引言
+
+本章介绍了加入 FreeBSD 翻译团队、在 Weblate 上在线或离线翻译的一些基本步骤，以及关于翻译、校对和测试的一些简单建议。
+本章重点关注翻译部分。
+
+原始文档（文章和书籍）位于 {main-site}[文档门户]。
+
+https://weblate.org/en/[Weblate] 是一款基于 Web 的开源软件，专注于本地化；FreeBSD 项目运行着一个本地实例。
+
+[[weblate-become-translator]]
+== 如何成为 FreeBSD 翻译者
+
+以下是开始翻译 FreeBSD 文档项目文章和书籍的简单步骤。
+
+. 在 https://translate-dev.freebsd.org/[FreeBSD Weblate 实例] 上使用电子邮件地址或您的 GitHub 帐户创建一个帐户。
+. 订阅 {freebsd-translators}。
+. 介绍自己并请求加入一个语言团队。
+如果该语言团队不存在，请请求创建它。
+自我介绍至关重要。
+它会增加您获得写入权限的机会。
+. 使用新帐户登录 https://translate-dev.freebsd.org/[Weblate]。
+. 找到语言团队并选择一个要翻译的初始文档。
+. 创建一个 Bugzilla 帐户，以便在完成文档后提交翻译。
+文档项目也接受带有翻译提交的 GitHub 拉取请求。
+
+[WARNING]
+====
+所有翻译文件和文档都必须遵守 https://www.freebsd.org/copyright/freebsd-doc-license/[FreeBSD 文档许可证]；如果无法接受，请不要注册或发送任何补丁或翻译。
+====
+
+[[weblate-introduce-yourself]]
+== 自我介绍
+
+请在 {freebsd-translators} 上提供简短的自我介绍，以启动授予访问权限的过程。
+这将使语言协调员或管理员能够为 Weblate 的新用户提供开始翻译所需的权限。
+
+以下是此类电子邮件的示例。
+
+[.programlisting]
+....
+主题：自我介绍：姓名和语言
+
+姓名：      姓名（使用首选名称）
+地点：      城市，国家（可选）
+登录名：     用户名或电子邮件（必需）
+语言：  要翻译的语言（必需）
+职业或学生身份：（可选）
+关于您：（自由格式——您愿意与他人分享的信息：
+  公司、学校、其他隶属关系、历史资格、您参与过的其他项目、
+  计算机技能的水平和类型、其他相关技能等）
+您与 FreeBSD 项目：（自由格式：感兴趣的其他 FreeBSD 项目、
+  评论等）
+....
+
+[[weblate-login]]
+== 登录 Weblate
+
+打开 https://translate-dev.freebsd.org/[] 并“登录”。
+
+image::weblate-login.png[Weblate 登录,800]
+
+使用用户名、电子邮件地址或 GitHub 帐户登录。
+
+用户个人资料包含您的偏好、姓名和电子邮件地址。
+姓名和地址将用于提交；请保持此信息准确。
+
+在 FreeBSD Weblate 实例上，所有翻译都将提交到 https://github.com/freebsd/freebsd-doc-translate[freebsd-doc-translate]（GitHub 上的一个中间仓库），而不是直接提交到 https://github.com/freebsd/freebsd-doc[freebsd-doc]。
+翻译人员必须获取 PO gettext 文件（`.po`），将其转换为 `.adoc`，并通过 https://bugs.freebsd.org/bugzilla/[Bugzilla] 或 https://github.com/freebsd/freebsd-doc/pulls[GitHub] 提交，以在文档门户中发布或更新翻译的文档。
+请参阅以下部分了解更多信息。
+
+如果有任何新的字符串被翻译，Weblate 将每天至少向 `freebsd-doc-translate` 提交一次。
+
+[[weblate-find-language-team]]
+== 寻找要加入的语言团队
+
+单击“项目”，选择“文档”，然后单击“语言”，即可查看所有可用语言。
+
+image::weblate-languages.png[Weblate 语言,500]
+
+请注意，某些语言和翻译的文档已经存在于文档门户和仓库中。
+
+如果 Weblate 中没有所需的翻译语言，请在请求创建新语言之前联系 https://www.freebsd.org/docproj/translations/[语言协调员]。
+如果没有答复，请写信给 {doceng}。
+
+[[weblate-translating-online]]
+== 在 Weblate 上在线翻译
+
+在线翻译文档被证明是在 FreeBSD 上进行文档翻译的最简单方法，因为它允许多个用户协作处理同一个文件，从而有效地分配工作量。
+
+一旦协调员或管理员授予特定语言的用户名访问权限，保存按钮将被启用，以便该用户可以开始翻译。
+
+image::weblate-documents.png[Weblate 文档,800]
+image::weblate-translate.png[Weblate 翻译,800]
+
+Weblate 有一组链接，可引导至实际的翻译。
+翻译进一步分为单独的检查，如“未翻译”或“需要审阅”。
+如果整个文档都已翻译且没有任何错误，“所有翻译”链接仍然可用，以备需要审阅时使用。
+或者，可以使用搜索字段查找特定的字符串或术语。
+
+在 https://docs.weblate.org/en/latest/user/translating.html#translation-projects[Weblate 文档] 中，有更多关于翻译的信息，如键盘快捷键和有关翻译工具的其他提示。
+
+[[weblate-translating-offline]]
+== 离线翻译
+
+FreeBSD 上的 Weblate 使用 PO gettext 文件进行翻译。
+熟悉 PO gettext 文件并希望离线翻译的用户可以通过 Weblate 上的文档页面单击“文件”部分来下载和上传翻译。
+
+image::weblate-offline.png[Weblate 离线,800]
+
+[[weblate-automatic-suggestions]]
+== 基于自动建议的翻译
+
+在迁移到 Hugo/Asciidoctor 之前使用 Weblate 的语言可以利用 Weblate 的此功能来节省时间。
+
+Weblate 的此功能使用同一服务器上其他组件和项目生成的翻译记忆库。
+为此，以前的 Weblate 翻译作为只读内容托管在同一服务器上。
+
+相似度为 `100/100` 的字符串可以直接复制和保存。
+其他字符串至少需要进行微调。
+
+一些例子：
+
+image::weblate_automatic_suggestion_01.png[Weblate 自动建议 01,800]
+
+随着向 Hugo/Asciidoctor 的迁移，文档使用 UTF-8。
+一些 HTML 实体应该被替换。
+一些字符串，如链接，需要更改标记。
+
+image::weblate_automatic_suggestion_02.png[Weblate 自动建议 02,800]
+
+链接：
+
+image::weblate_automatic_suggestion_03.png[Weblate 自动建议 03,800]
+
+[[weblate-proofreading-qa]]
+== 校对和 Weblate 质量检查
+
+文档仪表板 `项目/语言/文档` 显示该文档的翻译状态和字符串状态。
+此页面对于校对和质量检查非常方便。
+
+image::weblate-revision1.png[Weblate 修订 01,800]
+
+在此示例中，有两个字符串缺少句号；点击该链接将仅显示那些需要修订/翻译的字符串。
+
+image::weblate-revision2.png[Weblate 修订 02,800]
+
+翻译人员和审阅人员通常很重视在上下文中观察翻译的字符串。
+
+[[weblate-building]]
+== 构建翻译文档
+
+该项目不使用持续集成和持续交付来构建翻译。
+正在研究使其可用。
+
+[NOTE]
+====
+以下示例使用 GitHub，因为 Weblate 也在 GitHub 上。
+请注意，此仓库是只读镜像，但接受拉取请求。
+====
+
+要在本地构建翻译，请按照以下步骤操作：
+
+[[weblate-clone-repositories]]
+
+[.procedure]
+====
+.步骤：克隆必要的仓库
+. 克隆 `freebsd-doc` 仓库：
++
+[source,console?prompt=%]
+....
+% git clone https://github.com/freebsd/freebsd-doc.git ~/freebsd-doc
+....
+
+. 克隆 `freebsd-doc-translate` 仓库：
++
+[source,console?prompt=%]
+....
+% git clone https://github.com/freebsd/freebsd-doc-translate.git ~/freebsd-doc-translate
+....
+====
+
+[[weblate-copy-translation]]
+
+[.procedure]
+====
+.步骤：将翻译文件复制到 `freebsd-doc`
+
+两个仓库都准备好后，将翻译从 `freebsd-doc-translate` 复制到 `freebsd-doc`。
+以西班牙语的 Committer's Guide 文章翻译为例。
+
+[source,console?prompt=%]
+....
+% cp ~/freebsd-doc-translate/documentation/content/es/articles/committers-guide/_index.po \
+~/freebsd-doc/documentation/content/es/articles/committers-guide/
+....
+====
+
+[[weblate-translate]]
+
+[.procedure]
+====
+.步骤：将翻译文件（`.po`）转换为 `.adoc`
+
+转到 `freebsd-doc` 的根目录。
+
+[source,console?prompt=%]
+....
+% cd ~/freebsd-doc
+....
+
+翻译（转换）`.po` 文件为 `.adoc`
+
+[source,console?prompt=%]
+....
+% ./tools/translate.sh documentation es articles/committers-guide
+....
+
+默认情况下：只有翻译字符串超过百分之八十的文件才会被转换为 `.adoc`。
+
+要忽略该限制：
+
+[source,console?prompt=%]
+....
+% KEEP_ENV=0 ./tools/translate.sh documentation es articles/committers-guide
+....
+
+====
+
+一些文档，如书籍，有许多 PO gettext 文件。
+在翻译和构建时，请务必复制所有这些文件。
+未翻译的文件将使用源（英文）字符串进行转换。
+
+[WARNING]
+====
+目录结构至关重要。
+请始终遵循英文文档的目录结构。
+====
+
+[[weblate-build]]
+
+[.procedure]
+====
+.步骤：构建翻译文档
+
+最后是构建部分。
+
+Enter the documentation directory because there is no need to build the FreeBSD website.
+
+[source,console?prompt=%]
+....
+% cd documentation
+....
+
+并构建文档。
+请注意，在构建任何其他语言时，默认情况下总是会添加 `en`。
+
+[source,console?prompt=%]
+....
+% DOC_LANG=es make
+....
+
+此命令将仅构建 FreeBSD 文档门户的英文和西班牙文文档。
+输出将位于 [.filename]#public# 目录中；在浏览器中打开它。
+请注意，某些索引文件可能会将浏览器重定向到在线页面。
+
+另一个不错的选择是使用 Hugo 的内部 Web 服务器构建和提供内容：
+
+[source,console?prompt=%]
+....
+% DOC_LANG=es make run
+....
+
+默认情况下，Web 服务器在 `localhost` 上侦听；要覆盖此行为，请在 `BIND` 参数值中指定所需的 IP 地址。
+
+[source,console?prompt=%]
+....
+% DOC_LANG=es make run BIND=192.168.15.10
+....
+
+这将使用 Hugo 的内部 Web 服务器构建和提供内容，并让其打开，如果任何文件发生更改，它将自动重新构建它们。
+====
+
+要在翻译中进行任何必要的调整，请按照以下步骤重新同步所有组件：
+
+- 在 https://translate-dev.freebsd.org/[Weblate] 上修复翻译字符串。
+- 在 `Document/Manage/Commit` 部分强制 Weblate 提交更改。
+- 使用 `git pull origin main` 命令同步本地 Weblate 仓库 `freebsd-doc-translate`。
+- 再次将翻译复制到 `freebsd-doc`。
+- 使用 `./tools/translate.sh` 脚本将翻译转换为 .adoc。
+- 如果使用了 `make run`，Hugo 将重新构建该文件，而不是构建整个集合；或者重新执行 `make`。
+
+[IMPORTANT]
+====
+根据需要多次执行前面的步骤，直到文档准备好发布。
+====
+
+The crossref:doc-build[doc-build-rendering,文档构建过程] 章节包含有关渲染为 HTML 和 PDF 的信息。
+
+[[weblate-submitting-translations]]
+== 提交翻译
+
+提交巴西葡萄牙语文章 Committer's Guide 更新的示例。
+
+
+[[weblate-git-repo-status]]
+
+[.procedure]
+====
+.检查仓库
+
+按照 crossref:weblate[weblate-building,构建翻译文档] 中的步骤操作后，转到 `freebsd-doc` 的根目录并预览将要提交的内容。
+要查看要更改的文件和文件内容差异的概述：
+
+[source,console?prompt=%]
+....
+% git status
+% git diff
+....
+
+查看输出，如果更改或添加了与 Committer's Guide 翻译更新无关的任何文件，请在继续操作之前采取相应的操作，分别还原或删除它们。
+
+请务必包含 PO gettext 文件（`.po`）和 Hugo/Asciidoctor 中的翻译文档（`.adoc`）。
+====
+
+[[weblate-git-new-branch]]
+
+[.procedure]
+====
+.创建新分支并提交
+
+创建另一个分支以分离工作，这将有助于将来在本地仓库中进行更新。
+
+[source,console?prompt=%]
+....
+% git checkout -b committers-guide_pt-br
+....
+
+注册本地提交。
+
+[source,console?prompt=%]
+....
+% git add .
+% git commit
+....
+
+翻译的提交消息示例：
+
+[.programlisting]
+....
+pt-br/committers-guide: Sync with en XXXXXXX
+....
+
+其中 `XXXXXXX` 是存储在 Weblate 仓库 [.filename]#~/freebsd-doc-translate/revision.txt# 中的 man:git[1] 修订版。
+
+如果是文章的首次翻译：
+
+[.programlisting]
+....
+Add Korean translation of Leap Seconds article
+....
+
+如果之前未配置 man:git[1]，提交后将显示一条消息。
+请按照说明操作，并提供在 Weblate 上使用的姓名和电子邮件地址。
+此步骤对于正确署名贡献者至关重要。
+
+然后检查整个提交，查看更改以及作者姓名和电子邮件。
+
+[source,console?prompt=%]
+....
+% git show
+....
+====
+
+[[weblate-git-patch-submit]]
+
+[.procedure]
+====
+.生成补丁
+
+接下来，生成一个 man:git-format-patch[1] 文件。
+
+[source,console?prompt=%]
+....
+% git format-patch main
+0001-pt-br-committers-guide-Sync-with-en-XXXXXXX.patch
+....
+====
+
+将补丁 [.filename]#0001-pt-br-committers-guide-Sync-with-en-XXXXXXX.patch# 附加到 https://bugs.freebsd.org/bugzilla/[FreeBSD Bugzilla] 中的问题报告。
+
+在报告中包含以下信息：
+
+[[weblate-bugzilla-fields]]
+.Bugzilla 字段
+[cols="1,1", frame="none", options="header"]
+|===
+| 字段
+| 值
+
+| *product*
+| Documentation
+
+| *Component*
+| Books & Articles
+
+| *Summary*
+| 与本地提交相同
+
+| *Description*
+| 说明已遵循本指南中的说明，包括校对和其他必要步骤。
+包括可能有助于分类和推进报告的内容。
+
+
+| *CC* (可选)
+| 如果该语言有协调员，请在 CC 字段中包含他们的电子邮件地址。
+|===
+
+对于熟悉 man:git[1] 和 GitHub 的人：可以不通过 https://bugs.freebsd.org/bugzilla/[Bugzilla] 提交补丁，而是使用 https://github.com/freebsd/freebsd-doc/pulls[GitHub 拉取请求]（使用您在 Weblate 中使用的姓名和地址）。
+
+https://github.com/freebsd/freebsd-doc/ 是一个二级镜像。
+只有拥有 `doc` 提交权限的人才能对 `doc` 树进行更改。
+
+当翻译人员不断发送高质量的补丁时，他们可以被其他提交者提名为获得写入权限（extref:{committers-guide}[doc commit bit, committer.types] for translations）、一个 FreeBSD 帐户以及相关的福利。
+
+The extref:{contributors}[Additional FreeBSD Contributors, contrib-additional] 列表包括其贡献被提交到 `doc` 树的非提交者。
+
+如果对任何程序有疑问，请写信给 {freebsd-translators}。
+
+[[weblate-faq]]
+== FAQ（常见问题）
+
+[[weblate-copyrights]]
+=== 是否需要翻译所有版权信息？
+
+每个语言团队都为自己的语言决定这一点；在 `pt-br`（巴西葡萄牙语）团队中，决定不翻译这些消息。

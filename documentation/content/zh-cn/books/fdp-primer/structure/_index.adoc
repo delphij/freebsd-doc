@@ -1,0 +1,420 @@
+---
+title: 第 4 章. 文档目录结构
+prev: books/fdp-primer/working-copy
+next: books/fdp-primer/doc-build
+description: FreeBSD 文档项目中使用的文档目录结构说明
+tags: ["directory structure", "organization"]
+showBookMenu: true
+weight: 5
+params:
+  path: "/books/fdp-primer/structure/"
+---
+
+[[structure]]
+= 文档目录结构
+:doctype: book
+:toc: macro
+:toclevels: 1
+:icons: font
+:sectnums:
+:sectnumlevels: 6
+:sectnumoffset: 4
+:partnums:
+:source-highlighter: rouge
+:experimental:
+:images-path: books/fdp-primer/
+
+ifdef::env-beastie[]
+ifdef::backend-html5[]
+:imagesdir: ../../../../images/{images-path}
+endif::[]
+ifndef::book[]
+include::shared/authors.adoc[]
+include::shared/mirrors.adoc[]
+include::shared/releases.adoc[]
+include::shared/attributes/attributes-{{% lang %}}.adoc[]
+include::shared/{{% lang %}}/teams.adoc[]
+include::shared/{{% lang %}}/mailing-lists.adoc[]
+include::shared/{{% lang %}}/urls.adoc[]
+toc::[]
+endif::[]
+ifdef::backend-pdf,backend-epub3[]
+include::../../../../../shared/asciidoctor.adoc[]
+endif::[]
+endif::[]
+
+ifndef::env-beastie[]
+toc::[]
+include::../../../../../shared/asciidoctor.adoc[]
+endif::[]
+
+*doc/* 树中的文件和目录遵循一种旨在实现以下目标的结构：
+
+. 便于自动将文档转换为其他格式。
+. 促进不同文档组织之间的一致性，以便于在不同文档之间切换工作。
+. 便于决定新文档应放置在树中的哪个位置。
+
+此外，文档树必须能够容纳多种不同语言的文档。
+重要的是，文档树结构不应强制执行任何特定的默认设置或文化偏好。
+
+[[structure-top]]
+== 的顶层，doc/
+
+*doc/* 下有三个部分，documentation 和 website 共享相同的结构。
+
+[cols="20%,80%", frame="none", options="header"]
+|===
+| 目录
+| 用途
+
+| *documentation*
+| 包含所有 AsciiDoc 格式的文章和书籍。
+包含子目录以按语言进一步对信息进行分类。
+
+| *tools*
+| 包含一组用于使用 link:https://weblate.org/en/[Weblate] 翻译文档和网站的工具。
+Weblate 实例可以在 link:https://translate-dev.freebsd.org[这里] 找到。
+
+| *shared*
+| 包含不特定于文档各种翻译的文件。
+包含子目录以按语言进一步对信息进行分类，以及三个用于存储作者、发布和镜像信息的文件。
+此目录在 `documentation` 和 `website` 之间共享。
+
+| *website*
+| 包含 link:https://www.FreeBSD.org[FreeBSD 网站] 的 AsciiDoc 格式。
+包含子目录以按语言进一步对信息进行分类。
+|===
+
+[[structure-locale]]
+== 目录
+
+这些目录包含文档和网站。
+文档在此级别下的子目录中进行组织，遵循 link:https://gohugo.io/getting-started/directory-structure/[Hugo 目录结构]。
+
+[cols="20%,80%", frame="none", options="header"]
+|===
+| 目录
+| 用途
+
+
+| *archetypes*
+| 包含用于创建新文章、书籍和网页的模板。
+更多信息请参阅 link:https://gohugo.io/content-management/archetypes/[这里]。
+
+| *config*
+| 包含 Hugo 配置文件。
+一个主文件和每种语言一个文件。
+更多信息请参阅 link:https://gohugo.io/getting-started/configuration/[这里]。
+
+| *content*
+| 包含书籍、文章和网页。
+每种可用的文档翻译都有一个目录，例如 `en` 和 `zh-tw`。
+
+| *data*
+| 包含用于以 link:https://en.wikipedia.org/wiki/TOML[TOML] 格式构建网站的自定义数据。
+此目录用于存储事件、新闻、新闻稿等。
+更多信息请参阅 link:https://gohugo.io/templates/data-templates/[这里]。
+
+| *static*
+| 包含静态资产。
+图像、安全公告、pgpkeys 等。
+更多信息请参阅 link:https://gohugo.io/content-management/static-files/[这里]。
+
+| *themes*
+| 包含以 `.html` 文件形式存在的模板，这些模板指定了网站的外观。
+更多信息请参阅 link:https://gohugo.io/templates/[这里]。
+
+| *tools*
+| 包含用于增强文档构建的工具。
+例如，生成书籍的目录等。
+
+| *beastie.png*
+| 这张图片无需介绍 ;)
+
+| *LICENSE*
+| 文档、共享内容和网站的许可证。BSD 2-Clause 许可证。
+
+| *Makefile*
+| *Makefile* 定义了文档和网站的构建过程。
+|===
+
+[[structure-document]]
+== 特定文档信息
+
+本节包含有关 FDP 管理的特定文档的注释。
+
+[[structure-document-books]]
+== 书籍：books/
+
+书籍是用 AsciiDoc 编写的。
+
+对于每本 FreeBSD 书籍，AsciiDoc 文档类型（又名 doctype）是 `book`。
+书籍有“部分”（part），每个部分包含几个“章节”（chapter）。
+
+当文档转换为 HTML 5（使用内置的 `html5` 后端）时：
+
+* `book` 的 `chapter` 开头的 AsciiDoc 章节级别 0 (`=`) 将是 `<h1>`
+* AsciiDoc 章节级别 1 (`==`) 必须用于章节的第一个逻辑部分，并将是 `<h2>`
+* AsciiDoc 章节级别 2 (`===`) 必须用于第一个逻辑小节，并将是 `<h3>`
+
+——依此类推。参考：link:https://docs.asciidoctor.org/asciidoc/latest/sections/titles-and-levels/[章节标题和级别 | Asciidoctor 文档]。
+
+[[structure-document-books-physical]]
+=== 物理组织
+
+书籍目录中有许多文件和目录，都具有相同的结构。
+
+[[structure-document-books-physical-index]]
+==== _index.adoc
+
+*_index.adoc* 文件定义了一些影响 AsciiDoc 源文件如何转换为其他格式的 AsciiDoc 变量，并列出了目录、示例表、图表、表格和摘要部分。
+
+[[structure-document-books-physical-book]]
+==== book.adoc
+
+*book.adoc* 文件定义了一些影响 AsciiDoc 源文件如何转换为其他格式的 AsciiDoc 变量，并列出了目录、示例表、图表、表格、摘要部分和所有章节。
+此文件用于使用 `asciidoctor-pdf` 生成 PDF，以及在一个 `html` 页面中生成书籍。
+
+[[structure-document-books-physical-part]]
+==== part*.adoc
+**part*.adoc** 文件存储了书籍一个部分的简要介绍。
+
+[[structure-document-handbook-physical-chapters]]
+==== directory/_index.adoc
+
+手册中的每一章都存储在一个名为 *_index.adoc* 的文件中，该文件位于与其他章节分开的目录中。
+
+例如，这是一章标题的示例：
+
+[source.programlisting,asciidoc]
+....
+---
+title: 第 8 章. 配置 FreeBSD 内核
+part: 第二部分. 常见任务
+prev: books/handbook/multimedia
+next: books/handbook/printing
+---
+
+[[kernelconfig]]
+= 配置 FreeBSD 内核
+...
+....
+
+当生成手册的 HTML5 版本时，这将产生 *kernelconfig/index.html*。
+
+稍加浏览就会发现，有许多目录都包含各自的 *_index.adoc* 文件，包括 *basics/_index.adoc*、*introduction/_index.adoc* 和 *printing/_index.adoc*。
+
+[IMPORTANT]
+====
+不要根据章节在手册中的顺序来命名章节或目录。
+随着手册内容的重新组织，这个顺序可能会改变。
+重新组织应该可以在不重命名文件的情况下进行，除非整个章节在层次结构中被提升或降级。
+====
+
+[[structure-document-articles]]
+== 文章：articles/
+
+文章是用 AsciiDoc 编写的。
+
+文章被组织为 AsciiDoc `article`。
+文章分为章节 (`=`) 和小节 (`==`, `===`) 等。
+
+[[structure-document-articles-physical]]
+=== 物理组织
+
+每篇文章都有一个 *_index.adoc* 文件。
+
+[[structure-document-articles-physical-index]]
+==== _index.adoc
+
+*_index.adoc* 文件包含所有的 AsciiDoc 变量和内容。
+
+例如，这是一篇文章的示例，其结构与一本书的章节非常相似：
+
+[source.programlisting,asciidoc]
+....
+---
+title: 为什么你应该为你的开源项目使用 BSD 风格的许可证
+authors:
+  - author: Bruce Montague
+    email: brucem@alumni.cse.ucsc.edu
+trademarks: ["freebsd", "intel", "general"]
+---
+
+= 为什么你应该为你的开源项目使用 BSD 风格的许可证
+:doctype: article
+:toc: macro
+:toclevels: 1
+:icons: font
+:sectnums:
+:sectnumlevels: 6
+:source-highlighter: rouge
+:experimental:
+
+'''
+
+toc::[]
+
+[[intro]]
+== 引言
+....
+
+== 管理贡献者列表
+
+FreeBSD 项目在文档和印刷材料中的几个不同列表中认可贡献者。
+本节描述了文档团队如何管理对这些列表的更改。
+
+=== 导师和新提交者关系列表
+
+自 FreeBSD 7.0 起，FreeBSD 维护了 link:https://cgit.freebsd.org/src/tree/share/misc[三个贡献者导师/被指导者关系列表] - 一个用于源代码，一个用于 ports，一个用于文档。
+这些文件是 *".dot"* 格式的，旨在与流行的图形工具包 package:graphics/graphviz[] 一起使用，该工具包可作为 FreeBSD 软件包或 port 提供。
+
+[NOTE]
+====
+man:dot[1] 作为 package:graphics/graphviz[] 软件包或 port 的一部分安装。
+[.filename]#dot# 程序读取 *".dot"* 格式的文件，并创建有向图的图形图像。
+====
+
+这三个文件通常作为所有三个团队的新提交者的学习经验，他们被指示将自己和他们的导师添加到适当的文件中，作为他们的第一次提交。
+每个文件都有一个用于新提交者的“当前”部分，一个用于归还提交权限时的“校友”部分，以及一个显示关系的“导师/被指导者”部分。
+每种条目类型的格式在文件顶部都有解释。
+
+=== 一般贡献者列表
+
+extref:{contributors}[FreeBSD 的贡献者] 以文章格式进行维护。
+用于管理 *贡献者* 文章文件的源文件位于：
+
+[subs=+quotes]
+----
+doc
+ /documentation
+   /content
+     /{language}
+       /articles
+         /contributors
+           [.filename]#_index.adoc# – 包含适用于每个部分的包含文件列表。
+           [.filename]#_index.po# – 翻译页面
+           [.filename]#contrib-develinmemoriam.adoc# - “纪念”部分的内容
+           [.filename]#contrib-develinmemoriam.po# – 翻译页面
+----
+
+此贡献者目录的副本可能存在于其他内容语言目录中。
+
+请注意，文件 [.filename]#contrib-develinmemoriam.adoc# 也在此目录中找到。
+有关其他信息，请参见下文。
+
+[.filename]#contributors/_index.adoc# 文件被设计为包含文件的集合。
+包含文件列在源文件的 Hugo 特定部分中。
+该部分分为几个部分，带有 "ifdef::" 语句。
+有一个用于网站输出的子部分和一个用于非网站（包括 PDF）输出的子部分。
+
+*贡献者* 页面的每个部分的文本都包含一个 "include::" 语句。
+例如，“Port Manager Alumni” 的条目是 `include::{include-contrib-portmgralumni}[]`。
+这将 port manager alumni 的文本拉入渲染的输出中。
+
+要进行更改，请编辑适当的包含文件：
+
+[subs=+quotes]
+----
+include-contrib-committers:     [.filename]#~/doc/shared/contrib-committers.adoc#
+include-contrib-corealumni:     [.filename]#~/doc/shared/contrib-corealumni.adoc#
+include-contrib-develalumni:    [.filename]#~/doc/shared/contrib-develalumni.adoc#
+include-contrib-portmgralumni:  [.filename]#~/doc/shared/contrib-portmgralumni.adoc#
+include-contrib-additional:     [.filename]#~/doc/shared/contrib-additional.adoc#
+include-contrib-386bsd:         [.filename]#~/doc/shared/contrib-386bsd.adoc#
+
+另外，编辑 [.filename]#authors.adoc# 文件：[.filename]#~/doc/shared/authors.adoc#
+以及任何相关的翻译。
+
+----
+
+通常，如果要添加一个人，只需要进行一次编辑，他们可以被添加到适当的包含文件中。
+如果一个人要从“当前”状态移动到“校友”状态，则需要进行两次编辑 - 一次删除，一次为适当的文件插入。
+所有文件的条目顺序见下表。
+
+[cols="25%,25%,25%,25%", frame="none", options="header"]
+|===
+| 目的 | 部分锚点 | ~/doc/shared/ 中的文件 | 排序规范
+| *FreeBSD 开发人员* | include-contrib-committers | [.filename]#contrib-committers.adoc# | 按姓氏字母顺序
+| *核心团队校友* | include-contrib-corealumni | [.filename]#contrib-corealumni.adoc# | 大致按时间倒序
+| *开发团队校友* | include-contrib-develalumni | [.filename]#contrib-develalumni.adoc# | 大致按时间倒序
+| *Ports 管理团队校友* | include-contrib-portmgralumni | [.filename]#contrib-portmgralumni.adoc# | 大致按时间倒序
+| *其他 FreeBSD 贡献者* | include-contrib-additional | [.filename]#contrib-additional.adoc# | 按名字字母顺序
+| *386BSD 补丁包补丁贡献者* | include-contrib-386bsd | [.filename]#contrib-386bsd.adoc# | 按名字字母顺序
+| *中央服务器项目贡献者* | 不使用包含文件 | [.filename]#contributors/_index.adoc# | 无序
+| *直接资助* | 不使用包含文件 | [.filename]#contributors/_index.adoc# | 无序
+| *硬件贡献者* | 不使用包含文件 | [.filename]#contributors/_index.adoc# | 无序
+| *特殊贡献者* | 不使用包含文件 | [.filename]#contributors/_index.adoc# | 无序
+|===
+
+=== “纪念”部分
+
+在向 BSD 社区通报社区成员去世时，应使用以下程序：
+
+. 使用文件 [.filename]#~/doc/shared/authors.adoc# 查找此人的姓名和属性引用，例如 `{foobsd}`。
+. 如果他们是 [.filename]#~/doc/website/content/en/administration.adoc# 中一个或多个 FreeBSD 项目团队的现任成员，请删除其属性引用的所有实例。
+此外，完成以下编辑：
++
+* [.filename]#~/doc/shared/contrib-committers.adoc# - 删除属性引用。
+* [.filename]#~/doc/shared/contrib-corealumni.adoc# - 如果他们是核心团队的 _现任_ 成员，请创建一个显示开始和结束日期的条目。
+* [.filename]#~/doc/shared/contrib-develalumni.adoc# - 添加属性引用和作为提交者的活动日期。
+* [.filename]#~/doc/shared/contrib-portmgralumni.adoc# - 如有必要，添加属性引用。
+* [.filename]#~/doc/shared/contrib-additional.adoc# - 删除条目。
+* [.filename]#~/doc/shared/contrib-386bsd.adoc# - 这只是一个历史文件。
+无需更改。
++
+. 在 [.filename]#~/doc/shared/authors.adoc# 文件中，注释掉（使用一个反斜杠 '\'）电子邮件地址，以避免创建电子邮件链接 "mailto:"
+请参见下面 `itojun` 的示例：
++
+[source.programlisting,asciidoc]
+....
+[shared/authors.adoc]
+
+[..]
+
+:itojun-name: Jun-ichiro Itoh
+:itojun-email: \itojun@FreeBSD.org
+:itojun: {itojun-name} <{itojun-email}>
+
+[..]
+....
++
+. 由于该成员已故（应仔细核对），请将他们添加到“纪念”文件 [.filename]#contrib-develinmemoriam.adoc# 中。
++
+尝试查找一些关于他们多年来对 FreeBSD 贡献的事实信息，并将其与他们在文件中的条目一起添加。
+这可能需要询问开发邮件列表、联系同事、联系 FreeBSD 基金会或搜索提交日志。
++
+要查找他们第一次提交的日期，请使用：
++
+[source.programlisting,asciidoc]
+....
+% cd ~/src
+% git log --reverse --author=foobsd     # 搜索 foobsd 的第一次提交
+....
++
+这将按相反的顺序列出他们的提交。
+第一次提交的日期将位于顶部。
++
+确保日期格式与其他条目匹配：
++
+[source.programlisting,asciidoc]
+....
+(提交权限开始年份 - 提交权限结束年份；RIP 去世年份)
+
+例如：
+
+* Foo BSD (2007 - 2010; RIP 2016)
+....
++
+检查文件中条目的顺序。
++
+[cols="25%,25%,25%,25%", frame="none", options="header"]
+|===
+| 目的 | 部分锚点 | ~/doc/documentation/content/{language}/articles/contributors/ 中的文件 | 排序规范
+| *开发团队：纪念* | [.filename]#contrib-develinmemoriam.adoc# | [.filename]#contrib-develinmemoriam.adoc# | 大致按时间倒序
+|===
++
+有关类似条目，请参见“纪念”文件。
++
+. 最后，如果适用，将提交者成员条目从“当前”部分移动到适当的 link:https://cgit.freebsd.org/src/tree/share/misc[贡献者导师/被指导者关系列表] 的“校友”部分，并附上适当的日期。
+无需更改导师/被指导者关系。

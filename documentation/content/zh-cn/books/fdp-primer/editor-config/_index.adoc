@@ -1,0 +1,330 @@
+--- 
+title: 第 13 章. 编辑器配置
+prev: books/fdp-primer/writing-style
+next: books/fdp-primer/trademarks
+description: FreeBSD 文档项目中使用的文本编辑器配置
+tags: ["editor", "configuration", "vim", "emacs", "FreeBSD"]
+showBookMenu: true
+weight: 13
+params:
+  path: "/books/fdp-primer/editor-config/"
+---
+
+[[editor-config]]
+= 编辑器配置
+:doctype: book
+:toc: macro
+:toclevels: 1
+:icons: font
+:sectnums:
+:sectnumlevels: 6
+:sectnumoffset: 13
+:partnums:
+:source-highlighter: rouge
+:experimental:
+:images-path: books/fdp-primer/
+
+ifdef::env-beastie[]
+ifdef::backend-html5[]
+:imagesdir: ../../../../images/{images-path}
+endif::[]
+ifndef::book[]
+include::shared/authors.adoc[]
+include::shared/mirrors.adoc[]
+include::shared/releases.adoc[]
+include::shared/attributes/attributes-{{% lang %}}.adoc[]
+include::shared/{% lang %}/teams.adoc[]
+include::shared/{% lang %}/mailing-lists.adoc[]
+include::shared/{% lang %}/urls.adoc[]
+toc::[]
+endif::[]
+ifdef::backend-pdf,backend-epub3[]
+include::../../../../../shared/asciidoctor.adoc[]
+endif::[]
+endif::[]
+
+ifndef::env-beastie[]
+toc::[]
+include::../../../../../shared/asciidoctor.adoc[]
+endif::[]
+
+调整您的文本编辑器配置可以使处理文档文件更快、更容易，并有助于使文档符合 FDP 指南。
+
+[[editor-config-vim]]
+== Vim
+
+从 package:editors/vim[] 安装，然后按照 crossref:editor-config[editor-config-vim-config,配置] 中的配置说明进行操作。
+更高级的用户可以使用像 link:https://github.com/dense-analysis/ale[Ale] 这样的合适的 linter，它也可以充当 Vim link:https://langserver.org/[语言服务器协议] 客户端。
+
+[[editor-config-vim-use]]
+=== 使用
+
+手册页编写者可以使用以下键盘快捷键重新格式化：
+
+* 按 kbd:[P] 重新格式化段落或在可视模式下选择的文本。
+* 按 kbd:[T] 将八个空格的组替换为制表符。
+
+一个名为 link:https://vale.sh[Vale] 的 linter 已被引入，用于检查文档中的语法和外观错误。
+Vale 支持各种编辑器和 IDE。
+
+Vale 可能已经作为 package:textproc/docproj[] meta-port 的依赖项安装。
+如果没有，请使用以下命令安装 package:textproc/vale[]：
+
+[source,console]
+....
+$ pkg install vale
+....
+
+安装 link:https://github.com/dense-analysis/ale[Ale] 以集成到 package:editors/vim[] 中，以便使用 package:textproc/vale[]。
+
+[source,console?prompt=%]
+....
+% mkdir -p ~/.vim/pack/vendor/start
+% git clone --depth 1 https://github.com/dense-analysis/ale.git ~/.vim/pack/vendor/start/ale
+....
+
+使用 package:editors/vim[] 插件管理器的用户不需要上述操作，应按照该插件管理器的说明安装 link:https://github.com/dense-analysis/ale[Ale]。
+
+目前由于 link:https://vale.sh[Vale] 中的一个错误，需要将 link:https://vale.sh[Vale] 配置复制到主目录。
+考虑到仓库已克隆到 [.filename]#~/doc#，请按如下方式复制：
+
+[source,console?prompt=%]
+....
+% cp -R ~/doc/.vale* ~/
+....
+
+[[editor-config-vim-config]]
+=== 配置
+
+编辑 [.filename]#~/.vimrc#，将这些行添加到文件末尾：
+
+[source.programlisting,viml]
+.`~/.vimrc`
+....
+if has("autocmd")
+  au BufNewFile,BufRead *.adoc call Set_ADOC()
+  au BufNewFile,BufRead *.[1-9] call Set_MAN()
+endif " has(autocmd)
+
+function Set_Highlights()
+  "match ExtraWhitespace /^\s* \s*|\s\+\$
+  return 0
+endfunction " Set_Highlights_Adoc()
+
+function Set_Highlights_MAN()
+  highlight default link OverLength ErrorMsg
+  match OverLength /\%71v.\+/
+  return 0
+endfunction " Set_Highlights_MAN()
+
+function ShowSpecial()
+  setlocal list listchars=tab:>>,trail:*,eol:$ 
+  hi def link nontext ErrorMsg
+  return 0
+endfunction " ShowSpecial()
+
+function Set_COMMON()
+  setlocal number
+  setlocal shiftwidth=2
+  setlocal tabstop=8
+  setlocal softtabstop=2
+  setlocal formatprg="fmt -p"
+  setlocal autoindent
+  setlocal smartindent
+  call ShowSpecial()
+  call Set_Highlights()
+  return 0
+endfunction " Set_COMMON()
+
+function Set_ADOC()
+  setlocal syntax=asciidoc
+  setlocal filetype=asciidoc
+  call Set_COMMON()
+  return 0
+endfunction " Set_ADOC()
+
+function Set_MAN()
+  setlocal syntax=man
+  setlocal filetype=man
+  setlocal textwidth=70
+  " Rewrap paragraphs
+  noremap P gqj
+  " Replace spaces with tabs
+  noremap T :s/        /\t/<CR>
+  call Set_COMMON()
+  call Set_Highlights_MAN()
+  return 0
+endfunction " Set_Man()
+
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\}
+let g:ale_linters = {
+\   'asciidoc': ['vale'],
+\}
+let g:ale_fix_on_save = 1
+....
+
+[IMPORTANT]
+======
+以上配置将自动删除尾随行、尾随空格和多个空格，这可能会在 `git diff` 输出中显示其他不必要的更改。
+在这种情况下，请在提交日志中正确提及。
+======
+
+[[editor-config-emacs]]
+== Emacs
+
+从 package:editors/emacs[] 或 package:editors/emacs-devel[] 安装。
+
+[[editor-config-emacs-igor]]
+=== 使用 Flycheck 和 Igor 进行自动校对
+
+The link:https://www.flycheck.org/[Flycheck] 软件包可从 link:https://melpa.org/[Milkypostman 的 Emacs Lisp 软件包存档] (MELPA) 获得。
+如果 MELPA 尚未在 Emacs 的 packages-archives 中，可以通过评估以下内容来添加它
+
+[source,emacs-lisp]
+....
+(add-to-list 'package-archives '("melpa" . "http://stable.melpa.org/packages/") t)
+....
+
+将该行添加到 Emacs 的初始化文件（[.filename]#~/.emacs#、[.filename]#~/.emacs.el# 或 [.filename]#~.emacs.d/init.el# 之一）以使此更改永久生效。
+
+要安装 Flycheck，请评估
+
+[source,emacs-lisp]
+....
+(package-install 'flycheck)
+....
+
+通过评估以下内容为 package:textproc/igor[] 创建一个 Flycheck 检查器
+
+[source,emacs-lisp]
+....
+(flycheck-define-checker igor
+  "FreeBSD Documentation Project sanity checker.
+
+  See URLs https://www.freebsd.org/docproj/ and
+  http://www.freshports.org/textproc/igor/."
+  :command ("igor" "-X" source-inplace)
+  :error-parser flycheck-parse-checkstyle
+  :modes (nxml-mode)
+  :standard-input t)
+
+  (add-to-list 'flycheck-checkers 'igor 'append)
+....
+
+同样，将这些行添加到 Emacs 的初始化文件以使更改永久生效。
+
+[[editor-config-emacs-specifc]]
+=== FreeBSD 文档特定设置
+
+要应用特定于 FreeBSD 文档项目的设置，请在文档仓库的根目录中创建 [.filename]#.dir-locals.el#，并将这些行添加到文件中：
+
+[source,emacs-lisp]
+....
+;;; Directory Local Variables
+;;; For more information see (info "(emacs) Directory Variables")
+
+((nxml-mode
+  (eval . (turn-on-auto-fill))
+  (fill-column . 70)
+  (eval . (require 'flycheck))
+  (eval . (flycheck-mode 1))
+  (flycheck-checker . igor)
+  (eval . (add-to-list 'rng-schema-locating-files "~/.emacs.d/schema/schemas.xml"))))
+....
+
+[[editor-config-nano]]
+== nano
+
+从 package:editors/nano[] 安装。
+
+[[editor-config-nano-config]]
+=== 配置
+
+目前，nano 发行版中没有 adoc/asciidoc 语法高亮文件。
+因此，让我们从头开始创建一个，并使用编辑器创建一个新文件或在 [.filename]#~/.nanorc# 中添加具有以下内容的行：
+
+[source]
+.`~/.nanorc`
+....
+syntax "asciidoc" "\.(adoc|asc|asciidoc)$"
+# main header
+color red "^====+$"
+# h1
+color red "^==[[:space:]].*$"
+color red "^----+$"
+# h2
+color magenta "^===[[:space:]].*$"
+color magenta "^~~~~+$"
+# h4
+color green "^====[[:space:]].*$"
+color green "^\^\^\^\^$"
+# h5
+color brightblue "^=====[[:space:]].*$"
+color brightblue "^\+\+\+\++$"
+# attributes
+color brightgreen ":.*:"
+color brightred "\{[a-z0-9]*\}"
+color red "\\\{[a-z0-9]*\\}"
+color red "\+\+\+\{[a-z0-9]*\}\+\+\+"
+# Paragraph Title
+color yellow "^\..*$"
+# source
+color magenta "^\[(source,.+|NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]"
+# Other markup
+color yellow ".*[[:space:]]+$"
+color yellow "_[^_]+_"
+color yellow "\*[^\*]+\*"
+color yellow "\+[^\+]+\+"
+color yellow "`[^`]+`"
+color yellow "^[^\^]+\^"
+color yellow "~[^~]+~"
+color yellow "'[^']+'"
+color cyan "`{1,2}[^']+'{1,2}"
+# bullets
+color brightmagenta "^[[:space:]]*[\*\.-]{1,5}[[:space:]]"
+# anchors
+color brightwhite "\[\[.*\]\]"
+color brightwhite "<<.*>>"
+# trailing whitespace
+color ,blue "[[:space:]]+$"
+# multiples of eight spaces at the start a line
+# (after zero or more tabs) should be a tab
+color ,blue "^([TAB]*[ ]{8})+"
+# tabs after spaces
+color ,yellow "( )+TAB"
+# highlight indents that have an odd number of spaces
+color ,red "^(([ ]{2})+|(TAB+))*[ ]{1}[^ ]{1}"
+....
+
+处理文件以创建嵌入式制表符：
+
+[source,console?prompt=%]
+....
+% perl -i'' -pe 's/TAB/\t/g' ~/.nanorc
+....
+
+[[editor-config-nano-use]]
+=== 使用
+
+运行编辑器时指定其他有用的选项：
+
+[source,console?prompt=%]
+....
+% nano -AKipwz -T8 _index.adoc
+....
+
+man:csh[1] 的用户可以在 [.filename]#~/.cshrc# 中定义一个别名来自动执行这些选项：
+
+[source,shell]
+....
+alias nano "nano -AKipwz -r 70 -T8"
+....
+
+定义别名后，选项将自动添加：
+
+[source,console?prompt=%]
+....
+% nano _index.adoc
+....

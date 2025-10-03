@@ -1,0 +1,161 @@
+---
+title: 第 3 章. 工作副本
+prev: books/fdp-primer/tools
+next: books/fdp-primer/structure
+description: 如何获取 FreeBSD 文档项目的工作副本
+tags: ["working copy", "documentation", "manual pages", "git"]
+showBookMenu: true
+weight: 4
+params:
+  path: "/books/fdp-primer/working-copy/"
+---
+
+[[working-copy]]
+= 工作副本
+:doctype: book
+:toc: macro
+:toclevels: 1
+:icons: font
+:sectnums:
+:sectnumlevels: 6
+:sectnumoffset: 3
+:partnums:
+:source-highlighter: rouge
+:experimental:
+:images-path: books/fdp-primer/
+
+ifdef::env-beastie[]
+ifdef::backend-html5[]
+:imagesdir: ../../../../images/{images-path}
+endif::[]
+ifndef::book[]
+include::shared/authors.adoc[]
+include::shared/mirrors.adoc[]
+include::shared/releases.adoc[]
+include::shared/attributes/attributes-{{% lang %}}.adoc[]
+include::shared/{{% lang %}}/teams.adoc[]
+include::shared/{{% lang %}}/mailing-lists.adoc[]
+include::shared/{{% lang %}}/urls.adoc[]
+toc::[]
+endif::[]
+ifdef::backend-pdf,backend-epub3[]
+include::../../../../../shared/asciidoctor.adoc[]
+endif::[]
+endif::[]
+
+ifndef::env-beastie[]
+toc::[]
+include::../../../../../shared/asciidoctor.adoc[]
+endif::[]
+
+_工作副本_ 是下载到本地计算机的 FreeBSD 仓库文档树的副本。
+更改在本地工作副本中进行，经过测试，然后作为补丁提交，以便合并到主仓库中。
+
+文档树的完整副本可能占用 550 MB 的磁盘空间。
+请预留整整 1 GB 的空间，以便为临时文件和各种输出格式的测试版本留出空间。
+
+link:https://git-scm.com/[Git] 用于管理 FreeBSD 文档文件。
+可以通过安装 package:devel/git[] 软件包来获取，该软件包还有一个名为 git-lite 的轻量级版本：
+
+[source,shell]
+....
+# pkg install git-lite
+....
+
+[[working-copy-doc-and-src]]
+== 文档和手册页
+
+FreeBSD 文档不仅仅是书籍和文章。
+所有命令和配置文件的手册页也是文档的一部分，并且属于 FDP 的范畴。
+这涉及到两个仓库：`doc` 用于书籍和文章，`src` 用于操作系统和手册页。
+要编辑手册页，必须单独检出 `src` 仓库。
+
+仓库可能包含多个版本的文档和源代码。
+新的修改几乎总是只在最新版本上进行，称为 `main`。
+
+[[working-copy-choosing-directory]]
+== 选择目录
+
+FreeBSD 文档传统上存储在 [.filename]#/usr/doc/# 中，而带有手册页的系统源代码则存储在 [.filename]#/usr/src/# 中。
+这些目录树是可重定位的，用户可能希望将工作副本放在其他位置，以避免干扰主目录中的现有信息。
+以下示例使用 [.filename]#~/doc# 和 [.filename]#~/src#，它们都是用户主目录的子目录。
+
+[[working-copy-checking-out]]
+== 检出副本
+
+从仓库下载工作副本称为 _克隆_，使用 `git clone` 完成。
+此示例克隆了主文档树的最新版本 (`main`) 的副本：
+
+[source,shell]
+....
+% git clone https://git.FreeBSD.org/doc.git ~/doc
+....
+
+检出源代码以处理手册页非常相似：
+
+[source,shell]
+....
+% git clone https://git.FreeBSD.org/src.git ~/src
+....
+
+[[working-copy-updating]]
+== 更新工作副本
+
+FreeBSD 仓库中的文档和文件每天都在变化。
+人们频繁地修改文件并提交更改。
+即使在初次检出后很短的时间内，本地工作副本与主 FreeBSD 仓库之间也已经存在差异。
+要使用主仓库中所做的更改来更新本地版本，请在包含本地工作副本的目录上使用 `git pull`：
+
+[source,shell]
+....
+% cd ~/doc
+% git pull --ff-only
+....
+
+养成在编辑文档文件之前使用 `git pull` 的保护性习惯。
+其他人可能最近编辑了该文件，本地工作副本在更新之前不会包含最新的更改。
+编辑文件的最新版本比尝试将较旧的、已编辑的本地文件与仓库中的较新版本合并要容易得多。
+
+[[working-copy-revert]]
+== 还原更改
+
+有时，更改最终可能是不必要的，或者作者只是想重新开始。
+可以使用 `git restore` 将文件“重置”为其未更改的形式。
+例如，要擦除对 [.filename]#_index.adoc# 所做的编辑并将其重置为未修改的形式：
+
+[source,shell]
+....
+% git restore _index.adoc
+....
+
+[[working-copy-making-diff]]
+== 创建差异文件
+
+在完成对一个或一组文件的编辑后，必须将本地工作副本与 FreeBSD 仓库中的版本之间的差异收集到一个文件中以供提交。
+这些 _diff_ 文件是通过将 `git diff` 的输出重定向到一个文件来生成的：
+
+[source,shell]
+....
+% cd ~/doc
+% git diff > doc-fix-spelling.diff
+....
+
+给文件起一个有意义的名称，以标识其内容。
+上面的示例是针对整个文档树的拼写修复。
+
+如果 diff 文件将通过 Web “link:https://bugs.FreeBSD.org/bugzilla/enter_bug.cgi[提交 FreeBSD 问题报告]” 界面提交，请添加 [.filename]#.txt# 扩展名，以便让这个认真而头脑简单的 Web 表单知道内容是纯文本。
+
+请注意：`git diff` 包括在当前目录和任何子目录中所做的所有更改。
+如果工作副本中有尚未准备好提交的编辑文件，请仅提供要包含的文件的列表：
+
+[source,shell]
+....
+% cd ~/doc
+% git diff disks/_index.adoc printers/_index.adoc > disks-printers.diff
+....
+
+[[working-copy-git-references]]
+== Git 参考
+
+这些示例展示了 Git 的非常基本的用法。
+更多详细信息可在 https://git-scm.com/book/en/v2[Git Book] 和 https://git-scm.com/doc[Git documentation] 中找到。

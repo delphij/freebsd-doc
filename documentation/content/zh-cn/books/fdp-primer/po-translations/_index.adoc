@@ -1,0 +1,395 @@
+--- 
+title: 第 9 章. PO 翻译
+prev: books/fdp-primer/translations
+next: books/fdp-primer/weblate
+description: 如何在 FreeBSD 文档项目中使用 PO 翻译
+tags: ["po", "translations", "tutorial", "quick start"]
+showBookMenu: true
+weight: 9
+params:
+  path: "/books/fdp-primer/po-translations/"
+---
+
+[[po-translations]]
+= PO 翻译
+:doctype: book
+:toc: macro
+:toclevels: 1
+:icons: font
+:sectnums:
+:sectnumlevels: 6
+:sectnumoffset: 9
+:partnums:
+:source-highlighter: rouge
+:experimental:
+:images-path: books/fdp-primer/
+
+ifdef::env-beastie[]
+ifdef::backend-html5[]
+:imagesdir: ../../../../images/{images-path}
+endif::[]
+ifndef::book[]
+include::shared/authors.adoc[]
+include::shared/mirrors.adoc[]
+include::shared/releases.adoc[]
+include::shared/attributes/attributes-{{% lang %}}.adoc[]
+include::shared/{{% lang %}}/teams.adoc[]
+include::shared/{{% lang %}}/mailing-lists.adoc[]
+include::shared/{{% lang %}}/urls.adoc[]
+toc::[]
+endif::[]
+ifdef::backend-pdf,backend-epub3[]
+include::../../../../../shared/asciidoctor.adoc[]
+endif::[]
+endif::[]
+
+ifndef::env-beastie[]
+toc::[]
+include::../../../../../shared/asciidoctor.adoc[]
+endif::[]
+
+[[po-translations-introduction]]
+== 引言
+
+http://www.gnu.org/software/gettext/[GNU gettext] 系统为翻译人员提供了一种创建和维护文档翻译的简单方法。
+可翻译的字符串从原始文档中提取到 PO（Portable Object）文件中。
+字符串的翻译版本使用单独的编辑器输入。
+这些字符串可以直接使用，也可以构建成原始文档的完整翻译版本。
+
+[[po-translations-quick-start]]
+== 快速入门
+
+假设已经执行了 crossref:overview[overview-quick-start,快速入门] 中显示的步骤。
+`TRANSLATOR` 选项是必需的，并且在 package:textproc/docproj[] port 中默认已启用。
+
+此示例展示了如何创建简短的 extref:{leap-seconds}[Leap Seconds] 文章的西班牙语翻译。
+
+[[po-translations-quick-start-install-po-editor]]
+
+[.procedure]
+====
+.步骤：安装 PO 编辑器
+. 需要一个 PO 编辑器来编辑翻译文件。此示例使用 package:editors/poedit[]。
++
+[source,shell]
+....
+# pkg install poedit
+....
+====
+
+[[po-translations-quick-start-initial-setup]]
+[.procedure]
+====
+.步骤：初始设置
+
+首次创建新翻译时，必须从英文原文创建或复制目录结构：
+
+. 为新翻译创建一个目录。英文文章源文件位于 [.filename]#~/doc/documentation/content/en/articles/leap-seconds/#。西班牙语翻译将放在 [.filename]#~/doc/documentation/content/es/articles/leap-seconds/#。除了语言目录的名称外，路径是相同的。
+英文文章源文件位于 [.filename]#~/doc/en/articles/leap-seconds/#。
+西班牙语翻译将放在 [.filename]#~/doc/es/articles/leap-seconds/#。
+除了语言目录的名称外，路径是相同的。
++
+[source,shell]
+....
+% mkdir ~/doc/documentation/content/es/articles/leap-seconds
+....
+
+. 将原始文档中的 [.filename]#_index.po# 复制到翻译目录中：
++
+[source,shell]
+....
+% cp ~/doc/documentation/content/en/articles/leap-seconds/_index.po \
+  ~/doc/documentation/content/es/articles/leap-seconds/
+....
+
+假设文档或语言也通过 Weblate 进行翻译。
+在这种情况下，最好从那里获取 `.po` 文件，并将翻译文档上传回平台，通过 Weblate 集中翻译工作以避免重复劳动。
+
+有关如何下载 `.po` 文件的信息，请参阅 crossref:weblate[weblate-translating-offline,在 Weblate 上离线翻译] 章节。
+====
+
+[[po-translations-quick-start-translation]]
+[.procedure]
+====
+.步骤：翻译
+
+使用 PO 编辑器在 PO 文件中输入翻译。
+有几种不同的编辑器可用。这里显示的是来自 package:editors/poedit[] 的 [.filename]#poedit#。
+
+[source,shell]
+....
+% poedit documentation/content/es/articles/leap-seconds/_index.po
+....
+====
+
+[[po-translations-quick-generating-a-translated-document]]
+[.procedure]
+====
+.步骤：生成翻译文档
+. 生成翻译文档：
++
+[source,shell]
+....
+% cd ~/doc
+% ./tools/translate.sh documentation es articles/leap-seconds
+....
++
+生成的文档名称与英文原文的名称匹配，通常是 [.filename]#_index.adoc#。
++
+. 通过将其渲染为 HTML 并使用 Web 浏览器查看来检查生成的文件：
++
+[source,shell]
+....
+% cd ~/doc/documentation
+% make
+....
+====
+
+[[po-translations-creating]]
+== 创建新翻译
+
+创建新翻译文档的第一步是找到或创建一个目录来存放它。
+FreeBSD 将翻译的文档放在一个以其语言和地区命名的子目录中，格式为 [.filename]#lang#。
+_lang_ 是一个两个字符的小写代码。
+
+[[po-translations-language-names]]
+.语言名称
+[cols="1,1,1", frame="none", options="header"]
+|===
+| 语言
+| 地区
+| 翻译目录名称
+
+|英语
+|美国
+|[.filename]#en#
+
+|孟加拉语
+|孟加拉国
+|[.filename]#bn-bd#
+
+|丹麦语
+|丹麦
+|[.filename]#da#
+
+|德语
+|德国
+|[.filename]#de#
+
+|希腊语
+|希腊
+|[.filename]#el#
+
+|西班牙语
+|西班牙
+|[.filename]#es#
+
+|法语
+|法国
+|[.filename]#fr#
+
+|匈牙利语
+|匈牙利
+|[.filename]#hu#
+
+|意大利语
+|意大利
+|[.filename]#it#
+
+|日语
+|日本
+|[.filename]#ja#
+
+|韩语
+|韩国
+|[.filename]#ko#
+
+|蒙古语
+|蒙古
+|[.filename]#mn#
+
+|荷兰语
+|荷兰
+|[.filename]#nl#
+
+|波兰语
+|波兰
+|[.filename]#pl#
+
+|葡萄牙语
+|巴西
+|[.filename]#pt-br#
+
+|俄语
+|俄罗斯
+|[.filename]#ru#
+
+|土耳其语
+|土耳其
+|[.filename]#tr#
+
+|中文
+|中国
+|[.filename]#zh-cn#
+
+|中文
+|台湾
+|[.filename]#zh-tw#
+|===
+
+翻译位于主文档目录的子目录中，
+这里假设为 [.filename]#~/doc/documentation/#，如 crossref:overview[overview-quick-start, 快速入门] 所示。
+例如，德语翻译位于 [.filename]#~/doc/documentation/content/de/#，
+而法语翻译位于 [.filename]#~/doc/documentation/content/fr/#。
+
+每个语言目录都包含以文档类型命名的单独子目录，通常是 [.filename]#articles/# 和 [.filename]#books/#。
+
+将这些目录名称组合起来，就得到了文章或书籍的完整路径。
+例如，NanoBSD 文章的法语翻译位于 [.filename]#~/doc/documentation/content/fr/articles/nanobsd/#，
+而手册的蒙古语翻译位于 [.filename]#~/doc/documentation/content/mn/books/handbook/#。
+
+将文档翻译成新语言时，必须创建一个新的语言目录。
+如果语言目录已经存在，则只需要在 [.filename]#articles/# 或 [.filename]#books/# 目录中创建一个子目录。
+
+[[po-translations-creating-example]]
+.创建 Porter 手册的西班牙语翻译
+[example]
+====
+创建 extref:{porters-handbook}[Porter 手册] 的新西班牙语翻译。
+原文是一本书，位于 [.filename]#~/doc/documentation/content/en/books/porters-handbook/#。
+
+[.procedure]
+======
+
+. 西班牙语书籍目录 [.filename]#~/doc/documentation/content/es/books/# 已经存在，因此只需要为 Porter 手册创建一个新的子目录：
++
+[source,shell]
+....
+% cd ~/doc/documentation/content/es/books
+% mkdir porters-handbook
+....
+
+. 从原始书籍复制内容：
++
+[source,shell]
+....
+% cd porters-handbook
+% cp -R ~/doc/documentation/content/en/books/porters-handbook/* .
+....
++
+现在文档结构已经准备好，翻译人员可以使用 `po4a` 命令开始翻译。
+======
+====
+
+[[po-translations-translating]]
+== 翻译
+
+gettext 系统大大减少了翻译人员必须跟踪的事情数量。
+要翻译的字符串从原始文档中提取到 PO 文件中。
+然后使用 PO 编辑器输入每个字符串的翻译版本。
+
+FreeBSD PO 翻译系统不会覆盖 PO 文件，因此可以随时运行提取步骤来更新 PO 文件。
+
+使用 PO 编辑器来编辑文件。
+这些示例中显示的是 package:editors/poedit[]，因为它简单且要求最低。
+其他 PO 编辑器提供了使翻译工作更容易的功能。
+Ports Collection 提供了其中几种编辑器，包括 package:devel/gtranslator[]。
+
+保留 PO 文件非常重要。
+它包含了翻译人员所做的所有工作。
+
+[IMPORTANT]
+====
+在线翻译文档被证明是在 FreeBSD 上进行文档翻译的最简单方法，因为它允许多个用户协作处理同一个文件，从而有效地分配工作量。
+有关更多详细信息，请参阅下一章 crossref:weblate[weblate-introduction,Weblate 翻译]。
+====
+
+[[po-translations-tips]]
+== 翻译技巧
+
+[[po-translations-tips-xmltags]]
+=== 保留 AsciiDoc 宏
+
+保留英文原文中显示的 AsciiDoc 宏。
+
+.保留 AsciiDoc 宏
+[example]
+====
+英文原文：
+
+[.programlisting]
+....
+msgid ""
+"This example shows the creation of a Spanish translation of the short "
+"extref:{leap-seconds}[Leap Seconds] article."
+....
+
+西班牙语翻译：
+
+[.programlisting]
+....
+msgid ""
+"Este ejemplo muestra la creación de un artículo con poco contenido como el artículo "
+"extref:{leap-seconds}[Leap Seconds]."
+....
+
+====
+
+[[po-translations-tips-spaces]]
+=== 保留空格
+
+保留要翻译的字符串开头和结尾的现有空格。
+翻译版本也必须有这些空格。
+
+[[po-translations-tips-verbatim]]
+=== 逐字复制的标签
+
+某些标签的内容应逐字复制，而不是翻译：
+
+* `man:man[1]`
+* `package:package[]`
+* `link`
+* `image`
+* `include`
+* `Admonitions`
+* `id's`
+* `Heading tags`
+* `source`
+
+[[po-translations-building]]
+== 构建翻译文档
+
+可以随时创建原始文档的翻译版本。
+原始文档中任何未翻译的部分都将以英文包含在生成的文档中。
+大多数 PO 编辑器都有一个指示器，显示翻译已完成的程度。
+这使得翻译人员可以轻松地看到何时已经翻译了足够多的字符串，从而值得构建最终文档。
+
+The Weblate 章节提供了一个关于如何 crossref:weblate[weblate-building,构建翻译文档] 的完整示例。
+
+[[po-translations-submitting]]
+== 提交新翻译
+
+准备好要提交的新翻译文件。
+这包括将文件添加到版本控制系统，为它们设置其他属性，然后创建一个用于提交的 diff。
+
+这些示例创建的 diff 文件可以附加到 https://bugs.freebsd.org/bugzilla/enter_bug.cgi?product=Documentation[文档错误报告] 或 https://reviews.freebsd.org/[代码审查]。
+
+[[po-translations-submitting-spanish]]
+.NanoBSD 文章的西班牙语翻译
+[example]
+====
+[.procedure]
+======
+
+. 从 [.filename]#~/doc/# 基本目录创建新文件的 diff，以便文件名显示完整路径。这有助于提交者识别目标语言目录。
++
+[source,shell]
+....
+% cd ~/doc
+% git diff documentation/content/es/articles/nanobsd/ > /tmp/es_nanobsd.diff
+....
+======
+
+The Weblate 章节提供了一个关于如何 crossref:weblate[weblate-submitting-translations,提交新翻译] 的完整示例。
+
+====

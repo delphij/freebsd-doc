@@ -1,0 +1,98 @@
+---
+title: 第 14 章. 商标
+prev: books/fdp-primer/editor-config/
+next: books/fdp-primer/see-also
+description: FreeBSD 文档项目中商标的指南
+tags: ["trademarks", "AsciiDoctor", "HTML"]
+showBookMenu: true
+weight: 14
+params:
+  path: "/books/fdp-primer/trademarks/"
+---
+
+[[trademarks]]
+= 商标
+:doctype: book
+:toc: macro
+:toclevels: 1
+:icons: font
+:sectnums:
+:sectnumlevels: 6
+:sectnumoffset: 14
+:partnums:
+:source-highlighter: rouge
+:experimental:
+:images-path: books/fdp-primer/
+
+ifdef::env-beastie[]
+ifdef::backend-html5[]
+:imagesdir: ../../../../images/{images-path}
+endif::[]
+ifndef::book[]
+include::shared/authors.adoc[]
+include::shared/mirrors.adoc[]
+include::shared/releases.adoc[]
+include::shared/attributes/attributes-{{% lang %}}.adoc[]
+include::shared/{{% lang %}}/teams.adoc[]
+include::shared/{{% lang %}}/mailing-lists.adoc[]
+include::shared/{{% lang %}}/urls.adoc[]
+toc::[]
+endif::[]
+ifdef::backend-pdf,backend-epub3[]
+include::../../../../../shared/asciidoctor.adoc[]
+endif::[]
+endif::[]
+
+ifndef::env-beastie[]
+toc::[]
+include::../../../../../shared/asciidoctor.adoc[]
+endif::[]
+
+对于 FreeBSD 文档项目的所有文档，引用注册商标是必要的，引用其他商标是惯例，这是对每位作者和贡献者的要求。
+
+[[trademark-symbols]]
+== 商标符号
+
+在商标名称首次出现时，以及在使用徽标时，请附加商标符号（(TM)、(R) 或其他）。
+使用 extref:{fdp-primer}/writing-style/#writing-style-special-characters[等效的 ASCII 序列]，它将被渲染为实际的 Unicode 字符。
+此外，请遵循其商标指南书写商标名称。
+
+如有疑问，请研究商标所有者的网站、产品网站和/或 link:https://www.uspto.gov/trademarks[美国专利商标局商标搜索网站]。
+
+[[trademark-citing]]
+== 商标引用
+
+The FreeBSD 文档项目提供了一个引用商标的模板，这也避免了在文档中重复商标。
+
+首先，在 link:https://cgit.freebsd.org/doc/tree/documentation/themes/beastie/i18n/en.toml#n328[项目模板的版权部分] 查找商标，然后将其添加到文档的 `Front Matter` 部分的 trademarks 标签中，该部分位于每个文档的开头。
+
+以下是 extref:{contributing}[为 FreeBSD 做贡献] 文章的 `Front Matter` 示例：
+
+....
+---
+title: 为 FreeBSD 做贡献
+authors:
+  - author: Jordan Hubbard
+  - author: Sam Lawrance
+  - author: Mark Linimon
+description: 如何为 FreeBSD 项目做贡献
+trademarks: ["freebsd", "ieee", "general"]
+weight: 15
+tags: ["Contributing", "FreeBSD", "Non-Programmer Tasks", "Programmer Tasks"]
+---
+....
+
+商标标签 `freebsd`、`ieee` 和 `general` 将在构建文档时自动渲染，如下所示：
+
+....
+FreeBSD 是 FreeBSD 基金会的注册商标。
+
+IEEE、POSIX 和 802 是电气和电子工程师协会在美国的注册商标。
+
+制造商和销售商用来区分其产品的许多名称都被声称为商标。在本文档中出现这些名称的地方，并且 FreeBSD 项目知道该商标声明，这些名称后面都跟有“™”或“®”符号。
+....
+
+如果商标不存在于项目模板中，则必须提交。
+任何开发人员或贡献者都可以更新商标。
+
+`freebsd` 和 `general` 商标标签通常出现在所有文档中。

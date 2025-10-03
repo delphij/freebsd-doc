@@ -1,0 +1,101 @@
+---
+title: FreeBSD 文档项目新人贡献者入门指南
+authors:
+  - author: The FreeBSD Documentation Project
+copyright: 1998-2023 The FreeBSD Documentation Project
+description: 开始为 FreeBSD 文档项目做贡献前需要了解的一切
+trademarks: ["freebsd", "general", "git"]
+tags: ["FDP", "documentation", "FreeBSD", "Index"]
+add_split_page_link: true
+---
+
+= FreeBSD 文档项目新人贡献者入门指南
+:doctype: book
+:toc: macro
+:toclevels: 2
+:icons: font
+:sectnums:
+:sectnumlevels: 6
+:partnums:
+:source-highlighter: rouge
+:experimental:
+:book: true
+:pdf: false
+:images-path: books/fdp-primer/
+
+ifdef::env-beastie[]
+ifdef::backend-html5[]
+include::shared/authors.adoc[]
+include::shared/mirrors.adoc[]
+include::shared/releases.adoc[]
+include::shared/attributes/attributes-{{% lang %}}.adoc[]
+include::shared/{{% lang %}}/teams.adoc[]
+include::shared/{{% lang %}}/mailing-lists.adoc[]
+include::shared/{{% lang %}}/urls.adoc[]
+:chapters-path: content/{{% lang %}}/books/fdp-primer/
+endif::[]
+ifdef::backend-pdf,backend-epub3[]
+:chapters-path:
+include::../../../../../shared/asciidoctor.adoc[]
+endif::[]
+endif::[]
+
+ifndef::env-beastie[]
+:chapters-path:
+include::../../../../../shared/asciidoctor.adoc[]
+endif::[]
+
+[.abstract-title]
+摘要
+
+感谢您成为 FreeBSD 文档项目的一份子。您的贡献非常有价值，我们对此表示感谢。
+
+本入门指南涵盖了开始为 FreeBSD 文档项目（FDP）做贡献所需的详细信息，包括工具、软件以及文档项目背后的理念。
+
+这是一个正在进行中的工作。我们随时欢迎修正和补充。
+
+'''
+
+toc::[]
+
+:sectnums!:
+
+include::{chapters-path}preface/_index.adoc[leveloffset=+1]
+
+:sectnums:
+
+include::{chapters-path}overview/_index.adoc[leveloffset=+1]
+
+include::{chapters-path}tools/_index.adoc[leveloffset=+1]
+
+include::{chapters-path}working-copy/_index.adoc[leveloffset=+1]
+
+include::{chapters-path}structure/_index.adoc[leveloffset=+1]
+
+include::{chapters-path}doc-build/_index.adoc[leveloffset=+1]
+
+include::{chapters-path}asciidoctor-primer/_index.adoc[leveloffset=+1]
+
+include::{chapters-path}rosetta/_index.adoc[leveloffset=+1]
+
+include::{chapters-path}translations/_index.adoc[leveloffset=+1]
+
+include::{chapters-path}po-translations/_index.adoc[leveloffset=+1]
+
+include::{chapters-path}weblate/_index.adoc[leveloffset=+1]
+
+include::{chapters-path}manual-pages/_index.adoc[leveloffset=+1]
+
+include::{chapters-path}writing-style/_index.adoc[leveloffset=+1]
+
+include::{chapters-path}editor-config/_index.adoc[leveloffset=+1]
+
+include::{chapters-path}trademarks/_index.adoc[leveloffset=+1]
+
+include::{chapters-path}see-also/_index.adoc[leveloffset=+1]
+
+:sectnums!:
+
+include::{chapters-path}examples/_index.adoc[leveloffset=+1]
+
+:sectnums:
