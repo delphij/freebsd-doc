@@ -1,0 +1,538 @@
+---
+title: FreeBSD 常见问题解答
+authors:
+  - author: The FreeBSD Documentation Project
+copyright: 1995-2023 The FreeBSD Documentation Project
+description: FreeBSD 常见问题解答
+trademarks: ["freebsd", "ieee", "linux", "microsoft", "openbsd", "netbsd", "general"]
+bookOrder: 5
+tags: ["FAQ", "FreeBSD FAQ"]
+layout: single
+---
+
+= FreeBSD 常见问题解答
+:doctype: book
+:toc: macro
+:toclevels: 1
+:icons: font
+:sectnums:
+:sectnumlevels: 6
+:partnums:
+:source-highlighter: rouge
+:experimental:
+:images-path: books/faq/
+
+ifdef::env-beastie[]
+ifdef::backend-html5[]
+include::shared/authors.adoc[]
+include::shared/mirrors.adoc[]
+include::shared/releases.adoc[]
+include::shared/attributes/attributes-{{% lang %}}.adoc[]
+include::shared/{{% lang %}}/teams.adoc[]
+include::shared/{{% lang %}}/mailing-lists.adoc[]
+include::shared/{{% lang %}}/urls.adoc[]
+endif::[]
+ifdef::backend-pdf,backend-epub3[]
+include::../../../../../shared/asciidoctor.adoc[]
+endif::[]
+endif::[]
+
+ifndef::env-beastie[]
+include::../../../../../shared/asciidoctor.adoc[]
+endif::[]
+
+[.abstract-title]
+摘要
+
+这是 FreeBSD 的常见问题解答 (FAQ)。
+我们已尽一切努力使本 FAQ 内容详尽。
+
+'''
+
+toc::[]
+
+[[introduction]]
+== 引言
+
+欢迎来到 FreeBSD 的世界！
+在本节中，我们全面概述了 FreeBSD 是什么、它的起源、目标、用例以及其背后的社区。
+
+探索其名称背后的原因，了解如何为该项目做出贡献，并在开源操作系统的背景下探索 FreeBSD 丰富的生态系统。
+
+[[what-is-FreeBSD]]
+=== 什么是 FreeBSD？
+
+FreeBSD 是一款功能多样、开源的类 UNIX(R) 操作系统，以其卓越的稳定性、安全性和性能而闻名。
+它由一个专注的志愿者社区开发，基于伯克利软件发行版 (BSD) UNIX 操作系统。
+
+FreeBSD 提供了一个功能强大且可定制的环境，适用于从服务器和嵌入式系统到桌面和网络设备的广泛应用。
+其对开源原则的承诺确保了透明和协作的开发过程，使 FreeBSD 成为寻求可靠且高度适应性强的人士值得信赖的选择。
+
+[[why-called-FreeBSD]]
+=== 为什么它被称为 FreeBSD？
+
+「FreeBSD」这个名字源于其在伯克利软件发行版 (BSD) UNIX 操作系统中的根基，该系统以其对开源软件世界的贡献而闻名。
+FreeBSD 中的「Free」象征着它对自由和开源软件原则的承诺，这些原则赋予用户学习、修改和分发代码的自由。
+
+值得指出的是，「free」这个词在这里有两种用法：一种意思是「免费」，另一种意思是「随心所欲」。
+
+[[FreeBSD-goals]]
+=== FreeBSD 项目的目标是什么？
+
+FreeBSD 项目有一个明确而坚定的目标：提供一个在性能、安全性和稳定性方面表现卓越的高质量、开源的类 UNIX 操作系统。
+
+它旨在提供一个多功能平台，适用于从服务器和工作站到嵌入式系统及其他领域的广泛计算需求。
+FreeBSD 的开发坚守开源原则，营造了一个协作环境，来自全球开发者社区的贡献帮助塑造和完善该操作系统。
+这种对质量、自由和可靠性的执着使 FreeBSD 与众不同，并推动其作为开源项目不断取得成功。
+
+[[FreeBSD-usecases]]
+=== FreeBSD 适用于哪些用例？
+
+FreeBSD 是一款多功能操作系统，在各种用例中表现出色。
+它特别适合服务器环境，其稳定性和性能使其成为 Web 托管、数据库和网络应用的热门选择。
+FreeBSD 强大的安全功能也使其成为防火墙和安全设备部署的有力候选者。
+除了服务器，FreeBSD 还可以定制以在特殊环境中运行，包括嵌入式系统和游戏机设备。
+其适应性、可靠性和开源特性使 FreeBSD 成为满足广泛计算需求的引人注目的选择。
+
+[[responsible]]
+=== 谁负责 FreeBSD？
+
+FreeBSD 是一个社区驱动的开源项目，具有去中心化的结构。
+其开发和维护由一个由专注的志愿者、开发人员和组织组成的全球社区进行，他们合作以增强和扩展该操作系统。
+
+有关 FreeBSD 项目的关键决策，例如项目的总体方向或允许谁向源代码树添加代码，由一个由九人组成的当选核心团队做出。
+
+这种协作和社区驱动的方法是 FreeBSD 作为可靠和强大的类 UNIX 操作系统取得成功和长寿的基础。
+
+[[how-to-contribute]]
+=== 我如何为 FreeBSD 做出贡献？我能做些什么来提供帮助？
+
+我们接受所有类型的贡献：文档、代码，甚至艺术作品。
+有关如何执行此操作的具体建议，请参阅 extref:{contributing}[为 FreeBSD 做贡献] 的文章。
+
+感谢您的想法！
+
+[[bsd-license-restrictions]]
+=== FreeBSD 许可证有什么限制吗？
+
+FreeBSD 在 https://www.FreeBSD.org/copyright/freebsd-license/[BSD 许可证] 下分发，该许可证以其宽松性而闻名。
+
+该许可证对您如何使用 FreeBSD 施加的限制很少：
+
+* 不要声称这是你写的。
+* 如果它坏了，不要起诉我们。
+* 不要删除或修改许可证。
+
+该许可证意味着您可以自由修改、分发甚至出售 FreeBSD，而*无需将您的修改作为开源发布*。
+但是，有一些最低条件，例如在分发 FreeBSD 时保留原始版权声明和免责声明。
+总的来说，BSD 许可证提供了高度的自由度和灵活性，使 FreeBSD 成为广泛应用和项目的有吸引力的选择。
+
+我们源代码树中属于 https://www.FreeBSD.org/copyright/COPYING[GNU 通用公共许可证 (GPL)] 或 https://www.FreeBSD.org/copyright/COPYING.LIB[GNU 库通用公共许可证 (LGPL)] 的代码附带的限制要多一些，至少在强制访问方面而不是通常的相反方面。
+
+[[replace-current-OS]]
+=== FreeBSD 可以取代我当前的操作系统吗？
+
+对于许多用户和管理员来说，是的。
+但这个问题并非那么简单。
+
+FreeBSD 是一个功能强大且用途广泛的操作系统，可以取代或与许多其他操作系统共存，具体取决于用户和管理员的特定需求。
+但是，FreeBSD 是否可以取代您当前的操作系统取决于您的硬件、软件要求以及对 FreeBSD 的熟悉程度等因素。
+
+虽然它提供了一个强大且功能丰富的替代方案，但在进行转换之前，评估您的特定用例和兼容性要求至关重要。
+
+如果某个应用程序仅在一种操作系统上可用，则该操作系统就不能被简单替换。
+
+从另一个类 UNIX 环境迁移到 FreeBSD 的用户会发现 FreeBSD 与之相似。
+非 UNIX 用户，如 Windows(R) 用户，应该期望投入一些额外的时间来学习 UNIX 的做事方式。
+
+[[run-popular-software]]
+=== FreeBSD 可以运行流行的开源软件吗？
+
+是的，FreeBSD 非常适合运行流行的开源软件。
+它与广泛的应用程序和库的兼容性使其成为那些希望部署和使用开源软件包的人士的有利选择。
+FreeBSD 提供了一个强大而稳定的环境，支持开源社区中常用的各种编程语言、数据库、Web 服务器和其他软件。
+其 ports 和 packages 系统简化了此类软件的安装和管理，确保用户可以轻松地在 FreeBSD 上访问和运行他们喜欢的开源工具和应用程序，而无需费力。
+
+[[install-software]]
+=== 我如何在 FreeBSD 中安装软件？
+
+FreeBSD 提供多种软件安装方法。
+最常见的方法之一是使用内置的 man:pkg[8] 包管理器，它通过获取和安装预构建的二进制包来简化流程。
+另一种方法是使用 man:ports[7] 集合从源代码编译和安装软件，为安装软件提供了一种灵活且可定制的方式。
+
+FreeBSD 的文档提供了有关这两种方法的详细指导，确保用户可以轻松地使用他们需要的软件扩展其系统的功能。
+
+[[differences-to-other-bsds]]
+=== FreeBSD、NetBSD、OpenBSD 和其他开源 BSD 操作系统之间有什么区别？
+
+FreeBSD、NetBSD、OpenBSD 和 DragonFly BSD 都是开源 BSD 家族的成员，共享共同的类 UNIX 基础，但每个都有自己独特的重点和优先事项。
+这些差异反映了每个项目的独特目标，虽然它们有相似之处，但它们各自的优势和重点迎合了 BSD 生态系统中的不同用例和偏好。
+
+[[freebsd-linux-distribution]]
+=== FreeBSD 是一个 Linux(R) 发行版吗？
+
+不，FreeBSD *不是*一个 Linux 发行版。
+
+虽然 FreeBSD 和 Linux 都是类 UNIX 操作系统并且有许多相似之处，但它们有不同的内核。
+Linux 使用 Linux 内核，而 FreeBSD 使用 FreeBSD 内核，该内核基于伯克利软件发行版 (BSD) UNIX 操作系统。
+
+FreeBSD 和 Linux 各有其独特的开发社区、发布周期和系统架构，使它们成为独立且独立的操作系统。
+
+与 Linux 发行版相比，FreeBSD 提供了自己的一套优势，包括不同的许可模式、系统设计和用户区实用程序。
+
+[[run-linux-programs-freebsd]]
+=== 在 FreeBSD 上运行 Linux 程序是否可能？
+
+是的，FreeBSD 提供了一个称为 _linuxulator_ (man:linux[4]) 的兼容层，允许许多 Linux 程序在 FreeBSD 上运行。
+此功能有助于执行各种 Linux 二进制文件，而无需专门的 Linux 环境。
+
+然而，值得注意的是，许多广泛使用的开源软件*都有可用的原生 FreeBSD 版本*，可通过 ports 和 packages 系统获得。
+
+[[installing-freebsd]]
+== 安装 FreeBSD
+
+安装 FreeBSD 的过程是利用这个强大的开源操作系统的第一步。
+本节提供了有关在何处获取 FreeBSD、详细的安装说明以及对 FreeBSD-CURRENT 和 FreeBSD-STABLE 等概念的见解。
+它还深入探讨了发布和快照计划、安装后配置工具、软件包搜索方法，并解决了有关软件包更新的常见问题。
+
+[[where-get]]
+=== 我在哪里可以获得 FreeBSD？
+
+FreeBSD 可从 link:https://www.FreeBSD.org/where/[FreeBSD 官方网站] 免费下载。
+
+此外，FreeBSD 也可能通过各种镜像站点提供，以确保全球用户的可访问性。
+link:https://www.FreeBSD.org/where/[官方网站] 是获取最新 FreeBSD 版本和更新的主要且最可靠的来源，使其成为 FreeBSD 之旅的理想起点。
+
+[[install-instructions-location]]
+=== FreeBSD 的安装说明在哪里？
+
+安装说明可以在 extref:{handbook}bsdinstall/[手册的安装 FreeBSD 一章] 中找到。
+
+[[current]]
+=== 什么是 FreeBSD-CURRENT 概念？
+
+FreeBSD-CURRENT 代表 FreeBSD 操作系统的开发分支。
+它是 FreeBSD 最前沿的版本，活跃的开发在这里进行。
+
+虽然它包含了最新的功能、改进和实验性更改，但它可能并不总是像 FreeBSD-STABLE 或发布版本那样稳定。
+
+FreeBSD-CURRENT 为希望为 FreeBSD 的未来做出贡献并保持其开发前沿的开发人员和爱好者提供了一个平台，尽管它可能偶尔会发生重大变化并且*不建议用于生产系统*。
+
+[[stable]]
+=== 什么是 FreeBSD-STABLE 概念？
+
+与 CURRENT 相比，FreeBSD-STABLE 分支是一个更稳定的开发分支。
+它包含在合并到 RELEASE 分支之前正在进行进一步测试和完善的代码。
+对于那些希望跟踪 FreeBSD 开发但更喜欢比 CURRENT 更稳定环境的人来说，STABLE 是一个不错的选择。
+
+[[release-freq]]
+=== FreeBSD 的发布频率如何？
+
+{re} 大约每 18 个月发布一个新的 FreeBSD 主要版本，平均每 8 个月发布一个新的次要版本。
+发布日期会提前公布，以便从事该系统工作的人员知道他们的项目何时需要完成和测试。
+每次发布前都有一个测试期，以确保新功能的增加不会影响发布的稳定性。
+
+[[snapshot-freq]]
+=== FreeBSD 快照何时制作？
+
+FreeBSD 快照通常会为所有活跃开发的份支定期生成。
+这些快照捕获了 FreeBSD 源代码和相关二进制包的某个时间点的状态。
+这些快照的频率可能会有所不同，但通常是每周或每两周一次。
+这些快照为用户提供了访问 FreeBSD 最新开发和变化的机会，帮助他们了解项目的最新进展。
+
+[[general-configuration-tool]]
+=== 是否有工具可以执行安装后配置任务？
+
+是的。man:bsdconfig[8] 提供了一个很好的界面来在安装后配置 FreeBSD。
+
+[[search-software-freebsd]]
+=== 我如何在 FreeBSD 中搜索要安装的软件？
+
+通过 man:pkg[8] 包管理器和 `pkg search` 命令，在 FreeBSD 中搜索要安装的软件变得很容易。
+
+用户可以使用此命令使用关键字、包名称或描述来搜索可用的包。
+此功能可帮助用户在庞大的 FreeBSD ports 和 packages 集合中快速找到他们需要的软件，从而简化了向其 FreeBSD 系统添加新应用程序和工具的过程。
+
+[[latest-packages-freebsd]]
+=== 为什么我的 FreeBSD 系统中没有最新的软件包？
+
+FreeBSD 中最新软件包的可用性可能受多种因素影响，包括软件包存储库的更新频率和所使用的 FreeBSD 的特定版本。
+
+还应该补充的是，FreeBSD ports 有两个分支。
+最新的是 `latest`，最稳定的是 `quarterly`。
+要使用最新的软件包，需要配置 `latest` 分支。
+有关如何配置分支的信息可以在 link:{handbook}ports/[手册的 Ports 一章] 中找到。
+
+[[hardware]]
+== 硬件
+
+硬件部分探讨了 FreeBSD 与各种硬件配置的兼容性。
+它涵盖了一系列主题，包括支持的架构、最大 RAM 容量、处理器可伸缩性、显卡兼容性、Wi-Fi 卡支持以及对 10 千兆以太网网卡的支持。
+无论是计划在服务器、工作站还是专用硬件上部署 FreeBSD，本节都提供了有关 FreeBSD 功能和限制的见解，提供了有关硬件选择和配置的信息。
+
+[[architectures-support]]
+=== FreeBSD 支持哪些架构？
+
+FreeBSD 拥有多种支持的架构，使其成为各种硬件环境的灵活选择。
+其兼容性扩展到 `amd64`、`arm64`、`riscv` 等架构。
+
+支持的架构的完整列表可以在 link:https://www.FreeBSD.org/platforms/[平台页面] 上找到。
+
+[[ram-support]]
+=== FreeBSD 支持多少内存？
+
+作为操作系统，FreeBSD 通常支持其运行平台所支持的尽可能多的物理内存 (RAM)。
+请记住，不同的平台对内存有不同的限制。
+
+例如，`amd64` 平台支持高达 4TB 的物理内存。
+
+[[cpu-support]]
+=== FreeBSD 支持多少个处理器？
+
+FreeBSD 的处理器支持因不同架构而异。
+在 amd64 和 arm64 系统上，FreeBSD 可以有效地利用多达 1024 个处理器。
+对于基于 powerpc 的系统，FreeBSD 支持多达 256 个处理器，而在 risc-v 系统上，它可以有效地利用多达 16 个处理器。
+
+[[graphics-cards-support]]
+=== FreeBSD 支持哪些显卡？
+
+像 Intel(R)、AMD(R) 或 NVIDIA(R) 这样的流行显卡供应商都得到了很好的支持。
+
+FreeBSD Wiki 中可以找到来自 link:https://wiki.freebsd.org/Graphics/Intel-GPU-Matrix[Intel] 和 link:https://wiki.freebsd.org/Graphics/AMD-GPU-Matrix[AMD] 的受支持显卡列表。
+
+[[wifi-support]]
+=== FreeBSD 支持哪些 Wi-Fi 卡？
+
+截至 2025 年，这是一个快速变化的领域，因此值得检查您选择的 link:https://www.freebsd.org/releases/[版本] 的硬件兼容性列表。
+
+已知在 FreeBSD 上运行良好的 PCIe Wi-Fi 设备列表：
+
+* man:iwlwifi[4] 涵盖的 Intel 芯片组设备（自 FreeBSD 14.3 起为高速）
+* Realtek RTL8188CE Mini PCIe
+
+已知在 FreeBSD 上运行良好的 USB Wi-Fi 设备列表：
+
+* RT5370 USB 加密狗（支持 hostap 模式）
+* TP-Link TL-WDN3200 (RT5592, man:if_run[4])
+* TP-Link TL-WN725N v2 (RTL8188EU, man:rtwn[4])
+* TP-Link Archer T4U (RTL8812AU, man:rtwn[4])
+* D-Link DWA-131 (RTL8192CU, man:rtwn[4])
+* D-Link DWA-171 rev A1 (RTL8821AU, man:rtwn[4])
+* ASUS USB-N10 NANO (RTL8188CUS, man:rtwn[4])
+
+
+[[gigabit-ethernet-network-support]]
+=== FreeBSD 是否支持 10 千兆以太网网卡？
+
+FreeBSD 为 10 千兆以太网网卡提供了强大的支持，使其成为高速网络环境的可行选择。
+FreeBSD 内核包含来自各种制造商的各种 10 千兆以太网适配器的驱动程序，确保无缝集成和最佳网络性能。
+
+更多信息可以在 link:https://wiki.freebsd.org/Networking/10GbE[FreeBSD Wiki] 上获得。
+
+[[documentation-support]]
+== 文档和支持
+
+本节为那些希望加深对 FreeBSD 了解的人提供了宝贵的资源。
+它涵盖了一系列主题，包括推荐的学习 FreeBSD 的书籍、商业培训和支持的途径、了解 FreeBSD 内部的见解，以及在 FreeBSD 社区中寻求帮助的地方。
+
+[[books]]
+=== 有哪些关于 FreeBSD 的好书？
+
+FreeBSD 爱好者和学习者可以探索各种专门介绍该操作系统的有内容的书籍。
+这些书籍涵盖了从 FreeBSD 基础知识到高级系统管理和开发的主题。
+
+一些著名的书名包括 Michael W. Lucas 的「Absolute FreeBSD: The Complete Guide To FreeBSD」和同样由 Michael W. Lucas 撰写的「FreeBSD Mastery series」等。
+这些资源提供了宝贵的见解和知识，可帮助各级用户掌握 FreeBSD 并最大限度地发挥其潜力。
+
+除了书籍，FreeBSD 项目还制作了大量的文档，可在 link:https://docs.FreeBSD.org/[文档门户] 在线获取。
+
+[[training]]
+=== 我在哪里可以获得商业 FreeBSD 培训和支持？
+
+对于寻求 FreeBSD 专业培训和支持的人士，有几家商业提供商提供量身定制的服务。
+FreeBSD 项目维护着一个 link:https://www.freebsd.org/commercial/[公司列表]，可以从中请求支持。
+
+[[learn-advanced]]
+=== 我如何了解更多关于 FreeBSD 的内部结构？
+
+要深入了解 FreeBSD 的内部工作原理，感兴趣的个人可以探索诸如「The Design And Implementation Of The FreeBSD Operating System」之类的资源。
+extref:{arch-handbook}[FreeBSD 架构手册] 是另一个宝贵的资源，它提供了有关 FreeBSD 架构、系统组织和设计原则的详细信息。
+
+此外，查阅可通过 FreeBSD 源代码存储库获得的 FreeBSD 源代码，可以为了解操作系统的核心组件提供宝贵的见解。
+
+[[help-freebsd-system]]
+=== 我如何在 FreeBSD 系统中获得帮助？
+
+在 FreeBSD 系统中获得帮助很简单。
+FreeBSD 提供了大量内置文档，可通过 man:man[1] 命令访问，
+该命令提供了有关各种命令和系统组件的全面信息。
+
+此外，extref:{handbook}[FreeBSD 手册] 可在线和系统本地获取，是深入指导的宝贵资源。
+
+如果出现特定问题，通过邮件列表、论坛或 IRC 向 FreeBSD 社区寻求帮助，可以从经验丰富的 FreeBSD 用户和开发人员那里获得及时的解决方案和见解。
+
+[[community-questions]]
+== 社区问题
+
+探索本节以发现与 FreeBSD 社区互动的方式。
+
+了解用于实时讨论的 FreeBSD IRC 频道、用于分享见解的基于 Web 的论坛，
+以及用于深入讨论和新闻更新的 FreeBSD 邮件列表和新闻组。
+
+[[irc]]
+=== 是否有 FreeBSD IRC (Internet Relay Chat) 频道？
+
+是的，大多数主要的 IRC 网络都托管一个 FreeBSD 聊天频道，FreeBSD wiki 上有一个最新的 link:https://wiki.freebsd.org/IRC/Channels[IRC 频道列表]。
+
+这些频道中的每一个都是不同的，并且彼此之间没有连接。
+由于它们的聊天风格不同，请尝试每一个以找到适合您聊天风格的频道。
+
+[[forums]]
+=== 是否有任何基于网络的论坛来讨论 FreeBSD？
+
+官方 FreeBSD 论坛位于 link:https://forums.FreeBSD.org/[FreeBSD 论坛主页]。
+
+[[mailing]]
+=== 我在哪里可以找到有关 FreeBSD 邮件列表的信息？
+
+公共邮件列表可以在 link:https://lists.freebsd.org/[FreeBSD 邮件列表] 中找到。
+
+[[misc]]
+== 其他问题
+
+探索有关 FreeBSD 的各种有趣而实际的查询，涵盖从 shell 选择到系统怪癖甚至 FreeBSD 宠物的名字等主题。
+
+[[minimal-sh]]
+=== 为什么 /bin/sh 如此精简？为什么 FreeBSD 不使用 bash 或其他 shell？
+
+许多人需要编写可在许多系统上移植的 shell 脚本。
+这就是为什么 POSIX(R) 详细规定了 shell 和实用程序命令。
+大多数脚本都是用 Bourne shell (man:sh[1]) 编写的，因为一些重要的编程接口被指定使用 Bourne shell 来解释命令。
+由于 Bourne shell 使用得如此频繁和广泛，因此它启动快、行为确定且内存占用小非常重要。
+
+现有的实现是我们尽最大努力同时满足尽可能多的这些要求的成果。
+为了保持 `/bin/sh` 的小巧，我们没有提供其他 shell 所具有的许多便利功能。
+
+这就是为什么可以使用 `bash`、`scsh`、man:tcsh[1] 和 `zsh` 等其他功能更丰富的 shell 的原因。
+
+[[keyboard-delete-key]]
+=== 我如何在 sh 和 csh 中使用我的删除键？
+
+对于 Bourne Shell，将以下行添加到 [.filename]#~/.shrc#：
+
+[.programlisting]
+....
+bind ^[[3~ ed-delete-next-char # for xterm
+....
+
+对于 C Shell，将以下行添加到 [.filename]#~/.cshrc#：
+
+[.programlisting]
+....
+bindkey ^[[3~ delete-char # for xterm
+....
+
+[[forgot-root-pw]]
+=== 我忘记了 root 密码！我该怎么办？
+
+不要惊慌！
+重新启动系统，在 `Boot:` 提示符下键入 `boot -s` 以进入单用户模式。
+在询问要使用的 shell 的问题时，按 kbd:[Enter] 键，这将显示一个 # 提示符。
+输入 `mount -urw /` 以读/写方式重新挂载根文件系统，然后运行 `mount -a` 以重新挂载所有文件系统。
+运行 `passwd root` 以更改 `root` 密码，然后运行 man:exit[1] 以继续引导。
+
+[TIP]
+====
+如果您在进入单用户模式时仍被提示输入 `root` 密码，则表示控制台在 [.filename]#/etc/ttys# 中被标记为 `insecure`。
+在这种情况下，需要从 FreeBSD 安装盘启动，在安装过程开始时选择 [.guimenuitem]#Live CD# 或 [.guimenuitem]#Shell#，然后发出上述命令。
+在这种情况下挂载特定分区，然后 chroot 到它。
+例如，对于 _ada0p1_ 上的系统，将 `mount -urw /` 替换为 `mount /dev/ada0p1 /mnt; chroot /mnt`。
+====
+
+[TIP]
+====
+如果无法从单用户模式挂载根分区，则可能是分区已加密，没有访问密钥就无法挂载它们。
+有关更多信息，请参阅 FreeBSD extref:{handbook}disks/[手册，disks-encrypting] 中有关加密磁盘的部分。
+====
+
+[[rcconf-readonly]]
+=== 我在 rc.conf 或其他启动文件中犯了一个错误，现在我无法编辑它，因为文件系统是只读的。我该怎么办？
+
+在加载程序提示符下使用 `boot -s` 重新启动系统以进入单用户模式。
+当提示输入 shell 路径名时，按 kbd:[Enter] 并运行 `mount -urw /` 以读/写模式重新挂载根文件系统。
+您可能还需要运行 `mount -a -t ufs` 来挂载定义了您喜欢的编辑器的文件系统。
+如果该编辑器位于网络文件系统上，请在挂载网络文件系统之前手动配置网络，或使用位于本地文件系统上的编辑器，例如 man:ed[1]。
+
+为了使用诸如 man:vi[1] 或 man:emacs[1] 之类的全屏编辑器，请运行 `export TERM=xterm`，以便这些编辑器可以从 man:termcap[5] 数据库加载正确的数据。
+
+执行这些步骤后，编辑 [.filename]#/etc/rc.conf# 以修复语法错误。
+内核引导消息后立即显示的错误消息应指示文件中出错的行号。
+
+[[free-memory-amount]]
+=== 有多少可用内存？
+
+有几种「可用内存」。
+最常见的是在不回收已用内存的情况下立即可用的内存量。
+这是空闲页面队列的大小加上一些其他保留页面。
+此数量由 `vm.stats.vm.v_free_count` man:sysctl[8] 导出，例如由 man:top[1] 显示。
+另一种「可用内存」是可供用户区进程使用的虚拟内存总量，它取决于交换空间和可用内存的总和。
+其他种类的「可用内存」描述也是可能的，但定义这些相对无用，重要的是要确保分页率保持在较低水平，并避免耗尽交换空间。
+
+[[timezone]]
+=== 我的时间不正确，如何更改时区？
+
+使用 man:tzsetup[8]。
+
+[[more-swap]]
+=== 即使计算机有剩余的可用内存，FreeBSD 也会使用大量交换空间。为什么？
+
+FreeBSD 会主动将完全空闲、未使用的内存页面移动到交换空间中，以便为活动使用提供更多的主内存。
+这种对交换的大量使用通过使用额外的可用内存进行缓存来平衡。
+
+请注意，虽然 FreeBSD 在这方面是主动的，但当系统真正空闲时，它不会任意决定交换页面。
+因此，系统在闲置一夜后不会全部被换出。
+
+[[top-freemem]]
+=== 为什么即使我运行的程序很少，top 也会显示很少的可用内存？
+
+简单的答案是，可用内存是浪费的内存。
+
+程序未主动分配的任何内存都在 FreeBSD 内核中用作磁盘缓存。
+man:top[1] 标记为 `Inact` 和 `Laundry` 的值是处于不同老化级别的缓存数据。
+此缓存数据意味着系统不必再次访问慢速磁盘以获取最近访问过的数据，从而提高了整体性能。
+通常，man:top[1] 中 `Free` 内存显示的低值是好的，前提是它不是*非常*低。
+
+[[daemon-name]]
+=== 那个可爱的红色小家伙叫什么名字？
+
+他没有名字，只被称为「BSD 守护进程」。
+如果你坚持要用一个名字，就叫他「beastie」。
+请注意，「beastie」的发音是「BSD」。
+
+有关 BSD 守护进程的更多信息，请访问他的 http://www.mckusick.com/beastie/index.html[主页]。
+
+[[use-beastie]]
+=== 我可以使用 BSD 守护进程的图片吗？
+
+也许可以。
+BSD 守护进程的版权归 Marshall Kirk McKusick 所有。
+有关详细的使用条款，请查看他的 http://www.mckusick.com/beastie/mainpage/copyright.html[关于使用 BSD 守护进程形象的声明]。
+
+总之，只要给予适当的署名，该图像就可以以一种有品味的方式用于个人用途。
+在商业上使用该徽标之前，请联系 {mckusick} 以获得许可。
+更多详细信息可在 http://www.mckusick.com/beastie/index.html[BSD 守护进程的主页] 上找到。
+
+[[bikeshed-painting]]
+=== 我为什么要关心自行车棚是什么颜色的？
+
+非常非常简短的答案是，你不应该关心。
+稍长一点的答案是，仅仅因为你有能力建造一个自行车棚，并不意味着你应该阻止别人建造一个，仅仅因为你不喜欢他们计划粉刷的颜色。
+这是一个比喻，表明你不需要仅仅因为你知道得足够多而争论每一个小功能。
+有人评论说，一项变更产生的噪音量与变更的复杂性成反比。
+
+更长更完整的答案是，在关于 man:sleep[1] 是否应该接受小数秒参数的非常长的争论之后，{phk} 发表了一篇长长的消息，题为 link:http://www.bikeshed.com[一个自行车棚（任何颜色都可以）在更绿的草地上...]。
+
+[[acknowledgments]]
+== 致谢
+
+在过去的几十年里，本 FAQ 经过了众多贡献者的无数次修订和改进。
