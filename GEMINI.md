@@ -59,9 +59,9 @@ This document provides essential context for AI models interacting with this pro
         - Character Set: Simplified Chinese (简体中文).
         - Terminology: Use terminology consistent with PRC IT industry standards (e.g., 信息 instead of 資訊).
         - Punctuation: Use full-width Chinese punctuation where appropriate (e.g., `，` instead of `,`, `。` instead of `.`).
-        - Quotation Marks: Prefer `「」` for outer quotes (instead of English-style “ ”). Use `『』` for nested quotes when necessary.
+        - Quotation Marks: Always use `「」` for outer quotes (instead of English-style “ ”). Use `『』` for nested quotes when necessary.
         - Localization: Align with PRC technical norms and expression style, but maintain technical accuracy from the English original.
-        - Examples: “FreeBSD Handbook” → “FreeBSD 使用手册”.
+        - Examples: “FreeBSD Handbook” → 「FreeBSD 使用手册」.
 
     * `zh-tw`: Traditional Chinese translation, following **Taiwan conventions**:
         - Character Set: Traditional Chinese (繁體中文).
