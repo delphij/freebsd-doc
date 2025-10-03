@@ -149,7 +149,7 @@ Weblate 实例可以在 link:https://translate-dev.freebsd.org[这里] 找到。
 书籍是用 AsciiDoc 编写的。
 
 对于每本 FreeBSD 书籍，AsciiDoc 文档类型（又名 doctype）是 `book`。
-书籍有“部分”（part），每个部分包含几个“章节”（chapter）。
+书籍有「部分」（part），每个部分包含几个「章节」（chapter）。
 
 当文档转换为 HTML 5（使用内置的 `html5` 后端）时：
 
@@ -276,7 +276,7 @@ man:dot[1] 作为 package:graphics/graphviz[] 软件包或 port 的一部分安�
 ====
 
 这三个文件通常作为所有三个团队的新提交者的学习经验，他们被指示将自己和他们的导师添加到适当的文件中，作为他们的第一次提交。
-每个文件都有一个用于新提交者的“当前”部分，一个用于归还提交权限时的“校友”部分，以及一个显示关系的“导师/被指导者”部分。
+每个文件都有一个用于新提交者的「当前」部分，一个用于归还提交权限时的「校友」部分，以及一个显示关系的「导师/被指导者」部分。
 每种条目类型的格式在文件顶部都有解释。
 
 === 一般贡献者列表
@@ -294,7 +294,7 @@ doc
          /contributors
            [.filename]#_index.adoc# – 包含适用于每个部分的包含文件列表。
            [.filename]#_index.po# – 翻译页面
-           [.filename]#contrib-develinmemoriam.adoc# - “纪念”部分的内容
+           [.filename]#contrib-develinmemoriam.adoc# - 「纪念」部分的内容
            [.filename]#contrib-develinmemoriam.po# – 翻译页面
 ----
 
@@ -309,7 +309,7 @@ doc
 有一个用于网站输出的子部分和一个用于非网站（包括 PDF）输出的子部分。
 
 *贡献者* 页面的每个部分的文本都包含一个 "include::" 语句。
-例如，“Port Manager Alumni” 的条目是 `include::{include-contrib-portmgralumni}[]`。
+例如，「Port Manager Alumni」 的条目是 `include::{include-contrib-portmgralumni}[]`。
 这将 port manager alumni 的文本拉入渲染的输出中。
 
 要进行更改，请编辑适当的包含文件：
@@ -329,7 +329,7 @@ include-contrib-386bsd:         [.filename]#~/doc/shared/contrib-386bsd.adoc#
 ----
 
 通常，如果要添加一个人，只需要进行一次编辑，他们可以被添加到适当的包含文件中。
-如果一个人要从“当前”状态移动到“校友”状态，则需要进行两次编辑 - 一次删除，一次为适当的文件插入。
+如果一个人要从「当前」状态移动到「校友」状态，则需要进行两次编辑 - 一次删除，一次为适当的文件插入。
 所有文件的条目顺序见下表。
 
 [cols="25%,25%,25%,25%", frame="none", options="header"]
@@ -347,7 +347,7 @@ include-contrib-386bsd:         [.filename]#~/doc/shared/contrib-386bsd.adoc#
 | *特殊贡献者* | 不使用包含文件 | [.filename]#contributors/_index.adoc# | 无序
 |===
 
-=== “纪念”部分
+=== 「纪念」部分
 
 在向 BSD 社区通报社区成员去世时，应使用以下程序：
 
@@ -379,7 +379,7 @@ include-contrib-386bsd:         [.filename]#~/doc/shared/contrib-386bsd.adoc#
 [..]
 ....
 +
-. 由于该成员已故（应仔细核对），请将他们添加到“纪念”文件 [.filename]#contrib-develinmemoriam.adoc# 中。
+. 由于该成员已故（应仔细核对），请将他们添加到「纪念」文件 [.filename]#contrib-develinmemoriam.adoc# 中。
 +
 尝试查找一些关于他们多年来对 FreeBSD 贡献的事实信息，并将其与他们在文件中的条目一起添加。
 这可能需要询问开发邮件列表、联系同事、联系 FreeBSD 基金会或搜索提交日志。
@@ -414,7 +414,7 @@ include-contrib-386bsd:         [.filename]#~/doc/shared/contrib-386bsd.adoc#
 | *开发团队：纪念* | [.filename]#contrib-develinmemoriam.adoc# | [.filename]#contrib-develinmemoriam.adoc# | 大致按时间倒序
 |===
 +
-有关类似条目，请参见“纪念”文件。
+有关类似条目，请参见「纪念」文件。
 +
-. 最后，如果适用，将提交者成员条目从“当前”部分移动到适当的 link:https://cgit.freebsd.org/src/tree/share/misc[贡献者导师/被指导者关系列表] 的“校友”部分，并附上适当的日期。
+. 最后，如果适用，将提交者成员条目从「当前」部分移动到适当的 link:https://cgit.freebsd.org/src/tree/share/misc[贡献者导师/被指导者关系列表] 的「校友」部分，并附上适当的日期。
 无需更改导师/被指导者关系。

@@ -106,7 +106,7 @@ https://weblate.org/en/[Weblate] 是一款基于 Web 的开源软件，专注于
 [[weblate-login]]
 == 登录 Weblate
 
-打开 https://translate-dev.freebsd.org/[] 并“登录”。
+打开 https://translate-dev.freebsd.org/[] 并「登录」。
 
 image::weblate-login.png[Weblate 登录,800]
 
@@ -144,8 +144,8 @@ image::weblate-documents.png[Weblate 文档,800]
 image::weblate-translate.png[Weblate 翻译,800]
 
 Weblate 有一组链接，可引导至实际的翻译。
-翻译进一步分为单独的检查，如“未翻译”或“需要审阅”。
-如果整个文档都已翻译且没有任何错误，“所有翻译”链接仍然可用，以备需要审阅时使用。
+翻译进一步分为单独的检查，如「未翻译」或「需要审阅」。
+如果整个文档都已翻译且没有任何错误，「所有翻译」链接仍然可用，以备需要审阅时使用。
 或者，可以使用搜索字段查找特定的字符串或术语。
 
 在 https://docs.weblate.org/en/latest/user/translating.html#translation-projects[Weblate 文档] 中，有更多关于翻译的信息，如键盘快捷键和有关翻译工具的其他提示。
@@ -154,7 +154,7 @@ Weblate 有一组链接，可引导至实际的翻译。
 == 离线翻译
 
 FreeBSD 上的 Weblate 使用 PO gettext 文件进行翻译。
-熟悉 PO gettext 文件并希望离线翻译的用户可以通过 Weblate 上的文档页面单击“文件”部分来下载和上传翻译。
+熟悉 PO gettext 文件并希望离线翻译的用户可以通过 Weblate 上的文档页面单击「文件」部分来下载和上传翻译。
 
 image::weblate-offline.png[Weblate 离线,800]
 
