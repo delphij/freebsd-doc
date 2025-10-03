@@ -121,3 +121,8 @@ This document provides essential context for AI models interacting with this pro
     * **Format:** `<Component>: Subject goes here, max 50 cols`
     * **Body:** 72-column line width.
     * **Metadata:** Include fields like `PR:`, `Reviewed by:`, `Approved by:`, etc., at the end of the message.
+* **Translation Guidelines:**
+    * **Language Convention:** Translations should follow the established conventions and norms of the target language (e.g., punctuation, quotation marks, spacing, capitalization). For example, in Simplified Chinese (zh-cn), full-width corner brackets 「」 are preferred for quotations instead of English-style “” marks.
+    * **Tone and Style:** Maintain a professional, clear, and easy-to-read tone. Strive to follow industry best practices for technical documentation, such as the [Google Developer Documentation Style Guide](https://developers.google.com/style), while adapting to the target language's standards.
+    * **Consistency:** When updating or refining an existing translation, review the prior version first to preserve style, terminology, and tone consistency. Avoid unnecessary rewrites that change established style or phrasing unless corrections or improvements are required.
+    * **Readability:** Ensure translated text is concise and accessible to technical readers, avoiding overly literal translations that may reduce clarity.
