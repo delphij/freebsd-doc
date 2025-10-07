@@ -1,0 +1,684 @@
+# 按日期对条目进行排序
+
+[[press]]
+name = "2025年FreeBSD社区调查的见解"
+url = "https://freebsdfoundation.org/insights-from-the-2025-freebsd-community-survey/"
+siteName = "FreeBSD基金会"
+siteUrl = "https://freebsdfoundation.org/"
+date = "2025-09-23"
+author = "FreeBSD基金会"
+description = "您对当今FreeBSD使用情况的反馈"
+
+[[press]]
+name = "FreeBSD Jails简单易用"
+url = "https://freebsdfoundation.org/blog/freebsd-jails-are-simple-and-easy/"
+siteName = "FreeBSD基金会博客"
+siteUrl = "https://freebsdfoundation.org/blog/"
+date = "2025-08-25"
+author = "FreeBSD基金会"
+description = "Jails，容器化的轻量级答案"
+
+[[press]]
+name = "从Minecraft到市场：隐藏在身边的Java"
+url = "https://freebsdfoundation.org/blog/from-minecraft-to-markets-java-hiding-in-plain-sight/"
+siteName = "FreeBSD基金会博客"
+siteUrl = "https://freebsdfoundation.org/blog/"
+date = "2025-07-22"
+author = "FreeBSD基金会"
+description = "您知道Java在这里和这里被使用吗？"
+
+[[press]]
+name = "FreeBSD的Periodic系统简介"
+url = "https://freebsdfoundation.org/blog/an-introduction-to-freebsds-periodic-system/"
+siteName = "FreeBSD基金会博客"
+siteUrl = "https://freebsdfoundation.org/blog/"
+date = "2025-07-08"
+author = "FreeBSD基金会"
+description = "FreeBSD periodic实用程序是一个内置系统，用于以shell脚本的形式调度和运行常规维护作业"
+
+[[press]]
+name = "如何安装和配置Galene视频会议服务器"
+url = "https://freebsdfoundation.org/blog/how-to-install-and-configure-the-galene-video-meeting-server-on-freebsd/"
+siteName = "FreeBSD基金会博客"
+siteUrl = "https://freebsdfoundation.org/blog/"
+date = "2025-07-07"
+author = "FreeBSD基金会"
+description = "https://freebsdfoundation.org/blog/how-to-install-and-configure-the-galene-video-meeting-server-on-freebsd/"
+
+[[press]]
+name = "FreeBSD基金会欢迎新董事会成员：John Baldwin"
+url = "https://freebsdfoundation.org/blog/freebsd-foundation-welcomes-new-board-member-john-baldwin/"
+siteName = "FreeBSD基金会博客"
+siteUrl = "https://freebsdfoundation.org/blog/"
+date = "2025-06-27"
+author = "FreeBSD基金会"
+description = "长期的FreeBSD社区成员John Baldwin在年度会议上当选为FreeBSD基金会董事会成员"
+
+[[press]]
+name = "FreeBSD项目的软件物料清单（SBOM）"
+url = "https://freebsdfoundation.org/blog/software-bill-of-materials-sbom-for-freebsd-project/"
+siteName = "FreeBSD基金会博客"
+siteUrl = "https://freebsdfoundation.org/blog/"
+date = "2025-06-26"
+author = "FreeBSD基金会"
+description = "受Sovereign Tech Agency委托，于2025年4月开始一个新项目，为FreeBSD启用SBOM"
+
+[[press]]
+name = "FreeBSD Ports和软件包安全项目"
+url = "https://freebsdfoundation.org/blog/freebsd-ports-and-packages-security-project/"
+siteName = "FreeBSD基金会博客"
+siteUrl = "https://freebsdfoundation.org/blog/"
+date = "2025-06-26"
+author = "FreeBSD基金会"
+description = "受Sovereign Tech Agency委托，于2025年4月开始一个新项目，以进一步加强Ports和软件包的安全性"
+
+[[press]]
+name = "在五分钟内尝试FreeBSD的三种方法"
+url = "https://freebsdfoundation.org/blog/three-ways-to-try-freebsd-in-under-five-minutes/"
+siteName = "FreeBSD基金会博客"
+siteUrl = "https://freebsdfoundation.org/blog/"
+date = "2025-06-06"
+author = "FreeBSD基金会"
+description = "让我们快速了解如何通过三个不同平台开始使用FreeBSD的最新生产版本"
+
+[[press]]
+name = "通往FreeBSD上更好Wi-Fi的道路"
+url = "https://freebsdfoundation.org/blog/the-road-to-better-wi-fi-on-freebsd/"
+siteName = "FreeBSD基金会博客"
+siteUrl = "https://freebsdfoundation.org/blog/"
+date = "2025-06-05"
+author = "FreeBSD基金会"
+description = "要了解我们取得了多大的进步，回顾导致今天的道路会有所帮助，从FreeBSD中最早的无线工作开始"
+
+[[press]]
+name = "在FreeBSD上使用Sanoid进行ZFS自动快照"
+url = "https://freebsdfoundation.org/blog/zfs-automatic-snapshots-with-sanoid-on-freebsd/"
+siteName = "FreeBSD基金会博客"
+siteUrl = "https://freebsdfoundation.org/blog/"
+date = "2025-05-27"
+author = "FreeBSD基金会"
+description = "使用Sanoid定期拍摄自动ZFS快照并进行轮换"
+
+[[press]]
+name = "如何在FreeBSD 14上解锁高速Wi-Fi"
+url = "https://freebsdfoundation.org/blog/how-to-unlock-high-speed-wi-fi-on-freebsd-14/"
+siteName = "FreeBSD基金会博客"
+siteUrl = "https://freebsdfoundation.org/blog/"
+date = "2025-05-13"
+author = "FreeBSD基金会"
+description = "更快的Wi-Fi即将登陆14.3，但您今天就可以启用它"
+
+[[press]]
+name = "停滞的隐性成本：为什么运行EOL软件是定时炸弹"
+url = "https://freebsdfoundation.org/blog/the-hidden-costs-of-stagnation-why-running-eol-software-is-a-ticking-time-bomb/"
+siteName = "FreeBSD基金会博客"
+siteUrl = "https://freebsdfoundation.org/blog/"
+date = "2025-05-02"
+author = "FreeBSD基金会"
+description = "为什么定期更新您的系统至关重要"
+
+[[press]]
+name ="2025年3月/4月FreeBSD新闻通讯"
+url = "https://freebsdfoundation.org/news-and-events/newsletter/march-april-2025-freebsd-newsletter/"
+siteName = "FreeBSD基金会博客"
+siteUrl = "https://freebsdfoundation.org/blog/"
+date = "2025-04-30"
+author = "FreeBSD基金会"
+description = "3月/4月FreeBSD新闻通讯"
+
+[[press]]
+name = "从PlayStation到路由器，您可能在不知不觉中一直在使用FreeBSD"
+url = "https://www.theregister.com/2025/04/28/freebsd_foundation_25/"
+siteName = "The Register"
+siteUrl = "https://www.theregister.com"
+date = "2025-04-28"
+author = "Liam Proven"
+description = "操作系统先行，基金会后至——那么它做什么呢？"
+
+[[press]]
+name = "FreeBSD上的ZFS日志压缩"
+url = "https://freebsdfoundation.org/blog/zfs-log-compression-on-freebsd/"
+siteName = "FreeBSD基金会博客"
+siteUrl = "https://freebsdfoundation.org/blog/"
+date = "2025-04-16"
+author = "FreeBSD基金会"
+description = "使用ZFS动态压缩系统日志"
+
+[[press]]
+name = "倡导FreeBSD：FOSDEM 2025旅行报告"
+url = "https://freebsdfoundation.org/blog/advocating-for-freebsd-a-fosdem-2025-trip-report/"
+siteName = "FreeBSD基金会博客"
+siteUrl = "https://freebsdfoundation.org/blog/"
+date = "2025-04-08"
+author = "FreeBSD基金会"
+description = "Tom Jones报告他访问FOSDEM 2025的情况"
+
+[[press]]
+name = "OpenZFS备忘单"
+url = "https://freebsdfoundation.org/blog/openzfs-cheat-sheet/"
+siteName = "FreeBSD基金会博客"
+siteUrl = "https://freebsdfoundation.org/blog/"
+date = "2025-04-03"
+author = "FreeBSD基金会"
+description = "为了帮助使用OpenZFS，我们创建了一个OpenZFS备忘单"
+
+[[press]]
+name = "FreeBSD CI/CD系统的改进"
+url = "https://freebsdfoundation.org/blog/improvements-to-the-freebsd-ci-cd-systems/"
+siteName = "FreeBSD基金会博客"
+siteUrl = "https://freebsdfoundation.org/blog/"
+date = "2025-03-12"
+author = "FreeBSD基金会"
+description = "宣布CI/CD改进项目启动"
+
+[[press]]
+name = "BSDCan 2025旅行补助金申请现已开放"
+url = "https://freebsdfoundation.org/blog/bsdcan-2025-travel-grant-application-now-open/"
+siteName = "FreeBSD基金会博客"
+siteUrl = "https://freebsdfoundation.org/blog/"
+date = "2025-03-06"
+author = "FreeBSD基金会"
+description = "宣布BSDCan 2025旅行补助金申请开放"
+
+[[press]]
+name = "2025年1月笔记本电脑支持和可用性项目更新"
+url = "https://freebsdfoundation.org/blog/january-2025-laptop-support-and-usability-project-update/"
+siteName = "FreeBSD基金会博客"
+siteUrl = "https://freebsdfoundation.org/blog/"
+date = "2025-03-05"
+author = "FreeBSD基金会"
+description = "重点介绍基金会笔记本电脑支持和可用性项目的最新工作"
+
+[[press]]
+name = "OpenZFS RAID-Z扩展：存储灵活性的新时代"
+url = "https://freebsdfoundation.org/blog/openzfs-raid-z-expansion-a-new-era-in-storage-flexibility/"
+siteName = "FreeBSD基金会博客"
+siteUrl = "https://freebsdfoundation.org/blog/"
+date = "2025-02-21"
+author = "FreeBSD基金会"
+description = "OpenZFS Raid-Z扩展开发项目回顾"
+
+[[press]]
+name = "新的CHAOSScast剧集：FreeBSD上的GrimoireLab"
+url = "https://freebsdfoundation.org/news-and-events/latest-news/new-chaosscast-episode-grimoirelab-at-freebsd/"
+siteName = "FreeBSD基金会博客"
+siteUrl = "https://freebsdfoundation.org/blog/"
+date = "2025-02-06"
+author = "FreeBSD基金会"
+description = "讨论FreeBSD采用GrimoireLab以增强项目指标和错误管理"
+
+[[press]]
+name = "笔记本电脑支持和可用性项目更新：第一份月度报告和社区倡议"
+url = "https://freebsdfoundation.org/blog/laptop-support-and-usability-project-update-first-monthly-report-community-initiatives/"
+siteName = "FreeBSD基金会博客"
+siteUrl = "https://freebsdfoundation.org/blog/"
+date = "2025-02-03"
+author = "FreeBSD基金会"
+description = "基金会赞助的笔记本电脑支持和可用性开发项目更新"
+
+[[press]]
+name = "Sovereign Tech Fund将投资686,400欧元用于FreeBSD基础设施现代化"
+url = "https://freebsdfoundation.org/blog/sovereign-tech-fund-to-invest-e686400-in-freebsd-infrastructure-modernization/"
+siteName = "FreeBSD基金会博客"
+siteUrl = "https://freebsdfoundation.org/blog/"
+date = "2024-08-26"
+author = "FreeBSD基金会"
+description = "投资以加速零信任构建、SBOM、安全工具和开发人员体验"
+
+[[press]]
+name = "FreeBSD 14版本：最佳新功能"
+url = "https://www.debugpoint.com/freebsd-14-features/"
+siteName = "debugpoint.com"
+siteUrl = "https://www.debugpoint.com"
+date = "2023-11-15"
+author = "Arindam"
+description = "FreeBSD 14带来的新功能描述"
+
+[[press]]
+name = "FreeBSD现在可以在25毫秒内启动"
+url = "https://www.theregister.com/2023/08/29/freebsd_boots_in_25ms/"
+siteName = "theregister.com"
+siteUrl = "https://www.theregister.com"
+date = "2023-08-29"
+author = "Liam Proven"
+description = "FreeBSD现在可以在25毫秒内启动。在AWS Firecracker上——但也有其他新的微型虚拟机引擎。"
+
+[[press]]
+name = "30岁生日快乐，FreeBSD！"
+url = "https://www.infoworld.com/article/3699263/happy-30th-freebsd-why-the-freebsd-open-source-project-has-endured.html"
+siteName = "infoworld.com"
+siteUrl = "https://www.infoworld.com"
+date = "2023-06-13"
+author = "Deb Goodkin"
+description = "30岁生日快乐，FreeBSD！为什么FreeBSD开源项目经久不衰"
+
+[[press]]
+name = "FreeBSD登陆亚马逊的轻量级虚拟机管理程序"
+url = "https://www.theregister.com/2022/10/19/freebsd_comes_to_amazons_lightweight/"
+siteName = "theregister.com"
+siteUrl = "https://www.theregister.com"
+date = "2022-10-19"
+author = "Liam Proven"
+description = "将FreeBSD引入Amazon EC²的FreeBSD开发人员现在已使其在该公司的轻量级Firecracker虚拟机管理程序上正常工作。"
+
+[[press]]
+name = "基于CheriBSD的计算机首次运行KDE"
+url = "https://www.theregister.com/2022/07/26/cheri_computer_runs_kde/"
+siteName = "theregister.com"
+siteUrl = "https://www.theregister.com"
+date = "2022-07-26"
+author = "Liam Proven"
+description = "Wayland和KDE Plasma桌面现在可以在CheriBSD上运行，CheriBSD是用于Arm实验性Morello硬件的FreeBSD特殊版本。"
+
+[[press]]
+name = "FreeBSD 13.1发布，适用于从PowerPC到x86-64的所有平台"
+url = "https://www.theregister.com/2022/05/20/freebsd_131/"
+siteName = "theregister.com"
+siteUrl = "https://www.theregister.com"
+date = "2022-05-20"
+author = "Liam Proven"
+description = "最新版本的FreeBSD 13.1本周发布，适用于32位和64位形式的x86、Arm、POWER和64位RISC-V。"
+
+[[press]]
+name = "许可证的魅力"
+url = "https://www.theregister.com/2021/03/10/the_state_of_freebsd/"
+siteName = "theregister.com"
+siteUrl = "https://www.theregister.com"
+date = "2021-03-10"
+author = "Tim Anderson"
+description = "在v13.0之前，FreeBSD团队谈论了Linux和改变一切的已完成工具链项目"
+
+[[press]]
+name = "讨论FreeBSD项目的过去、现在和未来"
+url = "https://itsfoss.com/freebsd-interview-deb-goodkin/"
+siteName = "itsfoss.com"
+siteUrl = "https://itsfoss.com"
+date = "2020-02-24"
+author = "Abhishek Prakash"
+description = "FreeBSD是最受欢迎的BSD发行版之一。二十多年来，它一直用于台式机、服务器和嵌入式设备。我们与FreeBSD基金会执行董事Deb Goodkin进行了交谈，讨论了FreeBSD项目的过去、现在和未来。"
+
+[[press]]
+name = "支持开源操作系统：与FreeBSD基金会的问答"
+url = "https://www.techradar.com/news/supporting-an-open-source-operating-system-a-qanda-with-the-freebsd-foundation"
+siteName = "techradar.com"
+siteUrl = "https://techradar.com"
+date = "2020-02-20"
+author = ""
+description = "在讨论微软Windows或苹果macOS的替代操作系统时，人们常常会想到Linux。然而，虽然Linux是UNIX的再创造，但FreeBSD更像是一种延续。这个免费的开源操作系统最初是由加州大学伯克利分校的学生开发的，这就是为什么其名称中的BSD代表伯克利软件发行版。"
+
+[[press]]
+name = "认识FreeBSD项目——26年及以后的旅程"
+url = "https://hub.pfind.com/meet-freebsd-project/"
+siteName = "pfind.com"
+siteUrl = "https://hub.pfind.com"
+date = "2019-08-29"
+author = "William Chapman"
+description = "在谈论用于各种设备的整个计算过程的操作系统或平台时，您可能经常听说过FreeBSD。然而，今天这个操作系统的实现显然不是那么出名，许多人不知道FreeBSD在当今计算技术中的贡献。由于这个操作系统通常不适用于普通用户，FreeBSD仍然是当今许多人不熟悉的东西。然而，它今天已在各种硬件和在线平台中使用，并且已经活跃使用了26年以上。"
+
+[[press]]
+name = "FreeBSD 26岁"
+url = "https://lwn.net/Articles/791609/"
+siteName = "LWN.net"
+siteUrl = "https://lwn.net"
+date = "2019-06-21"
+author = "Sean Kerner"
+description = "FreeBSD操作系统在得名26年后继续取得进展。正在进行的工作领域包括改进对RISC-V的支持、FUSE文件系统更新、C运行时更改和安全改进。FreeBSD日于6月19日庆祝，以纪念1993年为386BSD项目的一个分支创造FreeBSD名称的日期。然而，FreeBSD的第一个正式版本直到1993年11月1日才发布。"
+
+[[press]]
+name = "您不知道的8种使用开源构建的流行产品"
+url = "https://www.designnews.com/design-hardware-software/8-popular-products-you-didnt-know-were-built-open-source"
+siteName = "DesignNews"
+siteUrl = "https://www.designnews.com"
+date = "2019-06-18"
+author = "Chris Wiltz"
+description = "流行的流媒体服务、视频游戏机和移动消息都归功于FreeBSD。"
+
+[[press]]
+name = "FreeBSD基金会宣布2019年6月19日为FreeBSD日"
+url = "http://brilliancesecuritymagazine.com/press-release/freebsd-foundation-announces-freebsd-day-on-june-19-2019/"
+siteName = "Brilliance Security Magazine"
+siteUrl = "https://www.brilliancesecuritymagazine.com"
+date = "2019-06-06"
+author = "编辑人员"
+description = "FreeBSD基金会，FreeBSD的支持者，世界上最古老、最大的开源计算机操作系统之一，被许多顶级公司使用，宣布2019年6月19日为FreeBSD日。FreeBSD日标志着1993年开发人员为新的开源操作系统命名的日期，并庆祝FreeBSD对开源计算的影响。"
+
+[[press]]
+name = "FreeBSD ZFS与ZoL性能，Ubuntu ZFS On Linux参考"
+url = "https://www.phoronix.com/scan.php?page=article&item=freebsd-zol-april"
+siteName = "Phoronix"
+siteUrl = "https://www.phoronix.com"
+date = "2019-04-22"
+author = "Michael Larabel"
+description = "总的来说，FreeBSD ZFS On Linux移植目前看起来不错，我们期待它能在FreeBSD 13.0及时成熟。iX Systems和所有相关人员做得很好，特别是ZFS On Linux项目。那些想帮助测试的人可以尝试FreeBSD ZoL版本。随着时间的推移和FreeBSD ZoL支持的进一步成熟，请继续关注更多基准测试和更多样化的硬件，但到目前为止，至少性能数据看起来不错。"
+
+[[press]]
+name = "我们为什么在FreeBSD之上构建我们的解决方案？"
+url = "https://www.synergysky.com/blog/whydidwebuildoursolutionontopof_freebsd"
+siteName = "Synergy SKY"
+siteUrl = "http://synergysky.com"
+date = "2017-11-07"
+author = "Egil Hasting"
+description = "FreeBSD为我们提供了“它就是能用”的体验，而没有牺牲完全的控制权。它感觉和行为成熟稳定，性能卓越！"
+
+[[press]]
+name = "FreeBSD项目：内幕"
+url = "http://www.hostingadvice.com/blog/freebsd-project-under-the-hood/"
+siteName = "HostingAdvice.com"
+siteUrl = "http://hostingadvice.com"
+date = "2016-06-09"
+author = "Alexandra Leslie"
+description = "FreeBSD项目拥有400多名志愿者开发人员，是一支充满活力的力量，将控制权交到管理员手中。项目提交者Allan Jude自2002年以来一直是该项目的粉丝。他讨论了系统的内部结构和功能，这些功能吸引他为其文档做出贡献，然后为其开发做出贡献，以及十多年后他现在正在从事的工作。"
+
+[[press]]
+name = "FreeBSD现已在Azure Marketplace中提供"
+url = "https://azure.microsoft.com/en-us/blog/freebsd-now-available-in-azure-marketplace/"
+siteName = "Microsoft Azure博客"
+siteUrl = "https://azure.microsoft.com/en-us/blog/"
+date = "2016-06-08"
+author = "Jason Anderson"
+description = "微软很高兴地宣布，FreeBSD 10.3现已作为现成的虚拟机映像直接从Azure Marketplace提供。这意味着您不仅可以在Azure中快速启动FreeBSD虚拟机，而且在您需要技术支持时，微软支持工程师也可以提供帮助。"
+
+[[press]]
+name = "Cascadia社区建设者奖表彰贡献者Michael Dexter"
+url = "http://seagl.org/news/2015/10/26/cascadia-award-announcement.html"
+siteName = "西雅图GNU/Linux会议"
+siteUrl = "http://seagl.org/"
+date = "2015-10-26"
+author = "SeaGL博客"
+description = "Cascadia社区建设者奖旨在表彰为卡斯卡迪亚地区自由软件运动做出杰出贡献的个人。Michael Dexter之所以被选中，是因为他在波特兰Linux/Unix用户组和BSD社区的工作体现了对自由软件运动发展至关重要的那种默默无闻的社区建设工作。"
+
+[[press]]
+name = "在AArch64上启用"
+url = "https://community.arm.com/groups/processors/blog/2015/07/07/enabling-freebsd-on-aarch64"
+siteName = "ARM Ltd.博客"
+siteUrl = "https://community.arm.com/groups/processors/blog/"
+date = "2015-07-07"
+author = "Andrew Wafaa"
+description = "移植到ARM新的AArch64（或ARM64）平台的活动摘要。"
+
+[[press]]
+name = "在服务器上运行：一位系统管理员的发言"
+url = "http://www.itwire.com/business-it-news/open-source/67420-running-freebsd-on-the-server-a-sysadmin-speaks"
+siteName = "iTWire"
+siteUrl = "http://www.itwire.com/"
+date = "2015-03-23"
+author = "Sam Varghese"
+description = "多年来，Linux一直风靡一时。但最近，在引入systemd（一个似乎越界的init系统）之后，一些资深用户中出现了一些抱怨。"
+
+[[press]]
+name = "展示FreeBSD！我们是如何做到的"
+url = "https://web.archive.org/web/20150115001300/https://www.digitalocean.com/company/blog/presenting-freebsd-how-we-made-it-happen/"
+siteName = "Digital Ocean Inc.博客"
+siteUrl = "https://www.digitalocean.com/blog/"
+date = "2015-01-14"
+author = "Neal Shrader"
+description = "支持IPv6的虚拟专用服务器现已在DigitalOcean平台的旧金山、纽约、伦敦、阿姆斯特丹和新加坡提供。DigitalOcean还在寻求教程，并为每篇教程<a href=\"https://www.digitalocean.com/community/get-paid-to-write\">提供200美元</a>。"
+
+[[press]]
+name = "开始使用FreeBSD：为Linux用户提供的简要介绍"
+url = "http://www.infoworld.com/article/2858288/unix/intro-to-freebsd-for-linux-users.html"
+siteName = "InfoWorld"
+siteUrl = "http://www.infoworld.com/"
+date = "2014-12-15"
+author = "Paul Venezia"
+description = "为好奇的Linux用户简要介绍FreeBSD。涵盖安装和更新过程、构建基本防火墙、安装二进制软件包，以及最后安装和配置典型的Web堆栈（Apache、PHP和MySQL）。"
+
+[[press]]
+name = "基金会宣布慷慨捐赠和筹款里程碑"
+url = "http://freebsdfoundation.blogspot.com/2014/11/freebsd-foundation-announces-generous.html"
+siteName = "基金会"
+siteUrl = "https://www.freebsdfoundation.org/"
+date = "2014-11-18"
+author = "基金会董事会"
+description = "基金会很高兴地宣布收到了来自<a href=\"https://www.whatsapp.com/\">WhatsApp</a>首席执行官兼联合创始人Jan Koum的创纪录捐款。"
+
+[[press]]
+name = "Cavium赞助基于ARMv8的实现"
+url = "http://www.prnewswire.com/news-releases/cavium-to-sponsor-freebsd-armv8-based-implementation-277724361.html"
+siteName = "PR Newswire"
+siteUrl = "http://www.prnewswire.com/"
+date = "2014-10-01"
+author = "Cavium, Inc."
+description = "Cavium, Inc.，一家为企业、数据中心、云、有线和无线网络提供智能处理的半导体产品领先供应商，今天宣布与基金会合作，开发和交付基于ThunderX工作负载优化处理器的第一个ARMv8参考设计和操作系统实现，用于下一代数据中心和云工作负载。"
+
+[[press]]
+name = "Parole de Tux：Tux和[法语]"
+url = "http://www.captainposix.net/?q=articles/episode-36-tux-et-freebsd"
+siteName = "Captain Posix"
+siteUrl = "http://www.captainposix.net/"
+date = "2014-09-24"
+author = "Captain Posix"
+description = "“Parole de Tux”是比利时的月度播客，讨论有关自由和开源软件的新闻和技术主题。本集首次专门讨论。嘉宾是一位开发人员，他总结了BSD的历史及其差异。然后，他简要解释了典型Linux发行版和FreeBSD之间的异同，然后转向主要主题：图形堆栈，以及FreeBSD在该领域的表现。"
+
+[[press]]
+name = "Atlantic.Net宣布推出基于SSD的VPS服务"
+url = "http://talkincloud.com/cloud-computing-and-open-source/090214/atlanticnet-unveils-freebsd-cloud-vps-hosting-plans"
+siteName = "Talkin' Cloud"
+siteUrl = "http://talkincloud.com/"
+date = "2014-09-02"
+author = "Chris Talbot"
+description = "SSD云VPS托管解决方案提供商Atlantic.net已在其奥兰多、达拉斯和多伦多的数据中心推出了FreeBSD。"
+
+[[press]]
+name = "将在年中支持安全启动"
+url = "http://www.itwire.com/business-it-news/open-source/62855-freebsd-to-support-secure-boot-by-mid-year"
+siteName = "ITWire"
+siteUrl = "http://www.itwire.com/"
+date = "2014-01-20"
+author = "Sam Varghese"
+description = "Kirk McKusick描述了在支持UEFI安全启动方面取得的进展，该功能计划包含在10.1中。"
+
+[[press]]
+name = "McKusick否认在安全方面落后"
+url = "http://www.itwire.com/business-it-news/open-source/62728-mckusick-denies-freebsd-lagging-on-security"
+siteName = "ITWire"
+siteUrl = "http://www.itwire.com/"
+date = "2014-01-06"
+author = "Sam Varghese"
+description = "Kirk McKusick否认在安全实践方面落后，并断言在过去十年中做出了良好的设计和工程选择。"
+
+[[press]]
+name = "使用商用硬件和BSD修复网络附加存储"
+url = "http://boingboing.net/2013/06/23/fixing-network-attached-storag.html"
+siteName = "Boing Boing"
+siteUrl = "http://boingboing.net/"
+date = "2013-06-23"
+author = "Ben Laurie"
+description = "Ben Laurie讨论了他如何以及为什么用基于FreeBSD和商用硬件的NAS替换专有NAS。"
+
+[[press]]
+name = "2012 - BSD年度回顾"
+url = "http://www.osnews.com/story/26787/2012_a_BSD_year_in_retrospective"
+siteName = "OSnews"
+siteUrl = "http://www.osnews.com/"
+date = "2013-02-14"
+author = "Julian Djamil"
+description = "回顾2012年BSD系列操作系统中所有激动人心的发展，重点关注FreeBSD、NetBSD、OpenBSD和Dragonfly BSD。"
+
+[[press]]
+name = "操作系统访问控制可扩展性的十年"
+url = "https://queue.acm.org/detail.cfm?id=2430732"
+siteName = "ACM Queue"
+siteUrl = "https://queue.acm.org/"
+date = "2013-01-18"
+author = "Robert N. M. Watson"
+description = "讨论操作系统安全性就是惊叹于已部署访问控制模型的多样性。"
+
+[[press]]
+name = "一个没有Linux的世界：今天的Apache、微软甚至苹果会怎样？"
+url = "http://www.infoworld.com/d/data-center/world-without-linux-where-would-apache-microsoft-even-apple-be-today-206680"
+siteName = "Infoworld"
+siteUrl = "http://www.infoworld.com"
+date = "2012-11-12"
+author = "Paul Venezia"
+description = "如果Linux没有征服世界，我们可能都在运行FreeBSD，甚至在我们的台式机上。"
+
+[[press]]
+name = "FreeBSD现在通过Beta版本在Windows Server Hyper-V上受支持"
+url = "http://redmondmag.com/articles/2012/08/09/freebsd-beta-for-windows-server-hyper-v.aspx"
+siteName = "Redmondmag"
+siteUrl = "http://redmondmag.com"
+date = "2012-08-09"
+author = "Kurt Mackie"
+description = "微软和合作公司今天宣布了一个驱动程序的测试版，该驱动程序使开源FreeBSD 8.2服务器操作系统能够在使用Microsoft Hyper-V Server的虚拟机（VM）中运行。"
+
+[[press]]
+name = "X.Org 7.7进入FreeBSD，KMS已准备就绪"
+url = "http://www.phoronix.com/scan.php?page=news_item&px=MTExNzY"
+siteName = "phoronix"
+siteUrl = "http://www.phoronix.com"
+date = "2012-06-11"
+author = "Michael Larabel"
+description = "虽然X.Org 7.7仅在上周发布，但这组更新的X软件包已经进入FreeBSD。FreeBSD开发人员请求您帮助测试。"
+
+[[press]]
+name = "Netflix开放连接网络：FreeBSD，而非Linux"
+url = "http://www.phoronix.com/scan.php?page=news_item&px=MTExNDM"
+siteName = "phoronix"
+siteUrl = "http://www.phoronix.com"
+date = "2012-06-06"
+author = "Michael Larabel"
+description = "本周，Netflix宣布其开放连接网络作为其自己的开放CDN（内容分发网络），但他们没有使用Linux作为这个开源平台的基础，而是决定使用FreeBSD。"
+
+[[press]]
+name = "你为什么应该使用FreeBSD？这里有一些原因"
+url = "http://www.phoronix.com/scan.php?page=news_item&px=MTExMDg"
+siteName = "phoronix"
+siteUrl = "http://www.phoronix.com"
+date = "2012-05-31"
+author = "Michael Larabel"
+description = "FreeBSD想知道你为什么使用FreeBSD。FreeBSD项目的David Chisnall正在更新他们关于这个领先的*BSD操作系统的宣传材料。因此，他在邮件列表上问道：“你为什么使用FreeBSD？”"
+
+[[press]]
+name = "托管提供商NYI为FreeBSD基金会启动东海岸镜像"
+url = "http://www.thewhir.com/web-hosting-news/colocation-provider-nyi-launches-east-coast-mirror-for-freebsd-foundation"
+siteName = "The WHIR"
+siteUrl = "http://www.thewhir.com"
+date = "2012-05-25"
+author = "Nicole Henderson"
+description = "托管提供商NYI周五宣布，它已为FreeBSD基金会启动了东海岸镜像。“FreeBSD一直是我们所做一切的关键组成部分，”NYI运营副总裁Phillip Koblence在一份声明中说。“我们认为这次启动是我们回馈社区的方式，这个社区的开源项目使我们能够从内到外为我们的客户量身定制解决方案。”"
+
+[[press]]
+name = "FreeBSD和Microsoft Hyper-V互操作性预计将于今年夏天实现"
+url = "http://redmondmag.com/articles/2012/05/14/microsoft-hyperv-interoperability.aspx"
+siteName = "Redmondmag"
+siteUrl = "http://redmondmag.com"
+date = "2012-05-14"
+author = "Kurt Mackie"
+description = "微软及其合作公司正在敲定一个项目，该项目将使FreeBSD与Windows Server Hyper-V实现互操作性。"
+
+[[press]]
+name = "FreeBSD 10将使用Clang编译器，弃用GCC"
+url = "http://www.phoronix.com/scan.php?page=news_item&px=MTEwMjI"
+siteName = "phoronix"
+siteUrl = "http://www.phoronix.com"
+date = "2012-05-12"
+author = "Michael Larabel"
+description = "正如2012年第一季度FreeBSD状态报告所示，LLVM的Clang编译器正在迅速取代GCC，成为这个流行的BSD操作系统的编译器。开发人员在无GNU的C++11堆栈方面也取得了很大进展。对于FreeBSD 10，他们的目标是让Clang成为默认的C/C++编译器，弃用GCC，并拥有一个BSD许可的C++堆栈。"
+
+[[press]]
+name = "FreeBSD在2012年第一季度取得了很大成就"
+url = "http://www.phoronix.com/scan.php?page=news_item&px=MTEwMjE"
+siteName = "phoronix"
+siteUrl = "http://www.phoronix.com"
+date = "2012-05-12"
+author = "Michael Larabel"
+description = "在2012年日历年的前三个月，FreeBSD项目在推进其开放操作系统方面取得了很大成就。以下是他们季度状态报告中一些有趣的亮点。"
+
+[[press]]
+name = "FreeBSD获得带有Intel KMS的新X.Org"
+url = "http://www.phoronix.com/scan.php?page=news_item&px=MTA5MTc"
+siteName = "phoronix"
+siteUrl = "http://www.phoronix.com"
+date = "2012-04-23"
+author = "Michael Larabel"
+description = "致力于X支持的FreeBSD团队宣布了一组X.Org更新，将FreeBSD软件包支持引入X.Org 7.5.2，其中现在包括Intel KMS支持。"
+
+[[press]]
+name = "2012年3月最可靠的托管公司网站"
+url = "http://news.netcraft.com/archives/2012/04/02/most-reliable-hosting-company-sites-in-march-2012.html"
+siteName = "Netcraft Ltd."
+siteUrl = "http://www.netcraft.com/"
+date = "2012-03-02"
+author = "Netcraft"
+description = "FreeBSD是2012年3月排名前10位最可靠托管公司网站中3家的操作系统。"
+
+[[press]]
+name = "PC-BSD 9评测——之于FreeBSD，犹如Ubuntu之于Debian"
+url = "http://www.linuxuser.co.uk/reviews/pc-bsd-9-review-to-freebsd-what-ubuntu-is-to-debian/"
+siteName = "Linux User & Developer"
+siteUrl = "http://www.linuxuser.co.uk"
+date = "2012-02-09"
+author = "Koen Vervloesem"
+description = "PC-BSD为您提供了一个基于坚如磐石的FreeBSD技术的全功能桌面环境，这使其成为您初次接触BSD的完美操作系统？"
+
+[[press]]
+name = "[评测] FreeBSD 9.0"
+url = "http://linuxconfig.net/review/freebsd-review/freebsd-9-0-review.html"
+siteName = "linuxconfig.net"
+siteUrl = "http://linuxconfig.net"
+date = "2012-01-10"
+author = "linuxconfig.net"
+description = "本文概述了FreeBSD 9.0中一些可用的新功能。"
+
+[[press]]
+name = "你为什么不使用FreeBSD？"
+url = "http://www.infoworld.com/d/data-center/why-arent-you-using-freebsd-178119?page=0,0"
+siteName = "Infoworld"
+siteUrl = "http://www.infoworld.com"
+date = "2011-11-11"
+author = "Paul Venezia"
+description = "本文介绍了Paul Venezia为什么在他的服务器上使用FreeBSD"
+
+[[press]]
+name = "FreeBSD：比Linux更快的Linux游戏平台？"
+url = "http://www.phoronix.com/scan.php?page=article&item=linux_games_bsd"
+siteName = "Phoronix"
+siteUrl = "http://www.phoronix.com/"
+date = "2011-09-07"
+description = "Michael Larabel展示了FreeBSD如何比Linux更快地运行一些Linux程序。"
+
+[[press]]
+name = "2011年6月最可靠的托管公司网站"
+url = "http://news.netcraft.com/archives/2011/07/08/most-reliable-hosting-company-sites-in-june-2011.html"
+siteName = "Netcraft Ltd."
+siteUrl = "http://www.netcraft.com/"
+date = "2011-07-08"
+author = "Jennifer Cownie"
+description = "FreeBSD是2011年6月排名前3位最可靠托管公司网站的操作系统。"
+
+[[press]]
+name = "PC-BSD 8.2评测"
+url = "http://www.linuxbsdos.com/2011/03/03/pc-bsd-8-2-review/"
+siteName = "LinuxBSDos.com"
+siteUrl = "http://www.linuxbsdos.com/"
+date = "2011-03-03"
+author = "LinuxBSDos.com"
+description = "LinuxBSDos.com着眼于PC-BSD 8.2的安装（特别是磁盘加密功能）、系统配置和系统管理（包括通过PC-BSD的PBI系统安装第三方软件包）。"
+
+[[press]]
+name = "FreeBSD 8.2扩展了ZFS支持"
+url = "http://itmanagement.earthweb.com/osrc/article.php/3926181/FreeBSD-82-Expands-ZFS-Support----Without-Oracle.htm"
+siteName = "Datamation.com"
+siteUrl = "http://itmanagement.earthweb.com/"
+date = "2011-02-25"
+author = "Sean Michael Kerner"
+description = "作者着眼于FreeBSD下ZFS的现状和未来。该信息基于该网站对FreeBSD开发人员Josh Paetzel和iXsystems的Matt Olander的采访。"
+
+[[press]]
+name = "PC-BSD 8.1评测"
+url = "http://www.linuxbsdos.com/2010/08/17/pc-bsd-8-1-review/"
+siteName = "LinuxBSDos.com"
+siteUrl = "http://www.linuxbsdos.com/"
+date = "2010-08-17"
+author = "LinuxBSDos.com"
+description = "LinuxBSDos.com着眼于PC-BSD 8.1的安装、系统配置和系统管理（包括通过PC-BSD的PBI系统安装第三方软件包）。"
+
+[[press]]
+name = "健康检查：FreeBSD - 不为人知的巨人"
+url = "http://www.h-online.com/open/features/Health-Check-FreeBSD-The-unknown-giant-920248.html"
+siteName = "The H"
+siteUrl = "http://www.h-online.com/"
+date = "2010-02-04"
+author = "Richard Hillesley"
+description = "Richard Hillesley着眼于FreeBSD的历史、BSD许可证、Beastie以及FreeBSD 8.0中的新功能。"

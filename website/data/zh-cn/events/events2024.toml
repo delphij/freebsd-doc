@@ -1,0 +1,61 @@
+# Sort events by start date, with more recent events lower in the file
+year = 2024
+
+[[events]]
+id = "fosdem-2024"
+name = "FOSDEM 2024"
+url = "https://fosdem.org/2024/"
+startDate = "2024-02-03"
+endDate = "2024-02-04"
+country = "比利时"
+city = "布鲁塞尔"
+site = "ULB"
+description = "每年，来自世界各地的数千名自由和开源软件开发者齐聚布鲁塞尔参加此活动。"
+
+
+[[events]]
+id = "asiabsdcon-2024"
+name = "AsiaBSDCon 2024"
+url = "https://2024.asiabsdcon.org/"
+startDate = "2024-03-21"
+endDate = "2024-03-24"
+countryCode = "TW"
+country = "台湾"
+city = "台北"
+site = "剑潭青年活动中心"
+description = "AsiaBSDCon 是一个面向 BSD 系统用户和开发者的会议。该会议面向所有开发、部署和使用基于 FreeBSD、NetBSD、OpenBSD、DragonFlyBSD、Darwin 和 MacOS X 系统的用户。AsiaBSDCon 是一个技术会议，旨在收集最佳技术论文和演示文稿，以确保我们开源社区的最新发展能够与最广泛的受众分享。"
+
+[[events]]
+id = "bsdcan-2024"
+name = "BSDCan 2024"
+url = "https://www.bsdcan.org/2024/"
+startDate = "2024-05-29"
+endDate = "2024-06-01"
+countryCode = "CA"
+country = "加拿大"
+city = "渥太华"
+site = "渥太华大学"
+description = "在加拿大渥太华举行的为期四天的 BSD 会议。BSDCan 举办关于 BSD 系列操作系统相关主题的讲座和教程。"
+
+[[events]]
+id = "eurobsdcon-2024"
+name = "EuroBSDcon 2024"
+url = "https://2024.eurobsdcon.org"
+startDate = "2024-09-19"
+endDate = "2024-09-22"
+countryCode = "IE"
+country = "爱尔兰"
+city = "都柏林"
+site = "都柏林大学奥莱利堂"
+description = "EuroBSDcon 是欧洲年度技术会议，汇集了使用和开发基于 4.4BSD (Berkeley Software Distribution) 操作系统家族及相关项目的用户和开发者。"
+
+[[events]]
+id = "freebsd-summit-2024"
+name = "2024 年秋季 FreeBSD 峰会"
+url = "https://freebsdfoundation.org/news-and-events/event-calendar/fall-2024-freebsd-summit/"
+startDate = "2024-11-07"
+endDate = "2024-11-08"
+country = "美国"
+city = "加利福尼亚州圣何塞"
+site = "NetApp 园区"
+description = "FreeBSD 峰会是一项每年举办的活动，旨在将 FreeBSD 社区聚集在一起，学习、交流并推动 FreeBSD 的使用。每年，该活动都会汇集 FreeBSD 用户，包括：决策者、软件工程师以及个人贡献者和用户，分享他们使用 FreeBSD 的最佳实践和成功经验。FreeBSD 峰会还提供了与开发者社区面对面讨论问题的独特机会。"

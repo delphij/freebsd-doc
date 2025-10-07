@@ -1,0 +1,113 @@
+# Sort events by start date, with more recent events lower in the file
+# $FreeBSD$
+year = 2003
+
+[[events]]
+id = "bsdcon-03"
+name = "BSDCon '03"
+url = "http://www.usenix.org/events/bsdcon03/"
+startDate = "2003-09-08"
+endDate = "2003-09-12"
+countryCode = "US"
+country = "美国"
+city = "圣马特奥"
+state = "加利福尼亚"
+description = "第四届主要的 BSD 活动 BSDCon 正在举行。为期两天的教程将先于两天半的技术会议。这是一个让所有经验水平的人都能向 BSD 专家、具有实际经验的专业人士和行业领导者学习的机会。"
+
+[[events]]
+id = "linux-kongress-03"
+name = "2003 年 Linux-Kongress"
+url = "http://www.linux-kongress.org/2003/"
+startDate = "2003-10-14"
+endDate = "2003-10-16"
+countryCode = "DE"
+country = "德国"
+city = "萨尔布吕肯"
+site = "萨尔大学"
+description = "FreeBSD 将在 Linux-Kongress 上设展位，这可能是欧洲最著名的 Linux 开发者大会。我们将回答问题，向您展示系统并销售一些 FreeBSD 周边产品。"
+
+[[events]]
+id = "bsdcon-japan-2003"
+name = "2003 年日本 BSDCon"
+url = "http://bsdcon.jp/"
+startDate = "2003-10-18"
+endDate = "2003-10-18"
+countryCode = "JP"
+country = "日本"
+city = "东京"
+site = "BIZ 新宿"
+description = "2003 年日本 BSD 大会，是日本第二次关于 *BSD 的会议，于 2003 年 10 月 18 日在东京举行。约有 170 名与会者。会议设有两场并行会议（通用和技术），并发表了四篇技术论文和十二场进行中的工作报告。"
+
+[[events]]
+id = "linuxday-5"
+name = "第五届福拉尔贝格 Linux 日"
+url = "http://www.linuxday.at/"
+startDate = "2003-11-15"
+endDate = "2003-11-15"
+countryCode = "AT"
+country = "奥地利"
+city = "多恩比恩"
+site = "HTL 多恩比恩"
+address = "Höchsterstrasse 73"
+description = "福拉尔贝格 Linux 日是一个开源项目向社区展示其成果的活动。免费入场。还将有一个关于 FreeBSD 的演讲。"
+
+[[events]]
+id = "scale-2003"
+name = "SCALE：2003 年南加州 Linux 博览会"
+url = "http://www.socallinuxexpo.com/"
+startDate = "2003-11-22"
+endDate = "2003-11-22"
+countryCode = "US"
+country = "美国"
+city = "洛杉矶"
+site = "洛杉矶会议中心"
+state = "加利福尼亚"
+description = "第二届年度南加州 Linux 博览会。FreeBSD 将出席并分发宣传材料。"
+
+[[events]]
+id = "sf10yearparty"
+name = "FreeBSD 十周年庆典派对"
+url = "http://www.offmyserver.com/cgi-bin/store/rsvp.html"
+startDate = "2003-11-24"
+endDate = "2003-11-24"
+countryCode = "US"
+country = "美国"
+city = "旧金山"
+site = "DNA 酒吧"
+address = "www.dnalounge.com"
+description = "加入我们，11 月 24 日星期一，庆祝 FreeBSD 十周年！请在此处回复 <a href=\"http://www.offmyserver.com/cgi-bin/store/rsvp.html\">此处</a>，以便我们为所有人准备足够的食物和饮料。"
+
+[[events]]
+id = "bsdlinuxday-2003"
+name = "BSD/Linux 日"
+url = "http://www.jus.or.jp/events/bsd-linux-day/"
+startDate = "2003-12-02"
+endDate = "2003-12-02"
+countryCode = "JP"
+country = "日本"
+city = "横滨"
+description = "在 2003 年 12 月 2 日至 5 日在横滨举行的 InternetWeek 2003 会议期间，将有一个由日本 Unix 协会组织的 BSD/Linux 日。"
+
+[[events]]
+id = "bsdcon-brasil-2003"
+name = "巴西 BSDCon"
+url = "http://bsdcon.myfreebsd.com.br/"
+startDate = "2003-12-06"
+endDate = "2003-12-07"
+countryCode = "BR"
+country = "巴西"
+city = "里约热内卢"
+description = "这是第一届巴西 BSDCon。巴西 BSDCon 由与 BSD 社区相关的公司联盟推广和组织。将有为期两天的关于 BSD 的密集研讨会、演示和迷你教程。"
+
+[[events]]
+id = "ccc-20"
+name = "第 20 届混沌通信大会"
+url = "http://www.ccc.de/congress/2003/"
+startDate = "2003-12-27"
+endDate = "2003-12-29"
+countryCode = "DE"
+country = "德国"
+city = "柏林"
+site = "柏林会议中心"
+address = "Alexanderplatz 2"
+description = "混沌通信大会是一个为期三天的关于技术、社会和乌托邦的会议。FreeBSD 将设有一个展位。如果您有兴趣提供帮助，请联系 <a href=\"mailto:brueffer@FreeBSD.org\">Christian Brueffer</a>。"

@@ -1,0 +1,284 @@
+# Sort the entries by name
+# $FreeBSD$
+
+[[isp]]
+id = "3vhosting"
+name = "3v-Hosting"
+url = "https://3v-host.com"
+description = "3v-Hosting - 是一家乌克兰主机提供商，在基辅、阿姆斯特丹和华盛顿设有数据中心，专门提供虚拟服务器 (VPS/VDS) 和专用服务器租赁以及各种 DNS 区域的域名销售。公司成立于 2016 年，自此积极发展，不断提高服务质量和客户服务水平。"
+
+[[isp]]
+id = "astute"
+name = "Astute Hosting Incorporated"
+url = "http://www.astutehosting.com"
+description = "Astute Hosting 提供先进的高可用性半托管专用主机服务，具备与主机托管相同的灵活性，但价格优于大多数非托管专用解决方案。FreeBSD 是我们首选的操作系统，也是我们自己服务器和工作站上运行的系统。我们的带宽由 4 个一级运营商组成，并在北美、欧洲和亚洲拥有数百个对等互联。"
+
+[[isp]]
+id = "filesanctuary"
+name = "File Sanctuary"
+url = "https://www.filesanctuary.net/"
+description = "File Sanctuary 是英国的一家托管服务提供商，提供由 Xen 虚拟机管理程序支持的云服务器 (VPS)。云服务器有多种大小和价格可供选择，并按月计费，以实惠的价格为客户提供完全控制。云服务器在收到订单后几分钟内即可部署。从 2016 年 1 月开始，FreeBSD 被添加为受支持的操作系统。"
+
+[[isp]]
+id = "IFDNRG"
+name = "IFDNRG"
+url = "http://www.ifdnrg.com/"
+description = "IFDNRG 是一家总部位于英国的网站和视频托管公司，在基于 FreeBSD 构建的网站系统方面拥有广泛的专业知识。我们致力于发展我们的网络，以推广高性能和高度可扩展的 Web 服务，并在基于 FreeBSD 的 Web/电子邮件和视频解决方案方面拥有 10 年的经验。"
+
+[[isp]]
+id = "hivelocity"
+name = "Hivelocity"
+url = "https://www.hivelocity.net/"
+description = "Hivelocity 提供专用服务器、主机托管和云托管。Hivelocity 部署根据您的确切规格构建的裸机服务器、虚拟服务器以及公共和私有云托管解决方案。Hivelocity 数据中心符合 HIPAA、PCI 和 SSAE-16 认证。托管客户可以 24/7 全天候私密安全地访问其在 Hivelocity 设施内的上锁机柜。Hivelocity 为成千上万的大大小小的企业提供广泛的尖端解决方案和软件。"
+
+[[isp]]
+id = "hubdotorg"
+name = "Hub Hosting Services"
+url = "http://hub.org/"
+description = "Hub.Org 自 1997 年以来一直提供开源网站托管服务。我们的解决方案包括<a href=\"http://hub.org/freebsd-vps-hosting\">FreeBSD VPS 托管</a>和<a href=\"http://hub.org/self-managed-vps-hosting\">自管理 VPS 托管</a>等。Hub 有多种经济高效的托管计划来满足您的业务需求，无论是新网站还是多个繁忙的网站。Hub.Org 一直积极参与多个领先的开源项目（FreeBSD InterNet News (INN)、WU-FTPd、OpenSSH），并为包括 PostgreSQL 和 Horde 在内的开源项目提供托管服务。"
+
+[[isp]]
+id = "bpa"
+name = "Black Point GmbH"
+url = "https://www.blackpoint.de/"
+description = "我们提供灵活的解决方案，并通过称职、快速的支持来满足客户的需求。我们的服务包括网站托管、虚拟服务器 (VPS) 和服务器托管（例如，托管服务器）/主机托管，适用于各种公司。我们位于德国。"
+
+[[isp]]
+id = "lf"
+name = "LF.net Netzwerksysteme GmbH"
+url = "http://www.LF.net/"
+description = "LF.net Netzwerksysteme GmbH 是一家互联网服务提供商，也是网络集成服务和解决方案的专家。LF.net 成立于 1992 年，拥有一支由 25 名专家组成的团队，位于德国最大的工业区之一巴登-符腾堡州。我们提供德国范围内的高速 DSL、64K ISDN 拨号和租用线路互联网接入。我们还专注于域名服务、网络服务器托管和托管、系统集成服务、网络管理、安全和 VPN 解决方案、病毒和垃圾邮件检查、屏幕设计和编程以及咨询和培训。"
+
+[[isp]]
+id = "macomnet"
+name = "MAcomnet telecommunications company, Moscow, Russia"
+url = "http://www.macomnet.com/"
+description = "CJSC MAcomnet 是莫斯科最大的电信公司之一，由莫斯科地铁公司和美国安德鲁公司于 1991 年创立。众多客户对 MAcomnet 的服务质量和水平给予了高度评价，其中包括大型通信运营商、互联网提供商、电话公司、银行、酒店、展览中心、大使馆、知名贸易公司、政府组织、机构、工业企业、科研院所、大众媒体。MAcomnet 的许多 ISP 服务器都基于 FreeBSD。MAcomnet 托管 cvsup4.ru.FreeBSD.org 和 cvsup5.ru.FreeBSD.org cvsup 镜像。"
+
+[[isp]]
+id = "hostpoint"
+name = "Hostpoint AG"
+url = "http://www.hostpoint.ch/"
+description = "Hostpoint 拥有 55,000 名客户和 100,000 个域名（截至 2007 年 12 月），是瑞士领先的托管服务提供商。Hostpoint 在瑞士各地提供网站和应用程序托管服务。"
+
+[[isp]]
+id = "gigenet"
+name = "GigeNET"
+url = "https://www.gigenet.com/"
+description = "GigeNET 提供专用服务器、云服务器、主机托管和 DDOS 保护服务。我们目前所有产品都完全支持 FreeBSD。我们还将 FreeBSD 9 集成到我们的云服务器产品中。"
+
+[[isp]]
+id = "globotech"
+name = "GloboTech Communications"
+url = "https://www.globo.tech/"
+description = "GloboTech 提供世界一流的托管服务和不折不扣的支持。他们的服务包括专用服务器、公共云和私有云，提供基础管理和 100% 的电源和网络正常运行时间。他们的全 SSD 公共云包括一组一键式应用程序，可实现更快的部署（不到 90 秒）和一个全面且易于使用的云门户。"
+
+[[isp]]
+id = "keyway"
+name = "Keyway Internet Services"
+url = "http://www.keyway.net/"
+description = "Keyway Internet Services 自 1995 年以来一直提供优质的商业和住宅解决方案。全国性服务包括商业级托管和拨号接入。南加州服务包括 T1、光纤、DSL 和无线。我们在加利福尼亚州安大略省拥有自己的主机托管设施，并自豪地将 FreeBSD 作为推荐平台。所有客户都获得实时无等待支持，T1/主机托管客户获得 24/7/365 支持。"
+
+[[isp]]
+id = "colocationamerica"
+name = "Colocation America"
+url = "http://www.colocationamerica.com/"
+description = "Colocation America 在美国 22 个数据中心提供主机托管、专用服务器和 VoIP 托管服务。我们的数据中心符合 PCI、SAS 70、SSAE 16 和 HIPAA 标准，安全和支持人员 24/7 全天候工作，以支持我们 100% 的正常运行时间保证。客户可以享受我们的 FreeBSD Web、邮件、DNS 和数据库服务器专用服务器，这些服务器托管在由经过认证的数据中心技术人员支持的安全环境中。"
+
+[[isp]]
+id = "asergo"
+name = "Asergo"
+url = "https://asergo.com"
+description = "EasySpeedy 提供具有主机托管优势的专用服务器，以及灵活的自助服务环境。我们致力于为客户带来各种自动安装的 Linux 和 BSD 系统，所有这些都只需单击一个按钮即可获得。"
+
+[[isp]]
+id = "eserver"
+name = "eServer.ru"
+url = "https://www.eserver.ru/"
+description = "我们仅基于针对托管需求定制的 FreeBSD 系统，在俄罗斯和独联体提供高质量的虚拟主机和 VIP 托管服务，并支持所有当前可用的 FreeBSD 发行版的专用服务器。"
+
+[[isp]]
+id = "peaknetworks"
+name = "peaknetworks"
+url = "https://www.peaknetworks.net"
+description = "peaknetworks 位于奥地利阿尔卑斯山中心，是一家网站托管和域名注册公司。我们的客户范围从私人博主到商业客户。我们使用 FreeBSD 是因为其久经考验的可扩展性和性能。有关更多信息，请查看我们的网站或通过电子邮件与我们联系。"
+
+[[isp]]
+id = "polarhome"
+name = "polarhome.com"
+url = "http://www.polarhome.com/"
+description = "polarhome.com 是一项非商业性的教育活动，旨在普及支持 shell 的操作系统和互联网服务，在所有可用系统（目前包括不同风格的 Linux、OpenVMS、Solaris、OpenIndiana、AIX、QNX、IRIX、HP-UX、Tru64、SCO OpenServer、UnixWare、FreeBSD、OpenBSD、NetBSD、DragonFly/BSD、MirBSD、Ultrix、Minix、GNU Hurd 和 OPENSTEP）上提供 shell 帐户、开发环境、邮件和其他在线服务。"
+
+[[isp]]
+id = "IntegrityHost"
+name = "Integrity Host"
+url = "http://www.integrityhost.com"
+description = "Integrity Host 提供共享主机、VPS（虚拟专用服务器）和在多个 FreeBSD 版本上运行的完全托管的专用服务器。提供 cPanel 和 Fantastico，带宽分配充足。"
+
+[[isp]]
+id = "Venigo"
+name = "Venigo Internet Services"
+url = "http://www.venigo.fr/"
+description = "Venigo Internet Services 是一家法国公司，提供基于 FreeBSD 的托管解决方案，如共享、专用、主机托管和 VPN 解决方案。Venigo Internet Services 还能够为各种 BSD 和 Linux 系统提供管理和支持。"
+
+[[isp]]
+id = "netcup"
+name = "netcup GmbH"
+url = "http://www.netcup.de/"
+description = "Netcup 是一家位于德国的托管服务提供商，我们专门提供虚拟主机和虚拟服务器。2013 年初，我们将虚拟化技术更改为 KVM。这使您可以运行您选择的操作系统。您只需单击几下即可使用我们准备好的 FreeBSD 映像轻松设置您的 vServer。"
+
+[[isp]]
+id = "NYI"
+name = "NYI"
+url = "http://www.nyi.net/"
+description = "NYI 成立于 1996 年，总部位于华尔街中心地带，在曼哈顿下城和新泽西州布里奇沃特均设有设施。该公司的核心服务包括主机托管和专用服务器、云计算和托管服务、灾难恢复和业务连续性规划。NYI 为媒体、金融服务、医疗保健、法律、时尚、建筑、生命科学和房地产等广泛行业提供关键任务数据解决方案。NYI 符合 SSAE 16、PCI 和 HIPPA 标准。有关更多信息，请访问我们的<a href=\"http://www.nyi.net\">网站</a>。"
+
+[[isp]]
+id = "HostingFreak"
+name = "HostingFreak.net, Inc."
+url = "http://www.hostingfreak.net/"
+description = "HostingFreak 是一家为满足每个人需求而提供托管服务的公司。无论是高内容网站还是私人网站，我们都致力于提供高水平的可靠性和性能。我们公司提供从网站托管到自管理专用服务器的托管服务。"
+
+[[isp]]
+id = "berklix"
+name = "Berklix.Com"
+url = "http://berklix.com/"
+description = "位于德国慕尼黑的英国公司。双语咨询和托管。在各种服务器上提供虚拟和物理域托管，以及客户自己的本地和 ISP 托管服务器。"
+
+[[isp]]
+id = "M5Hosting"
+name = "M5 Hosting"
+url = "https://www.m5hosting.com/"
+description = "我们提供<a href=\"https://www.m5hosting.com/freebsd-dedicated-server.php\"> FreeBSD 专用服务器</a>以及其他采用类 Unix 操作系统的专用服务器。所有服务器均根据您的规格进行定制，包括：磁盘分区、操作系统版本、软件包安装、IP 地址数量等。我们的网络强调质量带宽而非数量。"
+
+[[isp]]
+id = "bytecamp"
+name = "bytecamp GmbH"
+url = "http://www.bytecamp.net/"
+description = "自 2000 年以来，我们在位于柏林附近的东德自己的数据中心运行着一个同构的 FreeBSD 环境。我们的开发人员为许多开源项目贡献代码。bytecamp 是<a href=\"http://www.desktopbsd.net/\">desktopbsd.net</a>和德国最大的两个 BSD 社区<a href=\"http://www.bsdforen.de/\">bsdforen.de</a>和<a href=\"http://www.bsdgroup.de/\">bsdgroup.de</a>的所在地。bytecamp 在 FreeBSD 集群上提供专业托管、企业电子邮件解决方案、域名注册、专用和虚拟服务器。我们在 FreeBSD 平台上提供多种共享、经销商和 shell 托管计划，可满足您从小型个人家庭网站到成熟的在线电子商务解决方案的所有网络存在需求。"
+
+[[isp]]
+id = "ovh"
+name = "OVH"
+url = "https://www.ovhcloud.com"
+description = "OVH 在 4 大洲拥有众多自己的数据中心，并为要求最苛刻的基础设施需求提供广泛的服务，是全球第三大互联网托管公司，也是市场上全球领先的云提供商。在近 100 种其他 Unix/Linux 发行版中，OVH 自豪地为专用和虚拟服务器提供最新的 FreeBSD 版本，自 FreeBSD 4 以来一直如此。"
+
+[[isp]]
+id = "transip"
+name = "TransIP"
+url = "http://www.transip.nl"
+description = "Transip B.V. 是荷兰排名前 5 的域名注册商。TransIP 在其自己的服务器上专门使用 FreeBSD，并提供基于 FreeBSD 的虚拟主机和专用服务器。"
+
+[[isp]]
+id = "JohnCompanies"
+name = "JohnCompanies"
+url = "https://www.jcihosting.com/"
+description = "JohnCompanies, Inc. 是专用和虚拟 FreeBSD 服务器的专家。无限的技术支持直接来自 FreeBSD 工程师，没有复杂的工单系统、非个人化的自动回复，也没有阅读提示卡的一线技术人员。服务器托管在最先进、安全的托管设施中，具有多宿主一级骨干连接。我们托管<a href=\"https://sdbug.org/\">圣地亚哥 BSD 用户组</a>邮件列表和网站。"
+
+[[isp]]
+id = "fastpcnet"
+name = "Fast PC Networks"
+url = "http://www.fastpcnet.net"
+description = "我们通过我们的数据中心设施提供主机托管和托管服务。我们向希望拥有稳定灵活平台的托管客户推荐 FreeBSD。我们提供纯粹的主机托管环境或专用的托管主机。"
+
+[[isp]]
+id = "hamburgnet"
+name = "Hamburgnet"
+url = "http://www.hamburgnet.de"
+description = "Hamburgnet 为您提供基于 FreeBSD 和 OpenBSD 项目的经验。从低端 Web 服务器到高端防火墙和数据库集群。存储、服务器、Unix、集群和咨询。您可以访问我们的<a href=\"http://www.hamburgnet.de\">网站</a>，<a href=\"mailto:info@hamburgnet.de\">给我们发邮件</a>，致电 +49 (40) 73672322 或通过传真 +49 (40) 73672321 与我们联系。"
+
+[[isp]]
+id = "swishmail"
+name = "Swishmail"
+url = "http://www.swishmail.com/"
+description = "Swishmail 是一家总部位于纽约市的公司，自 1999 年以来，在 HP AMD Dual Opteron 64 位服务器上运行 FreeBSD amd64，提供带有病毒/垃圾邮件扫描的商业<a href=\"http://www.swishmail.com/emailhosting1.php\">电子邮件托管</a>。Swishmail 从事<a href=\"http://www.swishmail.com/emailhosting1.php\">电子邮件托管</a>、shell 提供、<a href=\"http://www.swishmail.com/webhosting1.php\">网站托管</a>、专用服务器和电子邮件会计业务。"
+
+[[isp]]
+id = "colocrossing"
+name = "Colocrossing"
+url = "http://www.colocrossing.com"
+description = "Colocrossing 在美国 6 个地点提供由 FreeBSD 支持的主机托管服务。从托管主机到主机托管，我们随时为您服务。"
+
+[[isp]]
+id = "netactuate"
+name = "NetActuate"
+url = "https://www.netactuate.com/"
+description = "NetActuate 是一家专门从事虚拟 FreeBSD 托管和托管服务的托管公司。FreeBSD 虚拟专用服务器允许用户修改内核、设置防火墙以及更多选项。每个 VPS 都包括 root 访问权限和一个基于 Web 的控制面板，用于管理虚拟环境。技术支持由内部 FreeBSD 专家处理，他们可以诊断问题并帮助您快速启动和运行。NetActuate 已向 FreeBSD 开发人员捐赠服务以支持社区。"
+
+[[isp]]
+id = "webdrops"
+name = "Webdrops ICT"
+url = "http://www.webdrops.net"
+description = "自 2004 年以来，总部位于意大利的 FreeBSD 托管服务。我们提供共享主机、专用服务器、主机托管、gTLD 和全球 ccTLD 注册以及您可能要求的任何数据中心服务。我们在意大利米兰、美国达拉斯和荷兰阿姆斯特丹都拥有机架空间；我们可以提供简单或复杂的网络基础设施，并提供品牌或定制的硬件和网络设备。"
+
+[[isp]]
+id = "tarsnap"
+name = "Tarsnap"
+url = "http://www.tarsnap.com/"
+description = "Tarsnap 是 FreeBSD 和其他类 unix 操作系统的安全在线备份服务。Tarsnap 由 FreeBSD 开发人员<a href=\"mailto:cperciva@FreeBSD.org\">Colin Percival</a>拥有和运营，并自豪地通过向 FreeBSD 基金会捐款来支持 FreeBSD。"
+
+[[isp]]
+id = "host1"
+name = "Host1"
+url = "https://host1.no/"
+description = "自 2009 年以来，Host1.no 一直在挪威提供托管、域名和服务器。我们提供 FreeBSD 虚拟服务器和专用服务器。我们还在我们的弹性云中的虚拟机上提供 FreeBSD。我们所有的服务器都带有原生 IPv6。"
+
+[[isp]]
+id = "atlantic"
+name = "Atlantic.net"
+url = "https://www.atlantic.net/"
+description = "Atlantic.net 是云托管、专用服务器、虚拟化托管服务和 FreeBSD 托管领域的领导者。用户可以在几秒钟内部署 FreeBSD 实例并运行任意数量的实例。"
+
+[[isp]]
+id = "vultr"
+name = "Vultr.com"
+url = "https://www.vultr.com/"
+description = "一家基于 100% SSD 硬件的云服务提供商，在全球拥有 14 个优化地点。Vultr 还提供许多关于如何在您的 VPS 上设置各种服务的教程。"
+
+[[isp]]
+id = "arpnetworks"
+name = "ARP Networks"
+url = "http://www.arpnetworks.com"
+description = "我们是一家数据中心服务提供商，提供 VPS、专用服务器、私有云、主机托管和 IP 中转。自 2008 年以来，我们所有的产品都支持 FreeBSD 和 OpenBSD。"
+
+[[isp]]
+id = "delimiter"
+name = "Delimiter"
+url = "https://www.delimiter.com/"
+description = "Delimiter 从我们位于美国的数据中心提供非托管、经济实惠的专用服务器和云托管。我们的非托管服务包括广泛的自助服务工具，包括自动操作系统安装和专用 KVM 功能。我们还提供廉价的裸机专用服务器。我们的支持技术人员拥有 5 年以上的 Unix、BSD 和 Linux 系统管理员经验。"
+
+[[isp]]
+id = "surelinebroadband"
+name = "Sureline Broadband"
+url = "http://www.surelinebroadband.com"
+description = "Sureline Broadband 在俄勒冈州提供运营商级互联网服务。我们还为全球范围内的网络和 FreeBSD 提供咨询服务，并提供云服务，包括 FreeBSD 系统。"
+
+[[isp]]
+id = "hostcolor"
+name = "Host Color"
+url = "https://www.hostcolor.com"
+description = "Host Color (HC) 提供高性能虚拟主机和云服务，采用基于 FreeBSD Ceph 的存储区域网络。帐户和云服务器还具有高可用性和自动容错功能。"
+
+[[isp]]
+id = "routerhosting"
+name = "RouterHosting"
+url = "https://www.routerhosting.com"
+description = "RouterHosting 在全球多个地点提供 NVMe SSD 云 VPS 服务器。RouterHosting 成立于 2008 年，我们的主要操作系统之一是 FreeBSD。"
+
+[[isp]]
+id = "elmotaheda"
+name = "El Motaheda"
+url = "https://www.elmotaheda-web.com"
+description = "El Motaheda 专门为完全以开源为中心的企业和组织提供本地（埃及）解决方案。我们提供基于 FreeBSD 的防火墙和存储解决方案。"
+
+[[isp]]
+id = "bestbuyrdp"
+name = "Bestbuyrdp"
+url = "https://bestbuyrdp.com/"
+description = "Bestbuyrdp 成立于 2015 年，在全球五个数据中心提供虚拟专用服务器 (Droplets)。Droplets 的大小和价格各不相同，支持按小时或按月计费，并具有快照功能。所有 Droplets 都在 SSD 驱动器上创建，以实现理想的性能。FreeBSD 支持于 2015 年第四季度添加。"
+
+[[isp]]
+id = "virtuacloud"
+name = "Virtua.Cloud"
+url = "https://www.virtua.cloud/cloud-servers/systems/freebsd"
+description = "Virtua.Cloud 是一家云托管公司，在欧洲提供经济实惠的 FreeBSD、Linux VPS 和 Windows VPS，具有即时设置和按小时计费的特点。"

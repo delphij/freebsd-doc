@@ -1,0 +1,106 @@
+# Sort events by start date, with more recent events lower in the file
+# $FreeBSD$
+year = 2015
+
+[[events]]
+id = "mckusick-kernel-2015"
+name = "FreeBSD 内核课程"
+url = "https://www.mckusick.com/courses/introeveclass.html"
+startDate = "2015-01-22"
+endDate = "2015-05-21"
+countryCode = "US"
+country = "美国"
+city = "伯克利"
+site = "山坡俱乐部"
+description = "Marshall Kirk McKusick 将教授他的 FreeBSD 内核课程，该课程基于《FreeBSD 操作系统设计与实现》第二版。课程将在加利福尼亚州伯克利历史悠久的山坡俱乐部进行。课程将每周授课，主要在周四晚上，从 1 月 22 日持续到 5 月 21 日。有关课程的详细信息和注册页面的链接可在 <a href=\"https://www.mckusick.com/courses/introeveclass.html\">https://www.mckusick.com/courses/introeveclass.html</a> 找到。不住在湾区但希望远程上课的人可以订阅，每周接收录制的课程，订阅地址为 <a href=\"https://www.mckusick.com/courses/introorderform.html\">https://www.mckusick.com/courses/introorderform.html</a>."
+
+[[events]]
+id = "fosdem-2015"
+name = "FOSDEM '15"
+url = "http://fosdem.org/2015/"
+startDate = "2015-01-31"
+endDate = "2015-02-01"
+countryCode = "BE"
+country = "比利时"
+city = "布鲁塞尔"
+site = "ULB Solbosh 校区"
+description = "FOSDEM '15 是一个由社区为社区组织的免费非商业活动。其目标是为自由和开源开发者提供一个交流的场所。活动组织了一个 BSD 开发室，用于举办关于所有 BSD 系统的讲座，参与者可关注 <a href=\"https://lists.fosdem.org/pipermail/fosdem/2014-December/002083.html\">CFP</a>。届时将有多位 FreeBSD 开发者出席."
+
+[[events]]
+id = "asiabsdcon-2015"
+name = "AsiaBSDCon 2015"
+url = "http://2015.asiabsdcon.org/"
+startDate = "2015-03-12"
+endDate = "2015-03-15"
+countryCode = "JP"
+country = "日本"
+city = "东京"
+site = "东京理科大学"
+description = "AsiaBSDCon 是一个面向 BSD 系统用户和开发者的会议。该会议面向所有开发、部署和使用基于 FreeBSD、NetBSD、OpenBSD、DragonFlyBSD、Darwin 和 MacOS X 系统的个人。AsiaBSDCon 是一个技术会议，旨在收集最佳技术论文和演示文稿，以确保我们开源社区的最新发展能够与最广泛的受众分享."
+
+[[events]]
+id = "SL-2015"
+name = "Solutions Linux'15"
+url = "http://www.solutionslinux.fr/?lg=en"
+startDate = "2015-05-20"
+endDate = "2015-05-21"
+countryCode = "FR"
+country = "法国"
+city = "巴黎 - 拉德芳斯"
+site = "CNIT"
+description = "Solutions Linux 是法国关于 Linux 和开源解决方案的主要企业活动之一。该活动还将举办一个开源社区“村”。由 <a href=\"http://www.bsdfrance.fr/\">BSD France</a> 领导的一群 BSD 爱好者将在那里推广 BSD 解决方案."
+
+[[events]]
+id = "bsdcan-2015"
+name = "BSDCan 2015"
+url = "http://www.bsdcan.org/"
+startDate = "2015-06-10"
+endDate = "2015-06-13"
+countryCode = "CA"
+country = "加拿大"
+city = "渥太华"
+site = "渥太华大学"
+description = "BSDCan 是一个面向从事 BSD 操作系统及相关项目工作的人员的技术会议。这是一个开发者会议，重点关注新兴技术、研究项目和正在进行的工作。它还包括用户空间基础设施项目，并邀请自由软件开发者和商业供应商的贡献。BSDCan 之后紧接着在同一地点举行 PGCon."
+
+[[events]]
+id = "vbsdcon-2015"
+name = "vBSDCon 2015"
+url = "http://www.vbsdcon.com/"
+startDate = "2015-09-11"
+endDate = "2015-09-13"
+countryCode = "US"
+country = "美国"
+city = "雷斯顿"
+site = "雷斯顿喜来登酒店"
+description = "这个激动人心的周末将汇集 BSD 社区成员，进行一系列圆桌讨论、教育课程、最佳实践交流和独家社交机会."
+
+[[events]]
+id = "eurobsdcon-2015"
+name = "EuroBSDCon 2015"
+url = "http://2015.eurobsdcon.org/"
+startDate = "2015-10-01"
+endDate = "2015-10-04"
+countryCode = "SE"
+country = "瑞典"
+city = "斯德哥尔摩"
+site = "斯德哥尔摩大学"
+description = "EuroBSDcon 是关于开源 BSD 操作系统的欧洲顶级会议，吸引了来自欧洲和世界其他地区约 250 名高技能工程专业人士、软件开发者、计算机科学学生和教授以及用户。EuroBSDcon 的目标是交流关于 BSD 操作系统知识，促进用户和开发者之间的协调与合作。2015 年斯德哥尔摩 EuroBSDCon 的日期已定为 10 月 1 日至 2 日为教程，10 月 3 日至 4 日为主会议."
+
+[[events]]
+id = "bsdcon-brazil-2015"
+name = "BSDCon 巴西 2015"
+url = "http://www.bsdcon.com.br/"
+startDate = "2015-10-09"
+endDate = "2015-10-10"
+countryCode = "BR"
+country = "巴西"
+city = "福塔莱萨"
+description = "BSDCon 巴西是巴西的 BSD 驱动和风味会议。第一届于 2005 年举行，它汇集了 BSD 开发者和用户的精彩组合，提供了开发者和用户导向的演示和活动."
+
+[[events]]
+id = "oss-paris-2015"
+name = "巴黎开源峰会 2015"
+url = "http://www.opensourcesummit.paris/"
+startDate = "2015-11-18"
+endDate = "2015-11-19"
+description = "巴黎开源峰会是法国主要的专业开源活动之一，是与那些基于开源构建或希望构建解决方案的公司会面的独特场所。一个 FreeBSD 提交者和贡献者团队将出席，向人们介绍 FreeBSD."

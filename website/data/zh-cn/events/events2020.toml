@@ -1,0 +1,261 @@
+# Sort events by start date, with more recent events lower in the file
+# $FreeBSD$
+year = 2020
+
+[[events]]
+id = "fosdem-freebsd-devsummit"
+name = "FreeBSD 迷你开发者峰会 FOSDEM 2020"
+url = "https://wiki.freebsd.org/DevSummit/202002"
+startDate = "2020-01-31"
+endDate = "2020-01-31"
+countryCode = "BE"
+country = "比利时"
+city = "布鲁塞尔"
+site = "NH Brussels Carrefour de l'Europe 酒店"
+description = "与 FreeBSD 开发者和供应商一起参加为期一天的峰会，该峰会将与 FOSDEM '20 在比利时布鲁塞尔同期举行。峰会将包括讨论环节，仅限受邀者参加。"
+
+[[events]]
+id = "fosdem-2020"
+name = "FOSDEM 2020"
+url = "https://fosdem.org/2020/"
+startDate = "2020-02-01"
+endDate = "2020-02-02"
+countryCode = "BE"
+country = "比利时"
+city = "布鲁塞尔"
+site = "ULB Solbosch 校区"
+description = "FOSDEM 是一个免费活动，供软件开发者会面、分享想法和协作。每年，来自世界各地的数千名自由和开源软件开发者齐聚布鲁塞尔参加此活动。"
+
+[[events]]
+id = "freebsd-office-hours-2020-04-01"
+name = "FreeBSD 办公时间"
+url = "https://www.youtube.com/watch?v=6qBm5NM3zTQ"
+startDate = "2020-04-01"
+endDate = "2020-04-01"
+site = "Google Hangout"
+description = "4月1日世界标准时间18:00，我们将举行首次“FreeBSD 办公时间”，这是一个互动在线活动，用户、贡献者和开发者可以在此提问并获得建议。活动结束后将录制并发布到 Youtube。"
+
+[[events]]
+id = "freebsd-office-hours-2020-04-16"
+name = "FreeBSD 办公时间"
+url = "https://live.freebsd.org/FreeBSD/officehours/"
+startDate = "2020-04-15"
+endDate = "2020-04-16"
+site = "live.FreeBSD.org"
+description = "4月16日世界标准时间02:00（北美时间4月15日），我们将举行第二次“FreeBSD 办公时间”，这是一个互动在线活动，用户、贡献者和开发者可以在此提问并获得建议。活动结束后将录制并发布到 Youtube。"
+
+[[events]]
+id = "bsdcan-2020"
+name = "BSDCan 2020"
+url = "https://www.bsdcan.org/2020/"
+startDate = "2020-06-03"
+endDate = "2020-06-06"
+site = "在线"
+description = "在加拿大渥太华举行的为期四天的 BSD 会议。BSDCan 举办关于基于 BSD 系列操作系统的各种主题的讲座和教程。"
+
+[[events]]
+id = "freebsd-office-hours-2020-06-24"
+name = "FreeBSD 办公时间"
+url = "https://live.freebsd.org/FreeBSD/officehours/"
+startDate = "2020-06-24"
+endDate = "2020-06-24"
+site = "live.FreeBSD.org"
+description = "6月24日世界标准时间18:00，我们将举行第五次“FreeBSD 办公时间”，这是一个互动在线活动，用户、贡献者和开发者可以在此提问并获得建议。活动结束后将录制并发布到 Youtube。更多信息请参见 FreeBSD wiki 上的 <a href=\"https://wiki.freebsd.org/OfficeHours\">办公时间</a> 页面。"
+
+[[events]]
+id = "freebsd-friday-2020-07-17"
+name = "FreeBSD 星期五：FreeBSD 简介"
+url = "https://freebsdfoundation.org/freebsd-fridays/"
+startDate = "2020-07-17"
+endDate = "2020-07-17"
+site = "https://live.freebsd.org/FreeBSD/freebsdfriday/"
+description = "2020年7月17日世界标准时间17:00起，将举行一小时的 FreeBSD 星期五直播会话。本周的主题是：Deb Goodkin 带来的 FreeBSD 简介。"
+
+[[events]]
+id = "freebsd-office-hours-2020-07-22"
+name = "FreeBSD 办公时间"
+url = "https://live.freebsd.org/FreeBSD/officehours/"
+startDate = "2020-07-22"
+endDate = "2020-07-22"
+site = "live.FreeBSD.org"
+description = "7月22日世界标准时间18:00，我们将举行一次“FreeBSD 办公时间”，这是一个互动在线活动，用户、贡献者和开发者可以在此提问并获得建议。活动结束后将录制并发布到 Youtube。更多信息请参见 FreeBSD wiki 上的 <a href=\"https://wiki.freebsd.org/OfficeHours\">办公时间</a> 页面。"
+
+[[events]]
+id = "freebsd-friday-2020-07-24"
+name = "FreeBSD 星期五：FreeBSD 安装节 第一部分"
+url = "https://freebsdfoundation.org/freebsd-fridays/"
+startDate = "2020-07-24"
+endDate = "2020-07-24"
+site = "https://live.freebsd.org/FreeBSD/freebsdfriday/"
+description = "2020年7月24日世界标准时间17:00起，将举行一小时的 FreeBSD 星期五直播会话。本周的主题是：Roller Angel 带来的 FreeBSD 安装节 第一部分。"
+
+[[events]]
+id = "freebsd-friday-2020-07-31"
+name = "FreeBSD 星期五：FreeBSD 安装节 第二部分"
+url = "https://freebsdfoundation.org/freebsd-fridays/"
+startDate = "2020-07-31"
+endDate = "2020-07-31"
+site = "https://live.freebsd.org/FreeBSD/freebsdfriday/"
+description = "2020年7月31日世界标准时间17:00起，将举行一小时的 FreeBSD 星期五直播会话。本周的主题是：Roller Angel 带来的 FreeBSD 安装节 第二部分。"
+
+[[events]]
+id = "freebsd-friday-2020-08-07"
+name = "FreeBSD 星期五：BSD 快速文件系统历史"
+url = "https://freebsdfoundation.org/freebsd-fridays/"
+startDate = "2020-08-07"
+endDate = "2020-08-07"
+site = "https://live.freebsd.org/FreeBSD/freebsdfriday/"
+description = "2020年8月7日世界标准时间17:00起，将举行一小时的 FreeBSD 星期五直播会话。本周的主题是：Marshall Kirk McKusick 博士带来的 BSD 快速文件系统历史。"
+
+[[events]]
+id = "freebsd-friday-2020-08-14"
+name = "FreeBSD 星期五：ZFS 简介"
+url = "https://freebsdfoundation.org/freebsd-fridays/"
+startDate = "2020-08-14"
+endDate = "2020-08-14"
+site = "https://live.freebsd.org/FreeBSD/freebsdfriday/"
+description = "2020年8月14日世界标准时间17:00起，将举行一小时的 FreeBSD 星期五直播会话。本周的主题是：Dan Langille 带来的 ZFS 简介。"
+
+[[events]]
+id = "freebsd-office-hours-2020-08-19"
+name = "FreeBSD 办公时间"
+url = "https://live.freebsd.org/FreeBSD/officehours/"
+startDate = "2020-08-19"
+endDate = "2020-08-19"
+site = "live.FreeBSD.org"
+description = "8月19日世界标准时间18:00，我们将举行一次“FreeBSD 办公时间”，这是一个互动在线活动，用户、贡献者和开发者可以在此提问并获得建议。活动结束后将录制并发布到 Youtube。更多信息请参见 FreeBSD wiki 上的 <a href=\"https://wiki.freebsd.org/OfficeHours\">办公时间</a> 页面。"
+
+[[events]]
+id = "freebsd-friday-2020-08-28"
+name = "FreeBSD 星期五：FreeBSD 安全简介"
+url = "https://freebsdfoundation.org/freebsd-fridays/"
+startDate = "2020-08-28"
+endDate = "2020-08-28"
+site = "https://live.freebsd.org/FreeBSD/freebsdfriday/"
+description = "2020年8月28日世界标准时间17:00起，将举行一小时的 FreeBSD 星期五直播会话。本周的主题是：Antranig Vartanian 带来的 FreeBSD 安全简介。"
+
+[[events]]
+id = "freebsd-friday-2020-09-11"
+name = "FreeBSD 星期五：树莓派硬件破解简介"
+url = "https://freebsdfoundation.org/freebsd-fridays/"
+startDate = "2020-09-11"
+endDate = "2020-09-11"
+site = "https://live.freebsd.org/FreeBSD/freebsdfriday/"
+description = "2020年9月11日世界标准时间17:00起，将举行一小时的 FreeBSD 星期五直播会话。本周的主题是：Tom Jones 带来的树莓派硬件破解简介。"
+
+[[events]]
+id = "bugsquash-2020-09-19"
+name = "FreeBSD Bug 清理"
+url = "https://wiki.freebsd.org/Bugathons"
+startDate = "2020-09-19"
+endDate = "2020-09-19"
+site = "live.FreeBSD.org"
+description = "2020年9月19日世界标准时间14:00-21:00，我们将举行一次协调的虚拟 Bug 清理活动。FreeBSD 有一个问题报告 (PR) 数据库，鼓励用户和开发者在此提交他们在基础系统和 ports 树中发现的问题和回归。Bug 清理是一个集中的会话，我们尝试分类、处理、修复和关闭 PR 数据库中尽可能多的报告。本次9月11日的 Bug 清理活动将重点关闭尽可能多的带有补丁的 PR。欢迎用户和开发者通过实时视频流和 IRC 频道参加和参与。"
+
+[[events]]
+id = "freebsd-office-hours-2020-09-23"
+name = "FreeBSD 办公时间"
+url = "https://live.freebsd.org/FreeBSD/officehours/"
+startDate = "2020-09-23"
+endDate = "2020-09-23"
+site = "live.FreeBSD.org"
+description = "9月23日世界标准时间18:00，我们将举行一次“FreeBSD 办公时间”，这是一个互动在线活动，用户、贡献者和开发者可以在此提问并获得建议。活动结束后将录制并发布到 Youtube。更多信息请参见 FreeBSD wiki 上的 <a href=\"https://wiki.freebsd.org/OfficeHours\">办公时间</a> 页面。"
+
+[[events]]
+id = "freebsd-friday-2020-09-25"
+name = "FreeBSD 星期五：Jails 简介"
+url = "https://freebsdfoundation.org/freebsd-fridays/"
+startDate = "2020-09-25"
+endDate = "2020-09-25"
+site = "https://live.freebsd.org/FreeBSD/freebsdfriday/"
+description = "2020年9月25日世界标准时间17:00起，将举行一小时的 FreeBSD 星期五直播会话。本周的主题是：Michael W. Lucas 带来的 Jails 简介。"
+
+[[events]]
+id = "freebsd-friday-2020-10-09"
+name = "FreeBSD 星期五：CheriBSD 简介"
+url = "https://freebsdfoundation.org/freebsd-fridays/"
+startDate = "2020-10-09"
+endDate = "2020-10-09"
+site = "https://live.freebsd.org/FreeBSD/freebsdfriday/"
+description = "2020年10月9日世界标准时间17:00起，将举行一小时的 FreeBSD 星期五直播会话。本周的主题是：Robert N. M. Watson 博士带来的 CheriBSD 简介。"
+
+[[events]]
+id = "freebsd-office-hours-2020-10-14"
+name = "FreeBSD 办公时间"
+url = "https://live.freebsd.org/FreeBSD/officehours/"
+startDate = "2020-10-14"
+endDate = "2020-10-14"
+site = "live.FreeBSD.org"
+description = "10月14日世界标准时间02:00，我们将举行第四次“FreeBSD 核心团队办公时间”，这是一个互动在线活动，用户、贡献者和开发者可以在此提问或发表评论。主题详情请参见 <a href=\"https://lists.freebsd.org/pipermail/freebsd-announce/2020-October/001991.html\">公告</a>。活动结束后将录制并发布到 Youtube。更多信息请参见 FreeBSD wiki 上的 <a href=\"https://wiki.freebsd.org/OfficeHours\">办公时间</a> 页面。"
+
+[[events]]
+id = "freebsd-friday-2020-10-23"
+name = "FreeBSD 星期五：Bhyve 简介"
+url = "https://freebsdfoundation.org/freebsd-fridays/"
+startDate = "2020-10-23"
+endDate = "2020-10-23"
+site = "https://live.freebsd.org/FreeBSD/freebsdfriday/"
+description = "2020年10月24日世界标准时间00:00起，将举行一小时的 FreeBSD 星期五直播会话。本周的主题是：Peter Grehan 带来的 Bhyve 简介。"
+
+[[events]]
+id = "freebsd-friday-2020-11-06"
+name = "FreeBSD 星期五：RISC-V 简介"
+url = "https://freebsdfoundation.org/freebsd-fridays/"
+startDate = "2020-11-06"
+endDate = "2020-11-06"
+site = "https://live.freebsd.org/FreeBSD/freebsdfriday/"
+description = "2020年11月6日世界标准时间17:00起，将举行一小时的 FreeBSD 星期五直播会话。本周的主题是：Mitchell Horne 带来的 RISC-V 简介。"
+
+[[events]]
+id = "freebsd-vendor-summit-2020"
+name = "FreeBSD 供应商峰会 2020"
+url = "https://wiki.freebsd.org/DevSummit/202011"
+startDate = "2020-11-11"
+endDate = "2020-11-13"
+site = "在线"
+description = "本次活动旨在汇集 FreeBSD 开发者和供应商，讨论共同目标。关于公司和 FreeBSD 最新发展的讲座将提供对未来方向的见解。本次活动也是在行业内建立联系的绝佳机会。半天会话免费参加，但您需要注册才能访问会议室。"
+
+[[events]]
+id = "freebsd-friday-2020-11-20"
+name = "FreeBSD 星期五：DTrace 简介"
+url = "https://freebsdfoundation.org/freebsd-fridays/"
+startDate = "2020-11-20"
+endDate = "2020-11-20"
+site = "https://live.freebsd.org/FreeBSD/freebsdfriday/"
+description = "2020年11月20日世界标准时间17:00起，将举行一小时的 FreeBSD 星期五直播会话。本周的主题是：Mark Johnston 带来的 DTrace 简介。"
+
+[[events]]
+id = "freebsd-office-hours-2020-12-03"
+name = "FreeBSD 办公时间"
+url = "https://live.freebsd.org/FreeBSD/officehours/"
+startDate = "2020-12-03"
+endDate = "2020-12-03"
+site = "live.FreeBSD.org"
+description = "12月3日世界标准时间18:00，我们将举行一次“FreeBSD 办公时间”，这是一个互动在线活动，用户、贡献者和开发者可以在此提问或发表评论。主题将是“Git 问答”。更多信息请参见 FreeBSD wiki 上的 <a href=\"https://wiki.freebsd.org/OfficeHours\">办公时间</a> 页面。"
+
+[[events]]
+id = "freebsd-friday-2020-12-11"
+name = "FreeBSD 星期五：Capsicum 简介"
+url = "https://freebsdfoundation.org/freebsd-fridays/"
+startDate = "2020-12-11"
+endDate = "2020-12-11"
+site = "https://live.freebsd.org/FreeBSD/freebsdfriday/"
+description = "2020年12月11日世界标准时间18:00起，将举行一小时的 FreeBSD 星期五直播会话。本周的主题是：Mariusz Zaborski 带来的 Capsicum 简介。"
+
+[[events]]
+id = "freebsd-office-hours-2020-12-16"
+name = "FreeBSD 办公时间"
+url = "https://live.freebsd.org/FreeBSD/officehours/"
+startDate = "2020-12-16"
+endDate = "2020-12-16"
+site = "live.FreeBSD.org"
+description = "12月16日世界标准时间21:00，我们将举行一次“FreeBSD 办公时间”，这是一个互动在线活动，用户、贡献者和开发者可以在此提问或发表评论。主题将是“Bhyve”，由 Peter Grehan 和 John Baldwin 主持。更多信息请参见 FreeBSD wiki 上的 <a href=\"https://wiki.freebsd.org/OfficeHours\">办公时间</a> 页面。"
+
+[[events]]
+id = "freebsd-friday-2020-12-18"
+name = "FreeBSD 星期五：文档简介"
+url = "https://freebsdfoundation.org/freebsd-fridays/"
+startDate = "2020-12-18"
+endDate = "2020-12-18"
+site = "https://live.freebsd.org/FreeBSD/freebsdfriday/"
+description = "2020年12月18日世界标准时间18:00起，将举行一小时的 FreeBSD 星期五直播会话。本周的主题是：Sergio Carlavilla 带来的文档简介。"

@@ -1,0 +1,111 @@
+# Sort events by start date, with more recent events lower in the file
+# $FreeBSD$
+year = 2017
+
+[[events]]
+id = "fosdem-2017"
+name = "FOSDEM 2017"
+url = "https://fosdem.org/2017/"
+startDate = "2017-02-04"
+endDate = "2017-02-05"
+countryCode = "BE"
+country = "比利时"
+city = "布鲁塞尔"
+site = "布鲁塞尔自由大学，索尔博斯校区"
+description = "FOSDEM 是一个以自由和开源软件开发为中心的活动。与许多其他社区一样，BSD 社区在活动中有一个专门的房间用于演讲。请查看 FOSDEM 网站上的日程安排，了解在 BSD 开发者房间举行的演讲。FreeBSD 基金会也将出席，分享有关项目的信息。"
+
+[[events]]
+id = "asiabsdcon-2017"
+name = "AsiaBSDCon 2017"
+url = "https://2017.asiabsdcon.org/"
+startDate = "2017-03-09"
+endDate = "2017-03-12"
+countryCode = "JP"
+country = "日本"
+city = "东京"
+site = "东京理科大学"
+description = "AsiaBSDCon 是一个面向基于 BSD 系统的用户和开发者的会议。该会议面向所有开发、部署和使用基于 FreeBSD、NetBSD、OpenBSD、DragonFlyBSD、Darwin 和 MacOS X 系统的用户。AsiaBSDCon 是一个技术会议，旨在收集最佳技术论文和演示文稿，以确保我们开源社区的最新发展能够与最广泛的受众分享。"
+
+[[events]]
+id = "bsdcan-2017"
+name = "BSDCan 2017"
+url = "https://www.bsdcan.org/2017/"
+startDate = "2017-06-07"
+endDate = "2017-06-10"
+countryCode = "CA"
+country = "加拿大"
+city = "渥太华"
+site = "渥太华大学"
+description = "在加拿大渥太华举行的为期四天的 BSD 会议。BSDCan 举办了关于基于 BSD 操作系统系列的各种主题的演讲和教程。"
+
+[[events]]
+id = "None"
+name = "亚美尼亚 FreeBSD 日"
+url = "https://www.facebook.com/events/113662152573216/?active_tab=about"
+startDate = "2017-06-19"
+endDate = "2017-06-19"
+countryCode = "AM"
+country = "亚美尼亚"
+city = "埃里温"
+site = "IBM 创新解决方案与技术中心"
+description = "在埃里温庆祝 FreeBSD 日。安装 FreeBSD，了解更多信息，获取一些贴纸等等。"
+
+[[events]]
+id = "essen-2017"
+name = "埃森黑客马拉松 2017"
+url = "https://wiki.freebsd.org/DevSummit/201707"
+startDate = "2017-07-07"
+endDate = "2017-07-09"
+countryCode = "DE"
+country = "德国"
+city = "埃森"
+site = "Linuxhotel Villa Vogelsang"
+description = "在德国埃森的 Linuxhotel 举办的周末黑客马拉松。这是一个修复错误、提交代码、摆弄设备、讨论新想法、尝试新事物和改进 FreeBSD 的绝佳机会。"
+
+[[events]]
+id = "bsdcam-2017"
+name = "2017 剑桥开发者峰会 (BSDCam)"
+url = "https://wiki.freebsd.org/DevSummit/201708"
+startDate = "2017-08-02"
+endDate = "2017-08-04"
+countryCode = "UK"
+country = "英国"
+city = "剑桥"
+site = "剑桥大学计算机实验室"
+description = "一个非会议形式的开发者峰会，重点关注互动主题和反映与会者兴趣的会议。剑桥开发者峰会是一个稍长的三天活动，没有相关的会议，这使我们能够举办更长时间的工作组、头脑风暴会议，并就多个主题进行多天的开发。过去的重要焦点包括虚拟化、网络性能、沙盒、跟踪/调试、软件包和软件包安全、教学、非 x86 架构（如 ARM/MIPS/RISC-V）以及测试。"
+
+[[events]]
+id = "vbsdcon-2017"
+name = "vBSDcon 2017"
+url = "http://www.vbsdcon.com"
+startDate = "2017-09-08"
+endDate = "2017-09-09"
+countryCode = "US"
+country = "美国"
+city = "弗吉尼亚州雷斯顿"
+site = "雷斯顿凯悦酒店"
+description = "这个激动人心的周末将汇集 BSD 社区的成员，进行一系列圆桌讨论、教育会议、最佳实践交流和独家交流机会。"
+
+[[events]]
+id = "eurobsdcon-2017"
+name = "EuroBSDcon 2017"
+url = "https://2017.eurobsdcon.org"
+startDate = "2017-09-21"
+endDate = "2017-09-24"
+countryCode = "FR"
+country = "法国"
+city = "巴黎"
+site = "圣马丁空间"
+description = "EuroBSDcon 是欧洲年度技术会议，汇集了使用和开发基于 4.4BSD（Berkeley 软件发行版）操作系统家族及相关项目的用户和开发者。EuroBSDcon 提供了了解 BSD 世界最新消息、见证当代部署案例研究以及亲自会见其他使用 BSD 相关技术的用户和公司的绝佳机会。EuroBSDcon 也是思想、讨论和信息交流的温床，这些往往会转化为编程项目。该会议一直吸引着活跃的程序员、管理员和有抱负的学生，以及大型 IT 公司，他们发现该会议是为其员工提供便捷和高质量培训的选择。我们坚信高水平教育对技术的未来至关重要，因此非常欢迎学生和年轻人参加这次定期会议。"
+
+[[events]]
+id = "bsdtw-2017"
+name = "BSDTW 2017"
+url = "https://2017.bsdtw.org"
+startDate = "2017-11-11"
+endDate = "2017-11-12"
+countryCode = "TW"
+country = "台湾"
+city = "台北"
+site = "北投丽禧温泉酒店"
+description = "BSDTW 是一个旨在吸引更多 BSD 开发者和在亚洲各地进行开发的会议，吸引了来自本地和世界各地的演讲者。我们将在台湾台北聚集，进行开发者和用户关注的演讲、美食和活动。"

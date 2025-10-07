@@ -1,0 +1,1998 @@
+# 按年份、月份和日期对新闻进行排序
+
+[[news]]
+date = "2025-09-28"
+description = "新提交者：<a href=\"mailto:tiga@FreeBSD.org\">Tiago Gasiba</a> (ports)"
+
+[[news]]
+date = "2025-09-27"
+title = "FreeBSD 15.0-ALPHA4 可用"
+description = "FreeBSD 15.0 发布周期的第四个 ALPHA 版本现已可用。amd64、armv7、aarch64、powerpc64、powerpc64le 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-stable/2025-September/003265.html\">获取</a>."
+
+[[news]]
+date = "2025-09-22"
+title = "FreeBSD 15.0-ALPHA3 可用"
+description = "FreeBSD 15.0 发布周期的第三个 ALPHA 版本现已可用。amd64、armv7、aarch64、powerpc64 和 powerpc64le 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-stable/2025-September/003240.html\">获取</a>."
+
+[[news]]
+date = "2025-09-14"
+title = "FreeBSD 15.0-ALPHA2 可用"
+description = "FreeBSD 15.0 发布周期的第二个 ALPHA 版本现已可用。amd64、armv7、aarch64 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-stable/2025-September/003182.html\">获取</a>."
+
+[[news]]
+date = "2025-09-12"
+description = "新提交者：<a href=\"mailto:andy@FreeBSD.org\">Andrei Zakhvatov</a> (doc/ru)"
+
+[[news]]
+date = "2025-09-09"
+description = "新提交者：<a href=\"mailto:jaeyoon@FreeBSD.org\">Jaeyoon Choi</a> (src)"
+
+[[news]]
+date = "2025-09-09"
+description = "新提交者：<a href=\"mailto:vladlen@FreeBSD.org\">Vladlen Popolitov</a> (doc/ru)"
+
+[[news]]
+date = "2025-09-07"
+title = "FreeBSD 15.0-ALPHA1 可用"
+description = "FreeBSD 15.0 发布周期的第一个 ALPHA 版本现已可用。amd64、powerpc64le、armv7、aarch64 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-stable/2025-September/003112.html\">获取</a>."
+
+[[news]]
+date= "2025-08-29"
+title = "2025年4月-6月状态报告"
+description = "包含32个条目的<a href=\"https://www.freebsd.org/status/report-2025-04-2025-06/\">4月至6月状态报告</a>现已发布。"
+
+[[news]]
+date = "2025-07-15"
+description = "新提交者：<a href=\"mailto:obiwac@FreeBSD.org\">Aymeric Wibo</a> (src)"
+
+[[news]]
+date = "2025-07-01"
+description = "新提交者：<a href=\"mailto:aokblast@FreeBSD.org\">ShengYi Hung</a> (src)"
+
+[[news]]
+date = "2025-06-13"
+description = "新提交者：<a href=\"mailto:alven@FreeBSD.org\">Älven</a> (ports)"
+
+[[news]]
+date = "2025-06-13"
+description = "新提交者：<a href=\"mailto:vexeduxr@FreeBSD.org\">Ahmad Khalifa</a> (src)"
+
+[[news]]
+date = "2025-06-10"
+title = "FreeBSD 14.3-RELEASE 可用"
+description = "「<a href=\"https://www.FreeBSD.org/releases/14.3R/announce/\">FreeBSD 14.3-RELEASE</a>」现已可用。请务必在安装前检查<a href=\"https://www.FreeBSD.org/releases/14.3R/relnotes/\">发行说明</a>和<a href=\"https://www.FreeBSD.org/releases/14.3R/errata/\">发行勘误</a>，以获取有关14.3的任何最新消息和/或问题。有关FreeBSD发行的更多信息，请访问<a href=\"https://www.FreeBSD.org/releases/\">发行信息</a>页面。"
+
+[[news]]
+date = "2025-06-02"
+description = "新提交者：<a href=\"mailto:dtxdf@FreeBSD.org\">Jesús Daniel Colmenares Oviedo</a> (ports)"
+
+[[news]]
+date = "2025-06-01"
+title = "FreeBSD 14.3-RC1 可用"
+description = "FreeBSD 14.3 发布周期的第一个候选版本现已可用。amd64、i386、powerpc、powerpc64、powerpc64le、powerpcspe、armv6、armv7、aarch64 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-stable/2025-June/002856.html\">获取</a>。"
+
+[[news]]
+date = "2025-05-24"
+title = "FreeBSD 14.3-BETA4 可用"
+description = "FreeBSD 14.3 发布周期的第四个 BETA 版本现已可用。amd64、i386、powerpc、powerpc64、powerpc64le、powerpcspe、armv6、armv7、aarch64 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-stable/2025-May/002853.html\">获取</a>。"
+
+[[news]]
+date= "2025-05-21"
+title = "2025年1月-3月状态报告"
+description = "包含40个条目的<a href=\"https://www.freebsd.org/status/report-2025-01-2025-03/\">1月至3月状态报告</a>现已发布。"
+
+[[news]]
+date = "2025-05-16"
+title = "FreeBSD 14.3-BETA3 可用"
+description = "FreeBSD 14.3 发布周期的第三个 BETA 版本现已可用。amd64、i386、powerpc、powerpc64、powerpc64le、powerpcspe、armv6、armv7、aarch64 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-stable/2025-May/002832.html\">获取</a>。"
+
+[[news]]
+date = "2025-05-10"
+title = "FreeBSD 14.3-BETA2 可用"
+description = "FreeBSD 14.3 发布周期的第二个 BETA 版本现已可用。amd64、i386、powerpc、powerpc64、powerpc64le、powerpcspe、armv6、armv7、aarch64 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-stable/2025-May/002817.html\">获取</a>。"
+
+[[news]]
+date = "2025-05-07"
+description = "新提交者：<a href=\"mailto:khorben@FreeBSD.org\">Pierre Pronchery</a> (src)"
+
+[[news]]
+date = "2025-05-02"
+title = "FreeBSD 14.3-BETA1 可用"
+description = "FreeBSD 14.3 发布周期的第一个 BETA 版本现已可用。amd64、i386、powerpc、powerpc64、powerpc64le、powerpcspe、armv6、armv7、aarch64 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-stable/2025-May/002810.html\">获取</a>。"
+
+[[news]]
+date = "2025-04-24"
+title = "2025年FreeBSD社区调查"
+description = "「<a href=\"https://www.surveymonkey.com/r/freebsdsurvey25\">2025年FreeBSD社区调查</a>」现已开放。请随时与您的雇主、同事、朋友或任何其他对FreeBSD感兴趣的社区成员分享调查链接。调查将于2025年5月7日星期三22:00 UTC截止。"
+
+[[news]]
+date = "2025-04-18"
+description = "新提交者：<a href=\"mailto:ivy@FreeBSD.org\">Lexi Winter</a> (src)"
+
+[[news]]
+date = "2025-04-07"
+description = "新提交者：<a href=\"mailto:kgalazka@FreeBSD.org\">Krzysztof Galazka</a> (src)"
+
+[[news]]
+date = "2025-03-11"
+title = "FreeBSD 13.5-RELEASE 可用"
+description = "「<a href=\"https://www.FreeBSD.org/releases/13.5R/announce/\">FreeBSD 13.5-RELEASE</a>」现已可用。请务必在安装前检查<a href=\"https://www.FreeBSD.org/releases/13.5R/relnotes/\">发行说明</a>和<a href=\"https://www.FreeBSD.org/releases/13.5R/errata/\">发行勘误</a>，以获取有关13.5的任何最新消息和/或问题。有关FreeBSD发行的更多信息，请访问<a href=\"https://www.FreeBSD.org/releases/\">发行信息</a>页面。"
+
+[[news]]
+date = "2025-03-02"
+title = "FreeBSD 13.5-RC1 可用"
+description = "FreeBSD 13.5 发布周期的第一个候选版本现已可用。amd64、i386、powerpc、powerpc64、powerpc64le、powerpcspe、armv6、armv7、aarch64 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-stable/2025-February/002719.html\">获取</a>。"
+
+[[news]]
+date= "2025-02-27"
+title = "2024年10月-12月状态报告"
+description = "包含44个条目的<a href=\"https://www.freebsd.org/status/report-2024-10-2024-12/\">10月至12月状态报告</a>现已发布。"
+
+[[news]]
+date = "2025-02-22"
+title = "FreeBSD 13.5-BETA3 可用"
+description = "FreeBSD 13.5 发布周期的第三个 BETA 版本现已可用。amd64、i386、powerpc、powerpc64、powerpc64le、powerpcspe、armv6、armv7、aarch64 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-stable/2025-February/002715.html\">获取</a>。"
+
+[[news]]
+date = "2025-02-14"
+title = "FreeBSD 13.5-BETA2 可用"
+description = "FreeBSD 13.5 发布周期的第二个 BETA 版本现已可用。amd64、i386、powerpc、powerpc64、powerpc64le、powerpcspe、armv6、armv7、aarch64 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-stable/2025-February/002714.html\">获取</a>。"
+
+[[news]]
+date = "2025-02-07"
+title = "FreeBSD 13.5-BETA1 可用"
+description = "FreeBSD 13.5 发布周期的第一个 BETA 版本现已可用。amd64、i386、powerpc、powerpc64、powerpc64le、powerpcspe、armv6、armv7、aarch64 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-stable/2025-February/002708.html\">获取</a>。"
+
+[[news]]
+date = "2025-01-26"
+description = "新提交者：<a href=\"mailto:ashafer@FreeBSD.org\">Austin Shafer</a> (ports)"
+
+[[news]]
+date = "2025-01-17"
+description = "新提交者：<a href=\"mailto:ziaee@FreeBSD.org\">Alexander Ziaee</a> (doc)"
+
+[[news]]
+date = "2024-12-03"
+title = "FreeBSD 14.2-RELEASE 可用"
+description = "「<a href=\"https://www.FreeBSD.org/releases/14.2R/announce/\">FreeBSD 14.2-RELEASE</a>」现已可用。请务必在安装前检查<a href=\"https://www.FreeBSD.org/releases/14.2R/relnotes/\">发行说明</a>和<a href=\"https://www.FreeBSD.org/releases/14.2R/errata/\">发行勘误</a>，以获取有关14.2的任何最新消息和/或问题。有关FreeBSD发行的更多信息，请访问<a href=\"https://www.FreeBSD.org/releases/\">发行信息</a>页面。"
+
+[[news]]
+date = "2024-11-23"
+title = "FreeBSD 14.2-RC1 可用"
+description = "FreeBSD 14.2 发布周期的第一个 RC 版本现已可用。amd64、i386、powerpc、powerpc64、powerpc64le、powerpcspe、armv7、aarch64 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-stable/2024-November/002542.html\">获取</a>。"
+
+[[news]]
+date = "2024-11-17"
+title = "FreeBSD 14.2-BETA3 可用"
+description = "FreeBSD 14.2 发布周期的第三个 BETA 版本现已可用。amd64、i386、powerpc、powerpc64、powerpc64le、powerpcspe、armv7、aarch64 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-stable/2024-November/002528.html\">获取</a>。"
+
+[[news]]
+date = "2024-11-09"
+title = "FreeBSD 14.2-BETA2 可用"
+description = "FreeBSD 14.2 发布周期的第二个 BETA 版本现已可用。amd64、i386、powerpc、powerpc64、powerpc64le、powerpcspe、armv7、aarch64 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-stable/2024-November/002513.html\">获取</a>。"
+
+[[news]]
+date= "2024-11-07"
+title = "2024年7月-9月状态报告"
+description = "包含32个条目的<a href=\"https://www.freebsd.org/status/report-2024-07-2024-09/\">7月至9月状态报告</a>现已发布。"
+
+[[news]]
+date = "2024-11-02"
+title = "FreeBSD 14.2-BETA1 可用"
+description = "FreeBSD 14.2 发布周期的第一个 BETA 版本现已可用。amd64、i386、powerpc、powerpc64、powerpc64le、powerpcspe、armv7、aarch64 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-stable/2024-November/002496.html\">获取</a>。"
+
+[[news]]
+date = "2024-10-15"
+description = "增强的提交权限：<a href=\"mailto:kbowling@FreeBSD.org\">Kevin Bowling</a> (src)"
+
+[[news]]
+date = "2024-10-07"
+description = "增强的提交权限：<a href=\"mailto:0mp@FreeBSD.org\">Mateusz Piotrowski</a> (src)"
+
+[[news]]
+date = "2024-09-17"
+title = "FreeBSD 13.4-RELEASE 可用"
+description = "「<a href=\"https://www.FreeBSD.org/releases/13.4R/announce/\">FreeBSD 13.4-RELEASE</a>」现已可用。请务必在安装前检查<a href=\"https://www.FreeBSD.org/releases/13.4R/relnotes/\">发行说明</a>和<a href=\"https://www.FreeBSD.org/releases/13.4R/errata/\">发行勘误</a>，以获取有关13.4的任何最新消息和/或问题。有关FreeBSD发行的更多信息，请访问<a href=\"https://www.FreeBSD.org/releases/\">发行信息</a>页面。"
+
+[[news]]
+date = "2024-09-07"
+title = "FreeBSD 13.4-RC3 可用"
+description = "FreeBSD 13.4 发布周期的第三个候选版本现已可用。amd64、i386、powerpc、powerpc64、powerpc64le、powerpcspe、armv6、armv7、aarch64 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-stable/2024-September/002367.html\">获取</a>。"
+
+[[news]]
+date = "2024-09-05"
+description = "新提交者：<a href=\"mailto:jlduran@FreeBSD.org\">Jose Luis Duran</a> (src)"
+
+[[news]]
+date = "2024-08-31"
+title = "FreeBSD 13.4-RC2 可用"
+description = "FreeBSD 13.4 发布周期的第二个候选版本现已可用。amd64、i386、powerpc、powerpc64、powerpc64le、powerpcspe、armv6、armv7、aarch64 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-stable/2024-August/002352.html\">获取</a>。"
+
+[[news]]
+date = "2024-08-24"
+title = "FreeBSD 13.4-RC1 可用"
+description = "FreeBSD 13.4 发布周期的第一个候选版本现已可用。amd64、i386、powerpc、powerpc64、powerpc64le、powerpcspe、armv6、armv7、aarch64 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-stable/2024-August/002345.html\">获取</a>。"
+
+[[news]]
+date = "2024-08-22"
+description = "新提交者：<a href=\"mailto:igoro@FreeBSD.org\">Igor Ostapenko</a> (src)"
+
+[[news]]
+date= "2024-08-19"
+title = "2024年4月-6月状态报告"
+description = "包含20个条目的<a href=\"https://www.freebsd.org/status/report-2024-04-2024-06/\">4月至6月状态报告</a>现已发布。"
+
+[[news]]
+date = "2024-08-17"
+title = "FreeBSD 13.4-BETA3 可用"
+description = "FreeBSD 13.4 发布周期的第三个 BETA 版本现已可用。amd64、i386、powerpc、powerpc64、powerpc64le、powerpcspe、armv6、armv7、aarch64 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-stable/2024-August/002339.html\">获取</a>。"
+
+[[news]]
+date = "2024-08-10"
+title = "FreeBSD 13.4-BETA2 可用"
+description = "FreeBSD 13.4 发布周期的第二个 BETA 版本现已可用。amd64、i386、powerpc、powerpc64、powerpc64le、powerpcspe、armv6、armv7、aarch64 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-stable/2024-August/002338.html\">获取</a>。"
+
+[[news]]
+date = "2024-08-03"
+title = "FreeBSD 13.4-BETA1 可用"
+description = "FreeBSD 13.4 发布周期的第一个 BETA 版本现已可用。amd64、i386、powerpc、powerpc64、powerpc64le、powerpcspe、armv6、armv7、aarch64 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-stable/2024-August/002336.html\">获取</a>。"
+
+[[news]]
+date = "2024-06-12"
+title = "新的FreeBSD核心团队当选"
+description = "项目的活跃提交者选举了您的第十三个FreeBSD核心团队。详情请参阅<a href=\"https://lists.freebsd.org/archives/freebsd-announce/2024-June/000136.html\">官方公告</a>。"
+
+[[news]]
+date = "2024-06-12"
+description = "新提交者：<a href=\"mailto:osamaabb@FreeBSD.org\">Osama Abboud</a> (src)"
+
+[[news]]
+date = "2024-06-04"
+title = "FreeBSD 14.1-RELEASE 可用"
+description = "「<a href=\"https://www.FreeBSD.org/releases/14.1R/announce/\">FreeBSD 14.1-RELEASE</a>」现已可用。请务必在安装前检查<a href=\"https://www.FreeBSD.org/releases/14.1R/relnotes/\">发行说明</a>和<a href=\"https://www.FreeBSD.org/releases/14.1R/errata/\">发行勘误</a>，以获取有关14.1的任何最新消息和/或问题。有关FreeBSD发行的更多信息，请访问<a href=\"https://www.FreeBSD.org/releases/\">发行信息</a>页面。"
+
+[[news]]
+date = "2024-05-29"
+title = "2024年社区调查结果"
+description = "「<a href=\"https://freebsdfoundation.org/blog/results-from-the-2024-freebsd-community-survey-report/\">2024年FreeBSD社区调查结果</a>」现已发布。"
+
+[[news]]
+date= "2024-05-03"
+title = "2024年1月-3月状态报告"
+description = "包含21个条目的<a href=\"https://www.freebsd.org/status/report-2024-01-2024-03/\">1月至3月状态报告</a>现已发布。"
+
+[[news]]
+date = "2024-03-05"
+title = "FreeBSD 13.3-RELEASE 可用"
+description = "「<a href=\"https://www.FreeBSD.org/releases/13.3R/announce/\">FreeBSD 13.3-RELEASE</a>」现已可用。请务必在安装前检查<a href=\"https://www.FreeBSD.org/releases/13.3R/relnotes/\">发行说明</a>和<a href=\"https://www.FreeBSD.org/releases/13.3R/errata/\">发行勘误</a>，以获取有关13.3的任何最新消息和/或问题。有关FreeBSD发行的更多信息，请访问<a href=\"https://www.FreeBSD.org/releases/\">发行信息</a>页面。"
+
+[[news]]
+date= "2024-02-16"
+title = "2023年10月-12月状态报告"
+description = "包含18个条目的<a href=\"https://www.freebsd.org/status/report-2023-10-2023-12/\">2023年10月至12月状态报告</a>现已发布。"
+
+[[news]]
+date = "2024-02-13"
+description = "新提交者：<a href=\"mailto:bnovkov@FreeBSD.org\">Bojan Novković</a> (src)"
+
+[[news]]
+date = "2024-01-26"
+description = "新提交者：<a href=\"mailto:uzsolt@FreeBSD.org\">Zsolt Udvari</a> (ports)"
+
+[[news]]
+date = "2024-01-12"
+description = "新提交者：<a href=\"mailto:dutra@FreeBSD.org\">Gabriel M. Dutra</a> (ports)"
+
+[[news]]
+date = "2023-12-01"
+description = "新提交者：<a href=\"mailto:olce@FreeBSD.org\">Olivier Certner</a> (src)"
+
+[[news]]
+date = "2023-11-20"
+title = "FreeBSD 14.0-RELEASE 可用"
+description = "「<a href=\"https://www.FreeBSD.org/releases/14.0R/announce/\">FreeBSD 14.0-RELEASE</a>」现已可用。请务必在安装前检查<a href=\"https://www.FreeBSD.org/releases/14.0R/relnotes/\">发行说明</a>和<a href=\"https://www.FreeBSD.org/releases/14.0R/errata/\">发行勘误</a>，以获取有关14.0的任何最新消息和/或问题。有关FreeBSD发行的更多信息，请访问<a href=\"https://www.FreeBSD.org/releases/\">发行信息</a>页面。"
+
+[[news]]
+date = "2023-11-17"
+description = "发布工程团队更新：<a href=\"mailto:cperciva@FreeBSD.org\">Colin Percival</a> 已被提升为首席发布工程师"
+
+[[news]]
+date = "2023-11-14"
+description = "新提交者：<a href=\"mailto:rcm@FreeBSD.org\">R. Christian McDonald</a> (src)"
+
+[[news]]
+date = "2023-11-14"
+description = "新提交者：<a href=\"mailto:akiyano@FreeBSD.org\">Arthur Kiyanovski</a> (src)"
+
+[[news]]
+date = "2023-11-03"
+description = "新提交者：<a href=\"mailto:jfree@FreeBSD.org\">Jake Freeland</a> (src)"
+
+[[news]]
+date = "2023-11-03"
+title = "FreeBSD 14.0-RC4 可用"
+description = "FreeBSD 14.0 发布周期的第四个 RC 版本现已可用。amd64、i386、powerpc、powerpc64、powerpc64le、powerpcspe、armv7、aarch64 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-current/2023-November/004928.html\">获取</a>。"
+
+[[news]]
+date= "2023-11-01"
+title = "2023年7月-9月状态报告"
+description = "包含32个条目的<a href=\"https://www.freebsd.org/status/report-2023-07-2023-09/\">2023年7月至9月状态报告</a>现已发布。"
+
+[[news]]
+date = "2023-10-27"
+title = "FreeBSD 14.0-RC3 可用"
+description = "FreeBSD 14.0 发布周期的第三个 RC 版本现已可用。amd64、i386、powerpc、powerpc64、powerpc64le、powerpcspe、armv7、aarch64 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-current/2023-October/004904.html\">获取</a>。"
+
+[[news]]
+date = "2023-10-20"
+title = "FreeBSD 14.0-RC2 可用"
+description = "FreeBSD 14.0 发布周期的第二个 RC 版本现已可用。amd64、i386、powerpc、powerpc64、powerpc64le、powerpcspe、armv7、aarch64 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-current/2023-October/004880.html\">获取</a>。"
+
+[[news]]
+date= "2023-10-16"
+description = "新提交者：<a href=\"mailto:michaelo@FreeBSD.org\">Michael Osipov</a> (ports)"
+
+[[news]]
+date = "2023-10-13"
+title = "FreeBSD 14.0-RC1 可用"
+description = "FreeBSD 14.0 发布周期的第一个 RC 版本现已可用。amd64、i386、powerpc、powerpc64、powerpc64le、powerpcspe、armv7、aarch64 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-current/2023-October/004844.html\">获取</a>。"
+
+[[news]]
+date = "2023-10-06"
+title = "FreeBSD 14.0-BETA5 可用"
+description = "FreeBSD 14.0 发布周期的第五个 BETA 版本现已可用。amd64、i386、powerpc、powerpc64、powerpc64le、powerpcspe、armv7、aarch64 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-current/2023-October/004814.html\">获取</a>。"
+
+[[news]]
+date = "2023-09-30"
+title = "FreeBSD 14.0-BETA4 可用"
+description = "FreeBSD 14.0 发布周期的第四个 BETA 版本现已可用。amd64、i386、powerpc、powerpc64、powerpc64le、powerpcspe、armv7、aarch64 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-current/2023-September/004773.html\">获取</a>。"
+
+[[news]]
+date = "2023-09-22"
+title = "FreeBSD 14.0-BETA3 可用"
+description = "FreeBSD 14.0 发布周期的第三个 BETA 版本现已可用。amd64、i386、powerpc、powerpc64、powerpc64le、powerpcspe、armv7、aarch64 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-current/2023-September/004736.html\">获取</a>。"
+
+[[news]]
+date = "2023-09-16"
+title = "FreeBSD 14.0-BETA2 可用"
+description = "FreeBSD 14.0 发布周期的第二个 BETA 版本现已可用。amd64、i386、powerpc、powerpc64、powerpc64le、powerpcspe、armv7、aarch64 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-current/2023-September/004685.html\">获取</a>。"
+
+[[news]]
+date = "2023-09-08"
+title = "FreeBSD 14.0-BETA1 可用"
+description = "FreeBSD 14.0 发布周期的第一个 BETA 版本现已可用。amd64、i386、powerpc、powerpc64、powerpc64le、powerpcspe、armv7、aarch64 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-current/2023-September/004614.html\">获取</a>。"
+
+[[news]]
+date = "2023-09-06"
+description = "新提交者：<a href=\"mailto:jbo@FreeBSD.org\">Joel Bodenmann</a> (ports)"
+
+[[news]]
+date= "2023-07-27"
+title = "2023年4月-6月状态报告"
+description = "包含37个条目的<a href=\"https://www.freebsd.org/status/report-2023-04-2023-06/\">2023年4月至6月状态报告</a>现已发布。"
+
+[[news]]
+date = "2023-05-22"
+description = "新提交者：<a href=\"mailto:christos@FreeBSD.org\">Christos Margiolis</a> (src)"
+
+[[news]]
+date= "2023-04-19"
+title = "2023年1月-3月状态报告"
+description = "包含25个条目的<a href=\"https://www.freebsd.org/status/report-2023-01-2023-03/\">2023年1月至3月状态报告</a>现已发布。"
+
+[[news]]
+date = "2023-04-11"
+title = "FreeBSD 13.2-RELEASE 可用"
+description = "「<a href=\"https://www.FreeBSD.org/releases/13.2R/announce/\">FreeBSD 13.2-RELEASE</a>」现已可用。请务必在安装前检查<a href=\"https://www.FreeBSD.org/releases/13.2R/relnotes/\">发行说明</a>和<a href=\"https://www.FreeBSD.org/releases/13.2R/errata/\">发行勘误</a>，以获取有关13.2的任何最新消息和/或问题。有关FreeBSD发行的更多信息，请访问<a href=\"https://www.FreeBSD.org/releases/\">发行信息</a>页面。"
+
+[[news]]
+date = "2023-04-02"
+title = "FreeBSD 13.2-RC6 可用"
+description = "FreeBSD 13.2 发布周期的第六个 RC 版本现已可用。amd64、i386、powerpc、powerpc64、powerpc64le、powerpcspe、armv6、armv7、aarch64 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-snapshots/2023-April/000234.html\">获取</a>。"
+
+[[news]]
+date = "2023-03-27"
+title = "FreeBSD 13.2-RC5 可用"
+description = "FreeBSD 13.2 发布周期的第五个 RC 版本现已可用。amd64、i386、powerpc、powerpc64、powerpc64le、powerpcspe、armv6、armv7、aarch64 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-snapshots/2023-March/000230.html\">获取</a>。"
+
+[[news]]
+date = "2023-03-25"
+title = "FreeBSD 13.2-RC4 可用"
+description = "FreeBSD 13.2 发布周期的第四个 RC 版本现已可用。amd64、i386、powerpc、powerpc64、powerpc64le、powerpcspe、armv6、armv7、aarch64 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-snapshots/2023-March/000229.html\">获取</a>。"
+
+[[news]]
+date = "2023-03-20"
+description = "增强的提交权限：<a href=\"mailto:salvadore@FreeBSD.org\">Lorenzo Salvadore</a> (ports, doc)"
+
+[[news]]
+date = "2023-03-18"
+title = "FreeBSD 13.2-RC3 可用"
+description = "FreeBSD 13.2 发布周期的第三个 RC 版本现已可用。amd64、i386、powerpc、powerpc64、powerpc64le、powerpcspe、armv6、armv7、aarch64 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-snapshots/2023-March/000222.html\">获取</a>。"
+
+[[news]]
+date = "2023-03-11"
+title = "FreeBSD 13.2-RC2 可用"
+description = "FreeBSD 13.2 发布周期的第二个 RC 版本现已可用。amd64、i386、powerpc、powerpc64、powerpc64le、powerpcspe、armv6、armv7、aarch64 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-snapshots/2023-March/000221.html\">获取</a>。"
+
+[[news]]
+date = "2023-03-04"
+title = "FreeBSD 13.2-RC1 可用"
+description = "FreeBSD 13.2 发布周期的第一个 RC 版本现已可用。amd64、i386、powerpc、powerpc64、powerpc64le、powerpcspe、armv6、armv7、aarch64 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-snapshots/2023-March/000217.html\">获取</a>。"
+
+[[news]]
+date = "2023-02-26"
+title = "FreeBSD 13.2-BETA3 可用"
+description = "FreeBSD 13.2 发布周期的第三个 BETA 版本现已可用。amd64、i386、powerpc、powerpc64、powerpc64le、powerpcspe、armv6、armv7、aarch64 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-snapshots/2023-February/000213.html\">获取</a>。"
+
+[[news]]
+date = "2023-02-18"
+title = "FreeBSD 13.2-BETA2 可用"
+description = "FreeBSD 13.2 发布周期的第二个 BETA 版本现已可用。amd64、i386、powerpc、powerpc64、powerpc64le、powerpcspe、armv6、armv7、aarch64 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-snapshots/2023-February/000209.html\">获取</a>。"
+
+[[news]]
+date= "2023-02-15"
+description = "新提交者：<a href=\"mailto:cc@FreeBSD.org\">Cheng Cui</a> (src)"
+
+[[news]]
+date = "2023-02-14"
+title = "FreeBSD 13.2-BETA1 可用"
+description = "FreeBSD 13.2 发布周期的第一个 BETA 版本现已可用。amd64、i386、powerpc、powerpc64、powerpc64le、powerpcspe、armv6、armv7、aarch64 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-stable/2023-February/001114.html\">获取</a>。"
+
+[[news]]
+date= "2023-02-09"
+description = "新提交者：<a href=\"mailto:rnagy@FreeBSD.org\">Robert Nagy</a> (ports)"
+
+[[news]]
+date= "2023-02-02"
+description = "新提交者：<a href=\"mailto:vvd@FreeBSD.org\">Vladimir Druzenko</a> (ports)"
+
+[[news]]
+date = "2023-02-02"
+description = "新提交者：<a href=\"mailto:fuz@FreeBSD.org\">Robert Clausecker</a> (ports)"
+
+[[news]]
+date= "2023-01-26"
+title = "2022年10月-12月状态报告"
+description = "包含34个条目的<a href=\"https://www.freebsd.org/status/report-2022-10-2022-12/\">2022年10月至12月状态报告</a>现已发布。"
+
+[[news]]
+date = "2022-12-05"
+title = "FreeBSD 12.4-RELEASE 可用"
+description = "「<a href=\"https://www.FreeBSD.org/releases/12.4R/announce/\">FreeBSD 12.4-RELEASE</a>」现已可用。请务必在安装前检查<a href=\"https://www.FreeBSD.org/releases/12.4R/relnotes/\">发行说明</a>和<a href=\"https://www.FreeBSD.org/releases/12.4R/errata/\">发行勘误</a>，以获取有关12.4的任何最新消息和/或问题。有关FreeBSD发行的更多信息，请访问<a href=\"https://www.FreeBSD.org/releases/\">发行信息</a>页面。"
+
+[[news]]
+date = "2022-11-11"
+title = "FreeBSD 12.4-RC2 可用"
+description = "FreeBSD 12.4 发布周期的第二个 RC 版本现已可用。amd64、armv6、armv7、arm64、i386、powerpc、powerpc64、powerpcspe 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-stable/2022-November/000943.html\">获取</a>。"
+
+[[news]]
+date = "2022-11-04"
+title = "FreeBSD 12.4-RC1 可用"
+description = "FreeBSD 12.4 发布周期的第一个 RC 版本现已可用。amd64、armv6、armv7、arm64、i386、powerpc、powerpc64、powerpcspe 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-stable/2022-November/000937.html\">获取</a>。"
+
+[[news]]
+date = "2022-10-26"
+description = "新提交者：<a href=\"mailto:corvink@FreeBSD.org\">Corvin Köhne</a> (src)"
+
+[[news]]
+date = "2022-10-21"
+title = "FreeBSD 12.4-BETA1 可用"
+description = "FreeBSD 12.4 发布周期的第一个 BETA 版本现已可用。amd64、armv6、armv7、arm64、i386、powerpc、powerpc64、powerpcspe 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-stable/2022-October/000920.html\">获取</a>。"
+
+[[news]]
+date= "2022-10-21"
+title = "2022年7月-9月状态报告"
+description = "包含24个条目的<a href=\"https://www.freebsd.org/status/report-2022-07-2022-09/\">2022年7月至9月状态报告</a>现已发布。"
+
+[[news]]
+date= "2022-10-16"
+description = "新提交者：<a href=\"mailto:zlei@FreeBSD.org\">Zhenlei Huang</a> (src)"
+
+[[news]]
+date = "2022-10-08"
+description = "增强的提交权限：<a href=\"mailto:bofh@FreeBSD.org\">Muhammad Moinur Rahman</a> (doc, ports)"
+
+[[news]]
+date= "2022-10-06"
+description = "新提交者：<a href=\"mailto:ronald@FreeBSD.org\">Ronald Klop</a> (ports)"
+
+[[news]]
+date= "2022-08-09"
+title = "2022年4月-6月状态报告"
+description = "包含26个条目的<a href=\"https://www.freebsd.org/status/report-2022-04-2022-06/\">2022年4月至6月状态报告</a>现已发布。"
+
+[[news]]
+date= "2022-08-01"
+description = "新提交者：<a href=\"mailto:zirias@FreeBSD.org\">Felix Palmen</a> (ports)"
+
+[[news]]
+date= "2022-06-29"
+description = "新提交者：<a href=\"mailto:dsl@FreeBSD.org\">Dmitry Salychev</a> (src)"
+
+[[news]]
+date= "2022-06-22"
+description = "新提交者：<a href=\"mailto:kd@FreeBSD.org\">Kornel Dulęba</a> (src)"
+
+[[news]]
+date = "2022-06-18"
+title = "新的FreeBSD核心团队当选"
+description = "项目的活跃提交者选举了您的第十二个FreeBSD核心团队。详情请参阅<a href=\"https://lists.freebsd.org/archives/freebsd-announce/2022-June/000034.html\">官方公告</a>。"
+
+[[news]]
+date= "2022-06-09"
+title = "2022年1月-3月状态报告"
+description = "包含22个条目的<a href=\"https://www.freebsd.org/status/report-2022-01-2022-03/\">2022年1月至3月状态报告</a>现已发布。"
+
+[[news]]
+date= "2022-06-03"
+description = "新提交者：<a href=\"mailto:pauamma@FreeBSD.org\">Pau Amma</a> (doc)"
+
+[[news]]
+date= "2022-06-01"
+description = "新提交者：<a href=\"mailto:grahamperrin@FreeBSD.org\">Graham Perrin</a> (doc)"
+
+[[news]]
+date = "2022-05-12"
+title = "FreeBSD 13.1-RELEASE 可用"
+description = "「<a href=\"https://www.FreeBSD.org/releases/13.1R/announce/\">FreeBSD 13.1-RELEASE</a>」现已可用。请务必在安装前检查<a href=\"https://www.FreeBSD.org/releases/13.1R/relnotes/\">发行说明</a>和<a href=\"https://www.FreeBSD.org/releases/13.1R/errata/\">发行勘误</a>，以获取有关13.1的任何最新消息和/或问题。有关FreeBSD发行的更多信息，请访问<a href=\"https://www.FreeBSD.org/releases/\">发行信息</a>页面。"
+
+[[news]]
+date = "2022-05-05"
+title = "FreeBSD 13.1-RC6 可用"
+description = "FreeBSD 13.1 发布周期的第六个 RC 版本现已可用。amd64、i386、arm64、powerpc64、powerpc64le、powerpcspe 和 riscv 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.FreeBSD.org/doc/en/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-stable/2022-May/000762.html\">获取</a>。"
+
+[[news]]
+date = "2022-04-28"
+title = "FreeBSD 13.1-RC5 可用"
+description = "FreeBSD 13.1 发布周期的第五个 RC 版本现已可用。amd64、i386、arm64、powerpc64、powerpc64le、powerpcspe 和 riscv 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.FreeBSD.org/doc/en/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-stable/2022-April/000735.html\">获取</a>。"
+
+[[news]]
+date = "2022-04-21"
+title = "FreeBSD 13.1-RC4 可用"
+description = "FreeBSD 13.1 发布周期的第四个 RC 版本现已可用。amd64、i386、arm64、powerpc64、powerpc64le、powerpcspe 和 riscv 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.FreeBSD.org/doc/en/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-stable/2022-April/000720.html\">获取</a>。"
+
+[[news]]
+date = "2022-04-14"
+title = "FreeBSD 13.1-RC3 可用"
+description = "FreeBSD 13.1 发布周期的第三个 RC 版本现已可用。amd64、i386、arm64、powerpc64、powerpc64le、powerpcspe 和 riscv 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.FreeBSD.org/doc/en/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-stable/2022-April/000718.html\">获取</a>。"
+
+[[news]]
+date = "2022-04-07"
+title = "FreeBSD 13.1-RC2 可用"
+description = "FreeBSD 13.1 发布周期的第二个 RC 版本现已可用。amd64、i386、arm64、powerpc64 和 powerpcspe 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.FreeBSD.org/doc/en/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-stable/2022-April/000700.html\">获取</a>。"
+
+[[news]]
+date = "2022-04-01"
+title = "FreeBSD 13.1-RC1 可用"
+description = "FreeBSD 13.1 发布周期的第一个 RC 版本现已可用。amd64、i386、arm64、powerpc64、powerpcspe 和 riscv 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.FreeBSD.org/doc/en/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-stable/2022-April/000651.html\">获取</a>。"
+
+[[news]]
+date = "2022-03-24"
+title = "FreeBSD 13.1-BETA3 可用"
+description = "FreeBSD 13.1 发布周期的第三个 BETA 版本现已可用。amd64、i386、arm64、powerpc64、powerpcspe 和 riscv 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.FreeBSD.org/doc/en/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-stable/2022-March/000629.html\">获取</a>。"
+
+[[news]]
+date = "2022-03-23"
+title = "新的 portmgr 潜伏者"
+description = "Portmgr 重启了 portmgr-lurker 计划，并选出了前两名潜伏者：<a href=\"mailto:pizzamig@FreeBSD.org\">Luca Pizzamiglio</a> 和 <a href=\"mailto:se@FreeBSD.org\">Stefan Eßer</a>。他们将在未来几个月加入 portmgr，了解其内部运作的方方面面。"
+
+[[news]]
+date = "2022-03-17"
+title = "FreeBSD 13.1-BETA2 可用"
+description = "FreeBSD 13.1 发布周期的第二个 BETA 版本现已可用。amd64、i386、arm64、powerpc64 和 powerpcspe 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.FreeBSD.org/doc/en/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-stable/2022-March/000581.html\">获取</a>。"
+
+[[news]]
+date = "2022-03-10"
+title = "FreeBSD 13.1-BETA1 可用"
+description = "FreeBSD 13.1 发布周期的第一个 BETA 版本现已可用。amd64、arm64、powerpc64、powerpcspe、powerpc64le 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.FreeBSD.org/doc/en/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-stable/2022-March/000571.html\">获取</a>。"
+
+[[news]]
+date= "2022-03-10"
+title = "2021年10月-12月状态报告"
+description = "包含19个条目的<a href=\"https://www.freebsd.org/status/report-2021-10-2021-12/\">2021年10月至12月状态报告</a>现已发布。"
+
+[[news]]
+date= "2022-02-09"
+description = "新提交者：<a href=\"mailto:asiciliano@FreeBSD.org\">Alfonso S. Siciliano</a> (src)"
+
+[[news]]
+date = "2021-12-07"
+title = "FreeBSD 12.3-RELEASE 可用"
+description = "「<a href=\"https://www.FreeBSD.org/releases/12.3R/announce/\">FreeBSD 12.3-RELEASE</a>」现已可用。请务必在安装前检查<a href=\"https://www.FreeBSD.org/releases/12.3R/relnotes/\">发行说明</a>和<a href=\"https://www.FreeBSD.org/releases/12.3R/errata/\">发行勘误</a>，以获取有关12.3的任何最新消息和/或问题。有关FreeBSD发行的更多信息，请访问<a href=\"https://www.FreeBSD.org/releases/\">发行信息</a>页面。"
+
+[[news]]
+date = "2021-11-18"
+title = "FreeBSD 12.3-RC2 可用"
+description = "FreeBSD 12.3 发布周期的第二个 RC 版本现已可用。amd64、armv6、armv7、arm64、i386、powerpc、powerpc64、powerpcspe 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-stable/2021-November/000330.html\">获取</a>。"
+
+[[news]]
+date = "2021-11-15"
+title = "2021年7月-9月状态报告"
+description = "包含42个条目的<a href=\"https://www.freebsd.org/status/report-2021-07-2021-09/\">2021年7月至9月状态报告</a>现已发布。"
+
+[[news]]
+date = "2021-11-11"
+title = "FreeBSD 12.3-RC1 可用"
+description = "FreeBSD 12.3 发布周期的第一个 RC 版本现已可用。amd64、armv6、armv7、arm64、i386、powerpc、powerpc64、powerpcspe 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-stable/2021-November/000321.html\">获取</a>。"
+
+[[news]]
+date= "2021-11-06"
+description = "新提交者：<a href=\"mailto:driesm@FreeBSD.org\">Dries Michiels</a> (ports)"
+
+[[news]]
+date = "2021-11-04"
+title = "FreeBSD 12.3-BETA3 可用"
+description = "FreeBSD 12.3 发布周期的第三个 BETA 版本现已可用。amd64、armv6、armv7、arm64、i386、powerpc、powerpc64、powerpcspe 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-stable/2021-November/000309.html\">获取</a>。"
+
+[[news]]
+date = "2021-10-29"
+title = "FreeBSD 12.3-BETA2 可用"
+description = "FreeBSD 12.3 发布周期的第二个 BETA 版本现已可用。amd64、armv6、armv7、arm64、i386、powerpc、powerpc64、powerpcspe 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-stable/2021-October/000289.html\">获取</a>。"
+
+[[news]]
+date = "2021-10-22"
+title = "FreeBSD 12.3-BETA1 可用"
+description = "FreeBSD 12.3 发布周期的第一个 BETA 版本现已可用。amd64、armv6、armv7、arm64、i386、powerpc、powerpc64、powerpcspe 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://docs.freebsd.org/en/books/handbook/mirrors/#mirrors-ftp\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/archives/freebsd-stable/2021-October/000269.html\">获取</a>。"
+
+[[news]]
+date = "2021-08-27"
+description = "新提交者：<a href=\"mailto:yasu@FreeBSD.org\">Yasuhiro Kimura</a> (ports)"
+
+[[news]]
+date = "2021-08-18"
+description = "增强的提交权限：<a href=\"mailto:emaste@FreeBSD.org\">Ed Maste</a> (doc, src)"
+
+[[news]]
+date = "2021-07-31"
+description = "增强的提交权限：<a href=\"mailto:lwhsu@FreeBSD.org\">Li-Wen Hsu</a> (doc, ports, src)"
+
+[[news]]
+date = "2021-07-24"
+title = "2021年4月-6月状态报告"
+description = "包含45个条目的<a href=\"https://www.freebsd.org/status/report-2021-04-2021-06/\">2021年4月至6月状态报告</a>现已发布。"
+
+[[news]]
+date = "2021-07-13"
+description = "增强的提交权限：<a href=\"mailto:philip@FreeBSD.org\">Philip Paeps</a> (src, ports, doc)"
+
+[[news]]
+date = "2021-07-06"
+description = "新提交者：<a href=\"mailto:diizzy@FreeBSD.org\">Daniel Engberg</a> (ports)"
+
+[[news]]
+date = "2021-05-17"
+description = "增强的提交权限：<a href=\"mailto:ygy@FreeBSD.org\">Guangyuan Yang</a> (doc, ports)"
+
+[[news]]
+date = "2021-05-06"
+title = "2021年1月-3月状态报告"
+description = "包含28个条目的<a href=\"https://www.freebsd.org/status/report-2021-01-2021-03/\">2021年1月至3月状态报告</a>现已发布。"
+
+[[news]]
+date = "2021-04-29"
+description = "新提交者：<a href=\"mailto:vishwin@FreeBSD.org\">Charlie Li</a> (ports)"
+
+[[news]]
+date = "2021-04-21"
+description = "新提交者：<a href=\"mailto:oh@FreeBSD.org\">Oskar Holmlund</a> (src)"
+
+[[news]]
+date = "2021-04-13"
+title = "FreeBSD 13.0-RELEASE 可用"
+description = "「<a href=\"https://www.FreeBSD.org/releases/13.0R/announce/\">FreeBSD 13.0-RELEASE</a>」现已可用。请务必在安装前检查<a href=\"https://www.FreeBSD.org/releases/13.0R/relnotes/\">发行说明</a>和<a href=\"https://www.FreeBSD.org/releases/13.0R/errata/\">发行勘误</a>，以获取有关13.0的任何最新消息和/或问题。有关FreeBSD发行的更多信息，请访问<a href=\"https://www.FreeBSD.org/releases/\">发行信息</a>页面。"
+
+[[news]]
+date = "2021-04-03"
+title = "FreeBSD 13.0-RC5 可用"
+description = "FreeBSD 13.0 发布周期的第五个 RC 版本现已可用。amd64、arm64、armv6、armv7、i386、powerpc、powerpc64、powerpcspe、powerpc64le 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.FreeBSD.org/doc/en/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2021-April/093429.html\">获取</a>。"
+
+[[news]]
+date = "2021-03-29"
+title = "FreeBSD 13.0-RC4 可用"
+description = "FreeBSD 13.0 发布周期的第四个 RC 版本现已可用。amd64、arm64、armv6、armv7、i386、powerpc、powerpc64、powerpcspe、powerpc64le 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.FreeBSD.org/doc/en/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2021-March/093374.html\">获取</a>。"
+
+[[news]]
+date = "2021-03-21"
+title = "重新开放 Weblate 进行翻译"
+description = "在迁移到 Hugo/AsciiDoctor 后，weblate 工具再次开放。要获取更多信息，<a href=\"https://lists.freebsd.org/pipermail/freebsd-translators/2021-March/000364.html\">请查看公告</a>。"
+
+[[news]]
+date = "2021-03-20"
+title = "FreeBSD 13.0-RC3 可用"
+description = "FreeBSD 13.0 发布周期的第三个 RC 版本现已可用。amd64、arm64、armv6、armv7、i386、powerpc、powerpc64、powerpcspe、powerpc64le 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.FreeBSD.org/doc/en/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2021-March/093340.html\">获取</a>。"
+
+[[news]]
+date = "2021-03-15"
+description = "新提交者：<a href=\"mailto:khng@FreeBSD.org\">Ka Ho Ng</a> (src)"
+
+[[news]]
+date = "2021-03-12"
+title = "FreeBSD 13.0-RC2 可用"
+description = "FreeBSD 13.0 发布周期的第二个 RC 版本现已可用。amd64、arm64、armv6、armv7、i386、powerpc、powerpc64、powerpcspe、powerpc64le 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.FreeBSD.org/doc/en/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2021-March/093294.html\">获取</a>。"
+
+[[news]]
+date = "2021-03-06"
+title = "FreeBSD 13.0-RC1 可用"
+description = "FreeBSD 13.0 发布周期的第一个 RC 版本现已可用。amd64、arm64、armv6、armv7、i386、powerpc、powerpc64、powerpcspe、powerpc64le 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.FreeBSD.org/doc/en/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2021-March/093272.html\">获取</a>。"
+
+[[news]]
+date = "2021-02-27"
+title = "FreeBSD 13.0-BETA4 可用"
+description = "FreeBSD 13.0 发布周期的第四个 BETA 版本现已可用。amd64、arm64、armv6、armv7、i386、powerpc、powerpc64、powerpcspe、powerpc64le 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.FreeBSD.org/doc/en/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2021-February/093233.html\">获取</a>。"
+
+[[news]]
+date = "2021-02-20"
+title = "FreeBSD 13.0-BETA3 可用"
+description = "FreeBSD 13.0 发布周期的第三个 BETA 版本现已可用。amd64、arm64、armv6、armv7、i386、powerpc、powerpc64、powerpcspe、powerpc64le 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.FreeBSD.org/doc/en/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2021-February/093151.html\">获取</a>。"
+
+[[news]]
+date = "2021-02-12"
+title = "FreeBSD 13.0-BETA2 可用"
+description = "FreeBSD 13.0 发布周期的第二个 BETA 版本现已可用。amd64、arm64、armv6、armv7、i386、powerpc、powerpc64、powerpcspe、powerpc64le 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.FreeBSD.org/doc/en/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2021-February/093081.html\">获取</a>。"
+
+[[news]]
+date = "2021-02-06"
+title = "FreeBSD 13.0-BETA1 可用"
+description = "FreeBSD 13.0 发布周期的第一个 BETA 版本现已可用。amd64、arm64、powerpc64、powerpcspe、powerpc64le 和 riscv64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.FreeBSD.org/doc/en/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2021-February/093047.html\">获取</a>。"
+
+[[news]]
+date = "2021-02-07"
+description = "新提交者：<a href=\"mailto:fernape@FreeBSD.org\">Fernando Apesteguia Santiago</a> (doc)"
+
+[[news]]
+date = "2021-01-27"
+description = "新提交者：<a href=\"mailto:rajeshasp@FreeBSD.org\">Rajesh Kumar M A</a> (src)"
+
+[[news]]
+date = "2021-01-27"
+description = "新提交者：<a href=\"mailto:eduardo@FreeBSD.org\">Nuno Teixeira</a> (ports)"
+
+[[news]]
+date = "2021-01-25"
+description = "网站和文档已转换为 Hugo 和 AsciiDoctor"
+
+[[news]]
+date = "2021-01-21"
+description = "新提交者：<a href=\"mailto:lcook@FreeBSD.org\">Lewis Cook</a> (ports)"
+
+[[news]]
+date = "2021-01-16"
+title = "2020年10月-12月状态报告"
+description = "包含42个条目的<a href=\"https://www.freebsd.org/status/report-2020-10-2020-12.html\">2020年10月至12月状态报告</a>现已发布。"
+
+[[news]]
+date = "2021-01-14"
+description = "新提交者：<a href=\"mailto:donner@FreeBSD.org\">Lutz Donnerhacke</a> (src)"
+
+[[news]]
+date = "2021-01-02"
+description = "新提交者：<a href=\"mailto:nc@FreeBSD.org\">Neel Chauhan</a> (ports)"
+
+[[news]]
+date = "2020-12-19"
+description = "FreeBSD src 仓库将转换为 git。详情请参阅 <a href=\"https://wiki.freebsd.org/git\">git wiki</a>。"
+
+[[news]]
+date = "2020-12-12"
+description = "新提交者：<a href=\"mailto:otis@FreeBSD.org\">Juraj Lutter</a> (ports)"
+
+[[news]]
+date = "2020-12-05"
+description = "FreeBSD doc 仓库已转换为 git。"
+
+[[news]]
+date = "2020-10-27"
+title = "FreeBSD 12.2-RELEASE 可用"
+description = "「<a href=\"https://www.freebsd.org/releases/12.2R/announce.html\">FreeBSD 12.2-RELEASE</a>」现已可用。请务必在安装前检查<a href=\"https://www.freebsd.org/releases/12.2R/relnotes.html\">发行说明</a>和<a href=\"https://www.freebsd.org/releases/12.2R/errata.html\">发行勘误</a>，以获取有关12.2的任何最新消息和/或问题。有关FreeBSD发行的更多信息，请访问<a href=\"https://www.freebsd.org/releases/index.html\">发行信息</a>页面。"
+
+[[news]]
+date = "2020-10-21"
+title = "2020年7月-9月状态报告"
+description = "包含35个条目的<a href=\"https://www.FreeBSD.org/status/report-2020-07-2020-09.html\">2020年7月至9月状态报告</a>现已发布。"
+
+[[news]]
+date = "2020-10-17"
+title = "FreeBSD 12.2-RC3 可用"
+description = "FreeBSD 12.2 发布周期的第三个 RC 版本现已可用。amd64、armv6、armv7、arm64、i386、powerpc、powerpc64、powerpcspe 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.FreeBSD.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2020-October/092786.html\">获取</a>。"
+
+[[news]]
+date = "2020-10-10"
+title = "FreeBSD 12.2-RC2 可用"
+description = "FreeBSD 12.2 发布周期的第二个 RC 版本现已可用。amd64、armv6、armv7、arm64、i386、powerpc、powerpc64、powerpcspe 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.FreeBSD.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2020-October/092761.html\">获取</a>。"
+
+[[news]]
+date = "2020-10-03"
+title = "FreeBSD 12.2-RC1 可用"
+description = "FreeBSD 12.2 发布周期的第一个 RC 版本现已可用。amd64、armv6、armv7、arm64、i386、powerpc、powerpc64、powerpcspe 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.FreeBSD.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2020-October/092740.html\">获取</a>。"
+
+[[news]]
+date = "2020-09-26"
+title = "FreeBSD 12.2-BETA3 可用"
+description = "FreeBSD 12.2 发布周期的第三个 BETA 版本现已可用。amd64、armv6、armv7、arm64、i386、powerpc、powerpc64 和 powerpcspe 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.FreeBSD.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2020-September/092727.html\">获取</a>。"
+
+[[news]]
+date = "2020-09-18"
+title = "FreeBSD 12.2-BETA2 可用"
+description = "FreeBSD 12.2 发布周期的第二个 BETA 版本现已可用。amd64、armv6、armv7、arm64、i386、powerpc、powerpc64、powerpcspe 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.FreeBSD.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2020-September/092702.html\">获取</a>。"
+
+[[news]]
+date = "2020-09-12"
+title = "FreeBSD 12.2-BETA1 可用"
+description = "FreeBSD 12.2 发布周期的第一个 BETA 版本现已可用。amd64、armv6、armv7、arm64、i386、powerpc、powerpc64、powerpcspe 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.FreeBSD.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2020-September/092680.html\">获取</a>。"
+
+[[news]]
+date = "2020-08-31"
+description = "新提交者：<a href=\"mailto:rhurlin@FreeBSD.org\">Rainer Hurling</a> (ports)"
+
+[[news]]
+date = "2020-07-26"
+description = "新提交者：<a href=\"mailto:debdrup@FreeBSD.org\">Daniel Ebdrup Jensen</a> (doc)"
+
+[[news]]
+date = "2020-07-23"
+description = "新提交者：<a href=\"mailto:rew@FreeBSD.org\">Robert Wing</a> (src)"
+
+[[news]]
+date = "2020-07-15"
+title = "2020年4月-6月状态报告"
+description = "包含51个条目的<a href=\"https://www.freebsd.org/news/status/report-2020-04-2020-06.html\">2020年4月至6月状态报告</a>现已发布。"
+
+[[news]]
+date = "2020-07-01"
+title = "新的FreeBSD核心团队当选"
+description = "项目的活跃提交者选举了您的第十一个FreeBSD核心团队。详情请参阅<a href=\"https://lists.freebsd.org/pipermail/freebsd-announce/2020-July/001962.html\">官方公告</a>。"
+
+[[news]]
+date = "2020-06-16"
+title = "FreeBSD 11.4-RELEASE 可用"
+description = "「<a href=\"https://www.freebsd.org/releases/11.4R/announce.html\">FreeBSD 11.4-RELEASE</a>」现已可用。请务必在安装前检查<a href=\"https://www.freebsd.org/releases/11.4R/relnotes.html\">发行说明</a>和<a href=\"https://www.freebsd.org/releases/11.4R/errata.html\">发行勘误</a>，以获取有关11.4的任何最新消息和/或问题。有关FreeBSD发行的更多信息，请访问<a href=\"https://www.freebsd.org/releases/index.html\">发行信息</a>页面。"
+
+[[news]]
+date = "2020-06-09"
+title = "FreeBSD 修订了其行为准则，采用了新的源自 LLVM 的行为准则。"
+description = "有关修订后的政策，请参阅<a href=\"https://www.freebsd.org/internal/code-of-conduct.html\">行为准则</a>。"
+
+[[news]]
+date = "2020-06-08"
+description = "新提交者：<a href=\"mailto:gbe@FreeBSD.org\">Gordon Bergling</a> (doc)"
+
+[[news]]
+date = "2020-06-02"
+title = "2020年FreeBSD社区调查"
+description = "「<a href=\"https://www.research.net/r/freebsd-2020-community-survey\">2020年FreeBSD社区调查</a>」现已开放。请随时与您的雇主、同事、朋友或任何其他对FreeBSD感兴趣的社区成员分享调查链接。调查将于6月16日（星期二，太平洋夏令时间上午10点）17:00 UTC截止。"
+
+[[news]]
+date = "2020-05-29"
+title = "FreeBSD 11.4-RC2 可用"
+description = "FreeBSD 11.4 发布周期的第二个 RC 版本现已可用。amd64、armv6、arm64、i386、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2020-May/092320.html\">获取</a>。"
+
+[[news]]
+date = "2020-05-22"
+title = "FreeBSD 11.4-RC1 可用"
+description = "FreeBSD 11.4 发布周期的第一个 RC 版本现已可用。amd64、armv6、arm64、i386、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2020-May/092304.html\">获取</a>。"
+
+[[news]]
+date = "2020-05-16"
+title = "FreeBSD 11.4-BETA2 可用"
+description = "FreeBSD 11.4 发布周期的第二个 BETA 版本现已可用。amd64、armv6、arm64、i386、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2020-May/092285.html\">获取</a>。"
+
+[[news]]
+date = "2020-05-16"
+title = "FreeBSD 参与 Google 文档季"
+description = "FreeBSD 项目再次作为<a href=\"https://developers.google.com/season-of-docs/docs/participants/\">指导组织</a>参与<a href=\"https://developers.google.com/season-of-docs\">Google 文档季</a>计划。该计划的目标是将开源和技术作者聚集在一起。技术作者花三个月时间与开源社区密切合作，将他们的专业知识带到项目的文档中。可用任务列表和联系信息可在<a href=\"https://wiki.freebsd.org/GoogleSeasonOfDocs\">FreeBSD wiki</a>上找到。"
+
+[[news]]
+date = "2020-05-09"
+title = "FreeBSD 11.4-BETA1 可用"
+description = "FreeBSD 11.4 发布周期的第一个 BETA 版本现已可用。amd64、armv6、arm64、i386、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2020-May/092284.html\">获取</a>。"
+
+[[news]]
+date = "2020-04-12"
+title = "2020年1月-3月状态报告"
+description = "「<a href=\"https://www.freebsd.org/news/status/report-2020-01-2020-03.html\">2020年1月至3月状态报告</a>」现已发布。"
+
+[[news]]
+date = "2020-04-06"
+description = "新提交者：<a href=\"mailto:rscheff@FreeBSD.org\">Richard Scheffenegger</a> (src)"
+
+[[news]]
+date = "2020-04-01"
+description = "新提交者：<a href=\"mailto:tagattie@FreeBSD.org\">Hiroki Tagato</a> (ports)"
+
+[[news]]
+date = "2020-03-10"
+description = "新提交者：<a href=\"mailto:afedorov@FreeBSD.org\">Aleksandr Fedorov</a> (src)"
+
+[[news]]
+date = "2020-03-09"
+description = "新提交者：<a href=\"mailto:nick@FreeBSD.org\">Nick O'Brien</a> (src)"
+
+[[news]]
+date = "2020-02-18"
+description = "新提交者：<a href=\"mailto:salvadore@FreeBSD.org\">Lorenzo Salvadore</a> (ports)"
+
+[[news]]
+date = "2020-02-10"
+description = "新提交者：<a href=\"mailto:freqlabs@FreeBSD.org\">Ryan Moeller</a> (src)"
+
+[[news]]
+date = "2020-01-27"
+description = "新提交者：<a href=\"mailto:alfredo@FreeBSD.org\">Alfredo Dal'Ava Júnior</a> (src)"
+
+[[news]]
+date = "2020-01-27"
+title = "2019年10月-12月状态报告"
+description = "「<a href=\"https://www.freebsd.org/news/status/report-2019-10-2019-12.html\">2019年10月至12月状态报告</a>」现已发布。"
+
+[[news]]
+date = "2020-01-21"
+title = "在 Weblate 上翻译 FreeBSD 的官方文章和书籍"
+description = "为了让新贡献者更容易地翻译<a href=\"https://www.freebsd.org/docs/books.html\">FreeBSD的官方文章和书籍</a>，该项目正在采用<a href=\"https://weblate.org/\">Weblate</a>作为其基于Web的持续本地化平台。该工具已被我们的一些翻译团队（pt_BR、es_ES和zh_CN）使用数月，由于取得了优异的成果和所采用的工作流程的成熟，我们相信我们已准备好向新的合作者开放。随着这个新工具的采用，翻译过程变得相当简单，任何愿意为项目贡献几分钟的人都可以为其做出贡献！如果您有兴趣通过翻译官方文档为文档项目做出贡献，您可以在我们的<a href=\"https://wiki.freebsd.org/DocTranslationOnWeblate\">wiki</a>上获取更多信息，并阅读发送到freebsd-translators邮件列表的<a href=\"https://lists.freebsd.org/pipermail/freebsd-translators/2019-December/000161.html\">公告</a>。"
+
+[[news]]
+date = "2020-01-10"
+description = "新提交者：<a href=\"mailto:mikael@FreeBSD.org\">Mikaël Urankar</a> (ports)"
+
+[[news]]
+date = "2020-01-02"
+description = "新提交者：<a href=\"mailto:lbartoletti@FreeBSD.org\">Loïc Bartoletti</a> (ports)"
+
+[[news]]
+date = "2019-11-25"
+title = "2019年7月-9月状态报告"
+description = "「<a href=\"https://www.freebsd.org/news/status/report-2019-07-2019-09.html\">2019年7月至9月状态报告</a>」现已发布。"
+
+[[news]]
+date = "2019-11-04"
+title = "FreeBSD 12.1-RELEASE 可用"
+description = "「<a href=\"https://www.freebsd.org/releases/12.1R/announce.html\">FreeBSD 12.1-RELEASE</a>」现已可用。请务必在安装前检查<a href=\"https://www.freebsd.org/releases/12.1R/relnotes.html\">发行说明</a>和<a href=\"https://www.freebsd.org/releases/12.1R/errata.html\">发行勘误</a>，以获取有关12.1的任何最新消息和/或问题。有关FreeBSD发行的更多信息，请访问<a href=\"https://www.freebsd.org/releases/index.html\">发行信息</a>页面。"
+
+[[news]]
+date = "2019-10-18"
+title = "FreeBSD 12.1-RC2 可用"
+description = "FreeBSD 12.1 发布周期的第二个 RC 版本现已可用。amd64、armv6、armv7、arm64、i386、powerpc、powerpc64、powerpcspe 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2019-October/091616.html\">获取</a>。"
+
+[[news]]
+date = "2019-10-11"
+title = "FreeBSD 12.1-RC1 可用"
+description = "FreeBSD 12.1 发布周期的第一个 RC 版本现已可用。amd64、armv6、armv7、arm64、i386、powerpc、powerpc64、powerpcspe 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2019-October/091599.html\">获取</a>。"
+
+[[news]]
+date = "2019-10-11"
+description = "新提交者：<a href=\"mailto:samm@FreeBSD.org\">Alex Samorukov</a> (ports)"
+
+[[news]]
+date = "2019-10-04"
+title = "FreeBSD 12.1-BETA3 可用"
+description = "FreeBSD 12.1 发布周期的第三个 BETA 版本现已可用。amd64、armv6、armv7、arm64、i386、powerpc、powerpc64、powerpcspe 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2019-October/091567.html\">获取</a>。"
+
+[[news]]
+date = "2019-09-29"
+description = "新提交者：<a href=\"mailto:0mp@FreeBSD.org\">Mateusz Piotrowski</a> (doc)"
+
+[[news]]
+date = "2019-09-28"
+title = "FreeBSD 12.1-BETA2 可用"
+description = "FreeBSD 12.1 发布周期的第二个 BETA 版本现已可用。amd64、armv6、armv7、arm64、i386、powerpc、powerpc64、powerpcspe 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2019-September/091555.html\">获取</a>。"
+
+[[news]]
+date = "2019-09-26"
+description = "新提交者：<a href=\"mailto:kaktus@FreeBSD.org\">Pawel Biernacki</a> (src)"
+
+[[news]]
+date = "2019-09-20"
+title = "FreeBSD 12.1-BETA1 可用"
+description = "FreeBSD 12.1 发布周期的第一个 BETA 版本现已可用。amd64、armv6、armv7、arm64、i386、powerpc、powerpc64、powerpcspe 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2019-September/091533.html\">获取</a>。"
+
+[[news]]
+date = "2019-09-15"
+description = "新提交者：<a href=\"mailto:dmgk@FreeBSD.org\">Dmitri Goutnik</a> (ports)"
+
+[[news]]
+date = "2019-09-10"
+description = "新提交者：<a href=\"mailto:sg@FreeBSD.org\">Stephen Gregoratto</a> (src)。致力于为<a href=\"https://developers.google.com/season-of-docs/\">Google文档季</a>改进FreeBSD项目用户手册"
+
+[[news]]
+date = "2019-08-28"
+description = "新提交者：<a href=\"mailto:fox@FreeBSD.org\">Santhosh Raju</a> (ports)"
+
+[[news]]
+date = "2019-08-25"
+title = "2019年4月-6月状态报告"
+description = "「<a href=\"https://www.freebsd.org/news/status/report-2019-04-2019-06.html\">2019年4月至6月状态报告</a>」现已发布。"
+
+[[news]]
+date = "2019-07-16"
+title = "FreeBSD.org 出站电子邮件系统变更"
+description = "由于我们无法控制的情况，我们需要更改 FreeBSD.org 电子邮件的出站 SMTP 服务器地址。我们意识到由于 SMTP 发件人信誉系统将会面临挑战。请参阅<a href=\"https://lists.freebsd.org/pipermail/freebsd-announce/2019-July/001892.html\">此公告</a>以获取更多信息。"
+
+[[news]]
+date = "2019-07-09"
+title = "FreeBSD 11.3-RELEASE 可用"
+description = "「<a href=\"https://www.freebsd.org/releases/11.3R/announce.html\">FreeBSD 11.3-RELEASE</a>」现已可用。请务必在安装前检查<a href=\"https://www.freebsd.org/releases/11.3R/relnotes.html\">发行说明</a>和<a href=\"https://www.freebsd.org/releases/11.3R/errata.html\">发行勘误</a>，以获取有关11.3的任何最新消息和/或问题。有关FreeBSD发行的更多信息，请访问<a href=\"https://www.freebsd.org/releases/index.html\">发行信息</a>页面。"
+
+[[news]]
+date = "2019-06-28"
+title = "FreeBSD 11.3-RC3 可用"
+description = "FreeBSD 11.3 发布周期的第三个 RC 版本现已可用。amd64、armv6、arm64、i386、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2019-June/091312.html\">获取</a>。"
+
+[[news]]
+date = "2019-06-21"
+title = "FreeBSD 11.3-RC2 可用"
+description = "FreeBSD 11.3 发布周期的第二个 RC 版本现已可用。amd64、armv6、arm64、i386、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2019-June/091293.html\">获取</a>。"
+
+[[news]]
+date = "2019-06-14"
+title = "FreeBSD 11.3-RC1 可用"
+description = "FreeBSD 11.3 发布周期的第一个 RC 版本现已可用。amd64、armv6、arm64、i386、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2019-June/091281.html\">获取</a>。"
+
+[[news]]
+date = "2019-06-07"
+title = "FreeBSD 11.3-BETA3 可用"
+description = "FreeBSD 11.3 发布周期的第三个 BETA 版本现已可用。amd64、armv6、arm64、i386、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2019-June/091257.html\">获取</a>。"
+
+[[news]]
+date = "2019-06-04"
+title = "2019年1月-3月状态报告"
+description = "「<a href=\"https://www.freebsd.org/news/status/report-2019-01-2019-03.html\">2019年1月至3月状态报告</a>」现已发布。"
+
+[[news]]
+date = "2019-05-31"
+title = "FreeBSD 11.3-BETA2 可用"
+description = "FreeBSD 11.3 发布周期的第二个 BETA 版本现已可用。amd64、armv6、arm64、i386、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2019-May/091227.html\">获取</a>。"
+
+[[news]]
+date = "2019-05-31"
+description = "新提交者：<a href=\"mailto:bdragon@FreeBSD.org\">Brandon Bergren</a> (src)"
+
+[[news]]
+date = "2019-05-29"
+description = "新提交者：<a href=\"mailto:chs@FreeBSD.org\">Chuck Silvers</a> (src)"
+
+[[news]]
+date = "2019-05-28"
+description = "新提交者：<a href=\"mailto:scottph@FreeBSD.org\">D Scott Phillips</a> (src)"
+
+[[news]]
+date = "2019-05-24"
+title = "FreeBSD 11.3-BETA1 可用"
+description = "FreeBSD 11.3 发布周期的第一个 BETA 版本现已可用。amd64、armv6、arm64、i386、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2019-May/091210.html\">获取</a>。"
+
+[[news]]
+date = "2019-05-16"
+description = "新提交者：<a href=\"mailto:carlavilla@FreeBSD.org\">Sergio Carlavilla Delgado</a> (docs, 西班牙语翻译)"
+
+[[news]]
+date = "2019-04-30"
+description = "新提交者：<a href=\"mailto:dougm@FreeBSD.org\">Doug Moore</a> (src)"
+
+[[news]]
+date = "2019-04-28"
+title = "「<a href=\"https://lists.freebsd.org/pipermail/freebsd-pkgbase/2019-April/000396.html\">CFT FreeBSD pkg base</a>」现已可用"
+description = "FreeBSD 正在测试一种新的 pkgbase 方法。有关更多详细信息，请参阅「<a href=\"https://lists.freebsd.org/pipermail/freebsd-pkgbase/2019-April/000396.html\">CFT FreeBSD pkg base</a>」消息。"
+
+[[news]]
+date = "2019-04-27"
+title = "2019年FreeBSD社区调查"
+description = "2019年FreeBSD社区调查现已开放（更新：已于2019-05-13关闭）。请随时与您的雇主、同事、朋友或任何其他对FreeBSD感兴趣的社区成员分享调查链接。调查将于5月13日午夜UTC（太平洋夏令时间星期一下午5点）截止。"
+
+[[news]]
+date = "2019-04-19"
+title = "「<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2019-April/090915.html\">CFT FreeBSD + 新上游 ZFS (ZoL)</a>」"
+description = "FreeBSD 正在为其 ZFS 实现测试一个新的上游，即 ZFS on Linux。FreeBSD 12-STABLE 和 13-CURRENT 的镜像现已可用于测试 FreeBSD + ZoL (ZFS on Linux)。有关测试详情，请参阅「<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2019-April/090915.html\">CFT FreeBSD + ZoL</a>」。"
+
+[[news]]
+date = "2019-04-14"
+description = "新提交者：<a href=\"mailto:pkubaj@FreeBSD.org\">Piotr Kubaj</a> (ports)"
+
+[[news]]
+date = "2019-04-14"
+description = "增强的提交权限：<a href=\"mailto:pfg@FreeBSD.org\">Pedro Giffuni</a> (ports, src)"
+
+[[news]]
+date = "2019-03-20"
+description = "新提交者：<a href=\"mailto:mhorne@FreeBSD.org\">Mitchell Horne</a> (src)"
+
+[[news]]
+date = "2019-02-01"
+description = "新提交者：<a href=\"mailto:kai@FreeBSD.org\">Kai Knoblich</a> (ports)"
+
+[[news]]
+date = "2019-01-19"
+description = "新提交者：<a href=\"mailto:johalun@FreeBSD.org\">Johannes Lundberg</a> (src)"
+
+[[news]]
+date = "2018-12-24"
+title = "2018年1月-9月状态报告"
+description = "「<a href=\"https://www.freebsd.org/news/status/report-2018-01-2018-09.html\">2018年1月至9月状态报告</a>」现已发布。"
+
+[[news]]
+date = "2018-12-11"
+title = "FreeBSD 12.0-RELEASE 可用"
+description = "「<a href=\"https://www.freebsd.org/releases/12.0R/announce.html\">FreeBSD 12.0-RELEASE</a>」现已可用。请务必在安装前检查<a href=\"https://www.freebsd.org/releases/12.0R/relnotes.html\">发行说明</a>和<a href=\"https://www.freebsd.org/releases/12.0R/errata.html\">发行勘误</a>，以获取有关12.0的任何最新消息和/或问题。有关FreeBSD发行的更多信息，请访问<a href=\"https://www.freebsd.org/releases/index.html\">发行信息</a>页面。"
+
+[[news]]
+date = "2018-12-11"
+title = "Cirrus CI 支持 FreeBSD"
+description = "最近，<a href=\"https://cirrus-ci.org/\">Cirrus CI</a> 系统增加了对 FreeBSD 的支持。Cirrus CI 利用现代云技术，使您的开发周期快速、高效和安全。Cirrus CI 可与您的团队一起扩展，使软件交付更快、更便宜。请遵循<a href=\"https://cirrus-ci.org/guide/FreeBSD/\">FreeBSD 虚拟机</a>指南以了解更多信息。"
+
+[[news]]
+date = "2018-12-01"
+title = "FreeBSD 12.0-RC3 可用"
+description = "FreeBSD 12.0 发布周期的第三个 RC 版本现已可用。amd64、armv6、armv7、arm64、i386、powerpc、powerpc64、powerpcspe 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2018-December/090138.html\">获取</a>。"
+
+[[news]]
+date = "2018-11-25"
+title = "FreeBSD 12.0-RC2 可用"
+description = "FreeBSD 12.0 发布周期的第二个 RC 版本现已可用。amd64、armv6、armv7、arm64、i386、powerpc、powerpc64、powerpcspe 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2018-November/090068.html\">获取</a>。"
+
+[[news]]
+date = "2018-11-17"
+title = "FreeBSD 12.0-RC1 可用"
+description = "FreeBSD 12.0 发布周期的第一个 RC 版本现已可用。amd64、armv6、armv7、arm64、i386、powerpc、powerpc64、powerpcspe 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2018-November/090020.html\">获取</a>。"
+
+[[news]]
+date = "2018-11-10"
+title = "FreeBSD 12.0-BETA4 可用"
+description = "FreeBSD 12.0 发布周期的第四个 BETA 版本现已可用。amd64、armv6、armv7、arm64、i386、powerpc、powerpc64、powerpcspe 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2018-November/089982.html\">获取</a>。"
+
+[[news]]
+date = "2018-11-03"
+title = "FreeBSD 12.0-BETA3 可用"
+description = "FreeBSD 12.0 发布周期的第三个 BETA 版本现已可用。amd64、armv6、armv7、arm64、i386、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2018-November/089945.html\">获取</a>。"
+
+[[news]]
+date = "2018-10-27"
+title = "FreeBSD 12.0-BETA2 可用"
+description = "FreeBSD 12.0 发布周期的第二个 BETA 版本现已可用。amd64、armv6、armv7、arm64、i386、powerpc、powerpc64、powerpcspe 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2018-October/089897.html\">获取</a>。"
+
+[[news]]
+date = "2018-10-20"
+title = "FreeBSD 12.0-BETA1 可用"
+description = "FreeBSD 12.0 发布周期的第一个 BETA 版本现已可用。amd64、armv6、armv7、arm64、i386、powerpc、powerpc64、powerpcspe 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2018-October/089821.html\">获取</a>。"
+
+[[news]]
+date = "2018-10-16"
+description = "新提交者：<a href=\"mailto:tmunro@FreeBSD.org\">Thomas Munro</a> (src)"
+
+[[news]]
+date = "2018-10-09"
+description = "新提交者：<a href=\"mailto:yuripv@FreeBSD.org\">Yuri Pankov</a> (src)"
+
+[[news]]
+date = "2018-10-08"
+description = "新提交者：<a href=\"mailto:egypcio@FreeBSD.org\">Vinícius Zavam</a> (ports)"
+
+[[news]]
+date = "2018-10-01"
+description = "新提交者：<a href=\"mailto:rigoletto@FreeBSD.org\">Alexandre C. Guimaraes</a> (ports)"
+
+[[news]]
+date = "2018-09-21"
+description = "新提交者：<a href=\"mailto:skozlov@FreeBSD.org\">Sergey Kozlov</a> (ports)"
+
+[[news]]
+date = "2018-09-06"
+description = "新提交者：<a href=\"mailto:manu@FreeBSD.org\">Emmanuel Vadot</a> (ports)"
+
+[[news]]
+date = "2018-09-02"
+description = "新提交者：<a href=\"mailto:kbowling@FreeBSD.org\">Kevin Bowling</a> (ports)"
+
+[[news]]
+date = "2018-08-09"
+description = "增强的提交权限：<a href=\"mailto:lwhsu@FreeBSD.org\">Li-Wen Hsu</a> (ports, src)"
+
+[[news]]
+date = "2018-07-16"
+description = "新提交者：<a href=\"mailto:jhixson@FreeBSD.org\">John Hixson</a> (ports)"
+
+[[news]]
+date = "2018-07-04"
+title = "新的FreeBSD核心团队当选"
+description = "项目的活跃提交者选举了您的第十个FreeBSD核心团队。详情请参阅<a href=\"https://lists.freebsd.org/pipermail/freebsd-announce/2018-July/001836.html\">官方公告</a>。"
+
+[[news]]
+date = "2018-06-30"
+description = "新提交者：<a href=\"mailto:jsm@FreeBSD.org\">Jesper Schmitz Mouridsen</a> (ports)"
+
+[[news]]
+date = "2018-06-27"
+title = "FreeBSD 11.2-RELEASE 可用"
+description = "「<a href=\"https://www.freebsd.org/releases/11.2R/announce.html\">FreeBSD 11.2-RELEASE</a>」现已可用。请务必在安装前检查<a href=\"https://www.freebsd.org/releases/11.2R/relnotes.html\">发行说明</a>和<a href=\"https://www.freebsd.org/releases/11.2R/errata.html\">发行勘误</a>，以获取有关11.2的任何最新消息和/或问题。有关FreeBSD发行的更多信息，请访问<a href=\"https://www.freebsd.org/releases/index.html\">发行信息</a>页面。"
+
+[[news]]
+date = "2018-06-27"
+description = "新提交者：<a href=\"mailto:bwidawsk@FreeBSD.org\">Ben Widawsky</a> (src)"
+
+[[news]]
+date = "2018-06-19"
+title = "国家FreeBSD日：FreeBSD今天25岁了！"
+description = "1993年6月19日，FreeBSD这个名字被正式商定并一直沿用至今。<a href=\"http://www.nationalfreebsdday.org\">了解更多</a>关于如何与我们一起庆祝这个重要的日子。"
+
+[[news]]
+date = "2018-06-16"
+title = "FreeBSD 11.2-RC3 可用"
+description = "FreeBSD 11.2 发布周期的第三个 RC 版本现已可用。amd64、armv6、arm64、i386、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2018-June/089116.html\">获取</a>。"
+
+[[news]]
+date = "2018-06-16"
+description = "新提交者：<a href=\"mailto:0mp@FreeBSD.org\">Mateusz Piotrowski</a> (ports)"
+
+[[news]]
+date = "2018-06-09"
+title = "FreeBSD 11.2-RC2 可用"
+description = "FreeBSD 11.2 发布周期的第二个 RC 版本现已可用。amd64、armv6、arm64、i386、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2018-June/089099.html\">获取</a>。"
+
+[[news]]
+date = "2018-06-08"
+title = "服务中断"
+description = "FreeBSD 集群的部分将于6月9日星期六因电气工程而进行长时间的维护窗口而离线。服务将受到影响，最显著的是邮件列表流量和我们的一部分Web服务。维护窗口于6月9日11:00 UTC（美国太平洋时间04:00）开始，并持续到20:00 UTC（美国太平洋时间13:00）"
+
+[[news]]
+date = "2018-06-02"
+title = "FreeBSD 11.2-RC1 可用"
+description = "FreeBSD 11.2 发布周期的第一个 RC 版本现已可用。amd64、armv6、arm64、i386、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2018-June/089053.html\">获取</a>。"
+
+[[news]]
+date = "2018-05-26"
+title = "FreeBSD 11.2-BETA3 可用"
+description = "FreeBSD 11.2 发布周期的第三个 BETA 版本现已可用。amd64、armv6、arm64、i386、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2018-May/089001.html\">获取</a>。"
+
+[[news]]
+date = "2018-05-22"
+description = "新提交者：<a href=\"mailto:leitao@FreeBSD.org\">Breno Leitao</a> (src)"
+
+[[news]]
+date = "2018-05-21"
+description = "新提交者：<a href=\"mailto:luporl@FreeBSD.org\">Leandro Lupori</a> (src)"
+
+[[news]]
+date = "2018-05-19"
+title = "FreeBSD 11.2-BETA2 可用"
+description = "FreeBSD 11.2 发布周期的第二个 BETA 版本现已可用。amd64、armv6、arm64、i386、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2018-May/088958.html\">获取</a>。"
+
+[[news]]
+date = "2018-05-15"
+description = "新提交者：<a href=\"mailto:arrowd@FreeBSD.org\">Gleb Popov</a> (ports)"
+
+[[news]]
+date = "2018-05-12"
+title = "FreeBSD 11.2-BETA1 可用"
+description = "FreeBSD 11.2 发布周期的第一个 BETA 版本现已可用。amd64、armv6、arm64、i386、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2018-May/088899.html\">获取</a>。"
+
+[[news]]
+date = "2018-04-17"
+description = "新提交者：<a href=\"mailto:sef@freeBSD.org\">Sean Eric Fagan</a> (src)"
+
+[[news]]
+date = "2018-04-07"
+description = "新提交者：<a href=\"mailto:thj@FreeBSD.org\">Tom Jones</a> (src)"
+
+[[news]]
+date = "2018-04-04"
+description = "新提交者：<a href=\"mailto:ram@FreeBSD.org\">Ram Kishore Vegesna </a> (src)"
+
+[[news]]
+date = "2018-03-23"
+description = "新提交者：<a href=\"mailto:mfechner@FreeBSD.org\">Matthias Fechner</a> (ports)"
+
+[[news]]
+date = "2018-03-17"
+description = "新提交者：<a href=\"mailto:ericbsd@FreeBSD.org\">Eric Turgeon</a> (ports)"
+
+[[news]]
+date = "2018-03-16"
+description = "新提交者：<a href=\"mailto:vmaffione@FreeBSD.org\">Vincenzo Maffione</a> (src)"
+
+[[news]]
+date = "2018-03-14"
+description = "新提交者：<a href=\"mailto:meta@FreeBSD.org\">Koichiro Iwao</a> (ports)"
+
+[[news]]
+date = "2018-03-03"
+description = "新提交者：<a href=\"mailto:fernape@FreeBSD.org\">Fernando Apesteguia</a> (ports)"
+
+[[news]]
+date = "2018-03-01"
+description = "新提交者：<a href=\"mailto:dteske@FreeBSD.org\">Devin Teske</a> (ports)"
+
+[[news]]
+date = "2018-02-14"
+title = "FreeBSD 项目将参与2018年 Google 编程之夏"
+description = "FreeBSD 项目很高兴地宣布参与 Google 2018 年编程之夏计划，该计划资助暑期学生参与开源项目。这将是 FreeBSD 项目第十四年参与该计划，在 2005 年至 2017 年期间，已指导超过 210 名学生成功完成为期整个暑假的编码项目。过去成功的项目包括改进 Linux ABI 仿真、NFSv4 ACL、TCP 回归测试、FUSE 文件系统支持以及无数其他项目。许多学生后来成为 FreeBSD 开发人员，并通过 FreeBSD 基金会的持续支持参与世界各地的 FreeBSD 开发人员活动。欢迎有兴趣的参与者申请；更多信息，包括提案和截止日期信息，请访问 <a href=\"https://www.freebsd.org/projects/summerofcode.html\">FreeBSD 夏季项目页面</a>。"
+
+[[news]]
+date = "2018-02-08"
+description = "新提交者：<a href=\"mailto:slavash@FreeBSD.org\">Slava Shwartsman</a> (src)"
+
+[[news]]
+date = "2018-01-25"
+description = "新提交者：<a href=\"mailto:jeb@FreeBSD.org\">Jeb Cramer</a> (src)"
+
+[[news]]
+date = "2018-01-04"
+title = "关于 Meltdown 和 Spectre 攻击"
+description = "关于 <a href=\"https://meltdownattack.com/\">Meltdown</a> 和 <a href=\"https://spectreattack.com/\">Spectre</a> 攻击：FreeBSD 于 2017 年 12 月下旬获悉这些问题。我们正在与 CPU 供应商和已发表的有关这些攻击的论文合作，以在 FreeBSD 上缓解这些攻击。由于攻击的根本性质，目前尚无补丁发布日期的估计。"
+
+[[news]]
+date = "2017-12-25"
+title = "2017年7月-9月状态报告"
+description = "「<a href=\"https://www.freebsd.org/news/status/report-2017-07-2017-09.html\">2017年7月至9月状态报告</a>」现已发布。"
+
+[[news]]
+date = "2017-11-11"
+description = "新提交者：<a href=\"mailto:jwb@FreeBSD.org\">Jason W. Bacon</a> (ports)"
+
+[[news]]
+date = "2017-10-30"
+description = "新提交者：<a href=\"mailto:arichardson@FreeBSD.org\">Alex Richardson</a> (src)"
+
+[[news]]
+date = "2017-10-29"
+description = "新提交者：<a href=\"mailto:yuri@FreeBSD.org\">Yuri Victorovich</a> (ports)"
+
+[[news]]
+date = "2017-10-04"
+title = "FreeBSD 10.4-RELEASE 可用"
+description = "「<a href=\"https://www.freebsd.org/releases/10.4R/announce.html\">FreeBSD 10.4-RELEASE</a>」现已可用。请务必在安装前检查<a href=\"https://www.freebsd.org/releases/10.4R/relnotes.html\">发行说明</a>和<a href=\"https://www.freebsd.org/releases/10.4R/errata.html\">发行勘误</a>，以获取有关10.4的任何最新消息和/或问题。有关FreeBSD发行的更多信息，请访问<a href=\"https://www.freebsd.org/releases/index.html\">发行信息</a>页面。"
+
+[[news]]
+date = "2017-09-27"
+title = "2017年4月-6月状态报告"
+description = "「<a href=\"https://www.freebsd.org/news/status/report-2017-04-2017-06.html\">2017年4月至6月状态报告</a>」现已发布。"
+
+[[news]]
+date = "2017-09-23"
+title = "FreeBSD 10.4-RC2 可用"
+description = "FreeBSD 10.4 发布周期的第二个 RC 版本现已可用。amd64、armv6、i386、ia64、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2017-September/087848.html\">获取</a>。"
+
+[[news]]
+date = "2017-09-19"
+description = "新提交者：<a href=\"mailto:eugen@FreeBSD.org\">Eugene Grosbein</a> (src)"
+
+[[news]]
+date = "2017-09-18"
+description = "新提交者：<a href=\"mailto:ygy@FreeBSD.org\">Guangyuan Yang</a> (doc)"
+
+[[news]]
+date = "2017-09-17"
+title = "FreeBSD 10.4-RC1 可用"
+description = "FreeBSD 10.4 发布周期的第一个 RC 版本现已可用。amd64、armv6、i386、ia64、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2017-September/087817.html\">获取</a>。"
+
+[[news]]
+date = "2017-09-11"
+description = "新提交者：<a href=\"mailto:leres@FreeBSD.org\">Craig Leres</a> (ports)"
+
+[[news]]
+date = "2017-09-09"
+description = "新提交者：<a href=\"mailto:dch@FreeBSD.org\">Dave Cottlehuber</a> (ports)"
+
+[[news]]
+date = "2017-09-09"
+title = "FreeBSD 10.4-BETA4 可用"
+description = "FreeBSD 10.4 发布周期的第四个 BETA 版本现已可用。amd64、armv6、i386、ia64、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2017-September/087791.html\">获取</a>。"
+
+[[news]]
+date = "2017-09-08"
+description = "新提交者：<a href=\"mailto:adridg@FreeBSD.org\">Adriaan de Groot</a> (ports)"
+
+[[news]]
+date = "2017-09-06"
+description = "新提交者：<a href=\"mailto:chuck@FreeBSD.org\">Chuck Tuffli</a> (src)"
+
+[[news]]
+date = "2017-09-02"
+description = "新提交者：<a href=\"mailto:shurd@FreeBSD.org\">Stephen Hurd</a> (src)"
+
+[[news]]
+date = "2017-09-02"
+title = "FreeBSD 10.4-BETA3 可用"
+description = "FreeBSD 10.4 发布周期的第三个 BETA 版本现已可用。amd64、armv6、i386、ia64、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2017-September/087748.html\">获取</a>。"
+
+[[news]]
+date = "2017-09-02"
+description = "新提交者：<a href=\"mailto:kibab@FreeBSD.org\">Ilya Bakulin</a> (src)"
+
+[[news]]
+date = "2017-08-28"
+description = "新提交者：<a href=\"mailto:fsu@FreeBSD.org\">Fedor Uporov</a> (src)"
+
+[[news]]
+date = "2017-08-26"
+title = "FreeBSD 10.4-BETA2 可用"
+description = "FreeBSD 10.4 发布周期的第二个 BETA 版本现已可用。amd64、armv6、i386、ia64、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2017-August/087708.html\">获取</a>。"
+
+[[news]]
+date = "2017-08-25"
+description = "新提交者：<a href=\"mailto:pizzamig@FreeBSD.org\">Luca Pizzamiglio</a> (ports)"
+
+[[news]]
+date = "2017-08-19"
+title = "FreeBSD 10.4-BETA1 可用"
+description = "FreeBSD 10.4 发布周期的第一个 BETA 版本现已可用。amd64、armv6、i386、ia64、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2017-August/087682.html\">获取</a>。"
+
+[[news]]
+date = "2017-07-26"
+title = "FreeBSD 11.1-RELEASE 可用"
+description = "「<a href=\"https://www.freebsd.org/releases/11.1R/announce.html\">FreeBSD 11.1-RELEASE</a>」现已可用。请务必在安装前检查<a href=\"https://www.freebsd.org/releases/11.1R/relnotes.html\">发行说明</a>和<a href=\"https://www.freebsd.org/releases/11.1R/errata.html\">发行勘误</a>，以获取有关11.1的任何最新消息和/或问题。有关FreeBSD发行的更多信息，请访问<a href=\"https://www.freebsd.org/releases/index.html\">发行信息</a>页面。"
+
+[[news]]
+date = "2017-07-18"
+description = "新提交者：<a href=\"mailto:mw@FreeBSD.org\">Marcin Wojtas</a> (src)"
+
+[[news]]
+date = "2017-07-15"
+title = "FreeBSD 11.1-RC3 可用"
+description = "FreeBSD 11.1 发布周期的第三个 RC 版本现已可用。amd64、armv6、i386、aarch64、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2017-July/087407.html\">获取</a>。"
+
+[[news]]
+date = "2017-07-12"
+description = "新提交者：<a href=\"mailto:mjoras@FreeBSD.org\">Matt Joras</a> (src)"
+
+[[news]]
+date = "2017-07-08"
+title = "FreeBSD 11.1-RC2 可用"
+description = "FreeBSD 11.1 发布周期的第二个 RC 版本现已可用。amd64、armv6、i386、aarch64、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2017-July/087368.html\">获取</a>。"
+
+[[news]]
+date = "2017-07-01"
+title = "FreeBSD 11.1-RC1 可用"
+description = "FreeBSD 11.1 发布周期的第一个 RC 版本现已可用。amd64、armv6、i386、aarch64、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2017-July/087340.html\">获取</a>。"
+
+[[news]]
+date = "2017-06-24"
+title = "FreeBSD 11.1-BETA3 可用"
+description = "FreeBSD 11.1 发布周期的第三个 BETA 版本现已可用。amd64、armv6、i386、aarch64、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2017-June/087303.html\">获取</a>。"
+
+[[news]]
+date = "2017-06-20"
+description = "新提交者：<a href=\"mailto:kevans@FreeBSD.org\">Kyle Evans</a> (src)"
+
+[[news]]
+date = "2017-06-17"
+title = "FreeBSD 11.1-BETA2 可用"
+description = "FreeBSD 11.1 发布周期的第二个 BETA 版本现已可用。amd64、armv6、i386、aarch64、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2017-June/087277.html\">获取</a>。"
+
+[[news]]
+date = "2017-06-10"
+title = "FreeBSD 11.1-BETA1 可用"
+description = "FreeBSD 11.1 发布周期的第一个 BETA 版本现已可用。amd64、armv6、i386、aarch64、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2017-June/087242.html\">获取</a>。"
+
+[[news]]
+date = "2017-06-07"
+description = "新提交者：<a href=\"mailto:rlibby@FreeBSD.org\">Ryan Libby</a> (src)"
+
+[[news]]
+date = "2017-05-31"
+description = "新提交者：<a href=\"mailto:ultima@FreeBSD.org\">Richard Gallamore</a> (ports)"
+
+[[news]]
+date = "2017-05-16"
+description = "新提交者：<a href=\"mailto:joneum@FreeBSD.org\">Jochen Neumeister</a> (ports)"
+
+[[news]]
+date = "2017-05-15"
+title = "2017年1月-3月状态报告"
+description = "「<a href=\"https://www.freebsd.org/news/status/report-2017-01-2017-03.html\">2017年1月至3月状态报告</a>」现已发布。"
+
+[[news]]
+date = "2017-05-03"
+description = "新提交者：<a href=\"mailto:dbaio@FreeBSD.org\">Danilo G. Baio</a> (ports)"
+
+[[news]]
+date = "2017-04-27"
+description = "新提交者：<a href=\"mailto:wulf@FreeBSD.org\">Vladimir Kondratyev</a> (src)"
+
+[[news]]
+date = "2017-04-18"
+description = "新提交者：<a href=\"mailto:bhughes@FreeBSD.org\">Bradley T. Hughes</a> (ports)"
+
+[[news]]
+date = "2017-03-04"
+description = "新提交者：<a href=\"mailto:eugen@FreeBSD.org\">Eugene Grosbein</a> (ports)"
+
+[[news]]
+date = "2017-03-03"
+description = "回归的提交者：<a href=\"mailto:rgrimes@FreeBSD.org\">Rodney W. Grimes</a> (src)"
+
+[[news]]
+date = "2017-02-27"
+title = "FreeBSD 项目将参与2017年 Google 编程之夏"
+description = "FreeBSD 项目很高兴地宣布参与 Google 2017 年编程之夏计划，该计划资助暑期学生参与开源项目。这将是 FreeBSD 项目第十三年参与该计划，在 2005 年至 2016 年期间，已指导超过 200 名学生成功完成为期整个暑假的编码项目。过去成功的项目包括改进 Linux ABI 仿真、NFSv4 ACL、TCP 回归测试、FUSE 文件系统支持以及无数其他项目。许多学生后来成为 FreeBSD 开发人员，并通过 FreeBSD 基金会的持续支持参与世界各地的 FreeBSD 开发人员活动。欢迎有兴趣的参与者申请；更多信息，包括提案和截止日期信息，请访问 <a href=\"https://www.freebsd.org/projects/summerofcode.html\">FreeBSD 夏季项目页面</a>。"
+
+[[news]]
+date = "2017-02-13"
+title = "2016年10月-12月状态报告"
+description = "「<a href=\"https://www.freebsd.org/news/status/report-2016-10-2016-12.html\">2016年10月至12月状态报告</a>」现已发布。"
+
+[[news]]
+date = "2017-02-10"
+description = "新提交者：<a href=\"mailto:mmokhi@FreeBSD.org\">Mahdi Mokhtari</a> (ports)"
+
+[[news]]
+date = "2017-02-08"
+description = "新提交者：<a href=\"mailto:tobik@FreeBSD.org\">Tobias Kortkamp</a> (ports)"
+
+[[news]]
+date = "2017-01-10"
+description = "增强的提交权限：<a href=\"mailto:dumbbell@FreeBSD.org\">Jean-Sébastien Pédron</a> (ports)"
+
+[[news]]
+date = "2017-01-09"
+description = "新提交者：<a href=\"mailto:rezny@FreeBSD.org\">Matthew Rezny</a> (ports)"
+
+[[news]]
+date = "2017-01-09"
+description = "新提交者：<a href=\"mailto:ler@FreeBSD.org\">Larry Rosenman</a> (ports)"
+
+[[news]]
+date = "2017-01-09"
+description = "新提交者：<a href=\"mailto:jmd@FreeBSD.org\">Johannes Dieterich</a> (ports)"
+
+[[news]]
+date = "2016-12-11"
+description = "新提交者：<a href=\"mailto:pstef@FreeBSD.org\">Piotr Paweł Stefaniak</a> (src)"
+
+[[news]]
+date = "2016-12-11"
+description = "新提交者：<a href=\"mailto:lifanov@FreeBSD.org\">Nikolai Lifanov</a> (ports)"
+
+[[news]]
+date = "2016-11-15"
+description = "新提交者：<a href=\"mailto:misha@FreeBSD.org\">Mikhail Pchelin</a> (ports)"
+
+[[news]]
+date = "2016-11-13"
+title = "2016年7月-9月状态报告"
+description = "「<a href=\"https://www.freebsd.org/news/status/report-2016-07-2016-09.html\">2016年7月至9月状态报告</a>」现已发布。"
+
+[[news]]
+date = "2016-11-02"
+description = "新提交者：<a href=\"mailto:def@FreeBSD.org\">Konrad Witaszczyk</a> (src)"
+
+[[news]]
+date = "2016-11-02"
+description = "新提交者：<a href=\"mailto:dexterf@FreeBSD.org\">Michael Dexter</a> (doc)"
+
+[[news]]
+date = "2016-10-22"
+description = "新提交者：<a href=\"mailto:dab@FreeBSD.org\">David Bright</a> (src)"
+
+[[news]]
+date = "2016-10-10"
+title = "FreeBSD 11.0-RELEASE 可用"
+description = "「<a href=\"https://www.freebsd.org/releases/11.0R/announce.html\">FreeBSD 11.0-RELEASE</a>」现已可用。请务必在安装前检查<a href=\"https://www.freebsd.org/releases/11.0R/relnotes.html\">发行说明</a>和<a href=\"https://www.freebsd.org/releases/11.0R/errata.html\">发行勘误</a>，以获取有关11.0的任何最新消息和/或问题。有关FreeBSD发行的更多信息，请访问<a href=\"https://www.freebsd.org/releases/index.html\">发行信息</a>页面。"
+
+[[news]]
+date = "2016-09-16"
+description = "新提交者：<a href=\"mailto:sevan@FreeBSD.org\">Sevan Janiyan</a> (doc)"
+
+[[news]]
+date = "2016-09-28"
+title = "FreeBSD 11.0-RELEASE 状态更新"
+description = "最终的 11.0-RELEASE 将被重新构建，以解决在发布标签后发现的一些最后时刻的问题。请参阅发布工程团队的<a href=\"https://lists.freebsd.org/pipermail/freebsd-announce/2016-September/001753.html\">官方公告</a>以获取更多信息。"
+
+[[news]]
+date = "2016-09-17"
+description = "新提交者：<a href=\"mailto:rcyu@FreeBSD.org\">Ruey-Cherng Yu</a> (doc)"
+
+[[news]]
+date = "2016-09-17"
+description = "新提交者：<a href=\"mailto:jrm@FreeBSD.org\">Joseph Mingrone</a> (ports)"
+
+[[news]]
+date = "2016-09-17"
+title = "FreeBSD 11.0-RC3 可用"
+description = "FreeBSD 11.0 发布周期的第三个 RC 版本现已可用。amd64、armv6、i386、aarch64、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2016-September/085645.html\">获取</a>。"
+
+[[news]]
+date = "2016-08-25"
+title = "FreeBSD 11.0-RC2 可用"
+description = "FreeBSD 11.0 发布周期的第二个 RC 版本现已可用。amd64、armv6、i386、aarch64、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2016-August/085365.html\">获取</a>。"
+
+[[news]]
+date = "2016-08-13"
+title = "FreeBSD 11.0-RC1 可用"
+description = "FreeBSD 11.0 发布周期的第一个 RC 版本现已可用。amd64、armv6、i386、aarch64、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2016-August/085277.html\">获取</a>。"
+
+[[news]]
+date = "2016-08-10"
+description = "新提交者：<a href=\"mailto:tsoome@FreeBSD.org\">Toomas Soome</a> (src)"
+
+[[news]]
+date = "2016-08-10"
+description = "FreeBSD 核心团队发布了关于最近的 freebsd-update 和相关漏洞的<a href=\"https://lists.freebsd.org/pipermail/freebsd-announce/2016-August/001739.html\">声明</a>。"
+
+[[news]]
+date = "2016-08-06"
+title = "FreeBSD 11.0-BETA4 可用"
+description = "FreeBSD 11.0 发布周期的第四个 BETA 版本现已可用。amd64、armv6、i386、aarch64、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2016-August/085186.html\">获取</a>。"
+
+[[news]]
+date = "2016-07-30"
+title = "FreeBSD 11.0-BETA3 可用"
+description = "FreeBSD 11.0 发布周期的第三个 BETA 版本现已可用。amd64、armv6、i386、aarch64、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2016-July/085114.html\">获取</a>。"
+
+[[news]]
+date = "2016-07-27"
+title = "2016年4月-6月状态报告"
+description = "「<a href=\"https://www.freebsd.org/news/status/report-2016-04-2016-06.html\">2016年4月至6月状态报告</a>」现已发布。"
+
+[[news]]
+date = "2016-07-24"
+title = "FreeBSD 11.0-BETA2 可用"
+description = "FreeBSD 11.0 发布周期的第二个 BETA 版本现已可用。amd64、armv6、i386、aarch64、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2016-July/085059.html\">获取</a>。"
+
+[[news]]
+date = "2016-07-19"
+description = "新提交者：<a href=\"mailto:mizhka@FreeBSD.org\">Michael Zhilin</a> (src)"
+
+[[news]]
+date = "2016-07-19"
+description = "新提交者：<a href=\"mailto:ivadasz@FreeBSD.org\">Imre Vadasz</a> (src)"
+
+[[news]]
+date = "2016-07-18"
+description = "新提交者：<a href=\"mailto:stevek@FreeBSD.org\">Stephen J. Kiernan</a> (src)"
+
+[[news]]
+date = "2016-07-11"
+description = "新提交者：<a href=\"mailto:cpm@FreeBSD.org\">Carlos J. Puga Medina</a> (ports)"
+
+[[news]]
+date = "2016-07-10"
+title = "FreeBSD 11.0-BETA1 可用"
+description = "FreeBSD 11.0 发布周期的第一个 BETA 版本现已可用。amd64、armv6、i386、aarch64、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2016-July/084918.html\">获取</a>。"
+
+[[news]]
+date = "2016-07-06"
+title = "新的FreeBSD核心团队当选"
+description = "FreeBSD 项目很高兴地宣布2016年核心团队选举完成。FreeBSD 核心团队担任项目的“董事会”，负责批准新的 src 提交者、解决开发人员之间的争议、任命特定目的的子委员会（安全官、发布工程、端口管理器、网站管理员等），以及根据需要做出任何其他管理或政策决定。自 2000 年以来，核心团队每两年由 FreeBSD 开发人员选举一次。FreeBSD 核心团队很高兴地宣布 <a href=\"mailto:matthew@FreeBSD.org\">Matthew Seaman</a> 将继续担任 <a href=\"mailto:core-secretary@FreeBSD.org\">核心团队秘书</a>。有关选举的更多信息（以及核心团队新成员的名单）可以在官方<a href=\"https://lists.freebsd.org/pipermail/freebsd-announce/2016-July/001732.html\">公告</a>中找到。"
+
+[[news]]
+date = "2016-07-06"
+description = "新提交者：<a href=\"mailto:tcberner@FreeBSD.org\">Tobias C. Berner</a> (ports)"
+
+[[news]]
+date = "2016-07-01"
+description = "新提交者：<a href=\"mailto:badger@FreeBSD.org\">Eric Badger</a> (src)"
+
+[[news]]
+date = "2016-06-09"
+description = "新提交者：<a href=\"mailto:karels@FreeBSD.org\">Mike Karels</a> (src)"
+
+[[news]]
+date = "2016-06-04"
+description = "新提交者：<a href=\"mailto:tz@FreeBSD.org\">Torsten Zuehlsdorff</a> (ports)"
+
+[[news]]
+date = "2016-05-31"
+description = "新提交者：<a href=\"mailto:landonf@FreeBSD.org\">Landon Fuller</a> (src)"
+
+[[news]]
+date = "2016-05-09"
+description = "新提交者：<a href=\"mailto:woodsb02@FreeBSD.org\">Ben Woods</a> (ports)"
+
+[[news]]
+date = "2016-05-01"
+title = "2016年1月-3月状态报告"
+description = "「<a href=\"https://www.freebsd.org/news/status/report-2016-01-2016-03.html\">2016年1月至3月状态报告</a>」现已发布。"
+
+[[news]]
+date = "2016-04-23"
+description = "新提交者：<a href=\"mailto:manu@FreeBSD.org\">Emmanuel Vadot</a> (src)"
+
+[[news]]
+date = "2016-04-04"
+title = "FreeBSD 10.3-RELEASE 可用"
+description = "「<a href=\"https://www.freebsd.org/releases/10.3R/announce.html\">FreeBSD 10.3-RELEASE</a>」现已可用。请务必在安装前检查<a href=\"https://www.freebsd.org/releases/10.3R/relnotes.html\">发行说明</a>和<a href=\"https://www.freebsd.org/releases/10.3R/errata.html\">发行勘误</a>，以获取有关10.3的任何最新消息和/或问题。有关FreeBSD发行的更多信息，请访问<a href=\"https://www.freebsd.org/releases/index.html\">发行信息</a>页面。"
+
+[[news]]
+date = "2016-03-20"
+title = "FreeBSD 10.3-RC3 可用"
+description = "FreeBSD 10.3 发布周期的第三个候选版本现已可用。amd64、armv6、i386、ia64、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2016-March/084424.html\">获取</a>。"
+
+[[news]]
+date = "2016-03-13"
+title = "FreeBSD 10.3-RC2 可用"
+description = "FreeBSD 10.3 发布周期的第二个候选版本现已可用。amd64、armv6、i386、ia64、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2016-March/084384.html\">获取</a>。"
+
+[[news]]
+date = "2016-03-05"
+title = "FreeBSD 10.3-RC1 可用"
+description = "FreeBSD 10.3 发布周期的第一个候选版本现已可用。amd64、armv6、i386、ia64、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2016-March/084296.html\">获取</a>。"
+
+[[news]]
+date = "2016-03-01"
+description = "新提交者：<a href=\"mailto:cmt@FreeBSD.org\">Christoph Moench-Tegeder</a> (ports)"
+
+[[news]]
+date = "2016-03-01"
+title = "FreeBSD 项目将参与2016年 Google 编程之夏"
+description = "FreeBSD 项目很高兴地宣布参与 Google 2016 年编程之夏计划，该计划资助暑期学生参与开源项目。这将是 FreeBSD 项目第十二年参与该计划，在 2005 年至 2015 年期间，已指导超过 180 名学生成功完成为期整个暑假的编码项目。过去成功的项目包括改进 Linux ABI 仿真、NFSv4 ACL、TCP 回归测试、FUSE 文件系统支持以及无数其他项目。许多学生后来成为 FreeBSD 开发人员，并通过 FreeBSD 基金会的持续支持参与世界各地的 FreeBSD 开发人员活动。欢迎有兴趣的参与者申请；更多信息，包括提案和截止日期信息，请访问 <a href=\"https://www.freebsd.org/projects/summerofcode.html\">FreeBSD 夏季项目页面</a>。"
+
+[[news]]
+date = "2016-02-28"
+description = "新提交者：<a href=\"mailto:phil@FreeBSD.org\">Phil Shafer</a> (src)"
+
+[[news]]
+date = "2016-02-28"
+title = "FreeBSD 10.3-BETA3 可用"
+description = "FreeBSD 10.3 发布周期的第三个 BETA 版本现已可用。amd64、armv6、i386、ia64、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2016-February/084238.html\">获取</a>。"
+
+[[news]]
+date = "2016-02-24"
+description = "新提交者：<a href=\"mailto:jmcneill@FreeBSD.org\">Jared McNeill</a> (src)"
+
+[[news]]
+date = "2016-02-24"
+description = "新提交者：<a href=\"mailto:sgalabov@FreeBSD.org\">Stanislav Galabov</a> (src)"
+
+[[news]]
+date = "2016-02-17"
+title = "FreeBSD 和 glibc (CVE-2015-7547)"
+description = "Dag-Erling Smørgrav 发布了一些关于 <a href=\"https://blog.des.no/2016/02/freebsd-and-cve-2015-7547/\">FreeBSD 和最近的 glibc CVE-2015-7547 漏洞</a>的信息。"
+
+[[news]]
+date = "2016-02-17"
+title = "PVS-Studio 对 FreeBSD 内核的分析"
+description = "PVS-Studio 静态代码分析器的开发团队检查了 FreeBSD 内核，并<a href=\"http://www.viva64.com/en/b/0377/\">发表了一篇文章</a>，描述了最可疑的片段。"
+
+[[news]]
+date = "2016-02-14"
+title = "FreeBSD 10.3-BETA2 可用"
+description = "FreeBSD 10.3 发布周期的第二个 BETA 版本现已可用。amd64、armv6、i386、ia64、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2016-February/084145.html\">获取</a>。"
+
+[[news]]
+date = "2016-02-06"
+title = "FreeBSD 10.3-BETA1 可用"
+description = "FreeBSD 10.3 发布周期的第一个 BETA 版本现已可用。amd64、armv6、i386、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2016-February/084088.html\">获取</a>。"
+
+[[news]]
+date = "2016-02-02"
+description = "新提交者：<a href=\"mailto:olivier@FreeBSD.org\">Olivier Cochard-Labbé</a> (ports)"
+
+[[news]]
+date = "2016-02-01"
+title = "10月-12月状态报告"
+description = "「<a href=\"https://www.freebsd.org/news/status/report-2015-10-2015-12.html\">2015年10月-12月状态报告</a>」现已发布。"
+
+[[news]]
+date = "2016-01-18"
+description = "新提交者：<a href=\"mailto:wma@FreeBSD.org\">Wojciech Macek</a> (src)"
+
+[[news]]
+date = "2016-01-06"
+title = "FreeBSD 基金会关于骚扰的声明"
+description = "FreeBSD 基金会发布了其关于 FreeBSD 社区骚扰的<a href=\"http://freebsdfoundation.blogspot.com/2016/01/freebsd-foundation-statement-on.html\">初步声明</a>。"
+
+[[news]]
+date = "2016-01-03"
+description = "FreeBSD 核心团队发布了关于 FreeBSD 社区骚扰的<a href=\"https://lists.freebsd.org/pipermail/freebsd-announce/2016-January/001691.html\">初步声明</a>"
+
+[[news]]
+date = "2015-12-13"
+description = "新提交者：<a href=\"mailto:anish@FreeBSD.org\">Anish Gupta</a> (src)"
+
+[[news]]
+date = "2015-11-13"
+description = "新提交者：<a href=\"mailto:rpokala@FreeBSD.org\">Ravi Pokala</a> (src)"
+
+[[news]]
+date = "2015-11-01"
+description = "新提交者：<a href=\"mailto:mmel@FreeBSD.org\">Michal Meloun</a> (src)"
+
+[[news]]
+date = "2015-10-26"
+description = "新提交者：<a href=\"mailto:jtl@FreeBSD.org\">Jonathan T. Looney</a> (src)"
+
+[[news]]
+date = "2015-10-25"
+title = "7月-9月状态报告"
+description = "「<a href=\"https://www.freebsd.org/news/status/report-2015-07-2015-09.html\">2015年7月-9月状态报告</a>」现已发布。"
+
+[[news]]
+date = "2015-10-23"
+description = "新提交者：<a href=\"mailto:skra@FreeBSD.org\">Svatopluk Kraus</a> (src)"
+
+[[news]]
+date = "2015-10-21"
+description = "新提交者：<a href=\"mailto:lidl@FreeBSD.org\">Kurt Lidl</a> (src)"
+
+[[news]]
+date = "2015-09-24"
+description = "新提交者：<a href=\"mailto:avos@FreeBSD.org\">Andriy Voskoboinyk</a> (src)"
+
+[[news]]
+date = "2015-08-13"
+title = "FreeBSD 10.2-RELEASE 可用"
+description = "「<a href=\"https://www.freebsd.org/releases/10.2R/announce.html\">FreeBSD 10.2-RELEASE</a>」现已可用。请务必在安装前检查<a href=\"https://www.freebsd.org/releases/10.2R/relnotes.html\">发行说明</a>和<a href=\"https://www.freebsd.org/releases/10.2R/errata.html\">发行勘误</a>，以获取有关10.2的任何最新消息和/或问题。有关FreeBSD发行的更多信息，请访问<a href=\"https://www.freebsd.org/releases/index.html\">发行信息</a>页面。"
+
+[[news]]
+date = "2015-08-08"
+description = "增强的提交权限：<a href=\"mailto:araujo@FreeBSD.org\">Marcelo Araujo</a> (ports, src)"
+
+[[news]]
+date = "2015-08-07"
+title = "FreeBSD 10.2-RC3 可用"
+description = "FreeBSD 10.2 发布周期的第三个 RC 版本现已可用。amd64、armv6、i386、ia64、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2015-August/083031.html\">获取</a>。"
+
+[[news]]
+date = "2015-08-01"
+title = "FreeBSD 10.2-RC2 可用"
+description = "FreeBSD 10.2 发布周期的第二个 RC 版本现已可用。amd64、armv6、i386、ia64、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2015-August/082966.html\">获取</a>。"
+
+[[news]]
+date = "2015-07-30"
+description = "增强的提交权限：<a href=\"mailto:allanjude@FreeBSD.org\">Allan Jude</a> (src)"
+
+[[news]]
+date = "2015-07-27"
+description = "新提交者：<a href=\"mailto:junovitch@FreeBSD.org\">Jason Unovitch</a> (ports)"
+
+[[news]]
+date = "2015-07-26"
+title = "2015年4月-6月状态报告"
+description = "「<a href=\"https://www.freebsd.org/news/status/report-2015-04-2015-06.html\">2015年4月-6月状态报告</a>」现已发布。"
+
+[[news]]
+date = "2015-07-24"
+title = "FreeBSD 10.2-RC1 可用"
+description = "FreeBSD 10.2 发布周期的第一个 RC 版本现已可用。amd64、armv6、i386、ia64、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2015-July/082903.html\">获取</a>。"
+
+[[news]]
+date = "2015-07-17"
+title = "FreeBSD 10.2-BETA2 可用"
+description = "FreeBSD 10.2 发布周期的第二个 BETA 版本现已可用。amd64、armv6、i386、ia64、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2015-July/082771.html\">获取</a>。"
+
+[[news]]
+date = "2015-07-11"
+title = "FreeBSD 10.2-BETA1 可用"
+description = "FreeBSD 10.2 发布周期的第一个 BETA 版本现已可用。amd64、armv6、i386、ia64、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2015-July/082704.html\">获取</a>。"
+
+[[news]]
+date = "2015-07-05"
+description = "新提交者：<a href=\"mailto:cem@FreeBSD.org\">Conrad Meyer</a> (src)"
+
+[[news]]
+date = "2015-06-26"
+title = "闰秒和 FreeBSD 文章"
+description = "一篇新文章「<a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/articles/leap-seconds/article.html\">FreeBSD 对闰秒的支持</a>」简要概述了闰秒处理。下一个闰秒将发生在 2015 年 6 月 30 日 23:59:60 UTC。"
+
+[[news]]
+date = "2015-05-24"
+description = "新提交者：<a href=\"mailto:brnrd@FreeBSD.org\">Bernard Spil</a> (ports)"
+
+[[news]]
+date = "2015-04-30"
+title = "2015年1月-3月状态报告"
+description = "「<a href=\"https://www.freebsd.org/news/status/report-2015-01-2015-03.html\">2015年1月-3月状态报告</a>」现已发布。"
+
+[[news]]
+date = "2015-04-27"
+description = "新提交者：<a href=\"mailto:oshogbo@FreeBSD.org\">Mariusz Zaborski</a> (src)"
+
+[[news]]
+date = "2015-04-21"
+description = "新提交者：<a href=\"mailto:mmoll@FreeBSD.org\">Michael Moll</a> (ports)"
+
+[[news]]
+date = "2015-04-02"
+description = "增强的提交权限：<a href=\"mailto:mat@FreeBSD.org\">Mathieu Arnold</a> (ports, doc)"
+
+[[news]]
+date = "2015-03-31"
+description = "新提交者：<a href=\"mailto:mahrens@FreeBSD.org\">Matthew Ahrens</a> (src)"
+
+[[news]]
+date = "2015-03-22"
+description = "新提交者：<a href=\"mailto:kp@FreeBSD.org\">Kristof Provost</a> (src)"
+
+[[news]]
+date = "2015-03-08"
+description = "新提交者：<a href=\"mailto:vangyzen@FreeBSD.org\">Eric van Gyzen</a> (src)"
+
+[[news]]
+date = "2015-03-08"
+description = "新提交者：<a href=\"mailto:jah@FreeBSD.org\">Jason Harmening</a> (src)"
+
+[[news]]
+date = "2015-02-11"
+description = "新提交者：<a href=\"mailto:whu@FreeBSD.org\">Wei Hu</a> (src)"
+
+[[news]]
+date = "2015-01-19"
+description = "新提交者：<a href=\"mailto:jbeich@FreeBSD.org\">Jan Beich</a> (ports)"
+
+[[news]]
+date = "2015-01-15"
+title = "2014年10月-12月状态报告"
+description = "「<a href=\"https://www.freebsd.org/news/status/report-2014-10-2014-12.html\">2014年10月-12月状态报告</a>」现已发布。"
+
+[[news]]
+date = "2014-12-14"
+description = "新提交者：<a href=\"mailto:bofh@FreeBSD.org\">Muhammad Moinur Rahman</a> (ports)"
+
+[[news]]
+date = "2014-12-14"
+description = "新提交者：<a href=\"mailto:erj@FreeBSD.org\">Eric Joyner</a> (src)"
+
+[[news]]
+date = "2014-11-14"
+title = "FreeBSD 10.1-RELEASE 可用"
+description = "「<a href=\"https://www.freebsd.org/releases/10.1R/announce.html\">FreeBSD 10.1-RELEASE</a>」现已可用。请务必在安装前检查<a href=\"https://www.freebsd.org/releases/10.1R/relnotes.html\">发行说明</a>和<a href=\"https://www.freebsd.org/releases/10.1R/errata.html\">发行勘误</a>，以获取有关10.1的任何最新消息和/或问题。有关FreeBSD发行的更多信息，请访问<a href=\"https://www.freebsd.org/releases/index.html\">发行信息</a>页面。"
+
+[[news]]
+date = "2014-11-02"
+title = "FreeBSD 10.1-RC4 可用"
+description = "FreeBSD 10.1 发布周期的第四个 RC 版本现已可用。amd64、armv6、i386、ia64、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2014-November/080872.html\">获取</a>。"
+
+[[news]]
+date = "2014-11-02"
+title = "FreeBSD 今天 21 岁了！"
+description = "FreeBSD 1.0，FreeBSD 的第一个正式版本，于 21 年前的今天，即 1993 年 11 月 2 日宣布。请在此处查看<a href=\"https://www.freebsd.org/releases/1.0/announce.html\">原始公告</a>。"
+
+[[news]]
+date = "2014-10-23"
+title = "FreeBSD 10.1-RC3 可用"
+description = "FreeBSD 10.1 发布周期的第三个 RC 版本现已可用。amd64、armv6、i386、ia64、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2014-October/080701.html\">获取</a>。"
+
+[[news]]
+date = "2014-10-23"
+description = "新提交者：<a href=\"mailto:bhd@FreeBSD.org\">Björn Heidotting</a> (doc)"
+
+[[news]]
+date = "2014-10-14"
+title = "2014年7月-9月状态报告"
+description = "「<a href=\"https://www.freebsd.org/news/status/report-2014-07-2014-09.html\">2014年7月-9月状态报告</a>」现已发布。"
+
+[[news]]
+date = "2014-10-13"
+title = "FreeBSD 10.1-RC2 可用"
+description = "FreeBSD 10.1 发布周期的第二个 RC 版本现已可用。amd64、armv6、i386、ia64、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2014-October/080555.html\">获取</a>。"
+
+[[news]]
+date = "2014-10-12"
+description = "新提交者：<a href=\"mailto:arybchik@FreeBSD.org\">Andrew Rybchenko</a> (src)"
+
+[[news]]
+date = "2014-10-04"
+title = "FreeBSD 10.1-RC1 可用"
+description = "FreeBSD 10.1 发布周期的第一个 RC 版本现已可用。amd64、armv6、i386、ia64、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2014-October/080453.html\">获取</a>。"
+
+[[news]]
+date = "2014-09-28"
+title = "FreeBSD 10.1-BETA3 可用"
+description = "FreeBSD 10.1 发布周期的第三个 BETA 版本现已可用。amd64、armv6、i386、ia64、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2014-September/080264.html\">获取</a>。"
+
+[[news]]
+date = "2014-09-24"
+description = "新提交者：<a href=\"mailto:jch@FreeBSD.org\">Julien Charbon</a> (src)"
+
+[[news]]
+date = "2014-09-21"
+title = "FreeBSD 10.1-BETA2 可用"
+description = "FreeBSD 10.1 发布周期的第二个 BETA 版本现已可用。amd64、armv6、i386、ia64、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2014-September/080177.html\">获取</a>。"
+
+[[news]]
+date = "2014-09-14"
+title = "FreeBSD 10.1-BETA1 可用"
+description = "FreeBSD 10.1 发布周期的第一个 BETA 版本现已可用。amd64、armv6、i386、ia64、powerpc、powerpc64 和 sparc64 架构的 ISO 镜像可在我们大多数 <a href=\"https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html\">FreeBSD 镜像站点</a>上<a href=\"https://lists.freebsd.org/pipermail/freebsd-stable/2014-September/080106.html\">获取</a>。"
+
+[[news]]
+date = "2014-09-09"
+description = "新提交者：<a href=\"mailto:kami@FreeBSD.org\">Dominic Fandrey</a> (ports)"
+
+[[news]]
+date = "2014-08-21"
+title = "FreeBSD ports 树诞生二十周年，让我们一起庆祝吧！"
+description = "这一切都始于 1994 年 8 月 21 日 Jordan Hubbard 的这次提交：“提交我的新 ports make 宏。虽然还远未 100% 完成，但在这个阶段已经相当可用了。”为庆祝这一事件，我们准备了<a href=\"http://youtu.be/LiFq5D-zmBs\">一个视频</a>！"
+
+[[news]]
+date = "2014-08-14"
+description = "新提交者：<a href=\"mailto:alonso@FreeBSD.org\">Alonso Schaich</a> (ports)"
+
+[[news]]
+date = "2014-08-10"
+description = "新提交者：<a href=\"mailto:dvl@FreeBSD.org\">Dan Langille</a> (ports)"

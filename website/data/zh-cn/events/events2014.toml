@@ -1,0 +1,111 @@
+# Sort events by start date, with more recent events lower in the file
+# $FreeBSD$
+year = 2014
+
+[[events]]
+id = "nycbsdcon-2014"
+name = "NYCBSDCon 2014"
+url = "http://www.nycbsdcon.org/2014/"
+startDate = "2014-02-08"
+endDate = "2014-02-08"
+countryCode = "US"
+country = "美国"
+city = "纽约市"
+site = "曼哈顿悬挂者酒吧餐厅"
+description = "为期一天的活动，主题为“生产环境中的 BSD”。随着对 BSD 在基础设施中扮演的关键角色以及未来可能扮演的角色日益关注，NYCBSDCon 有望成为纽约大都会区技术社区的重要活动。由纽约市 *BSD 用户组主办。"
+
+[[events]]
+id = "bhyvecon-2014"
+name = "bhyvecon 2014"
+url = "http://bhyvecon.org/"
+startDate = "2014-03-12"
+endDate = "2014-03-12"
+countryCode = "JP"
+country = "日本"
+city = "东京"
+site = "SAKURA 互联网研究中心"
+description = "亲身体验 bhyve 虚拟机管理程序，并向核心 bhyve 开发者提出您的技术问题。"
+
+[[events]]
+id = "asiabsdcon-2014"
+name = "AsiaBSDCon 2014"
+url = "http://2014.asiabsdcon.org/"
+startDate = "2014-03-13"
+endDate = "2014-03-16"
+countryCode = "JP"
+country = "日本"
+city = "东京"
+site = "东京理科大学"
+description = "AsiaBSDCon 是一个面向 BSD 系统用户和开发者的会议。该会议面向所有开发、部署和使用基于 FreeBSD、NetBSD、OpenBSD、DragonFlyBSD、Darwin 和 MacOS X 等系统的人员。AsiaBSDCon 是一个技术会议，旨在收集最佳技术论文和演示文稿，以确保我们开源社区的最新发展能够与最广泛的受众分享。"
+
+[[events]]
+id = "bsdcan-2014"
+name = "BSDCan 2014"
+url = "http://www.bsdcan.org/"
+startDate = "2014-05-14"
+endDate = "2014-05-17"
+countryCode = "CA"
+country = "加拿大"
+city = "渥太华"
+site = "渥太华大学"
+description = "BSDCan 是一个面向 BSD 操作系统及其相关项目工作者的技术会议。这是一个开发者会议，重点关注新兴技术、研究项目和正在进行的工作。它还包括用户空间基础设施项目，并邀请自由软件开发者和商业供应商的贡献。会议设有系统管理、安全、黑客和嵌入式等专题。PGCon 紧随其后在同一地点举行。"
+
+[[events]]
+id = "bsdcam-2014"
+name = "BSDCam 2014"
+url = "http://bsdcam.cl.cam.ac.uk/"
+startDate = "2014-07-09"
+endDate = "2014-07-12"
+countryCode = "GB"
+country = "英国"
+city = "剑桥"
+site = "剑桥大学"
+description = "剑桥 FreeBSD 开发者峰会是一年一度的仅限受邀者参加的活动，旨在汇集开发者和供应商，共同讨论和构建 FreeBSD 项目的未来。今年的议题将包括 FreeBSD 11 的预期功能集、实施 9 和 10 分支的新发布策略、打包基础系统以及构建基础设施和工具以吸引更多嵌入式供应商使用 FreeBSD。"
+
+[[events]]
+id = "bsdday-2014"
+name = "BSDday"
+url = "http://bsdday.org/"
+startDate = "2014-08-09"
+endDate = "2014-08-09"
+countryCode = "AR"
+country = "阿根廷"
+city = "布宜诺斯艾利斯"
+site = "布宜诺斯艾利斯大学自然与精确科学学院"
+description = "BSDday Argentina 是一个面向 BSD 软件和基于系统用户、系统管理员和开发者的会议。该会议面向所有开发、部署和使用基于 FreeBSD、NetBSD、OpenBSD、DragonFlyBSD 和其他 *BSD 系统的人员。BSDday Argentina 是一个技术会议，旨在收集最佳技术论文和演示文稿，以确保我们开源社区的最新发展能够与最广泛的受众分享。"
+
+[[events]]
+id = "eurobsdcon-2014"
+name = "EuroBSDCon 2014"
+url = "http://2014.eurobsdcon.org/"
+startDate = "2014-09-25"
+endDate = "2014-09-28"
+countryCode = "BG"
+country = "保加利亚"
+city = "索非亚"
+site = "InterExpo 会议中心"
+description = "EuroBSDcon 是关于开源 BSD 操作系统的欧洲顶级会议，吸引了来自欧洲和世界其他地区约 250 名高技能工程专业人士、软件开发者、计算机科学学生和教授以及用户。EuroBSDcon 的目标是交流有关 BSD 操作系统的知识，促进用户和开发者之间的协调与合作。2014 年索非亚 EuroBSDCon 的日期已定为 9 月 25-26 日为教程，9 月 27-28 日为主会议。"
+
+[[events]]
+id = "xdc-2014"
+name = "X 开发者大会 2014"
+url = "http://wiki.x.org/wiki/Events/XDC2014/"
+startDate = "2014-10-08"
+endDate = "2014-10-10"
+countryCode = "FR"
+country = "法国"
+city = "波尔多"
+site = "波尔多第一大学 LaBRI 实验室"
+description = "XDC 是 FOSS 图形栈工作者每年聚会的会议。演讲涵盖项目状态、正在进行的工作、变更提案等。与许多类似的会议一样，这是开发者和用户面对面交流的绝佳机会。时隔许久，FreeBSD 将首次出席并就图形栈的状态发表演讲。主要目标是重新建立与上游的沟通，目前上游往往以 Linux 为中心。"
+
+[[events]]
+id = "meetbsd-2014"
+name = "MeetBSD California 2014"
+url = "https://www.meetbsd.com/"
+startDate = "2014-11-01"
+endDate = "2014-11-02"
+countryCode = "US"
+country = "美国"
+city = "圣何塞"
+site = "西部数据园区"
+description = "MeetBSD 2014 采用混合非会议形式，包括预定演讲和社区驱动的活动，如兴趣小组会议、闪电演讲和快速极客交流会。"

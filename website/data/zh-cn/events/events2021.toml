@@ -1,0 +1,129 @@
+# Sort events by start date, with more recent events lower in the file
+# $FreeBSD$
+year = 2021
+
+[[events]]
+id = "freebsd-office-hours-2021-01-27"
+name = "FreeBSD 办公时间"
+url = "https://live.freebsd.org/FreeBSD/officehours/"
+startDate = "2021-01-27"
+endDate = "2021-01-27"
+site = "live.FreeBSD.org"
+description = "在 UTC 时间 1 月 27 日 21:00，我们将举办“FreeBSD 办公时间”，这是一个互动在线活动，用户、贡献者和开发者可以提问或发表评论。主题将是“Bhyve 问答”，由 Peter Grehan 主持。欲了解更多信息，请参阅 FreeBSD wiki 上的<a href=\"https://wiki.freebsd.org/OfficeHours\">办公时间</a>页面。"
+
+[[events]]
+id = "fosdem-2021"
+name = "FOSDEM 2021"
+url = "https://fosdem.org/2021/"
+startDate = "2021-02-06"
+endDate = "2021-02-07"
+site = "在线"
+description = "每年，来自世界各地的数千名自由和开源软件开发者都会聚集在布鲁塞尔的活动中。2021 年，他们将在线聚集。请务必前往 <a href=\"https://stands.fosdem.org/stands/freebsd_project/\">FreeBSD 展位</a>和 <a href=\"https://fosdem.org/2021/schedule/track/bsd/\">BSD 开发室</a>，了解 FreeBSD 的最新动态。"
+
+[[events]]
+id = "freebsd-office-hours-2021-03-24"
+name = "FreeBSD 办公时间"
+url = "https://live.freebsd.org/FreeBSD/officehours/"
+startDate = "2021-03-24"
+endDate = "2021-03-24"
+site = "live.FreeBSD.org"
+description = "在 UTC 时间 3 月 24 日 21:00，我们将举办“FreeBSD 办公时间”，这是一个互动在线活动，用户、贡献者和开发者可以提问或发表评论。主题将是“Bhyve 问答”，由 Peter Grehan 主持。欲了解更多信息，请参阅 FreeBSD wiki 上的<a href=\"https://wiki.freebsd.org/OfficeHours\">办公时间</a>页面。"
+
+[[events]]
+id = "freebsd-office-hours-2021-03-31"
+name = "FreeBSD 办公时间"
+url = "https://live.freebsd.org/FreeBSD/officehours/"
+startDate = "2021-03-31"
+endDate = "2021-03-31"
+site = "live.FreeBSD.org"
+description = "在 UTC 时间 3 月 31 日 18:00，我们将举办“FreeBSD 办公时间”，这是一个互动在线活动，用户、贡献者和开发者可以提问或发表评论。主题将是“调查结果”，由 Sean Chittenden 主持。欲了解更多信息，请参阅 FreeBSD wiki 上的<a href=\"https://wiki.freebsd.org/OfficeHours\">办公时间</a>页面。"
+
+[[events]]
+id = "freebsd-office-hours-2021-05-12"
+name = "FreeBSD 办公时间"
+url = "https://live.freebsd.org/FreeBSD/officehours/"
+startDate = "2021-05-12"
+endDate = "2021-05-12"
+site = "live.FreeBSD.org"
+description = "在 UTC 时间 5 月 12 日 18:00，我们将举办“FreeBSD 办公时间”，这是一个互动在线活动，用户、贡献者和开发者可以提问或发表评论。主题将是“最佳实践虚拟小组讨论”，由 Warner Losh 主持。欲了解更多信息，请参阅 FreeBSD wiki 上的<a href=\"https://wiki.freebsd.org/OfficeHours\">办公时间</a>页面。"
+
+[[events]]
+id = "freebsd-office-hours-2021-05-26"
+name = "FreeBSD 办公时间"
+url = "https://live.freebsd.org/FreeBSD/officehours/"
+startDate = "2021-05-26"
+endDate = "2021-05-26"
+site = "live.FreeBSD.org"
+description = "在 UTC 时间 5 月 26 日 02:00，我们将举办“FreeBSD 办公时间”，这是一个互动在线活动，用户、贡献者和开发者可以提问或发表评论。主题将是“最佳实践虚拟小组讨论”，由 Warner Losh 主持。欲了解更多信息，请参阅 FreeBSD wiki 上的<a href=\"https://wiki.freebsd.org/OfficeHours\">办公时间</a>页面。"
+
+[[events]]
+id = "freebsd-friday-2021-06-04"
+name = "FreeBSD 周五：BastilleBSD 简介"
+url = "https://freebsdfoundation.org/freebsd-fridays/"
+startDate = "2021-06-04"
+endDate = "2021-06-04"
+site = "https://live.freebsd.org/FreeBSD/freebsdfriday/"
+description = "在 UTC 时间 2021 年 6 月 4 日 17:00 起，将举行一小时的 FreeBSD 周五直播会话。本周的主题是：由 Christer Edwards 主讲的“BastilleBSD 简介”。"
+
+[[events]]
+id = "devsummit-202106"
+name = "2021 年 6 月 FreeBSD 开发者峰会"
+url = "https://wiki.freebsd.org/DevSummit/202106"
+startDate = "2021-06-09"
+endDate = "2021-06-11"
+site = "在线"
+description = "加入我们，参加 2021 年 6 月的在线 FreeBSD 开发者峰会。本次活动将包括虚拟的半天会话，于 2021 年 6 月 9 日至 11 日举行。免费参加，但我们要求您通过 <a href=\"https://www.eventbrite.com/e/june-2021-freebsd-developer-summit-tickets-151547652107\">Eventbrite</a> 系统注册以获取会议室访问权限。除了开发者讨论会话外，我们还将有供应商演讲。"
+
+[[events]]
+id = "freebsd-friday-2021-06-18"
+name = "FreeBSD 周五：如何向 FreeBSD 提交补丁"
+url = "https://freebsdfoundation.org/freebsd-fridays/"
+startDate = "2021-06-18"
+endDate = "2021-06-18"
+site = "https://live.freebsd.org/FreeBSD/freebsdfriday/"
+description = "在 UTC 时间 2021 年 6 月 18 日 17:00 起，将举行一小时的 FreeBSD 周五直播会话。本周的主题是：由 Drew Gurkowski 和 Ed Maste 主讲的“如何向 #FreeBSD 提交补丁”。"
+
+[[events]]
+id = "freebsd-friday-2021-08-13"
+name = "FreeBSD 周五：如何使用 Git 跟踪 FreeBSD"
+url = "https://freebsdfoundation.org/freebsd-fridays/"
+startDate = "2021-08-13"
+endDate = "2021-08-13"
+site = "https://live.freebsd.org/FreeBSD/freebsdfriday/"
+description = "在 UTC 时间 2021 年 8 月 13 日 17:00 起，将举行一小时的 FreeBSD 周五直播会话。本周的主题是：由 Warner Losh 主讲的“如何使用 Git 跟踪 FreeBSD”。"
+
+[[events]]
+id = "freebsd-office-hours-2021-09-13"
+name = "FreeBSD 办公时间"
+url = "https://live.freebsd.org/FreeBSD/officehours/"
+startDate = "2021-09-13"
+endDate = "2021-09-13"
+site = "live.FreeBSD.org"
+description = "Warner Losh 将在我们的下一次核心办公时间中，与那些对转向下一套开发工具感兴趣的人进行讨论。讨论将于 9 月 13 日 UTC 时间 17:00 举行。我们将有数量有限的小组成员，并通过 IRC 进行问答。如果您有任何问题希望得到解答，也可以提前发送至 core@freebsd.org。"
+
+[[events]]
+id = "eurobsdcon-2021"
+name = "EuroBSDcon 2021"
+url = "https://2021.eurobsdcon.org"
+startDate = "2021-09-17"
+endDate = "2021-09-19"
+site = "在线"
+description = "EuroBSDcon 是欧洲年度技术会议，汇集了使用和开发基于 4.4BSD（Berkeley 软件发行版）操作系统家族及相关项目的用户和开发者。"
+
+[[events]]
+id = "freebsd-friday-2021-10-22"
+name = "FreeBSD 周五：FreeBSD 写作学者指南"
+url = "https://freebsdfoundation.org/news-and-events/event-calendar/freebsd-fridays-the-writing-scholars-guide-to-freebsd/"
+startDate = "2021-10-22"
+endDate = "2021-10-22"
+site = "https://live.freebsd.org/FreeBSD/freebsdfriday/"
+description = "在 UTC 时间 2021 年 10 月 22 日 17:00 起，将举行一小时的 FreeBSD 周五直播会话。本周的主题是：由 Corey Stephan 主讲的“FreeBSD 写作学者指南”。"
+
+[[events]]
+id = "freebsd-vendor-summit-2021"
+name = "FreeBSD 供应商峰会 2021"
+url = "https://wiki.freebsd.org/DevSummit/202111"
+startDate = "2021-11-18"
+endDate = "2021-11-19"
+site = "在线"
+description = "加入我们，参加 2021 年 11 月的在线 FreeBSD 供应商峰会。本次活动将包括虚拟的半天会话，于 2021 年 11 月 18 日至 19 日举行。免费参加，但我们要求您通过 <a href=\"https://www.eventbrite.com/e/november-2021-freebsd-vendor-summit-tickets-169166733253\">Eventbrite</a> 系统注册以获取会议室访问权限和单独的交流环节。除了供应商演讲外，我们还将有讨论会话。如果您有任何特定主题希望讨论，请联系 devsummit@FreeBSD.org"

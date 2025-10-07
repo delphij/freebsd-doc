@@ -1,0 +1,104 @@
+# 按开始日期对事件进行排序，最近的事件排在文件下方
+# $FreeBSD$
+year = 2011
+
+[[events]]
+id = "asiabsdcon-2011"
+name = "2011年亚洲BSD会议"
+url = "http://2011.asiabsdcon.org/"
+startDate = "2011-03-17"
+endDate = "2011-03-20"
+countryCode = "JP"
+country = "日本"
+city = "东京"
+site = "东京理科大学"
+description = "「AsiaBSDCon」是一个面向BSD系统用户和开发者的会议。该会议面向所有开发、部署和使用基于FreeBSD、NetBSD、OpenBSD、DragonFlyBSD、Darwin和MacOS X的系统的人。AsiaBSDCon是一个技术会议，旨在收集最好的技术论文和演讲，以确保我们开源社区的最新发展能与尽可能广泛的受众分享。"
+
+[[events]]
+id = "linuxfest-2011"
+name = "2011年印第安纳Linux节"
+url = "http://www.indianalinux.org/cms/"
+startDate = "2011-03-25"
+endDate = "2011-03-27"
+countryCode = "US"
+country = "美国"
+city = "印第安纳波利斯"
+site = "印第安纳波利斯西部温德姆酒店"
+description = "「印第安纳Linux节」是一个社区F/OSS会议，展示了社区在自由和开源软件、开源硬件和自由文化方面所能提供的最好的东西。我们还重点介绍了从业余爱好者到专业人士等所有这些社区中最优秀和最聪明的人。在Linux节期间，BSD认证小组将提供参加其BSDA认证考试的机会。"
+
+[[events]]
+id = "graz-linuxtag-2011"
+name = "2011年格拉茨Linuxtag"
+url = "http://www.linuxtage.at/"
+startDate = "2011-04-09"
+endDate = "2011-04-09"
+countryCode = "AT"
+country = "奥地利"
+city = "格拉茨"
+site = "格拉茨FH Joanneum应用技术大学"
+description = "「格拉茨Linuxtag」是一个为期一天的关于Linux和自由软件的活动。除了FreeBSD展台和参加BSDA认证考试的机会外，还将有涵盖不同FreeBSD主题的现场研讨会。更多信息请访问<a href=\"http://www.bsdbootcamp.org/\">这里</a>。"
+
+[[events]]
+id = "bsdcan-2011"
+name = "BSDCan 2011"
+url = "http://www.bsdcan.org/"
+startDate = "2011-05-10"
+endDate = "2011-05-13"
+countryCode = "CA"
+country = "加拿大"
+city = "渥太华"
+site = "渥太华大学"
+description = "「BSDCan」是一个开发者会议，重点关注新兴技术、研究项目和正在进行的工作。它还包括用户级基础设施项目，并邀请来自自由软件开发者和商业供应商的贡献。"
+
+[[events]]
+id = "worldipv6day-2011"
+name = "世界IPv6日"
+url = "http://www.worldipv6day.org/"
+startDate = "2011-06-08"
+endDate = "2011-06-08"
+description = "「世界IPv6日」是由互联网协会于2011年6月8日0:00 UTC至23:59 UTC组织的为期24小时的IPv6试飞活动。FreeBSD计划通过帮助推广IPv6并在用户遇到紧急IPv6问题时提供帮助来做出贡献。请参阅我们专门的<a href=\"https://www.FreeBSD.org/ipv6/w6d.html\">FreeBSD与世界IPv6日</a>页面以获取更多信息以及您如何提供帮助。"
+
+[[events]]
+id = "kyivbsd-2011"
+name = "2011年基辅BSD"
+url = "http://ru.kyivbsd.org.ua/"
+startDate = "2011-09-24"
+endDate = "2011-09-24"
+countryCode = "UA"
+country = "乌克兰"
+city = "基辅"
+description = "第三届KyivBSD会议将在乌克兰基辅举行。"
+
+[[events]]
+id = "eurobsdcon-2011"
+name = "2011年欧洲BSD会议"
+url = "http://2011.eurobsdcon.org/"
+startDate = "2011-10-06"
+endDate = "2011-10-09"
+countryCode = "NL"
+country = "荷兰"
+description = "「EuroBSDCon」是面向BSD系统用户和开发者的年度欧洲技术会议。第十届欧洲BSD会议将于2010年10月在荷兰举行，包括技术分会、教程和FreeBSD开发者峰会。会议感兴趣的主题包括但不限于基于BSD的操作系统的应用、架构、实现、性能和安全，以及有关BSD使用的经济或组织方面的主题。"
+
+[[events]]
+id = "bsdday-argentina-2011"
+name = "2011年阿根廷BSD日"
+url = "http://www.bsdday.org.ar/"
+startDate = "2011-11-05"
+endDate = "2011-11-05"
+countryCode = "AR"
+country = "阿根廷"
+city = "布宜诺斯艾利斯市"
+site = "国立科技大学"
+description = "「阿根廷BSD日」是面向BSD软件和基于BSD系统的用户、系统管理员和开发者的会议。该会议面向所有开发、部署和使用基于FreeBSD、NetBSD、OpenBSD、DragonFly BSD和其他BSD的系统的人。阿根廷BSD日是一个技术会议，旨在收集最好的技术论文和演讲，以确保我们开源社区的最新发展能与尽可能广泛的受众分享。"
+
+[[events]]
+id = "bsdday-2011"
+name = "bsd_day(2011)"
+url = "http://bsdday.eu/2011"
+startDate = "2011-11-05"
+endDate = "2011-11-05"
+countryCode = "SK"
+country = "斯洛伐克"
+city = "布拉迪斯拉发"
+site = "斯洛伐克技术大学"
+description = "新一届BSD日即将来临，旨在召集中欧的BSD人士会面。该活动邀请开发者推广他们的工作，并与用户和潜在的未来合作伙伴交流。没有手续、论文、注册或参与费，但鼓励受邀的开发者就他们最喜欢的BSD相关主题进行简短的演讲。目标是激励每个人，特别是大学生使用BSD系统。"

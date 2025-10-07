@@ -1,0 +1,338 @@
+# Sort the entries by name
+# $FreeBSD$
+
+[[consulting]]
+id = "Acadix"
+category = "namerica"
+name = "Acadix, LLC"
+url = "http://www.acadix.biz"
+description = "Acadix, LLC 为 FreeBSD 及其他平台提供全方位的服务，包括系统集成、文件服务器、WEB 服务器以及编程/移植。Acadix 为密尔沃基都会区的企业、学校和慈善机构提供现场服务。编程服务在美国所有地区均可提供。欲了解更多信息，请<a href=\"http://acadix.biz\">访问我们的网站</a>。"
+
+[[consulting]]
+id = "ateamsystems"
+category = "namerica"
+name = "A-Team Systems"
+url = "http://www.ateamsystems.com/"
+description = "A-Team Systems 拥有超过 15 年的经验，可帮助客户以安全、定制和统一的方式，将 FreeBSD 的强大功能与其他开源软件（如 PHP、MySQL 和 Apache）相结合。我们从 1.0 版本开始就一直与 FreeBSD 合作！我们可以帮助您完成现有部署或未来计划：从加密备份到 Web 和邮件服务器。请访问我们的<a href=\"http://www.ateamsystems.com/\">网站</a>了解更多信息。"
+
+[[consulting]]
+id = "BMK"
+category = "australia"
+name = "B.M.K. Industries"
+url = "http://www.bmk.com.au"
+description = "B.M.K. Industries 位于澳大利亚墨尔本，专门使用 FreeBSD 搭建低成本路由器和服务器（Web、电子邮件、FTP、DNS 和安全 Web 服务器）。设置永久性调制解调器和 ISDN 互联网连接也是我们的专长。<a href=\"http://www.bmk.com.au\">请访问我们的网页。</a>"
+
+[[consulting]]
+id = "bpa"
+category = "europe"
+name = "Black Point Arts Internet Solutions GmbH"
+url = "http://www.bpanet.de/"
+description = "Black Point Arts Internet Solutions GmbH 位于德国（美因河畔法兰克福）。我们在 FreeBSD、Linux 和 Windows 服务器方面拥有丰富的经验。我们的业务活动包括托管/托管、编程和网页设计。我们为您的内部网、外部网和互联网需求开发解决方案。欲了解更多信息，您可以访问<a href=\"http://www.bpanet.de/\">我们的网站</a>或发送电子邮件至<a href=\"mailto:service@bpanet.de\">service@bpanet.de</a>。"
+
+[[consulting]]
+id = "PrometheusSystems"
+category = "africa"
+name = "Prometheus Systems"
+url = "https://prometheus-systems.co.za/"
+description = "我们位于南非约翰内斯堡，提供广泛的 UNIX 系统咨询服务，包括现场和远程系统管理服务、网络设计和实施（局域网、WiFi 部署、私有和公共云服务、基于 FreeBSD 的定制防火墙）、大型存储部署（ZFS、NFS、CIFS）以及虚拟机管理程序部署和管理（Bhyve 和 KVM）。"
+
+[[consulting]]
+id = "CloneConsulting"
+category = "nzealand"
+name = "Clone Consulting"
+url = "http://www.clone.co.nz/"
+description = "Clone 提供软件开发、系统架构和 FreeBSD 基础设施支持方面的咨询服务。有关更多信息，请访问<a href=\"http://www.clone.co.nz\">Clone 网站</a>。"
+
+[[consulting]]
+id = "EscapeBox"
+category = "europe"
+name = "EscapeBox"
+url = "http://www.escapebox.net/en/"
+description = "超过 20 年的 IT 经验，随需应变！EscapeBox Germany GmbH 成立于 2002 年，是一家小而敏捷的公司，提供 IT 咨询服务。我们可以根据需要为客户提供远程和现场支持。因此，如果您正在为您的项目寻找有能力的自由职业者，请立即<a href=\"http://www.escapebox.net/en/contact.html\">联系我们</a>！"
+
+[[consulting]]
+id = "TheFreeBSDMall"
+category = "namerica"
+name = "The FreeBSD Mall"
+url = "http://www.freebsdmall.com/"
+description = "FreeBSD Mall 为 FreeBSD 提供多种不同级别的支持合同。支持可以按次提供，也可以作为方便、可扩展的年度合同提供。我们训练有素的技术支持人员将以专业、高效的方式处理您的请求，并通过电话、传真或电子邮件为您的需求提供详细的答复。FreeBSD Mall 的员工拥有超过 8 年的 FreeBSD 支持经验。有关更多信息，请参阅<a href=\"http://www.freebsdmall.com/support/\">我们的支持页面</a>。"
+
+[[consulting]]
+id = "hecker"
+category = "europe"
+name = "Hecker Consulting"
+url = "https://www.hco.de"
+description = "我们全面的产品组合包括广泛的服务，例如个人指导、团队培训以及针对整个组织的广泛专业发展套餐。我们为包括 FreeBSD 在内的不同开源系统提供培训和咨询。有关更多详细信息，请访问<a href=\"https://www.hco.de\">我们的网站</a>或通过邮件 info@hco.de 与我们联系"
+
+[[consulting]]
+id = "Hermetek"
+category = "namerica"
+name = "HermeTek Network Solutions"
+url = "https://www.hermetek.com/"
+description = "HermeTek Network Solutions 是一家综合性网络解决方案提供商，重点关注 FreeBSD。HermeTek 还为其他 BSD 和 Linux 操作系统以及完全托管的托管软件包提供支持。请访问<a href=\"https://www.hermetek.com/\">我们的网站</a>了解更多信息。"
+
+[[consulting]]
+id = "GregLehey"
+category = "australia"
+name = "Greg Lehey"
+url = "http://www.lemis.com/grog/"
+description = "Greg Lehey 在所有系统编程和系统管理领域拥有超过 20 年的行业经验，包括设备驱动程序、内核调试、编译器、库、性能分析和站点规划。他是<a href=\"http://www.lemis.com/vinum.html\">Vinum 卷管理器</a>的作者，这是一个包含软件 RAID 的虚拟磁盘驱动程序，也是<a href=\"http://www.oreilly.com/catalog/port/\">《移植 UNIX 软件》</a>和<a href=\"http://www.oreilly.com/catalog/cfreebsd/\">《FreeBSD 完全手册》</a>的作者。通过<a href=\"mailto:grog@FreeBSD.org\">电子邮件</a>与他联系，或访问他的<a href=\"http://www.lemis.com/~grog\">网站</a>。"
+
+[[consulting]]
+id = "ITSPro"
+category = "europe"
+name = "ITS Pro"
+url = "http://www.itspro.com.pl"
+description = "ITS Pro 自 2013 年开始进入市场。我们总部位于波兰。我们专注于咨询和顾问服务。我们为来自不同行业和国家的客户提供定制的系统和应用程序、监控 IT 系统、消息系统。我们致力于基于 FreeBSD 平台的以下应用程序：消息系统 - Postfix、监控系统 – Nagios、安全发布 Internet 访问后端办公应用程序和服务（反向代理），如 Exchange 和 SharePoint。欢迎与我们联系，了解您如何从我们在 IT 技术方面的知识、经验和热情中受益。"
+
+[[consulting]]
+id = "ITSchulungen"
+category = "europe"
+name = "IT-schulungen.com"
+url = "http://www.it-schulungen.com"
+description = "IT-Schulungen.com 位于德国，是一个 IT 培训门户网站（包括个人研讨会和公开研讨会），并为包括<a href=\"http://www.it-schulungen.com/seminare/serversysteme/freebsd/index.html\">FreeBSD</a>在内的不同开源系统提供培训和咨询。有关更多信息，请致电 01805 120 222（德国境内）或访问我们的<a href=\"http://www.it-schulungen.com\">网站</a>。"
+
+[[consulting]]
+id = "Schweikhardt"
+category = "europe"
+name = "Jens Schweikhardt"
+url = "http://www.schweikhardt.net/"
+description = "Jens Schweikhardt 位于<strong>德国斯图加特</strong>附近，是 FreeBSD 的提交者，拥有 20 年的 Unix 经验，曾多次赢得国内和国际编程竞赛。如果您遇到的问题可以使用 Unix 工具箱（最好是 C、perl、shell）解决，他就是能搞定它的人。凭借他在 Unix 标准化方面的背景，他将确保您的投资在您关心的所有 Unix 系统上都能便携高效地运行。通过<a href=\"mailto:schweikh@FreeBSD.org\">schweikh@FreeBSD.org</a>与他联系。"
+
+[[consulting]]
+id = "Stacey"
+category = "europe"
+name = "Julian Stacey"
+url = "http://www.berklix.com/~jhs/cv/"
+description = "<a href=\"http://berklix.com/\">网络服务和系统工程</a>，自 1978 年以来从事 UNIX 工作，维护<a href=\"http://www.berklix.com/consultants/\">FreeBSD 商业顾问索引</a>（<strong>按地理位置和全职/兼职排序）</strong>。请务必访问他的页面！"
+
+[[consulting]]
+id = "Klara"
+category = "namerica"
+name = "Klara Inc."
+url = "https://klarasystems.com/freebsd-development/"
+description = "<a href=\"https://klarasystems.com/freebsd-development/\">FreeBSD 专业服务</a>，为全球客户提供 FreeBSD 的开发和支持。"
+
+[[consulting]]
+id = "Supportodua"
+category = "europe"
+name = "Support.od.ua"
+url = "http://support.od.ua/"
+description = "Support.od.ua 位于乌克兰敖德萨。我们为乌克兰、俄罗斯联邦和哈萨克斯坦的客户提供专业的 FreeBSD 和 Linux 安装、咨询和服务器解决方案。有关更多信息和联系方式，请访问我们的<a href=\"http://support.od.ua\">网站</a>。"
+
+[[consulting]]
+id = "myserver.bg"
+category = "europe"
+name = "myserver.bg"
+url = "https://myserver.bg/en"
+description = "myserver.bg 为实施开源解决方案的公司提供专业服务。我们是经过 BSD 和 Linux 认证的系统管理员和网络工程师。日常系统管理包括数据库、Web 服务、高可用性系统、虚拟化、监控、电话和垃圾邮件防治。这只是我们自 2001 年以来所做工作的一部分。多年来，我们在系统管理、服务器维护和网络管理方面积累了丰富的经验。有关更多信息，请访问我们的网站。"
+
+[[consulting]]
+id = "OmarSiddique"
+category = "namerica"
+name = "Omar Siddique"
+url = "http://www.heedme.com/resume"
+description = "<a href=\"http://www.heedme.com\">Omar Siddique</a> 是一位常驻华盛顿特区的顾问，在 FreeBSD、Linux、Solaris 方面拥有丰富的经验。他的专长包括互联网服务、系统集成、系统管理和网络。通过<a href=\"mailto:omar@heedme.com\">omar@heedme.com</a>与他联系。"
+
+[[consulting]]
+id = "Omniscient"
+category = "namerica"
+name = "Omniscient Technologies"
+url = "http://www.omniscient.com/"
+description = "Omniscient Technologies 是一家位于华盛顿特区的咨询集团，在 *BSD、Solaris、Linux 和许多其他 UNIX 变体方面拥有丰富的经验，专门从事高度可扩展的系统、系统集成和网络安全。还提供定制应用程序设计。请访问<a href=\"http://www.omniscient.com\">我们的网站</a>了解更多信息。"
+
+[[consulting]]
+id = "PeterDufault"
+category = "namerica"
+name = "Peter Dufault"
+url = "mailto:dufault@hda.com"
+description = "HD Associates 的 Peter Dufault。Peter 在医疗设备控制、高性能仿真系统、数字闭环反馈系统、实时类 UNIX 系统和 UNIX 设备驱动程序方面拥有超过 15 年的经验。有关更多信息，请发送电子邮件至<a href=\"mailto:dufault@hda.com\">dufault@hda.com</a>"
+
+[[consulting]]
+id = "PhilBudne"
+category = "namerica"
+name = "Phil Budne"
+url = "http://www.ultimate.com/phil/resume.html"
+description = "Phil Budne 是一位波士顿地区的顾问，自 1985 年以来一直专业从事 BSD 和其他 Unix 系统的工作。服务包括内核扩展、设备驱动程序、网络协议实现和应用程序的开发和移植，以及网络和系统管理。有关更多信息，请联系<a href=\"mailto:phil+fbsd@ultimate.com\">phil+fbsd@ultimate.com</a>。"
+
+[[consulting]]
+id = "Secnetix"
+category = "europe"
+name = "Secnetix GmbH and Co KG"
+url = "http://www.secnetix.de/"
+description = "Secnetix GmbH & Co KG——位于德国慕尼黑——非常注重 BSD 系统，并提供专业的咨询服务，范围从基本管理、编程和安全相关任务到涉及复杂网络设置的设计、实施和维护的复杂项目。有关更多信息，请<a href=\"http://www.secnetix.de/\">访问我们的网站</a>或发送邮件至<a href=\"mailto:info@secnetix.de\">info@secnetix.de</a>。"
+
+[[consulting]]
+id = "smlan"
+category = "europe"
+name = "SMLAN Software & Management Training"
+url = "https://www.smlan.de"
+description = "SMLan Software & Management Training 是一个 IT 培训学习中心。为公司和个人提供<a href=\"https://www.smlan.de/seminarthemen/alle/freebsd-administration\">FreeBSD</a>等开源系统的研讨会。联系电话：0049 30 4492545。"
+
+[[consulting]]
+id = "SysCare"
+category = "europe"
+name = "SysCare s. r. o."
+url = "http://www.SysCare.sk/"
+description = "SysCare s. r. o. 是一家总部位于斯洛伐克的公司，旨在以合理的费用提供高度专业的解决方案，包括咨询和外包服务。我们的重点是为基于 FreeBSD 构建的 Web、数据库、DNS 和电子邮件产品提供高可用性和高性能的解决方案。SysCare s. r. o. 由 Daniel Gerzo 创立，他是官方开发团队的一员。如需咨询，请发送电子邮件至<a href=\"office@syscare.sk\">office@syscare.sk</a>，或访问我们的<a href=\"http://www.SysCare.sk/\">网站</a>了解更多信息。"
+
+[[consulting]]
+id = "TecVD"
+category = "europe"
+name = "TecVD"
+url = "http://www.tecvd.com/"
+description = "TecVD 位于西班牙巴塞罗那。我们是一家专注于系统安全和异构基础设施中开源实现（GNU/Linux、FreeBSD 和 OpenBSD）的公司。我们还提供安全设备 Tseg 系列和网络服务设备 Tcor 系列。我们可以为您提供量身定制的完整企业解决方案。请访问我们的网站或发送电子邮件至<a href=\"mailto:tecvd@tecvd.com\">tecvd@tecvd.com</a>了解更多信息。"
+
+[[consulting]]
+id = "TundraWare"
+category = "namerica"
+name = "TundraWare Inc."
+url = "http://www.tundraware.com/"
+description = "TundraWare Inc. 在所有环境中提供与 FreeBSD 相关的咨询服务，从嵌入式系统到大型事务处理系统。我们拥有丰富的国际经验，可以提供网络设计、系统架构、开发、部署和运营方面的服务。通过电话 847/827-1706、电子邮件<a href=\"mailto:info@tundraware.com\">info@tundraware.com</a>或写信至 TundraWare Inc., 817 Fairmont Court, Des Plaines, IL 60018, USA 与我们联系。"
+
+[[consulting]]
+id = "Raditex"
+category = "europe"
+name = "Raditex Control AB"
+url = "http://www.raditex.nu/"
+description = "Raditex Control AB 是一家顾问公司，也从事 Unix 教育。我们拥有各种 Unix 系统的长期经验，不仅限于 FreeBSD 或 Linux。有关更多信息，请致电 +46 19 450105 或发送电子邮件至<a href=\"mailto:gorhas@raditex.nu\">gorhas@raditex.nu</a>或<a href=\"http://raditex.nu/\">访问我们的网站</a>。"
+
+[[consulting]]
+id = "ZYTRAX"
+category = "namerica"
+name = "ZYTRAX, Inc"
+url = "http://www.zytrax.com/"
+description = "Zytrax, Inc. 总部位于加拿大蒙特利尔，提供专门针对 BSD 平台的咨询、开发、实施、托管和维护服务。我们的技能基础包括 Apache、PHP、Ruby、DNS、邮件、LDAP、Samba、PostgeSQL/MySQL 和嵌入式系统。请发送电子邮件至<a href=\"MAILTO:consulting@zytrax.com\">consulting@zytrax.com</a>。我们的电话是 +1.514.285.9088。"
+
+[[consulting]]
+id = "oscillation"
+category = "europe"
+name = "os-cillation"
+url = "http://www.os-cillation.de"
+description = "os-cillation，位于德国锡根/北莱茵-威斯特法伦州。我们提供广泛的基于 BSD 的软件开发（C/C++/Java/HTML/PHP/Perl/SQL）。安装和支持基于 FreeBSD 的邮件、Web、防火墙、数据库、新闻、dns 和 ftp 服务器。FreeBSD 和 Windows 桌面集成。还拥有 NetBSD、Solaris 和 Linux 的经验。"
+
+[[consulting]]
+id = "EnvescentLCC"
+category = "namerica"
+name = "Envescent, LLC"
+url = "http://www.envescent.com/"
+description = "Envescent 是专注于 FreeBSD 的技术产品和服务领先提供商。我们提供咨询、预装工作站和服务器、兼容硬件、外包系统和网络管理与实施、安全审计、技术支持等等。"
+
+[[consulting]]
+id = "sheridan"
+category = "europe"
+name = "Sheridan Computers Limited"
+url = "http://www.sheridancomputers.co.uk"
+description = "我们提供基于 BSD 软件的 IT 咨询、系统集成、企业信息系统和安全解决方案。有关更多信息，请发送<a href=\"mailto:info@sheridancomputers.co.uk\">电子邮件</a>或访问我们的<a href=\"http://www.sheridancomputers.co.uk\">网站</a>。我们在英国开展业务。"
+
+[[consulting]]
+id = "BSDPIE"
+category = "europe"
+name = "BSD Professionals In Europe (BSDPIE)"
+url = "http://www.bsdpie.eu/"
+description = "我们是位于德国慕尼黑的基于 BSD 的合作顾问，提供咨询、支持、开发、安装和互联网服务。"
+
+[[consulting]]
+id = "cts"
+category = "europe"
+name = "CTS Consulting and Trade Service"
+url = "http://www.ctseuro.com"
+description = "CTS Consulting & Trade Service 是预装 FreeBSD 服务器的全方位服务顾问和供应商。我们提供防火墙、互联网网关、带病毒防护的邮件系统、实时 http 扫描器、文件和打印服务器。网络规划和实施带 IPSEC 隧道的广域网、Samba 和 Hylafax 安装。成立于 1985 年，拥有自 1978 年以来的 Unix 和大型机经验。我们总部位于奥地利萨尔茨堡和维也纳，在整个欧洲和东欧拥有 5 至 60000 名用户的客户参考。我们还提供预装的 Asterisk 电话系统，并拥有最佳参考。"
+
+[[consulting]]
+id = "netfence"
+category = "europe"
+name = "NetFence"
+url = "http://www.netfence.it"
+description = "NetFence 部署和维护基于 FreeBSD 和其他开源软件（包括 Apache Web 服务器、Squid、Samba、Cyrus IMAP、PostgreSQL、OpenVPN 等）的互联网/内联网服务器。还提供网络和客户端硬件/软件/支持，以及定制编程和安全覆盖。它位于意大利博洛尼亚，可通过<a href=\"mailto:freebsd@netfence.it\">freebsd@netfence.it</a>联系。"
+
+[[consulting]]
+id = "hamburgnet"
+category = "europe"
+name = "Hamburgnet"
+url = "http://www.hamburgnet.de"
+description = "Hamburgnet 为您提供基于 FreeBSD 和 OpenBSD 项目的经验。从低端 Web 服务器到高端防火墙和数据库集群。存储、服务器、Unix、集群和咨询。您可以访问我们的<a href=\"http://www.hamburgnet.de\">网站</a>，<a href=\"mailto:info@hamburgnet.de\">给我们发邮件</a>，致电 +49 (40) 73672322 或通过传真 +49 (40) 73672321 与我们联系。"
+
+[[consulting]]
+id = "tecno21"
+category = "samerica"
+name = "Tecno21 - Openservices"
+url = "http://www.tecno21.com.br/FreeBSD/"
+description = "我们为 FreeBSD、OpenBSD 和 Linux 提供设置和支持。我们在企业和中小企业客户方面拥有超过 10 年的开源软件经验。我们提供定制应用程序（C/C++/Java/C#）、网络基础设施设计、安全、审计和智能卡解决方案。通过<a href=\"mailto:suporte@tecno21.com.br\">电子邮件</a>或电话 +55 (11) 3825-2472 与我们联系。"
+
+[[consulting]]
+id = "pate"
+category = "namerica"
+name = "Pate Consulting, Inc."
+url = "http://www.pateconsulting.com/"
+description = "我们专注于为使用 OpenBSD、FreeBSD 和 Linux 的企业提供可靠的开源解决方案。经营 6 年。12 年经验 - MCSE、CCNA、RHCE 认证 - 还包括 MySQL、PostgreSQL。VPN、防火墙、无线、DNS、squidGuard、邮件 - 甚至 FreeBSD 培训。您可以通过<a href=\"mailto:info@pateconsulting.com\">电子邮件</a>、致电 713.333.5468 或传真 713.333.5494 与我们联系。"
+
+[[consulting]]
+id = "paxym"
+category = "namerica"
+name = "Paxym"
+url = "http://www.paxym.com"
+description = "Paxym 的高技能团队在内核、新 CPU 和主板的引导加载程序、网络安全应用程序、存储设备以及嵌入式软件和网络/存储/安全应用程序的性能调整等领域提供软件开发和咨询服务。Paxym 为 OCTEON（来自 Cavium Networks 的多核 Mips64 CPU）提供 FreeBSD SMP。该端口经过 OpenPosix、Apache WebBench、UnixBench、MySQL Sysbench、OHCP、Netperf、FreeNAS 的广泛测试，以确保稳定性和功能完整性。基于 FreeBSD 7.0 的稳定端口面向网络、安全和存储应用程序。可以在 SMP 模式下使用 1-16 个多核。支持动态和静态链接模型、o32、n64 和 n32 ABI。根文件系统可以嵌入内核内存或放在 Compact-Flash/NFS 上。libthr 用于 POSIX pthreads。Paxym 的团队在多核 Mips (Octeon)、PPC 和 x86 CPU 方面拥有丰富的经验。从 Rom-Monitor、引导加载程序、操作系统、网络堆栈、存储协议、设备驱动程序、安全算法和嵌入式应用程序等方面开展工作。Paxym 一直与 FreeBSD、Linux 和专有操作系统环境密切合作。有关更多信息，请访问<a href=\"http://www.paxym.com\">http://www.paxym.com/</a>"
+
+[[consulting]]
+id = "interfuture"
+category = "europe"
+name = "Interfuture Systems Ltd"
+url = "http://www.interfuture.co.uk"
+description = "Interfuture 是一家英国公司，提供全方位的 UNIX 咨询服务，从桌面安装和支持到关键任务服务器支持和故障排除。我们的专业领域之一和首选操作系统是 FreeBSD。请访问我们的网站了解更多信息或致电 +44 203 002 2111。"
+
+[[consulting]]
+id = "senseofsecurity"
+category = "australia"
+name = "Sense of Security Pty Ltd"
+url = "http://www.senseofsecurity.com.au/"
+description = "Sense of Security 是澳大利亚的免费 BSD 和 Unix 咨询服务提供商。我们非常注重构建安全的网络和系统，包括防火墙、VPN、Web 服务器等。我们也是进行安全审查、审计、渗透测试和评估服务的专家。"
+
+[[consulting]]
+id = "afreebsdbrasil"
+category = "samerica"
+name = "A FreeBSD Brasil"
+url = "https://www.freebsdbrasil.com.br/"
+description = "FreeBSD 巴西。成立于 2002 年，我们为拉丁美洲和加勒比地区 (LAC) 提供 FreeBSD 支持。一家以 FreeBSD 为中心且仅专注于 FreeBSD 的公司，也许是全球唯一一家专门从事 FreeBSD 技术的公司。我们提供专业的咨询、支持（含 SLA）、开发和培训，以及 ProApps，即为数百家公司的关键任务基础设施、安全和高级路由提供支持的 FreeBSD 专业设备。我们利用 FreeBSD 的强大功能为银行、政府、金融、航天机构和顶级企业增加军用级网络防御。我们是防御的多样性，是沉默的战马。在战斗的最后，FreeBSD 创造了不同。深度防御专家。防御多样性专家。合规性、最佳实践、渗透测试、威胁情报。高级路由、基于 netmap 的防火墙和 IDS/IPS、Web 应用程序防火墙、多因素身份验证、身份管理、设施威胁吸收、SOA 审计、响应计划、进攻性防御、红队、渗透测试。这不仅仅是安全，更是网络防御。"
+
+[[consulting]]
+id = "ulbsdru"
+category = "europe"
+name = "Ulyanovsk.BSD (ULBSD)"
+url = "http://www.ulbsd.ru"
+description = "Ulyanovsk.BSD (ULBSD) 是一家位于乌里扬诺夫斯克的俄罗斯公司。我们为基于 ULBSD 操作系统的用户提供技术支持和咨询。我们提供免费和付费版本的操作系统。我们还免费回答用户的许多问题，并帮助他们在 ULBSD 中工作。有关更多信息，请发送电子邮件至<a href=\"mailto:info@ulbsd.ru\">info@ulbsd.ru</a>。"
+
+[[consulting]]
+id = "linuxstans"
+category = "europe"
+name = "Linux Stans"
+url = "https://linuxstans.com/support/"
+description = "一个提供 FreeBSD 服务的自由职业者团队。包括但不限于安装、设置和配置 FreeBSD，以及 24/7 维护、监控和更新"
+
+[[consulting]]
+id = "manchesterpc"
+category = "europe"
+name = "Manchester PC"
+url = "https://www.manchester-pc.co.uk/freebsd-support-manchester/"
+description = "Manchester PC 位于英国曼彻斯特，我们专注于计算机支持服务，例如计算机维修、服务器设置、网络安装和故障排除。我们热爱开源软件，尤其是 FreeBSD、PHP、MySQL、pfSense、FreeNAS 和 Apache。"
+
+[[consulting]]
+id = "AMG-Labs"
+category = "samerica"
+name = "AMG Labs"
+url = "https://www.amglabs.net"
+description = "我们是一家自 2014 年开始运营的软件开发和服务器管理公司。我们致力于开发定制的 Web 系统以及部署和管理基于 CentOS、Debian、FreeBSD、OpenBSD 和 Ubuntu Server 等开源技术的服务器。"
+
+[[consulting]]
+id = "miletic"
+category = "europe"
+name = "Miletic"
+url = "https://www.miletic.net/"
+description = "Miletic 提供科学软件开发、维护、集成和部署服务。具体专长是科学应用程序和库的跨平台移植，包括从 FreeBSD 移植到 FreeBSD 以及从 FreeBSD 移植到其他平台。通过我们的网站<a href=\"https://www.miletic.net/#contact\">www.miletic.net</a>或电子邮件<a href=\"mailto:info@miletic.net\">info@miletic.net</a>联系。"
+
+[[consulting]]
+id = "System Goats"
+category = "namerica"
+name = "System Goats"
+url = "https://systemgoats.com"
+description = "System Goats 为对数据科学基础设施感兴趣的组织提供系统配置、网络、指导和培训。"

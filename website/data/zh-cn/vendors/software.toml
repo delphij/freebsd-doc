@@ -1,0 +1,527 @@
+# Sort the entries by name
+# $FreeBSD$
+
+[[software]]
+id = "Aestiva"
+category = "DEV"
+name = "Aestiva HTML/OS"
+url = "http://www.htmlos.com/"
+description = "Aestiva HTML/OS 是一个用于高级动态网站和网络软件开发的完整解决方案。它消除了对 CGI 编程和集成工具的需求，包含一个内置数据库引擎以及用于打包和复制保护商业网络产品的工具，并支持十多种平台。访问 <a href=\"http://www.htmlos.com\">www.htmlos.com</a> 获取更多信息。"
+
+[[software]]
+id = "Aker"
+category = "NETWORK"
+name = "Aker Firewall"
+url = "http://www.aker.com.br/"
+description = "Aker Firewall 是一个在 FreeBSD 上运行的防火墙解决方案。该防火墙提供有状态过滤引擎、网络地址转换 (NAT)、加密（手动密钥交换和 SKIP）、对预配置事件的自动响应，以及通过在许多不同平台上运行的易于使用的图形界面进行远程管理。有关更多信息，请<a href=\"http://www.aker.com.br/\">访问我们的网站</a>或发送电子邮件至<a href=\"mailto:info@aker.com.br\">info@mail.aker.com.br</a>。"
+
+[[software]]
+id = "interchangecommerce"
+category = "ECOMMERCE"
+name = "Interchange"
+url = "https://www.interchangecommerce.org"
+description = "Interchange 是一个 Web 应用程序服务器、电子目录和数据库显示系统。"
+
+[[software]]
+id = "AMSOFT"
+category = "DATABASE"
+name = "AM'SOFT"
+url = "http://www.amsoft.ru/"
+description = "AM'SOFT (Andrew Maltsev's Software) 提供<a href=\"http://www.amsoft.ru/easysql/\">EasySQL</a>，这是一个类似 ODBC 的、独立于数据库的 C/C++ 库。提供完整的源代码。"
+
+[[software]]
+id = "AstroArch"
+category = "SYSADMIN"
+name = "AstroArch Consulting"
+url = "http://www.astroarch.com/"
+description = "AstroArch Consulting, Inc. 为 FreeBSD 以及其他十三个操作系统开发和许可其<em>ISP 计费和跟踪系统</em> (BATS)。有关更多信息，请访问<a href=\"http://www.astroarch.com/\">www.astroarch.com/</a>，发送电子邮件至<a href=\"mailto:info@astroarch.com\">info@astroarch.com</a>，或致电 +1.512.990.9711。"
+
+[[software]]
+id = "BSProject"
+category = "MISC"
+name = "BS Project"
+url = "http://www.bsproject.net/"
+description = "BS Project 是一个外包项目。该项目的目标是为 VoIP 运营商开发实时计费系统。我们的旗舰产品 VoIP BS 专为中小型 VoIP 运营商设计。VoIP BS 适用于 FreeBSD 和 Linux。有关更多信息，请参阅<a href=\"http://www.bsproject.net/\">www.bsproject.net</a>。"
+
+[[software]]
+id = "Ballista"
+category = "SYSADMIN"
+name = "Ballista"
+url = "http://www.secnet.com/ballista/"
+description = "Ballista 是一种网络安全审计工具，用于在保证级别至关重要的领域评估安全状况。Ballista 主要设计用于审计网络的远程安全方面，并且在 FreeBSD 下运行良好。"
+
+[[software]]
+id = "BrownBear"
+category = "MISC"
+name = "Brown Bear Software"
+url = "http://www.brownbearsw.com"
+description = "Brown Bear Software 生产和支持<a href=\"http://www.brownbearsw.com/calcium/\">Calcium</a>，这是一个您通过浏览器使用的交互式<strong>网络日历服务器</strong>。功能包括：动态日历合并多个视图和格式；重复事件、电子邮件通知和提醒、iCalendar 支持、Palm Pilot 同步、颜色和字体自定义、支持事件文本和日历页眉页脚中的完整 HTML、与任何事件关联的弹出文本、搜索和过滤、多语言支持、灵活的安全模型，<a href=\"http://www.brownbearsw.com/calcium/FeaturesList.html\">以及更多</a>。Calcium 非常易于使用并得到完全支持。它可以在任何支持 Perl CGI 的地方运行；不需要非标准的 Perl 模块。提供一个实时的<a href=\"http://www.brownbearsoftware.com/cgi-bin/Calcium?CalendarName=D emo\">在线演示</a>；您可以下载一个<a href=\"http://www.brownbearsw.com/calcium/download\">评估副本</a>（功能齐全，但仅限于单个日历），或在我们的服务器上尝试您自己的<a href=\"http://www.brownbearsw.com/calcium/onlineTrial.html\">私人演示</a>。"
+
+[[software]]
+id = "CoSORT"
+category = "MISC"
+name = "CoSORT"
+url = "http://www.cosort.com"
+description = "CoSORT 是领先的高性能数据排序和操作软件包，用于处理在 UNIX 服务器上处理的大量数据。CoSORT 于 1985 年首次在 UNIX 上发布，可以以每分钟超过 2GB 的速度并行排序。CoSORT 最常用于：大型机和 COBOL 排序和数据迁移；加速超大型数据库 (VLDB) 重组和加载；在 ETL 和 ODS 环境中集成和暂存海量数据仓库（和数据网络仓库）提取；通过即插即用接口直接替换十几种第三方排序引擎；以及在简单到复杂、多格式/多目标环境中编写自定义报告。CoSORT 可以在 100 多种数据类型之间进行整理和转换。最重要的是，CoSORT 允许您将排序与选择、连接、聚合、类型转换、交叉计算、重新映射和格式化功能结合起来，所有这些都在一次数据处理中完成。访问<a href=\"http://www.cosort.com/\">www.cosort.com</a>，或致电 1-800-333-SORT 了解更多信息并获取您的免费 30 天试用版。"
+
+[[software]]
+id = "CoolHorizon"
+category = "SYSADMIN"
+name = "Cool Horizon"
+url = "http://www.coolhorizon.net/"
+description = "Cool Horizon 为 ISP 提供一个名为<em>Internet Billing</em>的计费软件包。该软件包旨在处理互联网服务提供商的所有计费需求。它在 MS-Windows 下运行。该软件的一部分是客户端/服务器集，其中一个守护程序在 UNIX 服务器（包括 FreeBSD）上运行，允许客户端在 Windows 前端下进行所有用户管理。"
+
+[[software]]
+id = "CybernetSystems"
+category = "NETWORK"
+name = "Cybernet Systems"
+url = "http://www.cybernet.com/"
+description = "Cybernet Systems 为 FreeBSD 生产<a href=\"http://www.netmax.com/\">NetMAX</a>系列瘦服务器和专业产品。瘦服务器系列包括防火墙（带路由器）、网络服务器（带电子邮件和 FTP）和文件服务器（带打印共享）。NetMAX Professional 包含这三个功能，以及讨论组/新闻服务器、拨入功能、增强的系统管理和报告功能、扩展的支持等等。通过 GUI 轻松安装随附的操作系统，并通过 Web 浏览器设置和管理您的服务器。节省处理繁琐任务的时间。可以访问命令行以供“传统”Unix 使用。"
+
+[[software]]
+id = "Dartware"
+category = "NETWORK"
+name = "Dartware, LLC"
+url = "http://www.dartware.com/"
+description = "Dartware 的旗舰产品 InterMapper 显示活动地图，提供关键网络设备和链路之间流量的实时可视化视图。状态窗口允许您通过显示任何链路或设备正在使用的容量百分比来主动和被动地做出反应。InterMapper 使用 ping、SNMP、Web、SMTP 和数十个内置服务器探针来密切关注网络的关键部分，并在出现问题时通知您——甚至在您的客户致电之前。当 InterMapper 检测到问题时，它会向一个或多个负责人发送通知。这些声音、电子邮件、寻呼和短信可以延迟或重复以建立升级计划。InterMapper 的自动发现和地图安排工具可让您在一两个小时内安装并运行它。<br />您可以免费获得一个永不过期、功能齐全的许可证，该许可证可让您监控多达五个设备。有关更多信息，请访问<a href=\"http://www.intermapper.com/\">www.intermapper.com</a>。"
+
+[[software]]
+id = "DBMaker"
+category = "DATABASE"
+name = "DBMaker"
+url = "http://www.dbmaker.com"
+description = "DBMaker 为您提供具有多媒体功能、原生 ODBC 接口、大型数据库功能和跨平台支持的专业数据库系统。独特的开放式架构和原生 ODBC 接口让您可以自由地使用各种编程工具（如 Visual Basic 或 Delphi）构建自定义应用程序，或使用现有的符合 ODBC 的应用程序查询数据库。DBMaker 提供出色的多媒体处理功能，允许您存储、搜索、检索和操作所有类型的多媒体数据。二进制大对象 (BLOB) 允许您通过充分利用 DBMaker 中包含的高级安全和崩溃恢复机制来确保多媒体数据的完整性；文件对象 (FO) 允许您管理多媒体数据，同时保持在源应用程序中编辑单个文件的能力。<a href=\"http://www.dbmaker.com\">立即下载免费副本！</a> - DBMaker 的这个免费副本包括一个三用户许可证，没有时间或存储限制。更多信息请访问<a href=\"http://www.dbmaker.com\">www.dbmaker.com</a>。"
+
+[[software]]
+id = "Devart"
+category = "DATABASE"
+name = "Devart"
+url = "https://www.devart.com/unidac"
+description = "Devart Delphi 数据访问组件是功能丰富、性能卓越的组件库，可在 Windows、Mac OS X、iOS、Android、Linux 和 FreeBSD（32 位和 64 位平台）上为 Delphi、C++Builder、Lazarus（和 Free Pascal）提供与 Oracle、SQL Server、MySQL、PostgreSQL、SQLite、Interbase、Firebird 的原生连接。这些数据访问组件旨在帮助程序员开发快速的原生桌面和移动应用程序。它提供了通过原生数据访问和直接通过 TCP/IP 连接到 Oracle、SQL Server、MySQL、PostgeSQL、SQLite、Firebird 和 Interbase 的可能性，而无需涉及数据库客户端。"
+
+[[software]]
+id = "Easysoft"
+category = "DEV"
+name = "Easysoft Ltd"
+url = "http://www.easysoft.com/"
+description = "Easysoft Ltd 的 ODBC-ODBC Bridge 2000 (OOB) 提供从任何远程客户端（例如 Unix、Linux、OpenVMS、Windows 或其他系统）对任何本地 ODBC 数据源的完全访问。有关更多信息或下载软件，请访问<a href=\"http://www.easysoft.com/\">www.easysoft.com</a>。<p></p> Easysoft 的 JDBC-ODBC Bridge 2000 (JOB) 提供从 FreeBSD 平台上的 Java Applet 或应用程序到网络上安装了桥接器服务器组件的任何位置的 ODBC（开放数据库连接）数据源的 Type 3 JDBC 访问。更多信息可以在我们的<a href=\"http://www.easysoft.com\">网站</a>上找到"
+
+[[software]]
+id = "EasyStat"
+category = "MISC"
+name = "EasyStat"
+url = "http://www.easystat.net/"
+description = "EasyStat 是一个类似“计数器”的应用程序。它将跟踪您网站的访问者数量，并收集有关您访问者的信息，例如他们的浏览器、操作系统、引荐来源等。然后，EasyStat 将以优雅的方式显示它收集的所有信息，其网站上提供了演示。"
+
+[[software]]
+id = "EfficientIP"
+category = "NETWORK"
+name = "Efficient IP"
+url = "http://www.efficientip.com/"
+description = "Efficient IP 是一家总部位于美国的解决方案提供商 - 软件编辑器，专注于开发用于管理 IP 网络、DHCP 和 DNS 服务器的广泛架构的专业工具。我们的目标是为您提供一个完整、简单和动态的解决方案，使您能够执行这些服务的所有管理，同时适应您的 IT 安装的技术、人力或管理限制。"
+
+[[software]]
+id = "EiffelSoftware"
+category = "DEV"
+name = "Eiffel Software"
+url = "http://www.eiffel.com/"
+description = "Eiffel Studio 是一个集成开发环境 (IDE)，专为 Eiffel 面向对象应用程序开发语言而设计。除了企业版之外，还免费提供仅供非商业用途的免费版供下载。"
+
+[[software]]
+id = "ElasticSoftware"
+category = "ECOMMERCE"
+name = "Elastic Path Software"
+url = "http://www.elasticpath.com"
+description = "Elastic Path Software 是灵活、对开发人员友好的 Java 电子商务软件架构的先驱，用于构建复杂且不断发展的在线商店。在一个充满复杂软件的世界里，我们轻量级的电子商务框架令人耳目一新，提供了无限的灵活性并最大限度地降低了总拥有成本。施乐、Sunoco、宝洁、24 Hour Fitness、JBoss 和兰登书屋等公司都使用 Elastic Path 来满足他们今天所需的核心电子商务功能以及他们明天所需的最大灵活性。"
+
+[[software]]
+id = "Elego"
+category = "DEV"
+name = "Elego"
+url = "http://www.elego.de/"
+description = "Elego ComPact 配置管理。<em>Elego ComPact</em>是一套用于配置管理的工具，基于非常可靠且可扩展的版本控制解决方案，与多平台、独立于语言的构建系统以及软件包的概念集成在一起。它提供可编写脚本的面向命令行的程序以及基于 HTTP/HTML 的 GUI，并且可以轻松地逐步引入。<p> 它的一些功能是：客户端/服务器设计、基线和发布分支支持、签入/签出模型、面向包的变更集、集成的构建系统、支持异构平台的开发、可从一个扩展到数百个开发人员、C、C++、Java、Modula-3 的默认配置，可轻松移植到大多数 PC 和工作站平台。</p> <p> Elego ComPact 目前使用 CVS 作为其底层版本控制机器，但未来版本也可能支持其他系统。二进制文件适用于 FreeBSD、Linux、Windows 和 Solaris/SPARC 系统。John Polstra 的 CVSup 可用于存储库镜像/复制。与 CVSup 一样，Elego ComPact 完全用 Modula-3 编写。</p> <p> 功能齐全的演示 CD，包括所有支持平台的二进制文件以及 HTML、DVI、PDF 和 PS 格式的文档，可通过发送电子邮件至<a href=\"mailto:info@elego.de\">info@elego.de</a>获取。更多信息也可从<a href=\"http://www.elego.de\">Elego WWW 主页</a>获得。"
+
+[[software]]
+id = "EmpressSoft"
+category = "DEV"
+name = "Empress Software Inc."
+url = "http://www.empress.com"
+description = "Empress Software Inc. 开发了<em>嵌入式 Empress 开发人员工具包</em>。要了解有关该工具包的更多信息，请访问<a href=\"http://www.empress.com\">www.empress.com</a>"
+
+[[software]]
+id = "TolisGroup"
+category = "SYSADMIN"
+name = "TOLIS Group, Inc."
+url = "http://www.tolisgroup.com/"
+description = "TOLIS Group, Inc. 开发了<em>BRU</em>，这是一个非常强大且可靠的备份解决方案。除其他功能外，它还提供按文件压缩、改进的磁带格式（具有三种不同的验证方式）以及许多安全检查以确保数据完整性。BRU 完全支持 FreeBSD 4.2 至 8.1 版本。既可作为独立的备份工具，也可作为企业级 BRU Server 产品的客户端。我们提供 32 位和 64 位 Intel 版本，如果客户需要，还可以提供 PPC、Alpha、Itanium 2 和 SPARC 版本。"
+
+[[software]]
+id = "Etherpage"
+category = "MISC"
+name = "Etherpage"
+url = "http://www.ppt.com/"
+description = "EtherPage 为 Unix 网络和 Windows NT 提供基于客户端/服务器的字母数字寻呼解决方案。提供命令行和 Web 界面。EtherPage 非常适合系统和数据库管理，它允许根据数据库事件等自动向支持人员发送消息。其他功能包括链接到电子邮件、与用户编写的脚本集成、多个收件人、按一天中的时间/一周中的某天选择的寻呼机、重复消息抑制、长消息拆分/截断、作业日志记录和 C API。几乎支持所有寻呼服务。"
+
+[[software]]
+id = "FairCom"
+category = "DATABASE"
+name = "FairCom Corporation"
+url = "http://www.faircom.com/"
+description = "自 1979 年以来，FairCom Corporation 一直为专业程序员提供优质的数据库开发工具。FairCom 以其极其便携、高性能的数据管理产品<em>c-tree Plus</em>而闻名。该产品以完整的源代码发布，并支持点对点开发和客户端开发，以便与<em>c-tree</em>数据库服务器一起使用。FreeBSD 版本提供高级的跨平台功能，包括工业级事务处理、文件镜像、海量文件支持和灾难恢复。FairCom ODBC 驱动程序和 Crystal Report(tm) 接口允许最终用户使用更高级别的产品（如 Microsoft Access 和 Crystal Reports）访问<em>c-tree</em> Plus 应用程序。FairCom 工具集由<em>r-tree</em>（一个强大的报表生成器）和强大的 FairCom 服务器（具有异构网络支持）完成，它允许不同的客户端连接到一个平台，并轻松迁移到超过 20 个受支持的平台，从 FreeBSD 到 Windows 再到 Mac。有关更多信息，请访问<a href=\"http://www.faircom.com/\">www.faircom.com</a>。"
+
+[[software]]
+id = "GroundLabs"
+category = "SECURITY"
+name = "Ground Labs"
+url = "http://www.groundlabs.com"
+description = "Ground Labs 是支付卡行业持卡人数据发现软件开发的全球领导者。其旗舰产品<a href=\"http://www.groundlabs.com/products/crse\">Card Recon</a>和<a href=\"http://www.groundlabs.com/products/cree\">Enterprise Recon</a>可识别全球数千个计算机系统上的数据存储风险，帮助公司防止导致客户信用卡和借记卡号码被盗的安全漏洞。有关更多信息和我们产品的免费试用版，请访问<a href=\"http://www.groundlabs.com/\">www.groundlabs.com</a>。"
+
+[[software]]
+id = "icon"
+category = "DEV"
+name = "Icon Laboratories"
+url = "http://www.icon-labs.com/"
+description = "Icon Laboratories 为 FreeBSD 提供 Envoy。Envoy 是 ISI 流行的 Envoy SNMP 库的移植版本。每个端口都包含用于 C 开发的 SNMP 库和头文件、一个 MIB 编译器以及一个示例代理的源代码，专为 FreeBSD 设计。有关更多信息，请发送电子邮件至<a href=\"mailto:info@icon-labs.com\">info@icon-labs.com</a>。"
+
+[[software]]
+id = "InterBase"
+category = "DATABASE"
+name = "InterBase"
+url = "http://www.interbase.com"
+description = "InterBase 是完美的嵌入式数据库。在每个出色的客户端/服务器应用程序背后，您都会发现一个出色的数据库，而且很可能是一个嵌入式数据库。出色嵌入式数据库的标志是它能够为应用程序提供支持并提供信息，同时对最终用户几乎不可见，并且几乎不需要数据库管理员的关注。那个数据库就是 InterBase。InterBase 的日本合作伙伴 RIOS Corporation 现在正在为 FreeBSD 提供 InterBase 4 的端口。更多信息请访问<a href=\"http://www.interbase.com\">www.interbase.com</a>或直接从 RIOS 访问<a href=\"http://iblinux.rios.co.jp/intl/\">http://iblinux.rios.co.jp/intl/</a>"
+
+[[software]]
+id = "iPass"
+category = "SYSADMIN"
+name = "iPass"
+url = "http://www.ipass.com/"
+description = "i-Pass Alliance 是为互联网服务提供商提供全球互联网漫游解决方案的领先提供商。我们提供一个完整的解决方案，使 ISP 能够加入全球网络，并为其旅行的互联网用户提供方便、低成本的全球访问。我们是一个独立的组织，处理您与其他互联网服务提供商之间的财务结算，并使您能够向其用户收取此项服务的费用。加入无需任何费用，i-Pass 软件也无需任何费用。i-Pass 交叉授权和结算软件与所有常见的身份验证协议和服务器兼容，包括 FreeBSD。有关更多信息，请访问<a href=\"http://www.ipass.com/\">www.ipass.com</a>。"
+
+[[software]]
+id = "irie"
+category = "DEV"
+name = "Irie Tools"
+url = "http://www.irietools.com/"
+description = "Irie Tools 开发了 Irie Pascal，这是一个多平台编译器和解释器，可使用通用网关接口创建控制台程序和 Web 服务器程序。功能包括对标准 Pascal 的强大支持（非常适合学习 Pascal）、MySQL 数据库编程以及创建用于处理大型数据集的程序（代码或数据没有 64K 限制）。Irie Pascal 支持五种不同的操作系统（FreeBSD、Windows、Linux、Solaris/x86 和 Solaris/Sparc）。每个受支持的操作系统都有一个单独的 Irie Pascal 版本，并且使用任何版本中的编译器创建的程序都可以由所有版本中的解释器执行（无需重新编译）。<a href=\"http://www.irietools.com\">Irie Tools 网站</a>上提供了免费的评估副本。"
+
+[[software]]
+id = "journyx"
+category = "MISC"
+name = "journyx WebTime"
+url = "http://journyx.com/products.html"
+description = "journyx WebTime 是一款基于 Web 的时间和考勤跟踪产品，适用于工程部门和技术咨询公司或拥有移动人员的承包公司。它是在 FreeBSD 上开发的。由于它是基于 Web 的，因此可以进行全球数据收集。"
+
+[[software]]
+id = "Kaspersky"
+category = "SECURITY"
+name = "Kaspersky Lab"
+url = "http://www.kaspersky.com/"
+description = "卡巴斯基实验室为 FreeBSD 提供 KasperskyT Anti-Virus (AVP)——一种独特的反病毒解决方案。该产品为运行 FreeBSD 的文件和应用程序服务器及网关提供全面的保护。Kaspersky Anti-Virus for FreeBSD 包括最完整的反病毒工具集，可帮助您构建多层防御系统，抵御任何类型的恶意代码攻击，包括计算机病毒、互联网蠕虫和木马。该软件包包括一个用于按需检查数据存储设备（本地和网络）上病毒的反病毒扫描程序；一个实时过滤数据中病毒的反病毒守护程序。Kaspersky Anti-Virus for FreeBSD 提供了一个交互式配置程序和一个用于自动下载反病毒数据库更新的实用程序。该产品还包括一个现成的解决方案，可将产品集成到流行的 Sendmail 和 Qmail 网关中。这是创建您自己的集中式电子邮件流量过滤系统并清除其中病毒的完美解决方案。Kaspersky Anti-Virus for FreeBSD/BSDi 的客户端部分以开源代码提供。这使您可以轻松地将产品集成到您自己的应用程序中以执行特定任务，例如，集成到其他电子邮件或应用程序服务器中。卡巴斯基实验室还为 DOS、Windows 95/98、Windows 2000/NT Workstation/Server、Novell NetWare、Linux、OS/2、BSDi、MS Exchange Server、Lotus Notes 和 MS Office 2000 开发反病毒解决方案。"
+
+[[software]]
+id = "LoneStar"
+category = "SYSADMIN"
+name = "Lone Star Software Corp"
+url = "http://www.LONE-TAR.com/"
+description = "15 年来，LONE-TAR 一直是 UNIX 系统管理员事实上的标准备份解决方案。LONE-TAR 是一个完全由菜单驱动的数据归档和恢复实用程序。它采用高压缩率，可将存档设备的容量增加一倍，并对存档数据与硬盘进行位级验证。"
+
+[[software]]
+id = "Lugaru"
+category = "DEV"
+name = "Lugaru Software Ltd."
+url = "http://www.lugaru.com"
+description = "Lugaru 的 Epsilon 程序员编辑器具有 EMACS 风格和 Brief 风格的键绑定、C/C++/Java、Perl、HTML 和 TeX 模式、具有类型记录日志的并发编译器控制、语法高亮、异步 Internet 支持、智能缩进和标签，以及多文件、多目录搜索和替换。此外还有完整的撤消/重做、跨目录文件模式、命令/文件名补全、方便的键盘宏、交互式可定制性等等。包括适用于 FreeBSD、Linux、Windows 95/98/NT/2000/3.1、OS/2 和 DOS 的可执行文件。访问<a href=\"http://www.lugaru.com\">www.lugaru.com</a>了解详情并获取免费评估副本。"
+
+[[software]]
+id = "MainStreet"
+category = "ECOMMERCE"
+name = "MainStreet"
+url = "http://www.mainstreetsoftworks.com/"
+description = "MainStreet Softworks 为零售、邮购/电话订购和电子商务行业开发和销售关键的金融交易软件。其主要软件产品 MainStreet Credit Verification Engine 在许多符合 POSIX 的主机操作系统（如 FreeBSD）上提供直接的信用卡授权/结算服务。MCVE 提供授权和结算主要信用卡所需的所有功能，并已通过成熟的清算所（处理商）认证，以确保尽可能低的商户费率。要了解更多信息，请访问我们的<a href=\"http://www.mainstreetsoftworks.com/\">网站</a>或通过<a href=\"mailto:info@mainstreetsoftworks.com\">info@mainstreetsoftworks.com</a>与我们联系。"
+
+[[software]]
+id = "Muonics"
+category = "DEV"
+name = "Muonics"
+url = "http://www.muonics.com/Products/MIBSmithy/"
+description = "Muonics 的 MIB Smithy 是一款面向简单网络管理协议 (SNMP) 开发人员、管理信息库 (MIB) 设计人员和互联网草案作者的软件产品，它提供了一个基于 Visual GUI 的环境，用于根据 SMIv1 和 SMIv2（管理信息结构）标准设计、编辑和编译 MIB 模块。MIB Smithy 支持多种平台，包括 FreeBSD。更多信息和 15 天有限评估版可从<a href=\"http://www.muonics.com/\">www.muonics.com</a>获取。"
+
+[[software]]
+id = "NAG"
+category = "SCIENTIFIC"
+name = "NAG, Ltd."
+url = "http://www.nag.co.uk/"
+description = "NAG, Ltd. 为大多数 Unix（包括 FreeBSD）、VMS 和 PC 提供 Fortran-90 编译器。<em>NAGWare f90</em>编译器是 Fortran 90 的完整实现（根据定义，它包括 Fortran 77），外加 HPF 的单处理器实现。有关更多信息，在北美，请发送电子邮件至<a href=\"mailto:naginfo@nag.com\">naginfo@nag.com</a>，在其他地方，请发送电子邮件至<a href=\"mailto:infodesk@nag.co.uk\">infodesk@nag.co.uk</a>。或者，访问<a href=\"http://www.nag.co.uk/\">www.nag.co.uk/</a>。"
+
+[[software]]
+id = "NameSurfer"
+category = "SYSADMIN"
+name = "NameSurfer, Ltd."
+url = "http://www.namesurfer.com/"
+description = "NameSurfer, Ltd. NameSurfer 是一个用于 DNS 数据的分布式管理工具，具有基于 WWW 的图形用户界面，用于远程 Internet 和 Intranet DNS 管理。FreeBSD 提供功能齐全的评估版。有关更多信息，请访问<a href=\"http://www.namesurfer.com/\">www.namesurfer.com</a>。"
+
+[[software]]
+id = "NetBeans"
+category = "DEV"
+name = "NetBeans, Inc."
+url = "http://www.netbeans.org/"
+description = "NetBeans, Inc. 制作 Java IDE，用 Java 编写，可在 FreeBSD 上运行。提供一套完整的开放 API 用于扩展环境。"
+
+[[software]]
+id = "Netsville"
+category = "SYSADMIN"
+name = "Netsville, Inc."
+url = "http://www.netsville.com/"
+description = "Netsville, Inc. 销售一种名为<a href=\"http://hazel.netsville.com/\">Hazel</a>的互联网商品销售系统，该系统允许网站管理员、网站顾问或普通店主在互联网上创建网上商店。Hazel 与 Web 服务器接口，使用 SSL 进行安全保护，并使用各种交易处理器进行信用卡授权。开发人员实际上是使用 FreeBSD 作为其操作系统来编写 Hazel 的。如果您需要一个灵活的互联网购物车解决方案，Hazel 是您的最佳选择。"
+
+[[software]]
+id = "NettixPeru"
+category = "MISC"
+name = "Nettix Peru"
+url = "http://www.nettix.com.pe/"
+description = "Nettix Peru 为当今秘鲁和拉丁美洲的中小型公司提供基于开源软件的增值解决方案。我们的主要技能在于 Linux、Unix、网络和安全相关主题。"
+
+[[software]]
+id = "Openmake"
+category = "DEV"
+name = "Openmake"
+url = "http://www.openmake.com/"
+description = "Openmake 是一个基于 GUI 和 shell 的构建管理器，其功能超出了备受喜爱的 GNU make。Openmake 被一些全球最大的公司用于简单的应用程序和复杂的多语言/多操作系统应用程序，它允许完全标准化和自动化构建过程。与任何版本控制工具（例如 RCS）结合使用，Openmake 绝对可以确保源代码和可执行文件匹配。同时将您的客户端构建提交到 Windows，将您的服务器构建提交到 FreeBSD（或 AIX、HP、Sun、Sequent、OS/2）。有关更多信息，请访问<a href=\"http://www.openmake.com\">www.openmake.com</a>。"
+
+[[software]]
+id = "PacificTimesheet"
+category = "ECOMMERCE"
+name = "Pacific Timesheet"
+url = "http://www.pacifictimesheet.com/"
+description = "Pacific Timesheet 是一款基于网络的工时表软件，在一个系统中提供工资、项目、工作成本核算、时间和考勤功能。其他模块包括自动审批、计费和工资率、休假安排、自定义报告、iPhone 工时表、IVR 集成、时钟集成和工资集成。我们支持所有主流操作系统和浏览器。我们的软件提供许可版或 ASP/在线版。"
+
+[[software]]
+id = "Parabase"
+category = "MISC"
+name = "Parabase Technology Inc."
+url = "http://www.parabase.com"
+description = "Parabase Technology Inc. 提供 Parabase Web-Order-System，这是一套集成的基于 Web 的业务应用程序，包含基于 Web 的订单输入、目录生成、购物车和管理。它会自动计算运费和手续费以及销售税 [取决于地点]，并具有完整的发票预览和电子邮件订单确认。该系统目前与 QuickBooks 和 Excel 接口；可根据要求提供其他会计软件包。该系统基于高度可靠的日记账数据库概念。更多信息请访问<a href=\"http://www.parabase.com\">www.parabase.com</a>。"
+
+[[software]]
+id = "Perforce"
+category = "MISC"
+name = "Perforce Software"
+url = "http://www.perforce.com/"
+description = "Perforce Software 生产<a href=\"http://www.perforce.com/product/perforce\">PERFORCE</a>——快速软件配置管理系统。Perforce SCM 为在多个操作系统和多个物理位置工作的组织简化了软件开发过程。这个功能强大的 SCM 系统可在 50 多种操作系统上运行，包括 Windows 和几乎所有 UNIX 变体，从 Linux 到 Mac OS X 再到 AS/400，为软件开发人员提供了一个易于使用的工具，用于版本控制、工作区管理和原子更改事务。可从<a href=\"http://www.perforce.com\">Perforce 网站</a>获得免费、功能齐全的评估版。专门在开源许可下许可或分发软件的组织可能有资格免费获得 Perforce 许可证。可通过<a href=\"mailto:info@perforce.com\">info@perforce.com</a>或 +1-510-864-7400 联系 Perforce Software。"
+
+[[software]]
+id = "pfSense"
+category = "SECURITY"
+name = "pfSense"
+url = "https://www.pfsense.org/"
+description = "<a href=\"https://www.pfsense.org\">pfSense 项目</a>是一个免费的网络防火墙发行版，基于 FreeBSD 操作系统，具有自定义内核，并包含用于附加功能的第三方免费软件包。pfSense 软件在软件包系统的帮助下，能够提供与更常见的商业防火墙相同或更多的功能，而没有任何人为限制。"
+
+[[software]]
+id = "PixInsight"
+category = "SCIENTIFIC"
+name = "PixInsight"
+url = "http://pixinsight.com/"
+description = "<a href=\"http://pixinsight.com/features/index.html\">PixInsight</a>是一个先进的模块化图像处理软件平台，专为满足天体摄影和其他技术成像领域的苛刻要求而设计。PixInsight 可在 FreeBSD、Linux、Mac OS X 和 Windows 操作系统（32 位和 64 位版本）上原生使用。有关更多信息，请访问我们的<a href=\"http://pixinsight.com/\">网站</a>。"
+
+[[software]]
+id = "Polyhedra"
+category = "DATABASE"
+name = "Polyhedra"
+url = "https://www.enea.com/polyhedra"
+description = "Polyhedra 是一个内存中的对象关系数据库，非常适合需要事件驱动、对数据更改的实时响应、复杂的数据库设计、分布式应用程序以及高可用性和连续运行的容错性的关键任务应用程序。<p> 对象关系数据库可以包含处理基于 IP 的协议的对象，对象方法在数据库进程本身中运行，并且可供数据库中存储的其他对象/信息访问。<a href=\"https://www.enea.com/polyhedra\">我们的网站</a>提供了一个 Polyhedra 的示例，它既充当 Web 服务器又充当信息存储，包括可用于在 Linux 模式下在 FreeBSD 上试用 Polyhedra 的免费下载。"
+
+[[software]]
+id = "quadstor"
+category = "SYSADMIN"
+name = "QUADStor Systems"
+url = "http://www.quadstor.com"
+description = "QUADStor Systems 为 FreeBSD 和 Linux 提供存储虚拟化和数据去重产品。QUADStor 存储虚拟化的优势包括数据去重、数据压缩、易于管理等。最棒的是，QUADStor 产品可免费用于非商业用途。有关更多信息，请访问我们的<a href=\"http://www.quadstor.com\">网站</a>。"
+
+[[software]]
+id = "REBOL"
+category = "SCIENTIFIC"
+name = "REBOL"
+url = "http://www.rebol.com/"
+description = "REBOL 是一种全新的、基于网络的消​​息传递语言，可提高生产力、缩减应用程序大小并缩短应用程序上市时间。该语言以人为本，而非以计算机为本，为 Java 和 C++ 等过时的编程语言以及 PERL 和 Tcl 等脚本语言提供了一种新的替代方案。REBOL 结构紧凑、平台独立，可在网络或单个系统上运行。它非常适合网站管理员、技术人员、业余爱好者、教育工作者、实验者以及任何需要简单、可定制、健壮、易于理解的语言的人。立即在<a href=\"http://www.rebol.com/downloads.html\">www.rebol.com/downloads.html</a>下载<em>自由语言</em> (tm)"
+
+[[software]]
+id = "Revolution"
+category = "DEV"
+name = "Revolution"
+url = "http://www.runrev.com/"
+description = "Revolution 是一款多平台软件开发工具，使开发人员能够轻松快速地为 OS X、经典 Mac OS、Windows、Linux 和流行的 Unix 系统（包括 FreeBSD）创建功能强大的应用程序……在所有平台上都具有原生外观和感觉。有关更多信息或下载免费的 30 天试用评估版，请访问<a href=\"http://www.runrev.com/\">www.runrev.com</a>。"
+
+[[software]]
+id = "Sendmail"
+category = "EMAIL"
+name = "Sendmail Inc"
+url = "http://www.sendmail.com/"
+description = "Sendmail Inc. 开发商业版 (Sendmail Pro) 和免费版的 sendmail，这是一种无处不在的邮件传输代理。它支持 FreeBSD 以及许多其他 Unix 实现。"
+
+[[software]]
+id = "SiamScan"
+category = "ECOMMERCE"
+name = "SiamScan.NET"
+url = "http://www.siamscan.net/"
+description = "SiamScan.NET 是一家总部位于曼谷的公司，提供商业网络应用软件 CPA - 协同便携式会计。CPA 是一款网络会计软件，旨在让非会计人员也能轻松使用。此外，我们还提供 FreeBSD 系统的维护和实施服务。有关更多信息，请发送电子邮件至<a href=\"mailto:sale@siamscan.net\">sale@siamscan.net</a>，访问<a href=\"http://www.siamscan.net/\">SiamScan.NET</a>网站，致电 +66 2532 9068-70，或传真 +66 2533 4167。"
+
+[[software]]
+id = "Oracle"
+category = "DATABASE"
+name = "Oracle"
+url = "http://www.oracle.com"
+description = "Oracle 分发 Berkeley DB，这是一个带有完整源代码的可嵌入数据库系统。Oracle Berkeley DB 经过测试和认证，可在所有现代操作系统上编译和运行，包括 Solaris、Windows、Linux、Android、Mac OS/X、BSD、iPhone OS、VxWorks 和 QNX 等。它提供高端数据管理服务，包括完整的事务支持、灾难恢复、热备份、超大型数据库以及同时处理大量用户的能力。键和记录可以任意长，并且可以是任意数据类型。Berkeley DB 可以将数据存储在 B+ 树、哈希表或顺序存储中。编程接口简单，可以从 C、C++、Java 或 Perl 调用。Berkeley DB 易于安装和管理，因此您的客户可以使用您的应用程序而无需学习如何成为数据库管理员。有关更多信息，请访问<a href=\"http://www.oracle.com/us/products/database/berkeley-db/index.html\">Berkeley DB 网站</a>。"
+
+[[software]]
+id = "SoftIntegration"
+category = "DEV"
+name = "SoftIntegration, Inc."
+url = "http://www.softintegration.com/"
+description = "Ch 是一个可嵌入的 C/C++ 解释器，用于跨平台脚本、2D/3D 绘图、数值计算、shell 编程和嵌入式脚本。Ch 支持 ISO 1990 C 标准 (C90)、C99 的主要特性（复数、可变长度数组或 VLA、类型通用函数、长数据类型等）和 C++ 类。Ch 对 C 语言进行了扩展，内置字符串类型等，便于编写脚本。Ch 还具有计算数组的扩展，便于进行数值计算和 2D/3D 绘图。除了 Ch，我们还有一个免费的 C CGI 工具包，类似于 ASP 和 JSP，用于 Web 开发。"
+
+[[software]]
+id = "Solid"
+category = "DATABASE"
+name = "Solid Information Technology Ltd"
+url = "http://www.solidtech.com/"
+description = "Solid Information Technology Ltd 是独特数据管理产品<a href=\"http://www.solidtech.com/market/products/index.htm\">SOLID Server</a>的制造商。它专为在要求苛刻的环境中稳健运行而设计。其体积小、易于使用，非常适合部署到网站、各种嵌入式系统以及其他需要数据库无人值守运行的环境中。可从<a href=\"http://www.solidtech.com/market/eval/index.htm\">此处</a>下载免费评估副本。"
+
+[[software]]
+id = "Sophos"
+category = "SECURITY"
+name = "Sophos Anti-Virus"
+url = "http://www.sophos.com"
+description = "Sophos Plc 为 FreeBSD 提供<em>Sophos Anti-Virus</em>。Sophos Anti-Virus 是解决病毒问题的独特解决方案，在一个完全集成的产品中提供真正的跨平台保护。以网络为中心的设计为服务器、工作站和便携式设备的保护带来了许多好处。Sophos 的突破性架构最大限度地提高了保护，同时最大限度地减少了性能和管理开销。Sophos Anti-Virus 可完全扩展，同样适用于保护单台 PC、本地网络或整个企业。Sophos Anti-Virus 适用于所有流行的桌面和网络操作系统，包括 DOS、Windows 3.x/95/98/NT/2000、Unix（包括 FreeBSD）、OS/2、Netware 和 OpenVMS。Sophos Anti-Virus 监控所有病毒入口点，包括磁盘、程序、文档、网络驱动器、CD-ROM、互联网下载、电子邮件附件和压缩文件。超过 65% 的《泰晤士报》百强公司使用 Sophos Anti-Virus 来保护其网络免受病毒侵害。Sophos Anti-Virus 保护的这种认可在全球范围内共享。可<a href=\"http://www.sophos.com/en-us/products/free-trials.aspx\">下载</a>免费评估副本。"
+
+[[software]]
+id = "StalkerSoftware"
+category = "NETWORK"
+name = "Stalker Software, Inc."
+url = "http://www.stalker.com/"
+description = "Stalker Software, Inc. 提供<a href=\"http://www.stalker.com/CommuniGatePro/\">CommuniGate Pro</a>，即互联网消息服务器。它基于 Stalker Foundation 框架，采用所有主要操作系统的原生服务，包括 FreeBSD、Windows 95/98、Windows NT、Apple Rhapsody、Linux、Solaris 等。CommuniGate Pro 服务器充分利用了现代多线程和多处理器环境，并包括反垃圾邮件保护、通过 Web 进行管理、广泛的多域支持、拨号功能、独特的 IMAP 多邮箱功能，旨在提供对数十万个帐户的访问，并在负载最重的站点上中继邮件。从<a href=\"http://www.stalker.com/\">www.stalker.com</a>下载免费试用版或发送电子邮件至<a href=\"mailto:sales@stalker.com\">Stalker Software Sales</a>。"
+
+[[software]]
+id = "StarQuest"
+category = "DATABASE"
+name = "StarQuest Ventures"
+url = "http://www.starquest.com/"
+description = "StarQuest Ventures 提供连接产品，允许 Windows、UNIX 和 Java 应用程序访问大型机和中型机系统上的 IBM 主机资源。StarQuest 提供 StarSQL（用于连接 IBM DB2 关系数据库的 ODBC 兼容驱动程序）和 StarSQL for Java（用于 DB2 访问的类型 4 JDBC 兼容驱动程序），以便与 FreeBSD 一起使用。这些驱动程序通过直接 TCP/IP 连接实现与各种 IBM DB2 平台的原生 DRDA 协议，无需额外的主机软件。它们包括对 LOB（大对象）数据、加密密码、连接池和全局两阶段提交 (2PC) 事务的支持。请访问<a href=\"http://www.starquest.com\">www.starquest.com</a>了解更多信息或获取试用版。"
+
+[[software]]
+id = "Tonec"
+category = "MISC"
+name = "Tonec, Inc."
+url = "http://www.tonec.com"
+description = "Tonec, Inc. 提供屡获殊荣的产品和解决方案，用于 Web 开发、Java applet 和 Perl 模块。Tonec 是 Adgen 的开发商，Adgen 是适用于 Linux 和 FreeBSD 的 BMP 到 PFR 动态字体转换器。此外，Tonec 在其位于俄罗斯、波兰和拉脱维亚的开发中心提供定制编程、经济高效的离岸软件开发、网页设计以及定制 ASP 和 Java 开发服务。<a href=\"http://www.tonec.com\">访问我们的网站</a>了解更多信息。"
+
+[[software]]
+id = "Vital"
+category = "DEV"
+name = "Vital, Inc."
+url = "http://www.vital.com/"
+description = "Vital, Inc. 是 CRiSP 可视化文本编辑器的制造商。CRiSP 是适用于 FreeBSD 和大多数其他 Windows、UNIX 和 Linux 平台的开发工具。CRiSP 100% 与 BRIEF 兼容，并且还模拟其他流行的编辑器，如 vi、emacs、EDT、CUA 和 Wordstar。这使得 CRiSP 成为一个功能强大且易于使用的编辑软件包，具有剪切和粘贴、语法着色、代码美化、代码折叠、搜索等功能。"
+
+[[software]]
+id = "WebHostWorks.net"
+category = "ECOMMERCE"
+name = "WebHostWorks.net"
+url = "http://www.webhostworks.net/"
+description = "WebHostWorks.net 是一家小型且蓬勃发展的网络开发公司，专门为中小型企业提供电子商务集成。我们专有的 E-Cart 商务软件包支持非常实用的购物车服务，具有后端产品列表管理、订单处理、执行摘要报告、客户评论处理和库存预测功能。有关更多信息，请参阅<a href=\"http://www.webhostworks.net\">webhostworks.net</a>。"
+
+[[software]]
+id = "XDesigner"
+category = "DEV"
+name = "X-Designer"
+url = "http://www.ist-inc.com/xd/"
+description = "来自<a href=\"http://www.ist-inc.com/\">Imperial Software Technology</a>的 X-Designer 是适用于 FreeBSD 的高级 GUI 构建器。X-Designer 使构建和测试图形用户界面变得容易。使用 X-Designer 从单个设计快速创建可用的 X/Motif、Windows 或 Java GUI。包括自动 GUI 测试和使用 XD/Capture 重新设计旧 Motif 界面的技术。访问我们的<a href=\"http://www.ist-inc.com/xd\">网站</a>了解更多信息或发送电子邮件至<a href=\"mailto:sales@ist-inc.com\">sales@ist-inc.com</a>。"
+
+[[software]]
+id = "XGForce"
+category = "NETWORK"
+name = "XGForce.COM"
+url = "http://www.xgforce.com/"
+description = "XGForce.COM 宣布推出<a href=\"http://www.xgforce.com/eCluster.html\">eCluster(tm)</a>软件。新的互联网集群技术旨在将内联网/互联网服务器集群成虚拟组，从而实现服务器负载平衡和故障安全。"
+
+[[software]]
+id = "SippySoftwareInc"
+category = "NETWORK"
+name = "Sippy Software, Inc."
+url = "http://www.sippysoft.com"
+description = "Sippy Software, Inc. 是一家 VoIP 解决方案公司。我们使互联网电话服务提供商 (ITSP) 和语音网络运营商能够快速高效地实施、管理和交付各种 IP 电话服务。我们的旗舰产品<a href=\"http://www.sippysoft.com/?page=products&m_l2=0&m_l3=0\">Sippy Softswitch</a>是一款运营商级 SIP 会话控制器和计费/计费解决方案，也是一个极其灵活的客户管理平台，使 IP 电话服务提供商能够启动、定价和配置一系列 VoIP 服务。有关更多信息，请参阅<a href=\"http://www.sippysoft.com\">www.sippysoft.com</a>。我们使用 FreeBSD 作为运行我们软件的平台，并积极支持它以及其他几个免费软件项目，例如<a href=\"http://www.iptel.org/ser\">SER</a>和<a href=\"http://www.b2bua.org\">Sippy B2BUA</a>，方法是回馈我们的修复和增强功能。"
+
+[[software]]
+id = "ClickTime"
+category = "NETWORK"
+name = "ClickTime"
+url = "http://www.clicktime.com/"
+description = "ClickTime 是一款易于使用的网络时间表，用于计费、成本核算和工资单。用户友好且速度超快，员工可以在任何有互联网连接的计算机（Mac 或 PC）上轻松输入时间。如果他们忘记了，ClickTime 会提醒他们。现在，员工不必等到回到办公室才提交费用；使用 ClickTime，他们可以从任何地方获得批准，而无需处理文书工作的麻烦。强大的报告、简单的工时表审批、24 小时客户支持以及将数据导出到 Excel、QuickBooks、PDF 和其他流行软件，也为管理人员省去了这些麻烦。ClickTime 经济高效且节省时间，无需合同、无需安装、培训最少。试试我们 30 天的免费试用版，亲身体验 ClickTime 是跟踪员工时间的最简单方法。"
+
+[[software]]
+id = "ConnectDaily"
+category = "NETWORK"
+name = "Connect Daily Web Calendar"
+url = "http://www.mhsoftware.com/connectdaily.htm"
+description = "Connect Daily 是一个基于 Java 的网络日历。它提供高级功能来安排资源，包括甘特图视图和审批。用户可以订阅通知和提醒，以便在添加事件时接收有关事件的电子邮件消息。支持将事件导出到 iCal，以及一个将事件导出到 Palm 和 MS Outlook 的同步程序。可以根据 LDAP 目录或 MS Active Directory 对用户进行身份验证。"
+
+[[software]]
+id = "dbstar"
+category = "DATABASE"
+name = "dbstar"
+url = "http://www.ittia.com/dbstar/dbstar.html"
+description = "db.* 是一个免费、占用空间小（小于 150K）的开源数据库管理系统 (DBMS)，旨在为使用嵌入式数据库开发应用程序提供强大、灵活、高性能的功能。通过在单个系统中结合网络和关系模型技术，db.* 使您能够高效地组织和访问信息，无论数据的复杂性如何。它文档齐全，并且在开源操作系统上完全免费使用、修改和分发。db.* 非常可靠和稳定，并且与所有嵌入式数据库一样，不需要 DBA。"
+
+[[software]]
+id = "ieasoftware"
+category = "ECOMMERCE"
+name = "IEA Software, Inc."
+url = "http://www.iea-software.com"
+description = "<a href=\"http://www.iea-software.com/emerald\">Emerald Management Suite</a> <br />Emerald 提供自动计费、报告、帐户管理、集成的 AAA/RADIUS、CRM、客户自助注册和管理、使用计费、网络记帐、自动调度、配置和强大的安全功能，可实现虚拟 ISP 和漫游方案。有关 Emerald 的更多信息，请参阅<a href=\"http://www.iea-software.com/emerald\">Emerald 产品页面</a>。可从<a href=\"http://www.iea-software.com/download\">IEA 下载中心</a>获得包含完整产品支持的免费评估许可证。要在线查看该产品，可<a href=\"http://www.iea-software.com/products/emerald4_demo.cfm\">在此处</a>获得基于 Web 的演示。Emerald 在 FreeBSD 5.0 或更高版本上原生运行。"
+
+[[software]]
+id = "wisdomforce"
+category = "DATABASE"
+name = "WisdomForce Technologies, Inc."
+url = "http://www.wisdomforce.com"
+description = "WisdomForce Technologies 提供软件产品，帮助数据密集型企业和政府实体提高其 IT 系统中数据的质量、可用性和连续性，从而做出更好的业务决策、提高生产力并改善利润。WisdomForce 的产品专注于实时数据库数据移动和数据集成市场。WisdomForce 为跨异构系统实时移动数据提供解决方案。WisdomForce 为客户提供软件基础设施，用于从一个/多个数据库到一个/多个数据库的数据复制、提取、捕获、转换、移动和管理。WisdomForce FastReader for Oracle 数据传输能够以平均每秒 100,000 行的速度从大型生产表中提取数据到平面文件。"
+
+[[software]]
+id = "anthemion"
+category = "MISC"
+name = "Anthemion Software Ltd."
+url = "http://www.anthemion.co.uk"
+description = "Anthemion Software Ltd. 是一家位于苏格兰爱丁堡的小型独立软件公司，专门从事帮助作家和 wxWidgets 应用程序开发框架用户的工具。<p>我们为您提供以下产品：</p> <p> <a href=\"http://www.dialogblocks.com/\">DialogBlocks</a>是一个基于 sizer 的 GUI 资源编辑器，可让您快速创建具有专业外观的对话框、向导和框架，以便在 Windows、Linux、Mac 或任何其他受支持的 wxWidgets 平台上部署。</p> <p> <a href=\"http://www.jutoh.com/\">Jutoh</a>使您可以轻松地以流行格式创建电子书，您可以在许多电子书网站上销售这些电子书。使用“新建项目向导”在几秒钟内从现有文件创建您的项目；或使用内置的样式文本编辑器从头开始创建您的书籍。从 Jutoh 的模板中选择书籍封面设计，或使用内置的封面编辑器创建您自己的封面设计。Jutoh 让您可以快速开始创建电子书，但具有大量功能和配置可供更高级的使用，包括对目录、索引和尾注页面的支持。"
+
+[[software]]
+id = "supportex"
+category = "SYSADMIN"
+name = "Supportex.Net"
+url = "http://www.supportex.net"
+description = "Supportex.Net 是一家位于俄罗斯莫斯科的外包服务器管理公司。提供量身定制的 FreeBSD 配置、优化和调整服务。"
+
+[[software]]
+id = "ahsay"
+category = "SYSADMIN"
+name = "Ahsay Online Backup Software"
+url = "http://www.ahsay.com"
+description = "Ahsay Online Backup Software 是面向 ISP 和在线备份服务提供商的商业解决方案。除了其强大的备份功能和多平台支持外，AhsayOBS 还是市场上唯一完全可贴牌的解决方案。AhsayOBS 用户友好，但功能丰富。它不仅支持增量文件备份和计划备份等常见功能，还支持砖级 Exchange 备份（包括 Outlook 邮件、日历等）。AhsayOBS 专为备份 MS SQL Server、MySQL Server、Oracle、MS Exchange Server、Lotus Domino Server 等数据库而设计。AhsayOBS 提供高级别的安全性。来自多个 AhsayOBS 的数据可以进一步复制到 Ahsay Replication Server 作为额外的保护级别。此外，数据可以跨不同平台恢复到特定快照。此外，广泛的 API 和全面的报告有助于帐户管理。作为拥有超过 150,000 个安装的全球领导者，AhsayOBS 支持 18 种语言，并且数量还在不断增加。有关更多信息和免费下载，请访问<a href=\"http://www.ahsay.com\">www.ahsay.com</a>。"
+
+[[software]]
+id = "kernun"
+category = "SECURITY"
+name = "Kernun Firewall"
+url = "http://www.kernun.com/"
+description = "Kernun 防火墙是一个商业软件包，由一组应用程序代理、配置工具和其他实用程序组成，并提供其源代码。它依赖于 FreeBSD 操作系统和一块硬件（目前支持 i386 PC 和 amd64 Hammer 架构）。Kernun 防火墙在控制所有网络层的数据通信方面非常有效。<br />Kernun 防火墙旨在在不同网络上的主机之间调解合法的通信（如果防火墙策略允许），同时阻止在一个网络上发起并以受 Kernun 保护的不同网络为目标的非法通信和网络攻击。它还可用于制止滥用网络资源，检测和阻止病毒、间谍软件、垃圾邮件和其他有害内容。"
+
+[[software]]
+id = "chartdirector"
+category = "DEV"
+name = "ChartDirector"
+url = "https://www.advsofteng.com/"
+description = "ChartDirector 适用于各种应用程序类型（桌面、Web、控制台、批处理、实时……），并支持多种编程语言和操作系统。这意味着您对 ChartDirector 的投资将对您当前以及未来的项目都有用。"
+
+[[software]]
+id = "tmidependia"
+category = "DEV"
+name = "Tmi Dependia"
+url = "https://www.dependia.net/en/properties"
+description = "Tmi Dependia 是一家小型芬兰软件公司，提供用于开发信息系统的软件。关系数据库管理系统范式中的属性依赖关系用于自动化软件开发。可以使用多种类型系统和数据库模块。该产品在 ARM64 和 i386/AMD64 平台上的 FreeBSD 和其他 UNIX 系统（Linux、MuslC）上原生运行。"

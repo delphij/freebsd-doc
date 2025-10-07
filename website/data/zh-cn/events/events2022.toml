@@ -1,0 +1,89 @@
+# Sort events by start date, with more recent events lower in the file
+year = 2022
+
+[[events]]
+id = "fosdem-2022"
+name = "FOSDEM 2022"
+url = "https://fosdem.org/2022/"
+startDate = "2022-02-05"
+endDate = "2022-02-06"
+site = "线上"
+description = "每年，成千上万的自由和开源软件开发者都会齐聚布鲁塞尔参加此活动。2022年，他们将在线上聚会。请务必访问<a href=\"https://stands.fosdem.org/stands/freebsd_project/\">FreeBSD展台</a>和<a href=\"https://fosdem.org/2022/schedule/track/bsd/\">BSD开发室</a>，了解FreeBSD的最新动态。"
+
+[[events]]
+id = "freebsd-friday-2022-02-11"
+name = "如何使用Git跟踪FreeBSD，第二部分 – Warner Losh"
+url = "https://www.youtube.com/watch?v=Fe-dJrDMK_0"
+startDate = "2022-02-11"
+endDate = "2022-02-11"
+site = "FreeBSD 周五 – YouTube"
+description = "关于如何使用Git跟踪FreeBSD的入门教程。包括获取和编译FreeBSD的基础知识，以及更高级的主题——例如管理本地更改，以及如何将这些更改贡献给FreeBSD项目。"
+
+[[events]]
+id = "freebsd-office-hours-2022-03-16"
+name = "Google编程之夏"
+url = "https://www.youtube.com/watch?v=x-4U1xurmBE&list=PLugwS7L7NMXwS6uGcMnnVaQBQYejycvF1"
+startDate = "2022-03-16"
+endDate = "2022-03-16"
+site = "FreeBSD 办公时间 – YouTube"
+description = "即将到来的Google编程之夏，以及学员如何参与其中。"
+
+[[events]]
+id = "bsdcan-2022"
+name = "BSDCan 2022"
+url = "https://www.bsdcan.org/2022/"
+startDate = "2022-06-01"
+endDate = "2022-06-04"
+site = "线上"
+description = "为期四天的BSD线上会议。BSDCan举办了围绕BSD系列操作系统及其相关项目的各种主题的讲座和教程。"
+
+[[events]]
+id = "devsummit-202206"
+name = "2022年6月FreeBSD开发者峰会"
+url = "https://wiki.freebsd.org/DevSummit/202206"
+startDate = "2022-06-16"
+endDate = "2022-06-17"
+site = "线上"
+description = "欢迎参加2022年6月FreeBSD线上开发者峰会。本次活动将包括虚拟的半天会议，于2022年6月16日至17日举行。免费参加，但我们要求您在会议系统注册以获取会议室访问权限（更多信息即将公布）。除了开发者讨论会议，我们还将有供应商演讲。"
+
+[[events]]
+id = "eurobsdcon-2022"
+name = "EuroBSDcon 2022"
+url = "https://2022.eurobsdcon.org"
+startDate = "2022-09-15"
+endDate = "2022-09-18"
+countryCode = "AT"
+country = "奥地利"
+city = "维也纳"
+site = "维也纳工业大学Freihaus校区"
+description = "EuroBSDcon是欧洲年度技术会议，汇集了使用和开发基于4.4BSD（Berkeley软件发行版）操作系统家族及相关项目的用户和开发者。"
+
+[[events]]
+id = "aberdeen-2022"
+name = "阿伯丁黑客马拉松 2022"
+url = "https://wiki.freebsd.org/Hackathon/202210"
+startDate = "2022-10-08"
+endDate = "2022-10-08"
+countryCode = "GB-SCT"
+country = "苏格兰"
+city = "阿伯丁"
+site = "57 North Hacklab"
+description = "FreeBSD黑客马拉松将于2022年10月5日至10月8日在苏格兰阿伯丁举行。本次黑客马拉松将由57 North Hacklab主办。"
+
+[[events]]
+id = "vendor-summit-2022"
+name = "2022年11月FreeBSD供应商峰会"
+url = "https://wiki.freebsd.org/DevSummit/202211"
+startDate = "2022-11-03"
+endDate = "2022-11-04"
+site = "线上"
+description = "欢迎参加2022年11月FreeBSD线上供应商峰会。本次活动将包括虚拟的半天会议，于2022年11月3日至4日举行。免费参加，但我们要求您在<a href=\"https://www.eventbrite.com/e/november-2022-freebsd-vendor-summit-tickets-406954340387\">Eventbrite</a>系统注册以获取会议室和单独的交流区访问权限。本次供应商峰会由FreeBSD基金会赞助。"
+
+[[events]]
+id = "freebsd-friday-2022-12-16"
+name = "FreeBSD服务介绍 – Drew Gurkowski"
+url = "https://freebsdfoundation.org/freebsd-fridays/"
+startDate = "2022-12-16"
+endDate = "2022-12-16"
+site = "FreeBSD 周五 – FreeBSD基金会"
+description = "在新安装的FreeBSD上设置打印、音频和Wi-Fi。"

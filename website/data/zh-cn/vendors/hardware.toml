@@ -1,0 +1,205 @@
+# Sort the entries by name
+
+[[hardware]]
+id = "ABMX"
+name = "ABMX 服务器"
+url = "http://www.abmx.com/"
+description = "ABMX 位于加利福尼亚州，提供针对 FreeBSD 优化的定制机架式服务器。我们可以定制构建几乎任何东西。如果可以配置，我们就会配置。请致电 1-800-711-1788 联系我们友好的工程师，或访问 <a href=\"http://www.abmx.com/\">http://www.abmx.com/</a>."
+
+[[hardware]]
+id = "ACNODES"
+name = "Acnodes 公司"
+url = "http://www.acnodes.com/"
+description = "<p>Acnodes 公司为工业控制、自动化行业和军事领域的客户提供基于 FreeBSD 和 Linux 的计算机。我们的机架式计算机、嵌入式系统和平板电脑均可完全配置，并支持 FreeBSD、Linux 或任何其他操作系统。</p> <p>我们的产品线包括 <a href=\"http://www.acnodes.com/Rackmount-computer.htm\">机架式计算机</a>（1U 至 4U 机架安装就绪计算机，标准 ATX 或 SBC 系统）、<a href=\"http://www.acnodes.com/Panel-PC.htm\">平板电脑</a>（面板安装就绪触摸屏计算机）、<a href=\"http://www.acnodes.com/Fanless-embedded-microbox-system.htm\">嵌入式系统盒</a>（集成到坚固金属紧凑型微型盒中的无风扇一体式计算机）、<a href=\"http://www.acnodes.com/Monitor-keyboard-drawer.htm\">显示器键盘抽屉</a>（节省空间的 1U/2U 控制台，可选 Cat6、IP KVM 切换器）和 <a href=\"http://www.acnodes.com/Rackmount-LCD-monitor.htm\">机架式液晶显示器</a>（最大 20 英寸的机架安装就绪液晶显示器）。</p> <p>我们的产品线配置在我们的 <a href=\"http://www.acnodes.com\">网站</a> 上有详细说明。然而，大多数商用和工业计算机都是根据您的确切要求定制的。</p>"
+
+[[hardware]]
+id = "ActiveWire"
+name = "ActiveWire 公司"
+url = "http://www.ActiveWireInc.com/"
+description = "ActiveWire 公司提供了一个极其灵活的、基于 USB 的 I/O 板，可连接按钮、开关和 LED，提供简单的 API 来读写板上的 I/O 引脚。Ports Collection 中还提供了一个额外的 EZ USB 芯片固件下载器。"
+
+[[hardware]]
+id = "ASA"
+name = "ASA Computers"
+url = "http://www.asacomputers.com/"
+description = "ASA Computers 提供各种以性能为导向的服务器、工作站和网络产品。我们在 FreeBSD、Linux 和其他操作系统的优质配置和支持方面经验丰富。多操作系统经验和知识是我们的优势。我们转售各种通信和网络产品，包括 3COM、Cisco、Cyclades、DIGI、Livingston 和 U.S. Robotics。请查看我们网页上的预配置系统。"
+
+[[hardware]]
+id = "aspensystems"
+name = "Aspen Systems"
+url = "http://www.aspsys.com/"
+description = "Aspen Systems 总部位于科罗拉多州惠特里奇，拥有超过 30 年的业务历史，提供可定制的机架式服务器和工作站，采用 FreeBSD 和其他开源操作系统。我们还为世界各地的政府、大学和企业提供定制的交钥匙高性能计算集群。请立即致电 <a href=\"tel:8009929242\">1(800)992-9242</a> 联系销售工程师，或访问我们的<a href=\"http://www.aspsys.com\">网站</a>了解更多信息。"
+
+[[hardware]]
+id = "atto"
+name = "ATTO Technology"
+url = "https://www.atto.com/"
+description = "25 年来，ATTO Technology, Inc. 一直是数据密集型计算环境中存储和网络连接及基础设施解决方案的全球领导者。ATTO 生产主机总线适配器、RAID 适配器、网络适配器、RAID 存储控制器、支持 Thunderbolt 的 Desklink 设备、桥接器、交换机和软件。ATTO 的 Celerity 16Gb 光纤通道适配器、ExpressSAS 12Gb SAS/SATA HBA 和 SAN 存储控制器均支持 9.3 和 10.x 操作系统。"
+
+[[hardware]]
+id = "catpipe"
+name = "catpipe Systems"
+url = "http://www.catpipe.net/"
+description = "catpipe Systems ApS 为预装 FreeBSD 的机架式服务器提供托管服务和支持合同。"
+
+[[hardware]]
+id = "CoreSystems"
+name = "Core Systems"
+url = "https://core-systems.com"
+description = "Core Systems 是位于加利福尼亚州的军用和工业用坚固型计算机和坚固型显示器的全球领导者。我们制造的坚固型产品部署在全球的地面车辆、飞机和海上设施中。"
+
+[[hardware]]
+id = "DAVICOM"
+name = "DAVICOM Semiconductor, Inc."
+url = "http://www.davicom.com.tw/index.php?lang_id=en"
+description = "DAVICOM Semiconductor, Inc. 设计、开发和销售用于主流网络和通信应用的经济高效的集成电路 (IC) 解决方案。DAVICOM 是向网络和通信设备国际原始设备制造商 (OEM) 提供局域网 (LAN) 和广域网 (WAN) 芯片组的领先供应商之一。<p> DAVICOM Semiconductor, Inc. 目前支持 FreeBSD 驱动程序的产品有 DM9102（10M/100M PCI 快速以太网单芯片）、DM9102A（3.3 伏低功耗 10M/100M PCI 快速以太网单芯片）、DM9101（10M/100M PCI 快速以太网 PHY 芯片，包含在 DM9102 单芯片中）、DM9131（3.3 伏低功耗 10M/100M PCI 快速以太网 PHY 芯片，包含在 DM9102A 单芯片中）和 DM9801（1M8 Home PNA PHY 芯片）。</p>"
+
+[[hardware]]
+id = "EmergingTechnologies"
+name = "Emerging Technologies"
+url = "http://www.etinc.com/"
+description = "Emerging Technologies, Inc. 提供高速串行通信适配器，允许 FreeBSD 系统以 56k 至 T1/E1 的速度直接连接到租用线路。ET 驱动程序在单个基于 FreeBSD 的 PC 上最多支持 16 条 T1/E1 线路。这些适配器包括一套完整的驱动程序和实用程序，允许 FreeBSD 机器通过同步 PPP、帧中继、X.25 直接与几乎任何 IP 路由器通信，并通过思科串行封装直接与思科品牌路由器通信。包括完整的文档和支持。硬件选择适用于 ISA 和 PCI 总线，从经济的单端口 ISA 适配器到带有四个专用 25MHz 板载处理器的四 T1/E1 端口 PCI 卡。要联系 Emerging Technologies，请发送电子邮件至<a href=\"mailto:info@etinc.com\">info@etinc.com</a>。"
+
+[[hardware]]
+id = "EMT"
+name = "EMT"
+url = "http://www.emt.co.jp/"
+description = "EMT 总部位于日本，提供针对 FreeBSD 优化的定制服务器和工作站。我们通过进行彻底的检查来提供高质量和高可靠性的系统，并提供硬件保修支持。请通过<a href=\"mailto:sales@emt.co.jp\">电子邮件</a>与我们联系或访问我们的<a href=\"http://www.emt.co.jp/\">网站</a>。"
+
+[[hardware]]
+id = "GenstorSystems"
+name = "Genstor Systems, Inc."
+url = "http://www.genstor.com/"
+description = "Genstor Systems 专门提供针对 FreeBSD 定制的系统。您会发现围绕优质硬件构建的存储（例如使用 SATA 磁盘的多 TB 存储）和服务器选项。我们还构建集群并为设备集成提供 OEM 服务。Genstor 紧跟驱动程序和错误的最新动态，因此您不必担心。我们还围绕 Linux 和 x86 Solaris 定制系统。通过电子邮件<a href=\"mailto:sales@genstor.com\">sales@genstor.com</a>与我们联系，或致电 (877)25-SERVERS 测试我们的能力。"
+
+[[hardware]]
+id = "Highpoint"
+name = "HighPoint Technologies"
+url = "http://www.highpoint-tech.com/"
+description = "HighPoint 销售的 SATA RAID 控制器产品受 FreeBSD 6.3 和 7.0 原生支持。其网站上提供了适用于旧版 FreeBSD 的驱动程序。HighPoint 专门提供 SATA RAID 解决方案，包括企业系列、价值系列和升级系列 RAID 控制器。他们的座右铭是“一种尺寸并不适合所有情况”。"
+
+[[hardware]]
+id = "IronSystems"
+name = "Iron Systems"
+url = "http://www.ironsystems.com/"
+description = "Iron Systems 位于加利福尼亚州圣何塞，是高密度机架式互联网系统、低成本托管解决方案和 OEM 集成服务的提供商。系统解决方案要么是具有定制配置的硬件、操作系统、内核和应用程序的按订单构建的 iServer；要么是一组预配置的网络基础设施 iEngines 和 iClusters，专门用于交付专用应用程序。Iron Systems 为所有解决方案提供世界一流的 FreeBSD 和 Linux 技术支持。我们的团队平均拥有超过 10 年的基于 BSD 的系统构建经验。我们了解我们的服务器运行着您的关键任务应用程序——这就是为什么我们只使用最优质的组件并预先测试所有系统的原因。我们相信您会欣赏我们的方法。给我们一个为您服务的机会！请发送电子邮件至<a href=\"mailto:info@ironsystems.com\">info@ironsystems.com</a>或致电 1-800-921-IRON。"
+
+[[hardware]]
+id = "MOXA"
+name = "MOXA"
+url = "http://www.moxa.com/"
+description = "MOXA 生产价格诱人的多端口串行卡，与 FreeBSD 的 <em>sio</em> 串行驱动程序兼容。C104 / C168 系列 2/4/8 串行端口卡采用定制 ASIC 设计，速度高达 921.6Kbps，具有浪涌保护、独立且可通过软件配置的 I/O 端口和 IRQ。"
+
+[[hardware]]
+id = "Netgate"
+name = "Netgate"
+url = "https://shop.netgate.com/"
+description = "Netgate 是一家高品质通信设备制造商，设计高度可配置的计算机，专为低功耗、高吞吐量、可靠的部署而设计。我们提供快速部署的现成系统、专门的定制产品解决方案以及为大客户提供的端到端 OEM 服务计划。<p>Netgate 通过为 pfSense 项目提供管理、工程和支持资源，直接支持开源软件和开源硬件项目。</p>"
+
+[[hardware]]
+id = "iXsystems"
+name = "iXsystems"
+url = "http://www.iXsystems.com/"
+description = "iXsystems（前身为 OffMyServer）为全球市场提供基于 FreeBSD 和 Linux 的互联网基础设施级机架式服务器、网络设备、企业刀片服务器和存储产品。我们只使用最优质的组件，并预先进行必要的测试——因为我们知道您将在我们的服务器上运行您的关键任务应用程序。我们相信您会欣赏我们的方法——给我们一个为您服务的机会！请发送电子邮件至<a href=\"mailto:info@iXsystems.com\">info@iXsystems.com</a>。"
+
+[[hardware]]
+id = "PCW"
+name = "PCW Microsystems, Inc."
+url = "http://www.rackmount.com/"
+description = "PCW Microsystems, Inc. 提供针对 FreeBSD 操作系统优化的机架式工作站和服务器。我们为 FreeBSD 操作系统提供全系列机架式机箱、RAID、WAN 和 LAN 产品。请<a href=\"http://www.rackmount.com/\">访问我们的网站</a>了解更多信息，或发送电子邮件至<a href=\"mailto:sales@pcwnet.com\">sales@pcwnet.com</a>"
+
+[[hardware]]
+id = "PSSCLabs"
+name = "PSSC Labs"
+url = "http://www.pssclabs.com/"
+description = "PSSC Labs 提供定制配置的计算机解决方案，以满足任何预算或规格。访问我们的网站，按照您的要求构建您的计算机，包括硬盘分区和操作系统设置。"
+
+[[hardware]]
+id = "psychsoftpc"
+name = "Psychsoftpc"
+url = "http://www.psychsoftpc.com/"
+description = "Psychsoftpc 是高性能计算机、工作站和集群的制造商，可根据要求预装 Linux 或 FreeBSD。"
+
+[[hardware]]
+id = "PerleSpecialix"
+name = "Perle Specialix"
+url = "http://www.perle.com/"
+description = "Perle Specialix 生产各种多端口异步串行扩展产品。ISA、EISA 和 PCI SI/XIO 主机卡在 FreeBSD 下使用 <em>si</em> 驱动程序工作。"
+
+[[hardware]]
+id = "SWTechnology"
+name = "SW Technology"
+url = "https://www.swt.com/"
+description = "SW Technology 提供预装 FreeBSD 的优质奔腾机器。"
+
+[[hardware]]
+id = "Synetic"
+name = "Synetic, Inc."
+url = "http://www.synetic.net/"
+description = "Synetic Inc. 是 IDE-to-IDE、SCSI-to-IDE 和 SCSI-to-SCSI RAID 控制器的加拿大和北美分销商，支持 FreeBSD 平台。"
+
+[[hardware]]
+id = "NCSTechnologies"
+name = "NCS Technologies"
+url = "http://www.ncst.com/"
+description = "NCS Technologies 为独立软件供应商 (ISV) 和其他 OEM 提供“NCS Swift 设备合作伙伴计划 (NCSAPP)”。根据该计划，NCS 通过将其设备软件与其自己的硬件平台捆绑在一起，为其 ISV 合作伙伴开发“交钥匙”服务器设备。这些设备硬件平台使用最新的行业标准芯片组和组件构建，可以运行基于 FreeBSD 的应用程序。"
+
+[[hardware]]
+id = "rackmountnet"
+name = "RackmountNet"
+url = "http://www.rackmountnet.com/"
+description = "RackmountNet 提供全系列 1U、2U、3U、4U、5U、7U 19" 机架式机箱和服务器，适用于工业关键任务应用。"
+
+[[hardware]]
+id = "eracks"
+name = "eRacks Open Source Systems"
+url = "http://eracks.com/"
+description = "eRacks Open Source Systems 是开源解决方案的领先提供商。该公司生产机架式计算机服务器，专门从事定制设计的系统，并提供广泛的服务，包括开源企业迁移、安全和网络架构设计。eRacks 在其系统上提供全方位的开源操作系统配置，包括 FreeBSD。有关更多信息，请联系 eRacks：<a href=\"mailto:info@eracks.com\">info@eracks.com</a>。"
+
+[[hardware]]
+id = "rackmountmart"
+name = "Synergy Global Inc"
+url = "http://www.rackmountmart.com"
+description = "我们是 FreeBSD 和 Linux 机架式液晶显示器键盘抽屉、机架式机箱、服务器制造商和分销商。"
+
+[[hardware]]
+id = "42u"
+name = "42U"
+url = "http://www.42u.com/"
+description = "42U 专门提供远程访问解决方案，包括与 FreeBSD 兼容的串行控制台服务器、KVM 交换机、KVM over IP 产品、远程电源重启和环境监控。有关更多信息，请联系<a href=\"mailto:info@42u.com\">info@42u.com</a>或访问<a href=\"http://www.42u.com/\">www.42u.com</a>。"
+
+[[hardware]]
+id = "kvmonline"
+name = "KVM Switches Online"
+url = "http://www.kvm-switches-online.com"
+description = "KVM Switches Online 是服务器机房解决方案的领先提供商，提供服务器管理和服务器空间优化解决方案，利用与 FreeBSD 兼容的串行控制台服务器和 KVM 切换产品。有关更多信息，请联系<a href=\"mailto:info@kvm-switches-online.com\">info@kvm-switches-online.com</a>或访问<a href=\"http://www.kvm-switches-online.com\">www.kvm-switches-online.com</a>。"
+
+[[hardware]]
+id = "serverrack"
+name = "Server Racks Online"
+url = "http://www.server-rack-online.com"
+description = "Server Racks Online 计算机机架超市。在 Server Racks Online，我们还允许您轻松配置我们的计算机机架、服务器机柜和配件，以满足您的确切要求和 FreeBSD 需求。Server Rack Online 致力于为每种解决方案提供广泛的服务器机架产品和配件选择。有关更多信息，请联系<a href=\"mailto:infor@server-rack-online.com?subject=FreeBSD Site\">info@server-rack-online.com</a>或访问<a href=\"http://www.server-rack-online.com\">www.server-rack-online.com</a>"
+
+[[hardware]]
+id = "CPTechnologies"
+name = "CP North America"
+url = "https://cpnorthamerica.com/"
+description = "CP North America 为军事、工业和商业市场设计、制造和集成标准和定制的高性能计算平台、数据链路和液晶显示器。"
+
+[[hardware]]
+id = "servaris"
+name = "Servaris Corporation"
+url = "http://www.servaris.com"
+description = "<p>Servaris 构建高级机架式、<a href=\"http://www.servaris.com/blade_servers.php\">刀片服务器</a>和<a href=\"http://www.servaris.com/tower_servers.php\">塔式服务器</a>以及<a href=\"http://www.servaris.com/raid.php\">RAID 存储</a>子系统。</p> <p>Servaris ProServ <a href=\"http://www.servaris.com/1u_rack_server.php\">1U 机架式服务器</a>和 ProServ <a href=\"http://www.servaris.com/2u-rack-server.php\">2U 机架式服务器</a>和 4U <a href=\"http://www.servaris.com/servers_4680.php\">高性能计算服务器</a>均与 FreeBSD 兼容。几乎所有 ProServ 服务器都通过支持 Java 的 Web 浏览器进行熄灯远程管理。Servaris 将预装 FreeBSD AMD/64 或 i386，并提供通用或完全定制的 FreeBSD 安装。Servaris <a href=\"http://www.servaris.com/blade_servers.php\">刀片服务器</a>是“一体化”集群和故障转移解决方案，可通过任何支持 Java 的 Web 浏览器进行完全远程管理，并采用英特尔最新的 5500 四核至强处理器。<a href=\"http://www.servaris.com/raid.php\">Servaris iStor RAID 存储</a>子系统是 4GB/8GB 光纤到 SAS/SATA，提供 12 盘位、16 盘位和 24 盘位机箱。易于扩展，易于维护，并且可以通过 Web 浏览器完全管理。</p> <p>Servaris 拥有友好的员工，可以回答您的问题。请致电 1.877.963.1900 或<a href=\"http://www.servaris.com/contact.php\">从此处联系他们</a>。Servaris 将以合理的价格为您提供优质的服务器和 RAID 系统以及出色的保修：“Servaris，追求卓越。”</p>"
+
+[[hardware]]
+id = "thinkpenguin"
+name = "ThinkPenguin"
+url = "https://www.thinkpenguin.com"
+description = "ThinkPenguin 专门通过全球最大的硬件目录之一支持免费软件操作系统。我们备有各种计算机、外围设备和配件。我们的与众不同之处在于我们致力于改善免费软件操作系统的硬件支持，并确保硬件能够得到 FreeBSD 社区的适当和原生支持。"
+
+[[hardware]]
+id = "minifree"
+name = "Minifree"
+url = "https://minifree.org"
+description = "Minifree Ltd 提供配备 Libreboot 的二手 ThinkPad，Libreboot 是基于 coreboot 的免费开源引导固件，可取代专有的 BIOS/UEFI 固件。客户可以要求安装 FreeBSD，无论他们需要何种配置，都将提供全盘加密。coreboot 的结合带来了高度坚固、安全的笔记本电脑。Minifree 自 2014 年开始营业，并向全球发货。"

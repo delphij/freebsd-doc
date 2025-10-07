@@ -1,0 +1,99 @@
+# Sort events by start date, with more recent events lower in the file
+# $FreeBSD$
+year = 2013
+
+[[events]]
+id = "asiabsdcon-2013"
+name = "2013年亚洲BSD大会"
+url = "http://2013.asiabsdcon.org/"
+startDate = "2013-03-14"
+endDate = "2013-03-17"
+countryCode = "JP"
+country = "日本"
+city = "东京"
+site = "东京理科大学"
+description = "AsiaBSDCon 是一个面向基于 BSD 系统的用户和开发者的会议。该会议面向所有开发、部署和使用基于 FreeBSD、NetBSD、OpenBSD、DragonFlyBSD、Darwin 和 MacOS X 系统的用户。AsiaBSDCon 是一个技术会议，旨在收集最佳技术论文和演示文稿，以确保我们开源社区的最新发展能够与最广泛的受众分享。"
+
+[[events]]
+id = "bsdday-2013"
+name = "2013年中欧BSD日"
+url = "http://bsdday.eu/2013"
+startDate = "2013-04-06"
+endDate = "2013-04-06"
+countryCode = "IT"
+country = "意大利"
+city = "那不勒斯"
+site = "生物结构与生物成像研究所"
+description = "请注意，又一个 BSD-Day 即将到来：明年四月，Beastie 将访问那不勒斯，召集意大利和中欧的 BSD 人士齐聚一堂！本次活动为 BSD 开发者和爱好者提供了一个绝佳的机会，向更广泛的受众展示他们的工作，与同行分享他们的想法，并寻找潜在的合作伙伴。传统上，本次活动力求避免形式主义，不要求演讲者提交论文，也不要求与会者注册或支付入场费。但是，鼓励受邀者就他们最喜欢的 BSD 主题进行简短演讲。目标是激励所有人，尤其是大学生，看到我们方法的优势，并抓住机会使用 BSD 系统。"
+
+[[events]]
+id = "bsdcan-2013"
+name = "2013年BSDCan大会"
+url = "http://www.bsdcan.org/"
+startDate = "2013-05-15"
+endDate = "2013-05-18"
+countryCode = "CA"
+country = "加拿大"
+city = "渥太华"
+site = "渥太华大学"
+description = "BSDCan 是一个开发者大会，重点关注新兴技术、研究项目和正在进行的工作。它还包括用户空间基础设施项目，并邀请自由软件开发者和商业供应商的贡献。"
+
+[[events]]
+id = "kyivbsd-2013"
+name = "2013年基辅BSD大会"
+url = "http://en.kyivbsd.org.ua/"
+startDate = "2013-09-21"
+endDate = "2013-09-21"
+countryCode = "UA"
+country = "乌克兰"
+city = "基辅"
+site = "基辅塔拉斯舍甫琴科国立大学"
+description = "我们很高兴邀请所有人参加在基辅举行的第五届会议！基辅既是历史地标，也是一个城市化程度很高的城市，有许多对开源感兴趣的人。对于本地和外国开发者来说，这是一个很好的选择。"
+
+[[events]]
+id = "eurobsdcon-2013"
+name = "2013年欧洲BSD大会"
+url = "http://2013.eurobsdcon.org/"
+startDate = "2013-09-26"
+endDate = "2013-09-29"
+countryCode = "MT"
+country = "马耳他"
+city = "圣朱利安"
+site = "希尔顿会议中心"
+description = "我们很高兴地宣布，2013年欧洲BSD大会将于2013年9月28日（星期六）和29日（星期日）（9月26日和27日星期四和星期五举行教程）在马耳他（圣朱利安地区）举行。白天天气宜人，气温约为26°C，夜间为20°C。海水仍然温暖。考虑带上您的家人、妻子、孩子和配偶，度过一个漫长的周末。周六晚上的社交活动将在一个美丽的海滩举行烧烤。家人也被邀请，儿童免费参加。正在组织一个观光和环岛游的附带项目，费用自理。"
+
+[[events]]
+id = "vbsdcon-2013"
+name = "2013年vBSDCon大会"
+url = "http://www.vbsdcon.com/"
+startDate = "2013-10-25"
+endDate = "2013-10-27"
+countryCode = "US"
+country = "美国"
+city = "杜勒斯"
+site = "杜勒斯凯悦酒店"
+description = "这个激动人心的周末将汇集BSD社区成员，进行一系列圆桌讨论、教育课程、最佳实践交流和独家交流机会。"
+
+[[events]]
+id = "freebsd20th-2013"
+name = "FreeBSD 20周年庆典"
+url = "http://rsvp.ixsystems.com/"
+startDate = "2013-11-02"
+endDate = "2013-11-02"
+countryCode = "US"
+country = "美国"
+city = "旧金山"
+site = "DNA Lounge"
+description = "为纪念FreeBSD的用户、管理员、开发者和倡导者而举办的一日活动。20周年庆典将有精彩的公司、饮品、音乐以及来自FreeBSD过去、现在和未来的知名人物。庆祝活动将于下午6点开始，晚上9点向公众开放，并将持续到凌晨。还将有书籍和其他好礼赠送，以及新的FreeBSD 20周年T恤。"
+
+[[events]]
+id = "rubsd-2013"
+name = "2013年ruBSD大会"
+url = "http://tech.yandex.ru/events/yagosti/ruBSD/"
+startDate = "2013-12-14"
+endDate = "2013-12-14"
+countryCode = "RU"
+country = "俄罗斯"
+city = "莫斯科"
+site = "圣列夫·托尔斯泰"
+description = "首届关于BSD系列操作系统的俄罗斯技术会议，于2013年12月14日在Yandex莫斯科办公室举行。它面向系统管理员和程序员。会议的目标包括BSD世界的新技术，以及BSD系统讨论和示例。参与免费，但需要注册。座位有限。如果您注册但无法参加，请告知我们。"

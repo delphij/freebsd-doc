@@ -1,0 +1,72 @@
+# Sort events by start date, with more recent events lower in the file
+year = 2025
+
+[[events]]
+id = "fosdem-2025"
+name = "FOSDEM 2025"
+url = "https://fosdem.org/2025/"
+startDate = "2025-02-01"
+endDate = "2025-02-02"
+country = "比利时"
+city = "布鲁塞尔"
+site = "布鲁塞尔自由大学 (ULB)"
+description = "每年，成千上万的自由和开源软件开发者齐聚布鲁塞尔参加此活动。届时将组织一个<a href=\"https://fosdem.org/2025/schedule/track/bsd/">BSD 开发室</a>，用于涵盖 BSD 操作系统家族的演示，<a href=\"https://people.freebsd.org/~rodrigo/fosdem25/">征稿通知</a>现已发布。"
+
+[[events]]
+id = "BSD-NL2025"
+name = "BSD-NL 2025"
+url = "https://bsdnl.nl/"
+startDate = "2025-04-12"
+endDate = "2025-04-12"
+countryCode = "NL"
+country = "荷兰"
+city = "乌得勒支"
+site = "Maximus 啤酒厂, Pratumplaats 2A, 3454 NA 乌得勒支"
+description = "太棒了！我们将在乌得勒支的 Maximus 啤酒厂举办第三届会议。届时将有演讲、编程、休闲、啤酒和美食。"
+
+[[events]]
+id = "bsdcan-2025"
+name = "BSDCan 2025"
+url = "https://www.bsdcan.org/2025/"
+startDate = "2025-06-11"
+endDate = "2025-06-14"
+countryCode = "CA"
+country = "加拿大"
+city = "渥太华"
+site = "渥太华大学"
+description = "在加拿大渥太华举行的为期四天的 BSD 会议。BSDCan 举办关于 BSD 操作系统家族相关主题的讲座和教程。"
+
+[[events]]
+id = "eurobsdcon-2025"
+name = "EuroBSDcon 2025"
+url = "https://2025.eurobsdcon.org"
+startDate = "2025-09-25"
+endDate = "2025-09-28"
+countryCode = "HR"
+country = "克罗地亚"
+city = "萨格勒布"
+site = "电气工程与计算学院 (FER)"
+description = "EuroBSDcon 是欧洲年度技术会议，汇集了使用和开发基于 4.4BSD (Berkeley Software Distribution) 操作系统家族及相关项目的用户和开发者。"
+
+[[events]]
+id = "openzfs-2025"
+name = "OpenZFS 开发者峰会 2025"
+url = "https://openzfs.org/wiki/OpenZFS_Developer_Summit_2025"
+startDate = "2025-10-25"
+endDate = "2025-10-28"
+countryCode = "US"
+country = "美国"
+city = "俄勒冈州波特兰"
+site = "Hillsdale 社区"
+description = "本次活动的目标是促进 OpenZFS 工作的跨社区讨论，并在我们提出的一些项目上取得进展。这个为期 4 天的活动包括 2 天的用户峰会、1 天的开发者峰会和 1 天的开发者峰会黑客马拉松。"
+
+[[events]]
+id = "freebsd-summit-2025"
+name = "2025 年秋季 FreeBSD 峰会"
+url = "https://freebsdfoundation.org/news-and-events/event-calendar/fall-2025-freebsd-summit/"
+startDate = "2025-11-06"
+endDate = "2025-11-07"
+country = "美国"
+city = "加利福尼亚州圣何塞"
+site = "NetApp 园区"
+description = "FreeBSD 峰会是一项每年举办的活动，旨在将 FreeBSD 社区聚集在一起，学习、交流并推动 FreeBSD 的使用。每年，该活动都会汇集 FreeBSD 用户，包括决策者、软件工程师以及个人贡献者和用户，分享他们在 FreeBSD 使用方面的最佳实践和成功经验。FreeBSD 峰会还提供了与开发者社区面对面讨论问题的独特机会。"

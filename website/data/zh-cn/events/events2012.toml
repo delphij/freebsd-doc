@@ -1,0 +1,109 @@
+# Sort events by start date, with more recent events lower in the file
+# $FreeBSD$
+year = 2012
+
+[[events]]
+id = "chemnitz-linux-days-2012"
+name = "2012 年开姆尼茨 Linux 日"
+url = "http://chemnitzer.linux-tage.de/2012/info/"
+startDate = "2012-03-17"
+endDate = "2012-03-18"
+countryCode = "DE"
+country = "德国"
+city = "开姆尼茨"
+site = "开姆尼茨工业大学"
+description = "开姆尼茨 Linux 日是一个关于 Linux 和开源软件的会议。它对所有人开放——无论是新手还是专家。本次活动由 IN Chemnitz、CLUG、计算中心、开姆尼茨工业大学计算机科学学院以及众多志愿者共同组织。请查阅您的日程表，并在 3 月 17 日和 18 日做好标记。您不会后悔的。"
+
+[[events]]
+id = "asiabsdcon-2012"
+name = "2012 年亚洲 BSD 大会"
+url = "http://2012.asiabsdcon.org/"
+startDate = "2012-03-22"
+endDate = "2012-03-25"
+countryCode = "JP"
+country = "日本"
+city = "东京"
+site = "东京理科大学森户纪念馆"
+description = "亚洲 BSD 大会是面向 BSD 系统用户和开发者的会议。本次会议面向所有开发、部署和使用基于 FreeBSD、NetBSD、OpenBSD、DragonFlyBSD、Darwin 和 MacOS X 系统的个人。亚洲 BSD 大会是一个技术会议，旨在收集最佳技术论文和演示文稿，以确保我们开源社区的最新发展能够与最广泛的受众分享。"
+
+[[events]]
+id = "bsdday-eu-2012"
+name = "2012 年欧洲 BSD 日"
+url = "http://bsdday.eu/2012"
+startDate = "2012-05-05"
+endDate = "2012-05-05"
+countryCode = "AT"
+country = "奥地利"
+city = "维也纳"
+site = "维也纳技术应用科学大学"
+description = "今年五月，Beastie 将在维也纳与 Tux 一同巡游：又一场“DanuBSDCon”即将到来，汇聚中欧 BSD 社区成员！本次活动邀请了多位 BSD 开发者和爱好者，分享他们的工作，与同行交流，并寻找潜在的未来合作伙伴。一如既往，本次活动没有繁文缛节、论文、注册或参与费用，但我们鼓励受邀者就他们最喜欢的 BSD 相关主题进行简短演讲。目标是激励所有人，特别是大学生，参与 BSD 系统的工作。"
+
+[[events]]
+id = "bsdcan-2012"
+name = "2012 年 BSDCan 大会"
+url = "http://www.bsdcan.org/"
+startDate = "2012-05-09"
+endDate = "2012-05-12"
+countryCode = "CA"
+country = "加拿大"
+city = "渥太华"
+site = "渥太华大学"
+description = "BSDCan 是一个开发者大会，重点关注新兴技术、研究项目和正在进行的工作。它还包括用户空间基础设施项目，并邀请自由软件开发者和商业供应商贡献力量。"
+
+[[events]]
+id = "solutions-linux-2012"
+name = "2012 年 Linux 解决方案大会"
+url = "http://www.solutionslinux.fr"
+startDate = "2012-06-19"
+endDate = "2012-06-21"
+countryCode = "FR"
+country = "法国"
+city = "巴黎"
+site = "CNIT 拉德芳斯"
+description = "一个为期三天的活动，旨在向企业推广 GNU/Linux 和开源软件。照例，法国 FreeBSD 用户组将到场推广 FreeBSD。本次活动免费入场。"
+
+[[events]]
+id = "kyivbsd-2012"
+name = "2012 年基辅 BSD 大会"
+url = "http://kyivbsd.org.ua/"
+startDate = "2012-09-29"
+endDate = "2012-09-29"
+countryCode = "UA"
+country = "乌克兰"
+city = "基辅"
+description = "第四届基辅 BSD 大会将在乌克兰基辅举行。本次会议的主要目标是：让社区更快发展，延长系统正常运行时间，让用户更满意。今年将讨论嵌入式 BSD 系统、poudriere 和 pkgng 教程、mpd5 深入解析以及其他一些技术主题。"
+
+[[events]]
+id = "eurobsdcon-2012"
+name = "2012 年欧洲 BSD 大会"
+url = "http://2012.eurobsdcon.org/"
+startDate = "2012-10-18"
+endDate = "2012-10-21"
+countryCode = "PL"
+country = "波兰"
+city = "华沙"
+description = "欧洲 BSD 大会是面向从事和使用基于 BSD 操作系统及相关项目的人员举办的欧洲技术会议。2012 年欧洲 BSD 大会是第 11 届，将于 2012 年 10 月 20-21 日（教程 10 月 18-19 日）在波兰华沙举行。欧洲 BSD 大会是一个绝佳而独特的机会，可以了解我们日常使用的强大 BSD 系统，并与世界各地的其他开发者建立联系。"
+
+[[events]]
+id = "meetbsd-2012"
+name = "2012 年加州 meetBSD 大会"
+url = "http://www.meetbsd.com/"
+startDate = "2012-11-03"
+endDate = "2012-11-04"
+countryCode = "US"
+country = "美国"
+city = "加利福尼亚州森尼维尔"
+site = "雅虎公司"
+description = "2012 年加州 meetBSD 大会承诺将带来与众不同的体验。加州 meetBSD 大会并非普通的会议——它是来自 BSD 社区各地的思想交流盛会。2012 年加州 meetBSD 大会将包括社区安排的分组会议、讨论小组、5-10 分钟的“闪电演讲”，以及经验丰富的 BSD 专家的更长时间演讲。"
+
+[[events]]
+id = "bsdday-argentina-2012"
+name = "2012 年阿根廷 BSD 日"
+url = "http://www.bsdday.org/"
+startDate = "2012-11-17"
+endDate = "2012-11-17"
+countryCode = "AR"
+country = "阿根廷"
+city = "布宜诺斯艾利斯市"
+site = "国立科技大学"
+description = "阿根廷 BSD 日是面向 BSD 软件和基于 BSD 系统用户、系统管理员和开发者的会议。本次会议面向所有开发、部署和使用基于 FreeBSD、NetBSD、OpenBSD、DragonFlyBSD 和其他 *BSD 系统的个人。阿根廷 BSD 日是一个技术会议，旨在收集最佳技术论文和演示文稿，以确保我们开源社区的最新发展能够与最广泛的受众分享。"

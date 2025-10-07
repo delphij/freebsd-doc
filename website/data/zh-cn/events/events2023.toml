@@ -1,0 +1,81 @@
+# Sort events by start date, with more recent events lower in the file
+year = 2023
+
+[[events]]
+id = "fosdem-2023"
+name = "FOSDEM 2023"
+url = "https://fosdem.org/2023/"
+startDate = "2023-02-04"
+endDate = "2023-02-05"
+country = "比利时"
+city = "布鲁塞尔"
+site = "ULB"
+description = "每年，来自世界各地的数千名自由和开源软件开发者都会齐聚布鲁塞尔参加此活动。2023年，在经历了两年线上活动之后，他们将再次在布鲁塞尔相聚。请务必前往 FreeBSD 展位和 <a href=\"https://fosdem.org/2023/schedule/track/bsd/">BSD 开发室</a>，了解 FreeBSD 的最新动态。"
+
+[[events]]
+id = "freebsd-office-hours-2023-03-22"
+name = "Google 编程之夏"
+url = "https://live.freebsd.org/FreeBSD/officehours/"
+startDate = "2023-03-22"
+endDate = "2023-03-22"
+site = "FreeBSD 办公时间 – YouTube"
+description = "UTC 时间 3 月 22 日星期三 17:00，我们将分享通过 Google 编程之夏为 FreeBSD 做出贡献的信息。"
+
+[[events]]
+id = "asiabsdcon-2023"
+name = "AsiaBSDCon 2023"
+url = "https://2023.asiabsdcon.org/"
+startDate = "2023-03-30"
+endDate = "2023-04-02"
+countryCode = "JP"
+country = "日本"
+city = "东京"
+site = "东京理科大学"
+description = "AsiaBSDCon 是一个面向 BSD 系统用户和开发者的会议。该会议面向所有开发、部署和使用基于 FreeBSD、NetBSD、OpenBSD、DragonFlyBSD、Darwin 和 MacOS X 系统的用户。AsiaBSDCon 是一个技术会议，旨在收集最佳技术论文和演示文稿，以确保我们开源社区的最新发展能够与最广泛的受众分享。"
+
+[[events]]
+id = "bsdcan-2023"
+name = "BSDCan 2023"
+url = "https://www.bsdcan.org/2023/"
+startDate = "2023-05-17"
+endDate = "2023-05-20"
+countryCode = "CA"
+country = "加拿大"
+city = "渥太华"
+site = "渥太华大学"
+description = "在加拿大渥太华举行的为期四天的 BSD 会议。BSDCan 举办围绕 BSD 系列操作系统的一系列主题演讲和教程。"
+
+[[events]]
+id = "eurobsdcon-2023"
+name = "EuroBSDcon 2023"
+url = "https://2023.eurobsdcon.org"
+startDate = "2023-09-14"
+endDate = "2023-09-17"
+countryCode = "PT"
+country = "葡萄牙"
+city = "科英布拉"
+site = "科英布拉大学"
+description = "EuroBSDcon 是欧洲年度技术会议，汇集了使用和开发基于 4.4BSD (Berkeley Software Distribution) 操作系统家族及相关项目的用户和开发者。"
+
+[[events]]
+id = "hackathon-202310"
+name = "202310 黑客马拉松"
+url = "https://wiki.freebsd.org/Hackathon/202310"
+startDate = "2023-10-04"
+endDate = "2023-10-06"
+countryCode = "NO"
+country = "挪威"
+city = "奥斯陆"
+site = "Modirum"
+description = "FreeBSD 黑客马拉松将于 2023 年 10 月 4 日、5 日和 6 日在奥斯陆举行。Modirum MDPay 慷慨地提出在他们位于奥斯陆的办公室接待我们。"
+
+[[events]]
+id = "vendor-summit-2023"
+name = "2023 年 11 月 FreeBSD 供应商峰会"
+url = "https://freebsdfoundation.org/blog/save-the-date-november-2023-freebsd-vendor-summit/"
+startDate = "2023-11-02"
+endDate = "2023-11-03"
+country = "美国"
+city = "圣何塞, 加利福尼亚州"
+site = "NetApp 园区"
+description = "请标记您的日历！2023 年 11 月 FreeBSD 供应商峰会将于 2023 年 11 月 2 日至 3 日在加利福尼亚州圣何塞的 NetApp 园区举行。供应商峰会将在两天内设有一个单一的演讲主题。"
