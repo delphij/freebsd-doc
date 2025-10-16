@@ -1,0 +1,158 @@
+---
+title: 序言
+prev: books/fdp-primer
+next: books/fdp-primer/overview
+description: 關於 FreeBSD 文件計畫的序言
+tags: ["preface", "prompts", "conventions"]
+showBookMenu: true
+weight: 1
+params:
+  path: "/books/fdp-primer/preface/"
+---
+
+[preface]
+[[preface]]
+= 序言
+:doctype: book
+:toc: macro
+:toclevels: 1
+:icons: font
+:source-highlighter: rouge
+:experimental:
+:images-path: books/fdp-primer/
+
+ifdef::env-beastie[]
+ifdef::backend-html5[]
+:imagesdir: ../../../../images/{images-path}
+endif::[]
+ifndef::book[]
+include::shared/authors.adoc[]
+include::shared/mirrors.adoc[]
+include::shared/releases.adoc[]
+include::shared/attributes/attributes-{{% lang %}}.adoc[]
+include::shared/{{% lang %}}/teams.adoc[]
+include::shared/{{% lang %}}/mailing-lists.adoc[]
+include::shared/{{% lang %}}/urls.adoc[]
+toc::[]
+endif::[]
+ifdef::backend-pdf,backend-epub3[]
+include::../../../../../shared/asciidoctor.adoc[]
+endif::[]
+endif::[]
+
+ifndef::env-beastie[]
+toc::[]
+include::../../../../../shared/asciidoctor.adoc[]
+endif::[]
+
+[[preface-prompts]]
+== Shell 提示符號
+
+此表顯示預設的系統提示符號和超級使用者提示符號。
+範例中使用這些提示符號來表示執行範例的使用者類型。
+
+[.informaltable]
+[cols="1,2", frame="none", options="header"]
+|===
+| 使用者
+| 提示符號
+
+
+|一般使用者
+|%
+
+|`root`
+|# 
+|===
+
+[[preface-conventions]]
+== 排版慣例
+
+此表描述本書中使用的排版慣例。
+
+[.informaltable]
+[cols="1,2", frame="none", options="header"]
+|===
+| 意義
+| 範例
+
+
+|指令名稱。
+|使用 `ls -l` 列出所有檔案。
+
+|檔案名稱。
+|編輯 [.filename]#.login#。
+
+|螢幕上的電腦輸出。
+a|
+
+[source,shell]
+....
+You have mail.
+....
+
+
+|使用者輸入的內容，與螢幕上的電腦輸出對比。
+a|
+
+[source,shell]
+....
+% date +"The time is %H:%M"
+The time is 09:18
+....
+
+|手冊頁面參考。
+|使用 man:su[1] 來變更使用者身份。
+
+|使用者和群組名稱。
+|只有 `root` 可以這麼做。
+
+|強調。
+|使用者 _必須_ 這麼做。
+
+|使用者應以實際文字取代的文字。
+|若要在手冊頁面中搜尋關鍵字，請輸入 `man -k _keyword_`
+
+|環境變數。
+|`$HOME` 設定為使用者的家目錄。
+|===
+
+[[preface-notes]]
+== 註解、提示、重要資訊、警告和範例
+
+註解、警告和範例會出現在內文中。
+
+[NOTE]
+====
+註解會像這樣呈現，其中包含需要注意的資訊，因為它可能會影響使用者的操作。
+====
+
+[TIP]
+====
+
+提示會像這樣呈現，其中包含對使用者有幫助的資訊，例如展示一種更簡單的作法。
+====
+
+[IMPORTANT]
+====
+重要資訊會像這樣呈現。
+通常，這些會顯示使用者可能需要採取的額外步驟。
+====
+
+[WARNING]
+====
+
+警告會像這樣呈現，其中包含警告如果不遵循指示可能造成的損害。
+這種損害可能是實體的，對硬體或使用者造成損害，也可能是非實體的，例如無意中刪除重要檔案。
+====
+
+.一個範例
+[example]
+====
+範例會像這樣呈現，通常包含展示演練或特定動作結果的範例。
+====
+
+[[preface-acknowledgements]]
+== 致謝
+
+感謝 Sue Blake、Patrick Durusau、Jon Hamilton、Peter Flynn 和 Christopher Maden，他們花時間閱讀本文件的初稿，並提供了許多寶貴的意見和批評。

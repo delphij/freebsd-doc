@@ -1,0 +1,353 @@
+---
+title: 第 1 章. 總覽
+prev: books/fdp-primer/preface
+next: books/fdp-primer/tools
+description: 關於 FreeBSD 文件計畫流程的總覽
+tags: ["overview", "FreeBSD Documentation Project", "quick start"]
+showBookMenu: true
+weight: 2
+params:
+  path: "/books/fdp-primer/overview/"
+---
+
+[[overview]]
+= 總覽
+:doctype: book
+:toc: macro
+:toclevels: 1
+:icons: font
+:sectnums:
+:sectnumlevels: 6
+:sectnumoffset: 1
+:partnums:
+:source-highlighter: rouge
+:experimental:
+:images-path: books/fdp-primer/
+
+ifdef::env-beastie[]
+ifdef::backend-html5[]
+:imagesdir: ../../../../images/{images-path}
+endif::[]
+ifndef::book[]
+include::shared/authors.adoc[]
+include::shared/mirrors.adoc[]
+include::shared/releases.adoc[]
+include::shared/attributes/attributes-{{% lang %}}.adoc[]
+include::shared/{{% lang %}}/teams.adoc[]
+include::shared/{{% lang %}}/mailing-lists.adoc[]
+include::shared/{{% lang %}}/urls.adoc[]
+toc::[]
+endif::[]
+ifdef::backend-pdf,backend-epub3[]
+include::../../../../../shared/asciidoctor.adoc[]
+endif::[]
+endif::[]
+
+ifndef::env-beastie[]
+toc::[]
+include::../../../../../shared/asciidoctor.adoc[]
+endif::[]
+
+歡迎來到 FreeBSD 文件計畫（FDP）。
+高品質的文件對於 FreeBSD 的成功至關重要，我們非常重視您的貢獻。
+
+本文件描述了 FDP 的組織方式、如何撰寫和提交文件，以及如何有效地使用可用的工具。
+
+歡迎所有人為 FDP 做出貢獻。
+貢獻的意願是唯一的會員要求。
+
+本入門手冊將說明如何：
+
+* 了解文件的角色及其在生態系統中的地位。
+* 辨識 FreeBSD 的哪些部分由 FDP 維護。
+* 安裝所需的文件工具和檔案。
+* 對文件進行變更。
+* 提交變更以供審查並納入 FreeBSD 文件中。
+
+[[overview-documentation-ecosystem]]
+== FreeBSD 生態系統中的文件
+
+所有文件都是為了讀者的利益，而不是為了作者或維護者。
+文件應該適應讀者，而不是期望讀者適應文件。
+
+永遠不要因為以下原因責備讀者：
+
+* 無法輕易或根本無法使用文件
+* 覺得文件令人困惑
+* 不了解文件或如何應用
+* 找不到明確的答案或成功地彌補差距（或連接點）以推理出答案
+
+相反地，應該承認文件是：
+
+* 難以取得
+* 令人困惑
+* 難以理解或應用
+* 不完整
+
+然後，讓文件變得：
+
+* 更易於取得
+* 不那麼令人困惑
+* 更清晰
+* 更完整
+
+使用以下方法：
+
+* 應用 link:https://webaim.org/intro/#principles[無障礙最佳實踐] 來修正回報的問題以及您發現的任何類似問題
+* 修改或澄清令人困惑的結構或語言
+* 在難以理解或應用的部分加入相關範例
+* 填補空白或加入缺失的步驟
+
+[[overview-quick-start]]
+== 快速入門
+
+在編輯 FreeBSD 文件之前，必須採取一些準備步驟。
+首先，訂閱 {freebsd-doc}。
+一些團隊成員也在 http://www.efnet.org/[EFnet] 上的 `#bsddocs` IRC 頻道上互動。
+這些人可以協助解決與文件有關的問題。
+
+[[freebsd-installation-process]]
+=== FreeBSD 安裝流程
+
+[.procedure]
+====
+. 安裝這些套件。`docproj` _meta-port_ 會安裝所有與 FreeBSD 文件相關的實用應用程式。
++
+[source,shell]
+....
+# pkg install docproj
+....
++
+. 從 FreeBSD 儲存庫安裝一份本地工作副本的文件到 [.filename]#~/doc#（請參閱 crossref:working-copy[working-copy,The Working Copy]）。
++
+[source,shell]
+....
+% git clone https://git.FreeBSD.org/doc.git ~/doc
+....
++
+. 編輯需要變更的文件。如果檔案需要大幅變更，請諮詢郵件列表以取得意見。
++
+檢閱輸出並編輯檔案以修正任何顯示的問題，然後重新執行指令以尋找任何剩餘的問題。
+重複此步驟，直到所有錯誤都解決為止。
++
+. *_永遠_* 在提交變更之前建立並檢閱變更。在 `documentation` 或 `website` 子目錄中執行 `make` 將會以 HTML 格式產生文件。
++
+[source,shell]
+....
+% make
+....
++
+為了減少編譯時間，只能編譯一種語言：
++
+[source,shell]
+....
+% make DOC_LANG=en
+....
++
+建置輸出儲存在 [.filename]#~/doc/documentation/public/en/articles/# 和 [.filename]#~/doc/documentation/public/en/books/#。
++
+. 檢閱建置輸出，並確保編輯沒有錯字、排版問題或錯誤。如果在建置過程中發現任何錯誤，請編輯有問題的檔案以修正任何出現的問題，然後再次執行建置指令，直到所有錯誤都解決為止。
++
+. 使用 `git add .` 加入所有檔案，然後使用 `git diff` 檢閱差異。例如：
++
+[source,shell]
+....
+% git add .
+% git diff --staged
+....
++
+確保所有必要的檔案都已包含，然後將變更提交到您的本地分支，並使用 `git format-patch` 產生一個修補程式
++
+[source,shell]
+....
+% git commit
+% git format-patch origin/main
+....
++
+使用 `git format-patch` 產生的修補程式將包含作者身份和電子郵件地址，
+讓開發人員更容易套用（使用 `git am`）並給予適當的致謝。
++
+[IMPORTANT]
+======
+為了讓提交者更容易在其文件樹的工作副本上套用修補程式，
+請從您的文件樹的根目錄產生 [.filename]#.diff#。
+======
++
+在上面的範例中，已對手冊的 *bsdinstall* 部分進行了變更。
++
+. 使用網頁版的 https://bugs.FreeBSD.org/bugzilla/enter_bug.cgi?product=Documentation[問題回報] 系統提交修補程式或 diff 檔案。如果使用網頁表單，請在「摘要」中輸入 _[patch] 問題的簡短描述_。選取「元件」為 `Documentation`。在「描述」欄位中，輸入變更的簡短描述以及任何重要的詳細資訊。使用 btn:[新增附件] 按鈕附加修補程式或 diff 檔案。最後，使用 btn:[提交錯誤] 按鈕將您的 diff 提交到問題回報系統。
+====
+
+[[gnu-linux-installation-process]]
+=== GNU/Linux 安裝流程
+
+[.procedure]
+====
+. 在 apt-based 系統（如 Debian 或 Ubuntu）中安裝這些套件。
+在其他 GNU/Linux 發行版中，套件名稱可能會不同。
+如有疑問，請查閱您的發行版的套件管理器。
++
+[source,shell]
+....
+# apt install hugo ruby-asciidoctor ruby-asciidoctor-pdf ruby-rouge git bmake
+....
++
+. 從 FreeBSD 儲存庫安裝一份本地工作副本的文件到 [.filename]#~/doc#（請參閱 crossref:working-copy[working-copy,The Working Copy]）。
++
+[source,shell]
+....
+% git clone https://git.FreeBSD.org/doc.git ~/doc
+....
++
+. 編輯需要變更的文件。如果檔案需要大幅變更，請諮詢郵件列表以取得意見。
++
+檢閱輸出並編輯檔案以修正任何顯示的問題，然後重新執行指令以尋找任何剩餘的問題。
+重複此步驟，直到所有錯誤都解決為止。
++
+. 永遠在提交變更之前建立並測試變更。在 `documentation` 或 `website` 子目錄中執行 `bmake` 將會以 HTML 格式產生文件。
++
+[source,shell]
+....
+% bmake run LOCALBASE=/usr
+....
++
+. 使用 `git add .` 加入所有檔案，然後使用 `git diff` 檢閱差異。例如：
++
+[source,shell]
+....
+% git add .
+% git diff --staged
+....
++
+確保所有必要的檔案都已包含，然後將變更提交到您的本地分支，並使用 `git format-patch` 產生一個修補程式
++
+[source,shell]
+....
+% git commit
+% git format-patch origin/main
+....
++
+使用 `git format-patch` 產生的修補程式將包含作者身份和電子郵件地址，
+讓開發人員更容易套用（使用 `git am`）並給予適當的致謝。
++
+[IMPORTANT]
+======
+為了讓提交者更容易在其文件樹的工作副本上套用修補程式，
+請從您的文件樹的根目錄產生 [.filename]#.diff#。
+======
++
+. 使用網頁版的 https://bugs.FreeBSD.org/bugzilla/enter_bug.cgi?product=Documentation[問題回報] 系統提交修補程式或 diff 檔案。
+如果使用網頁表單，請在「摘要」中輸入 _問題的簡短描述_。
+選取「元件」為 `Documentation`。
+在「描述」欄位中，在 _摘要_ 欄位中輸入問題的簡短描述，並在 _關鍵字_ 欄位中加入 _patch_。
+使用 btn:[新增附件] 按鈕附加修補程式或 diff 檔案。
+最後，使用 btn:[提交錯誤] 按鈕將您的 diff 提交到問題回報系統。
+====
+
+[[mac-os-installation-process]]
+=== macOS(R) 安裝流程
+
+[.procedure]
+====
+
+. 使用 link:https://brew.sh/[Homebrew] 和 link:https://rubygems.org/[RubyGem] 安裝這些套件。
++
+[source,shell]
+....
+$ brew install hugo ruby git bmake
+....
++
+. 將 Ruby 加入路徑。
++
+[source,shell]
+....
+$ echo 'export PATH="$(brew --prefix ruby)/bin:$PATH"' >> ~/.zshrc
+$ echo 'export PATH="$(brew --prefix hugo)/bin:$PATH"' >> ~/.zshrc
+$ echo 'export GEM_PATH="$(gem environment gemdir)"' >> ~/.zshrc
+$ echo 'export PATH="${GEM_PATH}/bin:$PATH"' >> ~/.zshrc
+$ source ~/.zshrc
+....
+. 使用 RubyGem 安裝 rouge 套件。
++
+[source,shell]
+....
+$ sudo gem install rouge asciidoctor asciidoctor-pdf asciidoctor-epub3
+....
++
+. 從 FreeBSD 儲存庫安裝一份本地工作副本的文件到 [.filename]#~/doc#（請參閱 crossref:working-copy[working-copy,The Working Copy]）。
++
+[source,shell]
+....
+$ git clone https://git.FreeBSD.org/doc.git ~/doc
+....
++
+. 編輯需要變更的文件。如果檔案需要大幅變更，請諮詢郵件列表以取得意見。
++
+檢閱輸出並編輯檔案以修正任何顯示的問題，然後重新執行指令以尋找任何剩餘的問題。
+重複此步驟，直到所有錯誤都解決為止。
++
+. 永遠在提交變更之前建立並測試變更。在 `documentation` 或 `website` 子目錄中執行 `bmake` 將會以 HTML 格式產生文件。
++
+[source,shell]
+....
+$ bmake run USE_RUBYGEMS=YES RUBY_CMD="$(brew --prefix ruby)/bin/ruby" HUGO_CMD="$(brew --prefix hugo)/bin/hugo"
+....
+. 使用 `git add .` 加入所有檔案，然後使用 `git diff` 檢閱差異。例如：
++
+[source,shell]
+....
+% git add .
+% git diff --staged
+....
++
+確保所有必要的檔案都已包含，然後將變更提交到您的本地分支，並使用 `git format-patch` 產生一個修補程式
++
+[source,shell]
+....
+% git commit
+% git format-patch origin/main
+....
++
+使用 `git format-patch` 產生的修補程式將包含作者身份和電子郵件地址，
+讓開發人員更容易套用（使用 `git am`）並給予適當的致謝。
++
+[IMPORTANT]
+======
+為了讓提交者更容易在其文件樹的工作副本上套用修補程式，
+請從您的文件樹的根目錄產生 [.filename]#.diff#。
+======
++
+. 使用網頁版的 https://bugs.FreeBSD.org/bugzilla/enter_bug.cgi?product=Documentation[問題回報] 系統提交修補程式或 diff 檔案。
+如果使用網頁表單，請在「摘要」中輸入 _問題的簡短描述_。
+選取「元件」為 `Documentation`。
+在「描述」欄位中，在 _摘要_ 欄位中輸入問題的簡短描述，並在 _關鍵字_ 欄位中加入 _patch_。
+使用 btn:[新增附件] 按鈕附加修補程式或 diff 檔案。
+最後，使用 btn:[提交錯誤] 按鈕將您的 diff 提交到問題回報系統。
+====
+
+[[overview-doc]]
+== FreeBSD 文件集
+
+The FDP 負責四類 FreeBSD 文件。
+
+* _手冊_：手冊是 FreeBSD 使用者全面的線上資源和參考資料。
+* _FAQ_：FAQ 使用簡短的問答格式來解決在各種專門討論 FreeBSD 的郵件列表和論壇上經常被問到的問題。這種格式不允許冗長而全面的答案。
+* _手冊頁面_：英文系統手冊頁面通常不是由 FDP 撰寫的，因為它們是基本系統的一部分。但是，FDP 可以修改現有手冊頁面的部分內容，使其更清晰或修正不準確之處。
+* _網站_：這是 FreeBSD 在網路上的主要存在，可在 https://www.freebsd.org/[https://www.FreeBSD.org/] 和全球許多鏡像站點上看到。網站通常是新使用者第一次接觸 FreeBSD 的地方。
+
+翻譯團隊負責將手冊和網站翻譯成不同的語言。
+目前不翻譯手冊頁面。
+
+FreeBSD 網站、手冊和 FAQ 的文件原始碼可在文件儲存庫 `https://cgit.freebsd.org/doc/` 中取得。
+
+手冊頁面的原始碼可在位於 `https://cgit.freebsd.org/src/` 的獨立原始碼儲存庫中取得。
+
+文件提交訊息可使用 `git log` 查看。
+提交訊息也存檔在 link:{dev-commits-doc-all}。
+
+這兩個儲存庫的網頁前端可在 https://cgit.freebsd.org/doc/[] 和 https://cgit.freebsd.org/src/[] 取得。
+
+許多人撰寫了關於 FreeBSD 的教學或操作指南文章。
+有些儲存為 FDP 檔案的一部分。
+在其他情況下，作者決定將文件分開存放。
+FDP 致力於提供盡可能多的外部文件連結。

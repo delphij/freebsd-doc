@@ -1,0 +1,420 @@
+---
+title: 第 4 章. 文件目錄結構
+prev: books/fdp-primer/working-copy
+next: books/fdp-primer/doc-build
+description: FreeBSD 文件計畫中使用的文件目錄結構說明
+tags: ["directory structure", "organization"]
+showBookMenu: true
+weight: 5
+params:
+  path: "/books/fdp-primer/structure/"
+---
+
+[[structure]]
+= 文件目錄結構
+:doctype: book
+:toc: macro
+:toclevels: 1
+:icons: font
+:sectnums:
+:sectnumlevels: 6
+:sectnumoffset: 4
+:partnums:
+:source-highlighter: rouge
+:experimental:
+:images-path: books/fdp-primer/
+
+ifdef::env-beastie[]
+ifdef::backend-html5[]
+:imagesdir: ../../../../images/{images-path}
+endif::[]
+ifndef::book[]
+include::shared/authors.adoc[]
+include::shared/mirrors.adoc[]
+include::shared/releases.adoc[]
+include::shared/attributes/attributes-{{% lang %}}.adoc[]
+include::shared/{{% lang %}}/teams.adoc[]
+include::shared/{{% lang %}}/mailing-lists.adoc[]
+include::shared/{{% lang %}}/urls.adoc[]
+toc::[]
+endif::[]
+ifdef::backend-pdf,backend-epub3[]
+include::../../../../../shared/asciidoctor.adoc[]
+endif::[]
+endif::[]
+
+ifndef::env-beastie[]
+toc::[]
+include::../../../../../shared/asciidoctor.adoc[]
+endif::[]
+
+*doc/* 樹中的檔案和目錄遵循一種結構，旨在：
+
+. 便於自動將文件轉換為其他格式。
+. 促進不同文件組織之間的一致性，以便更容易在不同文件之間切換工作。
+. 便於決定新文件應放置在樹中的哪個位置。
+
+此外，文件樹必須容納多種不同語言的文件。
+重要的是，文件樹結構不應強制執行任何特定的預設值或文化偏好。
+
+[[structure-top]]
+== 頂層，doc/
+
+*doc/* 下有三個部分，文件和網站共享相同的結構。
+
+[cols="20%,80%", frame="none", options="header"]
+|===
+| 目錄
+| 用途
+
+| *documentation*
+| 包含所有 AsciiDoc 格式的文章和書籍。
+包含子目錄以按語言進一步分類資訊。
+
+| *tools*
+| 包含一組用於使用 link:https://weblate.org/en/[Weblate] 翻譯文件和網站的工具。
+Weblate 實例可在 link:https://translate-dev.freebsd.org[此處] 找到。
+
+| *shared*
+| 包含不特定於文件各種翻譯的檔案。
+包含子目錄以按語言進一步分類資訊，以及三個用於儲存作者、版本和鏡像資訊的檔案。
+此目錄在 `documentation` 和 `website` 之間共享。
+
+| *website*
+| 包含 link:https://www.FreeBSD.org[FreeBSD 網站] 的 AsciiDoc 格式。
+包含子目錄以按語言進一步分類資訊。
+|===
+
+[[structure-locale]]
+== 目錄
+
+這些目錄包含文件和網站。
+文件在此層級下的子目錄中組織，遵循 link:https://gohugo.io/getting-started/directory-structure/[Hugo 目錄結構]。
+
+[cols="20%,80%", frame="none", options="header"]
+|===
+| 目錄
+| 用途
+
+
+| *archetypes*
+| 包含用於建立新文章、書籍和網頁的範本。
+更多資訊請參閱 link:https://gohugo.io/content-management/archetypes/[此處]。
+
+| *config*
+| 包含 Hugo 設定檔。
+一個主檔案和每種語言一個檔案。
+更多資訊請參閱 link:https://gohugo.io/getting-started/configuration/[此處]。
+
+| *content*
+| 包含書籍、文章和網頁。
+文件的每個可用翻譯都有一個目錄，例如 `en` 和 `zh-tw`。
+
+| *data*
+| 包含用於以 link:https://en.wikipedia.org/wiki/TOML[TOML] 格式建立網站的自訂資料。
+此目錄用於儲存活動、新聞、新聞稿等。
+更多資訊請參閱 link:https://gohugo.io/templates/data-templates/[此處]。
+
+| *static*
+| 包含靜態資產。
+圖片、安全公告、pgpkeys 等。
+更多資訊請參閱 link:https://gohugo.io/content-management/static-files/[此處]。
+
+| *themes*
+| 包含以 `.html` 檔案形式的範本，指定網站的外觀。
+更多資訊請參閱 link:https://gohugo.io/templates/[此處]。
+
+| *tools*
+| 包含用於增強文件建置的工具。
+例如，產生書籍的目錄等。
+
+| *beastie.png*
+| 這張圖片不需要介紹；)
+
+| *LICENSE*
+| 文件、共享和網站的授權。BSD 2-Clause License。
+
+| *Makefile*
+| *Makefile* 定義了文件和網站的建置過程。
+|===
+
+[[structure-document]]
+== 文件特定資訊
+
+本節包含有關 FDP 管理的特定文件的特定說明。
+
+[[structure-document-books]]
+== 書籍：books/
+
+書籍以 AsciiDoc 撰寫。
+
+對於每本 FreeBSD 書籍，AsciiDoc 文件類型 (doctype) 為 `book`。
+書籍有 ``part``，每個 ``part`` 包含數個 ``chapter``。
+
+當文件轉換為 HTML 5（使用內建的 `html5` 後端）時：
+
+* `book` 的 ``chapter`` 開頭的 AsciiDoc 區段層級 0 (`=`) 將是 `<h1>`
+* AsciiDoc 區段層級 1 (`==`) 必須用於章節的第一個邏輯區段，並且將是 `<h2>`
+* AsciiDoc 區段層級 2 (`===`) 必須用於第一個邏輯子區段，並且將是 `<h3>`
+
+– 依此類推。參考：link:https://docs.asciidoctor.org/asciidoc/latest/sections/titles-and-levels/[Section Titles and Levels | Asciidoctor Docs]。
+
+[[structure-document-books-physical]]
+=== 實體組織
+
+書籍目錄中有許多檔案和目錄，它們都具有相同的結構。
+
+[[structure-document-books-physical-index]]
+==== _index.adoc
+
+*_index.adoc* 檔案定義了一些影響 AsciiDoc 原始碼如何轉換為其他格式的 AsciiDoc 變數，並列出目錄、範例表、圖表、表格和摘要部分。
+
+[[structure-document-books-physical-book]]
+==== book.adoc
+
+*book.adoc* 檔案定義了一些影響 AsciiDoc 原始碼如何轉換為其他格式的 AsciiDoc 變數，並列出目錄、範例表、圖表、表格、摘要部分和所有章節。
+此檔案用於使用 `asciidoctor-pdf` 產生 PDF，以及在一個 `html` 頁面中產生書籍。
+
+[[structure-document-books-physical-part]]
+==== part*.adoc
+**part*.adoc** 檔案儲存了書籍一部分的簡要介紹。
+
+[[structure-document-handbook-physical-chapters]]
+==== directory/_index.adoc
+
+手冊中的每一章都儲存在一個名為*_index.adoc* 的檔案中，該檔案位於與其他章節分開的目錄中。
+
+例如，這是一章標頭的範例：
+
+[source.programlisting,asciidoc]
+....
+---
+title: 第 8 章. 設定 FreeBSD 核心
+part: 第 II 部分. 常見任務
+prev: books/handbook/multimedia
+next: books/handbook/printing
+---
+
+[[kernelconfig]]
+= 設定 FreeBSD 核心
+...
+....
+
+當產生手冊的 HTML5 版本時，這將產生 *kernelconfig/index.html*。
+
+快速瀏覽一下就會發現，有許多目錄都帶有各自的*_index.adoc* 檔案，包括 *basics/_index.adoc*、*introduction/_index.adoc* 和 *printing/_index.adoc*。
+
+[IMPORTANT]
+====
+不要根據章節在手冊中的順序來命名章節或目錄。
+隨著手冊內容的重新組織，這個順序可能會改變。
+重新組織應該可以在不重新命名檔案的情況下進行，除非整個章節在階層中被提升或降級。
+====
+
+[[structure-document-articles]]
+== 文章：articles/
+
+文章以 AsciiDoc 撰寫。
+
+文章被組織為 AsciiDoc `article`。
+文章分為區段 (`=`) 和子區段 (`==`, `===`) 等。
+
+[[structure-document-articles-physical]]
+=== 實體組織
+
+每篇文章都有一個*_index.adoc* 檔案。
+
+[[structure-document-articles-physical-index]]
+==== _index.adoc
+
+*_index.adoc* 檔案包含所有 AsciiDoc 變數和內容。
+
+例如，這是一篇文章的範例，其結構與一本書的章節非常相似：
+
+[source.programlisting,asciidoc]
+....
+---
+title: 為什麼你應該為你的開源專案使用 BSD 風格的授權
+authors:
+  - author: Bruce Montague
+    email: brucem@alumni.cse.ucsc.edu
+trademarks: ["freebsd", "intel", "general"]
+---
+
+= 為什麼你應該為你的開源專案使用 BSD 風格的授權
+:doctype: article
+:toc: macro
+:toclevels: 1
+:icons: font
+:sectnums:
+:sectnumlevels: 6
+:source-highlighter: rouge
+:experimental:
+
+'''
+
+toc::[]
+
+[[intro]]
+== 簡介
+....
+
+== 管理貢獻者列表
+
+FreeBSD 專案在文件和印刷品中的幾個不同列表中認可貢獻者。
+本節描述文件團隊如何管理這些列表的變更。
+
+=== 導師和新提交者關係列表
+
+自 FreeBSD 7.0 起，FreeBSD 維護了 link:https://cgit.freebsd.org/src/tree/share/misc[三個貢獻者導師/受指導者關係列表] - 一個用於原始碼，一個用於 ports，一個用於文件。
+這些檔案採用 *".dot"* 格式，旨在與流行的圖形工具包 package:graphics/graphviz[] 一起使用，該工具包可作為 FreeBSD 套件或 port 取得。
+
+[NOTE]
+====
+man:dot[1] 作為 package:graphics/graphviz[] 套件或 port 的一部分安裝。
+[.filename]#dot# 程式讀取 *".dot"* 格式的檔案，並建立有向圖的圖形影像。
+====
+
+這三個檔案通常作為所有三個團隊的新提交者的學習經驗，他們被指示將自己和他們的導師加入到適當的檔案中，作為他們的第一次提交。
+每個檔案都有一個用於新提交者的「目前」部分，一個用於歸還提交位元時的「校友」部分，以及一個顯示關係的「導師/受指導者」部分。
+每種類型條目的格式在檔案頂部都有說明。
+
+=== 一般貢獻者列表
+
+extref:{contributors}[FreeBSD 的貢獻者] 以文章格式維護。
+管理 *貢獻者* 文章檔案的原始檔位於：
+
+[subs=+quotes]
+----
+doc
+ /documentation
+   /content
+     /{language}
+       /articles
+         /contributors
+           [.filename]#_index.adoc# – 包含適用於每個區段的 include 檔案列表。
+           [.filename]#_index.po# – 翻譯頁面
+           [.filename]#contrib-develinmemoriam.adoc# - 「悼念」區段的內容
+           [.filename]#contrib-develinmemoriam.po# – 翻譯頁面
+----
+
+此貢獻者目錄的副本可能存在於其他內容語言目錄中。
+
+請注意，檔案 [.filename]#contrib-develinmemoriam.adoc# 也位於此目錄中。
+有關其他資訊，請參閱下文。
+
+[.filename]#contributors/_index.adoc# 檔案被設計為 include 檔案的集合。
+include 檔案列在原始檔的 Hugo 特定部分中。
+該部分分為幾個部分，帶有 "ifdef::" 陳述式。
+有一個用於網站輸出的子部分和一個用於非網站（包括 PDF）輸出的子部分。
+
+*貢獻者* 頁面每個區段的文字都包含一個 "include::" 陳述式。
+例如，「Port Manager Alumni」的條目是 `include::{include-contrib-portmgralumni}[]`。
+這會將 port manager alumni 的文字拉入呈現的輸出中。
+
+若要進行變更，請編輯適當的 include 檔案：
+
+[subs=+quotes]
+----
+include-contrib-committers:     [.filename]#~/doc/shared/contrib-committers.adoc#
+include-contrib-corealumni:     [.filename]#~/doc/shared/contrib-corealumni.adoc#
+include-contrib-develalumni:    [.filename]#~/doc/shared/contrib-develalumni.adoc#
+include-contrib-portmgralumni:  [.filename]#~/doc/shared/contrib-portmgralumni.adoc#
+include-contrib-additional:     [.filename]#~/doc/shared/contrib-additional.adoc#
+include-contrib-386bsd:         [.filename]#~/doc/shared/contrib-386bsd.adoc#
+
+此外，編輯 [.filename]#authors.adoc# 檔案：[.filename]#~/doc/shared/authors.adoc#
+以及任何相關的翻譯。
+
+----
+
+一般來說，如果正在新增一個人，只需要進行一次編輯，就可以將他們新增到適當的 include 檔案中。
+如果一個人正在從「目前」狀態轉移到「校友」狀態，則需要進行兩次編輯 - 一次刪除，一次插入到適當的檔案中。
+所有檔案的條目順序可在下表中找到。
+
+[cols="25%,25%,25%,25%", frame="none", options="header"]
+|===
+| 用途 | 區段錨點 | ~/doc/shared/ 中的檔案 | 順序規範
+| *FreeBSD 開發人員* | include-contrib-committers | [.filename]#contrib-committers.adoc# | 按姓氏字母順序
+| *核心團隊校友* | include-contrib-corealumni | [.filename]#contrib-corealumni.adoc# | 大致按時間倒序
+| *開發團隊校友* | include-contrib-develalumni | [.filename]#contrib-develalumni.adoc# | 大致按時間倒序
+| *Ports 管理團隊校友* | include-contrib-portmgralumni | [.filename]#contrib-portmgralumni.adoc# | 大致按時間倒序
+| *其他 FreeBSD 貢獻者* | include-contrib-additional | [.filename]#contrib-additional.adoc# | 按名字字母順序
+| *386BSD 修補程式套件修補程式貢獻者* | include-contrib-386bsd | [.filename]#contrib-386bsd.adoc# | 按名字字母順序
+| *中央伺服器專案的貢獻者* | 不使用 include 檔案 | [.filename]#contributors/_index.adoc# | 無序
+| *直接資助* | 不使用 include 檔案 | [.filename]#contributors/_index.adoc# | 無序
+| *硬體貢獻者* | 不使用 include 檔案 | [.filename]#contributors/_index.adoc# | 無序
+| *特殊貢獻者* | 不使用 include 檔案 | [.filename]#contributors/_index.adoc# | 無序
+|===
+
+=== 「悼念」區段
+
+在通知 BSD 社群社群成員去世時，應使用以下程序：
+
+. 使用檔案 [.filename]#~/doc/shared/authors.adoc# 查詢此人的姓名和屬性參考，例如 `{foobsd}`。
+. 如果他們是 [.filename]#~/doc/website/content/en/administration.adoc# 中一個或多個 FreeBSD 專案團隊的現任成員，請刪除其屬性參考的所有實例。
+此外，完成以下編輯：
++
+* [.filename]#~/doc/shared/contrib-committers.adoc# - 刪除屬性參考。
+* [.filename]#~/doc/shared/contrib-corealumni.adoc# - 如果他們是核心團隊的 _現任_ 成員，請建立一個顯示開始和結束日期的條目。
+* [.filename]#~/doc/shared/contrib-develalumni.adoc# - 新增屬性參考和作為提交者的活動日期。
+* [.filename]#~/doc/shared/contrib-portmgralumni.adoc# - 如有必要，新增屬性參考。
+* [.filename]#~/doc/shared/contrib-additional.adoc# - 刪除條目。
+* [.filename]#~/doc/shared/contrib-386bsd.adoc# - 這只是一份歷史文件。
+不需要變更。
++
+. 在 [.filename]#~/doc/shared/authors.adoc# 檔案中，註解掉（使用一個反斜線 '\'）電子郵件地址，以避免建立電子郵件連結 "mailto:"
+請參閱下面的 `itojun` 範例：
++
+[source.programlisting,asciidoc]
+....
+[shared/authors.adoc]
+
+[..]
+
+:itojun-name: Jun-ichiro Itoh
+:itojun-email: \itojun@FreeBSD.org
+:itojun: {itojun-name} <{itojun-email}>
+
+[..]
+....
++
+. 由於該成員已故（應再次確認），請將他們新增到「悼念」檔案 [.filename]#contrib-develinmemoriam.adoc# 中。
++
+嘗試尋找一些關於他們多年來對 FreeBSD 貢獻的事實資訊，並將其與他們在檔案中的條目一起新增。
+這可能需要詢問開發郵件列表、聯繫同事、聯繫 FreeBSD 基金會或搜尋提交日誌。
++
+若要尋找他們第一次提交的日期，請使用：
++
+[source.programlisting,asciidoc]
+....
+% cd ~/src
+% git log --reverse --author=foobsd     # 搜尋 foobsd 的第一次提交
+....
++
+這將以相反的順序列印出他們的提交。
+第一次提交的日期將在頂部。
++
+確保日期的格式與其他條目相符：
++
+[source.programlisting,asciidoc]
+....
+（提交位元開始年份 - 提交位元結束年份；RIP 去世年份）
+
+例如：
+
+* Foo BSD (2007 - 2010; RIP 2016)
+....
++
+檢查檔案中條目的順序。
++
+[cols="25%,25%,25%,25%", frame="none", options="header"]
+|===
+| 用途 | 區段錨點 | ~/doc/documentation/content/{language}/articles/contributors/ 中的檔案 | 順序規範
+| *開發團隊：悼念* | [.filename]#contrib-develinmemoriam.adoc# | [.filename]#contrib-develinmemoriam.adoc# | 大致按時間倒序
+|===
++
+有關類似條目，請參閱「悼念」檔案。
++
+. 最後，如果適用，將提交者成員條目從「目前」部分移至適當的 link:https://cgit.freebsd.org/src/tree/share/misc[貢獻者導師/受指導者關係列表] 的「校友」部分，並附上適當的日期。
+無需變更導師/受指導者關係。

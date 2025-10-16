@@ -1,0 +1,74 @@
+---
+title: 第 2 章. 工具
+prev: books/fdp-primer/overview
+next: books/fdp-primer/working-copy
+description: FreeBSD 文件計畫中使用的工具
+tags: ["tools", "required tools", "optional tools"]
+showBookMenu: true
+weight: 3
+params:
+  path: "/books/fdp-primer/tools/"
+---
+
+[[tools]]
+= 工具
+:doctype: book
+:toc: macro
+:toclevels: 1
+:icons: font
+:sectnums:
+:sectnumlevels: 6
+:sectnumoffset: 2
+:partnums:
+:source-highlighter: rouge
+:experimental:
+:images-path: books/fdp-primer/
+
+ifdef::env-beastie[]
+ifdef::backend-html5[]
+:imagesdir: ../../../../images/{images-path}
+endif::[]
+ifndef::book[]
+include::shared/authors.adoc[]
+include::shared/mirrors.adoc[]
+include::shared/releases.adoc[]
+include::shared/attributes/attributes-{{% lang %}}.adoc[]
+include::shared/{{% lang %}}/teams.adoc[]
+include::shared/{{% lang %}}/mailing-lists.adoc[]
+include::shared/{{% lang %}}/urls.adoc[]
+toc::[]
+endif::[]
+ifdef::backend-pdf,backend-epub3[]
+include::../../../../../shared/asciidoctor.adoc[]
+endif::[]
+endif::[]
+
+ifndef::env-beastie[]
+toc::[]
+include::../../../../../shared/asciidoctor.adoc[]
+endif::[]
+
+有數種軟體工具用於管理 FreeBSD 文件並將其呈現為不同的輸出格式。
+其中一些工具是必需的，必須在學習後續章節中的範例之前安裝。
+有些則是選用的，可以增加功能或使建立文件的工作變得不那麼費力。
+
+[[tools-required]]
+== 必要工具
+
+如 crossref:overview[overview,總覽章節] 所示，從 Ports Collection 安裝 `docproj` _meta-port_。
+這些應用程式是處理 FreeBSD 文件所必需的。
+下面提供了一些關於特定元件的進一步說明。
+
+[[tools-optional]]
+== 選用工具
+
+這些應用程式並非必要，但可以讓處理文件的工作變得更容易或增加功能。
+
+[[tools-optional-software]]
+=== 軟體
+
+Vim (package:editors/vim[]) -- 一款受歡迎的 Asciidoctor 編輯器。
+
+Emacs (package:editors/emacs[])。
+
+這兩種工具都包含一種特殊模式，可以減少打字量，並有助於減少錯誤。

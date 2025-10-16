@@ -1,0 +1,252 @@
+---
+title: 第 8 章. 翻譯
+prev: books/fdp-primer/rosetta
+next: books/fdp-primer/po-translations
+description: 關於 FreeBSD 文件計畫中翻譯流程的常見問題
+tags: ["FAQ", "i18n", "i10n", "translation"]
+showBookMenu: true
+weight: 9
+params:
+  path: "/books/fdp-primer/translations/"
+---
+
+[[translations]]
+= 翻譯
+:doctype: book
+:toc: macro
+:toclevels: 1
+:icons: font
+:sectnums:
+:sectnumlevels: 6
+:sectnumoffset: 8
+:partnums:
+:source-highlighter: rouge
+:experimental:
+:images-path: books/fdp-primer/
+
+ifdef::env-beastie[]
+ifdef::backend-html5[]
+:imagesdir: ../../../../images/{images-path}
+endif::[]
+ifndef::book[]
+include::shared/authors.adoc[]
+include::shared/mirrors.adoc[]
+include::shared/releases.adoc[]
+include::shared/attributes/attributes-{{% lang %}}.adoc[]
+include::shared/{{% lang %}}/teams.adoc[]
+include::shared/{{% lang %}}/mailing-lists.adoc[]
+include::shared/{{% lang %}}/urls.adoc[]
+toc::[]
+endif::[]
+ifdef::backend-pdf,backend-epub3[]
+include::../../../../../shared/asciidoctor.adoc[]
+endif::[]
+endif::[]
+
+ifndef::env-beastie[]
+toc::[]
+include::../../../../../shared/asciidoctor.adoc[]
+endif::[]
+
+這是為將 FreeBSD 文件（FAQ、手冊、教學、手冊頁面等）翻譯成不同語言的人員準備的常見問題集。
+
+它在很大程度上基於 FreeBSD 德國文件計畫的翻譯常見問題集，最初由 Frank Gründer 
+mailto:elwood@mc5sys.in-berlin.de[elwood@mc5sys.in-berlin.de] 撰寫，並由 Bernd Warken 
+mailto:bwarken@mayn.de[bwarken@mayn.de] 翻譯回英文。
+
+== i18n 和 l10n 是什麼意思？
+
+i18n 是 internationalization（國際化）的縮寫，l10n 是 localization（在地化）的縮寫。
+它們只是一種方便的簡寫。
+
+i18n 可以讀作「i」後面跟著 18 個字母，再跟著「n」。
+同樣地，l10n 是「l」後面跟著 10 個字母，再跟著「n」。
+
+== 有翻譯人員的郵件列表嗎？
+
+是的。不同的翻譯小組有自己的郵件列表。
+https://www.freebsd.org/docproj/translations[翻譯專案列表] 提供了有關每個翻譯專案運作的郵件列表和網站的更多資訊。
+此外，還有 mailto:freebsd-translators@freebsd.org[freebsd-translators@freebsd.org] 用於一般翻譯討論。
+
+== 需要更多翻譯人員嗎？
+
+是的。越多人參與翻譯，完成的速度就越快，英文文件的變更也能更快地反映在翻譯後的文件中。
+
+您不必是專業翻譯人員也能提供幫助。
+
+== 我需要懂哪些語言？
+
+理想情況下，您需要具備良好的英文書面能力，顯然地，您也需要流利地使用您要翻譯成的語言。
+
+英文並非絕對必要。
+例如，您可以從西班牙文翻譯版將 FAQ 翻譯成匈牙利文。
+
+== 我需要懂哪些軟體？
+
+強烈建議您維護一份 FreeBSD Git 儲存庫的本機副本（至少是文件部分）。
+可以透過執行以下指令來完成：
+
+[source,shell]
+....
+% git clone https://git.FreeBSD.org/doc.git ~/doc
+....
+
+https://git.FreeBSD.org/[git.FreeBSD.org] 是一個公開的 `git` 伺服器。
+
+[NOTE]
+====
+這需要安裝 package:git-lite[] 套件。
+====
+
+您應該熟悉使用 git。
+這將讓您能夠查看構成文件的檔案在不同版本之間的變更。
+
+例如，若要檢視 [.filename]#documentation/content/en/articles/committers-guide/_index.adoc# 的 `abff932fe8` 和 `2191c44469` 修訂版本之間的差異，請執行：
+
+[source,shell]
+....
+% git diff abff932fe8 2191c44469 documentation/content/en/articles/committers-guide/_index.adoc
+....
+
+有關在 FreeBSD 中使用 Git 的完整說明，請參閱 extref:{handbook}mirrors[FreeBSD 手冊, git]。
+
+== 如何找出還有誰可能在翻譯成同一種語言？
+
+https://www.FreeBSD.org/docproj/translations/[文件專案翻譯頁面] 列出了目前已知的翻譯工作。
+如果已經有人在將文件翻譯成您的語言，請不要重複他們的努力。
+相反地，請聯繫他們，看看您能如何提供幫助。
+
+如果該頁面上沒有列出任何人在為您的語言進行翻譯，請向 {freebsd-doc} 發送一封郵件，以防其他人正在考慮進行翻譯，但尚未宣布。
+
+== 沒有其他人翻譯成我的語言。我該怎麼辦？
+
+恭喜，您剛剛啟動了「FreeBSD _您的語言_ 文件翻譯專案」。
+歡迎加入。
+
+首先，決定您是否有時間。
+由於您是目前唯一從事您語言工作的人，因此您有責任宣傳您的工作並協調任何可能想幫助您的志願者。
+
+寫一封電子郵件到文件專案郵件列表，宣布您將要翻譯文件，以便維護文件專案翻譯頁面。
+
+如果您所在的國家/地區已經有人提供 FreeBSD 鏡像服務，您應該聯繫他們，詢問是否可以為您的專案提供一些網頁空間，以及可能的電子郵件地址或郵件列表服務。
+
+然後選擇一份文件並開始翻譯。
+最好從較小的文件開始 - FAQ 或其中一篇教學。
+
+== 我翻譯了一些文件，該寄到哪裡？
+
+這要看情況。
+如果您已經與翻譯團隊（例如日文團隊或德文團隊）合作，那麼他們將有自己的處理提交文件的程序，這些程序將在其網頁上概述。
+
+如果您是唯一從事特定語言工作的人（或者您負責一個翻譯專案並希望將您的變更提交回 FreeBSD 專案），那麼您應該將您的翻譯發送到 FreeBSD 專案（請參閱下一個問題）。
+
+== 我是唯一從事此語言翻譯的人，如何提交我的翻譯？
+
+首先，請確保您的翻譯組織得當。
+這意味著它應該直接放入現有的文件樹中並立即建置。
+
+此下的目錄根據其所用語言的語言代碼命名，如 ISO639 中所定義（在 1999 年 1 月 20 日之後的 FreeBSD 版本中為 [.filename]#/usr/share/misc/iso639#）。
+
+[WARNING]
+====
+Hugo 需要小寫的語言代碼。
+例如，Hugo 使用 `pt-br` 而不是 `pt_BR`。
+====
+
+目前，FreeBSD 文件儲存在名為 [.filename]#documentation/# 的頂層目錄中。
+此下的目錄根據其所用語言的語言代碼命名，如 ISO639 中所定義（在 1999 年 1 月 20 日之後的 FreeBSD 版本中為 [.filename]#/usr/share/misc/iso639#）。
+
+如果您的語言可以用不同的方式編碼（例如，中文），那麼在此之下應該有目錄，您提供的每種編碼格式都有一個目錄。
+
+最後，您應該為每份文件建立目錄。
+
+例如，一個假設的瑞典文翻譯可能看起來像這樣：
+
+[.programlisting]
+....
+documentation/
+  content/
+    sv/
+      books/
+        faq/
+          _index.adoc
+....
+
+`sv` 是翻譯的名稱，格式為 [.filename]#lang#。
+請注意這兩個 Makefile，它們將用於建置文件。
+
+使用 git diff 指令產生一個 diff 並將其發送到 link:https://reviews.freebsd.org/[審查系統]。
+
+[source,shell]
+....
+% git diff > sv-faq.diff
+....
+
+您應該使用 Bugzilla link:https://bugs.freebsd.org/bugzilla/enter_bug.cgi[提交報告]，表示您已提交文件。
+如果您能讓其他人先檢查您的翻譯並再次核對，那將非常有幫助，因為提交它的人不太可能精通該語言。
+
+然後會有人（可能是文件專案經理，目前是 {doceng}）接收您的翻譯並確認它是否可以建置。
+特別是，將會檢查以下事項：
+
+. 在 [.filename]#root# 目錄中執行 `make` 是否正常運作？
+
+如果有任何問題，審查提交的人員會與您聯繫以解決問題。
+
+如果沒有問題，您的翻譯將盡快被提交。
+
+== 我可以在我的翻譯中包含特定語言或國家的文字嗎？
+
+我們希望您不要這樣做。
+
+例如，假設您正在將手冊翻譯成韓文，並希望在您的手冊中包含有關韓國零售商的部分。
+
+沒有真正的理由說明該資訊不應該也出現在英文（或德文、西班牙文、日文等）版本中。
+在韓國的講英文的人很可能會嘗試在那裡購買一份 FreeBSD。
+這也有助於提高 FreeBSD 在全球的知名度，這不是一件壞事。
+
+如果您有特定國家的資訊，請將其作為對英文手冊的變更提交（使用 Bugzilla），然後將變更翻譯回您翻譯後的手冊中的語言。
+
+謝謝。
+
+=== 對讀者的稱呼
+
+在英文文件中，讀者被稱為「you」，沒有像某些語言中那樣有正式/非正式的區別。
+
+如果您正在翻譯成有區別的語言，請使用您語言中其他技術文件中通常使用的形式。
+如果不確定，請使用稍微禮貌的形式。
+
+== 我需要在我的翻譯中包含任何其他資訊嗎？
+
+是的。
+
+每份文件的英文版本標頭看起來會像這樣：
+
+[.programlisting]
+....
+ ---
+ title: Why you should use a BSD style license for your Open Source Project
+ releaseinfo: "$FreeBSD: head/en_US.ISO8559-1/articles/bsdl-gpl/article.xml 53942 2020-03-01 12:23:40Z carlavilla $"
+ trademarks: ["freebsd", "intel", "general"]
+ ---
+
+ = Why you should use a BSD style license for your Open Source Project
+....
+
+確切的樣板可能會變更，但它總是會包含一個 $FreeBSD$ 行和片語 `The FreeBSD Documentation Project`。
+請注意，$FreeBSD$ 部分由 Git 自動擴充，因此對於新檔案，它應該是空的（只有 `$FreeBSD$`）。
+
+您翻譯的文件應該包含它們自己的 FreeBSD 行，並將 `The FreeBSD Documentation Project` 行變更為 `The FreeBSD _language_ Documentation Project`。
+
+此外，您應該新增第三行，指出這是基於哪個修訂版本的英文文本。
+
+因此，此檔案的西班牙文版本可能會這樣開始：
+
+[.programlisting]
+....
+ ---
+ title: Soporte para segundos intercalares en FreeBSD
+ releaseinfo: "$FreeBSD: head/es_ES.ISO8559-1/articles/leap-seconds/article.xml 53090 2019-06-01 17:52:59Z carlavilla $"
+ ---
+
+ = Soporte para segundos intercalares en FreeBSD
+....

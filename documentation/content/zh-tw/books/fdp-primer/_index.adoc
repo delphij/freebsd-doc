@@ -1,0 +1,59 @@
+---
+title: FreeBSD 文件計畫新手入門
+authors:
+  - author: The FreeBSD Documentation Project
+copyright: 1998-2023 The FreeBSD Documentation Project
+trademarks: ["freebsd", "general", "git"]
+description: 開始為 FreeBSD 文件計畫貢獻所需知曉的一切
+next: books/fdp-primer/preface
+tags: ["FDP", "documentation", "FreeBSD", "Index"]
+add_single_page_link: true
+showBookMenu: true
+weight: 10
+params:
+  path: "/books/fdp-primer/"
+bookOrder: 50
+---
+
+= FreeBSD 文件計畫新手入門
+:doctype: book
+:toc: macro
+:toclevels: 1
+:icons: font
+:sectnums:
+:sectnumlevels: 6
+:partnums:
+:source-highlighter: rouge
+:experimental:
+:images-path: books/fdp-primer/
+
+ifdef::env-beastie[]
+ifdef::backend-html5[]
+include::shared/authors.adoc[]
+include::shared/mirrors.adoc[]
+include::shared/releases.adoc[]
+include::shared/attributes/attributes-{{% lang %}}.adoc[]
+include::shared/{{% lang %}}/teams.adoc[]
+include::shared/{{% lang %}}/mailing-lists.adoc[]
+include::shared/{{% lang %}}/urls.adoc[]
+endif::[]
+ifdef::backend-pdf,backend-epub3[]
+include::../../../../../shared/asciidoctor.adoc[]
+endif::[]
+endif::[]
+
+ifndef::env-beastie[]
+include::../../../../../shared/asciidoctor.adoc[]
+endif::[]
+
+[.abstract-title]
+摘要
+
+感謝您成為 FreeBSD 文件計畫的一份子。
+您的貢獻極其寶貴，我們對此深表感謝。
+
+本入門手冊涵蓋了開始為 FreeBSD 文件計畫（FDP）貢獻所需的詳細資訊，包括工具、軟體以及文件計畫背後的理念。
+
+這是一份持續進行中的工作。
+隨時歡迎指正與補充。
+

@@ -1,0 +1,161 @@
+---
+title: 第 3 章. 工作副本
+prev: books/fdp-primer/tools
+next: books/fdp-primer/structure
+description: 如何取得 FreeBSD 文件計畫的工作副本
+tags: ["working copy", "documentation", "manual pages", "git"]
+showBookMenu: true
+weight: 4
+params:
+  path: "/books/fdp-primer/working-copy/"
+---
+
+[[working-copy]]
+= 工作副本
+:doctype: book
+:toc: macro
+:toclevels: 1
+:icons: font
+:sectnums:
+:sectnumlevels: 6
+:sectnumoffset: 3
+:partnums:
+:source-highlighter: rouge
+:experimental:
+:images-path: books/fdp-primer/
+
+ifdef::env-beastie[]
+ifdef::backend-html5[]
+:imagesdir: ../../../../images/{images-path}
+endif::[]
+ifndef::book[]
+include::shared/authors.adoc[]
+include::shared/mirrors.adoc[]
+include::shared/releases.adoc[]
+include::shared/attributes/attributes-{{% lang %}}.adoc[]
+include::shared/{{% lang %}}/teams.adoc[]
+include::shared/{{% lang %}}/mailing-lists.adoc[]
+include::shared/{{% lang %}}/urls.adoc[]
+toc::[]
+endif::[]
+ifdef::backend-pdf,backend-epub3[]
+include::../../../../../shared/asciidoctor.adoc[]
+endif::[]
+endif::[]
+
+ifndef::env-beastie[]
+toc::[]
+include::../../../../../shared/asciidoctor.adoc[]
+endif::[]
+
+_工作副本_ 是從 FreeBSD 儲存庫文件樹下載到本機電腦的副本。
+變更會在本機工作副本上進行、測試，然後以修補程式的形式提交，以提交到主儲存庫。
+
+一份完整的文件樹副本可能會佔用 550 MB 的磁碟空間。
+請預留 1 GB 的空間，以便有足夠的空間存放暫存檔和各種輸出格式的測試版本。
+
+link:https://git-scm.com/[Git] 用於管理 FreeBSD 文件檔案。
+可以透過安裝 package:devel/git[] 套件來取得，該套件還有一個名為 git-lite 的輕量級版本：
+
+[source,shell]
+....
+# pkg install git-lite
+....
+
+[[working-copy-doc-and-src]]
+== 文件和手冊頁面
+
+FreeBSD 文件不僅僅是書籍和文章。
+所有指令和設定檔的手冊頁面也是文件的一部分，也是 FDP 的一部分。
+涉及兩個儲存庫：`doc` 用於書籍和文章，`src` 用於作業系統和手冊頁面。
+若要編輯手冊頁面，必須單獨簽出 `src` 儲存庫。
+
+儲存庫可能包含多個版本的文件和原始碼。
+新的修改幾乎總是只對最新版本進行，稱為 `main`。
+
+[[working-copy-choosing-directory]]
+== 選擇目錄
+
+FreeBSD 文件傳統上儲存在 [.filename]#/usr/doc/# 中，而帶有手冊頁面的系統原始碼則儲存在 [.filename]#/usr/src/# 中。
+這些目錄樹是可重定位的，使用者可能希望將工作副本放在其他位置，以避免干擾主目錄中的現有資訊。
+以下範例使用 [.filename]#~/doc# 和 [.filename]#~/src#，兩者都是使用者家目錄的子目錄。
+
+[[working-copy-checking-out]]
+== 簽出副本
+
+從儲存庫下載工作副本稱為 _clone_，使用 `git clone` 完成。
+此範例複製了主文件樹的最新版本 (`main`) 的副本：
+
+[source,shell]
+....
+% git clone https://git.FreeBSD.org/doc.git ~/doc
+....
+
+簽出原始碼以處理手冊頁面非常相似：
+
+[source,shell]
+....
+% git clone https://git.FreeBSD.org/src.git ~/src
+....
+
+[[working-copy-updating]]
+== 更新工作副本
+
+FreeBSD 儲存庫中的文件和檔案每天都在變更。
+人們經常修改檔案並提交變更。
+即使在初次簽出後不久，本機工作副本和主 FreeBSD 儲存庫之間也已經存在差異。
+若要使用對主儲存庫所做的變更來更新本機版本，請在包含本機工作副本的目錄上使用 `git pull`：
+
+[source,shell]
+....
+% cd ~/doc
+% git pull --ff-only
+....
+
+養成在編輯文件檔案之前使用 `git pull` 的保護性習慣。
+其他人可能最近編輯過該檔案，而本機工作副本在更新之前不會包含最新的變更。
+編輯最新版本的檔案比嘗試將較舊的、已編輯的本機檔案與儲存庫中的較新版本合併要容易得多。
+
+[[working-copy-revert]]
+== 還原變更
+
+有時，變更最終並非必要，或者作者只是想重新開始。
+可以使用 `git restore` 將檔案「重設」為其未變更的形式。
+例如，若要清除對 [.filename]#_index.adoc# 所做的編輯並將其重設為未修改的形式：
+
+[source,shell]
+....
+% git restore _index.adoc
+....
+
+[[working-copy-making-diff]]
+== 製作差異
+
+完成對一個或一組檔案的編輯後，必須將本機工作副本與 FreeBSD 儲存庫中的版本之間的差異收集到一個檔案中以供提交。
+這些 _diff_ 檔案是透過將 `git diff` 的輸出重新導向到一個檔案中來產生的：
+
+[source,shell]
+....
+% cd ~/doc
+% git diff > doc-fix-spelling.diff
+....
+
+為檔案指定一個有意義的名稱，以識別其內容。
+上面的範例是用於整個文件樹的拼字修正。
+
+如果 diff 檔案要透過網頁「link:https://bugs.FreeBSD.org/bugzilla/enter_bug.cgi[提交 FreeBSD 問題報告]」介面提交，請新增 [.filename]#.txt# 副檔名，以向認真而單純的網頁表單提示內容為純文字。
+
+請注意：`git diff` 包含目前目錄和任何子目錄中所做的所有變更。
+如果工作副本中有尚未準備好提交的編輯檔案，請僅提供要包含的檔案清單：
+
+[source,shell]
+....
+% cd ~/doc
+% git diff disks/_index.adoc printers/_index.adoc > disks-printers.diff
+....
+
+[[working-copy-git-references]]
+== Git 參考資料
+
+這些範例展示了 Git 的非常基本的用法。
+更多詳細資訊可在 https://git-scm.com/book/en/v2[Git Book] 和 https://git-scm.com/doc[Git 文件] 中取得。

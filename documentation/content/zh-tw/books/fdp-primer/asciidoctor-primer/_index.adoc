@@ -1,0 +1,362 @@
+---
+title: 第 6 章. Asciidoctor 入門
+prev: books/fdp-primer/doc-build
+next: books/fdp-primer/rosetta
+description: Asciidoctor 簡介
+tags: ["AsciiDoc", "Asciidoctor", "Primer", "Introduction", "Guide"]
+showBookMenu: true
+weight: 7
+params:
+  path: "/books/fdp-primer/asciidoctor-primer/"
+---
+
+[[asciidoctor-primer]]
+= Asciidoctor 入門
+:doctype: book
+:toc: macro
+:toclevels: 1
+:icons: font
+:sectnums:
+:sectnumlevels: 6
+:sectnumoffset: 6
+:partnums:
+:source-highlighter: rouge
+:experimental:
+:images-path: books/fdp-primer/
+
+ifdef::env-beastie[]
+ifdef::backend-html5[]
+:imagesdir: ../../../../images/{images-path}
+endif::[]
+ifndef::book[]
+include::shared/authors.adoc[]
+include::shared/mirrors.adoc[]
+include::shared/releases.adoc[]
+include::shared/attributes/attributes-{{% lang %}}.adoc[]
+include::shared/{{% lang %}}/teams.adoc[]
+include::shared/{{% lang %}}/mailing-lists.adoc[]
+include::shared/{{% lang %}}/urls.adoc[]
+toc::[]
+endif::[]
+ifdef::backend-pdf,backend-epub3[]
+include::../../../../../shared/asciidoctor.adoc[]
+endif::[]
+endif::[]
+
+ifndef::env-beastie[]
+toc::[]
+include::../../../../../shared/asciidoctor.adoc[]
+endif::[]
+
+大多數 FDP 文件都是用 AsciiDoc 撰寫的。
+本章解釋了這意味著什麼，如何閱讀和理解文件原始碼，以及所使用的技術。
+若要取得 Asciidoctor 功能的完整參考，請查閱 link:https://docs.asciidoctor.org/home/[Asciidoctor 文件]。
+本章中使用的一些範例取自 link:https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference[AsciiDoc 語法快速參考]。
+
+[[asciidoctor-primer-overview]]
+== 總覽
+
+在電腦的早期，電子文本很簡單。
+有一些字元集，如 ASCII 或 EBCDIC，但僅此而已。
+文本就是文本，所見即所得。
+沒有多餘的裝飾，沒有格式，沒有智慧。
+
+不可避免地，這還不夠。
+當文本採用機器可用的格式時，人們期望機器能夠智慧地使用和操作它。
+作者希望指出某些片語應該被強調、加入詞彙表或製作成超連結。
+檔名可以在螢幕上以「打字機」樣式字體顯示，但在列印時則為「斜體」，或者還有無數其他呈現選項。
+
+人們曾希望人工智慧 (AI) 能讓這一切變得簡單。
+電腦會閱讀文件並自動識別關鍵片語、檔名、讀者應輸入的文本、範例等等。
+不幸的是，現實生活並非如此，電腦仍然需要協助才能有意義地處理文本。
+
+更準確地說，它們需要幫助來識別什麼是什麼。
+請看這段文本：
+
+若要移除 [.filename]#/tmp/foo#，請使用 man:rm[1]。
+
+[source,shell]
+----
+% rm /tmp/foo
+----
+
+讀者很容易看出哪些部分是檔名，哪些是要輸入的指令，哪些部分是手冊頁面的參考等等。
+但是處理文件的電腦無法可靠地確定這一點。
+為此，我們需要標記。
+
+前面的範例在本文件中實際上是這樣表示的：
+
+....
+若要移除 */tmp/foo*，請使用 man:rm[1]。
+
+[source,shell]
+----
+% rm /tmp/foo
+----
+....
+
+[[asciidoctor-headings]]
+== 標題
+
+Asciidoctor 支援六個標題層級。
+如果文件類型是 `article`，則只能使用一個層級 0 (`=`)。
+如果文件類型是 `book`，則可以有多個層級 0 (`=`) 標題。
+
+這是一個 `article` 中標題的範例。
+
+....
+= 文件標題 (層級 0)
+
+== 層級 1 區段標題
+
+=== 層級 2 區段標題
+
+==== 層級 3 區段標題
+
+===== 層級 4 區段標題
+
+====== 層級 5 區段標題
+
+== 另一個層級 1 區段標題
+....
+
+[WARNING]
+====
+巢狀區段時不能跳過區段層級。
+
+以下語法不正確。
+
+....
+= 文件標題
+
+== 層級 1
+
+==== 層級 3
+....
+====
+
+[[asciidoctor-paragraphs]]
+== 段落
+
+在 AsciiDoc 中，段落不需要特殊標記。
+段落由一行或多行連續的文本定義。
+若要建立新段落，請留一個空行。
+
+例如，這是一個有兩個段落的標題。
+
+....
+= 這是標題
+
+這是第一個段落。
+這也是第一個段落。
+
+這是第二個段落。
+....
+
+[[asciidoctor-lists]]
+== 列表
+
+Asciidoctor 支援數種類型的列表，最常見的是 `ordered` 和 `unordered`。
+若要取得有關列表的更多資訊，請參閱 link:https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#lists[AsciiDoc 語法快速參考]。
+
+[[asciidoctor-ordered-lists]]
+=== 有序列表
+
+若要建立有序列表，請使用 `.` 字元。
+
+例如，這是一個有序列表。
+
+....
+. 第一項
+. 第二項
+.. 第二項的子項
+. 第三項
+....
+
+這將呈現為：
+
+. 第一項
+. 第二項
+.. 第二項的子項
+. 第三項
+
+[[asciidoctor-unordered-lists]]
+=== 無序列表
+
+若要建立無序列表，請使用 `*` 字元。
+
+例如，這是一個無序列表。
+
+....
+* 第一項
+* 第二項
+** 第二項的子項
+* 第三項
+....
+
+這將呈現為：
+
+* 第一項
+* 第二項
+** 第二項的子項
+* 第三項
+
+[[asciidoctor-links]]
+== 連結
+
+[[asciidoctor-links-external]]
+=== 外部連結
+
+若要指向另一個網站，應使用 `link` 巨集。
+
+....
+link:https://www.FreeBSD.org[FreeBSD]
+....
+
+[NOTE]
+====
+如 Asciidoctor 文件所述，當目標以 URL 配置 (如 `https`) 開頭時，不需要 `link` 巨集。
+但是，無論如何都建議這樣做，以確保 Asciidoctor 正確呈現連結，尤其是在非拉丁語系 (如日文) 中。
+====
+
+[[asciidoctor-links-internal]]
+=== 連結到另一本書或文章
+
+若要指向另一本書或文章，應使用 Asciidoctor 變數。
+例如，如果我們在 `cups` 文章中，並且想要指向 `ipsec-must`，則應使用以下步驟。
+
+. 從 [.filename]#~/doc/shared# 資料夾中包含 [.filename]#urls.adoc# 檔案。
++
+....
+\include::shared/{lang}/urls.adoc[]
+....
++
+. 然後使用 Asciidoctor 變數建立到 `ipsec-must` 文章的連結。
++
+....
+extref:{ipsec-must}[IPSec-Must 文章]
+....
++
+這將呈現為：
++
+extref:{ipsec-must}[IPSec-Must 文章]
+
+[NOTE]
+====
+`extref` 巨集被定義為擴充功能。
+它旨在在不同輸出中呈現正確的連結。
+====
+
+=== 連結到同一檔案或同一本書中的另一個檔案
+
+書籍被組織在不同的目錄中，以保持清晰的版面配置。
+若要從一本書的一個子目錄建立到同一本書的另一個子目錄的連結，請使用 `crossref` 巨集：
+....
+crossref:doc-build[documentation-makefile, 此連結]
+....
+這將呈現為
+
+crossref:doc-build[documentation-makefile, 此連結]
+
+[NOTE]
+====
+`crossref` 巨集被定義為擴充功能。
+它旨在在不同輸出中呈現正確的連結。
+====
+
+[NOTE]
+====
+也請使用 `crossref` 巨集進行文件內連結。
+雖然寫入目前文件的名稱可能不方便，但它可以確保在不同輸出中呈現正確的連結。
+====
+
+[WARNING]
+====
+請勿使用 `xref` 巨集或其捷徑 `<<` `>>`。
+它們在所有輸出格式中都無法正常運作。
+====
+
+[[asciidoctor-images-icons]]
+== 圖片和圖示
+
+圖片和圖示在提升整體使用者體驗方面扮演著至關重要的角色。
+這些視覺元素被策略性地整合，以傳達資訊、闡明概念並提供視覺上引人入勝的介面。
+
+[[asciidoctor-images]]
+=== 圖片
+
+圖片有助於說明複雜的概念，使其更容易為使用者所理解。
+
+第一步是將圖片新增到圖片目錄中的路徑：
+
+* [.filename]#~/website/static/images/# 用於網站。
+* [.filename]#~/documentation/static/images/# 用於文件。
+
+例如，若要將新圖片新增到 FreeBSD 安裝過程中，圖片將儲存到路徑 [.filename]#~/documentation/static/images/books/handbook/bsdinstall/new-image3.png#。
+
+下一步是設定 Asciidoctor 屬性 `images-path` 和 `imagesdir`。
+
+我們將以 extref:{freebsd-releng}[FreeBSD 版本工程] 文章的標頭為例。
+
+[source,asciidoc]
+....
+= FreeBSD 版本工程
+:doctype: article
+
+[...]
+
+:images-path: articles/freebsd-releng/ <1>
+
+[...]
+
+:imagesdir: ../../../images/{images-path} <2>
+
+[...]
+
+....
+
+<.> 指的是 [.filename]#/static/images# 資料夾內的路徑。
+<.> 指的是 Asciidoctor 屬性。
+
+一旦圖片位於正確的路徑中，並且已在文件中設定了 Asciidoctor 屬性，就可以使用 `image` 巨集。
+
+這是一個範例：
+
+....
+image::new-image3.png[FreeBSD 安裝過程中的新步驟]
+....
+
+[TIP]
+====
+為了提高可及性，必須為每張圖片新增描述性文字。
+====
+
+[[asciidoctor-icons]]
+=== 圖示
+
+圖示可作為直觀的符號，以便快速辨識和導覽。
+
+使用圖示的第一步是將 `icons` 屬性新增到每個文件頂部的 Asciidoctor 屬性區段。
+
+....
+:icons: font
+....
+
+設定 Asciidoctor 圖示屬性後，即可新增 link:https://fontawesome.com/v4/icons/[Font Awesome] 支援的圖示。
+
+這是有關如何使用 `envelope` 圖示的範例：
+
+....
+icon:envelope[link=mailto:test@example.com, title="contact"]
+....
+
+[TIP]
+====
+為了提高網站的可及性，`title` 屬性是必要的。
+====
+
+[[asciidoctor-conclusion]]
+== 結論
+
+這是本 Asciidoctor 入門的結論。
+由於篇幅和複雜性的原因，有幾件事沒有深入（或根本沒有）涵蓋。

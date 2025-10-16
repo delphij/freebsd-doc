@@ -1,0 +1,664 @@
+---
+title: 第 5 章. FreeBSD 文件建置流程
+prev: books/fdp-primer/structure
+next: books/fdp-primer/asciidoctor-primer
+description: 描述 FreeBSD 文件建置流程
+tags: ["build", "process", "make"]
+showBookMenu: true
+weight: 6
+params:
+  path: "/books/fdp-primer/doc-build/"
+---
+
+[[doc-build]]
+= FreeBSD 文件建置流程
+:doctype: book
+:toc: macro
+:toclevels: 1
+:icons: font
+:sectnums:
+:sectnumlevels: 6
+:sectnumoffset: 5
+:partnums:
+:source-highlighter: rouge
+:experimental:
+:images-path: books/fdp-primer/
+
+ifdef::env-beastie[]
+ifdef::backend-html5[]
+:imagesdir: ../../../../images/{images-path}
+endif::[]
+ifndef::book[]
+include::shared/authors.adoc[]
+include::shared/mirrors.adoc[]
+include::shared/releases.adoc[]
+include::shared/attributes/attributes-{{% lang %}}.adoc[]
+include::shared/{{% lang %}}/teams.adoc[]
+include::shared/{{% lang %}}/mailing-lists.adoc[]
+include::shared/{{% lang %}}/urls.adoc[]
+toc::[]
+endif::[]
+ifdef::backend-pdf,backend-epub3[]
+include::../../../../../shared/asciidoctor.adoc[]
+endif::[]
+endif::[]
+
+ifndef::env-beastie[]
+toc::[]
+include::../../../../../shared/asciidoctor.adoc[]
+endif::[]
+
+本章涵蓋文件建置流程的組織以及如何使用 man:make[1] 來控制它。
+
+[[doc-build-rendering]]
+== 將 AsciiDoc 轉譯為輸出
+
+可以從單一 AsciiDoc 原始檔產生不同類型的輸出。
+
+[cols="20%,20%,60%", frame="none", options="header"]
+|===
+| 格式
+| 檔案類型
+| 說明
+
+|`html`
+|HTML
+|`article` 或 `book` 章節。
+
+|`pdf`
+|PDF
+|可攜式文件格式。
+
+|`epub`
+|EPUB
+|電子出版物。
+ePub 檔案格式。
+|===
+
+[[doc-build-rendering-html]]
+=== 轉譯為 html
+
+若要將文件和網站轉譯為 `html`，請使用下列其中一個範例。
+
+[[documentation-build-example]]
+.建置文件
+[example]
+====
+[source,shell]
+....
+% cd ~/doc/documentation
+% make
+....
+====
+
+[[website-build-example]]
+.建置網站
+[example]
+====
+[source,shell]
+....
+% cd ~/doc/website
+% make
+....
+====
+
+[[project-build-example]]
+.建置整個文件專案
+[example]
+====
+[source,shell]
+....
+% cd ~/doc
+% make -j2
+....
+====
+
+以下提供進階建置範例：
+
+[[documentation-build-example-verbose]]
+.以詳細和偵錯訊息建置英文和西班牙文文件
+[example]
+====
+[source,shell]
+....
+% cd ~/doc/documentation
+% make DOC_LANG="en es" HUGO_ARGS="--verbose --debug"
+....
+====
+
+[[documentation-build-example-server]]
+.使用 Hugo 的內部網頁伺服器建置並提供內容
+[example]
+====
+[source,shell]
+....
+% cd ~/doc/documentation
+% make run
+....
+此網頁伺服器預設在 `localhost` 的 `1313` 連接埠上執行。
+
+若要使用 Hugo 的內部網頁伺服器並繫結特定的 IP 位址和連接埠來提供內容：
+
+[source,shell]
+....
+% make run BIND=192.168.15.10 HUGO_ARGS="-p 8080"
+....
+
+也可以將 `hostname` 設定為 Hugo 內部網頁伺服器的基礎 URL：
+
+[source,shell]
+....
+% make run BIND=192.168.15.10 HOSTNAME=example.com
+....
+====
+
+[[documentation-build-example-offline]]
+.以 html 格式建置文件以供離線使用
+[example]
+====
+[source,shell]
+....
+% cd ~/doc/documentation
+% make html
+....
+
+若要壓縮 html 輸出，請新增 `DOC_HTML_ARCHIVE=1`：
+
+[source,shell]
+....
+% cd ~/doc/documentation
+% DOC_HTML_ARCHIVE=1 make html
+....
+====
+
+[[doc-build-rendering-pdf]]
+=== 轉譯為 pdf
+
+若要將文件轉譯為 `pdf`，請使用下列其中一個範例。
+
+[[document-pdf-example]]
+.以 pdf 格式建置所有文件
+[example]
+====
+[source,shell]
+....
+% cd ~/doc/documentation
+% make pdf
+....
+====
+
+[[document-pdf-articles-example]]
+.以 pdf 格式建置所有文章
+[example]
+====
+[source,shell]
+....
+% cd ~/doc/documentation
+% make pdf-articles
+....
+====
+
+[[document-pdf-books-example]]
+.以 pdf 格式建置所有書籍
+[example]
+====
+[source,shell]
+....
+% cd ~/doc/documentation
+% make pdf-books
+....
+====
+
+[[document-pdf-language-example]]
+.以 pdf 格式為特定語言建置文件
+[example]
+====
+[source,shell]
+....
+% cd ~/doc/documentation
+% make DOC_LANG="en" pdf
+....
+這將以 pdf 格式建置所有英文文件。
+
+[source,shell]
+....
+% cd ~/doc/documentation
+% make DOC_LANG="en fr" pdf-books
+....
+這將以 pdf 格式建置所有英文和法文書籍。
+====
+
+[[doc-build-toolset]]
+== FreeBSD 文件建置工具集
+
+這些是用於建置和安裝 FDP 文件的工具。
+
+* 主要的建置工具是 man:make[1]，特別是 Berkeley Make。
+* Hugo
+* AsciiDoctor
+* Git
+
+[[doc-build-makefile]]
+== 了解文件樹中的 Makefile
+
+有三個 [.filename]#Makefile# 檔案可用於建置部分或全部文件專案。
+
+* [.filename]#documentation# 目錄中的 [.filename]#Makefile# 只會建置文件。
+* [.filename]#website# 目錄中的 [.filename]#Makefile# 只會建置網站。
+* 樹狀結構頂端的 [.filename]#Makefile# 會同時建置文件和網站。
+
+出現在子目錄中的 [.filename]#Makefile# 也支援 `make run`，以使用 Hugo 的內部網頁伺服器提供建置的內容。
+此網頁伺服器預設在 1313 連接埠上執行。
+
+[[documentation-makefile]]
+=== 文件 Makefile
+
+此 [.filename]#Makefile# 的格式如下：
+
+[source,shell]
+....
+# 產生 FreeBSD 文件
+#
+# Copyright (c) 2020-2025, The FreeBSD Documentation Project
+# Copyright (c) 2020-2025, Sergio Carlavilla <carlavilla@FreeBSD.org>
+#
+# 預計在命令列上使用的目標
+#
+# all (預設)	- 	產生書籍目錄並編譯所有文件
+# clean		- 	移除產生的檔案
+# run		- 	提供建置的文件網站以供本機瀏覽
+# pdf		- 	建置文章和書籍的 PDF 版本。
+# html		- 	建置文章和書籍的 HTML 版本以供
+#				離線使用。
+#				如果設定了變數 DOC_HTML_ARCHIVE，所有文件都將被
+#				封存/壓縮，並且只有這些檔案會保留在 public
+#				目錄中。
+# epub		- 	建置文章和書籍的 EPUB 版本（實驗性）。
+#
+# run 目標使用 hugo 的內建網頁伺服器，讓文件網站
+# 可供本機瀏覽。在使用 `run` 目標之前，應先建置文件。
+# 預設情況下，hugo 會在 1313 連接埠上啟動其
+# 網頁伺服器。
+
+MAINTAINER=carlavilla@FreeBSD.org <.>
+
+# 沒有書籍翻譯的語言列表
+ARTICLEONLY_LANGS=	bn-bd da ko tr
+# 沒有文章翻譯的語言列表
+BOOKONLY_LANGS=		mn
+
+# 我們有內容的所有語言列表
+ALL_LANGUAGES=	bn-bd da de el en es fr hu it ja ko mn nl pl pt-br ru tr zh-cn zh-tw <.>
+
+LOCALBASE?=	/usr/local
+
+RUBY_CMD =	${LOCALBASE}/bin/ruby <.>
+HUGO_CMD =	${LOCALBASE}/bin/hugo <.>
+HUGO_ARGS?=	--verbose --minify
+HUGO_OFFLINE_ARGS?= 	--environment offline --verbose --minify
+ASCIIDOCTOR_CMD=	${LOCALBASE}/bin/asciidoctor
+ASCIIDOCTORPDF_CMD=	${LOCALBASE}/bin/asciidoctor-pdf
+
+.if defined(DOC_LANG) && !empty(DOC_LANG)
+LANGUAGES= 	${DOC_LANG:S/,/ /g}
+.if  ${LANGUAGES:Men} == "" && ${.TARGETS:Mpdf*} == "" && ${.TARGETS:Mhtml*} == ""
+.warning "警告：無法略過 'en'；正在將其加回"
+LANGUAGES+= 	en
+.endif
+.else
+LANGUAGES=	${ALL_LANGUAGES}
+.endif
+
+RUBYLIB = 	../shared/lib
+.export	RUBYLIB
+
+RUN_DEPENDS=	${HUGO_CMD} \
+		${LOCALBASE}/bin/asciidoctor \
+		${LOCALBASE}/bin/rougify
+
+.ifndef HOSTNAME
+.  ifdef BIND
+.HOST=$(BIND)
+.  else
+.HOST=localhost
+.  endif
+.else
+.HOST=$(HOSTNAME)
+.endif
+
+# 從我們將用於建置書籍的語言列表中
+#  刪除只有文章的語言。
+BOOK_LANGS= ${LANGUAGES}
+.for a in ${ARTICLEONLY_LANGS}
+BOOK_LANGS:=	${BOOK_LANGS:N${a}}
+.endfor
+
+# 從我們將用於建置文章的語言列表中
+#  刪除只有書籍的語言。
+ARTICLE_LANGS= ${LANGUAGES}
+.for a in ${BOOKONLY_LANGS}
+ARTICLE_LANGS:=	${ARTICLE_LANGS:N${a}}
+.endfor
+
+# 取出所有語言的列表，然後取出我們被
+#   要求的語言。我們會將此提供給 hugo。
+SKIP_LANGS=
+.for a in ${ALL_LANGUAGES}
+.if 	${LANGUAGES:M${a}} == ""
+SKIP_LANGS+=	    ${a}
+.endif
+.endfor
+
+.ORDER: all run <.>
+
+.ORDER: requirements <.>
+.ORDER: starting-message
+.ORDER: starting-message build
+.ORDER: build
+
+all: requirements starting-message generate-pgpkeys-txt build
+run: requirements starting-message generate-pgpkeys-txt run-local
+
+# clean 不會呼叫 pdf-clean，因為那是 hugo-clean 的子集
+clean: hugo-clean pgp-clean
+
+requirements:
+.for dep in ${RUN_DEPENDS}
+.if !exists(${dep})
+	@(echo ${dep} 找不到，請執行 'pkg install docproj'; exit 1)
+.endif
+.endfor
+
+requirements-pdf:
+.if !exists(${LOCALBASE}/bin/asciidoctor-pdf)
+	@(echo ${LOCALBASE}/bin/asciidoctor-pdf 找不到，請執行 'pkg install rubygem-asciidoctor-pdf'; exit 1)
+.endif
+
+requirements-epub:
+.if !exists(${LOCALBASE}/bin/asciidoctor-epub3)
+	@(echo ${LOCALBASE}/bin/asciidoctor-epub3 找不到，請執行 'pkg install rubygem-asciidoctor-epub3'; exit 1)
+.endif
+
+starting-message: .PHONY <.>
+	@echo ---------------------------------------------------------------
+	@echo                   正在建置文件
+	@echo  包含的語言：${LANGUAGES}
+	@echo  排除的語言：${SKIP_LANGS}
+	@echo ---------------------------------------------------------------
+
+generate-pgpkeys-txt: static/pgpkeys/pgpkeys.txt
+
+static/pgpkeys/pgpkeys.txt: static/pgpkeys/*key
+	${RUBY_CMD} ./tools/global-pgpkeys-creator.rb
+
+run-local: .PHONY <.>
+	HUGO_DISABLELANGUAGES="${SKIP_LANGS}" ${HUGO_CMD} server \
+		${HUGO_ARGS} -D $(BIND:D--bind=$(BIND)) --baseURL="http://$(.HOST):1313"
+
+build: .PHONY <.>
+	HUGO_DISABLELANGUAGES="${SKIP_LANGS}" ${HUGO_CMD} ${HUGO_ARGS}
+
+build-offline: .PHONY
+	HUGO_DISABLELANGUAGES="${SKIP_LANGS}" ${HUGO_CMD} ${HUGO_OFFLINE_ARGS}
+
+pgp-clean: .PHONY
+	rm -f static/pgpkeys/pgpkeys.txt
+
+hugo-clean: .PHONY
+	rm -rf resources public
+
+#
+# PDF 目標
+# 使用 DOC_LANG 選擇語言，例如：make DOC_LANG="en fr" pdf-books
+#
+pdf: pdf-articles pdf-books
+
+pdf-books: requirements-pdf
+.for _lang in ${BOOK_LANGS}
+	./tools/asciidoctor.sh books ${_lang} pdf
+.endfor
+
+pdf-articles: requirements-pdf
+.for _lang in ${ARTICLE_LANGS}
+	./tools/asciidoctor.sh articles ${_lang} pdf
+.endfor
+
+pdf-clean: pdf-articles-clean pdf-books-clean
+
+pdf-books-clean:
+.for _lang in ${BOOK_LANGS}
+	rm -fr ${.CURDIR}/public/${_lang}/books
+	-rmdir ${.CURDIR}/public/${_lang}
+.endfor
+	-rmdir ${.CURDIR}/public/
+
+pdf-articles-clean:
+.for _lang in ${ARTICLE_LANGS}
+	rm -fr ${.CURDIR}/public/${_lang}/articles
+.if !exists(${.CURDIR}/public/${_lang}/books)
+	rm -fr ${.CURDIR}/public/${_lang}
+.endif
+.endfor
+	-rmdir ${.CURDIR}/public
+
+#
+# HTML 目標
+#
+html: build-offline html-clean-global html-clean-articles html-clean-books html-archive html-archive-clean-files
+
+html-clean: hugo-clean
+
+html-clean-global:
+	rm -fr ${.CURDIR}/public/index.html
+	rm -rf pgpkeys js
+
+html-clean-articles:
+.for _lang in ${ARTICLE_LANGS}
+	rm -fr ${.CURDIR}/public/${_lang}/index.html
+	rm -fr ${.CURDIR}/public/${_lang}/articles/index.html
+.endfor
+
+html-clean-books:
+.for _lang in ${BOOK_LANGS}
+	rm -fr ${.CURDIR}/public/${_lang}/books/index.html
+.endfor
+
+html-archive:
+.if defined(DOC_HTML_ARCHIVE)
+.for _lang in ${ARTICLE_LANGS}
+	./tools/asciidoctor.sh articles ${_lang} archive
+.endfor
+.for _lang in ${BOOK_LANGS}
+	./tools/asciidoctor.sh books ${_lang} archive
+.endfor
+.endif
+
+html-archive-clean-files:
+.if defined(DOC_HTML_ARCHIVE)
+	find ${.CURDIR}/public/ ! -name '*.pdf' ! -name '*.tar.gz' -type f -delete
+	find ${.CURDIR}/public/ -type d -empty -delete
+.endif
+
+#
+# EPUB 目標
+# 使用 DOC_LANG 選擇語言，例如：make DOC_LANG="en fr" epub-books
+#
+epub: epub-articles epub-books
+
+epub-books: requirements-epub
+	@echo ---------------------------------------------------------------
+	@echo !!! EPUB 輸出是實驗性的 !!!
+	@echo
+	@echo Asciidoctor EPUB3 目前是 alpha 軟體。請謹慎使用。雖然
+	@echo 大部分的 AsciiDoc 內容都已轉換，但仍需要努力填補
+	@echo 轉換不完整或未設定樣式的空白。
+	@echo https://docs.asciidoctor.org/epub3-converter/latest/#project-status
+	@echo ---------------------------------------------------------------
+.for _lang in ${BOOK_LANGS}
+	./tools/asciidoctor.sh books ${_lang} epub
+.endfor
+
+epub-articles: requirements-epub
+	@echo ---------------------------------------------------------------
+	@echo !!! EPUB 輸出是實驗性的 !!!
+	@echo
+	@echo Asciidoctor EPUB3 目前是 alpha 軟體。請謹慎使用。雖然
+	@echo 大部分的 AsciiDoc 內容都已轉換，但仍需要努力填補
+	@echo 轉換不完整或未設定樣式的空白。
+	@echo https://docs.asciidoctor.org/epub3-converter/latest/#project-status
+	@echo ---------------------------------------------------------------
+.for _lang in ${ARTICLE_LANGS}
+	./tools/asciidoctor.sh articles ${_lang} epub
+.endfor
+
+epub-clean: epub-articles-clean epub-books-clean
+
+epub-books-clean:
+.for _lang in ${BOOK_LANGS}
+	rm -fr ${.CURDIR}/public/${_lang}/books
+	-rmdir ${.CURDIR}/public/${_lang}
+.endfor
+	-rmdir ${.CURDIR}/public/
+
+epub-articles-clean:
+.for _lang in ${ARTICLE_LANGS}
+	rm -fr ${.CURDIR}/public/${_lang}/articles
+.if !exists(${.CURDIR}/public/${_lang}/books)
+	rm -fr ${.CURDIR}/public/${_lang}
+.endif
+.endfor
+	-rmdir ${.CURDIR}/public
+....
+
+<.> `MAINTAINER` 旗標指定此 Makefile 的維護者。
+<.> `ALL_LANGUAGES` 旗標指定必須產生目錄的語言。
+<.> `RUBY_CMD` 旗標指定 Ruby 二進位檔的位置。
+<.> `HUGO_CMD` 旗標指定 Hugo 二進位檔的位置。
+<.> `.ORDER` 指示詞用於確保多個 make 工作可以順利執行。
+<.> `all` 目標建置文件並將結果放在 *~/doc/documentation/public* 中。
+<.> `starting-message` 在 CLI 中顯示一則訊息，告知使用者程序正在執行。
+<.> `run-local` 在 1313 連接埠上執行 hugo 網頁伺服器，如果該連接埠已被使用，則使用隨機的可用連接埠。
+<.> `build` 建置文件並將結果放在 *~/doc/documentation/public* 中。
+
+[[website-makefile]]
+=== 網站 Makefile
+
+此 [.filename]#Makefile# 的格式如下：
+
+[source,shell]
+....
+# 產生 FreeBSD 網站
+#
+# Copyright (c) 2020-2025, The FreeBSD Documentation Project
+# Copyright (c) 2020-2025, Sergio Carlavilla <carlavilla@FreeBSD.org>
+#
+# 預計在命令列上使用的目標
+#
+# all (預設)	- 	產生 releases.toml 並編譯所有網站
+# run		- 		提供建置的網站以供本機瀏覽
+#
+# run 目標使用 hugo 的內建網頁伺服器，讓建置的網站
+# 可供本機瀏覽。在使用 `run` 目標之前，應先建置網站。
+# 預設情況下，hugo 會在 1313 連接埠上啟動其
+# 網頁伺服器。
+
+MAINTAINER=carlavilla@FreeBSD.org <.>
+
+# 我們有內容的所有語言列表
+ALL_LANGUAGES=	de el en es fr hu it ja nl ru tr zh-cn zh-tw
+
+LOCALBASE?=	/usr/local
+
+RUBY_CMD =	${LOCALBASE}/bin/ruby <.>
+HUGO_CMD =	${LOCALBASE}/bin/hugo <.>
+HUGO_ARGS?=	--verbose
+RUBYLIB = 	../shared/lib
+.export	RUBYLIB
+
+.ifndef HOSTNAME
+.  ifdef BIND
+.HOST=$(BIND)
+.  else
+.HOST=localhost
+.  endif
+.else
+.HOST=$(HOSTNAME)
+.endif
+
+.if defined(DOC_LANG) && !empty(DOC_LANG)
+LANGUAGES=	      ${DOC_LANG:S/,/ /g}
+.if  ${LANGUAGES:Men} == ""
+.warning "警告：無法略過 'en'；正在將其加回"
+LANGUAGES+=	en
+.endif
+.else
+LANGUAGES=	${ALL_LANGUAGES}
+.endif
+
+# 取出所有語言的列表，然後取出我們透過 DOC_LANG
+# 	要求語言。我們會將此提供給 hugo。
+SKIP_LANGS=
+.for a in ${ALL_LANGUAGES}
+.if ${LANGUAGES:M${a}} == ""
+SKIP_LANGS+=	${a}
+.endif
+.endfor
+
+.ORDER: all run <.>
+
+.ORDER: starting-message generate-releases
+.ORDER: starting-message build
+.ORDER: generate-releases build
+.ORDER: build post-build
+.ORDER: post-build end-message
+
+all: starting-message generate-releases build post-build end-message <.>
+run: starting-message generate-releases run-local
+clean: hugo-clean releases-clean
+
+starting-message: .PHONY <.>
+	@echo "---------------------------------------------------------------"
+	@echo "網站建置開始於 $$(date)"
+	@echo " 包含的語言：${LANGUAGES}"
+	@echo " 排除的語言：${SKIP_LANGS}"
+	@echo "---------------------------------------------------------------"
+
+end-message: .PHONY
+	@echo "---------------------------------------------------------------"
+	@echo "網站建置完成於 $$(date)"
+	@echo "---------------------------------------------------------------"
+
+generate-releases: data/releases.toml <.>
+
+data/releases.toml:
+	${RUBY_CMD} ./tools/releases-toml.rb
+
+run-local: .PHONY <.>
+	HUGO_DISABLELANGUAGES="${SKIP_LANGS}" ${HUGO_CMD} server \
+	    ${HUGO_ARGS} -D $(BIND:D--bind=$(BIND)) --baseURL="http://$(.HOST):1313"
+
+build: .PHONY <.>
+	HUGO_DISABLELANGUAGES="${SKIP_LANGS}" ${HUGO_CMD} ${HUGO_ARGS}
+
+post-build: cgi-permissions
+
+cgi-permissions:
+	@chmod 555 ./public/cgi/*.cgi
+
+hugo-clean:
+	rm -fr public resources
+
+releases-clean:
+	rm -f data/releases.toml
+....
+
+<.> `MAINTAINER` 旗標指定此 Makefile 的維護者。
+<.> `RUBY_CMD` 旗標指定 Ruby 二進位檔的位置。
+<.> `HUGO_CMD` 旗標指定 Hugo 二進位檔的位置。
+<.> `.ORDER` 指示詞用於確保多個 make 工作可以順利執行。
+<.> `all` 目標建置網站並將結果放在 *~/doc/website/public* 中。
+<.> `starting-message` 在 CLI 中顯示一則訊息，告知使用者程序正在執行。
+<.> `generate-releases` 呼叫用於從 AsciiDoc 變數轉換為 TOML 變數的腳本。
+透過此轉換，版本變數可以在 AsciiDoc 和 Hugo 自訂範本中使用。
+<.> `run-local` 在 1313 連接埠上執行 hugo 網頁伺服器，如果該連接埠已被使用，則使用隨機的可用連接埠。
+<.> `build` 建置網站並將結果放在 *~/doc/website/public* 中。

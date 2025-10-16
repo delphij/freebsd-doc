@@ -1,0 +1,378 @@
+---
+title: 第 12 章. 寫作風格
+prev: books/fdp-primer/manual-pages
+next: books/fdp-primer/editor-config
+description: FreeBSD 文件計畫中使用的寫作風格和一些慣例
+tags: ["writing", "style", "typos", "one sentence per line"]
+showBookMenu: true
+weight: 12
+params:
+  path: "/books/fdp-primer/writing-style/"
+---
+
+[[writing-style]]
+= 寫作風格
+:doctype: book
+:toc: macro
+:toclevels: 2
+:icons: font
+:sectnums:
+:sectnumlevels: 6
+:sectnumoffset: 12
+:partnums:
+:source-highlighter: rouge
+:experimental:
+:images-path: books/fdp-primer/
+
+ifdef::env-beastie[]
+ifdef::backend-html5[]
+:imagesdir: ../../../../images/{images-path}
+endif::[]
+ifndef::book[]
+include::shared/authors.adoc[]
+include::shared/mirrors.adoc[]
+include::shared/releases.adoc[]
+include::shared/attributes/attributes-{{% lang %}}.adoc[]
+include::shared/{{% lang %}}/teams.adoc[]
+include::shared/{{% lang %}}/mailing-lists.adoc[]
+include::shared/{{% lang %}}/urls.adoc[]
+toc::[]
+endif::[]
+ifdef::backend-pdf,backend-epub3[]
+include::../../../../../shared/asciidoctor.adoc[]
+endif::[]
+endif::[]
+
+ifndef::env-beastie[]
+toc::[]
+include::../../../../../shared/asciidoctor.adoc[]
+endif::[]
+
+[[writing-style-tips]]
+== 提示
+
+技術文件可以透過一致地使用幾個原則來改進。
+其中大部分可以歸類為三個目標：_清晰_、_完整_和_簡潔_。
+這些目標可能會相互衝突。
+好的寫作在於它們之間的平衡。
+
+[[writing-style-be-clear]]
+=== 清晰
+
+清晰度極為重要。
+讀者可能是新手，或者正在閱讀第二語言的文件。
+力求簡單、不複雜的文字，清楚地解釋概念。
+
+避免華麗或修飾的言辭、笑話或口語表達。
+盡可能簡單明瞭地寫作。
+簡單的文字更容易理解和翻譯。
+
+盡可能保持解釋簡短、簡單和清晰。
+避免空洞的片語，例如「in order to」，通常只表示「to」。
+避免可能帶有居高臨下意味的詞語，例如「basically」。
+避免拉丁術語，例如「i.e.,」或「cf.」，這些術語在學術或科學團體之外可能不為人知。
+
+以正式的風格寫作。
+避免稱呼讀者為「您」。
+例如，說「將檔案複製到 [.filename]#/tmp#」，而不是「您可以將檔案複製到 [.filename]#/tmp#」。
+
+提供清晰、正確、_經過測試_ 的範例。
+一個簡單的範例勝過沒有範例。
+一個好的範例更好。
+不要提供不好的範例，可以透過道歉或「但實際上永遠不應該那樣做」之類的句子來識別。
+不好的範例比沒有範例更糟。
+提供好的範例，因為_即使警告不要按範例所示使用_，讀者通常也只會按範例所示使用。
+
+避免使用_模棱兩可的詞語_，例如「should」、「might」、「try」或「could」。
+這些詞語暗示說話者不確定事實，並在讀者心中產生懷疑。
+
+同樣地，以祈使句的形式給出指令：不是「你應該這樣做」，而只是「這樣做」。
+
+[[writing-style-be-complete]]
+=== 完整
+
+不要對讀者的能力或技能水平做出假設。
+告訴他們需要知道什麼。
+提供其他文件的連結以提供背景資訊，而無需重新建立它。
+設身處地為讀者著想，預測他們會問的問題，並回答他們。
+
+[[writing-style-be-concise]]
+=== 簡潔
+
+雖然功能應該被完整地記錄，但有時資訊太多，讀者無法輕易找到所需的特定細節。
+在完整和簡潔之間取得平衡是一個挑戰。
+一種方法是先有引言，然後是描述最常見情況的「快速入門」部分，接著是深入的參考部分。
+
+[[writing-style-guidelines]]
+== 指南
+
+為了促進 FreeBSD 文件眾多作者之間的一致性，為作者制定了一些指南以供遵循。
+
+使用美式英文拼字：：
+英文有多種變體，同一個詞有不同的拼法。
+如果拼法不同，請使用美式英文變體。
+「color」，而不是「colour」，「rationalize」，而不是「rationalise」，依此類推。
++
+[NOTE]
+====
+在貢獻文章的情況下，可以接受使用英式英文，但拼字必須在整份文件中保持一致。
+其他文件，例如書籍、網站、手冊頁面等，必須使用美式英文。
+====
+
+不要使用縮寫：：
+不要使用縮寫。
+一律將片語完整拼出。
+「Don't use contractions」是錯誤的。
++
+避免使用縮寫可以使語氣更正式、更精確，並且對翻譯人員來說稍微容易一些。
+
+使用序列逗號：：
+在段落中的項目列表中，用逗號將每個項目與其他項目分開。
+用逗號和「and」一詞將最後一個項目與其他項目分開。
++
+例如：
++
+這是一個包含一、二和三項的列表。
++
+這是一個包含三項「一」、「二」和「三」的列表，還是一個包含兩項「一」和「二和三」的列表？
++
+最好明確一點，並包含一個序列逗號：
++
+這是一個包含一、二和三項的列表。
+避免多餘的片語：：
+不要使用多餘的片語。
+特別是，「the command」、「the file」和「man command」通常是多餘的。
++
+例如，指令：
++
+錯誤：使用 `git` 指令更新原始碼。
++
+正確：使用 `git` 更新原始碼。
++
+檔名：
++
+錯誤：... 在檔名 [.filename]#/etc/rc.local# 中...
++
+正確：... 在 [.filename]#/etc/rc.local# 中...
++
+手冊頁面參考（第二個範例使用 `man:[]` 和 man:csh[1] 實體）：
++
+錯誤：有關更多資訊，請參閱 `man csh`。
++
+正確：請參閱 man:csh[1]。
+
+有關寫作風格的更多資訊，請參閱 William Strunk 的 http://www.bartleby.com/141/[Elements of Style]。
+
+[[writing-style-guide]]
+== 風格指南
+
+為了在許多不同的人編輯文件時保持文件原始碼的一致性，請遵循這些風格慣例。
+
+[[one-sentence-per-line]]
+=== 每行一句
+
+在文件中使用語意換行，這是一種稱為「每行一句」的技術。
+這種技術的目的是幫助使用者撰寫和閱讀文件。
+若要取得有關此技術的更多資訊，請閱讀 link:https://sembr.org/[語意換行] 頁面。
+
+這是一個不使用「每行一句」的範例。
+
+....
+人人生而自由，在尊嚴和權利上一律平等。他們賦有理性和良心，並應以兄弟關係的精神互相對待。
+....
+
+這是一個使用該技術的範例。
+
+....
+人人生而自由，在尊嚴和權利上一律平等。
+他們賦有理性和良心，並應以兄弟關係的精神互相對待。
+....
+
+[[writing-style-acronyms]]
+=== 縮寫
+
+縮寫應在文件中首次出現時定義，例如：「網路時間協定 (NTP)」。
+定義縮寫後，除非在上下文中更有意義，否則請單獨使用縮寫。
+縮寫通常每章或每份文件只定義一次。
+
+所有縮寫都應使用 ` 字元括起來。
+
+[[writing-style-special-characters]]
+== 特殊字元列表
+
+此特殊字元列表顯示了在 FreeBSD 文件中使用的正確語法和輸出。
+如果某個字元不在列表中，請在 {freebsd-doc} 上詢問。
+
+[.informaltable]
+[cols="1,1,1", frame="none", options="header"]
+|===
+| 名稱
+| 語法
+| 呈現
+
+
+| 版權
+| +(C)+
+| (C)
+
+| 註冊
+| +(R)+
+| (R)
+
+| 商標
+| +(TM)+
+| (TM)
+
+| 長破折號
+| +--+
+| --
+
+| 刪節號
+| +...+
+| ...
+
+| 單向右箭頭
+| +->+
+| ->
+
+| 雙向右箭頭
+| +=>+
+| =>
+
+| 單向左箭頭
+| +<-+
+| <-
+
+| 雙向左箭頭
+| +<=+
+| <=
+
+|===
+
+[[writing-style-linting-vale]]
+== 使用 Vale 進行檢查
+
+為了在所有文件和網站頁面中保持清晰度和一致性，link:https://vale.sh[Vale] 樣式已引入文件樹中。
+link:https://vale.sh[Vale] 是一個功能強大的檢查器，用於撰寫自訂規則，並可用於多種情境。
+目前 link:https://vale.sh[Vale] 可用作命令列工具、用於 CI/CD 管線，並整合到所選的編輯器中。
+
+下表描述了目前的規則名稱及其各自的嚴重性。
+
+[.informaltable]
+[cols="1,1", frame="none", options="header"]
+|===
+| 名稱
+| 嚴重性
+
+| FreeBSD.BrandTerms
+| 錯誤
+
+| FreeBSD.ConsciousLanguage
+| 警告
+
+| FreeBSD.Contractions
+| 建議
+
+| FreeBSD.EOLSpacing
+| 警告
+
+| FreeBSD.Hang
+| 警告
+
+| FreeBSD.Hyphens
+| 警告
+
+| FreeBSD.Spacing
+| 錯誤
+
+| FreeBSD.SuperfluousOptArgInLinks
+| 建議
+
+| Vale.Avoid
+| 錯誤
+
+| Vale.Repetition
+| 錯誤
+
+| Vale.Spelling
+| 錯誤
+
+| Vale.Terms
+| 錯誤
+
+|===
+
+[[writing-style-linting-vale-rules]]
+=== 目前的 Vale 規則
+
+. FreeBSD.BrandTerms：根據 FreeBSD 基金會的版權規則，*freebsd* 應寫為 *FreeBSD*。
+同樣地，每個主要供應商和公司都有關於撰寫其品牌名稱和商標的特定規則。
+應注意尊重他人的品牌價值，並花時間撰寫 PostgreSQL、Node.js、Let's Encrypt 等。
+缺少的品牌名稱應新增到 `doc` 儲存庫中的 [.filename]#.vale/styles/FreeBSD/BrandTerms.yml#。
+
+. FreeBSD.ConsciousLanguage：此規則建議使用有意識的語言，以便在可能的情況下避免使用指向人們膚色、年齡、種族或性取向的敏感詞語。
+
+. FreeBSD.Contractions：不應使用縮寫詞。
+此規則避免所有縮寫，並建議使用完整詞語。
+
+. FreeBSD.EOLSpacing：在大多數文件中，都存在 EOL 間距，這不是理想的情況。
+
+. FreeBSD.Hang：`Hang` 通常用於表示應用程式已停止回應。
+此規則建議使用更好的措辭。
+
+. FreeBSD.Hyphens：通常以「ly」結尾的副詞會加上連字號，這是錯誤的。
+
+. FreeBSD.Spacing：通常雙空格很難用肉眼發現，這裡解決了這個問題。
+
+. FreeBSD.SuperfluousOptArgInLinks：建議在 `link:` 巨集中，當顯示的文字與 URL 一致時，將方括號清空。
+
+. Vale.Avoid：強制執行 FreeBSD 專案的 *請勿使用* 詞彙。
+如果發現任何不應出現在文件中的詞語，應將該詞語新增到 `doc` 儲存庫中的 [.filename]#.vale/styles/Vocab/Terms/reject.txt#。
+目前列表為空。
+
+. Vale.Repetition：離開鍵盤後再重新開始工作時，相同的詞語通常會輸入兩次。
+此規則會尋找重複的詞語並警告使用者。
+
+. Vale.Spelling：目前文件和網站中混合了 en_US 和 en_GB 的拼字。
+Vale 附帶一個內建字典，嚴格使用 en_US，不接受任何詞語的 en_GB 變體。
+
+. Vale.Terms：強制執行 FreeBSD 專案的 *偏好* 詞彙。
+目前術語列表為空，FreeBSD 特定術語將逐步新增。
+如果發現任何詞語正確但字典中沒有，應將該詞語新增到 `doc` 儲存庫中的 [.filename]#.vale/styles/Vocab/Terms/accept.txt#。
+
+未來幾天將視需要引入更多規則。
+
+[[writing-style-using-vale]]
+=== 使用 Vale
+
+link:https://vale.sh[Vale] 可從命令列和編輯器或 IDE 中使用。
+package:textproc/vale[] 可如下安裝：
+
+[source, shell]
+....
+$ pkg install vale
+....
+
+[[writing-style-using-vale-commandline]]
+==== 在命令列上使用 Vale
+
+假設 `doc` 儲存庫已複製到 [.filename]#~/doc#，則需要執行以下指令：
+
+[source, shell]
+....
+% cd ~/doc
+% vale .
+....
+
+[NOTE]
+======
+link:https://vale.sh[Vale] 是一個 CPU 和記憶體密集型程式，因為應用程式的性質，可能需要一段時間才能在螢幕上顯示任何輸出。
+更好的執行應用程式的方法是在特定資料夾或檔案上執行，而不是在整個 `doc` 儲存庫上執行，因為這已在 CI 管線中完成。
+======
+
+[[writing-style-using-vale-editors]]
+==== 在編輯器中使用 Vale
+
+link:https://vale.sh[Vale] 可與主流編輯器搭配使用，例如 package:editors/vim[]、package:editors/emacs[]、package:editors/vscode[]。
+目前，package:editors/vim[] 的必要設定在 crossref:editor-config[editor-config-vim, Vim] 中描述。
+正在為 package:editors/emacs[] 進行設定。
