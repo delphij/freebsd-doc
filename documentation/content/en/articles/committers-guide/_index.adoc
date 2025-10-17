@@ -299,6 +299,153 @@ Used by {donations}.
 
 Before any commit, a build test is necessary; see the 'Overview' and 'The FreeBSD Documentation Build Process' sections of the extref:{fdp-primer}[FreeBSD Documentation Project Primer for New Contributors] for more details.
 
+[[ai-guidelines]]
+== Guidance on using Generative AI in FreeBSD development
+
+This is our guide for using generative AI tools when contributing to the FreeBSD Project. The goal is simple: leverage these powerful new tools to be more productive and build a better OS, without introducing new risks to our codebase.
+
+This guidance represents current best practices. It is not a policy, but contributors are encouraged to follow these recommendations when using AI-assisted tools.
+
+=== You Are the Pilot, AI is the Co-Pilot
+
+This is the most important principle. You are ultimately and solely responsible for every line of code you commit.
+
+Think of AI as a very fast, sometimes brilliant, but occasionally unreliable junior developer. It can help you write code, but you are the senior engineer who must sign off on it. If it breaks the build, introduces a security flaw, causes a kernel panic, or worse, it copied code somewhere without proper attribution, the responsibility is yours, not the tool's.
+
+=== Smart Ways to Use AI (The "Do's")
+
+AI can be a huge time-saver. Here are some great ways to use it:
+
+* Crank out boilerplate: Let it generate repetitive code structures, function stubs, or standard data types.
+* Act as your rubber duck: Use it to brainstorm solutions, explore alternative algorithms, or refactor code. It can be a great Socratic questioning partner to help you understand complex code by summarizing it and asking you questions.
+* Get a head start on translations: Use it for first-pass translations of code or documentation, but always have a human with language expertise review the output for accuracy.
+* Help with documentation: Let it help you draft or clean up man pages, comments, and other docs to improve clarity and style.
+
+=== Traps to Avoid (The "Don'ts")
+
+Don't let it write entire subsystems. AI is best used for small, manageable chunks of code. Asking it to write complex, non-trivial logic is a recipe for subtle bugs and maintenance nightmares. Your design choices and critical thinking must drive the architecture.
+
+Don't ever, ever commit blind. Never trust AI-generated code without a thorough review. This is a zero-tolerance rule.
+
+=== Your Checklist: Responsibilities when using Generative AI
+
+Before you commit any code that was assisted by AI, run through this checklist.
+
+. Review It Like You Wrote It (Because you did)
++
+Meticulously review every line for correctness, efficiency, and adherence to FreeBSD coding standards. Look for subtle flaws and logical errors.
+
+. Protect Our Codebase from licensing issues
++
+AI models may be trained on code with all sorts of licenses (GPL, MIT, etc.). There is a risk the AI could spit out something that might resemble copyrighted code.
++
+* Keep it small & generic: Use AI for small, generic snippets.
+* Make it your own: Modify the output enough that the final result is clearly your own intellectual effort. This minimizes any risk of copyright infringement.
+
+. Scrutinize for security flaws
++
+Treat AI-generated code with heightened security awareness. Manually inspect it for common vulnerabilities and run it through our standard analysis tools just like any other code.
+
+. Check the AI Tool's "Terms of Use"
++
+Before you use a tool, make sure it's safe for the project.
++
+You must own the output. The terms should clearly state that you own the code you create. If the AI company claims any ownership, don't use it for project work.
++
+Your prompts should be private. Avoid services that use your code prompts to train their public models.
+
+. Be transparent in your commits
++
+If AI provided a non-trivial contribution, give it credit in the commit message. This helps everyone during code review and future maintenance.
++
+Good format: `Co-authored-by: Generative AI` or `Assisted-by: [Tool Name]`
+
+. Play in a Sandbox (recommended)
++
+If an AI tool can execute code locally (e.g., run builds or tests), do not run it with your normal user privileges unattended. A hallucinating AI with shell access can do real damage.
++
+Run it in a jail or VM, or at least under a different user identity with limited access to prevent unintended system modifications.
+
+The use of AI doesn't change our standards. You are the developer. You are the committer. You are responsible for the quality, security, and integrity of your contribution.
+
+=== Frequently Asked Questions (FAQ)
+
+==== Q1: Can I use Claude Code, ChatGPT, Gemini API, GitHub Copilot, or similar tools when working on FreeBSD?
+
+Yes -- but with care.
+
+You may use generative AI tools to assist your own work as long as:
+
+* You retain full ownership of your contributions.
+* The generated code is thoroughly reviewed and verified by you.
+* You comply with the tool's Terms of Use (see the section above).
+* You avoid including large or unmodified blocks of AI-generated code.
+
+Note well: some AI providers have different terms of use between their "free tier" users and paid customers, be sure to confirm if it is Okay before using their outputs.
+
+The key principle: AI can assist, but you remain the author.
+
+==== Q2: Do I need to disclose every use of AI in my commits?
+
+Not for trivial help, such as grammar fixes, formatting suggestions, or boilerplate generation that you fully rewrote or reviewed.
+
+However, if AI contributed non-trivial content -- for example, code, design ideas, or substantial documentation text -- it's good practice to acknowledge it in your commit message.
+
+Transparency helps reviewers understand the context of your work and protects both you and the project.
+
+==== Q3: Can I paste FreeBSD source code into an AI tool for help?
+
+Only if the code is already in public. Otherwise, you should make sure that tool's Terms of Use guarantee privacy of your input and that your prompts are not used for model training.
+
+Even though FreeBSD is open source, intermediate work (e.g., experimental branches, uncommitted patches) should not be shared with third-party services without care.
+
+If in doubt, use a self-hosted or locally running models instead of cloud-based tools.
+
+==== Q4: Can AI-generated code be committed directly if it passes all tests?
+
+No. Passing tests doesn't mean the code is safe, efficient, or legally clean.
+
+AI-generated code must still meet all the same review, licensing, and security standards as human-written code.
+
+Always review it manually and ensure it reflects your own intellectual effort.
+
+==== Q5: What if I output looks suspiciously similar to existing open source code?
+
+Do not commit it.
+
+If a generated snippet closely resembles code under another license (for example, GPL), it's safest to rewrite it yourself.
+When in doubt, treat it like third-party code and verify its origin before including it in the FreeBSD repository.
+
+==== Q6: Can AI help with documentation and translations?
+
+Yes, this is a good and low-risk use case.
+
+AI tools can help improve clarity, grammar, and consistency in documentation or assist with translations between languages.
+However, human review is still required to ensure technical accuracy and maintain FreeBSD’s documentation standards.
+
+==== Q7: Will FreeBSD ever prohibit AI-assisted contributions?
+
+There's no prohibition at this time.
+
+The project's focus is on responsible use — ensuring that AI-assisted work meets the same quality, licensing, and security standards as any other contribution.
+
+If problems arise, the community may revisit these guidelines.
+
+==== Q8: Is there a recommended setup for using AI tools safely?
+
+Yes:
+
+* Run AI tools in a sandboxed environment, such as a jail, VM, or at least a different user identity that is not privileged, if they can execute code or access your system.
+
+* Avoid giving them access to private repositories, SSH keys, or system-level credentials.  If you have to use a non-sandboxed environment, be sure to review all actions that the tool intends to do instead of giving it a blanket approval of doing all operations.
+
+* Keep track of which tools you use and what they generated — this helps during reviews and audits.
+
+==== Q9: Who can I contact if I’m unsure about AI usage in my work?
+
+For now, discuss it on the relevant mailing list (e.g., `freebsd-hackers@` or `freebsd-doc@`) or reach out to your mentor or reviewer.
+If there’s any licensing concern, consult the `core@` team before committing the code.
+
 [[git-primer]]
 == Git Primer
 
