@@ -1,0 +1,349 @@
+---
+title: A Developer's Guide to Generative AI in FreeBSD
+authors:
+  - author: Xin LI
+    email: delphij@FreeBSD.org
+copyright: 2025 The FreeBSD Documentation Project
+description: Best practices for using generative AI tools in FreeBSD development
+trademarks: ["freebsd", "general"]
+weight: 35
+tags: ["AI", "Development", "Guide", "Best Practices", "Contributing"]
+---
+
+= A Developer's Guide to Generative AI in FreeBSD
+:doctype: article
+:toc: macro
+:toclevels: 2
+:icons: font
+:sectnums:
+:sectnumlevels: 6
+:source-highlighter: rouge
+:experimental:
+:images-path: articles/ai-guide/
+
+ifdef::env-beastie[]
+ifdef::backend-html5[]
+include::shared/authors.adoc[]
+include::shared/mirrors.adoc[]
+include::shared/releases.adoc[]
+include::shared/attributes/attributes-{{% lang %}}.adoc[]
+include::shared/{{% lang %}}/teams.adoc[]
+include::shared/{{% lang %}}/mailing-lists.adoc[]
+include::shared/{{% lang %}}/urls.adoc[]
+:imagesdir: ../../../images/{images-path}
+endif::[]
+ifdef::backend-pdf,backend-epub3[]
+include::../../../../shared/asciidoctor.adoc[]
+endif::[]
+endif::[]
+
+ifndef::env-beastie[]
+include::../../../../../shared/asciidoctor.adoc[]
+endif::[]
+
+_Contributed by `{delphij}`
+
+[.abstract-title]
+Abstract
+
+Generative AI is a type of artificial intelligence that can produce new content, including code, text, and documentation, based on patterns it learned from training data.
+Generative AI tools offer a powerful new way to accelerate our work, from writing boilerplate to debugging complex code.
+The goal of this guide is to help developers to leverage these tools to be more productive in building better software and documentation, and to navigate the risks associated with their use.
+
+This document provides guidance and best practices.
+It does not replace the FreeBSD Committer's Guide and does not serve as a legal policy on licensing.
+
+'''
+
+toc::[]
+
+[[core-principle]]
+== The Core Principle: You are the Pilot, AI is the Co-Pilot
+
+This is the most important concept to remember.
+*You are ultimately and solely responsible for every line of code you commit.*
+
+Think of an AI as a brilliant, but untrusted external collaborator.
+Unlike a human collaborator, generative AI works by providing the statistically most probable output.
+This is very different from human reasoning, and it can usually produce solutions instantly.
+Generative AI can sometimes make mistakes and still appear very confident with what they give to human.
+Like any tools, it's the human developer who uses the tool who is assuming all responsibilities ultimately by signing off the output, therefore, it is important for you the human developer to be vigilant and pay attention at all times to what it is doing, and avoid, for example, introducing security flaws or creating licensing issues.
+
+[[primer]]
+== An Engineer's Primer on Generative AI
+
+If you are new to these tools, here's a quick overview of what they are, why they are useful, and what their primary risks are.
+
+[[what-is-genai]]
+=== What is Generative AI?
+
+Think of models like Gemini, ChatGPT, Claude, and GitHub Copilot.
+They've been trained on a massive corpus of text and code from the public internet.
+These models don't _think_ or _understand_ C the way you do: they simply predict the most statistically probable "next word" or "next line of code" based on the patterns they have learned.
+
+[[benefits]]
+=== The Benefits: Your "Rubber Duck" That Talks Back
+
+When used correctly, AI is a massive productivity boost.
+It is an excellent tool:
+
+* *Brainstorming:* It's a fantastic "rubber duck", but one that talks back.
+  It can offer different perspectives on your approach, thereby sparking more creative opportunities.
+  You can describe a problem and ask it to explore alternative algorithms or refactor existing code, or challenge it or have it challenge you back with the ideas to make it more thoughtful, and quickly increase your understanding of a given problem.
+* *Reducing Boilerplate:* It can generate function stubs, data structures, and repetitive code in seconds.
+* *Identify refactoring opportunities:* It can help you to identify repetitive patterns in code and give you advice about how to optimize them.
+* *Summarizing & Explaining:* It can be a great Socratic questioning partner to help you understand complex code by summarizing it and answering your questions.
+
+[[risks]]
+=== The Risks: The "Catch" You Must Look For
+
+Because generative AI is fundamentally a pattern matcher, it has several key weaknesses:
+
+. *Hallucinations:* The AI will confidently "invent" facts, API functions, or command-line flags that sound plausible but do not exist.
+  With help of test cases, etc., many of such cases can be easily identified, but be careful with the non-trivial ones.
+  This is especially true when asking it to do a large chunk of work (which you should avoid for other reasons) without looking into the details.
+. *Intellectual Property Risk:* The model may have been trained on code with various licenses (GPL, MIT, etc.).
+  It can sometimes give you code snippets verbatim or significantly look like its training data, which could be a potential licensing violation.
+. *Security Flaws:* An AI doesn't really "understand" secure coding principles.
+  It only knows the patterns.
+  It can easily reproduce common but insecure patterns, especially if they were common in its training data.
+. *Privacy Concerns:* Many cloud-based AI services use your prompts to train their future models.
+  Pasting private, uncommitted, or sensitive code into a cloud-based AI service that does not respect your privacy is a data leak.
+  Even for an open-source project, this can be a concern if you are working on experimental code or a sensitive (e.g., pre-disclosure security) patch.
+
+[[examples]]
+=== Putting AI to Work: Real-World Examples
+
+Modern AI goes beyond simple chat.
+You can integrate it into your command line and workflow as an "agent".
+
+*Example 1: Asking AI to help create test cases*
+
+You can ask AI to complete your work by creating test cases for a feature that you are working on, for example, you can write the following instructions:
+
+[source,shell]
+----
+I am creating a feature for FreeBSD rev(1) to have GNU rev(1)
+compatible `-0` feature, which treats the NUL byte ('\0')
+as a line separator instead of the default newline ('\n').
+
+rev(1)'s source lives under usr.bin/rev/, and the test cases
+are located under tests/.
+
+Your task is to implement test cases, ensuring that:
+ - When -0 is specified, treat '\0' as the line terminator
+   for input instead of '\n'.
+ - When -0 is not specified, the current behavior is preserved.
+ - Output should always preserve the same line terminator when
+   writing reversed lines.
+
+Reuse existing logic as much as possible; do not duplicate
+code unnecessarily.
+
+For small changes, preserve the surrounding style and
+structure. Keep the patch minimal. If needed, do it in smaller
+steps that is logically self-contained.
+
+When in doubt, always ask human for confirmation before proceeding
+further.
+----
+
+Then in a CLI tool, use that instruction to start dialogue with the generative AI.
+The tool will start "thinking" and will create the test cases for you, you can challenge it to cover cases that it did not think about, and have the agent keep notes about your conversation.
+
+*Example 2: Using a CLI for Code Review*
+
+You can pipe code directly to a tool like the Gemini CLI to get instant feedback.
+This is great for checking your work before sending it for human review.
+
+[source,shell]
+----
+You are a code reviewer who have received the latest revision
+(can be seen in `git show`). Please critique this change, check
+for non-compliance with style(9) and whether the change is
+conforming to the review guidelines.
+----
+
+*Example 3: Brainstorming Architecture*
+
+You can use a chat interface to explore a design problem before you write any code.
+
+[quote]
+____
+*Prompt:* "I need to design a lightweight IPC mechanism for a new kernel subsystem in FreeBSD. What are the trade-offs between a shared-memory ring buffer versus a simple message queue implemented with mutexes and condvars?"
+____
+
+*Example 4: In-Editor Assistance*
+
+Tools like GitHub Copilot, Gemini and Claude Code act as an in-editor co-pilot, suggesting entire blocks of code as you type, and you can ask it to do things like "`refactor the common code of <function A> and <function B> to reduce code duplication`".
+This is where the "Co-Pilot" metaphor comes from -- it is writing code alongside you, but you still have to steer.
+
+*Example 5: Translating FreeBSD documentation into another language*
+
+Large-Language-Models, which powers behind most of generative AI, were initially designed to solve translation problems and they can be a very good translator to give you a head start of translation of a new article, etc.
+
+From CLI tool you can say:
+
+[source,shell]
+----
+Translate contents under documentation/content/en/books/fdp-primer
+to Simplified Chinese and save to
+documentation/content/zh-cn/books/fdp-primer ; do not commit as
+I will review and verify it against the original version.
+----
+
+You can use tools like textproc/meld to compare the two directory directly side-by-side.
+
+[[practical-guide]]
+== A Practical Guide to Using AI in Your Workflow
+
+Here are our recommendations for integrating these tools safely and effectively.
+
+[[sweet-spots]]
+=== The "Sweet Spots": Great uses of GenAI
+
+* *Crank Out Boilerplate:* Let it generate repetitive code structures, `getopt` parsing loops, function stubs, or standard data types.
+* *Draft Test Cases:* This is a fantastic use.
+  "Here is a function... Write a set of unit tests for it, including edge cases for null pointers, off-by-one errors, and maximum input values."
+* *Act as Your Rubber Duck:* Use it to brainstorm solutions, explore alternative algorithms, or refactor a complex function.
+* *Get a Head Start on Translations:* Use it for first-pass translations of documentation.
+  *Always* have a human with language expertise review the output.
+* *Draft and Clean Up Docs:* Let it help you draft man pages, clean up comments, or improve the clarity and style of your documentation.
+
+[[high-risk]]
+=== High-Risk Areas: Where to Be Cautious
+
+* *Generating Complex, Non-Trivial Logic:* This is a recipe for subtle bugs.
+  AI is not really good at designing large-scale architecture.
+  Your design choices and critical thinking must drive the implementation.
+* *Writing Security-Sensitive Code:* Do not ask an AI to write code for crypto, privilege checks, or complex memory management.
+  The risk of subtle, dangerous vulnerabilities is high.
+  In fact, some adversarial actors are already deliberately poisoning public training data to introduce insecure patterns for future developers who rely too heavily on AI suggestions.
+* *"Blind Committing":* Never commit AI-generated code that you have not personally and thoroughly reviewed and tested.
+  Treat AI as an untrusted collaborator: just like a new contributor's patch, you must fully review it and take responsibility for it.
+  Perform code review and functional tests just as you would for any human-written code.
+
+[[pre-commit-checklist]]
+=== How to Avoid the Pitfalls: A Pre-Commit Checklist
+
+Before you commit any AI-assisted code, run through this mental checklist.
+
+. *Review It Like You Wrote It (Because You Did)*
++
+Meticulously review every single line for correctness, efficiency, and adherence to FreeBSD coding standards.
+Look for subtle flaws, logical errors, and hallucinations.
+Engage in dialogue with the AI to verify your understanding of what it produces.
+If you don't understand _why_ the AI's code works, don't commit it.
+
+. *Guard against IP & licensing risk*
++
+Your goal is to ensure the final result is _your_ intellectual effort.
++
+--
+* *Check the ToS:* Ensure the tool's Terms of Use state that you own the output.
+  If the AI company claims any ownership, don't use it for project work.
+* *Keep it small & generic:* AI is safest for small, generic snippets where you have given clear direction.
+* *Rewrite, don't copy-paste:* If the AI generates a large or complex block of code, use it as a reference and rewrite it in your own "voice".
+  This minimizes the risk of it being a "memorized" chunk of copyrighted code.
+--
+
+. *Protect Your (and Our) Privacy*
++
+--
+* *No Private Code in Public Tools:* Never paste uncommitted, experimental, or private FreeBSD code into a public AI chat service unless you have explicitly confirmed that the service's ToS guarantees your prompts are private and _not_ used for model training.
+* *Use Local Models:* When in doubt, use a self-hosted or locally running models for sensitive work.
+--
+
+. *Play in a Sandbox*
++
+If an AI tool can execute code locally (e.g., run builds or tests, many of them do nowadays), do not run it with your normal user privileges.
+A "hallucinating" AI with unattended shell access can do real damage.
+Run it in a jail or VM, or at minimum, under a different, unprivileged user identity to limit its access.
+
+. *Be Transparent*
++
+This provides important context for reviewers.
+If an AI provided a non-trivial contribution (i.e., more than a simple grammar fix or a few lines of boilerplate), give it credit in the commit message.
+This helps reviewers apply the right level of scrutiny.
++
+Use a format like:
++
+[literal]
+Assisted-by: [Tool Name]
+
+. *Keep Your Prompt History*
++
+It is good practice to keep records of important prompts you used to generate AI output.
+For example, you can save them in a Markdown file and reference them with `@` when invoking your CLI tool, instead of pasting them directly.
+These records not only help track how the output was produced but also serve as valuable learning material to improve your use of AI tools over time.
+
+[[reviewer-note]]
+=== A Note for Reviewers
+
+When reviewing a change, an `Assisted-by` tag should prompt you to apply additional scrutiny for non-trivial code changes, especially where design logic or large code segments were generated.
+
+* *Check for IP Risk:* Does a segment of the code look suspiciously familiar or "non-obvious" without attribution?
+  Raise the concern.
+* *Request Clarification:* Ask the contributor to explain the logic.
+  This is a simple way to verify the code wasn't "committed blind" and that the author truly understands their own change.
+
+[[faq]]
+== FAQ
+
+*Q1: Can I use GitHub Copilot, Gemini, ChatGPT, etc., when working on FreeBSD?*
+
+Yes, when done with care.
+You may use these tools as long as you follow the principles in this guide: you own the output, you review it meticulously, and you comply with the tool's Terms of Use.
+Crucially, ensure the terms state that you own the output and that your inputs will not be used for model training or disclosed to other parties.
+
+*Q2: Do I need to disclose every single use of AI?*
+
+No.
+We trust you to use your judgment.
+Trivial help, like fixing grammar in a comment, reformatting a line of code, or generating a 3-line function stub that you fully rewrote, doesn't need to be disclosed.
+If the AI contributed non-trivial code, design, or documentation, acknowledging it is good practice.
+
+*Q3: Can I paste FreeBSD source code into an AI tool for help?*
+
+Only if that code is already public _and_ you have verified the tool's Terms of Use guarantee your prompts are not used for training.
+Never paste intermediate work, uncommitted patches, or experimental code into a public cloud tool.
+Use a self-hosted or local model if possible.
+
+*Q4: Can AI-generated code be committed directly if it passes all tests?*
+
+No.
+Passing tests does not mean the code is safe, efficient, maintainable, or legally clean.
+It must meet the same review standards as human contributions.
+
+*Q5: What if AI output looks suspiciously similar to existing open source code?*
+
+*Do not commit it.*
+If a snippet closely resembles code under another license (e.g., GPL), rewrite it from scratch yourself, or ask someone else to implement it from scratch based on your description.
+It can be useful to try finding out other implementations _after_ you have made an implementation by searching them, especially for non-trivial (more than a few lines of) code.
+When in doubt, always treat AI output as third-party code and verify its origin.
+
+*Q6: Can AI help with documentation and translations?*
+
+Yes, this is actually a great, low-risk use case.
+Human review is still required to ensure technical accuracy and maintain our documentation standards, but it's an excellent "first draft" generator and a very good proof-reader to make sure your writing meets best language practices for technical writing.
+
+*Q7: Is there a recommended setup for using AI tools safely?*
+
+Yes: Run AI tools that can execute code in a sandboxed environment (a jail, VM, or separate unprivileged user).
+Doing so would make it safer for them to do automated operations, such as doing trial-and-error development or debugging, which sometimes saves a lot of human work.
+Avoid giving them access to private repos, SSH keys, or system-level credentials.
+
+*Q8: Who can I contact if I am unsure about AI usage?*
+
+Discuss it on the relevant mailing list (e.g., freebsd-hackers@ or freebsd-doc@) or reach out to your reviewer.
+If there's a licensing concern, consult the core@ team _before_ pushing it to FreeBSD source repositories.
+
+[[conclusion]]
+=== The Bottom Line
+
+Generative AI is evolving at an incredible pace.
+This guidance will be reviewed and updated to keep up.
+
+Our standards for code quality, security, and contributor accountability, however, remain constant.
+You are responsible for the quality, security, and integrity of what you commit.
+Use these tools to make your work better and faster, but never let them replace your own critical judgment.
