@@ -86,7 +86,7 @@ If you are new to these tools, here's a quick overview of what they are, why the
 [[what-is-genai]]
 === What is Generative AI?
 
-Think of models like Gemini, ChatGPT, Claude, and GitHub Copilot, as well as modern AI development environments like Claude Code, Cursor, and Replit AI.
+Think of models like Gemini, ChatGPT, Claude, and GitHub Copilot, as well as modern AI development environments like Cursor, Windsurf, and Replit AI.
 They've been trained on a massive corpus of text and code from the public internet.
 These models don't _think_ or _understand_ C the way you do: they simply predict the most statistically probable "next word" or "next line of code" based on the patterns they have learned.
 
@@ -127,6 +127,12 @@ AI lacks deep comprehension of FreeBSD's architectural principles, threading mod
 +
 _FreeBSD impact_: Code that works but violates locking protocols, introduces performance bottlenecks, or breaks subsystem assumptions.
 
+*Non-Determinism and Inconsistent Results*::
+AI outputs are non-deterministic: the same prompt can produce different results each time, and prompts that work well with one AI model may produce poor results with another.
+Never assume a previously successful prompt will produce equally good output in a new session or with a different tool.
++
+_FreeBSD impact_: Developers must review AI output carefully every time, even when reusing prompts that worked well before.
+
 ==== Legal and Compliance Risks
 
 *Intellectual Property Violations*::
@@ -140,10 +146,17 @@ Cloud-based AI services may use your code inputs for training, creating data lea
 +
 _FreeBSD impact_: Premature disclosure of security patches, experimental features, or vendor-sensitive code.
 
+*Terms of Service and Licensing Implications*::
+Different AI services have varying terms that affect the ownership and usage rights of generated code.
+Contributors must ensure compliance with both the AI service's terms and FreeBSD's BSD licensing requirements.
++
+_FreeBSD impact_: Code contributions that violate service terms or create licensing conflicts may need to be removed from the project.
+
 ==== Operational Security Risks
 
 *Prompt Injection and Command Execution*::
-Malicious inputs in code comments or documentation can trick AI tools into executing unintended commands.
+Processing untrusted inputs (e.g., reviewing a PR or analyzing a third-party archive) with an AI agent can lead to "Prompt Injection".
+Malicious instructions hidden in code comments or documentation can trick AI tools into executing unintended commands.
 +
 _FreeBSD impact_: Compromise of development environments or build systems.
 
@@ -169,7 +182,7 @@ You can ask AI to complete your work by creating test cases for a feature that y
 
 [quote]
 ____
-*Prompt:* "I am adding a `-0` option to `rev(1)` to use NUL as a line separator.
+I am adding a `-0` option to `rev(1)` to use NUL as a line separator.
 The source is in `usr.bin/rev/` and tests are in `tests/`.
 
 Please add test cases for the `-0` option, ensuring that:
@@ -178,7 +191,7 @@ Please add test cases for the `-0` option, ensuring that:
 - The output terminator matches the input terminator.
 
 Please reuse existing test logic where possible.
-When in doubt, always ask human for confirmation before proceeding further."
+When in doubt, always ask a human for confirmation before proceeding further.
 ____
 
 Then in a CLI tool, use that instruction to start dialogue with the generative AI.
@@ -192,8 +205,7 @@ This example shows how to use AI to check FreeBSD coding standards and common is
 [source,shell]
 ----
 # Review a commit for style(9) compliance and common issues
-git show HEAD | ai-tool --prompt "
-You are reviewing FreeBSD kernel code. Please check for:
+git show HEAD | ai-tool --prompt "You are reviewing FreeBSD kernel code. Please check for:
 
 1. style(9) compliance (indentation, naming, formatting)
 2. Common FreeBSD pitfalls (locking, error handling, memory management)
@@ -201,8 +213,7 @@ You are reviewing FreeBSD kernel code. Please check for:
 4. Performance concerns (unnecessary allocations, inefficient algorithms)
 
 Focus on FreeBSD-specific patterns and conventions.
-Flag any code that looks suspicious or non-idiomatic.
-"
+Flag any code that looks suspicious or non-idiomatic."
 ----
 
 *Important*: AI review supplements, never replaces, human code review.
@@ -214,7 +225,7 @@ You can use a chat interface to explore a design problem before you write any co
 
 [quote]
 ____
-*Prompt:* "I need to design a lightweight IPC mechanism for a new kernel subsystem in FreeBSD. What are the trade-offs between a shared-memory ring buffer versus a simple message queue implemented with mutexes and condvars?"
+I need to design a lightweight IPC mechanism for a new kernel subsystem in FreeBSD. What are the trade-offs between a shared-memory ring buffer versus a simple message queue implemented with mutexes and condvars?
 ____
 
 *Example 4: In-Editor and IDE Integration*
@@ -222,7 +233,7 @@ ____
 Modern AI tools offer deep integration with development environments:
 
 * *In-editor assistants:* GitHub Copilot, VS Code extensions, and JetBrains AI Assistant suggest code as you type
-* *AI-powered IDEs:* Claude Code, Cursor, and Windsurf provide full-featured development environments with AI built-in
+* *AI-powered IDEs:* Cursor and Windsurf provide full-featured development environments with AI built-in
 * *Interactive agents:* These tools can refactor code, generate tests, explain complex logic, and even debug issues autonomously
 * *Chat interfaces:* Most modern tools include chat functionality where you can ask "`refactor the common code of <function A> and <function B> to reduce code duplication`" or "`analyze this function for potential security vulnerabilities`"
 
@@ -230,18 +241,18 @@ This is where the "Co-Pilot" metaphor comes from -- the AI is writing code along
 
 *Example 5: Translating FreeBSD documentation into another language*
 
-Large-Language-Models, which power most of generative AI, were initially designed to solve translation problems and they can be a very good translator to give you a head start of translation of a new article, etc.
+Large language models (LLMs), which power most generative AI tools, were initially designed to solve translation problems and they can be a very good translator to give you a head start on translating a new article, etc.
 
 From CLI tool you can say:
 
 [quote]
-----
-*Prompt:* Translate the book 'FreeBSD Documentation Project Primer' from English to Simplified Chinese. The source is in 'documentation/content/en/books/fdp-primer'. Place the translated files in 'documentation/content/zh-cn/books/fdp-primer'. I will review the translation before committing.
-----
+____
+Translate the book 'FreeBSD Documentation Project Primer' from English to Simplified Chinese. The source is in 'documentation/content/en/books/fdp-primer'. Place the translated files in 'documentation/content/zh-cn/books/fdp-primer'. I will review the translation before committing.
+____
 
-Note that although the translation model nowadays works well, we still strongly recommend a manual
-review, because these models can make subtle mistakes that are materially different from the original text's intent.  You can use tools like textproc/meld to compare the two directories
-directly side-by-side.
+Note that although the translation model nowadays works well, we still strongly recommend a manual review.
+These models can make subtle mistakes that are materially different from the original text's intent.
+You can use tools like textproc/meld to compare the two directories directly side-by-side.
 
 *Example 6: AI Agents for Multi-Step Tasks*
 
@@ -266,10 +277,131 @@ The agent can:
 
 *Always review the agent's plan before allowing it to make changes, and thoroughly test the results.*
 
+When working with AI agents, be aware of these limitations:
+
+* *Context window limits:* AI agents may lose track of earlier decisions during long sessions. For complex tasks, consider breaking work into smaller sessions or periodically summarizing progress.
+* *Confirmation fatigue:* When an AI asks many questions or requests approval for multiple actions, developers may start auto-approving without careful review. Stay vigilant and take breaks if needed.
+
+[[licensing-tos]]
+== Understanding AI Service Terms and Licensing
+
+When using AI tools for FreeBSD contributions, understanding each service's terms of service (ToS) is crucial for ensuring legal compliance.
+*Contributors are responsible for verifying that any AI-generated content complies with both the AI service's terms and FreeBSD's BSD licensing requirements.*
+
+[[general-licensing-rule]]
+=== General Rule: Copyright Ownership
+
+As a general principle, if an AI service's terms of service allow it, the copyright of generated code belongs to the user who prompted the model.
+However, each service has specific conditions that may restrict this ownership or limit how the generated code can be used.
+
+[[service-specific-terms]]
+=== Service-Specific Terms and Restrictions
+
+The following information focuses on the terms relevant to generating code for use in FreeBSD. The terms for using these services to create derivative AI models are often more restrictive and are not the focus of this guide. This information is based on publicly available terms as of December 2025. *Always verify current terms before using any AI service*, as they can change.
+
+NOTE: Terms last reviewed: December 2025. Service terms change frequently - always verify current terms before use.
+
+==== Key Questions for Code Generation
+
+When reviewing a service's terms, you should seek answers to these key questions:
+
+* *Who owns the code I generate?* You should retain ownership of all output.
+* *Who owns my prompts?* Your prompts and other inputs should remain your confidential property.
+* *Is my data used for training?* The service must provide a way to opt out of having your prompts and generated code used to train their models. This is critical when working on non-public code.
+
+The following sections summarize how various services address these points.
+
+==== Commercial AI Services
+
+*GitHub Copilot* (https://docs.github.com/en/site-policy/github-terms/github-terms-for-additional-products-and-features[Additional Products Terms])::
+You retain ownership of the code you write using GitHub Copilot; the output returned by Copilot is called "Suggestions" and GitHub does not claim ownership of those Suggestions. Copilot's data practices depend on the product and plan:
+
+- *Copilot Business / Copilot Enterprise*: These license tiers are governed by product-specific terms that provide stronger contractual data protections and limit GitHub's use of your prompts and Suggestions for model training. See the GitHub Copilot Product Specific Terms (https://github.com/customer-terms/github-copilot-product-specific-terms) and the Copilot Trust Center (https://copilot.github.trust.page/) for current details.
+- *Individual / Free plans*: Data collection and usage vary by plan and your account settings. In some cases (including certain free usage scenarios) Copilot may collect Prompts, Suggestions, and usage data and that data can be used to improve models unless you opt out in your settings. Always verify the current settings and product terms before sending unpublished or sensitive code to the service.
+
+*Mistral AI* (https://mistral.ai/terms[Terms of Service])::
+Mistral provides both open-source models and commercial offerings. Rights to outputs and the applicable license depend on the specific model and how you access it. Some Mistral models (for example `Mistral-7B`) are released under permissive licenses (Apache 2.0), but other models or commercial products may carry restrictive or evaluation-only licenses (for example `Codestral`-style offerings). If you use a hosted Mistral service, review the service terms and privacy/data-use settings before sending unpublished or sensitive code; verify the model license before incorporating generated code into FreeBSD.
+
+*OpenAI (ChatGPT, Codex)* (https://openai.com/policies/service-terms/[Service Terms])::
+OpenAI's policies and product behavior vary by product and plan. OpenAI states that users may use generated outputs, however data-use and training policies depend on whether you're using the API, ChatGPT (free), ChatGPT+ / paid plans, or enterprise offerings. API customers can configure data controls (including opting out of having their API data used to improve models); ChatGPT free-tier interactions may be used to improve models unless you change your settings or use a plan that provides data protections. Always review the current OpenAI product terms and privacy settings before sending unpublished or sensitive code.
+
+*Claude (Anthropic)* (https://www.anthropic.com/legal/consumer-terms[Consumer Terms], https://www.anthropic.com/legal/commercial-terms[Commercial Terms])::
+You own your prompts and the generated output. However, there is a key distinction between consumer and commercial plans.
+_Commercial plans_ (API access, "Team", and "Enterprise") are governed by the Commercial Terms, which contractually restrict Anthropic's use of customer content for model training and treat inputs/outputs as confidential in most commercial offerings. _Consumer plans_ (Free, "Pro", and "Max" tiers on claude.ai) fall under the Consumer Terms; these plans provide opt-out controls in account settings but have important exceptions (for example, feedback ratings and Trust & Safety review may still be processed). For FreeBSD contributions involving sensitive or unpublished code, using a commercial plan or direct API agreements is recommended for stronger data protections.
+
+==== Permissive Models and Services
+
+*DeepSeek* (https://cdn.deepseek.com/policies/en-US/deepseek-terms-of-use.html[Terms of Use])::
+DeepSeek's published terms indicate that users have rights to outputs and that some of their open-source models are permissively licensed (MIT). As with any provider, verify the specific model license and the service's privacy/data-use policy before sending unpublished code or relying on generated output for a FreeBSD contribution.
+
+*Meta Llama 3.1* (https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/LICENSE[Community License])::
+This is a model license rather than a hosted-service Terms of Service; obligations depend on how you obtain and run the model. Meta's community license permits commercial use in many development scenarios but includes an attribution requirement ("Built with Llama") and restrictions on using outputs to improve other large language models and on very large-scale commercial services (the 700M monthly active user threshold). If you access Llama models through a third-party platform or hosted service, also review that provider's terms and any additional obligations.
+
+==== Older or More Restrictive Models
+
+*Meta Llama 2 & 3* (https://github.com/meta-llama/llama/blob/main/LICENSE[Llama 2], https://github.com/meta-llama/llama3/blob/main/LICENSE[Llama 3])::
+Similar to Llama 3.1, these are model licenses. Commercial use is allowed but comes with the same restrictions regarding attribution ("Built with Meta Llama") and a 700M active user threshold. A key restriction is that you cannot use the output of these models to improve any other large language model (except other Llama-based models). While this is more relevant for those developing AI models, it is a term to be aware of.
+
+[[data-privacy-controls]]
+=== Data Privacy and Training Controls
+
+Most AI services provide options to control how your data is used for training:
+
+*General Privacy Practices*::
+* *Opt-out of training*: Many services allow you to disable use of your inputs for model training
+* *Avoid feedback*: Don't provide thumbs up/down feedback if you want to prevent your interactions from being used for training
+* *Review privacy settings*: Check account settings for data usage controls
+* *Use commercial plans*: Business/Enterprise plans typically offer stronger data protection
+
+*Service-Specific Controls*::
+* *OpenAI*: API customers can opt out of training; ChatGPT Plus has data controls
+* *Anthropic*: Commercial plans (API, Team, Enterprise) do not use data for training; consumer plans (Free, Pro, Max) allow opt-out via settings
+* *GitHub Copilot*: Product-specific terms apply. Copilot Business/Enterprise offer stronger contractual data protections; individual/free plans may collect prompts and suggestions for service improvement or model training unless you opt out. See GitHub's Copilot Product Terms and Trust Center.
+* *Local models*: Self-hosted models provide complete data privacy but require more resources
+
+[[compliance-requirements]]
+=== Ensuring Compliance with FreeBSD Requirements
+
+When using AI-generated code in FreeBSD contributions, you must ensure:
+
+. *Service Terms Compliance*: The AI service's terms allow commercial use and don't claim ownership of the output.
+. *BSD License Compatibility*: The generated code can be released under FreeBSD's BSD license without conflicts.
+. *Attribution Requirements*: Any required attributions are properly included in commit messages or documentation.
+. *No Restrictive Licenses*: The AI service doesn't impose GPL or other copyleft requirements on the output.
+
+[[verification-guidelines]]
+=== Verification and Due Diligence
+
+Before using any AI service for FreeBSD contributions:
+
+. *Read the Current Terms*: Terms of service change frequently. Always check the most recent version.
+. *Understand Subscription Requirements*: Many services restrict commercial use to paid subscribers.
+. *Check Corporate vs. Individual Usage*: Some services have different terms for corporate versus individual users.
+. *Document Your Compliance*: Keep records of which services you used and under what terms.
+. *When in Doubt, Don't Use It*: If terms are unclear or restrictive, use alternative services or write code manually.
+
+[[safe-alternatives]]
+=== Recommended Safe Alternatives
+
+For maximum safety and legal clarity, consider:
+
+* *Local/Self-hosted Models*: Open-source models you run yourself (e.g., Llama 3.1, Codestral, StarCoder) typically have fewer restrictions.
+* *Permissive Services*: Services like DeepSeek that explicitly allow unrestricted use of generated code.
+* *Manual Development*: Traditional coding without AI assistance remains the safest option for avoiding any licensing complications.
+
+*Important Note*: This guidance is not legal advice.
+For specific legal questions about AI tool usage in FreeBSD contributions, consult with qualified legal counsel or contact the FreeBSD Core Team.
+
 [[practical-guide]]
 == A Practical Guide to Using AI in Your Workflow
 
 Here are our recommendations for integrating these tools safely and effectively.
+
+*Baseline safe workflow (start here unless you have a better pattern):*
+* *Work in a branch* and keep `git status` clean so you can revert AI mistakes easily.
+* *Use local or paid / enterprise plans* when prompts include unpublished code; scrub secrets from prompts.
+* *Treat AI output as untrusted:* read it critically, add or update tests, and run the relevant `make` or `kyua` targets before committing.
+* *Record notable prompts and decisions* in your notes or commit message so reviewers know where the ideas came from.
 
 [[sweet-spots]]
 === The "Sweet Spots": Great uses of GenAI
@@ -277,6 +409,7 @@ Here are our recommendations for integrating these tools safely and effectively.
 * *Crank Out Boilerplate:* Let it generate repetitive code structures, `getopt` parsing loops, function stubs, or standard data types.
 * *Draft Test Cases:* This is a fantastic use.
   "Here is a function... Write a set of unit tests for it, including edge cases for null pointers, off-by-one errors, and maximum input values."
+  However, always review AI-generated tests carefully to ensure they actually test what they claim—AI may generate tests that pass but don't meaningfully verify the intended behavior.
 * *Act as Your Rubber Duck:* Use it to brainstorm solutions, explore alternative algorithms, or refactor a complex function.
 * *Leverage Codebase-Aware Tools:* Many modern AI tools can be indexed on an entire local checkout of the repository. This allows them to answer questions, perform refactoring, and generate code with much better context of the surrounding architecture and conventions. This is often a safer and more effective way to use AI than feeding it isolated snippets.
 * *Automate Repetitive Development Tasks:* Use AI agents to automate tasks like updating copyright years, fixing formatting across multiple files, or generating boilerplate for new modules based on existing patterns.
@@ -313,11 +446,12 @@ You are accountable for every line of code. Review AI-generated output with the 
 
 . *Guard against IP & licensing risk*
 +
-Your goal is to ensure the final result is _your_ intellectual effort.
+Your goal is to ensure the final result is _your_ intellectual effort and complies with all licensing requirements.
 +
 --
-* *Check the ToS:* Ensure the tool's Terms of Use state that you own the output.
-  If the AI company claims any ownership, don't use it for project work.
+* *Verify Service Terms:* Before using any AI service, review the service-specific terms detailed in the <<licensing-tos,Understanding AI Service Terms and Licensing>> section. Ensure the tool's Terms of Use allow you to own the output and use it in FreeBSD contributions.
+* *Check Subscription Requirements:* Many AI services restrict commercial use to paid subscribers. Verify you meet any subscription requirements for the code to be used in FreeBSD.
+* *Handle Attribution Requirements:* Some services (e.g., Llama 3.1) require explicit attribution. Include appropriate credits in commit messages when required.
 * *Keep it small & generic:* AI is safest for small, generic snippets where you have given clear direction.
 * *Rewrite, don't copy-paste:* If the AI generates a large or complex block of code, use it as a reference and rewrite it in your own "voice".
   This minimizes the risk of it being a "memorized" chunk of copyrighted code.
@@ -328,7 +462,8 @@ Your goal is to ensure the final result is _your_ intellectual effort.
 +
 --
 * *No Private Code in Public Tools:* Never paste uncommitted, experimental, or private FreeBSD code into a public AI chat service unless you have explicitly confirmed that the service's ToS guarantees your prompts are private and _not_ used for model training.
-* *Prefer Local Models:* When in doubt, use a self-hosted or locally running model for sensitive work. The performance of open-source models (like Llama, Mistral, and Phi) now makes them a viable and secure alternative to cloud-based services for many tasks.  Note that using a local model only improve privacy, you still need to be careful as it can still have hallucinations. The data used to train it could also sneak into the results, so you need to carefully review the output to ensure it is genuinely the result of your own intellectual work.
+* *Strip sensitive details:* Remove secrets, tokens, partner identifiers, and other confidential context from prompts even when using private or local models.
+* *Prefer Local Models:* When in doubt, use a self-hosted or locally running model for sensitive work. The performance of open-source models (like Llama, Mistral, and Phi) now makes them a viable and secure alternative to cloud-based services for many tasks. Note that using a local model only improves privacy; you still need to be careful as it can still have hallucinations. The data used to train it could also appear in the results, so you need to carefully review the output to ensure it is genuinely the result of your own intellectual work.
 * *Audit Trails:* Maintain records of significant AI assistance for review purposes.
 --
 
@@ -371,6 +506,10 @@ When you do credit the AI, use a format like:
 [literal]
 Assisted-by: [Tool Name] (for generating initial test cases)
 
+. *Validate with tests and tooling*
++
+Run the relevant unit tests (e.g., `make check`, `kyua test`), static analysis, and style(9)/clang-format tooling before proposing the change. Testing will not catch everything, but it helps surface obvious regressions caused by AI suggestions.
+
 . *Keep Your Prompt History*
 +
 It is good practice to keep records of important prompts you used to generate AI output.
@@ -390,7 +529,7 @@ Well-crafted prompts lead to better, more reliable results.
 * *Set Constraints:* Specify what you don't want. "Optimize this function for performance, but don't change the public API or introduce new dependencies."
 * *Request Explanations:* Ask the AI to explain its reasoning. "Explain why you chose this algorithm over alternatives."
 * *Break Down Complex Tasks:* Large requests often produce poor results. Break them into smaller, focused tasks. It is a good idea to create a detailed list of what should happen, ask the AI to ask clarifying questions and rewrite it for your review, and then have it work on the task.
-* *Version Control Integration:* When asking for code changes, specify how you want to do it (for example, specify that you want to do it in a step-by-step instruction and have the tool commit the intermediate results). This makes it much easier for human to understand the changes, and usually also give better results.
+* *Version Control Integration:* When asking for code changes, specify how you want to do it (for example, specify that you want to do it in a step-by-step instruction and have the tool commit the intermediate results). This makes it much easier for humans to understand the changes, and usually also give better results.
 
 Example of a well-structured prompt:
 
@@ -468,6 +607,7 @@ When reviewing a change, an `Assisted-by` tag should prompt you to apply additio
 
 Yes, when done with care.
 You may use these tools as long as you follow the principles in this guide: you own the output, you review it meticulously, and you comply with the tool's Terms of Use.
+Review the service-specific terms in the <<licensing-tos,Understanding AI Service Terms and Licensing>> section to ensure compliance.
 Crucially, ensure the terms state that you own the output and that your inputs will not be used for model training or disclosed to other parties.
 
 *Q2: Do I need to disclose every single use of AI?*
@@ -487,19 +627,24 @@ Use a self-hosted or local model if possible.
 
 No.
 Passing tests does not mean the code is safe, efficient, maintainable, or legally clean.
-It must meet the same review standards as human contributions. AI can be quite good in writing code that passes tests without being as vigilant as human in terms of correctness, so always perform thorough code review regardless of test results.
+It must meet the same review standards as human contributions. AI can be quite good in writing code that passes tests without being as vigilant as a human in terms of correctness, so always perform thorough code review regardless of test results.
 
 *Q5: What if AI output looks suspiciously similar to existing open source code?*
 
 *Do not commit it.*
-If a snippet closely resembles code under another license (e.g., GPL), rewrite it from scratch yourself, or ask someone else to implement it from scratch based on your description.
+If a snippet closely resembles code under another license (e.g., GPL), rewrite it from scratch yourself, or ask someone else to implement it from scratch based on your description (a "Clean Room" implementation).
 
 After writing your own implementation, it is good practice to search for other open-source implementations of the same feature to compare approaches and help ensure your work is original, especially for non-trivial code.
 When in doubt, always treat AI output as third-party code and verify its origin.
 
 *Q6: Can I use AI to write my commit messages?*
 
-Yes, but with caution. AI can be helpful for drafting commit messages, especially for summarizing changes. However, the commit message is a critical part of the project's history. You are responsible for ensuring the message is accurate, follows the project's conventions, and provides the "why" behind the change, not just the "what". Never use an AI-generated commit message without carefully reviewing and editing it to ensure it meets these standards.
+Yes, but with caution.
+AI can be helpful for drafting commit messages, especially for summarizing changes.
+However, the commit message is a critical part of the project's history.
+You are responsible for ensuring the message is accurate, follows the project's conventions, and provides the "why" behind the change, not just the "what".
+AI-generated commit messages tend to be generic and often focus on describing _what_ changed rather than _why_ it changed—the reasoning that future developers need most.
+Never use an AI-generated commit message without carefully reviewing and editing it to ensure it meets these standards.
 
 *Q7: Can AI help with documentation and translations?*
 
@@ -522,9 +667,8 @@ If there's a licensing concern, consult the core@ team _before_ pushing it to Fr
 Always review the AI's plan before allowing any autonomous changes.
 
 Use version control to track changes, work in feature branches, and maintain the ability to rollback.
-Never run AI tools with unrestricted access to production system or with privileges, if it needs some privileged
-operation to happen (like installing a package), do it yourself and tell it the operation is complete instead of
-delegating these tasks to the AI tool.
+Never run AI tools with unrestricted access to production systems or with elevated privileges.
+If a task requires privileged operations (like installing a package), perform it yourself and inform the AI that the operation is complete rather than delegating these tasks to the AI tool.
 
 *Q11: What's the difference between AI suggestions and AI agents?*
 
@@ -544,7 +688,20 @@ Yes, several FreeBSD-specific factors require extra attention:
 
 Always verify AI suggestions against FreeBSD documentation and existing codebase patterns.
 
-*Q13: How can I stay updated on AI tool developments relevant to FreeBSD?*
+*Q13: How do I know if an AI service's terms allow me to use generated code in FreeBSD?*
+
+Check these key factors in the service's terms of service:
+
+* *Ownership*: The terms should state that you own the generated output
+* *Commercial Use*: The service should allow commercial use of generated code (FreeBSD is used commercially)
+* *Subscription Requirements*: Many services restrict commercial use to paid subscribers
+* *Attribution*: Some services require crediting the AI tool in your code or commits
+* *License Compatibility*: Ensure no restrictions conflict with BSD licensing
+
+Review the specific guidance in the <<licensing-tos,Understanding AI Service Terms and Licensing>> section.
+When in doubt, use a different service or write code manually.
+
+*Q14: How can I stay updated on AI tool developments relevant to FreeBSD?*
 
 * Monitor FreeBSD mailing lists (freebsd-hackers@, freebsd-current@) for community discussions
 * Follow FreeBSD developer blogs and conferences where AI usage patterns emerge
