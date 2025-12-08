@@ -103,7 +103,7 @@ They predict the statistically probable next word or line of code based on patte
 === The Benefits: Your "Rubber Duck" That Talks Back
 
 When used correctly, AI is a massive productivity boost.
-It is an excellent tool:
+It is excellent for:
 
 * *Brainstorming:* It is a fantastic "rubber duck" that talks back.
   It offers new perspectives and sparks creativity.
@@ -122,7 +122,7 @@ This creates several classes of risks:
 ==== Technical Risks
 
 *Hallucinations and False Confidence*::
-AI confidently "invents" non-existent APIs, functions,
+AI confidently invents non-existent APIs, functions,
 or command-line flags that sound plausible.
 Similar to how a human might misuse APIs,
 this can lead to subtle errors that are hard to detect.
@@ -178,7 +178,7 @@ or create licensing conflicts may need to be removed from the project.
 ==== Operational Security Risks
 
 *Prompt Injection*::
-Untrusted input (like a PR or a third-party file) can trick AI into executing unintended commands.
+Untrusted input (like a pull request or a third-party file) can trick AI into executing unintended commands.
 Hidden instructions might make the AI run unintended commands.
 +
 _FreeBSD impact_: Compromise of development environments or build systems.
@@ -283,7 +283,7 @@ Place the translated files in 'documentation/content/zh-cn/books/fdp-primer'.
 I will review the translation before committing.
 ____
 
-Note that although the translation model nowadays works well,
+Note that although modern translation models work well,
 we still strongly recommend a manual review.
 These models can make subtle mistakes that are materially different
 from the original text's intent.
@@ -292,7 +292,7 @@ directly side-by-side.
 
 *Example 6: AI Agents for Multi-Step Tasks*
 
-Latest AI tools act as autonomous agents.
+The latest AI tools act as autonomous agents.
 They can search files, refactor code, and run tests with little help.
 
 [source,shell]
@@ -493,7 +493,7 @@ For specific legal questions about AI tool usage in FreeBSD contributions, consu
 [[practical-guide]]
 == A Practical Guide to Using AI in Your Workflow
 
-Here are our recommendations for integrating these tools safely and effectively.
+The following recommendations help integrate these tools safely and effectively.
 
 *Baseline safe workflow (start here unless you have a better pattern):*
 * *Work in a branch* and keep `git status` clean so you can revert AI mistakes easily.
@@ -505,7 +505,7 @@ Here are our recommendations for integrating these tools safely and effectively.
   so reviewers know where the ideas came from.
 
 [[sweet-spots]]
-=== The "Sweet Spots": Great uses of GenAI
+=== The Sweet Spots: Great Uses of Generative AI
 
 * *Crank Out Boilerplate:* Let it generate repetitive code structures, `getopt` parsing loops,
   function stubs, or standard data types.
@@ -559,9 +559,9 @@ Before you commit any AI-assisted code, run through this mental checklist.
 +
 You are accountable for every line of code.
 Review AI-generated output with the same rigor you would apply to your own code.
-*   **Meticulously check for correctness,** efficiency, and adherence to FreeBSD coding standards (`style(9)`).
-*   **Actively probe for subtle flaws,** logical errors, and hallucinations.
-*   **Do not commit code you do not understand.** If you cannot explain why the code works and why it is correct,
+*   *Meticulously check for correctness,* efficiency, and adherence to FreeBSD coding standards (`style(9)`).
+*   *Actively probe for subtle flaws,* logical errors, and hallucinations.
+*   *Do not commit code you do not understand.* If you cannot explain why the code works and why it is correct,
     you must rewrite it or seek human guidance.
 
 . *Guard against IP & licensing risk*
@@ -590,7 +590,7 @@ Your goal is to ensure the final result is _your_ intellectual effort and compli
 --
 * *No Private Code in Public Tools:* Never paste uncommitted, experimental,
   or private FreeBSD code into a public AI chat service unless you have explicitly confirmed
-  that the service's ToS guarantees your prompts are private and _not_ used for model training.
+  that the service's terms of service guarantee your prompts are private and _not_ used for model training.
 * *Strip sensitive details:* Remove secrets, tokens, partner identifiers,
   and other confidential context from prompts even when using private or local models.
 * *Prefer Local Models:* When in doubt, use a self-hosted or locally running model for sensitive work.
@@ -673,7 +673,7 @@ Well-crafted prompts lead to better, more reliable results.
   This approach is also useful in making the code less susceptible to copyright disputes
   because it is easier to tell where they come from.
 * *Iterative Refinement:* Start with a general request, then refine based on the output.
-  "Make the error handling more robust" → "Add specific error codes for each failure case."
+  For example: "Make the error handling more robust" → "Add specific error codes for each failure case."
 * *Set Constraints:* Specify what you do not want.
   "Optimize this function for performance, but do not change the public API or introduce new dependencies."
 * *Request Explanations:* Ask the AI to explain its reasoning.
@@ -731,7 +731,7 @@ Modern workflows include AI at multiple review stages:
 * *Progressive Enhancement:* Start with AI-generated scaffolding, then iteratively improve with human expertise
 * *Documentation-Driven Development:* Have AI help generate comprehensive documentation that guides implementation
 
-==== Build / Testing Integration
+==== Build and Testing Integration
 
 Modern AI tools can be integrated into automated workflows:
 
@@ -779,7 +779,7 @@ If the AI contributed non-trivial code, design, or documentation, acknowledging 
 
 *Q3: Can I paste FreeBSD source code into an AI tool for help?*
 
-Only if that code is already public _and_ you have verified the tool's Terms of Use guarantee
+Only if that code is already public _and_ you have verified the tool's terms of service guarantee
 your prompts are not used for training.
 Never paste intermediate work, uncommitted patches, or experimental code into a public cloud tool.
 Use a self-hosted or local model if possible.
