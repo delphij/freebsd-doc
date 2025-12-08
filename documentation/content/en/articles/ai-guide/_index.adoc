@@ -79,7 +79,7 @@ Key implications:
 
 * *Full accountability*: Every AI-generated line requires the same scrutiny as your own code
 * *No blind commits*: Review, test, and understand AI output before using it.
-* *Your expertise drives*: AI helps you decide; it doesn't decide for you.
+* *Your expertise drives*: AI helps you decide; it does not decide for you.
 * *Quality standards apply*: AI-assisted code must meet the same security, performance,
   and maintainability standards as any FreeBSD contribution
 
@@ -96,7 +96,7 @@ and what their primary risks are.
 === What is Generative AI?
 
 Models like Gemini, ChatGPT, Claude, and Copilot are trained on a massive corpus of text and code from the public internet.
-They do not _think_ or _understand_ C they way you do.
+They do not _think_ or _understand_ C the way you do.
 They predict the statistically probable next word or line of code based on patterns they have learned.
 
 [[benefits]]
@@ -105,7 +105,7 @@ They predict the statistically probable next word or line of code based on patte
 When used correctly, AI is a massive productivity boost.
 It is an excellent tool:
 
-* *Brainstorming:* It's a fantastic "rubber duck" that talks back.
+* *Brainstorming:* It is a fantastic "rubber duck" that talks back.
   It offers new perspectives and sparks creativity.
   Describe a problem, ask for algorithms, or challenge it to refactor code.
   This boosts your understanding quickly.
@@ -124,7 +124,7 @@ This creates several classes of risks:
 *Hallucinations and False Confidence*::
 AI confidently "invents" non-existent APIs, functions,
 or command-line flags that sound plausible.
-Similar to how a human might make misuse of APIs,
+Similar to how a human might misuse APIs,
 this can lead to subtle errors that are hard to detect.
 It is especially dangerous with large code generation requests where subtle errors hide among working code.
 +
@@ -273,7 +273,7 @@ Large language models (LLMs), which power most generative AI tools,
 were initially designed to solve translation problems.
 Use them to jump-start translations of documentation.
 
-From CLI tool you can say:
+From a CLI tool you can say:
 
 [quote]
 ____
@@ -287,7 +287,8 @@ Note that although the translation model nowadays works well,
 we still strongly recommend a manual review.
 These models can make subtle mistakes that are materially different
 from the original text's intent.
-You can use tools like textproc/meld to compare the two directories directly side-by-side.
+You can use tools like textproc/meld to compare the two directories
+directly side-by-side.
 
 *Example 6: AI Agents for Multi-Step Tasks*
 
@@ -389,7 +390,7 @@ before sending unpublished or sensitive code; verify the model license before in
 
 *OpenAI (ChatGPT, Codex)* (https://openai.com/policies/service-terms/[Service Terms])::
 OpenAI's policies and product behavior vary by product and plan.
-OpenAI states that users may use generated outputs, however data-use and training policies
+OpenAI states that users may use generated outputs. However, data-use and training policies
 depend on whether you're using the API, ChatGPT (free), ChatGPT+ / paid plans, or enterprise offerings.
 API customers can configure data controls (including opting out of having their API data used to improve models);
 ChatGPT free-tier interactions may be used to improve models unless you change your settings
@@ -443,7 +444,7 @@ Check if the service uses your data for training.
 Most AI services provide options to control how your data is used for training:
 
 * *Opt-out*: Disable training on your inputs.
-* *Avoid feedback*: Don't provide thumbs up/down feedback if you want to prevent your interactions from being used for training
+* *Avoid feedback*: Do not provide thumbs up/down feedback if you want to prevent your interactions from being used for training
 * *Review privacy settings*: Check account settings for data usage controls
 * *Use paid plans*: These plans usually offer better privacy.
 
@@ -461,10 +462,10 @@ Most AI services provide options to control how your data is used for training:
 
 When using AI-generated code in FreeBSD contributions, you must ensure:
 
-. *Service Terms Compliance*: The AI service's terms allow commercial use and don't claim ownership of the output.
+. *Service Terms Compliance*: The AI service's terms allow commercial use and do not claim ownership of the output.
 . *BSD License Compatibility*: The generated code can be released under FreeBSD's BSD license without conflicts.
 . *Attribution Requirements*: Any required attributions are properly included in commit messages or documentation.
-. *No Restrictive Licenses*: The AI service doesn't impose GPL or other copyleft requirements on the output.
+. *No Restrictive Licenses*: The AI service does not impose GPL or other copyleft requirements on the output.
 
 [[verification-guidelines]]
 === Verification and Due Diligence
@@ -475,14 +476,14 @@ Before using any AI service for FreeBSD contributions:
 . *Understand Subscription Requirements*: Many services restrict commercial use to paid subscribers.
 . *Check Corporate vs. Individual Usage*: Some services have different terms for corporate versus individual users.
 . *Document Your Compliance*: Keep records of which services you used and under what terms.
-. *When in Doubt, Don't Use It*: If terms are unclear or restrictive, use alternative services or write code manually.
+. *When in Doubt, Do Not Use It*: If terms are unclear or restrictive, use alternative services or write code manually.
 
 [[safe-alternatives]]
 === Recommended Safe Alternatives
 
 For maximum safety and legal clarity, consider:
 
-* *Local/Self-hosted Models*: Open-source models you run yourself (e.g., Llama 3.1, Codestral, StarCoder) typically have fewer restrictions.
+* *Local/Self-hosted Models*: Open-source models you run yourself (for example, Llama 3.1, Codestral, StarCoder) typically have fewer restrictions.
 * *Permissive Services*: Services like DeepSeek that explicitly allow unrestricted use of generated code.
 * *Manual Development*: Traditional coding without AI assistance remains the safest option for avoiding any licensing complications.
 
@@ -512,7 +513,7 @@ Here are our recommendations for integrating these tools safely and effectively.
   "Here is a function... Write a set of unit tests for it, including edge cases for null pointers,
   off-by-one errors, and maximum input values."
   However, always review AI-generated tests carefully to ensure they actually test what they claim—
-  AI may generate tests that pass but don't meaningfully verify the intended behavior.
+  AI may generate tests that pass but do not meaningfully verify the intended behavior.
 * *Act as Your Rubber Duck:* Use it to brainstorm solutions, explore alternative algorithms,
   or refactor a complex function.
 * *Leverage Codebase-Aware Tools:* Many modern AI tools can be indexed on an entire local checkout of the repository.
@@ -528,7 +529,7 @@ Here are our recommendations for integrating these tools safely and effectively.
 * *Draft and Clean Up Docs:* Let it help you draft man pages, clean up comments,
   or improve the clarity and style of your documentation.
 * *Visualize with AI:* Use AI to generate diagrams from textual descriptions of code or architecture
-  (e.g., "Create a sequence diagram for this IPC mechanism").
+  (for example, "Create a sequence diagram for this IPC mechanism").
   This can be a quick way to produce documentation or clarify your thinking.
   As with code, always verify the diagram for accuracy.
 
@@ -560,7 +561,7 @@ You are accountable for every line of code.
 Review AI-generated output with the same rigor you would apply to your own code.
 *   **Meticulously check for correctness,** efficiency, and adherence to FreeBSD coding standards (`style(9)`).
 *   **Actively probe for subtle flaws,** logical errors, and hallucinations.
-*   **Do not commit code you don't understand.** If you cannot explain why the code works and why it is correct,
+*   **Do not commit code you do not understand.** If you cannot explain why the code works and why it is correct,
     you must rewrite it or seek human guidance.
 
 . *Guard against IP & licensing risk*
@@ -573,10 +574,10 @@ Your goal is to ensure the final result is _your_ intellectual effort and compli
   Ensure the tool's Terms of Use allow you to own the output and use it in FreeBSD contributions.
 * *Check Subscription Requirements:* Many AI services restrict commercial use to paid subscribers.
   Verify you meet any subscription requirements for the code to be used in FreeBSD.
-* *Handle Attribution Requirements:* Some services (e.g., Llama 3.1) require explicit attribution.
+* *Handle Attribution Requirements:* Some services (for example, Llama 3.1) require explicit attribution.
   Include appropriate credits in commit messages when required.
 * *Keep it small & generic:* AI is safest for small, generic snippets where you have given clear direction.
-* *Rewrite, don't copy-paste:* If the AI generates a large or complex block of code,
+* *Rewrite, do not copy-paste:* If the AI generates a large or complex block of code,
   use it as a reference and rewrite it in your own "voice".
   This minimizes the risk of it being a "memorized" chunk of copyrighted code.
   This means understanding the logic and implementing it from scratch, not just cosmetic changes.
@@ -645,7 +646,7 @@ Assisted-by: [Tool Name] (for generating initial test cases)
 
 . *Validate*
 +
-Run the relevant unit tests (e.g., `make check`, `kyua test`), static analysis,
+Run the relevant unit tests (for example, `make check`, `kyua test`), static analysis,
 and style(9)/clang-format tooling before proposing the change.
 Testing will not catch everything, but it helps surface obvious regressions caused by AI suggestions.
 
@@ -673,8 +674,8 @@ Well-crafted prompts lead to better, more reliable results.
   because it is easier to tell where they come from.
 * *Iterative Refinement:* Start with a general request, then refine based on the output.
   "Make the error handling more robust" → "Add specific error codes for each failure case."
-* *Set Constraints:* Specify what you don't want.
-  "Optimize this function for performance, but don't change the public API or introduce new dependencies."
+* *Set Constraints:* Specify what you do not want.
+  "Optimize this function for performance, but do not change the public API or introduce new dependencies."
 * *Request Explanations:* Ask the AI to explain its reasoning.
   "Explain why you chose this algorithm over alternatives."
 * *Break Down Complex Tasks:* Large requests often produce poor results. Break them into smaller, focused tasks.
@@ -752,7 +753,7 @@ When reviewing a change, an `Assisted-by` tag should prompt you to apply additio
   without attribution?
   Raise the concern.
 * *Request Clarification:* Ask the contributor to explain the logic.
-  This is a simple way to verify the code wasn't "committed blind" and that the author truly understands their change.
+  This is a simple way to verify the code was not "committed blind" and that the author truly understands their change.
 
 
 [[faq]]
@@ -773,7 +774,7 @@ and that your inputs will not be used for model training or disclosed to other p
 No.
 We trust you to use your judgment.
 Trivial help, like fixing grammar in a comment, reformatting a line of code,
-or generating a 3-line function stub that you fully rewrote, doesn't need to be disclosed.
+or generating a 3-line function stub that you fully rewrote, does not need to be disclosed.
 If the AI contributed non-trivial code, design, or documentation, acknowledging it is good practice.
 
 *Q3: Can I paste FreeBSD source code into an AI tool for help?*
@@ -793,7 +794,7 @@ in terms of correctness, so always perform thorough code review regardless of te
 *Q5: What if AI output looks suspiciously similar to existing open source code?*
 
 *Do not commit it.*
-If a snippet closely resembles code under another license (e.g., GPL), rewrite it from scratch yourself,
+If a snippet closely resembles code under another license (for example, GPL), rewrite it from scratch yourself,
 or ask someone else to implement it from scratch based on your description (a "Clean Room" implementation).
 
 After writing your own implementation, it is good practice to search for other open-source implementations
@@ -815,21 +816,21 @@ to ensure it meets these standards.
 
 Yes, this is actually a great, low-risk use case.
 Human review is still required to ensure technical accuracy and maintain our documentation standards,
-but it's an excellent "first draft" generator and a very good proof-reader
+but it is an excellent "first draft" generator and a very good proof-reader
 to make sure your writing meets best language practices for technical writing.
 
 *Q8: Is there a recommended setup for using AI tools safely?*
 
 Yes: Run AI tools that can execute code in a sandboxed environment
 (a jail, VM, or a separate, unprivileged user).
-Doing so would make it safer for them to do automated operations,
+Doing so makes it safer to use them for automated operations,
 such as doing trial-and-error development or debugging,
 which sometimes saves a lot of human work.
 Avoid giving them access to private repos, SSH keys, or system-level credentials.
 
 *Q9: Who can I contact if I am unsure about AI usage?*
 
-Discuss it on the relevant mailing list (e.g., freebsd-hackers@ or freebsd-doc@) or reach out to your reviewer.
+Discuss it on the relevant mailing list (for example, freebsd-hackers@ or freebsd-doc@) or reach out to your reviewer.
 If there's a licensing concern, consult the core@ team _before_ pushing it to FreeBSD source repositories.
 
 *Q10: How do I handle AI tools that want to make autonomous changes to my codebase?*
@@ -841,7 +842,7 @@ Never run AI tools with unrestricted access to production systems or with elevat
 If a task requires privileged operations (like installing a package), perform it yourself
 and inform the AI that the operation is complete rather than delegating these tasks to the AI tool.
 
-*Q11: What's the difference between AI suggestions and AI agents?*
+*Q11: What is the difference between AI suggestions and AI agents?*
 
 AI suggestions provide code snippets or advice that you manually implement.
 AI agents can autonomously execute tasks like searching files, making edits, and running commands.
@@ -855,14 +856,14 @@ Yes, several FreeBSD-specific factors require extra attention:
   locking protocols, and memory management.
   Be especially cautious with kernel code generation,
   and give more specific prompts instead of relying on AI to create designs.
-* *Platform-specific patterns*: AI may suggest patterns that don't take full advantage
+* *Platform-specific patterns*: AI may suggest patterns that do not take full advantage
   of FreeBSD's performance or security features, or may assume behaviors from other operating systems.
 * *Legacy compatibility*: FreeBSD maintains backward compatibility that AI might not understand,
   leading to suggestions that break existing functionality.
 * *Security models*: FreeBSD's privilege separation and security frameworks differ from other systems;
   AI suggestions may not follow FreeBSD best practices.
 * *System interfaces*: AI might suggest Linux-specific system calls or interfaces
-  that don't exist or work differently on FreeBSD.
+  that do not exist or work differently on FreeBSD.
 
 Always verify AI suggestions against FreeBSD documentation and existing codebase patterns.
 
@@ -882,7 +883,7 @@ When in doubt, use a different service or write code manually.
 
 *Q14: How can I stay updated on AI tool developments relevant to FreeBSD?*
 
-* Monitor FreeBSD mailing lists (freebsd-hackers@, freebsd-current@) for community discussions
+* Monitor FreeBSD mailing lists (for example, freebsd-hackers@, freebsd-current@) for community discussions
 * Follow FreeBSD developer blogs and conferences where AI usage patterns emerge
 * Test new AI tools in sandboxed environments before adopting them for production work
 * Participate in developer discussions about AI best practices specific to systems programming
