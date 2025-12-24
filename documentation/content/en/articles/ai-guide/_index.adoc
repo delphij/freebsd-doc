@@ -71,17 +71,16 @@ toc::[]
 *Rule #1: You are ultimately and solely responsible for every line you commit.*
 
 AI tools are powerful assistants, not replacements for developer judgment.
-Treat AI like a brilliant but untrusted external developer.
-They work by matching patterns, not by understanding logic.
+Treat AI like a brilliant but untrusted external developer: it matches patterns rather than understanding logic.
 AI answers quickly and confidently, but it does not reason like a human.
 
 Key implications:
 
-* *Full accountability*: Every AI-generated line requires the same scrutiny as your own code
+* *Full accountability*: Every AI-generated line requires the same scrutiny as your own code.
 * *No blind commits*: Review, test, and understand AI output before using it.
 * *Your expertise drives*: AI helps you decide; it does not decide for you.
 * *Quality standards apply*: AI-assisted code must meet the same security, performance,
-  and maintainability standards as any FreeBSD contribution
+  and maintainability standards as any FreeBSD contribution.
 
 This co-pilot relationship maximizes AI's benefits while maintaining FreeBSD's commitment
 to high-quality, secure software.
@@ -95,9 +94,9 @@ and what their primary risks are.
 [[what-is-genai]]
 === What is Generative AI?
 
-Models like Gemini, ChatGPT, Claude, and Copilot are trained on a massive corpus of text and code from the public internet.
-They do not _think_ or _understand_ C the way you do.
-They predict the statistically probable next word or line of code based on patterns they have learned.
+Models like Gemini, ChatGPT, Claude, and Copilot are trained on massive corpora of text and code from the public internet.
+They do not _think_ or _understand_ C the way you do;
+they predict the statistically probable next word or line of code based on patterns they have learned.
 
 [[benefits]]
 === The Benefits: Your "Rubber Duck" That Talks Back
@@ -105,10 +104,10 @@ They predict the statistically probable next word or line of code based on patte
 When used correctly, AI is a massive productivity boost.
 These tools excel at:
 
-* *Brainstorming:* It is a fantastic "rubber duck" that talks back.
-  It offers new perspectives and sparks creativity.
-  Describe a problem, ask for algorithms, or challenge it to refactor code.
-  This boosts your understanding quickly.
+* *Brainstorming:* These tools make a great "rubber duck" that talks back.
+  They offer new perspectives and spark creativity.
+  Describe a problem, ask for algorithms, or challenge the model to refactor code
+  to build understanding more quickly.
 * *Reducing Boilerplate:* Generate stubs, data structures, and repetitive code instantly.
 * *Refactoring:* Find repetitive patterns and get optimization advice.
 * *Summarizing:* Use it to explain complex code and answer questions.
@@ -123,7 +122,7 @@ This creates several classes of risks:
 
 *Hallucinations and False Confidence*::
 AI confidently invents non-existent APIs, functions, or command-line flags.
-It operates on probability, not truth, and will sound just as confident when being wrong.
+It operates on probability, not truth, and will sound just as confident when it is wrong.
 +
 _FreeBSD impact_: Non-existent system calls or fabricated kernel interfaces.
 _Mitigation_: Always verify APIs against the actual man pages (`man 2`, `man 9`) and header files.
@@ -139,7 +138,7 @@ Audit it specifically for memory safety and logic errors before even considering
 See <<high-risk,High-Risk Areas>> for more guidance on security-sensitive code.
 
 *Outdated or Non-Idiomatic Knowledge*::
-AI models are trained on historical and generic data.
+AI models are trained on older and often generic data.
 They might suggest APIs that were deprecated in recent FreeBSD versions or default to "textbook C" (like writing a custom linked list) instead of using FreeBSD's standard primitives (like `queue(3)`).
 Vague instructions like "for FreeBSD 14.0" are often insufficient because the model's training data may not distinguish clearly between versions.
 +
@@ -165,8 +164,9 @@ AI models have a limited "context window" and can lose track of earlier instruct
 _FreeBSD impact_: In lengthy sessions, the AI may forget constraints (like "use style(9)") or hallucinate details.
 _Mitigation_: Collaborate with the AI to create a clear plan first, then execute it step-by-step.
 Have the AI propose the plan and wait for your confirmation before proceeding.
-Apply this same "propose then confirm" pattern to the code generation for each step.
-This keeps the context focused and makes the output easier to review.
+Periodically restate key requirements (for example, "follow style(9)") to keep them in scope.
+Apply this same "propose then confirm" pattern to the code generation for each step
+to keep the context focused and the output easier to review.
 
 *Non-Deterministic Output*::
 AI outputs are inconsistent. The same prompt can produce different results each time,
@@ -175,7 +175,7 @@ and a prompt that works today might fail tomorrow with a model update.
 _FreeBSD impact_: Unreliable build scripts or test generators that work "sometimes."
 _Mitigation_: Do not rely on "magic prompts."
 Review the output every single time.
-If a prompt is critical to a workflow, document it, but expect to tweak it.
+If a prompt is critical to a workflow, save it with the surrounding context and expect to tweak it.
 
 ==== Legal and Compliance Risks
 
@@ -311,7 +311,7 @@ The AI drives the typing, but you steer the direction.
 *Example 5: Translating FreeBSD documentation into another language*
 
 Large language models (LLMs), which power most generative AI tools,
-were initially designed to solve translation problems.
+grew out of work on translation and sequence modeling.
 Use them to jump-start translations of documentation.
 
 From a CLI tool you can say:
@@ -611,10 +611,12 @@ Before you commit any AI-assisted code, run through this mental checklist.
 +
 You are accountable for every line of code.
 Review AI-generated output with the same rigor you would apply to your own code.
-*   *Meticulously check for correctness,* efficiency, and adherence to FreeBSD coding standards (`style(9)`).
-*   *Actively probe for subtle flaws,* logical errors, and hallucinations.
-*   *Do not commit code you do not understand.* If you cannot explain why the code works and why it is correct,
-    you must rewrite it or seek human guidance.
+
+--
+* Meticulously check for correctness, efficiency, and adherence to FreeBSD coding standards (`style(9)`).
+* Actively probe for subtle flaws, logical errors, and hallucinations.
+* Do not commit code you do not understand; rewrite it or seek human guidance until you can explain it.
+--
 
 . *Mitigate IP and Licensing Risks*
 +
