@@ -388,14 +388,17 @@ but other models or commercial products may carry restrictive or evaluation-only
 If you use a hosted Mistral service, review the service terms and privacy/data-use settings
 before sending unpublished or sensitive code; verify the model license before incorporating generated code into FreeBSD.
 
-*OpenAI (ChatGPT, Codex)* (https://openai.com/policies/service-terms/[Service Terms])::
-OpenAI's policies and product behavior vary by product and plan.
-OpenAI states that users may use generated outputs. However, data-use and training policies
-depend on whether you're using the API, ChatGPT (free), ChatGPT+ / paid plans, or enterprise offerings.
-API customers can configure data controls (including opting out of having their API data used to improve models);
-ChatGPT free-tier interactions may be used to improve models unless you change your settings
-or use a plan that provides data protections.
-Always review the current OpenAI product terms and privacy settings before sending unpublished or sensitive code.
+*OpenAI (ChatGPT, GPT models via API)* (https://openai.com/policies/service-terms/[Service Terms])::
+OpenAI states that you may use the generated output (subject to any third-party content the model may reproduce),
+but data-use policies differ by product tier.
+API traffic (including Assistants/GPTs API endpoints) is excluded from model training by default;
+customers must explicitly opt in if they want their API data used to improve models.
+ChatGPT Team and Enterprise state that customer prompts and outputs are not used for training and are treated as confidential.
+ChatGPT consumer tiers (including Free and Plus) use conversation content to improve models _unless_ you disable the
+"Improve the model for everyone" control in settings.
+Be aware that legal requirements (such as court-ordered litigation holds) may force OpenAI to retain conversation history indefinitely,
+potentially overriding user deletion requests.
+Always review the current OpenAI product terms and privacy controls before sending unpublished or sensitive code.
 
 *Claude (Anthropic)* (https://www.anthropic.com/legal/consumer-terms[Consumer Terms], https://www.anthropic.com/legal/commercial-terms[Commercial Terms])::
 You own your prompts and the generated output.
@@ -412,8 +415,11 @@ using a commercial plan or direct API agreements is recommended for stronger dat
 ==== Permissive Models and Services
 
 *DeepSeek* (https://cdn.deepseek.com/policies/en-US/deepseek-terms-of-use.html[Terms of Use])::
-DeepSeek's published terms indicate that users have rights to outputs
-and that some of their open-source models are permissively licensed (MIT).
+DeepSeek's open-weights models are often permissively licensed (e.g., MIT), allowing flexible use.
+However, if using their hosted chat service, be aware that their terms may allow them
+to use inputs and outputs to improve their services.
+Always distinguish between running the model yourself (safe/private)
+and using the hosted interface (subject to service terms).
 As with any provider, verify the specific model license and the service's privacy/data-use policy
 before sending unpublished code or relying on generated output for a FreeBSD contribution.
 
@@ -447,9 +453,14 @@ Most AI services provide options to control how your data is used for training:
 * *Avoid feedback*: Do not provide thumbs up/down feedback if you want to prevent your interactions from being used for training
 * *Review privacy settings*: Check account settings for data usage controls
 * *Use paid plans*: These plans usually offer better privacy.
+* *Legal Retention*: Be aware that service providers may be legally required to retain data
+  (including deleted chats) for litigation or compliance, regardless of your settings.
 
 *Service-Specific Controls*::
-* *OpenAI*: API customers can opt out of training; ChatGPT Plus has data controls
+* *OpenAI*: API inputs/outputs are excluded from training by default (opt-in available);
+  ChatGPT consumer tiers (Free/Plus) use data to improve models unless you disable "Improve the model for everyone";
+  Team/Enterprise state that customer content is not used for training.
+  Be mindful that litigation holds may prevent permanent deletion of data.
 * *Anthropic*: Commercial plans (API, Team, Enterprise) do not use data for training; consumer plans (Free, Pro, Max) allow opt-out via settings
 * *GitHub Copilot*: Product-specific terms apply. Copilot Business/Enterprise offer stronger contractual data protections;
   individual/free plans may collect prompts and suggestions for service improvement
