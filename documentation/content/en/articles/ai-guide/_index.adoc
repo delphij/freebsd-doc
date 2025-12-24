@@ -130,7 +130,7 @@ Treat AI output as a "hint" to be verified, never as a fact.
 
 *Insecure Code Patterns*::
 AI models are trained on public code, which includes buggy and insecure examples.
-They often reproduce buffer overflows, race conditions, or weak input validation without understanding the implications.
+They may reproduce buffer overflows, race conditions, or weak input validation without understanding the implications.
 +
 _FreeBSD impact_: Introduction of vulnerabilities like improper `sbuf` usage or missing capability checks.
 _Mitigation_: Assume the code is insecure by default.
@@ -149,7 +149,7 @@ For example, instead of "for FreeBSD 14", say "use sbuf(9) API" or "consult `sys
 If your tool supports it, provide relevant header files, manual pages, or similar existing code as context for the AI to analyze.
 
 *Architectural and Performance Blindness*::
-AI generates code based on local context and often misses the "big picture" of system architecture,
+AI generates code based on local context and sometimes misses the "big picture" of system architecture,
 locking protocols, or performance constraints.
 It might suggest a naive implementation that works in isolation but causes bottlenecks under load.
 +
@@ -300,9 +300,9 @@ ____
 Modern AI tools offer deep integration with development environments:
 
 * *Assistants:* Copilot and plugins suggest code as you type.
-* *AI-powered IDEs:* Cursor and Windsurf provide full-featured development environments with AI built-in
+* *AI-powered IDEs:* Cursor and Windsurf provide full-featured development environments with AI built-in.
 * *Interactive agents:* These tools can refactor code, generate tests,
-  explain complex logic, and even debug issues autonomously
+  explain complex logic, and even debug issues autonomously.
 * *Chat:* Ask questions like "refactor these functions to reduce duplication"
   or "check for security bugs".
 
@@ -491,8 +491,8 @@ Check if the service uses your data for training.
 Most AI services provide options to control how your data is used for training:
 
 * *Opt-out*: Disable training on your inputs.
-* *Avoid feedback*: Do not provide thumbs up/down feedback if you want to prevent your interactions from being used for training
-* *Review privacy settings*: Check account settings for data usage controls
+* *Avoid feedback*: Do not provide thumbs up/down feedback if you want to prevent your interactions from being used for training.
+* *Review privacy settings*: Check account settings for data usage controls.
 * *Use paid plans*: These plans usually offer better privacy.
 * *Legal Retention*: Be aware that service providers may be legally required to retain data
   (including deleted chats) for litigation or compliance, regardless of your settings.
@@ -502,12 +502,12 @@ Most AI services provide options to control how your data is used for training:
   ChatGPT consumer tiers (Free/Plus) use data to improve models unless you disable "Improve the model for everyone";
   Team/Enterprise state that customer content is not used for training.
   Be mindful that litigation holds may prevent permanent deletion of data.
-* *Anthropic*: Commercial plans (API, Team, Enterprise) do not use data for training; consumer plans (Free, Pro, Max) allow opt-out via settings
+* *Anthropic*: Commercial plans (API, Team, Enterprise) do not use data for training; consumer plans (Free, Pro, Max) allow opt-out via settings.
 * *GitHub Copilot*: Product-specific terms apply. Copilot Business/Enterprise offer stronger contractual data protections;
   individual/free plans may collect prompts and suggestions for service improvement
   or model training unless you opt out.
   See GitHub's Copilot Product Terms and Trust Center.
-* *Local models*: Self-hosted models provide complete data privacy but require more resources
+* *Local models*: Self-hosted models provide complete data privacy but require more resources.
 
 [[compliance-requirements]]
 === Ensuring Compliance with FreeBSD Requirements
@@ -885,7 +885,7 @@ AI can be helpful for drafting commit messages, especially for summarizing chang
 However, the commit message is a critical part of the project's history.
 You are responsible for ensuring the message is accurate, follows the project's conventions, and provides the "why" behind the change, not just the "what".
 AI-generated commit messages tend to be generic and often focus on describing _what_ changed
-rather than _why_ it changed--the reasoning that future developers need most.
+rather than _why_ it changed -- the reasoning that future developers need most.
 Never use an AI-generated commit message without carefully reviewing and editing it
 to ensure it meets these standards.
 
@@ -929,7 +929,7 @@ Agents require more careful oversight but can handle complex, multi-step tasks.
 
 Yes, several FreeBSD-specific factors require extra attention:
 
-* *Kernel development*: AI often lacks understanding of FreeBSD's kernel architecture,
+* *Kernel development*: AI might lack understanding of FreeBSD's kernel architecture,
   locking protocols, and memory management.
   Be especially cautious with kernel code generation,
   and give more specific prompts instead of relying on AI to create designs.
