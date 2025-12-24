@@ -53,7 +53,7 @@ from writing boilerplate code to debugging complex kernel issues.
 However, their misuse can introduce security vulnerabilities, licensing violations,
 and code quality problems.
 
-This guide sets practical rules for FreeBSD developers
+This guide establishes practical rules for FreeBSD developers
 to use AI effectively while keeping our high standards.
 It covers workflows, safety checklists, and examples for FreeBSD.
 
@@ -219,7 +219,7 @@ AI tools with file access can expose secrets or damage files.
 _FreeBSD impact_: Compromise of development credentials, source trees, or release infrastructure.
 
 [[examples]]
-=== Putting AI to Work: Real-World Examples
+== Real-World Examples
 
 Modern AI goes beyond simple chat.
 You can integrate it into your command line and workflow as an "agent".
@@ -564,7 +564,7 @@ The following recommendations help integrate these tools safely and effectively.
 * *Draft Test Cases:* This is a fantastic use.
   "Here is a function... Write a set of unit tests for it, including edge cases for null pointers,
   off-by-one errors, and maximum input values."
-  However, always review AI-generated tests carefully to ensure they actually test what they claim—
+  However, always review AI-generated tests carefully to ensure they actually test what they claim--
   AI may generate tests that pass but do not meaningfully verify the intended behavior.
 * *Act as Your Rubber Duck:* Use it to brainstorm solutions, explore alternative algorithms,
   or refactor a complex function.
@@ -717,13 +717,13 @@ to improve your use of AI tools over time.
 
 Before committing AI-assisted code, verify:
 
-* ☐ I understand every line and can explain it to a reviewer
-* ☐ Code follows style(9) and FreeBSD conventions
-* ☐ All tests pass (`make check`, `kyua test`)
-* ☐ Security review completed (especially for kernel/privileged code)
-* ☐ No suspicious similarity to GPL or other licensed code
-* ☐ Code has been rewritten in my own voice if it was a large/complex block
-* ☐ Added `Assisted-by:` tag if contribution is non-trivial
+* [ ] I understand every line and can explain it to a reviewer
+* [ ] Code follows style(9) and FreeBSD conventions
+* [ ] All tests pass (`make check`, `kyua test`)
+* [ ] Security review completed (especially for kernel/privileged code)
+* [ ] No suspicious similarity to GPL or other licensed code
+* [ ] Code has been rewritten in my own voice if it was a large/complex block
+* [ ] Added `Assisted-by:` tag if contribution is non-trivial
 
 [[prompt-engineering]]
 === Prompt Engineering Best Practices
@@ -740,7 +740,7 @@ Well-crafted prompts lead to better, more reliable results.
   This approach is also useful in making the code less susceptible to copyright disputes
   because it is easier to tell where they come from.
 * *Iterative Refinement:* Start with a general request, then refine based on the output.
-  For example: "Make the error handling more robust" → "Add specific error codes for each failure case."
+  For example: "Make the error handling more robust" -> "Add specific error codes for each failure case."
 * *Set Constraints:* Specify what you do not want.
   "Optimize this function for performance, but do not change the public API or introduce new dependencies."
 * *Request Explanations:* Ask the AI to explain its reasoning.
@@ -885,7 +885,7 @@ AI can be helpful for drafting commit messages, especially for summarizing chang
 However, the commit message is a critical part of the project's history.
 You are responsible for ensuring the message is accurate, follows the project's conventions, and provides the "why" behind the change, not just the "what".
 AI-generated commit messages tend to be generic and often focus on describing _what_ changed
-rather than _why_ it changed—the reasoning that future developers need most.
+rather than _why_ it changed--the reasoning that future developers need most.
 Never use an AI-generated commit message without carefully reviewing and editing it
 to ensure it meets these standards.
 
