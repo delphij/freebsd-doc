@@ -103,7 +103,7 @@ They predict the statistically probable next word or line of code based on patte
 === The Benefits: Your "Rubber Duck" That Talks Back
 
 When used correctly, AI is a massive productivity boost.
-It is excellent for:
+These tools excel at:
 
 * *Brainstorming:* It is a fantastic "rubber duck" that talks back.
   It offers new perspectives and sparks creativity.
@@ -122,35 +122,60 @@ This creates several classes of risks:
 ==== Technical Risks
 
 *Hallucinations and False Confidence*::
-AI confidently invents non-existent APIs, functions,
-or command-line flags that sound plausible.
-Similar to how a human might misuse APIs,
-this can lead to subtle errors that are hard to detect.
-It is especially dangerous with large code generation requests where subtle errors hide among working code.
+AI confidently invents non-existent APIs, functions, or command-line flags.
+It operates on probability, not truth, and will sound just as confident when being wrong.
 +
-_FreeBSD impact_: Non-existent system calls, incorrect flag usage, or fabricated kernel interfaces.
+_FreeBSD impact_: Non-existent system calls or fabricated kernel interfaces.
+_Mitigation_: Always verify APIs against the actual man pages (`man 2`, `man 9`) and header files.
+Treat AI output as a "hint" to be verified, never as a fact.
 
-*Insecure Code*::
-AI reproduces insecure patterns from training data without understanding the security implications.
-Common issues include buffer overflows, race conditions, and improper input validation.
+*Insecure Code Patterns*::
+AI models are trained on public code, which includes buggy and insecure examples.
+They often reproduce buffer overflows, race conditions, or weak input validation without understanding the implications.
 +
-_FreeBSD impact_: Kernel vulnerabilities, privilege escalation bugs, or memory management errors.
+_FreeBSD impact_: Introduction of vulnerabilities like improper `sbuf` usage or missing capability checks.
+_Mitigation_: Assume the code is insecure by default.
+Audit it specifically for memory safety and logic errors before even considering it for functionality.
+See <<high-risk,High-Risk Areas>> for more guidance on security-sensitive code.
 
-*Bad Architecture Decisions*::
-AI does not always fully understand FreeBSD architecture, threading,
-or performance best practices.
+*Outdated or Non-Idiomatic Knowledge*::
+AI models are trained on historical and generic data.
+They might suggest APIs that were deprecated in recent FreeBSD versions or default to "textbook C" (like writing a custom linked list) instead of using FreeBSD's standard primitives (like `queue(3)`).
+Vague instructions like "for FreeBSD 14.0" are often insufficient because the model's training data may not distinguish clearly between versions.
 +
-_FreeBSD impact_: Code that works but violates locking protocols,
-introduces performance bottlenecks, or breaks subsystem assumptions.
+_FreeBSD impact_: While compilation errors are easily caught, the real risk is introducing technical debt.
+Repeating generic implementations leads to code duplication, which can hide vulnerabilities and cause missed optimization opportunities by ignoring established system libraries like `sbuf(9)` or `libxo(3)`.
+_Mitigation_: Provide clear, specific instructions rather than broad version targets.
+For example, instead of "for FreeBSD 14", say "use sbuf(9) API" or "consult `sys/queue.h` and `queue(3)` for data structures".
+If your tool supports it, provide relevant header files, manual pages, or similar existing code as context for the AI to analyze.
 
-*Inconsistency*::
-AI outputs are non-deterministic: the same prompt can produce different results each time,
-and prompts that work well with one AI model may produce poor results with another.
-Never assume a previously successful prompt will produce equally good output in a new session
-or with a different tool.
+*Architectural and Performance Blindness*::
+AI generates code based on local context and often misses the "big picture" of system architecture,
+locking protocols, or performance constraints.
+It might suggest a naive implementation that works in isolation but causes bottlenecks under load.
 +
-_FreeBSD impact_: Developers must review AI output carefully every time,
-even when reusing prompts that worked well before.
+_FreeBSD impact_: Violating locking orders, inefficient memory allocations, or breaking subsystem assumptions.
+_Mitigation_: You must define the architecture.
+Do not ask the AI to "design a subsystem."
+Instead, make the architectural decisions yourself and use AI to implement specific, constrained components within that design.
+
+*Context Fatigue*::
+AI models have a limited "context window" and can lose track of earlier instructions as a conversation gets long.
++
+_FreeBSD impact_: In lengthy sessions, the AI may forget constraints (like "use style(9)") or hallucinate details.
+_Mitigation_: Collaborate with the AI to create a clear plan first, then execute it step-by-step.
+Have the AI propose the plan and wait for your confirmation before proceeding.
+Apply this same "propose then confirm" pattern to the code generation for each step.
+This keeps the context focused and makes the output easier to review.
+
+*Non-Deterministic Output*::
+AI outputs are inconsistent. The same prompt can produce different results each time,
+and a prompt that works today might fail tomorrow with a model update.
++
+_FreeBSD impact_: Unreliable build scripts or test generators that work "sometimes."
+_Mitigation_: Do not rely on "magic prompts."
+Review the output every single time.
+If a prompt is critical to a workflow, document it, but expect to tweak it.
 
 ==== Legal and Compliance Risks
 
@@ -217,9 +242,25 @@ Please reuse existing test logic where possible.
 When in doubt, always ask a human for confirmation before proceeding further.
 ____
 
-Paste this into the AI tool.
-It will generate test cases.
-Challenge it to cover edge cases it missed.
+The AI might generate test cases like:
+
+[source,shell]
+----
+# Test NUL terminator with -0 flag
+atf_test_case nul_terminator
+nul_terminator_body()
+{
+    printf 'abc\0def\0' | rev -0 > output
+    printf 'cba\0fed\0' > expected
+    atf_check cmp output expected
+}
+----
+
+*Critical*: Review these carefully to ensure they actually test the intended behavior.
+Challenge the AI to create both positive tests (verifying correct behavior)
+and negative tests (verifying incorrect inputs are properly rejected).
+This approach helps catch both missing functionality and insufficient error handling,
+and confirms that your tests can actually detect bugs rather than passing trivially.
 
 *Example 2: AI-Assisted Code Review*
 
@@ -575,13 +616,13 @@ Review AI-generated output with the same rigor you would apply to your own code.
 *   *Do not commit code you do not understand.* If you cannot explain why the code works and why it is correct,
     you must rewrite it or seek human guidance.
 
-. *Guard against IP & licensing risk*
+. *Mitigate IP and Licensing Risks*
 +
 Your goal is to ensure the final result is _your_ intellectual effort and complies with all licensing requirements.
 +
 --
-* *Verify Service Terms:* Before using any AI service, review the service-specific terms detailed in the
-  <<licensing-tos,Understanding AI Service Terms and Licensing>> section.
+* *Verify Service Terms:* Before using any AI service, review the service-specific terms in
+  <<licensing-tos,Understanding AI Service Terms and Licensing>>.
   Ensure the tool's Terms of Use allow you to own the output and use it in FreeBSD contributions.
 * *Check Subscription Requirements:* Many AI services restrict commercial use to paid subscribers.
   Verify you meet any subscription requirements for the code to be used in FreeBSD.
@@ -668,6 +709,19 @@ For example, you can save them in a Markdown file and reference them with `@` wh
 instead of pasting them directly.
 These records not only help track how the output was produced but also serve as valuable learning material
 to improve your use of AI tools over time.
+
+[[quick-checklist]]
+==== Quick Pre-Commit Checklist
+
+Before committing AI-assisted code, verify:
+
+* ☐ I understand every line and can explain it to a reviewer
+* ☐ Code follows style(9) and FreeBSD conventions
+* ☐ All tests pass (`make check`, `kyua test`)
+* ☐ Security review completed (especially for kernel/privileged code)
+* ☐ No suspicious similarity to GPL or other licensed code
+* ☐ Code has been rewritten in my own voice if it was a large/complex block
+* ☐ Added `Assisted-by:` tag if contribution is non-trivial
 
 [[prompt-engineering]]
 === Prompt Engineering Best Practices
@@ -796,11 +850,21 @@ Never paste intermediate work, uncommitted patches, or experimental code into a 
 Use a self-hosted or local model if possible.
 
 *Q4: If it passes tests, can I commit it?*
-No.
-Passing tests does not mean the code is safe, efficient, maintainable, or legally clean.
-It must meet the same review standards as human contributions.
-AI can be quite good in writing code that passes tests without being as vigilant as a human
-in terms of correctness, so always perform thorough code review regardless of test results.
+
+No, absolutely not.
+Passing tests is necessary but not sufficient.
+AI-generated code can pass tests while still containing:
+
+* Security vulnerabilities not covered by tests
+* Performance regressions
+* License violations
+* Technical debt (non-idiomatic patterns)
+* Logic errors in untested edge cases
+
+All code must meet the same review standards as human contributions,
+regardless of test results.
+AI can be quite good at writing code that passes tests without being as vigilant as a human
+in terms of correctness, so always perform thorough code review.
 
 *Q5: What if AI output looks suspiciously similar to existing open source code?*
 
