@@ -1,0 +1,1025 @@
+---
+title: FreeBSD 生成式 AI 開發者指南
+authors:
+  - author: Xin LI
+    email: delphij@FreeBSD.org
+copyright: 2025 The FreeBSD Documentation Project
+description: 在 FreeBSD 開發中使用生成式 AI 工具的最佳實務
+trademarks: ["freebsd", "general"]
+weight: 35
+tags: ["AI", "開發", "指南", "最佳實務", "貢獻"]
+---
+
+= FreeBSD 生成式 AI 開發者指南
+:doctype: article
+:toc: macro
+:toclevels: 2
+:icons: font
+:sectnums:
+:sectnumlevels: 6
+:source-highlighter: rouge
+:experimental:
+:images-path: articles/ai-guide/
+
+ifdef::env-beastie[]
+ifdef::backend-html5[]
+include::shared/authors.adoc[]
+include::shared/mirrors.adoc[]
+include::shared/releases.adoc[]
+include::shared/attributes/attributes-{{% lang %}}.adoc[]
+include::shared/{{% lang %}}/teams.adoc[]
+include::shared/{{% lang %}}/mailing-lists.adoc[]
+include::shared/{{% lang %}}/urls.adoc[]
+:imagesdir: ../../../images/{images-path}
+endif::[]
+ifdef::backend-pdf,backend-epub3[]
+include::../../../../shared/asciidoctor.adoc[]
+endif::[]
+endif::[]
+
+ifndef::env-beastie[]
+include::../../../../../shared/asciidoctor.adoc[]
+endif::[]
+
+_由 {delphij} 貢獻_
+
+[.abstract-title]
+摘要
+
+生成式 AI 工具（如 GitHub Copilot、ChatGPT、Claude 與 Gemini）正在徹底改變軟體開發。
+它們可以根據自然語言生成程式碼、文件與測試。
+這些助手可以加速 FreeBSD 開發，從撰寫樣板程式碼到除錯複雜的核心問題。
+然而，如果誤用，可能會引入安全漏洞、授權違規和程式碼品質問題。
+
+本指南為 FreeBSD 開發者確立了在保持高標準的同時有效使用 AI 的實用規則。
+它涵蓋了工作流程、安全檢查清單以及針對 FreeBSD 的範例。
+
+本文補充了 FreeBSD Committer's Guide，提供了針對 AI 的最佳實務。
+這並非關於授權或智慧財產權的法律建議。如有相關疑問，請諮詢律師。
+
+'''
+
+toc::[]
+
+[[core-principle]]
+== 核心原則：你是主駕，AI 是副駕
+
+*規則 #1：你對自己提交的每一行程式碼負有最終且唯一的責任。*
+
+AI 工具是強大的助手，但不能取代開發者的判斷。
+請將 AI 視為一位才華橫溢但不值得完全信任的外部開發者：它在做模式匹配，而不是理解邏輯。
+AI 的回答迅速且自信，但它不像人類那樣進行推理。
+
+關鍵意涵：
+
+* *完全負責*：每一行 AI 生成的程式碼都需要像你自己的程式碼一樣經過嚴格審查。
+* *禁止盲目提交*：在使用 AI 輸出之前，必須進行審查、測試和理解。
+* *你的專業主導*：AI 協助你做決定；它不為你做決定。
+* *品質標準適用*：AI 協助的程式碼必須符合與任何 FreeBSD 貢獻相同的安全、效能和可維護性標準。
+
+這種副駕關係在最大化 AI 效益的同時，維持 FreeBSD 對高品質、安全軟體的承諾。
+
+[[primer]]
+== 工程師的生成式 AI 入門
+
+如果你是這些工具的新手，這裡有一個關於它們是什麼、為何有用以及主要風險的快速概述。
+
+[[what-is-genai]]
+=== 什麼是生成式 AI？
+
+像 Gemini、ChatGPT、Claude 和 Copilot 這樣的模型是在來自公共網際網路的龐大文字資料與程式碼語料庫上訓練的。
+它們不像你那樣 _思考_ 或 _理解_ C 語言；
+它們基於學到的模式來預測統計上可能的下一個字或程式碼行。
+
+[[benefits]]
+=== 好處：會說話的「黃色小鴨」
+
+當使用得當時，AI 能夠大幅提升生產力。
+這些工具擅長：
+
+* *腦力激盪：* 這些工具就像一隻會說話的「黃色小鴨」。
+  它們提供新的視角並激發創意。
+  描述一個問題、詢問演算法，或挑戰模型重構程式碼以更快建立理解。
+* *減少樣板程式碼：* 迅速生成存根、資料結構和重複性程式碼。
+* *重構：* 找出重複模式並取得最佳化建議。
+* *摘要整理：* 用它來解釋複雜的程式碼和回答問題。
+
+[[risks]]
+=== 風險：你必須了解的關鍵弱點
+
+AI 透過統計模式匹配運作，而非理解。
+這產生了以下幾類風險：
+
+==== 技術風險
+
+*幻覺與過度自信*::
+AI 會自信地編造不存在的 API、函式或命令列旗標。
+它基於機率運作，而非真理，即使是錯的，聽起來也同樣自信。
++
+_對 FreeBSD 的影響_：不存在的系統呼叫或虛構的核心介面。
+_因應措施_：始終對照實際的手冊頁（`man 2`、`man 9`）和標頭檔來驗證 API。
+將 AI 輸出視為待驗證的「提示」，而不是直接當作事實。
+
+*不安全的程式碼模式*::
+AI 模型是在可公開存取的程式碼上訓練的，其中包含有錯誤與不安全的範例。
+它們可能會複製緩衝區溢位、競態條件，或是對輸入資料的驗證不足，
+而不理解其可能造成的後果。
++
+_對 FreeBSD 的影響_：引入漏洞，例如不當使用 `sbuf`，或忽略必要的權限檢查。
+_因應措施_：一律假設 AI 生成的程式碼存在安全問題。
+在確認功能是否完備之外，還要特別針對記憶體安全與邏輯錯誤進行稽核。
+有關安全敏感程式碼的更多指引，請參閱 <<high-risk,高風險領域>>。
+
+*過時或非慣用的知識*::
+AI 模型是在較舊且通常通用的資料上訓練的。
+它們可能建議在近期 FreeBSD 版本中已棄用的 API，或者預設使用「教科書式的 C」（如自行實作鏈結串列），
+而不是使用 FreeBSD 的標準原語（如 `queue(3)`）。
+像「適用於 FreeBSD 14.0」這類模糊指令通常不足，因為模型的訓練資料未必能清楚區分版本差異。
++
+_對 FreeBSD 的影響_：雖然編譯錯誤很容易被抓出，但真正的風險是引入技術負債。
+重複通用實作會造成程式碼重複，可能掩蓋漏洞，並因忽略既有系統函式庫（如 `sbuf(9)` 或 `libxo(3)`）而錯失最佳化機會。
+_因應措施_：提供清楚且具體的指示，而非籠統的目標版本。
+例如，不要說「適用於 FreeBSD 14」，而要說「使用 sbuf(9) API」或「參考 `sys/queue.h` 與 `queue(3)` 以取得資料結構」。
+如果你的工具支援，請提供相關的標頭檔、手冊頁或類似的現有程式碼作為上下文供 AI 分析。
+
+*架構與效能盲點*::
+AI 依據局部上下文生成程式碼，有時會忽略系統架構、鎖定協定或效能限制的「大局」。
+它可能建議一個單獨運作良好但在負載下會造成瓶頸的樸素實作。
++
+_對 FreeBSD 的影響_：違反鎖的順序、低效率的記憶體配置，或破壞子系統假設。
+_因應措施_：你必須定義架構。
+不要要求 AI 「設計一個子系統」。
+相反地，請自行做出架構決策，並使用 AI 在該設計中實作特定且受限的元件。
+
+*上下文疲勞*::
+雖然現代 AI 模型現在支援非常大的上下文視窗（200K+ tokens），
+但隨著對話變長，它們仍可能忘記早期指令，特別是在處理複雜的程式碼庫或長時間會話時。
+即使在視窗限制內，對早期上下文的關注品質也可能下降。
++
+_對 FreeBSD 的影響_：在長時間會話中，AI 可能忘記約束（如「使用 style(9)」）或產生細節幻覺。
+_因應措施_：先與 AI 協作制定清楚的計畫，再一步步執行。
+讓 AI 提出計畫並等待你的確認後再繼續。
+定期重申關鍵要求（例如，「遵循 style(9)」）以保持其在範圍內。
+對每個步驟的程式碼生成套用同樣的「先提議後確認」模式，以保持上下文集中且輸出易於審查。
+即使有更大的上下文視窗，將複雜任務拆成集中會話仍能得到更好的結果。
+
+*非確定性輸出*::
+AI 輸出是不一致的。同樣的提示每次都可能產生不同結果，
+而且今天有效的提示明天可能會因模型更新而失效。
++
+_對 FreeBSD 的影響_：不可靠的建置腳本或測試生成器，「有時」能工作。
+_因應措施_：不要依賴「魔法提示」。
+每一次都要審查輸出。
+如果提示對工作流程至關重要，請將其與周圍的上下文一併保存，並預期需要調整。
+
+==== 法律與合規風險
+
+*著作權侵害*::
+AI 可能逐字複製受著作權保護的程式碼。
+這有 GPL 污染或授權衝突的風險。
++
+_對 FreeBSD 的影響_：在 BSD 授權的程式碼庫中可能產生 GPL 污染或其他授權衝突。
+
+*隱私與資料外洩*::
+雲端 AI 服務可能使用你的程式碼輸入進行訓練，造成資料外洩。
++
+_對 FreeBSD 的影響_：過早揭露安全修補、實驗性功能或供應商敏感程式碼。
+
+*服務條款與授權影響*::
+不同的 AI 服務有不同的條款，影響生成程式碼的所有權與使用權。
+貢獻者必須確保遵守 AI 服務條款與 FreeBSD 的 BSD 授權要求。
++
+_對 FreeBSD 的影響_：違反服務條款或造成授權衝突的程式碼貢獻可能需要從專案中移除。
+
+==== 作業安全風險
+
+*提示詞注入*::
+不可信輸入（如 Pull Request 或第三方檔案）可能誘使 AI 執行非預期命令。
+隱藏指令可能讓 AI 執行未預期的命令。
++
+_對 FreeBSD 的影響_：危及開發環境或建置系統的完整性或安全性。
+
+*供應鏈污染*::
+AI 可能建議惡意或易受攻擊的函式庫，或受損的程式碼模式。
++
+_對 FreeBSD 的影響_：透過建議第三方元件引入後門或漏洞。
+
+*權限提升*::
+具有檔案存取權限的 AI 工具可能洩露機密或損壞檔案。
++
+_對 FreeBSD 的影響_：洩漏用於開發的身分憑證、原始碼樹，或使發佈基礎設施受損。
+
+[[examples]]
+== 真實世界的範例
+
+現代 AI 的能力遠遠超越了單純的聊天。
+你可以將它作為「AI 代理」整合到你的命令列與工作流程中。
+
+*範例 1：請 AI 幫忙建立測試案例*
+
+請 AI 為你撰寫測試案例。例如：
+
+[quote]
+____
+我正在向 `rev(1)` 添加 `-0` 選項以使用 NUL 作為行分隔符。
+原始碼在 `usr.bin/rev/` 中，測試在 `tests/` 中。
+
+請為 `-0` 選項新增測試案例，確保：
+ - 當指定 `-0` 時，NUL 是行終止符。
+ - 預設行為（換行符終止）不變。
+ - 輸出終止符與輸入終止符一致。
+
+請盡可能重用既有的測試邏輯。
+如有疑問，請務必在繼續之前詢問人類確認。
+____
+
+AI 可能會生成如下測試案例：
+
+[source,shell]
+----
+# Test NUL terminator with -0 flag
+atf_test_case nul_terminator
+nul_terminator_body()
+{
+    printf 'abc\0def\0' | rev -0 > output
+    printf 'cba\0fed\0' > expected
+    atf_check cmp output expected
+}
+----
+
+*關鍵*：仔細審查這些案例，以確保它們實際測試了預期行為。
+請 AI 製作正向測試（驗證正確行為）與負向測試（驗證不正確輸入被正確拒絕）。
+這種方法有助於發現缺失功能與不足的錯誤處理，並確認測試確實能檢出錯誤，而非輕易通過。
+
+*範例 2：AI 輔助的安全稽核與程式碼審查*
+
+AI 可以成為安全稽核與程式碼審查的有力工具，特別是在人工審查者看到你的工作之前捕捉常見的漏洞模式。
+現代 AI 模型是在大量的安全研究、CVE 資料庫與漏洞模式上訓練的，使它們能有效識別 FreeBSD 特有的安全問題。
+
+*常見問題的快速安全掃描：*
+
+[source,shell]
+----
+# Review a commit for style(9) compliance and common issues
+git show HEAD | ai-tool --prompt "You are reviewing FreeBSD kernel code. Please check for:
+
+1. style(9) compliance (indentation, naming, formatting)
+2. Common FreeBSD pitfalls (locking, error handling, memory management)
+3. Security issues (buffer overflows, integer overflow, privilege checks)
+4. Performance concerns (unnecessary allocations, inefficient algorithms)
+
+Focus on FreeBSD-specific patterns and conventions.
+Flag any code that looks suspicious or non-idiomatic."
+----
+
+*使用 FreeBSD 特定模式進行深入安全稽核：*
+
+對於安全關鍵程式碼，請提供完整的 FreeBSD 特定上下文：
+
+[source,shell]
+----
+# Detailed security review for kernel code
+cat sys/kern/kern_descrip.c | ai-tool --prompt "Perform a comprehensive security
+audit of this FreeBSD kernel code that handles file descriptors. Check for:
+
+**FreeBSD-Specific Memory Safety Issues:**
+- Before copyout(), verify the entire buffer is zeroed to prevent kernel memory leaks
+  (use bzero() or explicit zero initialization for all fields)
+- Check that copyout() targets are properly bounds-checked
+- Verify copyin() validates request sizes are reasonable before allocation
+- Ensure copyin() source addresses are validated (userland-accessible)
+- Check for proper use of copyinstr() with appropriate length limits
+- Look for stack or heap variables being copyout()'d without full initialization
+
+**FreeBSD Privilege Model:**
+- Verify priv_check() calls before privileged operations
+- Check prison_check() for jail-aware operations
+- Validate proper use of p_cansee(), p_candebug(), p_cansched()
+- Ensure MAC framework hooks are called where required (mac_check_*)
+- Check for proper credential handling with crhold()/crfree()
+
+**FreeBSD Locking Patterns:**
+- Verify proper lock ordering (consult lock_profile data)
+- Check for missing WITNESS assertions
+- Ensure locks are properly released on all error paths
+- Look for TOCTOU issues between lock release and reacquisition
+- Verify proper use of sx locks vs mutexes for the use case
+
+**FreeBSD-Specific API Usage:**
+- Check sbuf(9) usage: sbuf_new(), sbuf_finish(), sbuf_delete()
+- Verify proper ref-counting patterns (refcount(9))
+- Check SYSCTL declarations for proper permissions
+- Validate proper use of iterators and their safety guarantees
+
+**Example Vulnerabilities to Flag:**
+
+Bad (kernel memory leak via copyout):
+    struct stat sb;
+    // ... fill in only some fields of sb ...
+    sb.st_mode = vp->v_mode;
+    sb.st_uid = vp->v_uid;
+    // Padding and unset fields contain kernel stack data!
+    error = copyout(&sb, uap->sb, sizeof(sb));
+
+Good:
+    struct stat sb;
+    bzero(&sb, sizeof(sb));  // Zero entire structure first
+    sb.st_mode = vp->v_mode;
+    sb.st_uid = vp->v_uid;
+    // Now safe: unset fields are zeroed
+    error = copyout(&sb, uap->sb, sizeof(sb));
+
+Bad (missing size validation before copyin):
+    char *kbuf = malloc(uap->len, M_TEMP, M_WAITOK);
+    error = copyin(uap->buf, kbuf, uap->len);  // What if len is 1GB?
+
+Good:
+    if (uap->len > MAXPATHLEN)
+        return (EINVAL);
+    char *kbuf = malloc(uap->len, M_TEMP, M_WAITOK);
+    error = copyin(uap->buf, kbuf, uap->len);
+
+For each issue found, provide:
+1. Line number and code snippet
+2. Specific FreeBSD API or pattern violated
+3. Security impact (privilege escalation, info leak, DoS, etc.)
+4. Recommended fix following FreeBSD conventions"
+----
+
+*差異安全分析：*
+
+當修改安全關鍵程式碼時，請比較安全屬性：
+
+[source,shell]
+----
+git diff main...feature-branch -- sys/kern/vfs_syscalls.c | ai-tool --prompt \
+"This diff modifies VFS system call handling. Analyze security implications:
+
+1. Are all copyout() buffers properly zeroed before filling?
+2. Are copyin() sizes validated against reasonable limits?
+3. Have privilege checks (priv_check) been maintained or added?
+4. Do error paths properly release locks and free resources?
+5. Is the jail/MAC framework context preserved?
+6. Could this introduce TOCTOU races or privilege escalation?
+
+Compare the security posture of old vs new code."
+----
+
+*重要限制與最佳實務：*
+
+AI 輔助的安全稽核可以作為有價值的支援性工具，但必須在明確預期的前提下使用。
+
+**優勢**
+
+1. 擅長識別常見漏洞模式與可疑程式碼結構
+2. 適用於人工審查前的早期分流與優先順序
+
+**限制**
+
+1. 基於模式而非洞察：往往會漏掉新型或複雜的邏輯漏洞
+2. 容易產生誤報與誤導性結論
+3. 無法完整理解子系統層面的不變式、威脅模型與設計意圖
+
+**使用準則**
+
+1. 將結果視為提示，而非最終結論
+2. 對所有回報的問題進行人工驗證，並測試其可利用性
+3. 絕不能以 AI 審查取代有經驗的人類安全審查
+4. 僅應與成熟工具配合使用（例如 Clang Static Analyzer、Coverity 與 fuzzing）
+
+*工作流程整合：*
+
+1. *提交前掃描*：在提交前進行快速 AI 審查
+2. *審查前稽核*：在請求程式碼審查前進行深入 AI 分析
+3. *審查後驗證*：驗證安全修補是否完整
+4. *測試案例生成*：讓 AI 生成關注安全的測試案例
+
+*牢記*：AI 輔助的安全稽核是對人工安全審查、正式稽核、滲透測試、fuzzing 和靜態分析工具的補充，絕不是替代。
+
+*範例 3：架構腦力激盪*
+
+在撰寫程式碼之前，使用聊天來探索設計取捨。
+
+[quote]
+____
+我需要為 FreeBSD 中的一個新核心子系統設計一個輕量級的 IPC 機制。
+共享記憶體環形緩衝區與使用互斥鎖和條件變數實作的簡單訊息佇列之間的取捨是什麼？
+____
+
+*範例 4：編輯器內與 IDE 整合*
+
+現代 AI 工具提供了與開發環境的深度整合：
+
+* *助手：* Copilot 與外掛在你輸入時建議程式碼。
+* *AI 驅動的 IDE：* Cursor 與 Windsurf 提供內建 AI 的全功能開發環境。
+* *互動式 AI 代理：* 這些工具可以重構程式碼、生成測試、解釋複雜邏輯，甚至自主除錯問題。
+* *聊天：* 詢問諸如「重構這些函式以減少重複」或「檢查安全漏洞」之類的問題。
+
+AI 可以代你輸入程式碼，但你仍需掌握方向。
+
+*範例 5：將 FreeBSD 文件翻譯成另一種語言*
+
+為大多數生成式 AI 工具提供動力的大型語言模型（LLM）源自翻譯與序列建模工作。
+它們往往是很好的文件初步翻譯工具。
+
+你可以對 CLI 工具說：
+
+[quote]
+____
+Translate the book 'FreeBSD Documentation Project Primer' from English to Simplified Chinese.
+The source is in 'documentation/content/en/books/fdp-primer'.
+Place the translated files in 'documentation/content/zh-cn/books/fdp-primer'.
+I will review the translation before committing.
+____
+
+請注意，儘管現代翻譯模型效果很好，但我們仍強烈建議進行人工審查。
+這些模型可能犯下微妙、與原文意圖有實質差異的錯誤。
+你可以使用像 textproc/meld 這樣的工具直接並排比較兩個目錄。
+
+*範例 6：用於多步驟任務的 AI 代理*
+
+最新的 AI 工具有能力充當自主代理。
+它們可以在幾乎沒有協助的情況下搜尋檔案、重構程式碼和執行測試。
+
+[source,shell]
+----
+# Using an AI agent to analyze and refactor a codebase
+AI: "Analyze the src/kern/vfs_*.c files for duplicate code patterns
+and create a refactoring plan to reduce code duplication while
+maintaining functionality. Then implement the refactoring across
+all affected files, ensuring style(9) compliance."
+----
+
+AI 代理可以：
+
+* 搜尋多個檔案以識別模式
+* 建立完整的重構計畫
+* 在多個檔案中進行變更
+* 執行測試以驗證功能
+* 檢查樣式合規性
+
+*在 AI 代理執行之前，務必審查計畫。徹底測試結果。*
+
+在使用 AI 代理時，請注意這些限制：
+
+* *上下文視窗限制*：AI 代理可能會在長時間會話中忘記早期的決定。
+  對於複雜任務，考慮將工作拆成較小的會話或定期總結進度。
+* *確認疲勞*：當 AI 提出許多問題或要求批准多個操作時，開發者可能會開始不經仔細審查就自動批准。
+  保持警覺，如有需要請休息一下。
+
+[[licensing-tos]]
+== 了解 AI 服務條款與授權
+
+當使用 AI 工具進行 FreeBSD 貢獻時，了解每個服務的服務條款（ToS）對確保法律合規至關重要。
+貢獻者有責任確保 AI 內容符合服務條款與 BSD 授權。
+
+[[general-licensing-rule]]
+=== 一般規則：著作權歸屬
+
+通常而言，只要 AI 服務的服務條款允許，生成程式碼的著作權屬於向模型發出提示詞的使用者。
+然而，每個服務都有特定的使用條款，這些條款可能限制此所有權，
+或限制生成程式碼的使用方式。
+
+[[service-specific-terms]]
+=== 服務特定條款與限制
+
+以下資訊主要著重於使用大型語言模型生成用於 FreeBSD 的程式碼之相關條款。
+在使用這些服務來建立新的 AI 模型時，使用或服務條款往往會有更多限制，
+但這類用法並非本指南的重點。
+
+NOTE: 此資訊基於 2025 年 12 月公開可用的條款。服務條款經常更改，使用前請務必驗證目前條款。
+
+==== 程式碼生成的關鍵問題
+
+在審查服務條款時，你應該尋求以下關鍵問題的答案：
+
+* *誰擁有我生成的程式碼？* 你應保留所有輸出的所有權。
+* *誰擁有我的提示詞？* 你的提示詞與其他輸入應保留為你的機密財產。
+* *我的資料是否用於訓練？* 服務必須提供選擇退出的方式，讓你的提示詞與生成程式碼不被用於訓練其模型。
+  當在非公開程式碼上工作時，這點至關重要。
+
+以下部分總結各服務如何處理這些問題。
+
+==== 商業 AI 服務
+
+*GitHub Copilot* (https://docs.github.com/en/site-policy/github-terms/github-terms-for-additional-products-and-features[附加產品條款])::
+你保留使用 GitHub Copilot 撰寫的程式碼的所有權；
+Copilot 回傳的輸出稱為「建議（Suggestions）」，GitHub 不主張對這些建議擁有所有權。
+Copilot 的資料實務取決於產品與方案：
+
+- *Copilot Business / Copilot Enterprise*：這些授權層級受特定產品條款約束，
+  提供更強的合約資料保護，並限制 GitHub 使用你的提示詞與建議進行模型訓練。
+  有關目前詳細資訊，請參閱 GitHub Copilot 特定產品條款 (https://github.com/customer-terms/github-copilot-product-specific-terms)
+  與 Copilot 信任中心 (https://copilot.github.trust.page/)。
+- *個人 / 免費方案*：資料蒐集與使用因方案與你的帳戶設定而異。
+  在某些情況下（包括某些免費使用情境），Copilot 可能蒐集提示詞、建議與使用資料，
+  除非你在設定中選擇退出，否則該資料可用於改進模型。
+  在向服務送出未發佈或敏感程式碼之前，請務必確認目前設定與產品條款。
+
+*Mistral AI* (https://mistral.ai/terms[服務條款])::
+Mistral 提供開源模型與商業產品。
+輸出的權利與適用授權取決於具體模型與你存取它的方式。
+一些 Mistral 模型（例如 `Mistral-7B`）是在寬鬆授權（Apache 2.0）下發布的，
+但其他模型或商業產品可能帶有限制性或僅限評估的授權（例如 `Codestral` 風格產品）。
+如果你使用託管的 Mistral 服務，請在送出未發佈或敏感程式碼之前審查服務條款與隱私/資料使用設定；
+在將生成程式碼併入 FreeBSD 之前驗證模型授權。
+
+*OpenAI (ChatGPT, GPT models via API)* (https://openai.com/policies/service-terms/[服務條款])::
+OpenAI 聲明你可以使用生成的輸出（受模型可能重現的任何第三方內容影響），
+但資料使用政策因產品層級而異。
+API 流量（包括 Assistants/GPTs API 端點）預設不納入模型訓練；
+若客戶希望使用其 API 資料改進模型，必須明確選擇加入。
+ChatGPT Team 與 Enterprise 聲明客戶提示詞與輸出不會用於訓練，並視為機密。
+ChatGPT 消費者層級（包括免費與 Plus）會使用對話內容改進模型，_除非_ 你在設定中停用「為每個人改進模型」的控制。
+請注意，法律要求（如法院命令的訴訟保全）可能強制 OpenAI 無限期保留對話紀錄，
+這類要求可能會優先於使用者的刪除請求。
+在送出未發佈或敏感程式碼之前，請務必審查目前 OpenAI 產品條款與隱私控制。
+
+*Claude (Anthropic)* (https://www.anthropic.com/legal/consumer-terms[消費者條款], https://www.anthropic.com/legal/commercial-terms[商業條款])::
+你擁有你的提示詞與生成輸出。
+然而，消費者方案與商業方案之間有一個關鍵差異。
+_商業方案_（API 存取、「Team」與「Enterprise」）受商業條款約束，
+該條款在合約上限制 Anthropic 使用客戶內容進行模型訓練，並在多數商業產品中將輸入/輸出視為機密。
+_消費者方案_（claude.ai 上的免費、「Pro」與「Max」層級）屬於消費者條款；
+這些方案在帳戶設定中提供選擇退出控制，但有重要例外情況（例如，回饋評分與信任/安全審查可能仍會被處理）。
+對於涉及敏感或未發佈程式碼的 FreeBSD 貢獻，建議使用商業方案或直接 API 協議以取得更強資料保護。
+
+==== 寬鬆模型與服務
+
+*DeepSeek* (https://cdn.deepseek.com/policies/en-US/deepseek-terms-of-use.html[使用條款])::
+DeepSeek 的開放權重模型通常採寬鬆授權（例如 MIT），允許彈性使用。
+然而，若使用其託管聊天服務，請注意其條款可能允許使用輸入與輸出來改進服務。
+務必區分自建模型（安全/私有）與使用託管介面（受服務條款約束）。
+如同任何供應商，在送出未發佈程式碼或依賴生成輸出進行 FreeBSD 貢獻之前，請確認特定模型授權與服務的隱私/資料使用政策。
+
+*Meta Llama 3.1* (https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/LICENSE[社群授權])::
+這是模型授權，而非託管服務的服務條款；
+義務取決於你如何取得與運行模型。
+Meta 的社群授權允許在許多開發情境中商業使用，但包含歸屬要求（「Built with Llama」）
+以及對使用輸出改進其他大型語言模型與超大規模商業服務（7 億月活躍使用者門檻）的限制。
+如果你透過第三方平台或託管服務存取 Llama 模型，還需要審查該供應商的條款與任何附加義務。
+
+==== 較舊或限制較多的模型
+
+*Meta Llama 2 & 3* (https://github.com/meta-llama/llama/blob/main/LICENSE[Llama 2], https://github.com/meta-llama/llama3/blob/main/LICENSE[Llama 3])::
+與 Llama 3.1 類似，這些是模型授權。
+允許商業使用，但在歸屬（「Built with Meta Llama」）與 7 億活躍使用者門檻方面有相同限制。
+一個關鍵限制是你不能使用這些模型的輸出改進任何其他大型語言模型（除了其他基於 Llama 的模型）。
+雖然這對開發 AI 模型的人更為相關，但仍需注意。
+
+[[data-privacy-controls]]
+=== 資料隱私與訓練控制
+
+檢查服務是否使用你的資料進行訓練。
+大多數 AI 服務提供選項來控制如何使用你的資料進行訓練：
+
+* *選擇退出（opt-out）*：停用對你的輸入進行訓練。
+* *避免提供回饋*：若你想防止你的互動被用於訓練，請不要提供讚/踩回饋。
+* *仔細檢查隱私設定*：檢查帳戶設定中的資料使用控制。
+* *使用付費方案*：這些方案通常提供更好的隱私保護。
+* *法定保全*：請注意，不論你的設定如何，服務提供者可能在法律上被要求保留資料（包括已刪除的聊天紀錄）以進行訴訟或合規。
+
+*服務特定控制*::
+* *OpenAI*：API 輸入/輸出預設排除於訓練之外（可選擇加入）；
+  ChatGPT 消費者層級（免費/Plus）使用資料改進模型，除非你停用「為每個人改進模型」；
+  Team/Enterprise 聲明客戶內容不會用於訓練。
+  請注意，訴訟保全可能會阻止資料的永久刪除。
+* *Anthropic*：商業方案（API、Team、Enterprise）不使用資料進行訓練；消費者方案（免費、Pro、Max）允許透過設定選擇退出。
+* *GitHub Copilot*：適用特定產品條款。Copilot Business/Enterprise 提供更強的合約資料保護；
+  個人/免費方案可能蒐集提示詞與建議以用於服務改進或模型訓練，除非你選擇退出。
+  請參閱 GitHub 的 Copilot 產品條款與信任中心。
+* *本地模型*：自架模型提供完整資料隱私，但需要更多資源。
+
+[[compliance-requirements]]
+=== 確保符合 FreeBSD 要求
+
+在 FreeBSD 貢獻中使用 AI 生成的程式碼時，必須確保：
+
+1. *服務條款合規*：AI 服務條款允許商業使用，並且不主張對輸出的所有權。
+2. *BSD 授權相容性*：生成程式碼可在 FreeBSD 的 BSD 授權下發布且沒有衝突。
+3. *歸屬要求*：任何要求的歸屬都正確包含在提交訊息或文件中。
+4. *無限制性授權*：AI 服務不對輸出施加 GPL 或其他 copyleft 要求。
+
+[[verification-guidelines]]
+=== 驗證與盡職調查
+
+在將任何 AI 服務用於 FreeBSD 貢獻之前：
+
+1. *閱讀目前條款*：服務條款經常更改，務必確認最新版本。
+2. *了解訂閱要求*：許多服務將商業使用限制為付費訂閱者。
+3. *檢查企業與個人使用*：某些服務對企業與個人使用者有不同條款。
+4. *記錄你的合規性*：保留你使用的服務與條款資訊。
+5. *如有疑問，請勿使用*：若條款不清楚或限制較多，請使用替代服務或手動撰寫程式碼。
+
+[[safe-alternatives]]
+=== 推薦的安全替代方案
+
+為了最大的安全性與法律清晰度，請考慮：
+
+* *本地/自架模型*：自行運行的開源模型（例如 Llama 3.1、Codestral、StarCoder）通常限制較少。
+* *寬鬆服務*：像 DeepSeek 這樣明確允許不受限制使用生成程式碼的服務。
+* *手動開發*：沒有 AI 協助的傳統開發仍是避免授權相容性問題的最安全選擇。
+
+*重要提示*：本指南並非法律建議。
+有關在 FreeBSD 貢獻中使用 AI 工具的特定法律問題，請諮詢合格的法律顧問或聯絡 FreeBSD core@ 團隊。
+
+[[practical-guide]]
+== 在工作流程中使用 AI 的實用指南
+
+以下建議有助於安全有效地整合這些工具。
+
+*基線安全工作流程（除非你有更好的模式，否則從這裡開始）：*
+
+* *在分支中工作* 並保持 `git status` 乾淨，以便你可以輕鬆撤銷 AI 的錯誤。
+* 當提示包含未發佈程式碼時，*使用本地或付費/企業方案*；從提示中移除機密內容。
+* *將 AI 輸出視為不受信任的*：批判性閱讀它，新增或更新測試，
+  並在提交前執行相關的 `make` 或 `kyua` 目標。
+* 在你的筆記或提交訊息中 *記錄值得注意的提示與決策*，以便審查者知道想法來源。
+
+[[sweet-spots]]
+=== 最佳應用點：生成式 AI 的絕佳用途
+
+* *產出樣板程式碼：* 讓它生成重複的程式碼結構、`getopt` 解析迴圈、函式存根或標準資料型別。
+* *起草測試案例：* 這是極佳用途。
+  「這是函式... 為它撰寫一組單元測試，包括空指標、差一錯誤與最大輸入值的邊緣案例。」
+  但是，一定要仔細審查 AI 生成的測試，確保它們確實測試它們聲稱的內容——AI 可能生成通過但沒有真正驗證預期行為的測試。
+* *扮演你的黃色小鴨：* 用它來腦力激盪解決方案、探索替代演算法，或重構複雜函式。
+* *善用程式碼庫感知工具：* 許多現代 AI 工具可以在整個本地儲存庫建立索引。
+  這使它們能回答問題、執行重構，並在更了解周邊架構與慣例的上下文中生成程式碼。
+  這通常比提供零散片段更安全、更有效。
+* *自動化重複性開發任務：* 使用 AI 代理自動化任務，例如更新著作權年份、修復多個檔案的格式，或依據既有模式為新模組生成樣板程式碼。
+* *互動式除錯：* 現代 AI 工具可以透過分析錯誤訊息、建議修復方案，甚至在你注視下跨多個檔案實作解決方案來協助除錯。
+* *在翻譯上搶先一步：* 用它進行文件的初步翻譯。
+  *務必* 由具語言專業的人類審查輸出。
+* *起草與清理文件：* 讓它協助你起草手冊頁、整理註解，或提升文件清晰度與風格。
+* *用 AI 視覺化：* 使用 AI 從程式碼或架構的文字描述生成圖表
+  （例如，「為此 IPC 機制建立一個序列圖」）。
+  這可以是產生文件或釐清思路的快速方法。
+  與程式碼一樣，務必驗證圖表的正確性。
+
+[[high-risk]]
+=== 高風險領域：需要謹慎的地方
+
+* *生成複雜、不易理解的邏輯：* 這是引發微妙錯誤的配方。
+  AI 不適合設計大規模架構。
+  你的設計選擇與批判性思維必須主導實作。
+* *撰寫安全敏感程式碼：* 不要要求 AI 為加密、權限檢查或複雜的記憶體管理撰寫程式碼。
+  出現微妙且危險漏洞的風險很高。
+  事實上，一些對抗性行為者已在故意毒化公共訓練資料，
+  以便為未來過度依賴 AI 建議的開發者引入不安全模式。
+* *「盲目提交」：* 絕不要提交你未親自徹底審查與測試的 AI 生成程式碼。
+  將 AI 視為不受信任的合作者：就像新貢獻者的 patch 一樣，你必須完整審查並承擔責任。
+  就像對任何人類撰寫的程式碼一樣，進行程式碼審查與功能測試。
+
+[[pre-commit-checklist]]
+=== 如何避免陷阱：提交前檢查清單
+
+在你提交任何 AI 協助的程式碼之前，請過一遍這份心理檢查清單。
+
+. *完全負責與理解*
++
+你對每一行程式碼負責。
+以你對待自己程式碼的嚴格程度審查 AI 生成的輸出。
+
+--
+* 仔細檢查正確性、效率以及是否遵循 FreeBSD 編碼標準（`style(9)`）。
+* 主動找出微妙缺陷、邏輯錯誤與幻覺。
+* 不要提交你不理解的程式碼；重寫它或尋求人類指導，直到你能解釋它。
+--
+
+. *降低智慧財產權與授權風險*
++
+你的目標是確保最終結果是 _你_ 的智力成果，並符合所有授權要求。
++
+--
+* *驗證服務條款：* 在使用任何 AI 服務之前，請審查 <<licensing-tos,了解 AI 服務條款與授權>> 中的服務特定條款。
+  確保工具的使用條款允許你擁有輸出並在 FreeBSD 貢獻中使用它。
+* *檢查訂閱要求：* 許多 AI 服務將商業使用限制為付費訂閱者。
+  驗證你是否符合在 FreeBSD 中使用程式碼的任何訂閱要求。
+* *處理歸屬要求：* 某些服務（例如 Llama 3.1）需要明確的歸屬。
+  需要時在提交訊息中包含適當致謝。
+* *保持小而通用：* AI 最適合用於你已給出明確指示的小型、通用片段。
+* *重寫，不要複製貼上：* 若 AI 生成了大或複雜的程式碼區塊，
+  將其作為參考，並用你自己的「聲音」重寫。
+  這可最大限度降低它成為受著作權保護程式碼「記憶」區塊的風險。
+  這意味著理解邏輯並從頭實作，而非僅做表面修改。
+  目標是確保最終程式碼是你自己智力努力的產物，而非 AI 輸出的衍生物。
+--
+
+. *隱私*
++
+--
+* *小心提供尚未公開的程式碼：* 絕不要將未提交、實驗性或私有的 FreeBSD 程式碼貼到公共 AI 聊天服務中，除非你已明確確認該服務條款保證你的提示詞是私密且 _不_ 用於模型訓練。
+* *移除敏感細節：* 即使使用私有或本地模型，也要從提示詞中移除機密、權杖、合作夥伴識別資訊與其他需保密的上下文。
+* *優先使用本地模型：* 如有疑問，請使用自架或本地運行的模型進行敏感工作。
+  開源模型（如 Llama、Mistral 與 Phi）的效能已使它們成為許多任務的雲端服務可行且安全的替代方案。
+  請注意，僅使用本地模型只能提升隱私；你仍需小心，因為它仍可能產生幻覺。
+  用於訓練模型的資料也可能出現在結果中，因此你需要仔細審查輸出，以確保它確實是你自己智力工作的成果。
+* *稽核記錄：* 保留重要 AI 協助的紀錄以供審查。
+--
+
+. *縱深防禦*
++
+具備程式碼執行能力的 AI 工具需要多層保護：
++
+--
+* *使用沙箱：* 絕不要以自己的普通使用者權限執行 AI 工具。使用 FreeBSD jail、bhyve 虛擬機或專用的非特權使用者。
+** 僅限制存取必要目錄
+** 盡可能使用唯讀掛載
+** 絕不要授予對 `~/.ssh/`、憑證檔案或正式系統的存取權限
+* *網路隔離：*
+** 盡可能離線使用 AI 工具（本地模型）
+** 使用防火牆規則限制網路存取
+** 監控對外連線以防資料外洩
+* *命令驗證：*
+** 在執行前審查所有 AI 生成的命令
+** 對 `rm`、`chmod`、套件安裝或系統設定變更要特別小心
+** 若可能，使用 `dryrun` 模式
+* *資源限制：*
+** 設定 CPU、記憶體與磁碟配額以防資源耗盡
+** 對可能長時間執行的操作使用 `timeout`
+** 監控失控程序
+* *稽核記錄：*
+** 記錄所有 AI 工具活動
+** 保留執行命令與修改檔案的紀錄
+** 使用版本控制追蹤所有變更
+--
+
+. *透明度*
++
+若 AI 提供了重要貢獻，強烈建議在提交訊息中將工具列為共同作者。
+「重要」貢獻指 AI 生成的程式碼超過幾行樣板程式碼，
+或 AI 的建議構成邏輯核心。
+這可為審查者提供重要背景資訊，
+並協助他們套用適當的審查等級。
++
+關鍵原則是在適當處給予榮譽，並對程式碼來源保持透明。
++
+在將 AI 列為共同作者時，請使用如下格式：
++
+[literal]
+Assisted-by: [Tool Name] (for generating initial test cases)
++
+[literal]
+Co-authored-by: [Tool Name] (for implementing the core algorithm)
++
+*在 `Assisted-by` 與 `Co-authored-by` 之間選擇*：
++
+--
+* 當 AI 提供建議、腦力激盪或你做了大量修改或作為參考的小片段時，使用 `Assisted-by`。這適用於你是主要作者而 AI 作為助手的情況。
+* 當 AI 生成了最終程式碼的很大一部分（例如整個函式、複雜演算法或大量測試），而你只是進行審查並做了極少更改時，使用 `Co-authored-by`。若 AI 輸出構成最終成果的大部分實質內容，這樣更合適。
+--
+
+. *驗證*
++
+在提議變更之前，請執行相關單元測試（例如： `make check`、`kyua test`）、靜態分析與 style(9)/clang-format 工具。
+測試無法捕捉所有問題，但能幫助發現因 AI 建議造成的明顯退步。
+
+. *保留你的提示詞歷史*
++
+保留用於生成 AI 輸出的重要提示詞是一個好習慣。
+例如，你可以將它們保存在 Markdown 檔中，並在呼叫 CLI 工具時使用 `@` 引用它們，而不是直接貼上。
+這些紀錄不僅有助於追蹤輸出如何產生，也能作為改進你使用 AI 工具的寶貴學習材料。
+
+[[quick-checklist]]
+==== 快速提交前檢查清單
+
+在提交 AI 協助的程式碼之前，請確認：
+
+* [ ] 我理解每一行程式碼並能向審查者解釋
+* [ ] 程式碼遵循 style(9) 與 FreeBSD 慣例
+* [ ] 所有測試通過（`make check`、`kyua test`）
+* [ ] 已完成安全審查（特別是核心/特權程式碼）
+* [ ] 與 GPL 或其他授權程式碼沒有可疑的相似之處
+* [ ] 若是大型或複雜程式碼區塊，已用我自己的方式重寫
+* [ ] 若 AI 工具提供重要貢獻，我已加入 `Assisted-by:` 或 `Co-authored-by:` 標記
+
+[[prompt-engineering]]
+=== 提示詞工程最佳實務
+
+與 AI 工具的有效溝通需要深思熟慮的提示詞設計。
+精心設計的提示詞會產生更好、更可靠的結果。
+
+* *具體且清楚：* 不要說「修復此程式碼」，
+  而要說「透過確保在返回前釋放所有配置的緩衝區來修復清理函式中的記憶體洩漏」。
+* *提供上下文：* 包含關於程式碼庫、編碼標準（style(9)）與具體需求的相關背景。
+* *使用範例：* 向 AI 展示你想要的結果。
+  「重構此函式以符合 similar_function() 中使用的模式。」
+  這種方式也有助於降低程式碼遭受著作權爭議的風險，因為更容易判斷其來源。
+* *迭代精煉：* 從一般請求開始，再根據輸出進行調整。
+  例如：「讓錯誤處理更健壯」 -> 「為每個失敗情境新增特定錯誤碼。」
+* *設定限制：* 指明你不希望的內容。
+  「針對效能最佳化此函式，但不要更動公開 API 或引入新相依性。」
+* *要求解釋：* 要求 AI 解釋其推理。
+  「解釋為何你選擇此演算法而不是替代方案。」
+* *拆解複雜任務：* 大型請求通常產生糟糕結果。將它們拆成更小、更聚焦的任務。
+  建立詳細的執行清單，要求 AI 提出釐清問題並重寫給你審查，然後再讓它處理任務，是個好主意。
+* *版本控制整合：* 當要求程式碼變更時，指定你希望如何進行
+  （例如，指定你希望以逐步說明進行，並讓工具提交中間結果）。
+  這使人類更容易理解變更，通常也能得到更好的結果。
+
+結構良好的提示詞範例：
+
+[source,text]
+----
+Context: Working on FreeBSD kernel module for network packet filtering
+Task: Optimize the packet_filter() function in netpfil/pf/pf.c
+Requirements:
+- Maintain existing API compatibility
+- Follow style(9) guidelines
+- Focus on reducing memory allocations in the hot path
+- Preserve all existing functionality
+- Add comments explaining optimizations
+
+Please provide the optimized function with explanations for each change.
+----
+
+[[modern-workflows]]
+=== 現代 AI 開發工作流程
+
+當整合到結構化開發工作流程而非臨時使用時，AI 工具效果最好。
+
+==== AI 測試驅動開發
+
+使用 AI 加速 TDD 循環：
+
+. 撰寫失敗的測試（有或沒有 AI 協助）
+. 請 AI 實作功能以讓測試通過（在 AI 工作時仔細審查程式碼！）
+. 在保持測試通過的同時以 AI 協助重構
+. 讓 AI 建議用於測試的其他邊緣案例
+
+==== AI 輔助的程式碼審查
+
+現代工作流程在多個審查階段納入 AI：
+
+* *提交前審查：* 在提交之前使用 AI 審查你自己的程式碼
+* *自動化分析：* 將 AI 工具整合到建置/測試流程中，進行樣式、安全與邏輯檢查
+* *人機協作：* 審查者可以使用 AI 理解複雜變更或提出改進建議
+
+==== 迭代開發模式
+
+* *與 AI 結對程式設計：* 將 AI 視為程式設計夥伴，討論方法與替代方案
+* *漸進式強化：* 從 AI 生成的骨架開始，再以人類專業知識逐步改進
+* *文件驅動開發：* 讓 AI 協助生成指導實作的完整文件
+
+==== 建置與測試整合
+
+現代 AI 工具可以整合到自動化工作流程中：
+
+* *自動化程式碼生成：* 在大型程式碼庫中生成樣板程式碼或更新模式
+* *品質門檻：* 使用 AI 強制執行編碼標準並偵測反模式
+* *發行自動化：* 生成變更日誌、更新文件並準備發行說明
+
+==== 版本控制策略
+
+* *功能分支：* 為 AI 協助的實驗性工作使用獨立分支
+* *提交粒度：* 使用 AI 時進行更小、更聚焦的提交，以利審查與回滾
+* *協作歷史：* 使用清楚的提交訊息，指出 AI 協助的程度與類型
+
+[[reviewer-note]]
+=== 審查者注意事項
+當審查變更時，`Assisted-by` 或 `Co-authored-by` 標記應促使你對複雜程式碼變更施以額外審查，特別是設計邏輯或大量程式碼由 AI 生成時。
+
+* *檢查 IP 風險：* 程式碼片段是否在沒有歸屬的情況下看起來可疑地熟悉或「非顯而易見」？
+  提出疑慮。
+* *要求釐清：* 請貢獻者解釋邏輯。
+  這是驗證程式碼未被「盲目提交」且作者真正理解其變更的簡單方法。
+
+
+[[faq]]
+== 常見問題解答
+
+*Q1：在開發 FreeBSD 時，我可以使用 GitHub Copilot、Gemini、ChatGPT 等嗎？*
+
+可以，但要小心。
+只要你遵循本指南中的原則，就可以使用這些工具：
+你擁有輸出、仔細審查它，並遵守該工具的使用條款。
+審查 <<licensing-tos,了解 AI 服務條款與授權>> 部分中的服務特定條款以確保合規。
+至關重要的是，請確保條款聲明你擁有輸出，且你的輸入不會用於模型訓練或揭露給他方。
+
+*Q2：我需要揭露每一次 AI 使用嗎？*
+
+不需要。
+我們信任你會運用判斷力。
+微不足道的協助，如修正註解中的文法、重新格式化一行程式碼，
+或生成你完全重寫的 3 行函式存根，不需要揭露。
+若 AI 貢獻了實質性的程式碼、設計或文件，承認它是一種良好做法。
+
+*Q3：我可以將 FreeBSD 原始碼貼到 AI 工具中尋求協助嗎？*
+
+僅當該程式碼已經公開 _且_ 你已驗證該工具的服務條款保證你的提示詞不會用於訓練時才可以。
+絕不要將中間成果、未提交的 patch 或實驗性程式碼貼到公共雲端工具中。
+若可能，請使用自託管或本地模型。
+
+*Q4：如果通過測試，我可以提交嗎？*
+
+不，絕對不行。
+通過測試是必要但不充分的。
+AI 生成的程式碼可以通過測試，但仍可能包含：
+
+* 測試未涵蓋的安全漏洞
+* 效能退步
+* 授權違規
+* 技術負債（非慣用模式）
+* 未測試邊界情境的邏輯錯誤
+
+無論測試結果如何，所有程式碼都必須符合與人類貢獻相同的審查標準。
+AI 很擅長撰寫能通過測試的程式碼，但在正確性上不如人類警覺，因此務必進行徹底的程式碼審查。
+
+*Q5：如果 AI 輸出看起來與現有開源程式碼可疑地相似怎麼辦？*
+
+*不要提交它。*
+如果一段程式碼與其他授權下的程式碼（例如 GPL）非常相似，請自行從頭重寫，
+或請他人根據你的描述從頭實作（「淨室」實作）。
+
+在撰寫自己的實作後，搜尋同一功能的其他開源實作以比較方法並確保你的工作是原創的，
+特別是對於實質性的程式碼。
+如有疑問，一律將 AI 輸出視為第三方程式碼並驗證其來源。
+
+*Q6：我可以使用 AI 撰寫提交訊息嗎？*
+
+可以，但要謹慎。
+AI 有助於起草提交訊息，特別是用於摘要變更。
+然而，提交訊息是專案歷史的關鍵部分。
+你有責任確保訊息正確、遵循專案慣例，並提供變更背後的「為什麼」，而不只是「做了什麼」。
+AI 生成的提交訊息往往過於籠統，且通常偏重描述 _做了什麼_，
+而非 _為什麼_ 改變——這是未來開發者最需要的推理。
+絕不要在未仔細審查與編輯的情況下使用 AI 生成的提交訊息，確保其符合這些標準。
+
+*Q7：AI 可以協助文件與翻譯嗎？*
+
+可以，這其實是很好的低風險用例。
+雖然仍需要人工審查以確保技術準確性並維持文件標準，
+但它是很棒的「初稿」生成器，也是非常好的校對工具，
+能讓你的寫作符合技術寫作的最佳語言實務。
+
+*Q8：有安全使用 AI 工具的推薦設定嗎？*
+
+有：在沙箱環境（jail、VM 或獨立的非特權使用者）中執行可執行程式碼的 AI 工具。
+這能使其用於自動化操作更安全，
+例如進行試錯開發或除錯，有時能節省大量人工工作。
+避免讓它們存取私有儲存庫、SSH 金鑰或系統層級憑證。
+
+*Q9：若我不確定 AI 使用方式，我可以聯絡誰？*
+
+在相關郵件列表（例如 freebsd-hackers@ 或 freebsd-doc@）上討論，或聯絡你的審查者。
+若有授權問題，請在推送到 FreeBSD 原始碼儲存庫 _之前_ 諮詢 core@ 團隊。
+
+*Q10：我該如何處理想要對我的程式碼庫進行自主變更的 AI 工具？*
+
+在允許任何自主變更之前，務必審查 AI 的計畫。
+
+使用版本控制追蹤變更，在功能分支中工作，並保有回滾能力。
+絕不要讓 AI 工具以不受限制的存取權限操作正式系統或以提升權限執行。
+若任務需要特權操作（如安裝套件），請自行執行並通知 AI 操作已完成，而不是將這些任務委派給 AI 工具。
+
+*Q11：AI 建議與 AI 代理有何不同？*
+
+AI 建議提供你手動實作的程式碼片段或建議。
+AI 代理可自主執行任務，例如搜尋檔案、編輯與執行命令。
+AI 代理需要更仔細的監督，但可處理複雜的多步驟任務。
+
+*Q12：有哪些我應該知道的 FreeBSD 特定 AI 注意事項嗎？*
+
+是的，有幾個 FreeBSD 特定因素需要額外注意：
+
+* *核心開發*：AI 可能缺乏對 FreeBSD 核心架構、鎖定協定與記憶體管理的理解。
+  對核心程式碼生成要特別小心，並給出更具體的提示詞，而非依賴 AI 設計。
+* *平台特定模式*：AI 可能建議未充分利用 FreeBSD 效能或安全特性的模式，或假設其他作業系統的行為。
+* *向後相容性*：FreeBSD 維持向後相容，AI 可能不理解這點，導致建議破壞現有功能。
+* *安全模型*：FreeBSD 的權限分離與安全框架與其他系統不同；
+  AI 建議可能不遵循 FreeBSD 最佳實務。
+* *系統介面*：AI 可能建議不存在或在 FreeBSD 上運作方式不同的 Linux 特定系統呼叫或介面。
+
+請務必對照 FreeBSD 文件與既有程式碼庫模式驗證 AI 建議。
+
+*Q13：我如何確認 AI 服務條款允許我在 FreeBSD 中使用生成的程式碼？*
+
+檢查服務條款中的以下關鍵因素：
+
+* *所有權*：條款應聲明你擁有生成輸出
+* *商業使用*：服務應允許生成程式碼的商業使用（FreeBSD 可用於商業用途）
+* *訂閱要求*：許多服務將商業使用限制為付費訂閱者
+* *歸屬*：某些服務要求在你的程式碼或提交中致謝 AI 工具
+* *授權相容性*：確保沒有與 BSD 授權衝突的限制
+
+審查 <<licensing-tos,了解 AI 服務條款與授權>> 部分中的具體指引。
+如有疑問，請使用不同的服務或手動撰寫程式碼。
+
+*Q14：我如何隨時了解與 FreeBSD 相關的 AI 工具發展？*
+
+* 監控 FreeBSD 郵件列表（例如 freebsd-hackers@、freebsd-current@）以取得社群討論
+* 關注出現 AI 使用模式的 FreeBSD 開發者部落格與會議
+* 在將新的 AI 工具用於正式工作之前，先在沙箱環境中測試
+* 參與針對系統程式設計的 AI 最佳實務討論
+* 追蹤可能影響開源專案中 AI 工具使用的授權與法律發展
+
+[[conclusion]]
+=== 底線
+
+生成式 AI 正在以極快的速度發展。
+本指南將定期審查與更新以保持同步。
+
+然而，我們對程式碼品質、安全性與貢獻者問責制的標準保持不變。
+你對你提交的內容的品質、安全性與完整性負責。
+使用這些工具讓你的工作更好、更快，但絕不要讓它們取代你自己的批判性判斷。
