@@ -159,7 +159,10 @@ Do not ask the AI to "design a subsystem."
 Instead, make the architectural decisions yourself and use AI to implement specific, constrained components within that design.
 
 *Context Fatigue*::
-AI models have a limited "context window" and can lose track of earlier instructions as a conversation gets long.
+While modern AI models now support very large context windows (200K+ tokens),
+they can still lose track of earlier instructions as a conversation gets long,
+particularly when processing complex codebases or lengthy sessions.
+The quality of attention to earlier context may degrade even within the window limit.
 +
 _FreeBSD impact_: In lengthy sessions, the AI may forget constraints (like "use style(9)") or hallucinate details.
 _Mitigation_: Collaborate with the AI to create a clear plan first, then execute it step-by-step.
@@ -167,6 +170,7 @@ Have the AI propose the plan and wait for your confirmation before proceeding.
 Periodically restate key requirements (for example, "follow style(9)") to keep them in scope.
 Apply this same "propose then confirm" pattern to the code generation for each step
 to keep the context focused and the output easier to review.
+Even with larger context windows, breaking complex tasks into focused sessions produces better results.
 
 *Non-Deterministic Output*::
 AI outputs are inconsistent. The same prompt can produce different results each time,
@@ -262,10 +266,14 @@ and negative tests (verifying incorrect inputs are properly rejected).
 This approach helps catch both missing functionality and insufficient error handling,
 and confirms that your tests can actually detect bugs rather than passing trivially.
 
-*Example 2: AI-Assisted Code Review*
+*Example 2: AI-Assisted Security Auditing and Code Review*
 
-AI can help perform initial code review before human reviewers see your work.
-This example shows how to use AI to check FreeBSD coding standards and common issues:
+AI can be a powerful tool for security auditing and code review,
+especially for catching common vulnerability patterns before human reviewers see your work.
+Modern AI models are trained on vast amounts of security research, CVE databases,
+and vulnerability patterns, making them effective at identifying FreeBSD-specific security issues.
+
+*Quick Security Scan for Common Issues:*
 
 [source,shell]
 ----
@@ -281,8 +289,120 @@ Focus on FreeBSD-specific patterns and conventions.
 Flag any code that looks suspicious or non-idiomatic."
 ----
 
-*Important*: AI code review is a supplement. It does not replace human review.
-Use it to catch obvious errors early.
+*Deep Security Audit with FreeBSD-Specific Patterns:*
+
+For security-critical code, provide comprehensive FreeBSD-specific context:
+
+[source,shell]
+----
+# Detailed security review for kernel code
+cat sys/kern/kern_descrip.c | ai-tool --prompt "Perform a comprehensive security
+audit of this FreeBSD kernel code that handles file descriptors. Check for:
+
+**FreeBSD-Specific Memory Safety Issues:**
+- Before copyout(), verify the entire buffer is zeroed to prevent kernel memory leaks
+  (use bzero() or explicit zero initialization for all fields)
+- Check that copyout() targets are properly bounds-checked
+- Verify copyin() validates request sizes are reasonable before allocation
+- Ensure copyin() source addresses are validated (userland-accessible)
+- Check for proper use of copyinstr() with appropriate length limits
+- Look for stack or heap variables being copyout()'d without full initialization
+
+**FreeBSD Privilege Model:**
+- Verify priv_check() calls before privileged operations
+- Check prison_check() for jail-aware operations
+- Validate proper use of p_cansee(), p_candebug(), p_cansched()
+- Ensure MAC framework hooks are called where required (mac_check_*)
+- Check for proper credential handling with crhold()/crfree()
+
+**FreeBSD Locking Patterns:**
+- Verify proper lock ordering (consult lock_profile data)
+- Check for missing WITNESS assertions
+- Ensure locks are properly released on all error paths
+- Look for TOCTOU issues between lock release and reacquisition
+- Verify proper use of sx locks vs mutexes for the use case
+
+**FreeBSD-Specific API Usage:**
+- Check sbuf(9) usage: sbuf_new(), sbuf_finish(), sbuf_delete()
+- Verify proper ref-counting patterns (refcount(9))
+- Check SYSCTL declarations for proper permissions
+- Validate proper use of iterators and their safety guarantees
+
+**Example Vulnerabilities to Flag:**
+
+Bad (kernel memory leak via copyout):
+    struct stat sb;
+    // ... fill in only some fields of sb ...
+    sb.st_mode = vp->v_mode;
+    sb.st_uid = vp->v_uid;
+    // Padding and unset fields contain kernel stack data!
+    error = copyout(&sb, uap->sb, sizeof(sb));
+
+Good:
+    struct stat sb;
+    bzero(&sb, sizeof(sb));  // Zero entire structure first
+    sb.st_mode = vp->v_mode;
+    sb.st_uid = vp->v_uid;
+    // Now safe: unset fields are zeroed
+    error = copyout(&sb, uap->sb, sizeof(sb));
+
+Bad (missing size validation before copyin):
+    char *kbuf = malloc(uap->len, M_TEMP, M_WAITOK);
+    error = copyin(uap->buf, kbuf, uap->len);  // What if len is 1GB?
+
+Good:
+    if (uap->len > MAXPATHLEN)
+        return (EINVAL);
+    char *kbuf = malloc(uap->len, M_TEMP, M_WAITOK);
+    error = copyin(uap->buf, kbuf, uap->len);
+
+For each issue found, provide:
+1. Line number and code snippet
+2. Specific FreeBSD API or pattern violated
+3. Security impact (privilege escalation, info leak, DoS, etc.)
+4. Recommended fix following FreeBSD conventions"
+----
+
+*Differential Security Analysis:*
+
+When modifying security-critical code, compare security properties:
+
+[source,shell]
+----
+git diff main...feature-branch -- sys/kern/vfs_syscalls.c | ai-tool --prompt \
+"This diff modifies VFS system call handling. Analyze security implications:
+
+1. Are all copyout() buffers properly zeroed before filling?
+2. Are copyin() sizes validated against reasonable limits?
+3. Have privilege checks (priv_check) been maintained or added?
+4. Do error paths properly release locks and free resources?
+5. Is the jail/MAC framework context preserved?
+6. Could this introduce TOCTOU races or privilege escalation?
+
+Compare the security posture of old vs new code."
+----
+
+*Important Limitations and Best Practices:*
+
+AI security auditing is powerful but has critical limitations:
+
+* *AI recognizes patterns, not novel flaws:* It may miss complex logic vulnerabilities
+* *False positives are common:* Verify each finding yourself
+* *Context understanding is limited:* AI may not grasp subsystem-wide security invariants
+* *Use for initial triage:* Catch common mistakes before human security review
+* *Never skip human expert review:* Security-critical code needs experienced reviewer attention
+* *Combine with traditional tools:* Use alongside Clang Static Analyzer, Coverity, and fuzzing
+* *Test reported vulnerabilities:* Confirm exploitability before raising security concerns
+
+*Workflow Integration:*
+
+1. *Pre-commit scan:* Quick AI review before committing
+2. *Pre-review audit:* Deep AI analysis before requesting code review
+3. *Post-review verification:* Verify security fixes are complete
+4. *Test case generation:* Have AI generate security-focused test cases
+
+*Remember:* AI-assisted security auditing complements but never replaces manual security review,
+formal audits, penetration testing, fuzzing, and static analysis tools.
 
 *Example 3: Brainstorming Architecture*
 
@@ -662,25 +782,25 @@ AI tools with code execution capabilities require multiple layers of protection:
 +
 --
 * *Sandboxing:* Never run AI tools with your normal user privileges. Use FreeBSD jails, bhyve VMs, or dedicated unprivileged users.
-  ** Limit access to necessary directories only
-  ** Use read-only mounts where possible
-  ** Never grant access to `~/.ssh/`, credential files, or production systems
+** Limit access to necessary directories only
+** Use read-only mounts where possible
+** Never grant access to `~/.ssh/`, credential files, or production systems
 * *Network isolation:*
-  ** Use AI tools offline when possible (local models)
-  ** Restrict network access with firewall rules
-  ** Monitor outbound connections for data exfiltration
+** Use AI tools offline when possible (local models)
+** Restrict network access with firewall rules
+** Monitor outbound connections for data exfiltration
 * *Command validation:*
-  ** Review all AI-generated commands before execution
-  ** Be especially cautious with `rm`, `chmod`, package installation, or system configuration changes
-  ** Use `dryrun` modes when available
+** Review all AI-generated commands before execution
+** Be especially cautious with `rm`, `chmod`, package installation, or system configuration changes
+** Use `dryrun` modes when available
 * *Resource limits:*
-  ** Set CPU, memory, and disk quotas to prevent resource exhaustion
-  ** Use `timeout` for potentially long-running operations
-  ** Monitor for runaway processes
+** Set CPU, memory, and disk quotas to prevent resource exhaustion
+** Use `timeout` for potentially long-running operations
+** Monitor for runaway processes
 * *Audit trails:*
-  ** Log all AI tool activities
-  ** Maintain records of commands executed and files modified
-  ** Use version control to track all changes
+** Log all AI tool activities
+** Maintain records of commands executed and files modified
+** Use version control to track all changes
 --
 
 . *Transparency*
@@ -697,6 +817,16 @@ When you do credit the AI, use a format like:
 +
 [literal]
 Assisted-by: [Tool Name] (for generating initial test cases)
++
+[literal]
+Co-authored-by: [Tool Name] (for implementing the core algorithm)
++
+*Choosing between `Assisted-by` and `Co-authored-by`*:
++
+--
+* Use `Assisted-by` when the AI provided suggestions, brainstorming, or small snippets that you significantly modified or used as a reference. This is for when you are the primary author and the AI acted as an assistant.
+* Use `Co-authored-by` when the AI generated a significant, identifiable portion of the final code (such as an entire function, a complex algorithm, or a large set of tests) that you reviewed and used with minimal changes. This is more appropriate when the AI's output represents a substantial part of the final work.
+--
 
 . *Validate*
 +
@@ -723,7 +853,7 @@ Before committing AI-assisted code, verify:
 * [ ] Security review completed (especially for kernel/privileged code)
 * [ ] No suspicious similarity to GPL or other licensed code
 * [ ] Code has been rewritten in my own voice if it was a large/complex block
-* [ ] Added `Assisted-by:` tag if contribution is non-trivial
+* [ ] Added `Assisted-by:` or `Co-authored-by:` tag if contribution is non-trivial
 
 [[prompt-engineering]]
 === Prompt Engineering Best Practices
@@ -814,7 +944,7 @@ Modern AI tools can be integrated into automated workflows:
 
 [[reviewer-note]]
 === Note for Reviewers
-When reviewing a change, an `Assisted-by` tag should prompt you to apply additional scrutiny for non-trivial code changes, especially where design logic or large code segments were generated.
+When reviewing a change, an `Assisted-by` or `Co-authored-by` tag should prompt you to apply additional scrutiny for non-trivial code changes, especially where design logic or large code segments were generated.
 
 * *Check for IP Risk:* Does a segment of the code look suspiciously familiar or "non-obvious"
   without attribution?
