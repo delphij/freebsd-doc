@@ -61,6 +61,11 @@ This article supplements the FreeBSD Committer's Guide with AI-specific best pra
 It is not legal advice on licensing or intellectual property.
 Consult a lawyer for those questions.
 
+[NOTE]
+====
+For quick answers to common questions, see the <<faq,Frequently Asked Questions (FAQ)>> section.
+====
+
 '''
 
 toc::[]
