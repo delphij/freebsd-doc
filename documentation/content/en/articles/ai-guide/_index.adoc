@@ -83,7 +83,7 @@ Key implications:
 
 * *Full accountability*: Every AI-generated line requires the same scrutiny as your own code.
 * *No blind commits*: Review, test, and understand AI output before using it.
-* *Your expertise drives*: AI helps you decide; it does not decide for you.
+* *Your expertise drives*: AI offers options and draws attention to possible solutions, but you ultimately decide what is correct.
 * *Quality standards apply*: AI-assisted code must meet the same security, performance,
   and maintainability standards as any FreeBSD contribution.
 
@@ -102,6 +102,8 @@ and what their primary risks are.
 Models like Gemini, ChatGPT, Claude, and Copilot are trained on massive corpora of text and code from the public internet.
 They do not _think_ or _understand_ C the way you do;
 they predict the statistically probable next word or line of code based on patterns they have learned.
+As a result, they can give different answers to different users and may optimize for
+what they infer you want to hear rather than what is technically correct.
 
 [[benefits]]
 === The Benefits: Your "Rubber Duck" That Talks Back
@@ -132,6 +134,8 @@ It operates on probability, not truth, and will sound just as confident when it 
 _FreeBSD impact_: Non-existent system calls or fabricated kernel interfaces.
 _Mitigation_: Always verify APIs against the actual man pages (`man 2`, `man 9`) and header files.
 Treat AI output as a "hint" to be verified, never as a fact.
+Back this up with targeted testing and static analysis to catch mistakes that
+look plausible in review but fail under real checks.
 
 *Insecure Code Patterns*::
 AI models are trained on public code, which includes buggy and insecure examples.
@@ -158,10 +162,16 @@ AI generates code based on local context and sometimes misses the "big picture" 
 locking protocols, or performance constraints.
 It might suggest a naive implementation that works in isolation but causes bottlenecks under load.
 +
-_FreeBSD impact_: Violating locking orders, inefficient memory allocations, or breaking subsystem assumptions.
-_Mitigation_: You must define the architecture.
-Do not ask the AI to "design a subsystem."
-Instead, make the architectural decisions yourself and use AI to implement specific, constrained components within that design.
+_FreeBSD impact_: Violating locking orders, inefficient memory allocations, breaking subsystem assumptions,
+or regressing hot-path performance through cache-unfriendly layout
+(for example, growing frequently accessed structs past cache-line boundaries
+or introducing false sharing between CPUs).
+_Mitigation_: You must define the architecture and performance constraints.
+Do not ask the AI to "design a subsystem".
+Instead, specify hot-path rules up front: keep hot structs compact,
+separate hot/cold fields, avoid unnecessary fields in shared structures,
+and require before/after measurement for structural changes.
+Use AI for constrained implementation work within those rules.
 
 *Context Fatigue*::
 While modern AI models now support very large context windows (200K+ tokens),
@@ -189,11 +199,16 @@ If a prompt is critical to a workflow, save it with the surrounding context and 
 ==== Legal and Compliance Risks
 
 *Copyright Violations*::
-AI may reproduce copyrighted code verbatim.
-This risks GPL contamination or licensing conflicts.
+AI output is often novel, but it can sometimes reproduce verbatim
+or substantially similar copyrighted code.
+The risk appears low-frequency but non-zero, and legal treatment
+of AI-generated output is still evolving.
 +
 _FreeBSD impact_: Potential GPL contamination or other licensing conflicts
-in the BSD-licensed codebase.
+in the BSD-licensed codebase, plus provenance disputes during review.
+_Mitigation_: Treat non-trivial AI output like untrusted third-party code:
+check suspicious snippets with code search/reference tools, rewrite substantial
+blocks in your own implementation, and avoid merging code with unclear origin.
 
 *Privacy and Data Exposure*::
 Cloud-based AI services may use your code inputs for training, creating data leaks.
@@ -208,6 +223,10 @@ and FreeBSD's BSD licensing requirements.
 +
 _FreeBSD impact_: Code contributions that violate service terms
 or create licensing conflicts may need to be removed from the project.
+This risk is often higher with free or entry-tier plans, which may provide
+weaker contractual protections and broader provider rights over submitted content.
+Even when ownership language appears permissive, unclear or changing terms
+can create enough uncertainty to block use in FreeBSD contributions.
 
 ==== Operational Security Risks
 
@@ -226,6 +245,14 @@ _FreeBSD impact_: Introduction of backdoors or vulnerabilities through suggested
 AI tools with file access can expose secrets or damage files.
 +
 _FreeBSD impact_: Compromise of development credentials, source trees, or release infrastructure.
+
+*Review Process as a Safeguard*::
+The FreeBSD review process is designed to catch these issues.
+Reviewers are expected to verify not just that the code works,
+but that the submitter understands it and can vouch for its origin.
+Contributions that lack clear provenance or where the author cannot explain the implementation details
+will often be rejected, rather than accepted on the assumption that they are useful.
+This skepticism is a core part of our security model to prevent supply chain attacks and legal risks.
 
 [[examples]]
 == Real-World Examples
@@ -273,10 +300,10 @@ and confirms that your tests can actually detect bugs rather than passing trivia
 
 *Example 2: AI-Assisted Security Auditing and Code Review*
 
-AI can be a powerful tool for security auditing and code review,
-especially for catching common vulnerability patterns before human reviewers see your work.
-Modern AI models are trained on vast amounts of security research, CVE databases,
-and vulnerability patterns, making them effective at identifying FreeBSD-specific security issues.
+AI can help with security auditing and code review as an initial triage tool
+for common vulnerability patterns before human reviewers see your work.
+Treat it as a pattern matcher, not a security oracle:
+it can accelerate review, but all findings and fixes still require human validation.
 
 *Quick Security Scan for Common Issues:*
 
@@ -399,14 +426,20 @@ with clear expectations.
 
 **Limitations**
 1. Pattern-based, not insight-driven: often misses novel or complex logic vulnerabilities
-2. Produces false positives and misleading findings
+2. Produces false positives and misleading findings, may repeat bad advice with confidence.
 3. Lacks full understanding of subsystem invariants, threat models, and design intent
+4. May hallucinate CVE IDs, severity scores, or advisory details
+5. May misapply Linux-oriented advisories to FreeBSD due to kernel/libc/API differences
+6. May suggest incomplete or unsafe fixes when critical context is missing
 
 **Usage guidelines**
 1. Treat results as hints, not conclusions
 2. Manually validate all reported issues and test exploitability
 3. Never substitute AI review for experienced human security review
 4. Use only in combination with established tools (e.g., Clang Static Analyzer, Coverity, fuzzing)
+5. For any cited CVE, verify details against original sources (MITRE, NVD, vendor advisories)
+6. Confirm affected products, versions, and exploit preconditions actually match FreeBSD
+7. Treat AI output as a starting point only, not a final security disposition
 
 *Workflow Integration:*
 
@@ -833,15 +866,9 @@ When you do credit the AI, use a format like:
 [literal]
 Assisted-by: [Tool Name] (for generating initial test cases)
 +
-[literal]
-Co-authored-by: [Tool Name] (for implementing the core algorithm)
-+
-*Choosing between `Assisted-by` and `Co-authored-by`*:
-+
---
-* Use `Assisted-by` when the AI provided suggestions, brainstorming, or small snippets that you significantly modified or used as a reference. This is for when you are the primary author and the AI acted as an assistant.
-* Use `Co-authored-by` when the AI generated a significant, identifiable portion of the final code (such as an entire function, a complex algorithm, or a large set of tests) that you reviewed and used with minimal changes. This is more appropriate when the AI's output represents a substantial part of the final work.
---
+We recommend using `Assisted-by` for all AI contributions, regardless of the volume of code generated.
+The `Co-authored-by` trailer is reserved for human contributors who share creative control and responsibility.
+Since you are ultimately responsible for the code and its design, you are the author, and the AI is a tool that assisted you.
 
 . *Validate*
 +
@@ -866,9 +893,10 @@ Before committing AI-assisted code, verify:
 * [ ] Code follows style(9) and FreeBSD conventions
 * [ ] All tests pass (`make check`, `kyua test`)
 * [ ] Security review completed (especially for kernel/privileged code)
+* [ ] For hot-path struct changes, validated cache/layout impact with size/layout inspection and benchmarks
 * [ ] No suspicious similarity to GPL or other licensed code
 * [ ] Code has been rewritten in my own voice if it was a large/complex block
-* [ ] Added `Assisted-by:` or `Co-authored-by:` tag if contribution is non-trivial
+* [ ] Added `Assisted-by:` tag if contribution is non-trivial
 
 [[prompt-engineering]]
 === Prompt Engineering Best Practices
@@ -959,7 +987,7 @@ Modern AI tools can be integrated into automated workflows:
 
 [[reviewer-note]]
 === Note for Reviewers
-When reviewing a change, an `Assisted-by` or `Co-authored-by` tag should prompt you to apply additional scrutiny for non-trivial code changes, especially where design logic or large code segments were generated.
+When reviewing a change, an `Assisted-by` tag should prompt you to apply additional scrutiny for non-trivial code changes, especially where design logic or large code segments were generated.
 
 * *Check for IP Risk:* Does a segment of the code look suspiciously familiar or "non-obvious"
   without attribution?
