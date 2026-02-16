@@ -91,6 +91,40 @@ Here is a convenient list of `__FreeBSD_version` values as defined in https://cg
 |December 9, 2025
 |16.0-CURRENT after changing the `BUS_ALLOC_RESOURCE` bus driver method to pass the `rid` argument by value.
 
+|1600006
+|gitref:c10447a9256b561bf2edf26b5abf5f28071a15c7[repository="src",length=12]
+|December 15, 2025
+|16.0-CURRENT after the `BIOCGETIFLIST` ioctl was added to bpf(4).
+
+|1600007
+|gitref:1a26b161d829c9b52fec87fe44b4db50e8f046ff[repository="src",length=12]
+|December 18, 2025
+|16.0-CURRENT after vmap_pfn() was added to the Linuxolator.
+
+|1600008
+|gitref:66eedcb0224df03e56513f3caf1df93a52b6a919[repository="src",length=12]
+|January 13, 2026
+|16.0-CURRENT after struct sdt_probe ABI was broken to fix the probe ID type.
+
+|1600009
+|gitref:22569a1d80203bd4835a1d5d4660de5dbe334509[repository="src",length=12]
+|January 16, 2026
+|16.0-CURRENT after changing the mac(9) policy interface to include entry points for jail operations.
+
+|1600010
+|gitref:ac5a19ec6989675c8ec6c3ca245dba243d1a6416[repository="src",length=12]
+|January 23, 2026
+|16.0-CURRENT after making xdrproc_t to always take two arguments.
+
+|1600011
+|gitref:d185e9fae91a48041363e36a6ee4a2a9c567fc16[repository="src",length=12]
+|January 25, 2026
+|16.0-CURRENT after changes to eventfd API that exposes that API in linuxkpi for DRM drivers.
+
+|(not changed)
+|gitref:576ee62dd2e5e0454a5316eb9207f4ebaa543171[repository="src",length=12]
+|January 25, 2026
+|16.0-CURRENT after changing IPv6 neighbor discovery context storage directly in struct in6_ifextra.  It is a KPI change that may affect build of network related external kernel modules.
 |===
 
 [[versions-15]]
@@ -1033,6 +1067,11 @@ Here is a convenient list of `__FreeBSD_version` values as defined in https://cg
 |gitref:108b5d90bc1fa8ed83cfd6f58e636193e03e8049[repository="src",length=12]
 |December 18, 2025
 |14.3-STABLE after changing the `bus_alloc_resource` API to accept the `rid` argument by value.
+
+|1403508
+|gitref:16e2bb8177bd86a954ef968551d8c8980582381a[repository="src",length=12]
+|January 16, 2026
+|14.3-STABLE after various changes to LinuxKPI.
 
 |===
 

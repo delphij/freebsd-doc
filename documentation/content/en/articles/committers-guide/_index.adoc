@@ -2588,11 +2588,13 @@ Typically used when there is no PR, for example if the issue was reported on
 a mailing list.
 
 |`Submitted by:` +
-(deprecated)
-|This has been deprecated with the migration to git; submitted patches should have the author set by using `git commit --author` with a full name and valid email.
+(discouraged)
+|Name of an author who submitted a change without providing a full valid patch, especially without a valid email.
+Submitted patches should have the author set by using `git commit --author` with a full name and valid email.
+Before the migration to git allowed separate author and committer fields, this was used for contributed patches.
 
 |`Reviewed by:`
-a|
+|
 The name and e-mail address of the person or people that reviewed the change; for developers, just the username on the FreeBSD cluster. If a patch was submitted to a mailing list for review, and the review was favorable, then just include the list name. If the reviewer is not a member of the project, provide the name, email, and if ports an external role like maintainer:
 
 Reviewed by a developer:
@@ -2645,7 +2647,7 @@ Approved by: re (username)
 |The name of the project (if any) from which the code was obtained. Do not use this line for the name of an individual person.
 
 |`Fixes:`
-|The Git short hash and the title line of a commit that is fixed by this change as returned by `git log -n 1 --pretty=format:'%h ("%s")' GIT-COMMIT-HASH`.
+|The Git short hash and the title line of a commit that is fixed by this change as returned by `git log -n1 --format='%h ("%s")' GIT-COMMIT-HASH`.
 We include the commit title so that the referenced commit can be located even in the case that a future VCS migration invalidates hash references.
 
 |`MFC after:`
@@ -2675,6 +2677,11 @@ We include the commit title so that the referenced commit can be located even in
 
 |`Pull Request:`
 |This change was submitted as a pull request or merge request against one of FreeBSD's public read-only Git repositories.
+It should include the entire URL to the pull request, as these often act as code reviews for the code.
+For example: `https://github.com/freebsd/freebsd-src/pull/745`
+
+| `Closes:`
+| This change concludes the patch series discussed at the specified Github pull request, and closes that request.
 It should include the entire URL to the pull request, as these often act as code reviews for the code.
 For example: `https://github.com/freebsd/freebsd-src/pull/745`
 
@@ -2986,7 +2993,7 @@ You can find out more about Bugzilla at:
 The FreeBSD Project utilizes https://reviews.freebsd.org[Phabricator] for code review requests.
 See the https://wiki.freebsd.org/Phabricator[Phabricator wiki page] for details.
 
-Please use the `git arc` command provided by `devel/freebsd-git-devtools` (install the port or package, then type `git help arc` for documentation) to create and update Phabricator reviews.
+Please use the `git arc` command provided by `devel/freebsd-git-arc` (install the port or package, then type `git help arc` for documentation) to create and update Phabricator reviews.
 This will make it easier for others to review and test your patches.
 
 Committers with non-``FreeBSD.org`` Phabricator accounts can have the old account renamed to the ``FreeBSD.org`` account by following these steps:
@@ -3304,31 +3311,36 @@ The versions of supported compilers for a given branch such as `main` or `stable
 The authoritative source for supported compiler versions are automated CI jobs tested in GitHub's cross-build actions and Jenkins.
 
 [.tblbasic]
-[cols="10*",options="header",]
+[cols="12*",options="header",]
 |===
 |Branch | In-tree Compiler
 |llvm12 | llvm13 | llvm14 | llvm15 | llvm18
-|amd64-gcc12 | amd64-gcc13 | amd64-gcc14
+|amd64-gcc12 | amd64-gcc13 | amd64-gcc14 | amd64-gcc15
+|riscv64-gcc15
 
 |main | llvm 19
 |   |   |   | Y | Y
-| Y | Y | Y
+| Y | Y | Y | Y
+| Y
 
 |stable/15 | llvm 19
 |   |   | Y |   | Y
-| Y | Y | Y
+| Y | Y | Y |
+|
 
 |stable/14 | llvm 19
 | Y | Y | Y |   |
-| Y |   | Y
+| Y |   | Y |
+|
 
 |stable/13 | llvm 19
 | Y | Y | Y |   |
-| Y |   | Y
+| Y |   | Y |
+|
 |===
 
-GCC toolchains are tested for amd64 via CI jobs in Jenkins.
-LLVM toolchains are tested for aarch64 and arm64 in GitHub's cross-build actions.
+GCC toolchains are tested for amd64 and riscv64 via CI jobs in Jenkins.
+LLVM toolchains are tested for aarch64 and amd64 in GitHub's cross-build actions.
 
 === Other Suggestions
 

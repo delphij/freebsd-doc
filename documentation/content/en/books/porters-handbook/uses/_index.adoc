@@ -617,11 +617,11 @@ Add dependency on package:math/eigen[].
 [[uses-elextronfix]]
 == `electronfix`
 
-Possible arguments: `31`, `32`, `33`
+Possible arguments: `37`, `38`, `39`
 
 Provide support for easy porting of Electron applications that are distributed in binary form.
-Adds a build and run time dependency on package:devel/electron31[],
-package:devel/electron32[], or package:devel/electron33[] depending on the argument used.
+Adds a build and run time dependency on package:devel/electron37[],
+package:devel/electron38[], or package:devel/electron39[] depending on the argument used.
 
 The framework provides the following variables that can be set by ports:
 
@@ -797,14 +797,6 @@ Possible arguments: (none)
 
 Changes some default behavior of build systems to allow installing as a user.
 See https://wiki.debian.org/FakeRoot[] for more information on `fakeroot`.
-
-[[uses-fam]]
-== `fam`
-
-Possible arguments: (none), `fam`, `gamin`
-
-Uses a File Alteration Monitor as a library dependency, either package:devel/fam[] or package:devel/gamin[].
-End users can set WITH_FAM_SYSTEM to specify their preference.
 
 [[uses-firebird]]
 == `firebird`
@@ -1048,10 +1040,12 @@ See crossref:special[using-gnome,Using GNOME] for more information.
 Ports should not be created for Go libs, see crossref:special[go-libs,Go Libraries] for more information.
 ====
 
-Possible arguments: (none), `N.NN`, `N.NN-devel`, `modules`, `no_targets`, `run`
+Possible arguments: (none), `N.NN`, `N.NN+`, `N.NN-devel`, `modules`, `no_targets`, `run`
 
 Sets default values and targets used to build Go software.
 A build dependency on the Go compiler port is added, port maintainers can set version required.
+If the `X.Y+` format is used then Go `X.Y` will be used unless the default go
+version is higher than `X.Y` in which case the default version will be used.
 By default the build is performed in GOPATH mode.
 If Go software uses modules, the modules-aware mode can be switched on with `modules` argument.
 `no_targets` will setup build environment like `GO_ENV`, `GO_BUILDFLAGS` but skip creating extract and build targets.
@@ -1118,12 +1112,13 @@ Registers a dependency on package:textproc/groff[] if not present in the base sy
 [[uses-gssapi]]
 == `gssapi`
 
-Possible arguments: (none), `base` (default), `heimdal`, `mit`, `flags`, `bootstrap`
+Possible arguments: (none), `base` (default), `heimdal`, `mit`, `mit-devel`, `flags`, `bootstrap`
 
 Handle dependencies needed by consumers of the GSS-API.
 Only libraries that provide the Kerberos mechanism are available.
 By default, or set to `base`, the GSS-API library from the base system is used.
-Can also be set to `heimdal` to use package:security/heimdal[], or `mit` to use package:security/krb5[].
+Can also be set to `heimdal` to use package:security/heimdal[], `mit` to use
+package:security/krb5[], or `mit-devel` to use package:security/krb5-devel[].
 
 When the local Kerberos installation is not in `LOCALBASE`, set `HEIMDAL_HOME` (for `heimdal`) or `KRB5_HOME` (for `krb5`) to the location of the Kerberos installation.
 
@@ -1137,7 +1132,7 @@ These variables are exported for the ports to use:
 * `GSSAPILIBS`
 * `GSSAPI_CONFIGURE_ARGS`
 
-The `flags` option can be given alongside `base`, `heimdal`, or `mit` to automatically add `GSSAPICPPFLAGS`, `GSSAPILDFLAGS`, and `GSSAPILIBS` to `CFLAGS`, `LDFLAGS`, and `LDADD`, respectively.
+The `flags` option can be given alongside `base`, `heimdal`, `mit`, or `mit-devel` to automatically add `GSSAPICPPFLAGS`, `GSSAPILDFLAGS`, and `GSSAPILIBS` to `CFLAGS`, `LDFLAGS`, and `LDADD`, respectively.
 For example, use `base,flags`.
 
 The `bootstrap` option is a special prefix only for use by package:security/krb5[] and package:security/heimdal[].

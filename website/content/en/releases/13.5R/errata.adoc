@@ -48,6 +48,8 @@ For a list of all FreeBSD CERT security advisories, see https://www.FreeBSD.org/
 |link:https://www.FreeBSD.org/security/advisories/FreeBSD-SA-25:10.unbound.asc[FreeBSD-SA-25:10.unbound] |26 November 2025 |Cache poison in local-unbound service
 |link:https://www.FreeBSD.org/security/advisories/FreeBSD-SA-25:11.ipfw.asc[FreeBSD-SA-25:11.ipfw] |16 December 2025 |ipfw denial of service
 |link:https://www.FreeBSD.org/security/advisories/FreeBSD-SA-25:12.rtsold.asc[FreeBSD-SA-25:12.rtsold] |16 December 2025 |Remote code execution via ND6 Router Advertisements
+|link:https://www.FreeBSD.org/security/advisories/FreeBSD-SA-26:01.openssl.asc[FreeBSD-SA-26:01.openssl] |27 January 2026 |Multiple vulnerabilities in OpenSSL
+|link:https://www.FreeBSD.org/security/advisories/FreeBSD-SA-26:02.jail.asc[FreeBSD-SA-26:02.jail] |27 January 2026 |Jail escape by a privileged user via nullfs
 |===
 
 [[errata]]
@@ -64,6 +66,7 @@ For a list of all FreeBSD CERT security advisories, see https://www.FreeBSD.org/
 |link:https://www.FreeBSD.org/security/advisories/FreeBSD-EN-25:11.ena.asc[FreeBSD-EN-25:11.ena] |2 July 2025 |ena resets and kernel panic on Nitro v4 or newer instances
 |link:https://www.FreeBSD.org/security/advisories/FreeBSD-EN-25:15.arm64.asc[FreeBSD-EN-25:15.arm64] |16 September 2025 |arm64 syscall(2) allows unprivileged user to panic kernel
 |link:https://www.FreeBSD.org/security/advisories/FreeBSD-EN-25:18.freebsd-update.asc[FreeBSD-EN-25:18.freebsd-update] |30 September 2025 |freebsd-update(8) installs libraries in incorrect order
+|link:https://www.FreeBSD.org/security/advisories/FreeBSD-EN-26:03.vm.asc[FreeBSD-EN-26:03.vm] |27 January 2026 |The page fault handler fails to zero memory
 |===
 
 [[open-issues]]

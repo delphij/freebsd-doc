@@ -1,11 +1,12 @@
 #!/usr/local/bin/perl -T
 #
-# Copyright (c) 1996-2025 Wolfram Schneider <wosch@FreeBSD.org>
-# All rights reserved.
+# SPDX-License-Identifier: BSD-2-Clause
+# Copyright (c) 1996-2026 Wolfram Schneider <wosch@FreeBSD.org>
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions
 # are met:
+#
 # 1. Redistributions of source code must retain the above copyright
 #    notice, this list of conditions and the following disclaimer.
 # 2. Redistributions in binary form must reproduce the above copyright
@@ -59,6 +60,13 @@ my $download_streaming_caching = 0;
 
 # enable to download the manual pages as a tarball
 my $enable_download = 1;
+
+# show the drop-down menu for architectures
+my $enable_architectures = 1;
+
+# show the drop-down menu for architectures even if there are no know architectures
+my $enable_architectures_none = 0;
+
 
 #$command{'man'} = '/usr/bin/man';    # 8Bit clean man
 $command{'man'} = '/usr/local/www/bin/man.wrapper';    # set CPU limits
@@ -270,7 +278,9 @@ $sectionpath = {
     'CentOS 7.8' => { 'path' => '0p:1:1p:2:3:3p:3t:4:5:6:7:8:9:n' },
     'CentOS 7.9' => { 'path' => '0p:1:1p:2:3:3p:3t:4:5:6:7:8:9:n' },
 
+    'Rocky 10.1' => { 'path' => '0p:1:1p:2:3:3p:4:5:6:7:8:9:n', },
     'Rocky 10.0' => { 'path' => '0p:1:1p:2:3:3p:4:5:6:7:8:9:n', },
+    'Rocky 9.7' => { 'path' => '0p:1:1p:2:3:3p:4:5:6:7:8:9:n', },
     'Rocky 9.6' => { 'path' => '0p:1:1p:2:3:3p:4:5:6:7:8:9:n', },
     'Rocky 9.5' => { 'path' => '0p:1:1p:2:3:3p:4:5:6:7:8:9:n', },
     'Rocky 9.4' => { 'path' => '0p:1:1p:2:3:3p:4:5:6:7:8:9:n', },
@@ -449,8 +459,8 @@ $manPathDefault = 'FreeBSD 15.0-RELEASE and Ports';
 
     'FreeBSD 15.0-STABLE',
 "$manLocalDir/FreeBSD-15.0-STABLE/man:$manLocalDir/FreeBSD-15.0-STABLE/openssl/man",
-    'FreeBSD 14.3-STABLE',
-"$manLocalDir/FreeBSD-14.3-STABLE/man:$manLocalDir/FreeBSD-14.3-STABLE/openssl/man",
+    'FreeBSD 14.4-STABLE',
+"$manLocalDir/FreeBSD-14.4-STABLE/man:$manLocalDir/FreeBSD-14.4-STABLE/openssl/man",
     'FreeBSD 14.3-RELEASE',
 "$manLocalDir/FreeBSD-14.3-RELEASE/man:$manLocalDir/FreeBSD-14.3-RELEASE/openssl/man",
     'FreeBSD 14.2-RELEASE',
@@ -880,7 +890,9 @@ $manPathDefault = 'FreeBSD 15.0-RELEASE and Ports';
     'CentOS 7.8', "$manLocalDir/CentOS-7.8",
     'CentOS 7.9', "$manLocalDir/CentOS-7.9",
 
+    'Rocky 10.1', "$manLocalDir/Rocky-10.1",
     'Rocky 10.0', "$manLocalDir/Rocky-10.0",
+    'Rocky 9.7', "$manLocalDir/Rocky-9.7",
     'Rocky 9.6', "$manLocalDir/Rocky-9.6",
     'Rocky 9.5', "$manLocalDir/Rocky-9.5",
     'Rocky 9.4', "$manLocalDir/Rocky-9.4",
@@ -957,8 +969,8 @@ $manPathDefault = 'FreeBSD 15.0-RELEASE and Ports';
     'Debian 9.13.0', "$manLocalDir/Debian-9.13.0/man:$manLocalDir/Debian-9.13.0/misc",
     'Debian 10.13.0', "$manLocalDir/Debian-10.13.0/man:$manLocalDir/Debian-10.13.0/misc",
     'Debian 11.11.0', "$manLocalDir/Debian-11.11.0/man:$manLocalDir/Debian-11.11.0/misc",
-    'Debian 12.12.0', "$manLocalDir/Debian-12.12.0/man:$manLocalDir/Debian-12.12.0/misc",
-    'Debian 13.2.0', "$manLocalDir/Debian-13.2.0/man:$manLocalDir/Debian-13.2.0/misc",
+    'Debian 12.13.0', "$manLocalDir/Debian-12.13.0/man:$manLocalDir/Debian-12.13.0/misc",
+    'Debian 13.3.0', "$manLocalDir/Debian-13.3.0/man:$manLocalDir/Debian-13.3.0/misc",
     'Debian 14.0 unstable', "$manLocalDir/Debian-unstable/man:$manLocalDir/Debian-unstable/misc",
 
     'Ubuntu 23.10 mantic', "$manLocalDir/Ubuntu-mantic-23.10/man:$manLocalDir/Ubuntu-mantic-23.10/misc",
@@ -1015,9 +1027,9 @@ $manPathDefault = 'FreeBSD 15.0-RELEASE and Ports';
     # alias SunOS 0.4, apparently released in April 1983 based on 4.2BSD beta
     'Sun UNIX 0.4', "$manLocalDir/Sun-UNIX-0.4",
 
-    'macOS 26.2',   "$manLocalDir/macOS-26.2/man:$manLocalDir/macOS-26.2/developer-man:$manLocalDir/macOS-26.2/developer-platform-sdk-man:$manLocalDir/macOS-26.2/xctoolchain-man",  
-    'macOS 15.7.3',   "$manLocalDir/macOS-15.7.3/man:$manLocalDir/macOS-15.7.3/developer-man:$manLocalDir/macOS-15.7.3/developer-platform-sdk-man:$manLocalDir/macOS-15.7.3/xctoolchain-man",  
-    'macOS 14.8.3',   "$manLocalDir/macOS-14.8.3/man:$manLocalDir/macOS-14.8.3/developer-man:$manLocalDir/macOS-14.8.3/developer-platform-man:$manLocalDir/macOS-14.8.3/developer-platform-sdk-man:$manLocalDir/macOS-14.8.3/xctoolchain-man",  
+    'macOS 26.3',   "$manLocalDir/macOS-26.3/man:$manLocalDir/macOS-26.3/developer-man:$manLocalDir/macOS-26.3/developer-platform-sdk-man:$manLocalDir/macOS-26.3/xctoolchain-man",  
+    'macOS 15.7.4',   "$manLocalDir/macOS-15.7.4/man:$manLocalDir/macOS-15.7.4/developer-man:$manLocalDir/macOS-15.7.4/developer-platform-sdk-man:$manLocalDir/macOS-15.7.4/xctoolchain-man",  
+    'macOS 14.8.4',   "$manLocalDir/macOS-14.8.4/man:$manLocalDir/macOS-14.8.4/developer-man:$manLocalDir/macOS-14.8.4/developer-platform-man:$manLocalDir/macOS-14.8.4/developer-platform-sdk-man:$manLocalDir/macOS-14.8.4/xctoolchain-man",  
     'macOS 13.6.5', "$manLocalDir/macOS-13.6.5/man:$manLocalDir/macOS-13.6.5/developer-man:$manLocalDir/macOS-13.6.5/developer-platform-man:$manLocalDir/macOS-13.6.5/developer-platform-sdk-man:$manLocalDir/macOS-13.6.5/xctoolchain-man",  
     'macOS 12.7.3', "$manLocalDir/macOS-12.7.3/man:$manLocalDir/macOS-12.7.3/developer-man:$manLocalDir/macOS-12.7.3/developer-platform-man:$manLocalDir/macOS-12.7.3/developer-platform-sdk-man:$manLocalDir/macOS-12.7.3/xctoolchain-man",
     'macOS 11.1',    "$manLocalDir/macOS-11.1",
@@ -1234,7 +1246,7 @@ while ( ( $key, $val ) = each %manPath ) {
 
     'freebsd-stable',   'FreeBSD 15.0-STABLE',
     'freebsd-stable15', 'FreeBSD 15.0-STABLE',
-    'freebsd-stable14', 'FreeBSD 14.3-STABLE',
+    'freebsd-stable14', 'FreeBSD 14.4-STABLE',
     'freebsd-stable13', 'FreeBSD 13.5-STABLE',
 
     'freebsd-current',       'FreeBSD 16.0-CURRENT',
@@ -1244,12 +1256,12 @@ while ( ( $key, $val ) = each %manPath ) {
     'slackware',  'Linux Slackware 3.1',
     'redhat',     'Red Hat 9',
     'suse',       'SuSE 11.3',
-    'debian',     'Debian 13.2.0',
+    'debian',     'Debian 13.3.0',
     'ubuntu',     'Ubuntu 24.04 noble',
     'dragonfly',  'DragonFly 6.4.2',
     'centos',     'CentOS 7.9',
-    'rocky',      'Rocky 10.0',
-    'linux',      'Debian 13.2.0',
+    'rocky',      'Rocky 10.1',
+    'linux',      'Debian 13.3.0',
     'darwin',     'Darwin 8.0.1/ppc',
     'opendarwin', 'OpenDarwin 7.2.1',
     'macosx',     'Darwin 8.0.1/ppc',
@@ -1269,7 +1281,7 @@ while ( ( $key, $val ) = each %manPath ) {
     'sunos5',        'SunOS 5.10',
     'sunos4',        'SunOS 4.1.3',
     'sunos',         'SunOS 4.1.3',
-    'macos',         'macOS 26.2',
+    'macos',         'macOS 26.3',
     'plan9',         'Plan 9',
     'osf1',          'OSF1 V5.1/alpha',
     'true64',        'OSF1 V5.1/alpha',
@@ -1500,6 +1512,8 @@ sub do_man {
     else {
         $arch = "";
     }
+
+    $arch = "" if !$enable_architectures;
 
     # remove trailing spaces for dumb users
     $form{'query'} =~ s/\s+$//;
@@ -2374,8 +2388,10 @@ ETX
 
     print qq{</select>\n};
 
-    print qq{<select name="arch">\n};
     my @arch = exists $arch{$l} ? @{ $arch{$l}->{'arch'} } : $default_arch;
+    if ($enable_architectures && (scalar(@arch) > 1 || $enable_architectures_none)) {
+
+    print qq{<select name="arch">\n};
     unshift @arch, 'default';
 
     my $a;
@@ -2398,6 +2414,7 @@ ETX
     }
 
     print qq{</select>\n\n};
+    }
 
     local ($m) = &encode_url($l);
 
@@ -2454,7 +2471,7 @@ sub faq {
     return qq{\
 <h2>Copyright</h2>
 <pre>
-Copyright (c) 1996-2025 <a href="$mailtoURL">Wolfram Schneider</a>
+Copyright (c) 1996-2026 <a href="$mailtoURL">Wolfram Schneider</a>
 Copyright (c) 1993-1995 Berkeley Software Design, Inc.
 </pre>
 <p/>
